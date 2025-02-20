@@ -9,7 +9,8 @@ module AresMUSH
     def self.get_success_title(success_level)
       case success_level
       when -1
-        t('fs3skills.embarrassing_failure')
+        #t('fs3skills.embarrassing_failure')
+        t('fs3skills.botch')
       when 0
         t('fs3skills.failure')
       when 1, 2
@@ -18,8 +19,10 @@ module AresMUSH
         t('fs3skills.good_success')
       when 5, 6
         t('fs3skills.great_success')
-      when 7..99
+      when 7..15
         t('fs3skills.amazing_success')
+      when 16..99
+        t('fs3skills.critical_success')
       else
         raise "Unexpected roll result: #{success_level}"
       end

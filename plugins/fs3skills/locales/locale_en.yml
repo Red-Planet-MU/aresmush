@@ -58,7 +58,7 @@ en:
         good_success: "%xh%xgGood Success%xn"
         great_success: "%xh%xGGreat Success%xn"
         amazing_success: "%xh%xyAmazing Success%xn"
-        amazing_success: "%xh%xyCritical Success!%xn"
+        critical_success: "%xh%xyCritical Success!%xn"
         
         opposed_both_fail: "%xrEveryone failed!%xn"
         opposed_draw: "%xbDRAW!%xn"
