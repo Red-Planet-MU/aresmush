@@ -38,7 +38,7 @@ module AresMUSH
       botches = die_result.count { |d| d == 1 }
       autocritical = rand(19)
       Global.logger.debug "Autocrit roll: #{autocritical}"
-      return 8 if autocritical == 19
+      return 16 if autocritical == 19
       return -1 if autocritical == 0
       return successes if (successes > 0)
       return -1 if (botches > die_result.count / 2)
