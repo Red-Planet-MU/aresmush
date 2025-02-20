@@ -41,7 +41,8 @@ module AresMUSH
         success_level = FS3Skills.get_success_level(die_result)
         success_title = FS3Skills.get_success_title(success_level)
         Global.logger.debug "You're in the right place. Success level: #{success_level}"
-        if success_level == -1 || success_level == 16
+        if success_level == -1 
+          Global.logger.debug "It happened"
           message = t('fs3skills.auto_roll_result', 
             :name => char ? char.name : "#{self.name} (#{enactor_name})",
             :roll => self.roll_str,
