@@ -23,7 +23,7 @@ module AresMUSH
       if (dice > 30)
         Global.logger.warn "Attempt to roll #{dice} dice."
         # Hey if they're rolling this many dice they ought to succeed spectacularly.
-        return [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+        return [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
       end
       
       dice = [dice, 1].max.ceil
