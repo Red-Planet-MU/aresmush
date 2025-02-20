@@ -26,6 +26,7 @@ module AresMUSH
         return [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
       end
       
+      Global.logger.debug "#{FS3Skills.success_target_number}"
       dice = [dice, 1].max.ceil
       dice.times.collect { 1 + rand(10) }
     end
