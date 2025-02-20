@@ -2,7 +2,7 @@ module AresMUSH
   module FS3Skills
     
     def self.success_target_number
-      6
+      9
     end
     
     # Makes an ability roll and returns the raw dice results.
@@ -27,7 +27,7 @@ module AresMUSH
       end
       
       dice = [dice, 1].max.ceil
-      dice.times.collect { 1 + rand(8) }
+      dice.times.collect { 1 + rand(10) }
     end
     
     # Determines the success level based on the raw die result.
