@@ -36,9 +36,9 @@ module AresMUSH
     def self.get_success_level(die_result)
       successes = die_result.count { |d| d >= TDSSkills.success_target_number }
       botches = die_result.count { |d| d == 1 }
-      autocritical = rand(19)
+      autocritical = 1 + rand(20)
       Global.logger.debug "Autocrit roll: #{autocritical}"
-      return 16 if autocritical == 19
+      return 16 if autocritical == 20
       return -1 if autocritical == 0
       return successes if (successes > 0)
       return -1 if (botches > die_result.count / 2)
