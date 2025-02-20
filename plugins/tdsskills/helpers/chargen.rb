@@ -43,7 +43,7 @@ module AresMUSH
     
     # Checks to make sure an ability name doesn't have any funky characters in it.
     def self.check_ability_name(ability)
-      return t('fs3skills.no_special_characters') if (ability !~ /^[\w\s]+$/)
+      return t('tdsskills.no_special_characters') if (ability !~ /^[\w\s]+$/)
       return nil
     end
     
@@ -51,16 +51,16 @@ module AresMUSH
       ability = TDSSkills.find_ability(char, ability_name)
       if (ability)
         ability_type = TDSSkills.get_ability_type(ability_name)
-        t("fs3skills.#{ability_type}_set", :name => ability.name, :rating => ability.rating_name)
+        t("tdsskills.#{ability_type}_set", :name => ability.name, :rating => ability.rating_name)
       else
-        t("fs3skills.ability_removed", :name => ability_name)
+        t("tdsskills.ability_removed", :name => ability_name)
       end
     end
     
     def self.get_min_rating(ability_type)
       case ability_type
       when :action
-        if (Global.read_config('fs3skills', 'allow_incapable_action_skills'))
+        if (Global.read_config('tdsskills', 'allow_incapable_action_skills'))
           min_rating = 0
         else
           min_rating = 1
@@ -76,11 +76,11 @@ module AresMUSH
     def self.get_max_rating(ability_type)
       case ability_type
       when :action
-        max_rating = Global.read_config("fs3skills", "max_skill_rating")
+        max_rating = Global.read_config("tdsskills", "max_skill_rating")
       when :background, :language, :advantage
         max_rating = 3
       when :attribute
-        max_rating = Global.read_config("fs3skills", "max_attr_rating")
+        max_rating = Global.read_config("tdsskills", "max_attr_rating")
       end
     end
     
@@ -89,8 +89,8 @@ module AresMUSH
       min_rating = TDSSkills.get_min_rating(ability_type)
       max_rating = TDSSkills.get_max_rating(ability_type)
 
-      return t('fs3skills.max_rating_is', :rating => max_rating) if (rating > max_rating)
-      return t('fs3skills.min_rating_is', :rating => min_rating) if (rating < min_rating)
+      return t('tdsskills.max_rating_is', :rating => max_rating) if (rating > max_rating)
+      return t('tdsskills.min_rating_is', :rating => min_rating) if (rating < min_rating)
       return nil
     end
     

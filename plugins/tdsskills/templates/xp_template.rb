@@ -22,7 +22,7 @@ module AresMUSH
       
       def days_left(a)
         time_left = TDSSkills.days_to_next_learn(a)
-        message = time_left == 0 ? t('fs3skills.xp_days_now') : t('fs3skills.xp_days', :days => time_left)
+        message = time_left == 0 ? t('tdsskills.xp_days_now') : t('tdsskills.xp_days', :days => time_left)
         center(message, 13)
       end
       
@@ -33,11 +33,11 @@ module AresMUSH
       end
       
       def show_advantages
-        Global.read_config("fs3skills", "use_advantages")
+        Global.read_config("tdsskills", "use_advantages")
       end
       
       def allow_advantages_xp
-        Global.read_config("fs3skills", "allow_advantages_xp")
+        Global.read_config("tdsskills", "allow_advantages_xp")
       end
       
     end

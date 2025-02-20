@@ -2,7 +2,7 @@ module AresMUSH
   module TDSSkills
     module StartingSkills
       def self.config
-        Global.read_config("fs3skills", "starting_skills") || {}
+        Global.read_config("tdsskills", "starting_skills") || {}
       end
       
       def self.get_skills_for_char(char)
@@ -13,7 +13,7 @@ module AresMUSH
         end
         
         TDSSkills.action_skills.map { |a| a['name'] }.each do |a|
-          skills[a] = Global.read_config('fs3skills', 'allow_incapable_action_skills') ? 0 : 1
+          skills[a] = Global.read_config('tdsskills', 'allow_incapable_action_skills') ? 0 : 1
         end
         
         groups = get_groups_for_char(char)

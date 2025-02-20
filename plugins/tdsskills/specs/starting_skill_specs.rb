@@ -14,11 +14,11 @@ module AresMUSH
             "Position" => { "Pilot" => { "skills" => { "C" => 4 } } },
             "Faction" => { "Navy" => { "skills" => { "C" => 2 } } }
           }
-          allow(Global).to receive(:read_config).with("fs3skills", "starting_skills") { starting_skills }
-          allow(Global).to receive(:read_config).with("fs3skills", "attributes") { [ ] }
-          allow(Global).to receive(:read_config).with("fs3skills", "action_skills") { [ ] }
+          allow(Global).to receive(:read_config).with("tdsskills", "starting_skills") { starting_skills }
+          allow(Global).to receive(:read_config).with("tdsskills", "attributes") { [ ] }
+          allow(Global).to receive(:read_config).with("tdsskills", "action_skills") { [ ] }
           
-          allow(Global).to receive(:read_config).with("fs3skills", "allow_incapable_action_skills") { true }
+          allow(Global).to receive(:read_config).with("tdsskills", "allow_incapable_action_skills") { true }
           
           @char = double
         end
@@ -47,7 +47,7 @@ module AresMUSH
         it "should include default attributes" do
           allow(@char).to receive(:group).with("Position") { "Other" }
           allow(@char).to receive(:group).with("Faction") { "Other" }
-          allow(Global).to receive(:read_config).with("fs3skills", "attributes") { [ { 'name' => 'Brawn' }, { 'name' => 'Presence' } ] }
+          allow(Global).to receive(:read_config).with("tdsskills", "attributes") { [ { 'name' => 'Brawn' }, { 'name' => 'Presence' } ] }
           skills = { "A" => 2, "B" => 3, "Brawn" => 1, "Presence" => 1 }
           expect(StartingSkills.get_skills_for_char(@char)).to eq skills        
         end
@@ -55,8 +55,8 @@ module AresMUSH
         it "should include default action skills when incapable allowed" do
           allow(@char).to receive(:group).with("Position") { "Other" }
           allow(@char).to receive(:group).with("Faction") { "Other" }
-          allow(Global).to receive(:read_config).with("fs3skills", "action_skills") { [ { 'name' => 'Melee' } ] }
-          allow(Global).to receive(:read_config).with("fs3skills", "allow_incapable_action_skills") { true }
+          allow(Global).to receive(:read_config).with("tdsskills", "action_skills") { [ { 'name' => 'Melee' } ] }
+          allow(Global).to receive(:read_config).with("tdsskills", "allow_incapable_action_skills") { true }
           skills = { "A" => 2, "B" => 3, "Melee" => 0 }
           expect(StartingSkills.get_skills_for_char(@char)).to eq skills        
         end
@@ -64,8 +64,8 @@ module AresMUSH
         it "should include default action skills when incapable not allowed" do
           allow(@char).to receive(:group).with("Position") { "Other" }
           allow(@char).to receive(:group).with("Faction") { "Other" }
-          allow(Global).to receive(:read_config).with("fs3skills", "action_skills") { [ { 'name' => 'Melee' } ] }
-          allow(Global).to receive(:read_config).with("fs3skills", "allow_incapable_action_skills") { false }
+          allow(Global).to receive(:read_config).with("tdsskills", "action_skills") { [ { 'name' => 'Melee' } ] }
+          allow(Global).to receive(:read_config).with("tdsskills", "allow_incapable_action_skills") { false }
           skills = { "A" => 2, "B" => 3, "Melee" => 1 }
           expect(StartingSkills.get_skills_for_char(@char)).to eq skills        
         end
@@ -79,7 +79,7 @@ module AresMUSH
             "Position" => { "Pilot" => { "skills" => { "C" => 4 }, "specialties" => { "A" => [ "X", "U" ] } } },
             "Faction" => { "Navy" => { "skills" => { "C" => 2 }, "specialties" => { "B" => [ "W" ] } } }
           }
-          allow(Global).to receive(:read_config).with("fs3skills", "starting_skills") { starting_skills }
+          allow(Global).to receive(:read_config).with("tdsskills", "starting_skills") { starting_skills }
           @char = double
         end
         

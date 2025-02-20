@@ -43,25 +43,25 @@ module AresMUSH
 
           ability = TDSSkills.find_ability(model, self.name)
           if (!ability)
-            client.emit_failure t('fs3skills.ability_not_found')
+            client.emit_failure t('tdsskills.ability_not_found')
             return
           end
         
           config = TDSSkills.action_skill_config(name)
           if (!config || !config['specialties'])
-            client.emit_failure t('fs3skills.invalid_specialty_skill')
+            client.emit_failure t('tdsskills.invalid_specialty_skill')
             return
           end
         
           if (!ability.specialties.include?(self.specialty))     
-            client.emit_failure t('fs3skills.specialty_not_found', :name => model.name)
+            client.emit_failure t('tdsskills.specialty_not_found', :name => model.name)
             return
           end
         
           specs = ability.specialties
           specs.delete self.specialty
           ability.update(specialties: specs)
-          client.emit_success t('fs3skills.specialty_removed', :name => self.specialty)
+          client.emit_success t('tdsskills.specialty_removed', :name => self.specialty)
         end
       end
     end

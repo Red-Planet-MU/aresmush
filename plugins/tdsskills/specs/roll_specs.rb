@@ -3,8 +3,8 @@ module AresMUSH
     describe TDSSkills do
 
       before do
-        allow(Global).to receive(:read_config).with("fs3skills", "max_luck") { 3 }
-        allow(Global).to receive(:read_config).with("fs3skills", "roll_channel") { "FS3 Chan" }
+        allow(Global).to receive(:read_config).with("tdsskills", "max_luck") { 3 }
+        allow(Global).to receive(:read_config).with("tdsskills", "roll_channel") { "FS3 Chan" }
         allow(Achievements).to receive(:award_achievement) {}
         # Note:  By seeding the random number generator, we can avoid the randomness.
         #   If you use Kernel.srand(22), the first 10 die rolls in tests will always be:  

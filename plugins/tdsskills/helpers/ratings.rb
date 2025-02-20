@@ -28,7 +28,7 @@ module AresMUSH
       when :attribute
         return nil
       else
-        return Global.read_config("fs3skills", "default_linked_attr")
+        return Global.read_config("tdsskills", "default_linked_attr")
       end
     end
     

@@ -42,19 +42,19 @@ module AresMUSH
         when :attribute
           metadata = TDSSkills.attrs
           starting_rating = 1
-          starting_rating_name = t('fs3skills.poor_rating')
+          starting_rating_name = t('tdsskills.poor_rating')
         when :action
           metadata = TDSSkills.action_skills
           starting_rating = 1
-          starting_rating_name = t('fs3skills.everyman_rating')
+          starting_rating_name = t('tdsskills.everyman_rating')
         when :language
           metadata = TDSSkills.languages
           starting_rating = 0
-          starting_rating_name = t('fs3skills.everyman_rating')
+          starting_rating_name = t('tdsskills.everyman_rating')
         when :advantage
           metadata = TDSSkills.advantages
           starting_rating = 0
-          starting_rating_name = t('fs3skills.everyman_rating')
+          starting_rating_name = t('tdsskills.everyman_rating')
         else
           metadata = nil
         end

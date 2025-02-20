@@ -70,8 +70,8 @@ module AresMUSH
       describe :get_linked_attr do
         before do 
           skills = [ { "name" => "Firearms", "linked_attr" => "Brawn" } ]
-          allow(Global).to receive(:read_config).with("fs3skills", "default_linked_attr") { "Wits" }
-          allow(Global).to receive(:read_config).with("fs3skills", "action_skills") { skills }
+          allow(Global).to receive(:read_config).with("tdsskills", "default_linked_attr") { "Wits" }
+          allow(Global).to receive(:read_config).with("tdsskills", "action_skills") { skills }
           
         end
         

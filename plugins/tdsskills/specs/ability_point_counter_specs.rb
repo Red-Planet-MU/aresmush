@@ -3,7 +3,7 @@ module AresMUSH
     describe TDSSkills do
 
       before do
-        allow(Global).to receive(:read_config).with("fs3skills", "free_languages") { 3 }
+        allow(Global).to receive(:read_config).with("tdsskills", "free_languages") { 3 }
       end
       
       describe :points_on_attrs do
@@ -57,7 +57,7 @@ module AresMUSH
       describe :points_on_background do
         before do
           @char = double
-          allow(Global).to receive(:read_config).with("fs3skills", "free_backgrounds") { 5 }
+          allow(Global).to receive(:read_config).with("tdsskills", "free_backgrounds") { 5 }
         end
         
         it "should count past the free ones" do
@@ -80,7 +80,7 @@ module AresMUSH
       describe :points_on_language do
         before do
           @char = double
-          allow(Global).to receive(:read_config).with("fs3skills", "free_languages") { 4 }
+          allow(Global).to receive(:read_config).with("tdsskills", "free_languages") { 4 }
         end
         
         it "should count past the free ones" do

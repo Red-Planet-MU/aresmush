@@ -26,7 +26,7 @@ module AresMUSH
           
           ability = TDSSkills.find_ability(model, self.skill)
           if (!ability)
-            client.emit_failure t('fs3skills.ability_not_found')
+            client.emit_failure t('tdsskills.ability_not_found')
             return
           end
           if (ability.xp > 0)
@@ -52,7 +52,7 @@ module AresMUSH
             end
           end
           model.update(fs3_xp: model.xp + 1)
-          client.emit_success t('fs3skills.xp_undone', :name => model.name, :skill => self.skill)
+          client.emit_success t('tdsskills.xp_undone', :name => model.name, :skill => self.skill)
         end
       end
     end

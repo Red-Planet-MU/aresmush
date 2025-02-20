@@ -17,7 +17,7 @@ module AresMUSH
       end
       
       def check_luck
-        return t('fs3skills.invalid_luck_points') if self.luck == 0
+        return t('tdsskills.invalid_luck_points') if self.luck == 0
         return nil
       end
       
@@ -31,9 +31,9 @@ module AresMUSH
           model.award_luck(self.luck)
           Global.logger.info "#{self.luck} Luck Points Awarded by #{enactor_name} to #{model.name} for #{self.reason}"
           
-          message = t('fs3skills.luck_awarded', :name => model.name, :luck => self.luck, :reason => self.reason)
+          message = t('tdsskills.luck_awarded', :name => model.name, :luck => self.luck, :reason => self.reason)
           client.emit_success message
-          Mail.send_mail([model.name], t('fs3skills.luck_award_mail_subject'), message, nil)          
+          Mail.send_mail([model.name], t('tdsskills.luck_award_mail_subject'), message, nil)          
           
         end
       end

@@ -1,7 +1,7 @@
 <%= header %>
-%xh<%= t('fs3skills.xp_summary', :name => char.name ) %>%xn
+%xh<%= t('tdsskills.xp_summary', :name => char.name ) %>%xn
 
-%xh<%= t('fs3skills.xp_progress_title')%>%xn
+%xh<%= t('tdsskills.xp_progress_title')%>%xn
 <% char.fs3_attributes.each do |a| %>
 <%= display(a) %>
 <% end %>
@@ -24,9 +24,9 @@
 <%= display(a) %>
 <% end %>
 <% else %>
-<%= t('fs3skills.cant_learn_advantages_xp') %>
+<%= t('tdsskills.cant_learn_advantages_xp') %>
 <% end %>
 <% end %>
 
-<%= t('fs3skills.xp_title') %> <%= char.xp %>
+<%= t('tdsskills.xp_title') %> <%= char.xp %>
 <%= footer %>

@@ -8,31 +8,31 @@ module AresMUSH
 
       describe :backgrounds do
         before do 
-          allow(Global).to receive(:read_config).with("fs3skills", "min_backgrounds") { 2 }
+          allow(Global).to receive(:read_config).with("tdsskills", "min_backgrounds") { 2 }
           @char = double
         end
         
         it "should error if too few bg skills" do
           allow(@char).to receive(:fs3_background_skills) { [ FS3BackgroundSkill.new() ] }
           review = TDSSkills.backgrounds_review(@char)
-          expect(review).to eq "fs3skills.backgrounds_added                        chargen.not_enough"
+          expect(review).to eq "tdsskills.backgrounds_added                        chargen.not_enough"
         end
         
         it "should be OK if enough bg skills" do
           allow(@char).to receive(:fs3_background_skills) { [ FS3BackgroundSkill.new(), FS3BackgroundSkill.new() ] }
           review = TDSSkills.backgrounds_review(@char)
-          expect(review).to eq "fs3skills.backgrounds_added                        chargen.ok"
+          expect(review).to eq "tdsskills.backgrounds_added                        chargen.ok"
         end
       end
       
       describe :ability_rating_check do
         before do 
-          allow(Global).to receive(:read_config).with("fs3skills", "max_skills_at_or_above") { { 5 => 2, 7 => 1 } }
-          allow(Global).to receive(:read_config).with("fs3skills", "max_attrs_at_or_above") { { 4 => 2, 5 => 1 } }
-          allow(Global).to receive(:read_config).with("fs3skills", "max_points_on_attrs") { 14 }
-          allow(Global).to receive(:read_config).with("fs3skills", "max_points_on_action") { 20 }
-          allow(Global).to receive(:read_config).with("fs3skills", "max_points_on_advantages") { 10 }
-          allow(Global).to receive(:read_config).with("fs3skills", "advantages_cost") { 2 }
+          allow(Global).to receive(:read_config).with("tdsskills", "max_skills_at_or_above") { { 5 => 2, 7 => 1 } }
+          allow(Global).to receive(:read_config).with("tdsskills", "max_attrs_at_or_above") { { 4 => 2, 5 => 1 } }
+          allow(Global).to receive(:read_config).with("tdsskills", "max_points_on_attrs") { 14 }
+          allow(Global).to receive(:read_config).with("tdsskills", "max_points_on_action") { 20 }
+          allow(Global).to receive(:read_config).with("tdsskills", "max_points_on_advantages") { 10 }
+          allow(Global).to receive(:read_config).with("tdsskills", "advantages_cost") { 2 }
           @char = double
         end
         
@@ -42,7 +42,7 @@ module AresMUSH
                                              FS3ActionSkill.new(rating: 8) ] }
           allow(@char).to receive(:fs3_advantages) { [] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.action_skills_above"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.action_skills_above"
         end
 
         it "should error if too many skills above 4" do
@@ -52,7 +52,7 @@ module AresMUSH
                                              FS3ActionSkill.new(rating: 5) ] }
           allow(@char).to receive(:fs3_advantages) { [] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.action_skills_above"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.action_skills_above"
         end
         
         it "should error if too many points on attrs" do
@@ -65,7 +65,7 @@ module AresMUSH
                                              FS3Attribute.new(rating: 3) ] }
           allow(@char).to receive(:fs3_advantages) { [] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.too_many_attributes"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.too_many_attributes"
         end
         
         it "should error if too many points on action skills" do
@@ -78,7 +78,7 @@ module AresMUSH
                                              FS3ActionSkill.new(rating: 4) ] }
           allow(@char).to receive(:fs3_advantages) { [] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.too_many_action_skills"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.too_many_action_skills"
         end
         
         
@@ -89,7 +89,7 @@ module AresMUSH
                                              FS3Advantage.new(rating: 2),
                                              FS3Advantage.new(rating: 1) ] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.too_many_advantages"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.too_many_advantages"
         end
         
         it "should error if too many attrs above 3" do
@@ -99,7 +99,7 @@ module AresMUSH
                                              FS3Attribute.new(rating: 5) ] }
           allow(@char).to receive(:fs3_advantages) { [] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.attributes_above"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.attributes_above"
         end
         
         it "should error if too many attrs above 4" do
@@ -108,7 +108,7 @@ module AresMUSH
                                              FS3Attribute.new(rating: 5) ] }
           allow(@char).to receive(:fs3_advantages) { [] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check%r%Tfs3skills.attributes_above"
+          expect(review).to eq "tdsskills.ability_ratings_check%r%Ttdsskills.attributes_above"
         end
         
         it "should be OK if not too many high abilities" do
@@ -121,7 +121,7 @@ module AresMUSH
           allow(@char).to receive(:fs3_advantages) { [ FS3Advantage.new(rating: 3),
                                              FS3Advantage.new(rating: 2) ] }
           review = TDSSkills.ability_rating_review(@char)
-          expect(review).to eq "fs3skills.ability_ratings_check                    chargen.ok"
+          expect(review).to eq "tdsskills.ability_ratings_check                    chargen.ok"
         end
       end
 
@@ -139,12 +139,12 @@ module AresMUSH
         it "should warn if missing a starting skill" do
           allow(TDSSkills).to receive(:ability_rating).with(@char, "B") { 0 }
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check%r%Tfs3skills.missing_starting_skill"
+          expect(review).to eq "tdsskills.starting_skills_check%r%Ttdsskills.missing_starting_skill"
         end
         
         it "should be OK if all skills present" do
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check                    chargen.ok"
+          expect(review).to eq "tdsskills.starting_skills_check                    chargen.ok"
         end
         
         it "should warn if missing a required specialty and over amateur" do
@@ -152,7 +152,7 @@ module AresMUSH
           allow(TDSSkills).to receive(:action_skill_config) { config }
           allow(@char).to receive(:fs3_action_skills) { [ FS3ActionSkill.new(name: "Firearms", rating: 3)] }
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check%r%Tfs3skills.missing_specialty"
+          expect(review).to eq "tdsskills.starting_skills_check%r%Ttdsskills.missing_specialty"
         end
         
         it "should warn if missing a required specialty and under amateur" do
@@ -160,7 +160,7 @@ module AresMUSH
           allow(TDSSkills).to receive(:action_skill_config) { config }
           allow(@char).to receive(:fs3_action_skills) { [ FS3ActionSkill.new(name: "Firearms", rating: 2)] }
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check                    chargen.ok"
+          expect(review).to eq "tdsskills.starting_skills_check                    chargen.ok"
         end
         
         it "should be OK if specialty present" do
@@ -168,20 +168,20 @@ module AresMUSH
           allow(TDSSkills).to receive(:action_skill_config) { config }
           allow(@char).to receive(:fs3_action_skills) { [ FS3ActionSkill.new(name: "Firearms", specialties: [ "X" ])] }
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check                    chargen.ok"
+          expect(review).to eq "tdsskills.starting_skills_check                    chargen.ok"
         end
         
         it "should warn if missing group specialty" do
           allow(@char).to receive(:fs3_action_skills) { [ FS3ActionSkill.new(name: "A", rating: 3)] }
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check%r%Tfs3skills.missing_group_specialty"
+          expect(review).to eq "tdsskills.starting_skills_check%r%Ttdsskills.missing_group_specialty"
         end
 
         it "should not warn if group specialty present" do
           skill = FS3ActionSkill.new(name: "A", rating: 3, specialties: [ 'X' ])
           allow(@char).to receive(:fs3_action_skills) { [ skill ] }
           review = TDSSkills.starting_skills_check(@char)
-          expect(review).to eq "fs3skills.starting_skills_check                    chargen.ok"
+          expect(review).to eq "tdsskills.starting_skills_check                    chargen.ok"
         end
       end
       
@@ -192,42 +192,42 @@ module AresMUSH
           allow(@char).to receive(:fs3_background_skills) { [] }
           allow(@char).to receive(:fs3_action_skills) { [] }
           allow(@char).to receive(:fs3_languages) { [] }
-          allow(Global).to receive(:read_config).with("fs3skills", "unusual_skills") { [ "A" ] }
+          allow(Global).to receive(:read_config).with("tdsskills", "unusual_skills") { [ "A" ] }
         end
 
         it "should warn if char has an unusual action skill above everyman" do
           allow(@char).to receive(:fs3_action_skills) { [ FS3ActionSkill.new(name: "A", rating: 2) ] }
           review = TDSSkills.unusual_skills_check(@char)
-          expect(review).to eq "fs3skills.unusual_abilities_check%r%Tfs3skills.unusual_skill"
+          expect(review).to eq "tdsskills.unusual_abilities_check%r%Ttdsskills.unusual_skill"
         end
 
         it "should not warn if char has an unusual action skill at everyman" do
           allow(@char).to receive(:fs3_action_skills) { [ FS3ActionSkill.new(name: "A", rating: 1) ] }
           review = TDSSkills.unusual_skills_check(@char)
-          expect(review).to eq "fs3skills.unusual_abilities_check                  chargen.ok"
+          expect(review).to eq "tdsskills.unusual_abilities_check                  chargen.ok"
         end
         
         it "should warn if char has an unusual background skill" do
           allow(@char).to receive(:fs3_background_skills) { [ FS3BackgroundSkill.new(name: "A", rating: 1) ] }
           review = TDSSkills.unusual_skills_check(@char)
-          expect(review).to eq "fs3skills.unusual_abilities_check%r%Tfs3skills.unusual_skill"
+          expect(review).to eq "tdsskills.unusual_abilities_check%r%Ttdsskills.unusual_skill"
         end
         
         it "should warn if char has an unusual language skill" do
           allow(@char).to receive(:fs3_languages) { [ FS3Language.new(name: "A", rating: 1) ] }
           review = TDSSkills.unusual_skills_check(@char)
-          expect(review).to eq "fs3skills.unusual_abilities_check%r%Tfs3skills.unusual_skill"
+          expect(review).to eq "tdsskills.unusual_abilities_check%r%Ttdsskills.unusual_skill"
         end
         
         it "should warn if char has a high background skill" do
           allow(@char).to receive(:fs3_background_skills) { [ FS3BackgroundSkill.new(name: "B", rating: 2)]}
           review = TDSSkills.unusual_skills_check(@char)
-          expect(review).to eq "fs3skills.unusual_abilities_check%r%Tfs3skills.high_bg"
+          expect(review).to eq "tdsskills.unusual_abilities_check%r%Ttdsskills.high_bg"
         end
         
         it "should be OK if no unusual skills present" do
           review = TDSSkills.unusual_skills_check(@char)
-          expect(review).to eq "fs3skills.unusual_abilities_check                  chargen.ok"
+          expect(review).to eq "tdsskills.unusual_abilities_check                  chargen.ok"
         end
         
       end

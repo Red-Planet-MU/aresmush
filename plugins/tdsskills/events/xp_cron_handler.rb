@@ -2,13 +2,13 @@ module AresMUSH
   module TDSSkills    
     class XpCronHandler
       def on_event(event)
-        config = Global.read_config("fs3skills", "xp_cron")
+        config = Global.read_config("tdsskills", "xp_cron")
         return if !Cron.is_cron_match?(config, event.time)
         
         Global.logger.debug "XP awards."
         
-        periodic_xp = Global.read_config("fs3skills", "periodic_xp")
-        max_xp = Global.read_config("fs3skills", "max_xp_hoard")
+        periodic_xp = Global.read_config("tdsskills", "periodic_xp")
+        max_xp = Global.read_config("tdsskills", "max_xp_hoard")
         
         approved = Chargen.approved_chars
         approved.each do |a|

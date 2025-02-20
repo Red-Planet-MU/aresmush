@@ -51,7 +51,7 @@ module AresMUSH
         client.emit message
       else
         room.emit message
-        channel = Global.read_config("fs3skills", "roll_channel")
+        channel = Global.read_config("tdsskills", "roll_channel")
         if (channel)
           Channels.send_to_channel(channel, message)
         end
@@ -97,7 +97,7 @@ module AresMUSH
         die_result2 = TDSSkills.parse_and_roll(model2, vs_roll2)
         
         if (!die_result1 || !die_result2)
-          return { error: t('fs3skills.unknown_roll_params') }
+          return { error: t('tdsskills.unknown_roll_params') }
         end
         
         successes1 = TDSSkills.get_success_level(die_result1)
@@ -105,9 +105,9 @@ module AresMUSH
           
         results = TDSSkills.opposed_result_title(vs_name1, successes1, vs_name2, successes2)
         
-        message = t('fs3skills.opposed_roll_result', 
-           :name1 => !model1 ? t('fs3skills.npc', :name => vs_name1) : model1.name,
-           :name2 => !model2 ? t('fs3skills.npc', :name => vs_name2) : model2.name,
+        message = t('tdsskills.opposed_roll_result', 
+           :name1 => !model1 ? t('tdsskills.npc', :name => vs_name1) : model1.name,
+           :name2 => !model2 ? t('tdsskills.npc', :name => vs_name2) : model2.name,
            :roll1 => vs_roll1,
            :roll2 => vs_roll2,
            :dice1 => TDSSkills.print_dice(die_result1),
@@ -127,7 +127,7 @@ module AresMUSH
         roll = TDSSkills.parse_and_roll(char, pc_skill)
         roll_result = TDSSkills.get_success_level(roll)
         success_title = TDSSkills.get_success_title(roll_result)
-        message = t('fs3skills.simple_roll_result', 
+        message = t('tdsskills.simple_roll_result', 
           :name => char ? char.name : "#{pc_name} (#{enactor.name})",
           :roll => pc_skill,
           :dice => TDSSkills.print_dice(roll),
@@ -142,7 +142,7 @@ module AresMUSH
         roll = TDSSkills.parse_and_roll(enactor, roll_str)
         roll_result = TDSSkills.get_success_level(roll)
         success_title = TDSSkills.get_success_title(roll_result)
-        message = t('fs3skills.simple_roll_result', 
+        message = t('tdsskills.simple_roll_result', 
           :name => enactor.name,
           :roll => roll_str,
           :dice => TDSSkills.print_dice(roll),

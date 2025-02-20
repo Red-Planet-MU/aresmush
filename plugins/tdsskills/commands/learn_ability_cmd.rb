@@ -15,12 +15,12 @@ module AresMUSH
       end
       
       def check_chargen_locked
-        return t('fs3skills.must_be_approved') if !enactor.is_approved?
+        return t('tdsskills.must_be_approved') if !enactor.is_approved?
         return nil
       end
       
       def check_xp
-        return t('fs3skills.not_enough_xp') if enactor.xp <= 0
+        return t('tdsskills.not_enough_xp') if enactor.xp <= 0
       end
       
       def handle
@@ -28,7 +28,7 @@ module AresMUSH
         if (error)
           client.emit_failure error
         else
-          client.emit_success t('fs3skills.xp_spent', :name => self.name)
+          client.emit_success t('tdsskills.xp_spent', :name => self.name)
         end
       end
     end

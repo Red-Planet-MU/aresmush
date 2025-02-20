@@ -23,7 +23,7 @@ module AresMUSH
             advantages: get_xp_list(char, char.fs3_advantages),
             xp_points: char.fs3_xp,
             can_learn: AresCentral.is_alt?(char, viewer),
-            allow_advantages_xp: Global.read_config("fs3skills", "allow_advantages_xp")
+            allow_advantages_xp: Global.read_config("tdsskills", "allow_advantages_xp")
           }
         else
           xp = nil

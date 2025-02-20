@@ -21,19 +21,19 @@ module AresMUSH
       end
       
       def self.points_on_background(char)
-        free = Global.read_config("fs3skills", "free_backgrounds")
+        free = Global.read_config("tdsskills", "free_backgrounds")
         count = char.fs3_background_skills.inject(0) { |count, a| count + a.rating }
         count > free ? count - free : 0
       end
 
       def self.points_on_language(char)
-        free = Global.read_config("fs3skills", "free_languages")
+        free = Global.read_config("tdsskills", "free_languages")
         count = char.fs3_languages.inject(0) { |count, a| count + a.rating }
         count > free ? count - free : 0
       end
       
       def self.points_on_advantages(char)
-        cost = Global.read_config("fs3skills", "advantages_cost")
+        cost = Global.read_config("tdsskills", "advantages_cost")
         char.fs3_advantages.inject(0) { |count, a| count + (a.rating * cost) }
       end
 

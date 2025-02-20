@@ -40,7 +40,7 @@ def plugin_title(name)
   return "AresCentral" if name == "arescentral"
   return "IC Time" if name == "ictime"
   return "OOC Time" if name == "ooctime"
-  return "FS3 Skills" if name == "fs3skills"
+  return "FS3 Skills" if name == "tdsskills"
   return "FS3 Combat" if name == "fs3combat"
   
   name.titlecase
