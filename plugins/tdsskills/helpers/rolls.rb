@@ -12,13 +12,13 @@ module AresMUSH
       dice = TDSSkills.dice_to_roll_for_ability(char, roll_params)
       roll = TDSSkills.roll_dice(dice)
       Global.logger.info "#{char.name} rolling #{roll_params} dice=#{dice} result=#{roll}"
-      Achievements.award_achievement(char, "fs3_roll")
+      Achievements.award_achievement(char, "tds_roll")
       roll
     end
     
 
         
-    # Rolls a number of FS3 dice and returns the raw die results.
+    # Rolls a number of TDS dice and returns the raw die results.
     def self.roll_dice(dice)
       if (dice > 30)
         Global.logger.warn "Attempt to roll #{dice} dice."
@@ -61,7 +61,7 @@ module AresMUSH
         end
         
       end
-      Global.logger.info "FS3 roll results: #{message}"
+      Global.logger.info "TDS roll results: #{message}"
     end
     
     # Returns either { message: roll_result_message }  or  { error: error_message }
