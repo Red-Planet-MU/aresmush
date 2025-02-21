@@ -20,7 +20,7 @@ aliases:
 
 You can set your skills during character creation via the web portal or the ability commands explained below.  After you're approved, you can only improve skills with [Experience Points](/help/xp).
 
-> Learn how the FS3 skills system works in the [TDS Tutorial](/help/TDS).
+> Learn how the TDS skills system works in the [TDS Tutorial](/help/TDS).
 
 ## Reset to Start
 
