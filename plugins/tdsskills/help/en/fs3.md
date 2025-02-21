@@ -1,12 +1,12 @@
 ---
-toc: FS3 Skills and Combat
+toc: TDS Skills and Combat
 order: 1
 tutorial: true
 summary: Skills and Combat System
 ---
-# FS3
+# TDS
 
-This game uses the FS3 system, Third Edition.  The complete guide can be found online: [FS3 Player's Guide](http://www.aresmush.com/fs3/fs3-3).
+This game uses Trashcan's Difficult Skill System, which stands on the very broad shoulders of FS3.  You can read about FS3 online: [FS3 Player's Guide](http://www.aresmush.com/fs3/fs3-3).
 
 ![Sheet Page Screenshot](https://aresmush.com/images/help-images/sheet.png)
 
@@ -14,7 +14,7 @@ This game uses the FS3 system, Third Edition.  The complete guide can be found o
 
 ## Abilities
 
-FS3 has several basic types of abilities:
+TDS has several basic types of abilities:
 
 * **Attributes** represent basic abilities that everyone has to some extent. Attributes boost related skills, and come into play when no skill directly applies. Attributes are rated from 1-4. 
 * **Action Skills** represent your ability in areas deemed important for gameplay. Action Skills are rated from 0-8. 
@@ -36,14 +36,14 @@ An Ability Roll is used when you want to know if you succeed or fail at a given 
 
 > **Tip:** See the [Conflict](https://aresmush.com/fs3/fs3-3/conflict.html) section of the player's guide for details about when and how to use ability rolls to resolve conflicts.
 
-The basic roll mechanic in FS3 is to roll a number of dice equal to Attribute + Ability, and count successes.  One success is enough to accomplish the task at hand; more successes mean you do better than expected.
+The basic roll mechanic in TDS is to roll a number of dice equal to Attribute + Ability, and count successes.  One success is enough to accomplish the task at hand; more successes mean you do better than expected.
 
-    <FS3> Hannah rolls Firearms: Good Success (7 7 7 4)
+    <TDS> Hannah rolls Firearms: Good Success (10 10 10 4)
 
 You can also do opposed rolls, which basically just compare the number of successes from each side and figure out who won and by how much.
 
-    <FS3> Flare rolls Firearms (8 4 3 2 1) vs Ivan's Firearms (8 7 6 6 6 5 5 2 1 1)
-    <FS3>          Crushing Victory for Ivan.
+    <TDS> Flare rolls Firearms (9 4 3 2 1) vs Ivan's Firearms (10 10 9 9 9 5 5 2 1 1)
+    <TDS>          Crushing Victory for Ivan.
 
 When rolling an ability, the system will assume you want to use the default linked attribute. You can also specify which attribute to use, or roll _just_ an attribute (this is used when "defaulting" to a skill you don't have, and assumes an Everyman level):
 
@@ -62,7 +62,7 @@ And finally, for NPCs you can just roll a skill rating.  An attribute of 2 is fa
 
 ## Luck
 
-Luck Points in FS3 can be used to generate various lucky breaks.  Luck points are earned by participating in scenes. You can use luck points for combat, ability rolls, or other plot points at the storyteller's discretion.
+Luck Points in TDS can be used to generate various lucky breaks.  Luck points are earned by participating in scenes. You can use luck points for combat, ability rolls, or other plot points at the storyteller's discretion.
 
 > **Tip:** See the [Luck](https://aresmush.com/fs3/fs3-3/luck.html) section of the player's guide for details about when and how to use luck points.
 
@@ -94,5 +94,7 @@ If you're looking for a character with a specific skill, you can use the `skill/
 [Combat](/help/combat) (if your game has enabled the combat system)
 
 ## Copyright
+
+TDS has no copyright.
 
 The FS3 System Copyright 2007 by Wordsmyth Creations LLC and is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (http://creativecommons.org/licenses/by-nc-sa/4.0/).

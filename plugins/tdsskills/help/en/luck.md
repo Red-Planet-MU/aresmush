@@ -1,11 +1,11 @@
 ---
-toc: FS3 Skills and Combat
+toc: TDS Skills and Combat
 summary: Using luck points.
 ---
-# FS3 - Luck
+# TDS - Luck
 
-Luck Points in FS3 can be used to generate various lucky breaks.  
+Luck Points in TDS can be used to generate various lucky breaks.  
 
-> Learn how the FS3 skills system works in the [FS3 Tutorial](/help/fs3).
+> Learn how the TDS skills system works in the [TDS Tutorial](/help/tds).
 
 `luck/spend <reason>` - Spends luck outside of combat. See [Combat Luck](/help/combat) for combat-related luck commands.

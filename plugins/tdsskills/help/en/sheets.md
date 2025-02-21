@@ -4,11 +4,11 @@ order: 3
 summary: Viewing character sheets.
 
 ---
-# FS3 - Character Sheet
+# TDS - Character Sheet
 
 The `sheet` command lets you view your character sheet, showing your abilities.
 
-> Learn how the FS3 skills system works in the [FS3 Tutorial](/help/fs3).
+> Learn how the TDS skills system works in the [TDS Tutorial](/help/tds).
 
 `sheet` - Views your own sheet.
 `sheet <name>` - Views someone else's sheet.
