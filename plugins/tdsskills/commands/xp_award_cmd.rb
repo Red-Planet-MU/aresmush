@@ -32,7 +32,7 @@ module AresMUSH
       
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
-          if (model.fs3_xp + self.xp < 0)
+          if (model.tds_xp + self.xp < 0)
             client.emit_failure  t('tdsskills.invalid_xp_award')
             return
           end

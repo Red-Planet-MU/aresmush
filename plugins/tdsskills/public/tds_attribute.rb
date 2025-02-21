@@ -1,5 +1,5 @@
 module AresMUSH
-  class FS3BackgroundSkill < Ohm::Model
+  class TDSAttribute < Ohm::Model
     include ObjectModel
     include LearnableAbility
     
@@ -12,25 +12,29 @@ module AresMUSH
     def print_rating
       case rating
       when 0
-          return ""
+        return ""
       when 1
         return "%xg@%xn"
       when 2
         return "%xg@%xy@%xn"
       when 3
         return "%xg@%xy@%xr@%xn"
+      when 4
+        return "%xg@%xy@%xr@%xb@%xn"
       end
     end
     
     def rating_name
       case rating
-      when 0
-        return t('tdsskills.everyman_rating')
+      when 0 
+        return ""
       when 1
-        return t('tdsskills.fair_rating')
+        return t('tdsskills.poor_rating')
       when 2
-        return t('tdsskills.good_rating')
+        return t('tdsskills.average_rating')
       when 3
+        return t('tdsskills.good_rating')
+      when 4
         return t('tdsskills.exceptional_rating')
       end
     end

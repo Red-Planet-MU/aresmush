@@ -2,7 +2,7 @@ module AresMUSH
   module TDSSkills
     
     def self.backgrounds_review(char)
-      TDSSkills.min_item_review(char.fs3_background_skills.count, "min_backgrounds", "tdsskills.backgrounds_added")
+      TDSSkills.min_item_review(char.tds_background_skills.count, "min_backgrounds", "tdsskills.backgrounds_added")
     end
 
     def self.ability_rating_review(char)
@@ -11,13 +11,13 @@ module AresMUSH
 
       max_skills = Global.read_config('tdsskills', 'max_skills_at_or_above')
       max_skills.each do |rating, limit|
-        error = TDSSkills.check_high_abilities(char.fs3_action_skills, rating, limit, 'tdsskills.action_skills_above')
+        error = TDSSkills.check_high_abilities(char.tds_action_skills, rating, limit, 'tdsskills.action_skills_above')
         too_high << error if error
       end
       
       max_attrs = Global.read_config('tdsskills', 'max_attrs_at_or_above')
       max_attrs.each do |rating, limit|
-        error = TDSSkills.check_high_abilities(char.fs3_attributes, rating, limit, 'tdsskills.attributes_above')
+        error = TDSSkills.check_high_abilities(char.tds_attributes, rating, limit, 'tdsskills.attributes_above')
         too_high << error if error
       end      
 
@@ -43,9 +43,9 @@ module AresMUSH
       too_high = []
       message = t('tdsskills.unusual_abilities_check')
       
-      all_skills = char.fs3_background_skills.map { |s| s.name }
-      all_skills.concat char.fs3_action_skills.select { |s| s.rating > 1 }.map { |s| s.name }
-      all_skills.concat char.fs3_languages.map { |s| s.name }
+      all_skills = char.tds_background_skills.map { |s| s.name }
+      all_skills.concat char.tds_action_skills.select { |s| s.rating > 1 }.map { |s| s.name }
+      all_skills.concat char.tds_languages.map { |s| s.name }
       
       uncommon_skills = Global.read_config("tdsskills", "unusual_skills") || []
       uncommon_skills.each do |s|
@@ -54,7 +54,7 @@ module AresMUSH
         end
       end
           
-      char.fs3_background_skills.each do |b|
+      char.tds_background_skills.each do |b|
         if (b.rating > 1)
           too_high << t('tdsskills.high_bg', :skill => b.name)
         end
@@ -104,7 +104,7 @@ module AresMUSH
       end
       
       starting_specs = StartingSkills.get_specialties_for_char(char)
-      char.fs3_action_skills.each do |a|
+      char.tds_action_skills.each do |a|
         specs_for_skill = starting_specs[a.name]
         if (specs_for_skill)
           specs_for_skill.each do |s|
@@ -115,7 +115,7 @@ module AresMUSH
         end
       end
       
-      char.fs3_action_skills.each do |a|
+      char.tds_action_skills.each do |a|
         config = TDSSkills.action_skill_config(a.name)
         if (config['specialties'] && a.specialties.empty? && a.rating > 2)
           missing << t('tdsskills.missing_specialty', :skill => a.name)

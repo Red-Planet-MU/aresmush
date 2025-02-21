@@ -18,15 +18,15 @@ module AresMUSH
       else
         case ability_type
         when :action
-          ability = FS3ActionSkill.create(character: char, name: ability_name, rating: rating)
+          ability = TDSActionSkill.create(character: char, name: ability_name, rating: rating)
         when :background
-          ability = FS3BackgroundSkill.create(character: char, name: ability_name, rating: rating)
+          ability = TDSBackgroundSkill.create(character: char, name: ability_name, rating: rating)
         when :language
-          ability = FS3Language.create(character: char, name: ability_name, rating: rating)
+          ability = TDSLanguage.create(character: char, name: ability_name, rating: rating)
         when :advantage
-          ability = FS3Advantage.create(character: char, name: ability_name, rating: rating)
+          ability = TDSAdvantage.create(character: char, name: ability_name, rating: rating)
         when :attribute
-          ability = FS3Attribute.create(character: char, name: ability_name, rating: rating)
+          ability = TDSAttribute.create(character: char, name: ability_name, rating: rating)
         end
       end
       
@@ -95,11 +95,11 @@ module AresMUSH
     end
     
     def self.reset_char(char)
-      char.fs3_action_skills.each { |s| s.delete }
-      char.fs3_attributes.each { |s| s.delete }
-      char.fs3_background_skills.each { |s| s.delete }
-      char.fs3_languages.each { |s| s.delete }
-      char.fs3_advantages.each { |s| s.delete }
+      char.tds_action_skills.each { |s| s.delete }
+      char.tds_attributes.each { |s| s.delete }
+      char.tds_background_skills.each { |s| s.delete }
+      char.tds_languages.each { |s| s.delete }
+      char.tds_advantages.each { |s| s.delete }
         
       TDSSkills.attr_names.each do |a|
         TDSSkills.set_ability(char, a, 2)

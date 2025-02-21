@@ -2,25 +2,25 @@
 %xh<%= t('tdsskills.xp_summary', :name => char.name ) %>%xn
 
 %xh<%= t('tdsskills.xp_progress_title')%>%xn
-<% char.fs3_attributes.each do |a| %>
+<% char.tds_attributes.each do |a| %>
 <%= display(a) %>
 <% end %>
 
-<% char.fs3_action_skills.each do |a| %>
+<% char.tds_action_skills.each do |a| %>
 <%= display(a) %>
 <% end %>
 
-<% char.fs3_background_skills.each do |a| %>
+<% char.tds_background_skills.each do |a| %>
 <%= display(a) %>
 <% end %>
 
-<% char.fs3_languages.each do |a| %>
+<% char.tds_languages.each do |a| %>
 <%= display(a) %>
 <% end %>
 
 <% if show_advantages %>
 <% if allow_advantages_xp %>
-<% char.fs3_advantages.each do |a| %>
+<% char.tds_advantages.each do |a| %>
 <%= display(a) %>
 <% end %>
 <% else %>

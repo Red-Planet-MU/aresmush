@@ -9,16 +9,16 @@ module AresMUSH
       
       describe :award_xp do
         before do
-          @char = Character.new(fs3_xp: 1)
+          @char = Character.new(tds_xp: 1)
         end
         
         it "should add xp" do
-          expect(@char).to receive(:update).with(fs3_xp: 2)
+          expect(@char).to receive(:update).with(tds_xp: 2)
           @char.award_xp(1)
         end
 
         it "should not go over the cap" do
-          expect(@char).to receive(:update).with(fs3_xp: 3)
+          expect(@char).to receive(:update).with(tds_xp: 3)
           @char.award_xp(5)
         end
       end
@@ -83,7 +83,7 @@ module AresMUSH
       
       describe :xp do
         before do
-          @char = Character.new(fs3_xp: 2)
+          @char = Character.new(tds_xp: 2)
         end
         
         it "should return xp" do

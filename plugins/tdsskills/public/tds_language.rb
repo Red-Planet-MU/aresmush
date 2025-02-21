@@ -1,5 +1,5 @@
 module AresMUSH
-  class FS3Language < Ohm::Model
+  class TDSLanguage < Ohm::Model
     include ObjectModel
     include LearnableAbility
     

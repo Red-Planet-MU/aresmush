@@ -19,25 +19,25 @@ module AresMUSH
           @advantages = double
           
           allow(@advantages).to receive(:find).with(name: "Resources") { [] }
-          allow(@advantages).to receive(:find).with(name: "Rank") { [ FS3Advantage.new(name: "Rank", rating: 3 ) ]}
+          allow(@advantages).to receive(:find).with(name: "Rank") { [ TDSAdvantage.new(name: "Rank", rating: 3 ) ]}
           
           allow(@languages).to receive(:find).with(name: "Spanish") { [] }
-          allow(@languages).to receive(:find).with(name: "English") { [ FS3Language.new(name: "English", rating: 1 ) ] }
+          allow(@languages).to receive(:find).with(name: "English") { [ TDSLanguage.new(name: "English", rating: 1 ) ] }
           
-          allow(@action_skills).to receive(:find).with(name: "Firearms") {[ FS3ActionSkill.new(name: "Firearms", rating: 2 )] }
+          allow(@action_skills).to receive(:find).with(name: "Firearms") {[ TDSActionSkill.new(name: "Firearms", rating: 2 )] }
           allow(@action_skills).to receive(:find).with(name: "Demolitions") { [] }
           
-          allow(@bg_skills).to receive(:find).with(name: "Basketweaving") { [ FS3BackgroundSkill.new(name: "Basketweaving", rating: 3 )] }
+          allow(@bg_skills).to receive(:find).with(name: "Basketweaving") { [ TDSBackgroundSkill.new(name: "Basketweaving", rating: 3 )] }
           allow(@bg_skills).to receive(:find).with(name: "Art") { [] }
 
-          allow(@attrs).to receive(:find).with(name: "Brawn") { [ FS3Attribute.new(name: "Brawn", rating: 4 )] }
+          allow(@attrs).to receive(:find).with(name: "Brawn") { [ TDSAttribute.new(name: "Brawn", rating: 4 )] }
           allow(@attrs).to receive(:find).with(name: "Mind") { [] }
           
-          allow(@char).to receive(:fs3_languages) { @languages }
-          allow(@char).to receive(:fs3_attributes) { @attrs }
-          allow(@char).to receive(:fs3_action_skills) { @action_skills }
-          allow(@char).to receive(:fs3_background_skills) { @bg_skills }
-          allow(@char).to receive(:fs3_advantages) { @advantages }
+          allow(@char).to receive(:tds_languages) { @languages }
+          allow(@char).to receive(:tds_attributes) { @attrs }
+          allow(@char).to receive(:tds_action_skills) { @action_skills }
+          allow(@char).to receive(:tds_background_skills) { @bg_skills }
+          allow(@char).to receive(:tds_advantages) { @advantages }
         end
         
         it "should get skills that exist" do
@@ -57,12 +57,12 @@ module AresMUSH
         end
         
         it "should not search background skills for an action skill" do
-          allow(@bg_skills).to receive(:find).with(name: "Demolitions") { [ FS3BackgroundSkill.new(name: "Demolitions", rating: 3 )] }
+          allow(@bg_skills).to receive(:find).with(name: "Demolitions") { [ TDSBackgroundSkill.new(name: "Demolitions", rating: 3 )] }
           expect(TDSSkills.ability_rating(@char, "Demolitions")).to eq 0
         end
         
         it "should not search background skills for a language" do
-          allow(@bg_skills).to receive(:find).with(name: "Spanish") { [ FS3BackgroundSkill.new(name: "Spanish", rating: 3 )] }
+          allow(@bg_skills).to receive(:find).with(name: "Spanish") { [ TDSBackgroundSkill.new(name: "Spanish", rating: 3 )] }
           expect(TDSSkills.ability_rating(@char, "Spanish")).to eq 0
         end
       end

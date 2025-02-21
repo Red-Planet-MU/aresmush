@@ -7,7 +7,7 @@ tdsskills:
     25: 0.05
     50: 0.025
   public_sheets: true
-  roll_channel: FS3 Rolls
+  roll_channel: TDS Rolls
   shortcuts:
     spec: specialty
     sheet2: profile
@@ -22,11 +22,11 @@ tdsskills:
     xp/subtract: xp/remove
     xp/add: xp/award
   achievements:
-    fs3_luck_spent:
-      type: fs3
+    tds_luck_spent:
+      type: tds
       message: Spent a luck point.
-    fs3_roll:
-      type: fs3
+    tds_roll:
+      type: tds
       message: Rolled a skill.
   job_on_luck_spend: true
   permissions:

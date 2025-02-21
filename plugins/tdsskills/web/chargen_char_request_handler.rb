@@ -26,12 +26,12 @@ module AresMUSH
         end        
         
         {
-          fs3_attributes: get_ability_list(char, char.fs3_attributes, :attribute),
-          fs3_action_skills: get_ability_list(char, char.fs3_action_skills, :action),
-          fs3_backgrounds: get_ability_list(char, char.fs3_background_skills, :background),
-          fs3_languages: get_ability_list(char, char.fs3_languages, :language),
-          fs3_advantages: get_ability_list(char, char.fs3_advantages, :advantage),
-          reset_needed: !char.fs3_attributes.map { |a| a.rating > 1 }.any?,
+          tds_attributes: get_ability_list(char, char.tds_attributes, :attribute),
+          tds_action_skills: get_ability_list(char, char.tds_action_skills, :action),
+          tds_backgrounds: get_ability_list(char, char.tds_background_skills, :background),
+          tds_languages: get_ability_list(char, char.tds_languages, :language),
+          tds_advantages: get_ability_list(char, char.tds_advantages, :advantage),
+          reset_needed: !char.tds_attributes.map { |a| a.rating > 1 }.any?,
           use_advantages: TDSSkills.use_advantages?
         } 
       end
