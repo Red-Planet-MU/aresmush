@@ -9,7 +9,7 @@ module AresMUSH
       xp = char.xp + amount
       xp = [max_xp, xp].min
       xp = [0, xp].max
-      char.update(tds_xp: xp)
+      char.update(fs3_xp: xp)
     end
     
     def self.days_between_learning

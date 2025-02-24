@@ -1,5 +1,5 @@
 module AresMUSH
-  class TDSActionSkill < Ohm::Model
+  class FS3ActionSkill < Ohm::Model
     include ObjectModel
     include LearnableAbility
     

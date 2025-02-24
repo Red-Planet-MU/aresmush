@@ -1,7 +1,8 @@
 ---
 tdsskills:
   language_blurb: 'Languages represent your ability to speak and read other languages.  Languages
-    have a descriptive rating.'
+    have a descriptive rating.   See <a href="https://aresmush.com/fs3/fs3-3/chargen.html#languages"
+    target="_blank">FS3: Languages</a> for details.'
   languages:
   - name: Standard
     desc: Spoken across the colonies.

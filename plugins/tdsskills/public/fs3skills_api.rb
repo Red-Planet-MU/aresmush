@@ -75,14 +75,14 @@ module AresMUSH
     
     def self.save_char(char, chargen_data)
       alerts = []
-      (chargen_data[:tds][:tds_attributes] || {}).each do |k, v|
+      (chargen_data[:fs3][:fs3_attributes] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
           alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
         end
       end
 
-      (chargen_data[:tds][:tds_action_skills] || {}).each do |k, v|
+      (chargen_data[:fs3][:fs3_action_skills] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
           alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
@@ -90,13 +90,13 @@ module AresMUSH
         
         ability = TDSSkills.find_ability(char, k)
         if (ability)
-          specs = (chargen_data[:tds][:tds_specialties] || {})[k] || []
+          specs = (chargen_data[:fs3][:fs3_specialties] || {})[k] || []
           ability.update(specialties: specs)
         end
       end
     
       new_bg_skills = []
-      (chargen_data[:tds][:tds_backgrounds] || {}).each do |k, v|
+      (chargen_data[:fs3][:fs3_backgrounds] || {}).each do |k, v|
         skill_name = k.titleize
         error = TDSSkills.set_ability(char, skill_name, v.to_i)
         if (error)
@@ -106,20 +106,20 @@ module AresMUSH
       end
       
       # Remove any BG skills that they no longer have
-      char.tds_background_skills.each do |bg|
+      char.fs3_background_skills.each do |bg|
         if (!new_bg_skills.include?(bg.name))
           TDSSkills.set_ability(char, bg.name, 0)
         end
       end
     
-      (chargen_data[:tds][:tds_languages] || {}).each do |k, v|
+      (chargen_data[:fs3][:fs3_languages] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
           alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
         end
       end
     
-      (chargen_data[:tds][:tds_advantages] || {}).each do |k, v|
+      (chargen_data[:fs3][:fs3_advantages] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
           alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
@@ -130,7 +130,7 @@ module AresMUSH
     
     def self.luck_for_scene(char, scene)
       luck_for_scene = 0
-      luck_tracker = char.tds_scene_luck
+      luck_tracker = char.fs3_scene_luck
       luck_config = Global.read_config('tdsskills', 'luck_for_scene') || {}
       regular_luck = luck_config[0] || 0.1
       
@@ -163,7 +163,7 @@ module AresMUSH
       
       if (luck_for_scene > 0)
         char.award_luck(luck_for_scene)
-        char.update(tds_scene_luck: luck_tracker)
+        char.update(fs3_scene_luck: luck_tracker)
       end
     end
     

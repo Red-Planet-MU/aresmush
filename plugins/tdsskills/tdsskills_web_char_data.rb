@@ -4,9 +4,9 @@ module AresMUSH
       def build(char, viewer)
         is_owner = (viewer && viewer.id == char.id)
         
-        if (TDSCombat.is_enabled?)
-          damage = TDSCombat.damage_list_web_data(char)
-          damage_mod = TDSCombat.total_damage_mod(char).floor
+        if (FS3Combat.is_enabled?)
+          damage = FS3Combat.damage_list_web_data(char)
+          damage_mod = FS3Combat.total_damage_mod(char).floor
         else
           damage = nil
           damage_mod = nil
@@ -16,12 +16,12 @@ module AresMUSH
         
         if (TDSSkills.can_view_xp?(viewer, char))
           xp = {
-            attributes: get_xp_list(char, char.tds_attributes),
-            action_skills: get_xp_list(char, char.tds_action_skills),
-            backgrounds: get_xp_list(char, char.tds_background_skills),
-            languages: get_xp_list(char, char.tds_languages),
-            advantages: get_xp_list(char, char.tds_advantages),
-            xp_points: char.tds_xp,
+            attributes: get_xp_list(char, char.fs3_attributes),
+            action_skills: get_xp_list(char, char.fs3_action_skills),
+            backgrounds: get_xp_list(char, char.fs3_background_skills),
+            languages: get_xp_list(char, char.fs3_languages),
+            advantages: get_xp_list(char, char.fs3_advantages),
+            xp_points: char.fs3_xp,
             can_learn: AresCentral.is_alt?(char, viewer),
             allow_advantages_xp: Global.read_config("tdsskills", "allow_advantages_xp")
           }
@@ -31,11 +31,11 @@ module AresMUSH
       
         if (show_sheet)
           {
-            attributes: get_ability_list(char.tds_attributes),
-            action_skills: get_ability_list(char.tds_action_skills, true),
-            backgrounds: get_ability_list(char.tds_background_skills),
-            languages: get_ability_list(char.tds_languages),
-            advantages: get_ability_list(char.tds_advantages),
+            attributes: get_ability_list(char.fs3_attributes),
+            action_skills: get_ability_list(char.fs3_action_skills, true),
+            backgrounds: get_ability_list(char.fs3_background_skills),
+            languages: get_ability_list(char.fs3_languages),
+            advantages: get_ability_list(char.fs3_advantages),
             use_advantages: TDSSkills.use_advantages?,
             damage: damage,
             damage_mod: damage_mod,

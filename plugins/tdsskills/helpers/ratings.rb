@@ -6,15 +6,15 @@ module AresMUSH
       ability_type = TDSSkills.get_ability_type(ability_name)
       case ability_type
       when :attribute
-        char.tds_attributes.find(name: ability_name).first
+        char.fs3_attributes.find(name: ability_name).first
       when :action
-        char.tds_action_skills.find(name: ability_name).first
+        char.fs3_action_skills.find(name: ability_name).first
       when :background
-        char.tds_background_skills.find(name: ability_name).first
+        char.fs3_background_skills.find(name: ability_name).first
       when :advantage
-        char.tds_advantages.find(name: ability_name).first
+        char.fs3_advantages.find(name: ability_name).first
       when :language
-        char.tds_languages.find(name: ability_name).first
+        char.fs3_languages.find(name: ability_name).first
       else
         nil
       end
@@ -37,22 +37,22 @@ module AresMUSH
       Chargen.approved_chars.each do |c|
         
         if (skill_type == "Action")
-          c.tds_action_skills.each do |a|
+          c.fs3_action_skills.each do |a|
             add_to_hash(skills, c, a)
           end
 
         elsif (skill_type == "Background")
-          c.tds_background_skills.each do |a|
+          c.fs3_background_skills.each do |a|
             add_to_hash(skills, c, a)
           end
 
         elsif (skill_type == "Language")
-          c.tds_languages.each do |a|
+          c.fs3_languages.each do |a|
             add_to_hash(skills, c, a)
           end
           
         elsif (skill_type == "Advantage")
-          c.tds_advantages.each do |a|
+          c.fs3_advantages.each do |a|
             add_to_hash(skills, c, a)
           end
           

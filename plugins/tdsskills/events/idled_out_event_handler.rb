@@ -7,7 +7,7 @@ module AresMUSH
         
         Global.logger.debug "Clearing XP for #{event.char_id}"
         char = Character[event.char_id]
-        if (char.tds_xp > 0)
+        if (char.fs3_xp > 0)
           char.reset_xp
         end
       end

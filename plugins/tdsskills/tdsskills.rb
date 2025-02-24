@@ -89,7 +89,7 @@ module AresMUSH
         return AddJobRollRequestHandler
       when "addSceneRoll"
         return AddSceneRollRequestHandler
-      when "tdsScan"
+      when "fs3Scan"
         return SkillScanRequestHandler
       when "learnAbility"
         return LearnAbilityRequestHandler

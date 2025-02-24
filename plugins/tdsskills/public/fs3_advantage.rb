@@ -1,5 +1,5 @@
 module AresMUSH
-  class TDSBackgroundSkill < Ohm::Model
+  class FS3Advantage < Ohm::Model
     include ObjectModel
     include LearnableAbility
     

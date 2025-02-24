@@ -8,32 +8,32 @@ module AresMUSH
       
       describe :award_luck do
         before do
-          @char = Character.new(tds_luck: 1)
+          @char = Character.new(fs3_luck: 1)
         end
         
         it "should add luck" do
-          expect(@char).to receive(:update).with(tds_luck: 2.0) {}
+          expect(@char).to receive(:update).with(fs3_luck: 2.0) {}
           @char.award_luck(1)
         end
 
         it "should not go over the cap" do
-          expect(@char).to receive(:update).with(tds_luck: 3.0) {}
+          expect(@char).to receive(:update).with(fs3_luck: 3.0) {}
           @char.award_luck(5)
         end
       end
       
       describe :spend_luck do
         before do
-          @char = Character.new(tds_luck: 2)
+          @char = Character.new(fs3_luck: 2)
         end
         
         it "should spend luck" do
-          expect(@char).to receive(:update).with(tds_luck: 1.0)
+          expect(@char).to receive(:update).with(fs3_luck: 1.0)
           @char.spend_luck(1)
         end
 
         it "should not go below zero" do
-          expect(@char).to receive(:update).with(tds_luck: 0)
+          expect(@char).to receive(:update).with(fs3_luck: 0)
           @char.spend_luck(5)
         end
       end
@@ -41,7 +41,7 @@ module AresMUSH
       
       describe :luck do
         before do
-          @char = Character.new(tds_luck: 2)
+          @char = Character.new(fs3_luck: 2)
         end
         
         it "should return luck" do
@@ -51,7 +51,7 @@ module AresMUSH
       
       describe :luck_for_scene do
         before do
-          @char = Character.new(tds_luck: 2, tds_scene_luck: {})
+          @char = Character.new(fs3_luck: 2, fs3_scene_luck: {})
           @scene = double
           @base_luck = 0.1
           allow(Global).to receive(:read_config).with("tdsskills", "luck_for_scene") { {
@@ -67,7 +67,7 @@ module AresMUSH
           allow(newbie).to receive(:id) { 111 }
           expect(@scene).to receive(:participants) { [newbie] }
           expect(@char).to receive(:award_luck).with( @base_luck * 3 )
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 1 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 1 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
         
@@ -77,7 +77,7 @@ module AresMUSH
           allow(oldbie).to receive(:id) { 111 }
           expect(@scene).to receive(:participants) { [oldbie] }
           expect(@char).to receive(:award_luck).with( @base_luck * 2 )
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 1 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 1 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
         
@@ -85,10 +85,10 @@ module AresMUSH
           oldbie = double
           allow(oldbie).to receive(:created_at) { Time.now - 86400*90 }
           allow(oldbie).to receive(:id) { 111 }
-          @char.tds_scene_luck = { 111 => 9 }
+          @char.fs3_scene_luck = { 111 => 9 }
           expect(@scene).to receive(:participants) { [oldbie] }
           expect(@char).to receive(:award_luck).with( @base_luck )
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 10 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 10 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
         
@@ -96,10 +96,10 @@ module AresMUSH
           oldbie = double
           allow(oldbie).to receive(:created_at) { Time.now - 86400*90 }
           allow(oldbie).to receive(:id) { 111 }
-          @char.tds_scene_luck = { 111 => 11 }
+          @char.fs3_scene_luck = { 111 => 11 }
           expect(@scene).to receive(:participants) { [oldbie] }
           expect(@char).to receive(:award_luck).with( @base_luck * 0.75 )
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 12 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 12 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
         
@@ -107,10 +107,10 @@ module AresMUSH
           oldbie = double
           allow(oldbie).to receive(:created_at) { Time.now - 86400*90 }
           allow(oldbie).to receive(:id) { 111 }
-          @char.tds_scene_luck = { 111 => 26 }
+          @char.fs3_scene_luck = { 111 => 26 }
           expect(@scene).to receive(:participants) { [oldbie] }
           expect(@char).to receive(:award_luck).with( @base_luck * 0.5 )
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 27 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 27 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
         
@@ -121,10 +121,10 @@ module AresMUSH
           allow(oldbie).to receive(:created_at) { Time.now - 86400*90 }
           allow(oldbie).to receive(:id) { 111 }
           allow(newbie).to receive(:id) { 333 }
-          @char.tds_scene_luck = { 111 => 15 }
+          @char.fs3_scene_luck = { 111 => 15 }
           expect(@scene).to receive(:participants) { [oldbie, newbie] }
           expect(@char).to receive(:award_luck).with(@base_luck * 0.75 + @base_luck * 3)
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 16, 333 => 1 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 16, 333 => 1 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
         
@@ -134,7 +134,7 @@ module AresMUSH
           allow(oldbie).to receive(:id) { 111 }
           expect(@scene).to receive(:participants) { [oldbie, @char] }
           expect(@char).to receive(:award_luck).with(@base_luck * 2)
-          expect(@char).to receive(:update).with( { :tds_scene_luck => { 111 => 1 } } )
+          expect(@char).to receive(:update).with( { :fs3_scene_luck => { 111 => 1 } } )
           TDSSkills.luck_for_scene(@char, @scene)
         end
       end

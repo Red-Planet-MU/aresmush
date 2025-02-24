@@ -9,7 +9,7 @@ module AresMUSH
       luck = char.luck + amount
       luck = [max_luck, luck].min
       luck = [0, luck].max
-      char.update(tds_luck: luck)
+      char.update(fs3_luck: luck)
     end
     
     def self.spend_luck(char, reason, scene)
@@ -23,7 +23,7 @@ module AresMUSH
         char.room.emit_ooc message
       end
       
-      Achievements.award_achievement(char, "tds_luck_spent")
+      Achievements.award_achievement(char, "fs3_luck_spent")
       
       if (Global.read_config('tdsskills', 'job_on_luck_spend'))
         category = Jobs.system_category

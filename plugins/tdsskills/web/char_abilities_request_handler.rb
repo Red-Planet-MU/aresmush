@@ -20,7 +20,7 @@ module AresMUSH
         
         abilities = []
       
-        [ char.tds_attributes, char.tds_action_skills, char.tds_background_skills, char.tds_languages, char.tds_advantages ].each do |list|
+        [ char.fs3_attributes, char.fs3_action_skills, char.fs3_background_skills, char.fs3_languages, char.fs3_advantages ].each do |list|
           list.each do |a|
             abilities << a.name
           end

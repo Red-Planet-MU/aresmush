@@ -29,7 +29,7 @@ module AresMUSH
       
       def attrs
        list = []        
-        @char.tds_attributes.sort_by(:name, :order => "ALPHA").each_with_index do |a, i| 
+        @char.fs3_attributes.sort_by(:name, :order => "ALPHA").each_with_index do |a, i| 
           list << format_attr(a, i)
         end   
         list     
@@ -37,7 +37,7 @@ module AresMUSH
         
       def action_skills
         list = []
-        @char.tds_action_skills.sort_by(:name, :order => "ALPHA").each_with_index do |s, i| 
+        @char.fs3_action_skills.sort_by(:name, :order => "ALPHA").each_with_index do |s, i| 
            list << format_skill(s, i, true)
         end
         list
@@ -45,7 +45,7 @@ module AresMUSH
 
       def background_skills
         list = []
-        @char.tds_background_skills.sort_by(:name, :order => "ALPHA").each_with_index do |s, i| 
+        @char.fs3_background_skills.sort_by(:name, :order => "ALPHA").each_with_index do |s, i| 
            list << format_skill(s, i)
         end
         list
@@ -53,7 +53,7 @@ module AresMUSH
       
       def languages
         list = []
-        @char.tds_languages.sort_by(:name, :order => "ALPHA").each_with_index do |l, i|
+        @char.fs3_languages.sort_by(:name, :order => "ALPHA").each_with_index do |l, i|
           list << format_skill(l, i)
         end
         list
@@ -61,7 +61,7 @@ module AresMUSH
       
       def advantages
         list = []
-        @char.tds_advantages.sort_by(:name, :order => "ALPHA").each_with_index do |l, i|
+        @char.fs3_advantages.sort_by(:name, :order => "ALPHA").each_with_index do |l, i|
           list << format_skill(l, i)
         end
         list
@@ -73,7 +73,7 @@ module AresMUSH
       
       def specialties
         spec = {}
-        @char.tds_action_skills.each do |a|
+        @char.fs3_action_skills.each do |a|
           if (a.specialties)
             a.specialties.each do |s|
               spec[s] = a.name
