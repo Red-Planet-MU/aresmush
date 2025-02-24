@@ -22,6 +22,7 @@ module AresMUSH
       def handle
         
         result = ClassTargetFinder.find(self.name1, Character, enactor)
+        Global.logger.debug "You made it"
         model1 = result.target
         if (!model1 && !self.roll_str1.is_integer?)
           client.emit_failure t('fs3skills.numbers_only_for_npc_skills')
