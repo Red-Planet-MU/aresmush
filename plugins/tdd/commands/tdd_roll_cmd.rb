@@ -1,6 +1,6 @@
 module AresMUSH
 
-  module FS3Skills
+  module TDD
     class RollCmd
       include CommandHandler
       
