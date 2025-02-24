@@ -17,7 +17,7 @@ module AresMUSH
     def self.get_cmd_handler(client, cmd, enactor)
       Global.logger.debug "cmd.root: #{cmd.root}"
       case cmd.root
-      when "tddroll"
+      when "roll"
         if (cmd.args =~ / vs /)
           return TDDOpposedRollCmd
         else
