@@ -1,6 +1,6 @@
 module AresMUSH
 
-  module FS3Skills
+  module TDD
     class OpposedRollCmd
       include CommandHandler
       
@@ -39,26 +39,26 @@ module AresMUSH
           return
         end
           
-        die_result1 = FS3Skills.parse_and_roll(model1, self.roll_str1)
-        die_result2 = FS3Skills.parse_and_roll(model2, self.roll_str2)
+        die_result1 = TDD.parse_and_roll(model1, self.roll_str1)
+        die_result2 = TDD.parse_and_roll(model2, self.roll_str2)
           
         if (!die_result1 || !die_result2)
           client.emit_failure t('fs3skills.unknown_roll_params')
           return
         end
           
-        successes1 = FS3Skills.get_success_level(die_result1)
-        successes2 = FS3Skills.get_success_level(die_result2)
+        successes1 = TDD.get_success_level(die_result1)
+        successes2 = TDD.get_success_level(die_result2)
             
-        results = FS3Skills.opposed_result_title(self.name1, successes1, self.name2, successes2)
+        results = TDD.opposed_result_title(self.name1, successes1, self.name2, successes2)
           
-        message = t('fs3skills.opposed_roll_result', 
+        message = t('TDD.opposed_roll_result', 
            :name1 => !model1 ? t('fs3skills.npc', :name => self.name1) : model1.name,
            :name2 => !model2 ? t('fs3skills.npc', :name => self.name2) : model2.name,
            :roll1 => self.roll_str1,
            :roll2 => self.roll_str2,
-           :dice1 => FS3Skills.print_dice(die_result1),
-           :dice2 => FS3Skills.print_dice(die_result2),
+           :dice1 => TDD.print_dice(die_result1),
+           :dice2 => TDD.print_dice(die_result2),
            :result => results)  
           
         FS3Skills.emit_results message, client, enactor_room, self.private_roll
