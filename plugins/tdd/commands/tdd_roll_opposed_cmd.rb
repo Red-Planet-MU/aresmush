@@ -40,8 +40,8 @@ module AresMUSH
           return
         end
           
-        die_result1 = FS3Skills.parse_and_roll(model1, self.roll_str1)
-        die_result2 = FS3Skills.parse_and_roll(model2, self.roll_str2)
+        die_result1 = TDD.parse_and_roll(model1, self.roll_str1)
+        die_result2 = TDD.parse_and_roll(model2, self.roll_str2)
           
         if (!die_result1 || !die_result2)
           client.emit_failure t('fs3skills.unknown_roll_params')
