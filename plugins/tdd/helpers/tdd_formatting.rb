@@ -1,15 +1,16 @@
 module AresMUSH
-  module FS3Skills
+  module TDD
     
     def self.print_dice(dice)
-      dice.sort.reverse.map { |d| d >= FS3Skills.success_target_number ? "%xg#{d}%xn" : d}.join(" ")
+      dice.sort.reverse.map { |d| d >= TDD.success_target_number ? "%xg#{d}%xn" : d}.join(" ")
     end
     
     
     def self.get_success_title(success_level)
       case success_level
       when -1
-        t('fs3skills.embarrassing_failure')
+        #t('fs3skills.embarrassing_failure')
+        t('tdd.botch')
       when 0
         t('fs3skills.failure')
       when 1, 2
@@ -18,8 +19,10 @@ module AresMUSH
         t('fs3skills.good_success')
       when 5, 6
         t('fs3skills.great_success')
-      when 7..99
+      when 7..15
         t('fs3skills.amazing_success')
+      when 16..99
+        t('tdd.critical_success')
       else
         raise "Unexpected roll result: #{success_level}"
       end

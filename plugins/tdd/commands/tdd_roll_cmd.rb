@@ -25,10 +25,10 @@ module AresMUSH
       def handle
         char = Character.named(self.name)
         if (char)
-          die_result = FS3Skills.parse_and_roll(char, self.roll_str)
+          die_result = TDD.parse_and_roll(char, self.roll_str)
           
         elsif (self.roll_str.is_integer?)
-          die_result = FS3Skills.parse_and_roll(enactor, self.roll_str)
+          die_result = TDD.parse_and_roll(enactor, self.roll_str)
         else
           die_result = nil
         end
@@ -38,14 +38,23 @@ module AresMUSH
           return
         end
         
-        success_level = FS3Skills.get_success_level(die_result)
-        success_title = FS3Skills.get_success_title(success_level)
-        message = t('fs3skills.simple_roll_result', 
-          :name => char ? char.name : "#{self.name} (#{enactor_name})",
-          :roll => self.roll_str,
-          :dice => FS3Skills.print_dice(die_result),
-          :success => success_title
-        )
+        success_level = TDD.get_success_level(die_result)
+        success_title = TDD.get_success_title(success_level)
+        Global.logger.debug "You're in the right place. Success level: #{success_level}"
+        if success_level == -1 || success_level == 16
+          message = t('tdd.auto_roll_result', 
+            :name => char ? char.name : "#{self.name} (#{enactor_name})",
+            :roll => self.roll_str,
+            :success => success_title
+          )
+        else
+          message = t('tdd.simple_roll_result', 
+            :name => char ? char.name : "#{self.name} (#{enactor_name})",
+            :roll => self.roll_str,
+            :dice => TDD.print_dice(die_result),
+            :success => success_title
+          )
+        end
         FS3Skills.emit_results message, client, enactor_room, self.private_roll
       end
     end
