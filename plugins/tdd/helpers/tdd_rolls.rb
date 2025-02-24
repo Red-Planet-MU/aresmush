@@ -35,7 +35,7 @@ module AresMUSH
       autocritical = 1 + rand(20)
       Global.logger.debug "Autocrit roll: #{autocritical}"
       return 16 if autocritical == 20
-      return -1 if autocritical == 0
+      return -1 if autocritical == 1
       return successes if (successes > 0)
       return -1 if (botches > die_result.count / 2)
       return 0
