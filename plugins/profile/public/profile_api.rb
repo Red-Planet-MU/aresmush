@@ -3,6 +3,17 @@ module AresMUSH
     def self.general_field(char, field_type, value)
       client = Login.find_client(char)
       case field_type
+
+      when 'lookingforrp'
+        looking_for_rp = char.looking_for_rp
+        case char.looking_for_rp_type
+          when "scene"
+            flag = "%xgRP%xn"
+          when "text"
+            flag = "%xmTXT%xn"
+        end
+        looking_for_rp ? flag : ""
+                
       when 'demographic'
         char.demographic(value)
 
