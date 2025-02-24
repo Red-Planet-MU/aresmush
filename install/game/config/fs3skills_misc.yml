@@ -21,6 +21,7 @@ fs3skills:
     roll/secret: roll/private
     xp/subtract: xp/remove
     xp/add: xp/award
+    roll: tddroll
   achievements:
     fs3_luck_spent:
       type: fs3
