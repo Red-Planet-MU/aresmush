@@ -1,5 +1,5 @@
 module AresMUSH
-  module FS3Skills
+  module TDD
     
     def self.success_target_number
       9
