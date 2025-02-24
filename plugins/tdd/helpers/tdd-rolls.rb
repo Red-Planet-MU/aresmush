@@ -1,5 +1,5 @@
 module AresMUSH
-  module FS3Skills
+  module TDD
     
     def self.success_target_number
       9
@@ -10,7 +10,7 @@ module AresMUSH
     # use the other methods in this class to get the success level and title to display.
     def self.roll_ability(char, roll_params)
       dice = FS3Skills.dice_to_roll_for_ability(char, roll_params)
-      roll = FS3Skills.roll_dice(dice)
+      roll = TDD.roll_dice(dice)
       Global.logger.info "#{char.name} rolling #{roll_params} dice=#{dice} result=#{roll}"
       Achievements.award_achievement(char, "fs3_roll")
       roll
@@ -20,14 +20,10 @@ module AresMUSH
         
     # Rolls a number of FS3 dice and returns the raw die results.
     def self.roll_dice(dice)
-      if (dice > 30)
-        Global.logger.warn "Attempt to roll #{dice} dice."
-        # Hey if they're rolling this many dice they ought to succeed spectacularly.
-        return [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
-      end
       
       dice = [dice, 1].max.ceil
       dice.times.collect { 1 + rand(10) }
+
     end
     
     # Determines the success level based on the raw die result.
