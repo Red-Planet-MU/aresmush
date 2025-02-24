@@ -1,5 +1,5 @@
 ---
-toc: TDS Skills and Combat
+toc: FS3 Skills and Combat
 summary: Choosing your character's skills.
 order: 2
 aliases:
@@ -16,11 +16,11 @@ aliases:
 - advantages
 - abilities
 ---
-# TDS Skill Commands
+# FS3 Skill Commands
 
 You can set your skills during character creation via the web portal or the ability commands explained below.  After you're approved, you can only improve skills with [Experience Points](/help/xp).
 
-> Learn how the FS3 skills system works in the [TDS Tutorial](/help/TDS).
+> Learn how the FS3 skills system works in the [FS3 Tutorial](/help/fs3).
 
 ## Reset to Start
 

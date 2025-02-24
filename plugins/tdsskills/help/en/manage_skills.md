@@ -1,11 +1,11 @@
 ---
 toc: ~admin~ Managing the Game
-summary: Managing TDS Skills.
+summary: Managing FS3 Skills.
 aliases:
 - manage_abilities
-- manage_tds
+- manage_fs3
 ---
-# Managing TDS Skills
+# Managing FS3 Skills
 
 > **Permission Required:** These commands require the Admin role or the permission: manage\_abilities
 
