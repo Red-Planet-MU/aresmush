@@ -1,4 +1,4 @@
 ---
 tdd: 
   shortcuts:
-    tddroll: roll
+    roll: tddroll
