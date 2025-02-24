@@ -22,7 +22,7 @@ module AresMUSH
         else
           return RollCmd
         end
-      
+      end
       nil
     end
     
@@ -34,6 +34,7 @@ module AresMUSH
         return AddJobRollRequestHandler
       when "addSceneRoll"
         return AddSceneRollRequestHandler
+      end
       nil
     end
     
