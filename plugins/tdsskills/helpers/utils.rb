@@ -5,7 +5,7 @@ module AresMUSH
     end
     
     def self.can_view_sheets?(actor)
-      return true if Global.read_config("tdsskills", "public_sheets")
+      return true if Global.read_config("fs3skills", "public_sheets")
       return false if !actor
       actor.has_permission?("view_sheets")
     end
@@ -18,28 +18,28 @@ module AresMUSH
     end
 
     def self.attrs
-      Global.read_config("tdsskills", "attributes")
+      Global.read_config("fs3skills", "attributes")
     end
     
     def self.action_skills
-      Global.read_config("tdsskills", "action_skills")
+      Global.read_config("fs3skills", "action_skills")
     end 
     
     def self.languages
-      Global.read_config("tdsskills", "languages")
+      Global.read_config("fs3skills", "languages")
     end
     
     def self.advantages
       return {} if !TDSSkills.use_advantages?
-      Global.read_config("tdsskills", "advantages")
+      Global.read_config("fs3skills", "advantages")
     end
     
     def self.use_advantages?
-      Global.read_config("tdsskills", "use_advantages")
+      Global.read_config("fs3skills", "use_advantages")
     end
     
     def self.background_skills
-      Global.read_config("tdsskills", "background_skills")
+      Global.read_config("fs3skills", "background_skills")
     end
     
     def self.get_ability_desc(metadata_list, name)
@@ -77,23 +77,23 @@ module AresMUSH
     end
     
     def self.attr_blurb
-      Global.read_config("tdsskills", "attributes_blurb")
+      Global.read_config("fs3skills", "attributes_blurb")
     end
     
     def self.action_blurb
-      Global.read_config("tdsskills", "action_skills_blurb")
+      Global.read_config("fs3skills", "action_skills_blurb")
     end
     
     def self.bg_blurb
-      Global.read_config("tdsskills", "bg_skills_blurb")
+      Global.read_config("fs3skills", "bg_skills_blurb")
     end
     
     def self.language_blurb
-      Global.read_config("tdsskills", "language_blurb")
+      Global.read_config("fs3skills", "language_blurb")
     end
     
     def self.advantages_blurb
-      Global.read_config("tdsskills", "advantages_blurb")
+      Global.read_config("fs3skills", "advantages_blurb")
     end
     
     # Returns the type (attribute, action, etc) for a skill being rolled.

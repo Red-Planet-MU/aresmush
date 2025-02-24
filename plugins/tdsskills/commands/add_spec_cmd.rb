@@ -28,7 +28,7 @@ module AresMUSH
       end
       
       def check_name_for_dots
-        return t('tdsskills.no_special_characters') if (self.specialty !~ /^[\w\s]+$/)
+        return t('fs3skills.no_special_characters') if (self.specialty !~ /^[\w\s]+$/)
         return nil
       end
       
@@ -47,30 +47,30 @@ module AresMUSH
         ClassTargetFinder.with_a_character(self.target, client, enactor) do |model|        
           ability = TDSSkills.find_ability(model, self.name)
           if (!ability)
-            client.emit_failure t('tdsskills.ability_not_found')
+            client.emit_failure t('fs3skills.ability_not_found')
             return
           end
         
           config = TDSSkills.action_skill_config(name)
           if (!config || !config['specialties'])
-            client.emit_failure t('tdsskills.invalid_specialty_skill')
+            client.emit_failure t('fs3skills.invalid_specialty_skill')
             return
           end
         
           if (!config['specialties'].include?(self.specialty))     
-            client.emit_failure t('tdsskills.invalid_specialty', :names => config['specialties'].join(", "))
+            client.emit_failure t('fs3skills.invalid_specialty', :names => config['specialties'].join(", "))
             return
           end
         
           if (ability.specialties.include?(self.specialty))
-            client.emit_failure t('tdsskills.specialty_already_exists', :name => model.name)
+            client.emit_failure t('fs3skills.specialty_already_exists', :name => model.name)
             return
           end
         
           specs = ability.specialties
           specs << self.specialty
           ability.update(specialties: specs)
-          client.emit_success t('tdsskills.specialty_added', :name => self.specialty)
+          client.emit_success t('fs3skills.specialty_added', :name => self.specialty)
         end
       end
     end

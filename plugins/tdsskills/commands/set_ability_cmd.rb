@@ -26,7 +26,7 @@ module AresMUSH
       
       def check_valid_rating
         return nil if !self.rating
-        return t('tdsskills.invalid_rating') if !self.rating.is_integer?
+        return t('fs3skills.invalid_rating') if !self.rating.is_integer?
         return nil
       end
       

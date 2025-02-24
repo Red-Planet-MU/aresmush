@@ -10,7 +10,7 @@ module AresMUSH
 
       def handle
         TDSSkills.reset_char(enactor)        
-        client.emit_success t('tdsskills.reset_complete')
+        client.emit_success t('fs3skills.reset_complete')
       end
     end
   end

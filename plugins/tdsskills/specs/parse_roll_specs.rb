@@ -3,7 +3,7 @@ module AresMUSH
     describe TDSSkills do
 
       before do
-        allow(Global).to receive(:read_config).with("tdsskills", "max_luck") { 3 }
+        allow(Global).to receive(:read_config).with("fs3skills", "max_luck") { 3 }
         stub_translate_for_testing
       end
 

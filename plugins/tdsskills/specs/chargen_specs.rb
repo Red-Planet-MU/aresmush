@@ -3,29 +3,29 @@ module AresMUSH
     describe TDSSkills do
 
       before do
-        allow(Global).to receive(:read_config).with("tdsskills", "max_skill_rating") { 7 }
-        allow(Global).to receive(:read_config).with("tdsskills", "max_attr_rating") { 4 }
+        allow(Global).to receive(:read_config).with("fs3skills", "max_skill_rating") { 7 }
+        allow(Global).to receive(:read_config).with("fs3skills", "max_attr_rating") { 4 }
         allow(TDSSkills).to receive(:attr_names) { [ "Brawn", "Mind" ] }
         allow(TDSSkills).to receive(:action_skill_names) { [ "Firearms", "Demolitions" ] }
         allow(TDSSkills).to receive(:advantage_names) { [ "Rank" ] }
         allow(TDSSkills).to receive(:language_names) { [ "English", "Spanish" ] }
-        allow(Global).to receive(:read_config).with("tdsskills", "allow_incapable_action_skills") { false }
+        allow(Global).to receive(:read_config).with("fs3skills", "allow_incapable_action_skills") { false }
         stub_translate_for_testing
       end
       
       describe :check_ability_name do
         it "should not allow funky chars" do
           # Because it will mess up the +/- modifier parsing
-          expect(TDSSkills.check_ability_name("X+Y")).to eq "tdsskills.no_special_characters"
-          expect(TDSSkills.check_ability_name("X-Y")).to eq "tdsskills.no_special_characters"
-          expect(TDSSkills.check_ability_name("X=Y")).to eq "tdsskills.no_special_characters"
-          expect(TDSSkills.check_ability_name("X,Y")).to eq "tdsskills.no_special_characters"
+          expect(TDSSkills.check_ability_name("X+Y")).to eq "fs3skills.no_special_characters"
+          expect(TDSSkills.check_ability_name("X-Y")).to eq "fs3skills.no_special_characters"
+          expect(TDSSkills.check_ability_name("X=Y")).to eq "fs3skills.no_special_characters"
+          expect(TDSSkills.check_ability_name("X,Y")).to eq "fs3skills.no_special_characters"
           
           # For aesthetic reasons
-          expect(TDSSkills.check_ability_name("X:.[]|Y")).to eq "tdsskills.no_special_characters"
+          expect(TDSSkills.check_ability_name("X:.[]|Y")).to eq "fs3skills.no_special_characters"
           
           # Because folks on older clients can't see them properly.
-          expect(TDSSkills.check_ability_name("XñY")).to eq "tdsskills.no_special_characters"
+          expect(TDSSkills.check_ability_name("XñY")).to eq "fs3skills.no_special_characters"
         end
         
         it "should allow spaces and underlines" do
@@ -36,15 +36,15 @@ module AresMUSH
       
       describe :check_rating do
         it "should error if below min ratings" do
-          expect(TDSSkills.check_rating("Brawn", 0)).to eq "tdsskills.min_rating_is"
-          expect(TDSSkills.check_rating("Firearms", -1)).to eq "tdsskills.min_rating_is"
-          expect(TDSSkills.check_rating("English", -1)).to eq "tdsskills.min_rating_is"
-          expect(TDSSkills.check_rating("Basketweaving", -1)).to eq "tdsskills.min_rating_is"
+          expect(TDSSkills.check_rating("Brawn", 0)).to eq "fs3skills.min_rating_is"
+          expect(TDSSkills.check_rating("Firearms", -1)).to eq "fs3skills.min_rating_is"
+          expect(TDSSkills.check_rating("English", -1)).to eq "fs3skills.min_rating_is"
+          expect(TDSSkills.check_rating("Basketweaving", -1)).to eq "fs3skills.min_rating_is"
         end
         
         it "should allow incapable for min rating if configured" do
-          allow(Global).to receive(:read_config).with("tdsskills", "allow_incapable_action_skills") { true }
-          expect(TDSSkills.check_rating("Brawn", 0)).to eq "tdsskills.min_rating_is"
+          allow(Global).to receive(:read_config).with("fs3skills", "allow_incapable_action_skills") { true }
+          expect(TDSSkills.check_rating("Brawn", 0)).to eq "fs3skills.min_rating_is"
         end
         
         it "should allow min ratings" do
@@ -62,16 +62,16 @@ module AresMUSH
         end
         
         it "should error if above max ratings" do
-          expect(TDSSkills.check_rating("Brawn", 5)).to eq "tdsskills.max_rating_is"
-          expect(TDSSkills.check_rating("Firearms", 8)).to eq "tdsskills.max_rating_is"
-          expect(TDSSkills.check_rating("English", 4)).to eq "tdsskills.max_rating_is"
-          expect(TDSSkills.check_rating("Basketweaving", 4)).to eq "tdsskills.max_rating_is"
+          expect(TDSSkills.check_rating("Brawn", 5)).to eq "fs3skills.max_rating_is"
+          expect(TDSSkills.check_rating("Firearms", 8)).to eq "fs3skills.max_rating_is"
+          expect(TDSSkills.check_rating("English", 4)).to eq "fs3skills.max_rating_is"
+          expect(TDSSkills.check_rating("Basketweaving", 4)).to eq "fs3skills.max_rating_is"
         end
         
         it "should allow max action skill rating to be configurable" do
-          allow(Global).to receive(:read_config).with("tdsskills", "max_skill_rating") { 5 }
+          allow(Global).to receive(:read_config).with("fs3skills", "max_skill_rating") { 5 }
           expect(TDSSkills.check_rating("Firearms", 5)).to be_nil
-          expect(TDSSkills.check_rating("Firearms", 6)).to eq "tdsskills.max_rating_is"
+          expect(TDSSkills.check_rating("Firearms", 6)).to eq "fs3skills.max_rating_is"
         end
       end
       

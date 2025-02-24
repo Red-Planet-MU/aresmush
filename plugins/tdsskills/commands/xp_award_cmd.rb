@@ -21,7 +21,7 @@ module AresMUSH
       
       def check_xp
         return nil if !self.xp
-        return t('tdsskills.invalid_xp_award') if self.xp == 0
+        return t('fs3skills.invalid_xp_award') if self.xp == 0
         return nil
       end
       
@@ -33,16 +33,16 @@ module AresMUSH
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
           if (model.fs3_xp + self.xp < 0)
-            client.emit_failure  t('tdsskills.invalid_xp_award')
+            client.emit_failure  t('fs3skills.invalid_xp_award')
             return
           end
           
           model.award_xp self.xp
           Global.logger.info "#{self.xp} XP Awarded by #{enactor_name} to #{model.name}"
           if (self.xp < 0)
-            client.emit_success t('tdsskills.xp_removed', :name => model.name, :xp => -self.xp)
+            client.emit_success t('fs3skills.xp_removed', :name => model.name, :xp => -self.xp)
           else
-            client.emit_success t('tdsskills.xp_awarded', :name => model.name, :xp => self.xp)
+            client.emit_success t('fs3skills.xp_awarded', :name => model.name, :xp => self.xp)
           end
         end
       end

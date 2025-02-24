@@ -7,11 +7,11 @@ module AresMUSH
     end
  
     def self.shortcuts
-      Global.read_config("tdsskills", "shortcuts")
+      Global.read_config("fs3skills", "shortcuts")
     end
 
     def self.achievements
-      Global.read_config('tdsskills', 'achievements')
+      Global.read_config('fs3skills', 'achievements')
     end
  
     def self.get_cmd_handler(client, cmd, enactor)

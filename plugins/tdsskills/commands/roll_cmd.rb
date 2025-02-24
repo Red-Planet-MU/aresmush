@@ -34,7 +34,7 @@ module AresMUSH
         end
         
         if !die_result
-          client.emit_failure t('tdsskills.unknown_roll_params')
+          client.emit_failure t('fs3skills.unknown_roll_params')
           return
         end
         
@@ -42,13 +42,13 @@ module AresMUSH
         success_title = TDSSkills.get_success_title(success_level)
         Global.logger.debug "You're in the right place. Success level: #{success_level}"
         if success_level == -1 || success_level == 16
-          message = t('tdsskills.auto_roll_result', 
+          message = t('fs3skills.auto_roll_result', 
             :name => char ? char.name : "#{self.name} (#{enactor_name})",
             :roll => self.roll_str,
             :success => success_title
           )
         else
-          message = t('tdsskills.simple_roll_result', 
+          message = t('fs3skills.simple_roll_result', 
             :name => char ? char.name : "#{self.name} (#{enactor_name})",
             :roll => self.roll_str,
             :dice => TDSSkills.print_dice(die_result),

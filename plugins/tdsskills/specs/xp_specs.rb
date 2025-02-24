@@ -3,7 +3,7 @@ module AresMUSH
     describe TDSSkills do
 
       before do
-        allow(Global).to receive(:read_config).with("tdsskills", "max_xp_hoard") { 3 }
+        allow(Global).to receive(:read_config).with("fs3skills", "max_xp_hoard") { 3 }
         stub_translate_for_testing
       end
       
@@ -26,13 +26,13 @@ module AresMUSH
       describe :check_can_learn do
         before do
           @char = double
-          allow(Global).to receive(:read_config).with("tdsskills", "max_points_on_attrs") { 14 }
-          allow(Global).to receive(:read_config).with("tdsskills", "max_points_on_action") { 10 }
-          allow(Global).to receive(:read_config).with("tdsskills", "max_points_on_advantages") { 10 }
-          allow(Global).to receive(:read_config).with("tdsskills", "attr_dots_beyond_chargen_max") { 1 }
-          allow(Global).to receive(:read_config).with("tdsskills", "action_dots_beyond_chargen_max") { 2 }
-          allow(Global).to receive(:read_config).with("tdsskills", "advantage_dots_beyond_chargen_max") { 2 }
-          allow(Global).to receive(:read_config).with("tdsskills", "advantages_cost") { 2 }
+          allow(Global).to receive(:read_config).with("fs3skills", "max_points_on_attrs") { 14 }
+          allow(Global).to receive(:read_config).with("fs3skills", "max_points_on_action") { 10 }
+          allow(Global).to receive(:read_config).with("fs3skills", "max_points_on_advantages") { 10 }
+          allow(Global).to receive(:read_config).with("fs3skills", "attr_dots_beyond_chargen_max") { 1 }
+          allow(Global).to receive(:read_config).with("fs3skills", "action_dots_beyond_chargen_max") { 2 }
+          allow(Global).to receive(:read_config).with("fs3skills", "advantage_dots_beyond_chargen_max") { 2 }
+          allow(Global).to receive(:read_config).with("fs3skills", "advantages_cost") { 2 }
           allow(TDSSkills).to receive(:get_ability_type).with("Firearms") { :action }
           allow(TDSSkills).to receive(:get_ability_type).with("Reflexes") { :attribute }
           allow(TDSSkills).to receive(:get_ability_type).with("Rank") { :advantage }
@@ -40,13 +40,13 @@ module AresMUSH
         
         it "should return false if next rating not in cost chart" do
           expect(TDSSkills).to receive(:xp_needed).with("Firearms", 4) { nil }
-          expect(TDSSkills.check_can_learn(@char, "Firearms", 4)).to eq "tdsskills.cant_raise_further_with_xp"
+          expect(TDSSkills.check_can_learn(@char, "Firearms", 4)).to eq "fs3skills.cant_raise_further_with_xp"
         end
         
         it "should return false if char is at max in action already" do
           expect(TDSSkills).to receive(:xp_needed).with("Firearms", 4) { 4 }
           allow(TDSSkills::AbilityPointCounter).to receive(:points_on_action).with(@char) { 12 }
-          expect(TDSSkills.check_can_learn(@char, "Firearms", 4)).to eq "tdsskills.max_ability_points_reached"
+          expect(TDSSkills.check_can_learn(@char, "Firearms", 4)).to eq "fs3skills.max_ability_points_reached"
         end
         
         it "should return ok if char would be at max after spending on action" do
@@ -58,7 +58,7 @@ module AresMUSH
         it "should return false if char is at max in attrs already" do
           expect(TDSSkills).to receive(:xp_needed).with("Reflexes", 4) { 4 }
           allow(TDSSkills::AbilityPointCounter).to receive(:points_on_attrs).with(@char) { 16 }
-          expect(TDSSkills.check_can_learn(@char, "Reflexes", 4)).to eq "tdsskills.max_ability_points_reached"
+          expect(TDSSkills.check_can_learn(@char, "Reflexes", 4)).to eq "fs3skills.max_ability_points_reached"
         end
 
         it "should return ok if char would be at max after spending on attrs" do
@@ -70,7 +70,7 @@ module AresMUSH
         it "should return false if char is at max in adv already" do
           expect(TDSSkills).to receive(:xp_needed).with("Rank", 3) { 3 }
           allow(TDSSkills::AbilityPointCounter).to receive(:points_on_advantages).with(@char) { 14 }
-          expect(TDSSkills.check_can_learn(@char, "Rank", 3)).to eq "tdsskills.max_ability_points_reached"
+          expect(TDSSkills.check_can_learn(@char, "Rank", 3)).to eq "fs3skills.max_ability_points_reached"
         end
         
         it "should return ok if char would be at max after spending on adv" do

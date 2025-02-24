@@ -13,8 +13,8 @@ module AresMUSH
       def check_permission
         return nil if self.target == enactor_name
         return nil if TDSSkills.can_view_sheets?(enactor)
-        return nil if Global.read_config("tdsskills", "public_sheets")
-        return t('tdsskills.no_permission_to_view_sheet')
+        return nil if Global.read_config("fs3skills", "public_sheets")
+        return t('fs3skills.no_permission_to_view_sheet')
       end
       
       def handle

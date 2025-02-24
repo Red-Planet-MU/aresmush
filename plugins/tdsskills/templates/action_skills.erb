@@ -4,7 +4,7 @@
 <% data[:skills].each do |s| %>
 <%= left( s['name'], 14) %> <%= s['desc'] %> (<%= s['linked_attr'] %>)
 <% if s['specialties'] %>
-                   %xh<%= t('tdsskills.specialty_required') %>%xn <%= s['specialties'].join(", ") %>
+                   %xh<%= t('fs3skills.specialty_required') %>%xn <%= s['specialties'].join(", ") %>
 <% end %>
 <% end %>
 

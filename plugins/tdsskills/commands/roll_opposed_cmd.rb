@@ -24,7 +24,7 @@ module AresMUSH
         result = ClassTargetFinder.find(self.name1, Character, enactor)
         model1 = result.target
         if (!model1 && !self.roll_str1.is_integer?)
-          client.emit_failure t('tdsskills.numbers_only_for_npc_skills')
+          client.emit_failure t('fs3skills.numbers_only_for_npc_skills')
           return
         end
                                 
@@ -35,7 +35,7 @@ module AresMUSH
         end
                                 
         if (!model2 && !self.roll_str2.is_integer?)
-          client.emit_failure t('tdsskills.numbers_only_for_npc_skills')
+          client.emit_failure t('fs3skills.numbers_only_for_npc_skills')
           return
         end
           
@@ -43,7 +43,7 @@ module AresMUSH
         die_result2 = TDSSkills.parse_and_roll(model2, self.roll_str2)
           
         if (!die_result1 || !die_result2)
-          client.emit_failure t('tdsskills.unknown_roll_params')
+          client.emit_failure t('fs3skills.unknown_roll_params')
           return
         end
           
@@ -52,9 +52,9 @@ module AresMUSH
             
         results = TDSSkills.opposed_result_title(self.name1, successes1, self.name2, successes2)
           
-        message = t('tdsskills.opposed_roll_result', 
-           :name1 => !model1 ? t('tdsskills.npc', :name => self.name1) : model1.name,
-           :name2 => !model2 ? t('tdsskills.npc', :name => self.name2) : model2.name,
+        message = t('fs3skills.opposed_roll_result', 
+           :name1 => !model1 ? t('fs3skills.npc', :name => self.name1) : model1.name,
+           :name2 => !model2 ? t('fs3skills.npc', :name => self.name2) : model2.name,
            :roll1 => self.roll_str1,
            :roll2 => self.roll_str2,
            :dice1 => TDSSkills.print_dice(die_result1),

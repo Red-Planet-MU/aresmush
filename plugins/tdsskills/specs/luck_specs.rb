@@ -3,7 +3,7 @@ module AresMUSH
     describe TDSSkills do
 
       before do
-        allow(Global).to receive(:read_config).with("tdsskills", "max_luck") { 3 }
+        allow(Global).to receive(:read_config).with("fs3skills", "max_luck") { 3 }
       end
       
       describe :award_luck do
@@ -54,7 +54,7 @@ module AresMUSH
           @char = Character.new(fs3_luck: 2, fs3_scene_luck: {})
           @scene = double
           @base_luck = 0.1
-          allow(Global).to receive(:read_config).with("tdsskills", "luck_for_scene") { {
+          allow(Global).to receive(:read_config).with("fs3skills", "luck_for_scene") { {
             '0' => @base_luck,
             '10' => @base_luck * 0.75,
             '25' => @base_luck * 0.5

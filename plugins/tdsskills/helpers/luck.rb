@@ -5,7 +5,7 @@ module AresMUSH
     end
     
     def self.modify_luck(char, amount)
-      max_luck = Global.read_config("tdsskills", "max_luck")
+      max_luck = Global.read_config("fs3skills", "max_luck")
       luck = char.luck + amount
       luck = [max_luck, luck].min
       luck = [0, luck].max
@@ -14,7 +14,7 @@ module AresMUSH
     
     def self.spend_luck(char, reason, scene)
       char.spend_luck(1)
-      message = t('tdsskills.luck_point_spent', :name => char.name, :reason => reason)
+      message = t('fs3skills.luck_point_spent', :name => char.name, :reason => reason)
 
       if (scene)
         scene.room.emit_ooc message
@@ -25,9 +25,9 @@ module AresMUSH
       
       Achievements.award_achievement(char, "fs3_luck_spent")
       
-      if (Global.read_config('tdsskills', 'job_on_luck_spend'))
+      if (Global.read_config('fs3skills', 'job_on_luck_spend'))
         category = Jobs.system_category
-        status = Jobs.create_job(category, t('tdsskills.luck_job_title', :name => char.name), message, Game.master.system_character)
+        status = Jobs.create_job(category, t('fs3skills.luck_job_title', :name => char.name), message, Game.master.system_character)
         if (status[:job])
           Jobs.close_job(Game.master.system_character, status[:job])
         end

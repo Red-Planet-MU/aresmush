@@ -16,8 +16,8 @@ module AresMUSH
 
       def check_permission
         return nil if TDSSkills.can_view_sheets?(enactor)
-        return nil if Global.read_config("tdsskills", "public_sheets")
-        return t('tdsskills.no_permission_to_view_sheet')
+        return nil if Global.read_config("fs3skills", "public_sheets")
+        return t('fs3skills.no_permission_to_view_sheet')
       end
       
       def handle
@@ -45,7 +45,7 @@ module AresMUSH
           .sort_by { |c| c.name }
           .map { |c| "%xn#{color(c)}#{c.name}#{room_marker(c)}%xn" }
           
-          template = BorderedListTemplate.new(chars, t('tdsskills.skill_scan_title'), nil, t('tdsskills.skill_scan_subtitle', :skill => self.name, :type => skill_type))
+          template = BorderedListTemplate.new(chars, t('fs3skills.skill_scan_title'), nil, t('fs3skills.skill_scan_subtitle', :skill => self.name, :type => skill_type))
           client.emit template.render
         end
       end

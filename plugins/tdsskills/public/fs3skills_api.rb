@@ -17,7 +17,7 @@ module AresMUSH
     end
     
     def self.is_enabled?
-      !Global.plugin_manager.is_disabled?("tdsskills")
+      !Global.plugin_manager.is_disabled?("fs3skills")
     end
     
     
@@ -78,14 +78,14 @@ module AresMUSH
       (chargen_data[:fs3][:fs3_attributes] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
-          alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
+          alerts << t('fs3skills.error_saving_ability', :name => k, :error => error)
         end
       end
 
       (chargen_data[:fs3][:fs3_action_skills] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
-          alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
+          alerts << t('fs3skills.error_saving_ability', :name => k, :error => error)
         end
         
         ability = TDSSkills.find_ability(char, k)
@@ -100,7 +100,7 @@ module AresMUSH
         skill_name = k.titleize
         error = TDSSkills.set_ability(char, skill_name, v.to_i)
         if (error)
-          alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
+          alerts << t('fs3skills.error_saving_ability', :name => k, :error => error)
         end
         new_bg_skills << skill_name
       end
@@ -115,14 +115,14 @@ module AresMUSH
       (chargen_data[:fs3][:fs3_languages] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
-          alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
+          alerts << t('fs3skills.error_saving_ability', :name => k, :error => error)
         end
       end
     
       (chargen_data[:fs3][:fs3_advantages] || {}).each do |k, v|
         error = TDSSkills.set_ability(char, k, v.to_i)
         if (error)
-          alerts << t('tdsskills.error_saving_ability', :name => k, :error => error)
+          alerts << t('fs3skills.error_saving_ability', :name => k, :error => error)
         end
       end
       return alerts
@@ -131,7 +131,7 @@ module AresMUSH
     def self.luck_for_scene(char, scene)
       luck_for_scene = 0
       luck_tracker = char.fs3_scene_luck
-      luck_config = Global.read_config('tdsskills', 'luck_for_scene') || {}
+      luck_config = Global.read_config('fs3skills', 'luck_for_scene') || {}
       regular_luck = luck_config[0] || 0.1
       
       scene.participants.each do |p|

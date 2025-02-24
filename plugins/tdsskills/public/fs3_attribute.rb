@@ -29,13 +29,13 @@ module AresMUSH
       when 0 
         return ""
       when 1
-        return t('tdsskills.poor_rating')
+        return t('fs3skills.poor_rating')
       when 2
-        return t('tdsskills.average_rating')
+        return t('fs3skills.average_rating')
       when 3
-        return t('tdsskills.good_rating')
+        return t('fs3skills.good_rating')
       when 4
-        return t('tdsskills.exceptional_rating')
+        return t('fs3skills.exceptional_rating')
       end
     end
   end

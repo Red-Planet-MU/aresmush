@@ -1,7 +1,7 @@
 %lh
 %xh<%= char.name %>%xn <%= center( approval_status, 23 ) %>
 <% if show_section('attributes') -%>
-<%= section_line t('tdsskills.attributes_title') -%>
+<%= section_line t('fs3skills.attributes_title') -%>
 <% attrs.each do |a| -%>
 <%= a -%>
 <% end %>
@@ -9,19 +9,19 @@
 
 <% end -%>  
 <% if show_section('action') -%>
-<%= section_line t('tdsskills.action_skills_title') -%>
+<%= section_line t('fs3skills.action_skills_title') -%>
 <% action_skills.each do |a| -%>
 <%= a -%>
 <% end %> 
 
 <% if specialties %>
 
-%xh<%= t('tdsskills.specialties_title') %>%xn <%= specialties %>
+%xh<%= t('fs3skills.specialties_title') %>%xn <%= specialties %>
 <% end %>
 <% end -%>  
 
 <% if show_section('background') -%>
-<%= section_line t('tdsskills.background_skills_title') -%>
+<%= section_line t('fs3skills.background_skills_title') -%>
 <% background_skills.each do |b| -%>
 <%= b -%>
 <% end %> 
@@ -29,7 +29,7 @@
 
 <% end -%>  
 <% if show_section('languages') -%>
-<%= section_line t('tdsskills.languages_title') -%>
+<%= section_line t('fs3skills.languages_title') -%>
 <% languages.each do |l| -%>
 <%= l -%>
 <% end %> 
@@ -38,7 +38,7 @@
 <% if use_advantages %>
 <% if show_section('advantages') -%>
 
-<%= section_line t('tdsskills.advantages_title') -%>
+<%= section_line t('fs3skills.advantages_title') -%>
 <% advantages.each do |a| -%>
 <%= a -%>
 <% end %>
@@ -46,5 +46,5 @@
 <% end %>
 <% end -%>  
 
-%xh<%= t('tdsskills.xp_title') %>%xn <%= left( char.xp, 30 ) %> %xh<%= t('tdsskills.luck_title') %>%xn <%= luck %>
+%xh<%= t('fs3skills.xp_title') %>%xn <%= left( char.xp, 30 ) %> %xh<%= t('fs3skills.luck_title') %>%xn <%= luck %>
 %lf

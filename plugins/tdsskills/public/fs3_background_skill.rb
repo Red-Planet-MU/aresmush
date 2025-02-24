@@ -25,13 +25,13 @@ module AresMUSH
     def rating_name
       case rating
       when 0
-        return t('tdsskills.everyman_rating')
+        return t('fs3skills.everyman_rating')
       when 1
-        return t('tdsskills.fair_rating')
+        return t('fs3skills.fair_rating')
       when 2
-        return t('tdsskills.good_rating')
+        return t('fs3skills.good_rating')
       when 3
-        return t('tdsskills.exceptional_rating')
+        return t('fs3skills.exceptional_rating')
       end
     end
   end
