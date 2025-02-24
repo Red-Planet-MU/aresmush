@@ -10,7 +10,7 @@ module AresMUSH
       case success_level
       when -1
         #t('fs3skills.embarrassing_failure')
-        t('fs3skills.botch')
+        t('tdd.botch')
       when 0
         t('fs3skills.failure')
       when 1, 2
@@ -22,7 +22,7 @@ module AresMUSH
       when 7..15
         t('fs3skills.amazing_success')
       when 16..99
-        t('fs3skills.critical_success')
+        t('tdd.critical_success')
       else
         raise "Unexpected roll result: #{success_level}"
       end
