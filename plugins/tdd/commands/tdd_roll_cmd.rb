@@ -1,7 +1,7 @@
 module AresMUSH
 
   module TDD
-    class RollCmd
+    class TDDRollCmd
       include CommandHandler
       
       attr_accessor :name, :roll_str, :private_roll

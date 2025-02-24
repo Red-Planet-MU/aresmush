@@ -1,7 +1,7 @@
 module AresMUSH
 
   module TDD
-    class OpposedRollCmd
+    class TDDOpposedRollCmd
       include CommandHandler
       
       attr_accessor :name1, :name2, :roll_str1, :roll_str2, :private_roll
