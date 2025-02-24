@@ -1,7 +1,7 @@
 module AresMUSH
 
   module FS3Skills
-    class TDDOpposedRollCmd
+    class OpposedRollCmd
       include CommandHandler
       
       attr_accessor :name1, :name2, :roll_str1, :roll_str2, :private_roll

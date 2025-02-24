@@ -19,9 +19,9 @@ module AresMUSH
       case cmd.root
       when "roll"
         if (cmd.args =~ / vs /)
-          return TDDOpposedRollCmd
+          return OpposedRollCmd
         else
-          return TDDRollCmd
+          return RollCmd
         end
       end
       nil
