@@ -89,25 +89,25 @@ module AresMUSH
           vs_roll2 = "3"
         end
         
-        die_result1 = FS3Skills.parse_and_roll(model1, vs_roll1)
-        die_result2 = FS3Skills.parse_and_roll(model2, vs_roll2)
+        die_result1 = TDD.parse_and_roll(model1, vs_roll1)
+        die_result2 = TDD.parse_and_roll(model2, vs_roll2)
         
         if (!die_result1 || !die_result2)
           return { error: t('fs3skills.unknown_roll_params') }
         end
         
-        successes1 = FS3Skills.get_success_level(die_result1)
-        successes2 = FS3Skills.get_success_level(die_result2)
+        successes1 = TDD.get_success_level(die_result1)
+        successes2 = TDD.get_success_level(die_result2)
           
         results = FS3Skills.opposed_result_title(vs_name1, successes1, vs_name2, successes2)
         
-        message = t('fs3skills.opposed_roll_result', 
+        message = t('tdd.opposed_roll_result', 
            :name1 => !model1 ? t('fs3skills.npc', :name => vs_name1) : model1.name,
            :name2 => !model2 ? t('fs3skills.npc', :name => vs_name2) : model2.name,
            :roll1 => vs_roll1,
            :roll2 => vs_roll2,
-           :dice1 => FS3Skills.print_dice(die_result1),
-           :dice2 => FS3Skills.print_dice(die_result2),
+           :dice1 => TDD.print_dice(die_result1),
+           :dice2 => TDD.print_dice(die_result2),
            :result => results)  
 
       # ------------------
@@ -120,30 +120,46 @@ module AresMUSH
           pc_skill = "3"
         end
 
-        roll = FS3Skills.parse_and_roll(char, pc_skill)
-        roll_result = FS3Skills.get_success_level(roll)
-        success_title = FS3Skills.get_success_title(roll_result)
-        message = t('fs3skills.simple_roll_result', 
-          :name => char ? char.name : "#{pc_name} (#{enactor.name})",
-          :roll => pc_skill,
-          :dice => FS3Skills.print_dice(roll),
-          :success => success_title
+        roll = TDD.parse_and_roll(char, pc_skill)
+        roll_result = TDD.get_success_level(roll)
+        success_title = TDD.get_success_title(roll_result)
+        if success_level == -1 || success_level == 16
+          message = t('tdd.auto_roll_result', 
+            :name => char ? char.name : "#{pc_name} (#{enactor.name})",
+            :roll => pc_skill,
+            :success => success_title
           )
+        else
+          message = t('tdd.simple_roll_result', 
+            :name => char ? char.name : "#{pc_name} (#{enactor.name})",
+            :roll => pc_skill,
+            :dice => TDD.print_dice(die_result),
+            :success => success_title
+          )
+        end
           
       # ------------------
       # SELF ROLL
       # ------------------
       
       else
-        roll = FS3Skills.parse_and_roll(enactor, roll_str)
-        roll_result = FS3Skills.get_success_level(roll)
-        success_title = FS3Skills.get_success_title(roll_result)
-        message = t('fs3skills.simple_roll_result', 
-          :name => enactor.name,
-          :roll => roll_str,
-          :dice => FS3Skills.print_dice(roll),
-          :success => success_title
+        roll = TDD.parse_and_roll(enactor, roll_str)
+        roll_result = TDD.get_success_level(roll)
+        success_title = TDD.get_success_title(roll_result)
+        if success_level == -1 || success_level == 16
+          message = t('tdd.auto_roll_result', 
+            :name => enactor.name,
+            :roll => roll_str,
+            :success => success_title
           )
+        else
+          message = t('tdd.simple_roll_result', 
+            :name => enactor.name,
+            :roll => roll_str,
+            :dice => TDD.print_dice(die_result),
+            :success => success_title
+          )
+        end
       end
       
       return { message: message }
