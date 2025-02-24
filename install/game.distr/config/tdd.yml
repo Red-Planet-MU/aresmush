@@ -2,3 +2,4 @@
 tdd:
   shortcuts:
     roll: tddroll
+    craziness: echo %% what the fuck man
