@@ -30,7 +30,7 @@ module AresMUSH
     # Either:  0 for failure, -1 for a botch (embarrassing failure), or
     #    the number of successes.
     def self.get_success_level(die_result)
-      successes = die_result.count { |d| d >= FS3Skills.success_target_number }
+      successes = die_result.count { |d| d >= TDD.success_target_number }
       botches = die_result.count { |d| d == 1 }
       autocritical = 1 + rand(20)
       Global.logger.debug "Autocrit roll: #{autocritical}"
