@@ -7,4 +7,4 @@ serum:
     - 30
     - 45
   shortcuts:
-    lookingforrp/txt: lookingforrp/text
+    serums: serum
