@@ -13,6 +13,7 @@ module AresMUSH
         ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
            template = SerumTemplate.new(model)
            client.emit template.render
+        end
       end
     end
   end
