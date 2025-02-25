@@ -7,7 +7,7 @@ module AresMUSH
 
       def parse_args
         self.target_name = cmd.args ? titlecase_arg(cmd.args) : enactor_name
-     end
+      end
 
       def handle
         ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
