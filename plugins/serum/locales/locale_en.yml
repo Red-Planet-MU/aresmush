@@ -3,5 +3,5 @@ en:
   serum:
     get: "You've been set 'looking for RP' for the next %{duration} hour(s)."
     use: "You've been set 'looking for txt RP' for the next %{duration} hour(s)."
-    desc_for_list: "'s Serum vials:"
+    desc_for_list: "'s Serum Vials:"
 
