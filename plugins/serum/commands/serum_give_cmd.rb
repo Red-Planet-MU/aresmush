@@ -25,6 +25,8 @@ module AresMUSH
         Serum.modify_serum(enactor, self.serum_name, -1)
         client.emit_success t('serum.given_serum', :name => self.target.name, :serum_name => self.serum_name)
         message = t('serum.received_serum', :from => enactor.name, :serum_name => self.serum_name)
+        Login.emit_if_logged_in self.target, message
+        Login.notify(self.target, :luck, message, nil)
         #self.target.update(serum_has: target.serum_has + 1)
         #self.char.update(serum_has: char.serum_has - 1)
       end
