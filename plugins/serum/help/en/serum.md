@@ -1,29 +1,25 @@
 ---
-toc: 4 - Writing the Story
-summary: Healing Serums
+toc: 5 - System
+summary: Serums
 aliases:
 - healing
 - medpack
 ---
 ---
-# Finding RP
-You can find RP in many ways.
+# Serum Basics
+Serums are the primary method of administering chemical agents to the body on Mars. A number of different types of serums have been synthesized to produce a range of effects. The following have already been introduced and in common use on Mars for some time:
 
-* Ask on the RP Requests channel, or respond to requests from others there. Try to keep responses on the channel rather than paging; this helps reduce confusion, especially if someone is using the Discord plugin.
-* Sign up for an event.
-* Use the Looking for RP flag to set yourself available for RP, or to find others interested in RP.
+- **Vitalizer Serum**: 
+- **Adreno Serum**:
+- **Quickhand Serum**:
+- **Hardy Serum**:
+- **Glass Cannon Serum**:
 
-## Looking for RP
-The 'looking for RP' flag is used to indicate that you are actively seeking a distracted or traditionally paced scene. It is not used for those looking for async scenes.
-
-By default, the 'looking for RP' flag expires after one hour. If you know you will be searching for RP longer, you can set it for 2 or 3 hours, after which it will be automatically cleared.
-
-See who is looking for RP on the webportal or by using `who` or `where`.
+## Getting Serums
+Everyone in Virtue is given one dose of Vitalizer Serum per X from the community stockpiles. Additional serums can be obtained through the use of bargaining chits ICly, and are purchased with Luck OOCly.
 
 ## Commands
-`lookingforrp` - Set yourself as looking for RP.
-`lookingforrp <2 or 3>` - Set yourself as looking for RP for a given number of hours.
-`lookingforrp/text` - Set yourself as looking for text RP.
-`lookingforrp/text <2 or 3>` - Set yourself as looking for text RP for a given number of hours.
-`lookingforrp/off` - Turn off your looking for RP flag.
-`lookingforrp/announce <on or off>` - Toggle announcements to 'RP Requests' channel when you set your looking for RP flag.
+`serum [<name>]` - View your inventory of serums or someone else's.
+`serum/get <serum>` - Obtain an additional dose of a given serum.
+`serum/use <serum>[/<name>]` - Use a dose of serum on yourself or someone else.
+`serum/give <serum>/<name>` - Give a dose of serum to someone else.
