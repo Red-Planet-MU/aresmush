@@ -33,7 +33,8 @@ module AresMUSH
 
     def self.modify_serum(char, serum_type, amount)
       serum = char.find_serums_has(char, serum_type) + amount
-      char.update(char.find_serums_type(serum_type): serum)
+      update_serum_type = char.find_serums_type(serum_type)
+      char.update(char.update_serum_type: serum)
     end
 
     def self.end_at(duration)
