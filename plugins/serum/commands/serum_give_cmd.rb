@@ -23,6 +23,8 @@ module AresMUSH
         Global.logger.debug "Self.target: #{self.target}; Self.serum_name: #{self.serum_name}"
         Serum.modify_serum(self.target, self.serum_name, 1)
         Serum.modify_serum(enactor, self.serum_name, -1)
+        client.emit_success t('serum.given_serum', :name => self.target.name, :serum_name => self.serum_name)
+        message = t('serum.received_serum', :from => enactor.name, :serum_name => self.serum_name)
         #self.target.update(serum_has: target.serum_has + 1)
         #self.char.update(serum_has: char.serum_has - 1)
       end
