@@ -4,4 +4,5 @@ en:
     get: "You've been set 'looking for RP' for the next %{duration} hour(s)."
     use: "You've been set 'looking for txt RP' for the next %{duration} hour(s)."
     desc_for_list: "'s Serum Vials:"
+    dont_have_serum: "You don't have any of that serum."
 
