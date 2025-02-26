@@ -1,7 +1,22 @@
 module AresMUSH
   module Serum
 
-    def self.find_serums_has(char, serum)
+    def self.find_serums_type(serum_type)
+      case serum
+      when "Vitalizer"
+        "v_serums_has"
+      when "Quickhand"
+        "qh_serums_has"
+      when "Glass Cannon"
+        "gc_serums_has"
+      when "Hardy"
+        "h_serums_has"
+      when "Adreno"
+        "a_serums_has"
+      end
+    end
+
+    def self.find_serums_has(char, serum_type)
       case serum
       when "Vitalizer"
         v_serums_has
@@ -14,6 +29,11 @@ module AresMUSH
       when "Adreno"
         a_serums_has
       end
+    end
+
+    def self.modify_serum(char, serum_type, amount)
+      serum = char.find_serums_has(char, serum_type) + amount
+      char.update(char.find_serums_type(serum_type): serum)
     end
 
     def self.end_at(duration)
