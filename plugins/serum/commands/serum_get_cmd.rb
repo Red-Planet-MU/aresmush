@@ -1,29 +1,20 @@
 module AresMUSH
-    module LookingForRp
-      class LookingForRpAnnounceCommand
-        include CommandHandler
+  module Serum
+    class SerumGetCommand
+      include CommandHandler
 
-        attr_accessor :toggle
+      attr_accessor :target_name
 
-        def parse_args
-          self.toggle = (cmd.args)
-        end
-        
-        def required_args
-          [ self.toggle ]
-        end
-        
-        def handle
-          if self.toggle == "off"
-            LookingForRp.announce_toggle_off(enactor)
-            client.emit_success t('lookingforrp.announce_off')
+      def parse_args
+        self.target_name = cmd.args ? titlecase_arg(cmd.args) : enactor_name
+      end
 
-          elsif self.toggle == "on"
-            LookingForRp.announce_toggle_on(enactor)
-            client.emit_success t('lookingforrp.announce_on')
-          end
+      def handle
+        ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
+           template = SerumTemplate.new(model)
+           client.emit template.render
         end
       end
-  
     end
   end
+end

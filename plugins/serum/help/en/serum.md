@@ -7,7 +7,7 @@ aliases:
 ---
 ---
 # Serum Basics
-Serums are the primary method of administering chemical agents to the body on Mars. A number of different types of serums have been synthesized to produce a range of effects. The following have already been introduced and in common use on Mars for some time:
+Serums are the primary method of administering chemical agents to the body on Mars. A number of different types of serums have been synthesized to produce a range of effects.   Serums are administered by a quick-injection syringe. Individuals with some medical training are able to inject Vitalizer Serum more precisely, increasing its efficacy to the patient. The following have already been introduced and in common use on Mars for some time:
 
 - **Vitalizer Serum**: 
 - **Adreno Serum**:

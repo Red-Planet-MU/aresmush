@@ -19,6 +19,8 @@ module AresMUSH
           return SerumGetCommand
         when "use"
           return SerumUseCommand
+        when "give"
+          return SerumGiveCommand
         when nil
           return SerumCommand
         end

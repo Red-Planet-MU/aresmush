@@ -1,11 +1,19 @@
 module AresMUSH
   module Serum
 
-    def self.set(char, duration, type="scene")
-      end_at = LookingForRp.end_at(duration)
-      char.update(looking_for_rp_expires_at: end_at)
-      char.update(looking_for_rp: true)
-      char.update(looking_for_rp_type: type)
+    def self.find_serums_has(char, serum)
+      case serum
+      when "Vitalizer"
+        v_serums_has
+      when "Quickhand"
+        qh_serums_has
+      when "Glass Cannon"
+        gc_serums_has
+      when "Hardy"
+        h_serums_has
+      when "Adreno"
+        a_serums_has
+      end
     end
 
     def self.end_at(duration)

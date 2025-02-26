@@ -1,13 +1,20 @@
 module AresMUSH
-  module LookingForRp
-    class LookingForRpOffCommand
+  module Serum
+    class SerumUseCommand
       include CommandHandler
 
-      def handle
-        LookingForRp.expire(enactor)
-        client.emit_success t('lookingforrp.expire')
+      attr_accessor :target_name
+
+      def parse_args
+        self.target_name = cmd.args ? titlecase_arg(cmd.args) : enactor_name
       end
 
+      def handle
+        ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
+           template = SerumTemplate.new(model)
+           client.emit template.render
+        end
+      end
     end
   end
 end
