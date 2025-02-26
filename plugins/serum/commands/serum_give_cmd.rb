@@ -3,13 +3,13 @@ module AresMUSH
     class SerumGiveCommand
       include CommandHandler
 
-      attr_accessor :char, :target, :other_client, :serum_name
+      attr_accessor :char, :target, :other_client, :serum_name, :serum_type
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_arg2)
         self.serum_name = titlecase_arg(args.arg1)
         self.char = titlecase_arg(args.arg2)
-        serum_type = Serum.find_serums_type(self.serum_name)
+        self.serum_type = Serum.find_serums_type(self.serum_name)
         self.serum_has = Serum.find_serums_has(enactor, self.serum_name)
         self.target = Character.find_one_by_name(self.char)
       end
