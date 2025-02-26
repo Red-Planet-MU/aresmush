@@ -1,8 +1,0 @@
----
-friends:
-  shortcuts:
-    friends: friend
-  achievements:
-    friend_added:
-      type: community
-      message: Added a friend.
