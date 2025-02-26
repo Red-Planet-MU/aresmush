@@ -37,7 +37,7 @@ module AresMUSH
       update_serum_type = Serum.find_serums_type(serum_type)
       Global.logger.debug "update serum type: #{update_serum_type}"
       case update_serum_type
-      when "v_serum_has"
+      when "v_serums_has"
         char.update(v_serum_has: serum)
       when "Quickhand"
         char.update(qh_serums_has: serum)
