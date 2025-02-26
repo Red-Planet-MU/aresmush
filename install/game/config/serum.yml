@@ -1,5 +1,7 @@
 ---
 serum:
+  shortcuts:
+    serums: serum  
   serum_types:
     Vitalizer:
       desc: "A healing concoction."
@@ -22,5 +24,3 @@ serum:
       duration: 4
       lethality: 10
       lethality_mod: 10
-  shortcuts:
-    serums: serum
