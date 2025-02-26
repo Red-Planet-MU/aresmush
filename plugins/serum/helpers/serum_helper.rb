@@ -1,7 +1,7 @@
 module AresMUSH
   module Serum
 
-    def self.find_serums_type(serum_type)
+    def self.find_serums_type(serum)
       case serum
       when "Vitalizer"
         "v_serums_has"
@@ -17,7 +17,7 @@ module AresMUSH
     end
 
     def self.find_serums_has(char, serum_type)
-      case serum
+      case serum_type
       when "Vitalizer"
         v_serums_has
       when "Quickhand"
