@@ -32,7 +32,7 @@ module AresMUSH
     end
 
     def self.modify_serum(char, serum_type, amount)
-      serum = char.find_serums_has(char, serum_type) + amount
+      serum = Serum.find_serums_has(char, serum_type) + amount
       update_serum_type = char.find_serums_type(serum_type)
       case update_serum_type
       when "v_serum_has"
