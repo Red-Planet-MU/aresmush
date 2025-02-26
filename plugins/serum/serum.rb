@@ -1,8 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-     module Serum
-
+  module Serum
     def self.plugin_dir
       File.dirname(__FILE__)
     end

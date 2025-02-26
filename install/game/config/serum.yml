@@ -1,7 +1,7 @@
 ---
 serum:
   shortcuts:
-    serum: serums
+    serums: serum
   serum_types:
     Vitalizer:
       desc: "A healing concoction."
