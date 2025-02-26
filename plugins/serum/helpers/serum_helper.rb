@@ -38,7 +38,7 @@ module AresMUSH
       case update_serum_type
       when "v_serums_has"
         char.update(v_serums_has: serum)
-      when "h_serums_has"
+      when "qh_serums_has"
         char.update(qh_serums_has: serum)
       when "gc_serums_has"
         char.update(gc_serums_has: serum)
