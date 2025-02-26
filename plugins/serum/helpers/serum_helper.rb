@@ -1,8 +1,8 @@
 module AresMUSH
   module Serum
 
-    def self.find_serums_type(serum)
-      case serum
+    def self.find_serums_type(serum_name)
+      case serum_name
       when "Vitalizer"
         "v_serums_has"
       when "Quickhand"
@@ -16,8 +16,8 @@ module AresMUSH
       end
     end
 
-    def self.find_serums_has(char, serum_type)
-      case serum_type
+    def self.find_serums_has(char, serum_name)
+      case serum_name
       when "Vitalizer"
         char.v_serums_has
       when "Quickhand"
@@ -31,21 +31,20 @@ module AresMUSH
       end
     end
 
-    def self.modify_serum(char, serum_type, amount)
-      serum = Serum.find_serums_has(char, serum_type) + amount
-      Global.logger.debug "serum: #{serum}, serum_type: #{serum_type}"
-      update_serum_type = Serum.find_serums_type(serum_type)
-      Global.logger.debug "update serum type: #{update_serum_type}"
+    def self.modify_serum(char, serum_name, amount)
+      serum = Serum.find_serums_has(char, serum_name) + amount
+      update_serum_type = Serum.find_serums_type(serum_name)
+
       case update_serum_type
       when "v_serums_has"
         char.update(v_serums_has: serum)
-      when "Quickhand"
+      when "h_serums_has"
         char.update(qh_serums_has: serum)
-      when "Glass Cannon"
+      when "gc_serums_has"
         char.update(gc_serums_has: serum)
-      when "Hardy"
+      when "h_serums_has"
         char.update(h_serums_has: serum)
-      when "Adreno"
+      when "a_serums_has"
         char.update(a_serums_has: serum)
       end
     end
