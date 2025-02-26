@@ -34,7 +34,18 @@ module AresMUSH
     def self.modify_serum(char, serum_type, amount)
       serum = char.find_serums_has(char, serum_type) + amount
       update_serum_type = char.find_serums_type(serum_type)
-      char.update(char.update_serum_type: serum)
+      case update_serum_type
+      when "v_serum_has"
+        char.update(v_serum_has: serum)
+      when "Quickhand"
+        char.update(qh_serums_has: serum)
+      when "Glass Cannon"
+        char.update(gc_serums_has: serum)
+      when "Hardy"
+        char.update(h_serums_has: serum)
+      when "Adreno"
+        char.update(a_serums_has: serum)
+      end
     end
 
     def self.end_at(duration)
