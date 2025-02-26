@@ -20,7 +20,8 @@ module AresMUSH
 
       def handle
         self.other_client = Login.find_client(self.target)
-        Global.logger.debug "Self.target: #{self.target}; Self.serum_name: #{self.serum_name}"
+        shorties = Global.read_config("serum", "shortcuts")
+        Global.logger.debug "Shorties: #{shorties}"
         Serum.modify_serum(self.target, self.serum_name, 1)
         Serum.modify_serum(enactor, self.serum_name, -1)
         client.emit_success t('serum.given_serum', :name => self.target.name, :serum_name => self.serum_name)
