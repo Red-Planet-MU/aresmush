@@ -3,7 +3,7 @@ module AresMUSH
     class SerumGiveCommand
       include CommandHandler
 
-      attr_accessor :char, :target, :other_client, :serum
+      attr_accessor :char, :target, :other_client, :serum_name
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_arg2)
