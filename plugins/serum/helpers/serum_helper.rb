@@ -19,15 +19,15 @@ module AresMUSH
     def self.find_serums_has(char, serum_type)
       case serum_type
       when "Vitalizer"
-        v_serums_has
+        char.v_serums_has
       when "Quickhand"
-        qh_serums_has
+        char.qh_serums_has
       when "Glass Cannon"
-        gc_serums_has
+        char.gc_serums_has
       when "Hardy"
-        h_serums_has
+        char.h_serums_has
       when "Adreno"
-        a_serums_has
+        char.a_serums_has
       end
     end
 
