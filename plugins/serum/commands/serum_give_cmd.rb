@@ -20,7 +20,7 @@ module AresMUSH
 
       def handle
         self.other_client = Login.find_client(target)
-        Serum.modify_serum(target, self.serum_type, 1)
+        Serum.modify_serum(target, self.serum_name, 1)
         #self.target.update(serum_has: target.serum_has + 1)
         #self.char.update(serum_has: char.serum_has - 1)
       end
