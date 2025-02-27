@@ -16,7 +16,7 @@ module AresMUSH
       def handle
         enactor.spend_luck(1)
         Serum.modify_serum(enactor, self.serum_name, 1)
-        client.emit_success t('serum.got_serum', :serum => serum_name)
+        client.emit_success t('serum.got_serum', :serum_name => serum_name)
         
       end
     end
