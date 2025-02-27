@@ -3,17 +3,21 @@ module AresMUSH
     class SerumGetCommand
       include CommandHandler
 
-      attr_accessor :target_name
+      attr_accessor :serum_name
 
       def parse_args
-        self.target_name = cmd.args ? titlecase_arg(cmd.args) : enactor_name
+        self.serum_name = titlecase_arg(cmd.args)
+      end
+
+      def check_errors
+        return t('fs3skills.not_enough_points') if enactor.luck < 1
       end
 
       def handle
-        ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
-           template = SerumTemplate.new(model)
-           client.emit template.render
-        end
+        enactor.spend_luck(1)
+        Serum.modify_serum(enactor, self.serum_name, 1)
+        client.emit_success t('serum.got_serum', :serum => serum_name)
+        
       end
     end
   end

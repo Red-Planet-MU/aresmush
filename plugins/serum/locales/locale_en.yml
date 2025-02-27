@@ -1,10 +1,11 @@
 ---
 en:
   serum:
-    get: "You've been set 'looking for RP' for the next %{duration} hour(s)."
+    serum_got: "You have obtained a %{serum_name} Serum."
     use: "You've been set 'looking for txt RP' for the next %{duration} hour(s)."
     desc_for_list: "'s Serum Vials:"
     dont_have_serum: "You don't have any of that serum."
     given_serum: "You have given %{name} a %{serum_name} Serum."
     received_serum: "%{name} has given you a %{serum_name} Serum."
+    
 
