@@ -45,4 +45,17 @@ killares
 
 # Game directory
 # -----------------------------
-/game/
+.ftpconfig
+install/game/config/server.yml
+install/game/config/database.yml
+install/game/config/game.yml
+install/game/config/sites.yml
+game/config/server.yml
+game/config/database.yml
+game/config/game.yml
+game/config/sites.yml
+Gemfile.lock
+game/scripts/aresconfig.js
+.vscode/settings.json
+engine/aresmush/database.rb
+Gemfile.lock
