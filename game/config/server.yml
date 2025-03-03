@@ -6,6 +6,6 @@ server:
   hostname: localhost
   port: 4201
   private_key_file_path: "/home/ares/certs/privkey.pem"
-  use_https: false
+  use_https: true
   web_portal_port: 4200
   websocket_port: 4202
