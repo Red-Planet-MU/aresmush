@@ -46,6 +46,10 @@ killares
 # Game directory
 # -----------------------------
 .ftpconfig
+install/game/config/server.yml
+install/game/config/database.yml
+install/game/config/game.yml
+install/game/config/sites.yml
 game/config/server.yml
 game/config/database.yml
 game/config/game.yml
