@@ -1,6 +1,6 @@
 ---
 server:
-  bind_address: ''
+  bind_address: '134.122.15.20'
   certificate_file_path: "/home/ares/certs/fullchain.pem"
   engine_api_port: 4203
   hostname: redplanetmu.com
