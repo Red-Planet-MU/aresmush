@@ -20,7 +20,7 @@ module AresMUSH
 
       def check_errors
         return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
-        return t('serum.not_in_combat') if Global.read_config('serum',self.serum_name,'combat_only') = true && enactor.combat
+        return t('serum.not_in_combat') if Global.read_config('serum',self.serum_name,'combat_only') == true && enactor.combat
       end      
 
       def handle
