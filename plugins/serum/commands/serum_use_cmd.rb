@@ -3,7 +3,7 @@ module AresMUSH
     class SerumUseCommand
       include CommandHandler
 
-      attr_accessor :serum_name, :char, :serum_type, :serum_has, :target
+      attr_accessor :serum_name, :char, :serum_type, :serum_has, :target, :combat_only_serum
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
@@ -16,11 +16,13 @@ module AresMUSH
         else
           self.target = enactor
         end
+        self.combat_only_serum = Global.read_config('serum',self.serum_name,'combat_only')
       end
 
       def check_errors
         return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
-        return t('serum.not_in_combat') if Global.read_config('serum',self.serum_name,'combat_only') == true && enactor.combat
+        Global.logger.debug "Combat only: #{self.combat_only_serum}"
+        return t('serum.not_in_combat') if self.combat_only_serum == true && enactor.combat
       end      
 
       def handle
