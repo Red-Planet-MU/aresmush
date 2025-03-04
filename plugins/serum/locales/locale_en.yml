@@ -7,4 +7,4 @@ en:
     dont_have_serum: "You don't have any of that serum."
     given_serum: "You have given %{name} a %{serum_name} Serum."
     received_serum: "%{name} has given you a %{serum_name} Serum."
-    
+    not_in_combat: "You can only use that type of serum in combat."
