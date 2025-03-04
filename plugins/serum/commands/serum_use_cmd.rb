@@ -29,6 +29,21 @@ module AresMUSH
         def handle 
           heal_roll = TDD.parse_and_roll(enactor, "Medicine")
           Global.logger.debug "heal roll: #{heal_roll}"
+          heal_success_level = TDD.get_success_level(heal_roll)
+          case heal_success_level
+          when -1
+            heal_amount = -3
+          when 0
+            heal_amount = 0
+          when 1..4
+            heal_amount = 3
+          when 5..15
+            heal_amount = 5
+          when 16..99
+            heal_amount = 7
+          end
+          wound = FS3Combat.worst_treatable_wound(target)
+          FS3Combat.heal(wound, heal_amount)
         end
       end
     end
