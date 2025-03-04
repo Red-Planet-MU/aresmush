@@ -21,12 +21,11 @@ module AresMUSH
   
         def check_errors
           return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
-          Global.logger.debug "Combat only: #{self.combat_only_serum}"
-          return t('serum.not_in_combat') if self.combat_only_serum == true && enactor.combat
+          return t('serum.not_in_combat') if self.combat_only_serum == true && !enactor.combat
         end      
   
         def handle
-          ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
+          ClassTargetFinder.with_a_character(self.target_n, client, enactor) do |model|
              template = SerumTemplate.new(model)
              client.emit template.render
           end
