@@ -26,8 +26,8 @@ module AresMUSH
           return t('serum.no_healable_wounds', :target => self.target.name) if wound.blank?
         end      
   
-        def handle
-          heal_roll = TDD.roll_ability(enactor, "Medicine")
+        def handle 
+          heal_roll = TDD.parse_and_roll(enactor, "Medicine")
           Global.logger.debug "heal roll: #{heal_roll}"
         end
       end
