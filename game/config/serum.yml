@@ -3,30 +3,29 @@ serum:
   category: Other
   shortcuts:
     serums: serum
-  serum_types:
-    Vitalizer:
-      desc: "A healing concoction."
-      duration: 0
-      combat_only: false
-    Adreno:
-      desc: "This blend of ingredients will instantly revive anything from a dog to a horse. Too powerful to use on anything smaller."
-      duration: 0
-      combat_only: true
-    Quickhand:
-      desc: "Increases speed at the expense of caution."
-      duration: 4
-      init_mod: +2
-      armor_mod: -3
-      combat_only: true
-    Hardy:
-      desc: "Increases the toughness of one's skin. Freaky. Slows you down."
-      duration: 4
-      init_mod: -2
-      armor_mod: 3
-      combat_only: true
-    Glass Cannon:
-      desc: "A danger to yourself and others"
-      duration: 4
-      lethality: 10
-      lethality_mod: 10
-      combat_only: true
+  Vitalizer:
+    desc: "A healing concoction."
+    duration: 0
+    combat_only: false
+  Adreno:
+    desc: "This blend of ingredients will instantly revive anything from a dog to a horse. Too powerful to use on anything smaller."
+    duration: 0
+    combat_only: true
+  Quickhand:
+    desc: "Increases speed at the expense of caution."
+    duration: 4
+    init_mod: +2
+    armor_mod: -3
+    combat_only: true
+  Hardy:
+    desc: "Increases the toughness of one's skin. Freaky. Slows you down."
+    duration: 4
+    init_mod: -2
+    armor_mod: 3
+    combat_only: true
+  Glass Cannon:
+    desc: "A danger to yourself and others"
+    duration: 4
+    lethality: 10
+    lethality_mod: 10
+    combat_only: true
