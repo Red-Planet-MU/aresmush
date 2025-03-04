@@ -8,3 +8,4 @@ en:
     given_serum: "You have given %{name} a %{serum_name} Serum."
     received_serum: "%{name} has given you a %{serum_name} Serum."
     not_in_combat: "You can only use that type of serum in combat."
+    no_healable_wounds: "That target has no wounds that can be treated."

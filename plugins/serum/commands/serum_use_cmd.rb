@@ -22,13 +22,13 @@ module AresMUSH
         def check_errors
           return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
           return t('serum.not_in_combat') if self.combat_only_serum == true && !enactor.combat
+          wound = FS3Combat.worst_treatable_wound(self.target)
+          return t('serum.no_healable_wounds', :target => self.target.name) if wound.blank?
         end      
   
         def handle
-          ClassTargetFinder.with_a_character(self.target_n, client, enactor) do |model|
-             template = SerumTemplate.new(model)
-             client.emit template.render
-          end
+          heal_roll = TDD.roll_ability(enactor, "Medicine")
+          Global.logger.debug "heal roll: #{heal_roll}"
         end
       end
     end
