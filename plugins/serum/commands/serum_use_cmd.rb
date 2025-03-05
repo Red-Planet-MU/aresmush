@@ -32,8 +32,10 @@ module AresMUSH
           dice_message = TDD.print_dice(heal_roll)
           case heal_success_level
           when -1
-            heal_amount = -3
+            heal_amount = 0
             dice_message = t('tdd.botch')
+            FS3Combat.inflict_damage(self.target, "Flesh", "Botched Serum")
+            message = t('serum.used_v_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :dice_result => dice_message)
           when 0
             heal_amount = 1
           when 1..4
@@ -44,9 +46,12 @@ module AresMUSH
             heal_amount = 7
             dice_message = t('tdd.critical_success')
           end
-          wound = FS3Combat.worst_treatable_wound(self.target)
-          FS3Combat.heal(wound, heal_amount)
-          message = t('serum.used_vitalizer_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
+
+          if heal_success_level >= 0
+            wound = FS3Combat.worst_treatable_wound(self.target)
+            FS3Combat.heal(wound, heal_amount)
+            message = t('serum.used_v_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
+          end
           enactor.room.emit message
           if enactor.room.scene
             Scenes.add_to_scene(enactor.room.scene, message)

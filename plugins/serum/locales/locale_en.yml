@@ -9,4 +9,5 @@ en:
     received_serum: "%{name} has given you a %{serum_name} Serum."
     not_in_combat: "You can only use that type of serum in combat."
     no_healable_wounds: "That target has no wounds that can be treated."
-    used_vitalizer_out_of_combat: "%{name} injects %{target} with a %{serum_name} Serum, healing their worst injury for %{heal_points} points. (%{dice_result})"
+    used_v_out_of_combat: "%{name} injects %{target} with a %{serum_name} Serum, healing their worst injury for %{heal_points} points. (%{dice_result})"
+    used_v_made_it_worse: "%{name} injects %{target} with a %{serum_name} Serum, making their injury worse! (%{dice_result})"
