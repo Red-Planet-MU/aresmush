@@ -58,6 +58,7 @@ module AresMUSH
           if enactor.room.scene
             Scenes.add_to_scene(enactor.room.scene, message)
           end
+          Serum.modify_serum(enactor, self.serum_name, -1)
         end
       end
     end
