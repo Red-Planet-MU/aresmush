@@ -42,8 +42,14 @@ module AresMUSH
           when 16..99
             heal_amount = 7
           end
-          wound = FS3Combat.worst_treatable_wound(target)
+          wound = FS3Combat.worst_treatable_wound(self.target)
           FS3Combat.heal(wound, heal_amount)
+          dice_message = TDD.print_dice(heal_roll)
+          message = t('serum.used_vitalizer_out_of_combat', :name => enactor, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
+          enactor.room.emit message
+          if enactor.room.scene
+            Scenes.add_to_scene(enactor.room.scene, message)
+          end
         end
       end
     end
