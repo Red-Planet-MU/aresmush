@@ -28,7 +28,7 @@ module AresMUSH
   
         def handle 
           heal_roll = TDD.parse_and_roll(enactor, "Medicine")
-          heal_success_level = TDD.get_success_level(heal_roll)
+          heal_success_level = -1 #TDD.get_success_level(heal_roll)
           dice_message = TDD.print_dice(heal_roll)
           case heal_success_level
           when -1
