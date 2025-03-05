@@ -32,7 +32,7 @@ module AresMUSH
           dice_message = TDD.print_dice(heal_roll)
           case heal_success_level
           when -1
-            heal_amount = 0
+            #heal_amount = 0
             dice_message = t('tdd.botch')
             FS3Combat.inflict_damage(self.target, "Flesh", "Botched Serum")
             message = t('serum.used_v_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :dice_result => dice_message)
