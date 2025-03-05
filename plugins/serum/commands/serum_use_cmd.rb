@@ -30,6 +30,7 @@ module AresMUSH
           heal_roll = TDD.parse_and_roll(enactor, "Medicine")
           heal_success_level = -1 #TDD.get_success_level(heal_roll)
           dice_message = TDD.print_dice(heal_roll)
+          wound = FS3Combat.worst_treatable_wound(self.target)
           case heal_success_level
           when -1
             heal_amount = 0
@@ -46,9 +47,8 @@ module AresMUSH
             heal_amount = 7
             dice_message = t('tdd.critical_success')
           end
-          wound = FS3Combat.worst_treatable_wound(self.target)
           FS3Combat.heal(wound, heal_amount)
-          
+
           if heal_success_level >= 0
             wound = FS3Combat.worst_treatable_wound(self.target)
             FS3Combat.heal(wound, heal_amount)
