@@ -39,12 +39,14 @@ module AresMUSH
             message = t('serum.used_v_made_it_worse', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :dice_result => dice_message)
           when 0
             heal_amount = 1
-          when 1..4
+          when 1..2
             heal_amount = 3
-          when 5..15
+          when 3..4
             heal_amount = 5
-          when 16..99
+          when 5..7
             heal_amount = 7
+          when 16..99
+            heal_amount = 9
             dice_message = t('tdd.critical_success')
           end
           FS3Combat.heal(wound, heal_amount)
