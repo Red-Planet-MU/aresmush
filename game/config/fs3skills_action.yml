@@ -22,12 +22,6 @@ fs3skills:
   - name: Medicine
     desc: Tending to the ill and injured.
     linked_attr: Wits
-    specialties:
-    - Doctor
-    - Surgeon
-    - Nurse
-    - Medic
-    - Other
   - name: Melee
     desc: Fighting with fists, knives, and hand-to-hand weapons.
     linked_attr: Brawn
