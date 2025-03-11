@@ -9,10 +9,12 @@ module AresMUSH
           self.serum_name = self.action_args.before("/")
           self.targets = self.action_args.after("/")
           self.has_target = true
+          Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # If no target, set names list to the actor, ie self.name
         else
           self.targets = self.name
           self.serum_name = self.action_args
+          Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         end
         Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # Can only use serums one actually has
