@@ -9,12 +9,12 @@ module AresMUSH
           self.serum_name = self.action_args.before("/")
           self.targets = self.action_args.after("/")
           self.has_target = true
-          Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
+          #Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # If no target, set names list to the actor, ie self.name
         else
           self.targets = self.name
           self.serum_name = self.action_args
-          Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
+          #Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         end
         Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # Can only use serums one actually has
@@ -53,7 +53,7 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
-        message = Serum.combat_healing_serum(self.combatant.associated_model,self.targets.associated_model)
+        message = Serum.combat_healing_serum(combatant.associated_model,self.targets.associated_model)
 
         [message]
       end
