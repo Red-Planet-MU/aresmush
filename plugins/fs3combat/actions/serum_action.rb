@@ -1,7 +1,7 @@
 module AresMUSH
   module FS3Combat
     class SerumAction < CombatAction
-      attr_accessor  :serum_name, :has_target, :serum_has, :serum_type, :name
+      attr_accessor  :serum_name, :has_target, :serum_has, :serum_type
 
       def prepare
         #Compare action args to see if a target is specified
