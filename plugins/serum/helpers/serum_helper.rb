@@ -49,41 +49,34 @@ module AresMUSH
         end
       end
   
-      def self.end_at(duration)
-        Time.now + duration.hour
-      end
-  
-      def self.expire(char)
-        char.update(looking_for_rp: false)
-      end
-  
-      def self.chars_looking_for_rp
-        Chargen.approved_chars.select { |c| c.looking_for_rp == true }
-      end
-  
-      def self.type_marker(char)
-        case char.looking_for_rp_type
-        when "scene"
-          return ""
-        when "text"
-          return "#"
+      def self.healing_serum(char, target)
+        heal_roll = TDD.parse_and_roll(enactor, "Medicine")
+        heal_success_level = TDD.get_success_level(heal_roll)
+        dice_message = TDD.print_dice(heal_roll)
+        wound = FS3Combat.worst_treatable_wound(self.target)
+        case heal_success_level
+        when -1
+          heal_amount = 0
+          dice_message = t('tdd.botch')
+          FS3Combat.inflict_damage(self.target, "FLESH", "Botched Serum")
+          return t('serum.c_used_v_made_it_worse', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :dice_result => dice_message)
+        when 0
+          heal_amount = 1
+        when 1..2
+          heal_amount = 3
+        when 3..4
+          heal_amount = 5
+        when 5..7
+          heal_amount = 7
+        when 16..99
+          heal_amount = 9
+          dice_message = t('tdd.critical_success')
         end
-      end
-  
-      def self.web_list
-        chars_looking_for_rp.map { |c| { name: c.name, type_maker: type_marker(c) } }
-      end
-  
-      def self.char_names
-        chars_looking_for_rp.map { |c| c.name }
-      end
-  
-      def self.announce_toggle_on(char)
-        char.update(looking_for_rp_announce: "on")
-      end
-  
-      def self.announce_toggle_off(char)
-        char.update(looking_for_rp_announce: "off")
+
+        if heal_success_level >= 0
+          FS3Combat.heal(wound, heal_amount)
+          return t('serum.used_v_in_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
+        end
       end
   
     end

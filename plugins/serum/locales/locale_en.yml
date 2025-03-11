@@ -11,3 +11,7 @@ en:
     no_healable_wounds: "That target has no wounds that can be treated."
     used_v_out_of_combat: "%{name} injects %{target} with a %{serum_name} Serum, healing their worst injury for %{heal_points} points. (%{dice_result})"
     used_v_made_it_worse: "%{name} injects %{target} with a %{serum_name} Serum, making their injury worse! (%{dice_result})"
+    used_v_in_combat: "%{name} injects %{target} with a %{serum_name} Serum, healing their worst injury for %{heal_points} points."
+    c_used_v_made_it_worse: "%{name} injects %{target} with a %{serum_name} Serum, making their injury worse!"
+    use_serum_action_msg_long: "%{name} will inject %{target} with a %{serum_name} Serum this turn."
+    use_serum_action_msg_short: "%{serum_name} Serum %{target}"

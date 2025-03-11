@@ -36,11 +36,11 @@ module AresMUSH
       end
       
       def print_action
-        msg = t('fs3combat.treat_action_msg_long', :name => self.name, :target => print_target_names)
+        msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
       end
       
       def print_action_short
-        t('fs3combat.treat_action_msg_short', :name => self.name, :target => print_target_names)
+        t('serum.use_serum_action_msg_short', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
       end
       
       def resolve
@@ -49,11 +49,10 @@ module AresMUSH
         lethal_mod = Global.read_config('serum',self.serum_name,'lethality_mod')
         lethality = Global.read_config('serum',self.serum_name,'lethality')
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
-        message = FS3Combat.treat(self.target.associated_model, self.combatant.associated_model)
-        FS3Combat.check_for_unko(self.target)
-        if (!self.combatant.is_npc?)
-          Achievements.award_achievement(self.combatant.associated_model, "fs3_treated")  
-        end
+        is_healing = Global.read_config('serum',self.serum_name,'is_healing')
+        is_revive = Global.read_config('serum',self.serum_name,'is_revive')
+        message = Serum.healing_serum(self.combatant.associated_model,self.target.associated_model)
+
         [message]
       end
     end
