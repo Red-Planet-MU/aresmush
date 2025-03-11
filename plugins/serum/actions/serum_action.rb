@@ -3,6 +3,7 @@ module AresMUSH
     class SerumAction < CombatAction
       attr_accessor  :serum_name, :has_target, :serum_has, :serum_type, 
 
+      #FS3 COMBAT DOES NOT SEEM TO FIND THIS FILE. LOOK IN THE FS3 COMBAT FOLDER
       def prepare
         #Compare action args to see if a target is specified
         if (self.action_args =~ /\//)

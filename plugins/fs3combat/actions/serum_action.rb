@@ -1,7 +1,7 @@
 module AresMUSH
   module FS3Combat
     class SerumAction < CombatAction
-      attr_accessor  :serum_name, :has_target, :serum_has, :serum_type, 
+      attr_accessor  :serum_name, :has_target, :serum_has, :serum_type, :name
 
       def prepare
         #Compare action args to see if a target is specified
@@ -14,7 +14,7 @@ module AresMUSH
           names = self.name
           self.serum_name = self.action_args
         end
-
+        Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}"
         # Can only use serums one actually has
         self.serum_has = Serum.find_serums_has(self.name, self.serum_name)
         return t('serum.dont_have_serum') if !self.serum_has
