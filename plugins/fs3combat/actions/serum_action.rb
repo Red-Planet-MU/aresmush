@@ -19,7 +19,7 @@ module AresMUSH
         self.serum_has = Serum.find_serums_has(combatant.associated_model, self.serum_name)
         return t('serum.dont_have_serum') if !self.serum_has
 
-        error = self.parse_targets(self.action_args)
+        error = self.parse_targets(names)
         return error if error
         
         # Serums can only target one target
