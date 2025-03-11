@@ -6,7 +6,7 @@ module AresMUSH
       def prepare
         #Compare action args to see if a target is specified
         if (self.action_args =~ /\//)
-          self.serum_name = self.action_args.before("/")
+          self.serum_name = titlecase_arg(self.action_args.before("/"))
           names = self.action_args.after("/")
           self.has_target = true
         # If no target, set names list to the actor, ie self.name
