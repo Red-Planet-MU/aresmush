@@ -23,7 +23,7 @@ module AresMUSH
           return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
           return t('serum.not_in_combat') if self.combat_only_serum == true && !enactor.combat
           wound = FS3Combat.worst_treatable_wound(self.target)
-          return t('serum.no_healable_wounds', :target => self.target.name) if wound.blank?
+          return t('serum.no_healable_wounds', :target => self.target.name) if !wound
         end      
   
         def handle 
