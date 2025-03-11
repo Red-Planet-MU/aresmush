@@ -1,25 +1,25 @@
 module AresMUSH
   module FS3Combat
     class SerumAction < CombatAction
-      attr_accessor  :serum_name, :has_target, :serum_has, :serum_type
+      attr_accessor  :serum_name, :has_target, :serum_has, :serum_type, :targets
 
       def prepare
         #Compare action args to see if a target is specified
         if (self.action_args =~ /\//)
           self.serum_name = self.action_args.before("/")
-          names = self.action_args.after("/")
+          self.targets = self.action_args.after("/")
           self.has_target = true
         # If no target, set names list to the actor, ie self.name
         else
-          names = self.name
+          self.targets = self.name
           self.serum_name = self.action_args
         end
-        Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; names = #{names}"
+        Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # Can only use serums one actually has
         self.serum_has = Serum.find_serums_has(combatant.associated_model, self.serum_name)
         return t('serum.dont_have_serum') if !self.serum_has
 
-        error = self.parse_targets(names)
+        error = self.parse_targets(self.targets)
         return error if error
         
         # Serums can only target one target
@@ -51,7 +51,7 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
-        message = Serum.combat_healing_serum(self.combatant.associated_model,names.associated_model)
+        message = Serum.combat_healing_serum(self.combatant.associated_model,self.targets.associated_model)
 
         [message]
       end
