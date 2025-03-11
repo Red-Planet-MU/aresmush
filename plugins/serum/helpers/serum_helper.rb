@@ -49,8 +49,8 @@ module AresMUSH
         end
       end
   
-      def self.healing_serum(char, target)
-        heal_roll = TDD.parse_and_roll(enactor, "Medicine")
+      def self.combat_healing_serum(char, target)
+        heal_roll = TDD.parse_and_roll(combatant.associated_model, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
         wound = FS3Combat.worst_treatable_wound(self.target)
@@ -75,7 +75,7 @@ module AresMUSH
 
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
-          return t('serum.used_v_in_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
+          return t('serum.used_v_in_combat', :name => combatant.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
       end
   
