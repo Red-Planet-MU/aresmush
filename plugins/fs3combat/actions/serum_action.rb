@@ -16,7 +16,7 @@ module AresMUSH
         end
         Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}"
         # Can only use serums one actually has
-        self.serum_has = Serum.find_serums_has(self.name, self.serum_name)
+        self.serum_has = Serum.find_serums_has(combatant, self.serum_name)
         return t('serum.dont_have_serum') if !self.serum_has
 
         error = self.parse_targets(self.action_args)
