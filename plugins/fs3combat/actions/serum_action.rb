@@ -89,7 +89,7 @@ module AresMUSH
           message = t('serum.used_serum_combat', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
         end
 
-        if is_revive?
+        if is_revive.nil?
         nil
         end
 
