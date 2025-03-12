@@ -35,8 +35,8 @@ module AresMUSH
         end
         
         #If this is a serum with a lasting effect, the last serum must expire first
-        duration = Global.read_config('serum',self.serum_name,'duration')
-        if duration? 
+        serum_duration = self.target.serum_duration_counter
+        if serum_duration > 0
           return t('serum.already_serumed', :name => self.target.name)
         end
 
