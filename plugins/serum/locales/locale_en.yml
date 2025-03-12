@@ -16,3 +16,4 @@ en:
     use_serum_action_msg_long: "%{name} will inject %{target} with a %{serum_name} Serum this turn."
     use_serum_action_msg_short: "%{serum_name} Serum %{target}"
     used_serum_combat: "%{name} injects %{target} with a %{serum_name} Serum!"
+    already_serumed: "You are already under the effects of a serum."
