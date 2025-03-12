@@ -18,6 +18,7 @@ module AresMUSH
     # This happens BEFORE the regular processing, so that the character's luck spends, damage this turn, etc.
     # hasn't been reset yet.
     def self.custom_new_turn_reset(combatant)
+      Serum.serum_new_turn(combatant)
     end
   end
 end

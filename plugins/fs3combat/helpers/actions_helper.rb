@@ -233,7 +233,7 @@ module AresMUSH
       return 0 if armor.blank?
       
       pen = FS3Combat.weapon_stat(weapon, "penetration")
-      protect = FS3Combat.armor_stat(armor, "protection")[hitloc]
+      protect = FS3Combat.armor_stat(armor, "protection")[hitloc] + combatant.serum_armor_mod #Serums
             
       # Armor doesn't cover this hit location
       return 0 if !protect
@@ -423,8 +423,12 @@ module AresMUSH
         melee_damage_mod = [(strength_roll - 1) * 5, 0].max
       end
       
-      total_damage_mod = hit_mod + melee_damage_mod + attack_luck_mod - defense_luck_mod - armor
-      target.log "Damage modifiers: attack_luck=#{attack_luck_mod} hit=#{hit_mod} melee=#{melee_damage_mod} defense_luck=#{defense_luck_mod} armor=#{armor} total=#{total_damage_mod}"
+      #Serums
+      serum_mod = attacker.serum_lethality_mod
+      #Serums
+
+      total_damage_mod = hit_mod + melee_damage_mod + attack_luck_mod - defense_luck_mod - armor + serum_mod #Serums
+      target.log "Damage modifiers: attack_luck=#{attack_luck_mod} hit=#{hit_mod} melee=#{melee_damage_mod} defense_luck=#{defense_luck_mod} armor=#{armor} serum=#{serum_mod} total=#{total_damage_mod}"
       
       
       damage = FS3Combat.determine_damage(target, hitloc, weapon, total_damage_mod, crew_hit)

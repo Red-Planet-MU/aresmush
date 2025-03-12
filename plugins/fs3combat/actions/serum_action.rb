@@ -32,8 +32,14 @@ module AresMUSH
         self.serum_type = Serum.find_serums_type(self.serum_name)
         if (!wound) && self.serum_type == "v_serums_has"
           return t('fs3combat.target_has_no_treatable_wounds', :name => self.target.name)
-        end                
+        end
         
+        #If this is a serum with a lasting effect, the last serum must expire first
+        duration = Global.read_config('serum',self.serum_name,'duration')
+        if duration? 
+          return t('serum.already_serumed', :name => self.target.name)
+        end
+
         return nil
       end
       
@@ -53,10 +59,39 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
+        #Healing serums
         if is_healing == true 
           message = Serum.combat_healing_serum(combatant.associated_model,self.target.associated_model,self.serum_name)
         end
 
+        #Serums that have a lasting effect
+        if duration? 
+          self.target.update(serum_duration_counter: duration)
+          #ride on the default FS3 mod, which a GM may have set
+          if init_mod?
+            self.target.update(initiative_mod: self.target.initiative_mod + init_mod)
+          end
+
+          #ride on the default FS3 mod, which a GM may have set
+          if lethal_mod?
+            self.target.update(damage_lethality_mod: self.target.damage_lethality_mod + lethal_mod)
+          end
+
+          #No default FS3 mods for this value
+          if lethality?
+            self.target.update(serum_lethality_mod: lethality)
+          end
+
+          #No default FS3 mods for this value
+          if armor_mod?
+            self.target.update(serum_armor_mod: armor_mod)
+          end
+          message = t('serum.used_serum_combat', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+        end
+
+        if is_revive?
+        nil
+        end
 
         [message]
       end
