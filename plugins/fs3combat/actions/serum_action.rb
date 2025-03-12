@@ -53,10 +53,10 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
-        if is_healing? 
+        if is_healing == true 
           message = Serum.combat_healing_serum(combatant.associated_model,self.target.associated_model,self.serum_name)
         end
-        
+
 
         [message]
       end
