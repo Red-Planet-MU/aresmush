@@ -40,6 +40,12 @@ module AresMUSH
           return t('serum.already_serumed', :name => self.target.name)
         end
 
+        #Don't let use a revive serum if they are not KO'd
+        is_revive = Global.read_config('serum',self.serum_name,'is_revive')
+        if !is_revive && !self.target.is_ko
+          return t('serum.not_ko', :target => self.target.name) if ((spell['is_revive'] || spell['auto_revive']) && !target.is_ko)
+        end
+
         return nil
       end
       
@@ -92,7 +98,8 @@ module AresMUSH
         end
 
         if is_revive
-        nil
+          self.target.update(is_ko: false)
+          message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
         end
 
         [message]
