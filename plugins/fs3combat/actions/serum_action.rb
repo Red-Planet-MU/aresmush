@@ -65,7 +65,7 @@ module AresMUSH
         end
 
         #Serums that have a lasting effect
-        if duration? 
+        if duration.nil? 
           self.target.update(serum_duration_counter: duration)
           #ride on the default FS3 mod, which a GM may have set
           if init_mod?
