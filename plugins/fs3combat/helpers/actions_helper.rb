@@ -232,9 +232,16 @@ module AresMUSH
       # Not wearing armor at all.
       return 0 if armor.blank?
       
+      #Serum
+      serum_mod = combatant.serum_armor_mod
+      #/Serum
       pen = FS3Combat.weapon_stat(weapon, "penetration")
-      protect = FS3Combat.armor_stat(armor, "protection")[hitloc] + combatant.serum_armor_mod #Serums
-            
+      if serum_mod
+        protect = FS3Combat.armor_stat(armor, "protection")[hitloc] + serum_mod #Serums
+      else
+        protect = FS3Combat.armor_stat(armor, "protection")[hitloc]
+      end
+      
       # Armor doesn't cover this hit location
       return 0 if !protect
       random_die = rand(8) + 1
