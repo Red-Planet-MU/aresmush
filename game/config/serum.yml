@@ -3,7 +3,7 @@ serum:
   category: Other
   shortcuts:
     serums: serum
-  Vitalizer:
+  Revitalizer:
     desc: "A healing concoction."
     duration: 0
     is_healing: true
