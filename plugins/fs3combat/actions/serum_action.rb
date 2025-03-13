@@ -42,7 +42,7 @@ module AresMUSH
 
         #Don't let use a revive serum if they are not KO'd
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
-        if !is_revive && !self.target.is_ko
+        if is_revive && !self.target.is_ko
           return t('serum.not_ko', :target => self.target.name) 
         end
 
