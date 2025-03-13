@@ -13,9 +13,10 @@ module AresMUSH
         # If no target, set names list to the actor, ie self.name
         else
           self.targets = self.name
-          self.serum_name = self.action_args
+          self.serum_name = self.action_args.titlecase
           #Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         end
+        
         Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # Can only use serums one actually has
         self.serum_has = Serum.find_serums_has(combatant.associated_model, self.serum_name)
