@@ -18,3 +18,4 @@ en:
     used_serum_combat: "%{name} injects %{target} with a %{serum_name} Serum!"
     already_serumed: "That target is already under the effects of a serum."
     used_revive_serum: "%{name} injects %{target} with a %{serum_name} Serum and revives them back to the fight!"
+    not_ko: "That target is not currently knocked out and cannot be revived."
