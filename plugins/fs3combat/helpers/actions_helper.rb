@@ -236,11 +236,8 @@ module AresMUSH
       serum_mod = combatant.serum_armor_mod
       #/Serum
       pen = FS3Combat.weapon_stat(weapon, "penetration")
-      if serum_mod
-        protect = FS3Combat.armor_stat(armor, "protection")[hitloc] + serum_mod #Serums
-      else
-        protect = FS3Combat.armor_stat(armor, "protection")[hitloc]
-      end
+
+      protect = FS3Combat.armor_stat(armor, "protection")[hitloc] + serum_mod #Serums
       
       # Armor doesn't cover this hit location
       return 0 if !protect
