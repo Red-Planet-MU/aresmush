@@ -6,7 +6,7 @@ module AresMUSH
       def prepare
         #Compare action args to see if a target is specified
         if (self.action_args =~ /\//)
-          self.serum_name = self.action_args.before("/")
+          self.serum_name = self.action_args.before("/").gsub(/\w+/)
           self.targets = self.action_args.after("/")
           self.has_target = true
           #Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
@@ -102,6 +102,7 @@ module AresMUSH
           message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
         end
 
+        Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
         [message]
       end
     end
