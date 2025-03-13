@@ -77,12 +77,12 @@ module AresMUSH
           self.target.update(serum_duration_counter: duration)
           #ride on the default FS3 mod, which a GM may have set
           if init_mod
-            self.target.update(initiative_mod: self.target.initiative_mod + init_mod)
+            self.target.update(serum_init_mod: init_mod)
           end
 
           #ride on the default FS3 mod, which a GM may have set
           if lethal_mod
-            self.target.update(damage_lethality_mod: self.target.damage_lethality_mod + lethal_mod)
+            self.target.update(serum_damage_lethality_mod: lethal_mod)
           end
 
           #No default FS3 mods for this value
