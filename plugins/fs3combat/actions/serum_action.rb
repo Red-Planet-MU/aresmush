@@ -6,7 +6,7 @@ module AresMUSH
       def prepare
         #Compare action args to see if a target is specified
         if (self.action_args =~ /\//)
-          self.serum_name = self.action_args.before("/").gsub(/\w+/)
+          self.serum_name = self.action_args.before("/").titlecase
           self.targets = self.action_args.after("/")
           self.has_target = true
           #Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
