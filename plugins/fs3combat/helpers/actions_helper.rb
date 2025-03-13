@@ -202,8 +202,12 @@ module AresMUSH
       
       npc = combatant.is_npc? ? combatant.npc.wound_modifier : 0
       npc_mod = combatant.damage_lethality_mod + npc
+
+      #Serums
+      serum_mod = combatant.serum_damage_lethality_mod
+      #/Serums
       
-      total = random + severity + lethality + mod + npc_mod
+      total = random + severity + lethality + mod + npc_mod + serum_mod #Serums
       
       if (total < FS3Combat.damage_table["GRAZE"])
         damage = "GRAZE"
@@ -215,7 +219,7 @@ module AresMUSH
         damage = "INCAP"
       end
       
-      combatant.log "Determined damage: loc=#{hitloc} sev=#{severity} wpn=#{weapon}" +
+      combatant.log "Determined damage: loc=#{hitloc} sev=#{severity} wpn=#{weapon} serum=#{serum_mod}" + #Serums
       " lth=#{lethality} npc=#{npc_mod} mod=#{mod} rand=#{random} total=#{total} dmg=#{damage}"
       
       damage
@@ -256,7 +260,7 @@ module AresMUSH
         armor_reduction = 100
       end
       
-     combatant.log "Determined armor: loc=#{hitloc} weapon=#{weapon} net=#{attacker_net_successes} serum=#{serum_mod}" +
+     combatant.log "Determined armor: loc=#{hitloc} weapon=#{weapon} net=#{attacker_net_successes} serum=#{serum_mod}" + #Serums
       " pen=#{pen} protect=#{protect} random=#{random_die} result=#{result} reduction=#{armor_reduction}"
       
       armor_reduction
