@@ -15,7 +15,7 @@ module AresMUSH
       def self.get_fields_for_viewing(char, viewer)
         return {
           comps: Compliments.get_comps(char),
-          serums: Serum.fetch_serum(char),
+          #serums: Serum.fetch_serum(char),
         }
       end
     
