@@ -79,12 +79,12 @@ module AresMUSH
         end
       end
 
-      def self.fetch_serum(char)
-        return {v_serums: Website.format_markdown_for_html(char.v_serums_has), 
-        a_serums: Website.format_markdown_for_html(char.a_serums_has), 
-        qh_serums: Website.format_markdown_for_html(char.qh_serums_has), 
-        h_serums: Website.format_markdown_for_html(char.h_serums_has), 
-        gc_serums: Website.format_markdown_for_html(char.gc_serums_has)
+      def self.fetch_serum(char, viewer)
+        return {serums: Website.format_markdown_for_html(char.v_serums_has)#, 
+        #a_serums: Website.format_markdown_for_html(char.a_serums_has), 
+        #qh_serums: Website.format_markdown_for_html(char.qh_serums_has), 
+        #h_serums: Website.format_markdown_for_html(char.h_serums_has), 
+        #gc_serums: Website.format_markdown_for_html(char.gc_serums_has)
       }
       end
   

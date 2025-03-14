@@ -6,7 +6,6 @@ module AresMUSH
           char = Character.find_one_by_name(char_name_or_id)
           puts "Char: #{char}"
           puts Serum.fetch_serum(char)
-          serums = []
           serums = Serum.fetch_serum(char)
 
           return serums
