@@ -15,7 +15,7 @@ module AresMUSH
       def self.get_fields_for_viewing(char, viewer)
         return {
           comps: Compliments.get_comps(char),
-          #serums: Website.format_markdown_for_html(char.v_serums_has),
+          serums: char.v_serums_has,
         }
       end
     
