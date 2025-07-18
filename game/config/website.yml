@@ -47,9 +47,6 @@ website:
       route: mail
     - title: Events
       route: events
-    - divider: true
-    - title: Web Client
-      route: client
   - title: Directory
     menu:
     - title: Characters
@@ -229,6 +226,11 @@ website:
     - 4
     minute:
     - 37
+  char_backup_cleanup_cron:
+    hour:
+    - 3
+    minute:
+    - 14
   shortcuts:
     wiki: website
     website/archive: website/export

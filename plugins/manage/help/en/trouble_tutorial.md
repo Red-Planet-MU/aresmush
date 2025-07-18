@@ -32,9 +32,9 @@ Normally this would be done by game admin, but the default Ares configuration al
 
 You can report abusive channel conversations using the `channel/report` command or the "Report Abuse" menu option in the web portal chat screen.  This will create an admin job with the channel recall buffer automatically included.
 
-### Monitoring and Reporting Harassing Pages
+### Monitoring and Reporting Harassing PMs
 
-You can report abusive PM/page conversations using the `page/report` command or the "Report Abuse" menu option in the web portal chat screen.  This will create an admin job with the conversation automatically included.
+You can report abusive PM/page conversations using the `pm/report` command or the "Report Abuse" menu option in the web portal chat screen.  This will create an admin job with the conversation automatically included.
 
 ### Reporting Offensive Mails
 
@@ -56,7 +56,7 @@ The `statue` command, similar to Rhost's FUBAR flag or MUX's @toad, can deter tr
 
 ### Unapproving Trolls
 
-Most game-altering commands (building, posting to forums, starting scenes) are locked to approved characters by default.  This inherently protects you against malicious guests and characters fresh off the login screen.  If an already-approved character causes mischief, you can unapprove them using `app/unapprove` to deny them access to these commands.  
+Most game-altering commands (building, posting to forums, starting scenes) are locked to approved characters by default.  This inherently protects you against malicious characters fresh off the login screen.  If an already-approved character causes mischief, you can unapprove them using `app/unapprove` to deny them access to these commands.  
 
 ### Banning Trolls
 

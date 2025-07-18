@@ -361,11 +361,11 @@ module AresMUSH
             @system_char = double
             master_game = double
 
-            allow(client_monitor).to receive(:clients) { [] }
+            allow(client_monitor).to receive(:web_clients) { [] }
             allow(Game).to receive(:master) { master_game }
             allow(master_game).to receive(:system_character) { @system_char }
             allow(Login).to receive(:notify)
-            allow(Login).to receive(:find_client) { nil }
+            allow(Login).to receive(:find_game_client) { nil }
             allow(@bootee).to receive(:update)
             allow(@bootee).to receive(:last_ip) { "ip" }
             allow(@bootee).to receive(:last_hostname) { "host" }
@@ -403,15 +403,15 @@ module AresMUSH
           end
           
           it "should boot them from the game" do
-            expect(Login).to receive(:find_client).with(@bootee) { @client }
+            expect(Login).to receive(:find_game_client).with(@bootee) { @client }
             expect(@client).to receive(:emit_failure).with("login.you_have_been_booted")
             expect(@client).to receive(:disconnect)
             expect(Login.boot_char(@enactor, @bootee, "Reasons")).to eq nil
           end
           
           it "should boot them from the portal" do
-            expect(client_monitor).to receive(:clients) { [ @client ]}
-            expect(@client).to receive(:web_char_id) { "22" }
+            expect(client_monitor).to receive(:web_clients) { [ @client ]}
+            expect(@client).to receive(:char_id) { "22" }
             expect(@bootee).to receive(:id) { "22" }
             expect(@bootee).to receive(:update).with({ login_api_token: nil })
             expect(@client).to receive(:disconnect)
@@ -419,8 +419,8 @@ module AresMUSH
           end
           
           it "should not boot someone else from the portal" do
-            expect(client_monitor).to receive(:clients) { [ @client ]}
-            expect(@client).to receive(:web_char_id) { "4" }
+            expect(client_monitor).to receive(:web_clients) { [ @client ]}
+            expect(@client).to receive(:char_id) { "4" }
             expect(@bootee).to receive(:id) { "22" }
             expect(@bootee).to receive(:update).with({ login_api_token: nil })
             expect(@client).to_not receive(:disconnect)
@@ -458,6 +458,79 @@ module AresMUSH
         it "should allow nonadmins if permission present" do
           expect(Login.can_login?(@char)).to eq true
         end
+      end
+      
+      describe :create_temp_char_name do
+        before do
+          allow(Global).to receive(:read_config).with("names", "guest") { ["HappyWanderer"] }
+          @game = double
+          allow(Game).to receive(:master) { @game }
+          allow(@game).to receive(:login_guest_counter) { 0 }
+          allow(@game).to receive(:update)
+          allow(Login).to receive(:name_taken?).with("Guest-1") { nil }
+        end
+          
+        
+        it "should work if name not taken" do
+          allow(Login).to receive(:name_taken?).with("HappyWanderer") { nil }
+          allow(Character).to receive(:check_name).with("HappyWanderer") { nil }
+          
+          expect(Login.create_temp_char_name).to eq "HappyWanderer"
+        end
+        
+        it "should work if other name choice works" do
+          allow(Global).to receive(:read_config).with("names", "guest") { ["HappyWanderer", "SadPanda", "SadWanderer"] }
+
+          allow(Login).to receive(:name_taken?).with("HappyWanderer") { "taken" }
+          allow(Character).to receive(:check_name).with("HappyWanderer") { nil }
+
+          allow(Login).to receive(:name_taken?).with("SadPanda") { nil }
+          allow(Character).to receive(:check_name).with("SadPanda") { "bad" }
+
+          allow(Login).to receive(:name_taken?).with("HappyPanda") { "taken" }
+          allow(Character).to receive(:check_name).with("HappyPanda") { "bad" }
+          
+          allow(Login).to receive(:name_taken?).with("SadWanderer") { nil }
+          allow(Character).to receive(:check_name).with("SadWanderer") { nil }
+          
+          expect(Login.create_temp_char_name).to eq "SadWanderer"
+        end
+        
+        it "should fallback if name is taken" do
+          allow(Login).to receive(:name_taken?).with("HappyWanderer") { "taken" }
+          allow(Character).to receive(:check_name).with("HappyWanderer") { nil }
+          
+          expect(Login.create_temp_char_name).to eq "Guest-1"
+        end
+        
+        it "should fallback if name is invalid" do
+          allow(Login).to receive(:name_taken?).with("HappyWanderer") { nil }
+          allow(Character).to receive(:check_name).with("HappyWanderer") { "bad name" }
+          
+          expect(Login.create_temp_char_name).to eq "Guest-1"
+        end
+        
+        it "should fallback if second name choice also doesn't work" do
+          allow(Global).to receive(:read_config).with("names", "guest") { ["HappyWanderer", "HappyPanda"] }
+
+          allow(Login).to receive(:name_taken?).with("HappyWanderer") { "taken" }
+          allow(Character).to receive(:check_name).with("HappyWanderer") { nil }
+
+          allow(Login).to receive(:name_taken?).with("HappyPanda") { "taken" }
+          allow(Character).to receive(:check_name).with("HappyPanda") { "bad" }
+          
+          expect(Login.create_temp_char_name).to eq "Guest-1"
+        end
+        
+        it "should fail if fallback isn't available" do
+          allow(Login).to receive(:name_taken?).with("HappyWanderer") { nil }
+          allow(Character).to receive(:check_name).with("HappyWanderer") { "bad name" }
+          allow(Login).to receive(:name_taken?).with("Guest-1") { "taken" }
+          
+          expect {Login.create_temp_char_name}.to raise_error(RuntimeError)
+
+        end
+        
       end
       
     end
