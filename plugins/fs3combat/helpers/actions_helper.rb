@@ -202,8 +202,12 @@ module AresMUSH
       
       npc = combatant.is_npc? ? combatant.npc.wound_modifier : 0
       npc_mod = combatant.damage_lethality_mod + npc
+
+      #Serums
+      serum_mod = combatant.serum_damage_lethality_mod
+      #/Serums
       
-      total = random + severity + lethality + mod + npc_mod
+      total = random + severity + lethality + mod + npc_mod + serum_mod #Serums
       
       if (total < FS3Combat.damage_table["GRAZE"])
         damage = "GRAZE"
@@ -215,7 +219,7 @@ module AresMUSH
         damage = "INCAP"
       end
       
-      combatant.log "Determined damage: loc=#{hitloc} sev=#{severity} wpn=#{weapon}" +
+      combatant.log "Determined damage: loc=#{hitloc} sev=#{severity} wpn=#{weapon} serum=#{serum_mod}" + #Serums
       " lth=#{lethality} npc=#{npc_mod} mod=#{mod} rand=#{random} total=#{total} dmg=#{damage}"
       
       damage
@@ -232,13 +236,17 @@ module AresMUSH
       # Not wearing armor at all.
       return 0 if armor.blank?
       
+      #Serum
+      serum_mod = combatant.serum_armor_mod
+      #/Serum
       pen = FS3Combat.weapon_stat(weapon, "penetration")
-      protect = FS3Combat.armor_stat(armor, "protection")[hitloc]
-            
+
+      protect = FS3Combat.armor_stat(armor, "protection")[hitloc] 
+      
       # Armor doesn't cover this hit location
       return 0 if !protect
       random_die = rand(8) + 1
-      result = random_die + attacker_net_successes + pen - protect
+      result = random_die + attacker_net_successes + pen - protect - serum_mod #Serums
             
       if (result >= 8) # 8-9
         armor_reduction = 0
@@ -252,7 +260,7 @@ module AresMUSH
         armor_reduction = 100
       end
       
-     combatant.log "Determined armor: loc=#{hitloc} weapon=#{weapon} net=#{attacker_net_successes}" +
+     combatant.log "Determined armor: loc=#{hitloc} weapon=#{weapon} net=#{attacker_net_successes} serum=#{serum_mod}" + #Serums
       " pen=#{pen} protect=#{protect} random=#{random_die} result=#{result} reduction=#{armor_reduction}"
       
       armor_reduction
@@ -423,8 +431,12 @@ module AresMUSH
         melee_damage_mod = [(strength_roll - 1) * 5, 0].max
       end
       
-      total_damage_mod = hit_mod + melee_damage_mod + attack_luck_mod - defense_luck_mod - armor
-      target.log "Damage modifiers: attack_luck=#{attack_luck_mod} hit=#{hit_mod} melee=#{melee_damage_mod} defense_luck=#{defense_luck_mod} armor=#{armor} total=#{total_damage_mod}"
+      #Serums
+      serum_mod = attacker.serum_lethality_mod
+      #Serums
+
+      total_damage_mod = hit_mod + melee_damage_mod + attack_luck_mod - defense_luck_mod - armor + serum_mod #Serums
+      target.log "Damage modifiers: attack_luck=#{attack_luck_mod} hit=#{hit_mod} melee=#{melee_damage_mod} defense_luck=#{defense_luck_mod} armor=#{armor} serum=#{serum_mod} total=#{total_damage_mod}"
       
       
       damage = FS3Combat.determine_damage(target, hitloc, weapon, total_damage_mod, crew_hit)

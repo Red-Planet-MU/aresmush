@@ -9,13 +9,16 @@ module AresMUSH
     #      'mindtrick' => MindTrickAction
     #   }
     def self.custom_actions
-      {}
+      {
+        'serum' => SerumAction
+      }
     end
     
     # Here you can do any custom processing that needs to happen at the end of each turn.
     # This happens BEFORE the regular processing, so that the character's luck spends, damage this turn, etc.
     # hasn't been reset yet.
     def self.custom_new_turn_reset(combatant)
+      Serum.serum_new_turn(combatant)
     end
   end
 end
