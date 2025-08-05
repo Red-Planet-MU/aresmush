@@ -14,7 +14,8 @@ module AresMUSH
         end
         
         def handle
-            #connects to the scene/start command
+            #connects to the scene/start command 
+            #connects to the create_scene_handler
           if self.toggle == "off"
             Socializer.announce_toggle_off(enactor)
             client.emit_success t('socializer.announce_off')
