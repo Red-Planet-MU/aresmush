@@ -3,3 +3,4 @@ en:
   socializer:
     announce_off: "You have toggled Open Scene announcements off."
     announce_on: "You have toggled Open Scene announcements on."
+    rp_request_emit: "%{name} has started an open scene in %{location}."
