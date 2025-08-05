@@ -1,0 +1,5 @@
+---
+en:
+  socializer:
+    announce_off: "You have toggled Open Scene announcements off."
+    announce_on: "You have toggled Open Scene announcements on."
