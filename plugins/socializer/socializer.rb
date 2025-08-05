@@ -16,7 +16,7 @@ module AresMUSH
       when 'openscenes'
         case cmd.switch
         when "announce"
-          return OpenScenesAnnounceCommand
+          return SocializerAnnounceCommand
         end
 
 
