@@ -43,6 +43,11 @@ module AresMUSH
         )
           
         Global.logger.info "Web scene #{scene.id} created by #{enactor.name}."
+        #Socializer Changes
+        if enactor.open_scene_announce == "on"
+            Channels.send_to_channel("RP Requests", t('socializer.rp_request_emit', :name => enactor.name, :location => self.location))
+        end
+        #End Socializer Changes
 
         plot_ids = request.args['plots'] || []
         plots = []
