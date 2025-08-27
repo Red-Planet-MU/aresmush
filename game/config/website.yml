@@ -30,8 +30,13 @@ website:
     - title: Pre-Made Characters
       route: roster
     - divider: true
+    - title: About Us
+      url: https://redplanetmu.com/wiki/ooc:about_us
   - title: Game
     menu:
+    - title: Policies
+      url: https://redplanetmu.com/wiki/ooc:policies
+    - divider: true
     - title: Who's Online
       route: who
     - title: Forum
