@@ -30,7 +30,7 @@ website:
     - title: Pre-Made Characters
       route: roster
     - divider: true
-    - title: About Us
+    - title: About Red Planet
       url: https://redplanetmu.com/wiki/ooc:about_us
   - title: Game
     menu:
