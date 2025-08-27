@@ -23,22 +23,15 @@ website:
   top_navbar:
   - title: "<i class='fas fa-home' />"
     route: home
-  - title: Play
+  - title: Intro
     menu:
     - title: Create a Character
       route: chargen
     - title: Pre-Made Characters
       route: roster
     - divider: true
-    - title: Play
-      route: play
-    - title: Active Scenes
-      route: scenes-live
-    - title: Unshared Scenes
-      route: scenes-unshared
-    - title: Start New Scene
-      route: scene-create
-    - divider: true
+  - title: Game
+    menu:
     - title: Who's Online
       route: who
     - title: Forum
@@ -47,14 +40,29 @@ website:
       route: mail
     - title: Events
       route: events
-  - title: Directory
+  - title: World
     menu:
-    - title: Characters
-      route: characters
+  - title: Play
+    menu:
+    - title: Play
+      route: play
+    - title: Active Scenes
+      route: scenes-live
+    - title: Unshared Scenes
+      route: scenes-unshared
+    - title: Start New Scene
+      route: scene-create
+  - title: Story
+    menu:
     - title: Scenes
       route: scenes
     - title: Plots
       route: plots
+    - divider: true
+  - title: Directory
+    menu:
+    - title: Characters
+      route: characters
     - divider: true
     - title: Players
       route: players
