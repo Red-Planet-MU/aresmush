@@ -193,6 +193,7 @@ fs3combat:
       init_mod: 0
       allowed_specials:
       - Buckshot
+      - Both Barrels
     Club:
       description: Mace/club/baton
       skill: Melee
@@ -269,6 +270,7 @@ fs3combat:
     Scope:
       description: Sniper scope
       accuracy: 2
+      init_mod: -1
     Buckshot:
       description: Shotgun pellets
       accuracy: 3
@@ -276,3 +278,6 @@ fs3combat:
     Sparring:
       description: Padded sparring equipment
       lethality: -50
+    Both Barrels:
+      description: Pulling both triggers at once
+      dual_wield: true
