@@ -21,6 +21,8 @@ website:
     minute:
     - 17
   top_navbar:
+  - title: "<i class='fas fa-home' />"
+    route: home
   - title: Intro
     menu:
     - title: Create a Character
@@ -34,8 +36,6 @@ website:
     menu:
     - title: Policies
       url: https://redplanetmu.com/wiki/ooc:policies
-    - title: Staff Team
-      url: https://redplanetmu.com/wiki/staff_team
     - divider: true
     - title: Who's Online
       route: who
@@ -47,10 +47,6 @@ website:
       route: events
   - title: World
     menu:
-    - title: World
-      url: https://redplanetmu.com/wiki/world
-    - title: Creatures
-      url: https://redplanetmu.com/wiki/world:creatures
   - title: Play
     menu:
     - title: Play
@@ -72,8 +68,6 @@ website:
     menu:
     - title: Characters
       route: characters
-    - title: Creatures
-      url: https://redplanetmu.com/wiki/creatures
     - divider: true
     - title: Players
       route: players
