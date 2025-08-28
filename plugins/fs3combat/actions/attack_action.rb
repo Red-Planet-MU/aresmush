@@ -114,7 +114,7 @@ module AresMUSH
         end
 
         if bullets = 2 then 
-          if self.targets.count = 2 then
+          if self.targets.count == 2 then
             bullets_per_target = 2
             self.targets.each do |target, num|
               bullets_per_target.times.each do |n|
