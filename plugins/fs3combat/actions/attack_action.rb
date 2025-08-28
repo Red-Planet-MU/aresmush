@@ -105,11 +105,15 @@ module AresMUSH
         #NEW DUAL WIELDING LOGIC
         bullets = nil
         dual_wield = FS3Combat.weapon_stat(self.combatant.weapon, "dual_wield")
-        case bullets 
-        when self.is_burst
-          [3, self.combatant.ammo].min
-        when dual_wield
-          [2, self.combatant.ammo].min
+        #case bullets 
+        #when self.is_burst
+        #  [3, self.combatant.ammo].min
+        #when dual_wield
+        #  [2, self.combatant.ammo].min
+        #else 1
+        #end
+        if self.is_burst then bullets = [3, self.combatant.ammo].min
+        elsif dual_wield then bullets = [2, self.combatant.ammo].min
         else 1
         end
         Global.logger.debug "bullets first check = #{bullets}"
