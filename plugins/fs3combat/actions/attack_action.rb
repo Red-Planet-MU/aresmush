@@ -122,13 +122,13 @@ module AresMUSH
               end
             end
           end
-        end
+        else
         #end Dual-Wielding logic
 
-        bullets.times.each do |b|
-          messages.concat FS3Combat.attack_target(combatant, target, self.mod, self.called_shot, self.crew_hit, self.mount_hit)
+          bullets.times.each do |b|
+            messages.concat FS3Combat.attack_target(combatant, target, self.mod, self.called_shot, self.crew_hit, self.mount_hit)
+          end
         end
-
         ammo_message = FS3Combat.update_ammo(combatant, bullets)
         if (ammo_message)
           messages << ammo_message
