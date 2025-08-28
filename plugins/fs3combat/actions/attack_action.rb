@@ -13,6 +13,7 @@ module AresMUSH
           specials = []
         end
         
+        dual_wield = FS3Combat.weapon_stat(self.combatant.weapon, "dual_wield")
         weapon_type = FS3Combat.weapon_stat(self.combatant.weapon, "weapon_type")
         return t('fs3combat.use_explode_command') if weapon_type == "Explosive"
         return t('fs3combat.use_suppress_command') if weapon_type == "Suppressive"
@@ -20,7 +21,8 @@ module AresMUSH
         error = self.parse_targets(names)
         return error if error
       
-        return t('fs3combat.only_one_target') if (self.targets.count > 1)
+        return t('fs3combat.only_one_target') if (self.targets.count > 1) && !dual_wield
+        return t('fs3combat.only_two_targets') if (self.targets.count > 2) && dual_wield
       
         self.is_burst = false
         self.called_shot = nil

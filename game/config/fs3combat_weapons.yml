@@ -131,6 +131,22 @@ fs3combat:
       init_mod: 0
       allowed_specials:
       - Ap
+    Dual Revolvers:
+      description: TWO basic six-shooters.
+      skill: Firearms
+      lethality: 0
+      penetration: 5
+      weapon_type: Ranged
+      is_automatic: false
+      ammo: 12
+      recoil: 0
+      damage_type: Physical
+      accuracy: -1
+      has_shrapnel: false
+      init_mod: 0
+      dual_wield: true
+      allowed_specials:
+      - Ap
     Rifle:
       description: A long rifle. Bolt action.
       skill: Firearms
