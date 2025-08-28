@@ -7,7 +7,7 @@ module AresMUSH
         #LASSO
         damage_type = FS3Combat.weapon_stat(self.combatant.weapon, "damage_type")
         Global.logger.debug "damage type: #{damage_type}"
-        return t('fs3combat.subdue_uses_melee') if damage_type != "Stun" || weapon_type != "Melee" 
+        return t('fs3combat.subdue_uses_melee') if damage_type != "Stun" && weapon_type != "Melee" 
         #/LASSO
         
         error = self.parse_targets(self.action_args)
