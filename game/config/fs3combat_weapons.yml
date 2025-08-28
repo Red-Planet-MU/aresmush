@@ -5,7 +5,7 @@ fs3combat:
       description: A looped rope thrown to entangle something.
       skill: Athletics
       lethality: 0
-      penetration: 0
+      penetration: 9
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
