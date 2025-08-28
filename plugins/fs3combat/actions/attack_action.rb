@@ -115,7 +115,7 @@ module AresMUSH
 
         if bullets = 2 then 
           if self.targets.count == 2 then
-            bullets_per_target = 2
+            bullets_per_target = 1
             self.targets.each do |target, num|
               bullets_per_target.times.each do |n|
                 messages.concat FS3Combat.attack_target(combatant, target)
