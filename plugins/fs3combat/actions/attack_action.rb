@@ -101,7 +101,28 @@ module AresMUSH
           messages << t('fs3combat.fires_burst', :name => self.name)
         end
         
-        bullets = self.is_burst ? [3, self.combatant.ammo].min : 1
+        #bullets = self.is_burst ? [3, self.combatant.ammo].min : 1
+        #NEW DUAL WIELDING LOGIC
+        case bullets 
+        when self.is_burst
+          [3, self.combatant.ammo].min
+        when dual_wield
+          [2, self.combatant.ammo].min
+        else 1
+        end
+
+        if bullets = 2 then 
+          if self.targets.count = 2 then
+            bullets_per_target = 2
+            self.targets.each do |target, num|
+              bullets_per_target.times.each do |n|
+                messages.concat FS3Combat.attack_target(combatant, target)
+              end
+            end
+          end
+        end
+        #end Dual-Wielding logic
+
         bullets.times.each do |b|
           messages.concat FS3Combat.attack_target(combatant, target, self.mod, self.called_shot, self.crew_hit, self.mount_hit)
         end
