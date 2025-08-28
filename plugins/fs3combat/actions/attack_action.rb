@@ -113,7 +113,7 @@ module AresMUSH
         else 1
         end
         Global.logger.debug "bullets first check = #{bullets}"
-        if bullets = 2 && self.targets.count == 2 then 
+        if bullets == 2 && self.targets.count == 2 then 
           bullets_per_target = 1
           self.targets.each do |target, num|
             bullets_per_target.times.each do |n|
