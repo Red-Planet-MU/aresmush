@@ -6,7 +6,7 @@ fs3combat:
       skill: Athletics
       lethality: 0
       penetration: 0
-      weapon_type: Suppressive
+      weapon_type: Ranged
       is_automatic: false
       recoil: 0
       damage_type: Stun
