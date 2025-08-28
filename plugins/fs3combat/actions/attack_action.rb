@@ -123,6 +123,7 @@ module AresMUSH
         else
         #end Dual-Wielding logic
           Global.logger.debug "You ended up in the normal loop"
+          Global.logger.debug "bullets = #{bullets}"
           bullets.times.each do |b|
             messages.concat FS3Combat.attack_target(combatant, target, self.mod, self.called_shot, self.crew_hit, self.mount_hit)
           end
