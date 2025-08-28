@@ -1,21 +1,20 @@
 ---
 fs3combat:
   weapons:
-    Flash Grenade:
-      description: Flashbang Hand Grenade which blinds/deafens human targets for 5
-        secs.  No effect on Centurions.
+    Lasso:
+      description: A looped rope thrown to entangle something.
       skill: Athletics
       lethality: 0
-      penetration: 8
+      penetration: 0
       weapon_type: Suppressive
       is_automatic: false
       recoil: 0
       damage_type: Stun
-      accuracy: 5
+      accuracy: 0
       has_shrapnel: false
       init_mod: 0
-    Frag Grenade:
-      description: Fragmentation Hand Grenade
+    Dynamite:
+      description: A thrown stick of dynamite.
       skill: Athletics
       lethality: 0
       penetration: 8
@@ -62,19 +61,6 @@ fs3combat:
       recoil: 0
       damage_type: Physical
       accuracy: 3
-      has_shrapnel: false
-      init_mod: 0
-    Talons:
-      description: Unguided Anti-Vehicle Rockets
-      skill: Gunnery
-      lethality: 0
-      penetration: 9
-      weapon_type: Ranged
-      is_automatic: false
-      ammo: 20
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
       has_shrapnel: false
       init_mod: 0
     Rocket:
@@ -130,14 +116,14 @@ fs3combat:
       allowed_specials:
       - Ap
       - Bipod
-    Pistol:
-      description: Pistol
+    Revolver:
+      description: A basic six-shooter. 
       skill: Firearms
       lethality: 0
       penetration: 5
       weapon_type: Ranged
       is_automatic: false
-      ammo: 10
+      ammo: 6
       recoil: 0
       damage_type: Physical
       accuracy: 0
@@ -146,45 +132,44 @@ fs3combat:
       allowed_specials:
       - Ap
     Rifle:
-      description: Assault Rifle
+      description: A long rifle. Bolt action.
       skill: Firearms
       lethality: 0
       penetration: 6
       weapon_type: Ranged
-      is_automatic: true
-      ammo: 20
+      is_automatic: false
+      ammo: 5
       recoil: 3
+      damage_type: Physical
+      accuracy: 1
+      has_shrapnel: false
+      init_mod: -1
+      allowed_specials:
+      - Ap
+      - Scope
+    Repeater:
+      description: A lever-action long gun that can shoot more rapidly than a rifle but with less power and accuracy.
+      skill: Firearms
+      lethality: 0
+      penetration: 5
+      weapon_type: Ranged
+      is_automatic: false
+      ammo: 10
+      recoil: 1
       damage_type: Physical
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
       allowed_specials:
       - Ap
-      - Scope
-    Sniper Rifle:
-      description: Sniper Rifle
-      skill: Firearms
-      lethality: 0
-      penetration: 8
-      weapon_type: Ranged
-      is_automatic: false
-      ammo: 10
-      recoil: 0
-      damage_type: Physical
-      accuracy: 2
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Ap
-      - Scope
     Shotgun:
-      description: Shotgun using solid shot
+      description: Double-barreled shotgun
       skill: Firearms
       lethality: 10
       penetration: 3
       weapon_type: Ranged
       is_automatic: false
-      ammo: 8
+      ammo: 2
       recoil: 0
       damage_type: Physical
       accuracy: 0
@@ -192,34 +177,6 @@ fs3combat:
       init_mod: 0
       allowed_specials:
       - Buckshot
-    Smg:
-      description: Sub-machinegun
-      skill: Firearms
-      lethality: 0
-      penetration: 6
-      weapon_type: Ranged
-      is_automatic: true
-      ammo: 30
-      recoil: 4
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Ap
-    Tazer:
-      description: Stun gun
-      skill: Firearms
-      lethality: 70
-      penetration: 10
-      weapon_type: Ranged
-      is_automatic: false
-      ammo: 5
-      recoil: 0
-      damage_type: Stun
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
     Club:
       description: Mace/club/baton
       skill: Melee
@@ -286,31 +243,6 @@ fs3combat:
       allowed_specials:
       - Ap
       - Bipod
-    Kew:
-      description: KEW Assault Cannon.  This is a chain gun and always burst fires,
-        so that's factored into the damage.
-      skill: Gunnery
-      lethality: 0
-      penetration: 9
-      weapon_type: Ranged
-      is_automatic: false
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-    Cannon:
-      description: Tank cannon.
-      skill: Gunnery
-      lethality: 0
-      penetration: 23
-      weapon_type: Ranged
-      is_automatic: false
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
   weapon specials:
     Ap:
       description: Armor Piercing Rounds
