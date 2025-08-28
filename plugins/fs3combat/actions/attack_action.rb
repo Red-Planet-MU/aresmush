@@ -108,7 +108,7 @@ module AresMUSH
 
         if self.is_burst then bullets = [3, self.combatant.ammo].min
         elsif dual_wield then bullets = [2, self.combatant.ammo].min
-        else 1
+        else bullets = 1
         end
 
         if bullets == 2 && self.targets.count == 2 then 
