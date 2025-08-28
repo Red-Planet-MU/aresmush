@@ -217,6 +217,18 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
+    Throwing Axe:
+      description: A thrown axe.
+      skill: Athletics
+      lethality: 0
+      penetration: 3
+      weapon_type: Ranged
+      is_automatic: false
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: true
+      init_mod: 0
     Unarmed:
       description: Unarmed
       skill: Melee
