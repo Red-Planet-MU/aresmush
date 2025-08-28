@@ -12,7 +12,9 @@ module AresMUSH
         combatant.update(serum_damage_lethality_mod: 0)
         combatant.update(serum_lethality_mod: 0)
         combatant.update(serum_armor_mod: 0)
+        combatant.update(serum_duration_counter: -1)
         combatant.log "#{combatant.name} resetting all serum mods."
+        FS3Combat.emit_to_combat combatant.combat, t('serum.serum_wore_off', :name => combatant.name, :serum_name => last_serum.name), nil, true
         return 
       else
         combatant.update(serum_duration_counter: combatant.serum_duration_counter - 1)
