@@ -4,7 +4,10 @@ module AresMUSH
       
       def prepare
         weapon_type = FS3Combat.weapon_stat(self.combatant.weapon, "weapon_type")
-        return t('fs3combat.subdue_uses_melee') if weapon_type != "Melee"
+        #LASSO
+        damage_type = FS3Combat.weapon_stat(self.combatant.weapon, "damage_type")
+        return t('fs3combat.subdue_uses_melee') if damage_type != "Stun" || weapon_type != "Melee" 
+        #/LASSO
         
         error = self.parse_targets(self.action_args)
         return error if error
