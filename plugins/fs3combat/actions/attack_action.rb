@@ -103,6 +103,7 @@ module AresMUSH
         
         #bullets = self.is_burst ? [3, self.combatant.ammo].min : 1
         #NEW DUAL WIELDING LOGIC
+        bullets = nil
         case bullets 
         when self.is_burst
           [3, self.combatant.ammo].min
