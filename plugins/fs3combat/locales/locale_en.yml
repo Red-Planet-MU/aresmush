@@ -382,7 +382,7 @@ en:
         # SUBDUE AND ESCAPE
         # ----------------------------
         
-        subdue_uses_melee: "You must use a melee weapon to subdue."
+        subdue_uses_melee: "You must use a melee weapon or a lasso to subdue."
         subdue_action_msg_long: "%{name} will subdue %{target} this turn."
         subdue_action_msg_short: "Subdue %{target}"
         subdue_action_success: "%{name} successfully subdues %{target}."
