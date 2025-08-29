@@ -102,6 +102,8 @@ module AresMUSH
           self.target.update(is_ko: false)
           message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
         end
+        #track Last used serum
+        self.target.update(last_serum: self.serum_name)
 
         Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
         [message]
