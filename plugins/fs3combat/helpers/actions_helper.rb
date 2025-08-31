@@ -434,6 +434,7 @@ module AresMUSH
       #Serums
       if attacker.nil? then serum_mod = 0
       else serum_mod = attacker.serum_lethality_mod
+      end
       #Serums
 
       total_damage_mod = hit_mod + melee_damage_mod + attack_luck_mod - defense_luck_mod - armor + serum_mod #Serums
