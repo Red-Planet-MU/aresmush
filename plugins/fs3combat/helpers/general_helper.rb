@@ -109,6 +109,7 @@ module AresMUSH
     end
     
     def self.combatant_type_stat(type, stat)
+      Global.logger.debug "type: #{type}, stat: #{stat}"
       type_config = FS3Combat.combatant_types[type]
       type_config[stat]
     end
