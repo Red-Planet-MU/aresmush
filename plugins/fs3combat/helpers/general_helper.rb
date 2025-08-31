@@ -277,7 +277,8 @@ module AresMUSH
         armor: combatant.armor,
         is_npc: combatant.is_npc?,
         team: combatant.team,
-        ammo: combatant.ammo ? "(#{combatant.ammo})" : '',
+        #Trashcan's extended throwing weapons
+        ammo: if combatant.ammo then "(#{combatant.ammo})" elsif combatant.throws then "(#{combatant.throws})" else '' end,
         damage_boxes: ([-combatant.total_damage_mod.floor, 5].min).times.map { |d| d },
         damage: FS3Combat.damage_list_web_data(combatant.associated_model, false),
         damage_mod: combatant.total_damage_mod.floor,
