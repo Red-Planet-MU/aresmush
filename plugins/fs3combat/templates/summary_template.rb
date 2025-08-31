@@ -62,6 +62,8 @@ module AresMUSH
         
         if (c.max_ammo > 0)
           notes = " (#{c.ammo})"
+        elsif (c.max_throws > 0)
+          notes = " (#{c.throws})"
         else
           notes = ""
         end
