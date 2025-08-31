@@ -19,7 +19,7 @@ module AresMUSH
         mount_mod = 0
       end
 
-      Global.logger.debug "Combatant IS NPC = #{combat.is_npc}"
+      Global.logger.debug "Combatant IS NPC = #{combatant.is_npc?}"
       if combatant.is_npc? == false then
         #Find if weapon has specialty to add to attack roll
         firearm_specialty = FS3Combat.weapon_stat(combatant.weapon, "firearm_type")
