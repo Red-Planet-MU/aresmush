@@ -84,6 +84,8 @@ module AresMUSH
         
         if (c.max_ammo > 0)
           notes = " (#{c.ammo})"
+        elsif (c.max_throws > 0) #TC's Expanded Throwing Weapons
+          notes = " (#{c.throws})"
         else
           notes = ""
         end
