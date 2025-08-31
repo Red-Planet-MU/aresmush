@@ -19,7 +19,7 @@ module AresMUSH
         mount_mod = 0
       end
 
-      if !combatant.is_npc? then
+      if combatant.is_npc? == false then
         #Find if weapon has specialty to add to attack roll
         firearm_specialty = FS3Combat.weapon_stat(combatant.weapon, "firearm_type")
         #then need to find if character has that specialty
