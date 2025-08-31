@@ -22,7 +22,7 @@ module AresMUSH
       #Find if weapon has specialty to add to attack roll
       firearm_specialty = FS3Combat.weapon_stat(combatant.weapon, "firearm_type")
       #then need to find if character has that specialty
-      combatant_speciality = FS3Skills.find_specialty(combatant, ability)
+      combatant_speciality = FS3Skills.find_specialty(combatant.character, ability)
       Global.logger.debug "Firearm specialty: #{firearm_specialty} Combatant specialty: #{combatant_speciality}"
       #/end firearm specialty
 
