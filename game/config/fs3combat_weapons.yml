@@ -50,19 +50,20 @@ fs3combat:
       accuracy: 0
       has_shrapnel: true
       init_mod: 0
-    Missile:
-      description: Guided Anti-Vehicle Missile
-      skill: Gunnery
-      lethality: 80
-      penetration: 17
+    Bow:
+      description: A piece of wood with a string connecting the ends. Silent, compared to firearms.
+      skill: Athletics
+      lethality: 0
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
-      ammo: 2
       recoil: 0
       damage_type: Physical
-      accuracy: 3
+      accuracy: 0
       has_shrapnel: false
       init_mod: 0
+      allowed_specials:
+      - Dynamite
     Rocket:
       description: Unguided Anti-Personnel Rocket
       skill: Gunnery
@@ -289,3 +290,6 @@ fs3combat:
     Sparring:
       description: Padded sparring equipment
       lethality: -50
+    Dynamite:
+      description: A stick of dynamite tied to an arrow.
+      has_shrapnel: true
