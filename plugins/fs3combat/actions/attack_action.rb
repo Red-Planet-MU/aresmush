@@ -42,6 +42,10 @@ module AresMUSH
         
         return t('fs3combat.out_of_ammo') if !FS3Combat.check_ammo(self.combatant, 1)
         return t('fs3combat.not_enough_ammo_for_burst') if self.is_burst && !FS3Combat.check_ammo(self.combatant, 2)
+
+        #Trashcan's expanded Throwing Weapons
+        return t('fs3combat.out_of_throws') if !FS3Combat.check_throws(self.combatant, 1)
+        #/Trashcan's expanded Throwing Weapons
         
         return nil
       end
@@ -100,6 +104,9 @@ module AresMUSH
         if (self.is_burst)
           messages << t('fs3combat.fires_burst', :name => self.name)
         end
+
+        #Trashcan's Expanded Throwing Weapons
+        throws = FS3Combat.weapon_stat(self.combatant.weapon, "throws")
         
         #bullets = self.is_burst ? [3, self.combatant.ammo].min : 1
         #NEW DUAL WIELDING LOGIC
@@ -128,6 +135,11 @@ module AresMUSH
         if (ammo_message)
           messages << ammo_message
         end
+        throw_message = FS3Combat.update_throws(combatant, 1)
+        if (throw_message)
+          messages << throw_message
+        end
+        Global.logger.debug "Throws remaining: #{combatant.throws}"
         
         messages
       end
