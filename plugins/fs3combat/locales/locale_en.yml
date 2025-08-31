@@ -402,7 +402,9 @@ en:
         not_enough_ammo_for_burst: "You need 3 rounds for burst fire."
         not_enough_ammo_for_fullauto: "You need 8 rounds for fullauto fire."
         out_of_ammo: "You are out of ammo."
+        out_of_throws: "You are out of throws."
         weapon_clicks_empty: "%{name}'s weapon clicks empty."
+        weapon_out_of_throws: "%{name} runs out of throwing weapons."
         weapon_empty: "%{name}'s weapon is empty."
         
         reload_action_msg_long: "%{name} will reload this turn."
