@@ -28,51 +28,19 @@ fs3combat:
   combatant_types:
     Observer:
       hitloc: Humanoid
-    Soldier:
-      weapon: Rifle
-      weapon_specials:
-      - Ap
-      armor: Tactical
+    Bandit:
+      weapon: Revolver
+      hitloc: Humanoid
+      defense_skill: Reflexes
+    Police:
+      weapon: Revolver
+      armor: Police
       hitloc: Humanoid
       defense_skill: Reflexes
     Unarmed:
       weapon: Unarmed
       hitloc: Humanoid
       defense_skill: Reflexes
-    Centurion:
-      weapon: LMG
-      weapon_specials:
-      - Bipod
-      armor: Centurion
-      hitloc: Humanoid
-      defense_skill: Reflexes
-    Aa:
-      weapon: Missile
-      armor: Centurion
-      vehicle: Aa Battery
-      hitloc: Humanoid
-      defense_skill: Reflexes
-    Cylon:
-      weapon: Pistol
-      armor: Cylon
-      hitloc: Humanoid
-      defense_skill: Reflexes
-    Viper:
-      vehicle: Viper
-      hitloc: Humanoid
-      defense_skill: Piloting
-    Raptor:
-      vehicle: Raptor
-      hitloc: Humanoid
-      defense_skill: Piloting
-    Raider:
-      vehicle: Raider
-      hitloc: Humanoid
-      defense_skill: Piloting
-    Heavy:
-      vehicle: Heavy Raider
-      hitloc: Humanoid
-      defense_skill: Piloting
     Target:
       hitloc: Target
       weapon: Unarmed
