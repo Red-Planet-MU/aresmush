@@ -36,7 +36,7 @@ fs3combat:
         - Right Leg
         - Right Leg
         - Right Leg
-        Groin:
+        Ass:
         - Abdomen
         - Abdomen
         - Abdomen
@@ -44,9 +44,9 @@ fs3combat:
         - Right Leg
         - Left Leg
         - Right Leg
-        - Groin
-        - Groin
-        - Groin
+        - Ass
+        - Ass
+        - Ass
         Left Hand:
         - Chest
         - Chest
@@ -130,7 +130,7 @@ fs3combat:
       critical_areas:
       - Head
       - Neck
-      - Groin
+      - Ass
     Fighter:
       areas:
         Body:
