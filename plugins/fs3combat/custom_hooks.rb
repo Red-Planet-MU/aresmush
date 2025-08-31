@@ -10,7 +10,8 @@ module AresMUSH
     #   }
     def self.custom_actions
       {
-        'serum' => SerumAction
+        'serum' => SerumAction,
+        'recover' => RecoverAction
       }
     end
     
