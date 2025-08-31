@@ -27,8 +27,8 @@ module AresMUSH
 
         #If weapon and character's specialty match then give a 1 boost to attack roll
         if firearm_specialty == combatant_specialty then specialty_mod = 1
-        else specialty_mod = 0
         end
+      else specialty_mod = 0
       end
       #/end firearm specialty
 
