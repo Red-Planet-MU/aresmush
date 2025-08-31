@@ -409,6 +409,13 @@ en:
         reload_action_msg_short: "Reload"
         reload_resolution_msg: "%{name} reloads."
         cant_reload: "That weapon can't be reloaded."      
+
+        #Trashcan's extended throwing items
+        recover_action_msg_long: "%{name} will recover a throwing item this turn."
+        recover_action_msg_short: "Recover"
+        recover_resolution_msg: "%{name} recovers a throwing item."
+        cant_recover: "That weapon can't be recovered."    
+        #/Trashcan's extended throwing items
         
         cant_link_scene: "You are not a part of that scene, so you can't link combat to it."
         unrecognized_combat_cmd: "That is not a valid combat command."
