@@ -24,11 +24,13 @@ module AresMUSH
       #then need to find if character has that specialty
       combatant_speciality = FS3Skills.find_specialty(combatant.character, ability)
       Global.logger.debug "Firearm specialty: #{firearm_specialty} Combatant specialty: #{combatant_speciality}"
+      #If weapon and character's specialty match then give a 1 boost to attack roll
+      if firearm_specialty == combatant_specialty then specialty_mod = 1
       #/end firearm specialty
 
-      combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod}"
+      combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod} specialty=#{specialty_mod}" #TC
 
-      mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod
+      mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod + specialty_mod #TC
       
       
       combatant.roll_ability(ability, mod)
