@@ -15,6 +15,9 @@ fs3skills:
     linked_attr: Wits
   - name: Firearms
     desc: Shooting guns.
+    specialties:
+    - Rifles
+    - Pistols
     linked_attr: Reflexes
   - name: Gunnery
     desc: Vehicle/special weapons (cannons, rockets/missiles, ECM packages).
