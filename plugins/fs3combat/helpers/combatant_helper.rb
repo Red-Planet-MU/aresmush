@@ -19,6 +19,13 @@ module AresMUSH
         mount_mod = 0
       end
 
+      #Find if weapon has specialty to add to attack roll
+      firearm_specialty = FS3Combat.weapon_stat(combatant.weapon, "firearm_type")
+      #then need to find if character has that specialty
+      combatant_speciality = FS3Skills.find_specialty(combatant, ability)
+      Global.logger.debug "Firearm specialty: #{firearm_specialty} Combatant specialty: #{combatant_speciality}"
+      #/end firearm specialty
+
       combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod}"
 
       mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod
