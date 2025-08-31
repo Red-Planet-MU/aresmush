@@ -25,18 +25,17 @@ fs3combat:
       accuracy: 0
       has_shrapnel: true
       init_mod: 0
-    Grenade Launcher:
-      description: Grenade Launcher
-      skill: Gunnery
-      lethality: 0
-      penetration: 8
-      weapon_type: Explosive
+    Machete:
+      description: Longer than a knife, meant for clearing brush, but can be an intimidating weapon in the right hands.
+      skill: Melee
+      lethality: 5
+      penetration: 3
+      weapon_type: Melee
       is_automatic: false
-      ammo: 4
       recoil: 0
       damage_type: Physical
       accuracy: 0
-      has_shrapnel: true
+      has_shrapnel: false
       init_mod: 0
     Mine:
       description: Mine or other anti-personnel explosive
