@@ -163,6 +163,26 @@ module AresMUSH
         nil
       end
     end
+
+    #Trashcan's Throwing Weapons
+    def self.check_throws(combatant, throwing_items)
+      return true if combatant.max_throws == 0
+      combatant.throws >= throwing_items
+    end
+    
+    def self.update_throws(combatant, throwing_items)
+      return nil if combatant.max_throws == 0
+
+      throws = combatant.throws - throwing_items
+      combatant.update(throws: throws)
+      
+      if (throws == 0)
+        t('fs3combat.weapon_out_of_throws', :name => combatant.name)
+      else
+        nil
+      end
+    end
+    #/Trashcan's Throwing Weapons
     
     def self.change_team(combat, combatant, enactor, team)
       combatant.update(team: team)
