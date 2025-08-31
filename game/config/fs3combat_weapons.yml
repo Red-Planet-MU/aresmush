@@ -88,7 +88,7 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      firearm_type: rifle
+      firearm_type: Rifles
       allowed_specials:
       - Ap
       - Bipod
@@ -105,7 +105,7 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      firearm_type: pistol
+      firearm_type: Pistols
       allowed_specials:
       - Ap
     Dual Revolvers:
@@ -122,7 +122,7 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       dual_wield: true
-      firearm_type: pistol
+      firearm_type: Pistols
       allowed_specials:
       - Ap
     Rifle:
@@ -138,7 +138,7 @@ fs3combat:
       accuracy: 1
       has_shrapnel: false
       init_mod: -1
-      firearm_type: rifle
+      firearm_type: Rifles
       allowed_specials:
       - Ap
       - Scope
@@ -155,7 +155,7 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      firearm_type: rifle
+      firearm_type: Rifles
       allowed_specials:
       - Ap
     Shotgun:
@@ -171,7 +171,7 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      firearm_type: rifle
+      firearm_type: Rifles
       allowed_specials:
       - Buckshot
     Club:
