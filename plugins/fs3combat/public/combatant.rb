@@ -18,6 +18,8 @@ module AresMUSH
     attribute :luck
     attribute :ammo, :type => DataType::Integer
     attribute :max_ammo, :type => DataType::Integer, :default => 0
+    attribute :throws, :type => DataType::Integer
+    attribute :max_throws, :type => DataType::Integer, :default => 0
     attribute :posed, :type => DataType::Boolean
     attribute :recoil, :type => DataType::Integer, :default => 0
     attribute :team, :type => DataType::Integer, :default => 1
