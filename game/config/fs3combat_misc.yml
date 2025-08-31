@@ -1,6 +1,6 @@
 ---
 fs3combat:
-  default_type: Soldier
+  default_type: Bandit
   allow_vehicles: true
   allow_mounts: true
   stances:
