@@ -76,12 +76,12 @@ module AresMUSH
         #Serums that have a lasting effect
         if duration
           self.target.update(serum_duration_counter: duration)
-          #ride on the default FS3 mod, which a GM may have set
+          #ride on the default FS3 mod, which a GM may have set 8/31 Note, I don't think this is true anymore, this looks like a new custom mod value
           if init_mod
             self.target.update(serum_init_mod: init_mod)
           end
 
-          #ride on the default FS3 mod, which a GM may have set
+          #ride on the default FS3 mod, which a GM may have set 8/31 Note, I don't think this is true anymore, this looks like a new custom mod value
           if lethal_mod
             self.target.update(serum_damage_lethality_mod: lethal_mod)
           end
