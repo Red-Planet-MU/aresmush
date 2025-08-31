@@ -26,6 +26,7 @@ module AresMUSH
       Global.logger.debug "Firearm specialty: #{firearm_specialty} Combatant specialty: #{combatant_speciality}"
       #If weapon and character's specialty match then give a 1 boost to attack roll
       if firearm_specialty == combatant_specialty then specialty_mod = 1
+      end
       #/end firearm specialty
 
       combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod} specialty=#{specialty_mod}" #TC
