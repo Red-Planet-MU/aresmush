@@ -63,31 +63,6 @@ fs3combat:
       init_mod: 0
       allowed_specials:
       - Dynamite
-    Rocket:
-      description: Unguided Anti-Personnel Rocket
-      skill: Gunnery
-      lethality: 40
-      penetration: 8
-      weapon_type: Explosive
-      is_automatic: false
-      Ammo: 4
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: true
-      init_mod: 0
-    Shaped Charge:
-      description: Anti-Vehicle explosive
-      skill: Demolitions
-      lethality: 15
-      penetration: 25
-      weapon_type: Explosive
-      is_automatic: false
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: true
-      init_mod: 0
     Shrapnel:
       description: Random Shrapnel
       skill: 3
@@ -220,7 +195,7 @@ fs3combat:
     Throwing Axe:
       description: A thrown axe.
       skill: Athletics
-      lethality: 0
+      lethality: 5
       penetration: 3
       weapon_type: Ranged
       is_automatic: false
@@ -229,6 +204,20 @@ fs3combat:
       accuracy: 0
       has_shrapnel: true
       init_mod: 0
+      throws: 3
+    Throwing Knife:
+      description: A thrown knife.
+      skill: Athletics
+      lethality: 0
+      penetration: 4
+      weapon_type: Ranged
+      is_automatic: false
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: true
+      init_mod: 0
+      throws: 5
     Unarmed:
       description: Unarmed
       skill: Melee
@@ -243,18 +232,6 @@ fs3combat:
       init_mod: 0
       allowed_specials:
       - Sparring
-    Ecm:
-      description: ECM Package
-      skill: Gunnery
-      lethality: 0
-      penetration: 0
-      weapon_type: Suppressive
-      is_automatic: false
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
     Hmg:
       description: Heavy machinegun.
       skill: Firearms
