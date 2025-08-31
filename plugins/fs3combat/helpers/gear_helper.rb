@@ -167,7 +167,7 @@ module AresMUSH
       prior_ammo = combatant.prior_ammo || {}
 
       #Trashcan's expanded throwing weapons
-      max_throws = = FS3Combat.weapon_stat("#{weapon}#{special_text}", "throws") || 0
+      max_throws = FS3Combat.weapon_stat("#{weapon}#{special_text}", "throws") || 0
       prior_ammo = combatant.prior_throws || {}
 
       current_throws = max_throws
@@ -179,7 +179,7 @@ module AresMUSH
         combatant.update(prior_throws: prior_throws)
       end
       #/Trashcan's expanded throwing weapons
-      
+
       current_ammo = max_ammo
       if (weapon && prior_ammo[weapon] != nil)
         current_ammo = prior_ammo[weapon]
