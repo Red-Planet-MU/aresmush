@@ -52,11 +52,13 @@ module AresMUSH
       end
       
       def print_action
-        msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+        display_name = Global.read_config('serum',self.serum_name,'display_name')
+        msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => display_name)
       end
       
       def print_action_short
-        t('serum.use_serum_action_msg_short', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+        display_name = Global.read_config('serum',self.serum_name,'display_name')
+        t('serum.use_serum_action_msg_short', :name => self.name, :target => print_target_names, :serum_name => display_name)
       end
       
       def resolve
@@ -67,6 +69,7 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
+        display_name = Global.read_config('serum',self.serum_name,'display_name')
 
         Global.logger.debug "Duration: #{duration} Init_mod: #{init_mod} Lethal_mod: #{lethal_mod} Lethality: #{lethality} armor_mod: #{armor_mod} is_healing: #{is_healing} is_revive: #{is_revive}"
         #Healing serums
@@ -96,12 +99,12 @@ module AresMUSH
           if armor_mod
             self.target.update(serum_armor_mod: armor_mod)
           end
-          message = t('serum.used_serum_combat', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+          message = t('serum.used_serum_combat', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 
         if is_revive
           self.target.update(is_ko: false)
-          message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+          message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
         #track Last used serum
         self.target.update(last_serum: self.serum_name)
