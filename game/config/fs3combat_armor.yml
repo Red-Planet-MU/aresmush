@@ -6,6 +6,19 @@ fs3combat:
       defense: 0
       protection:
         Nowhere: 0
+    Practical:
+      description: Everyday, no-nonsense attire designed to offer protection from the usual dangers and inconveniences of life on the frontier.
+      defense: 0
+      protection:
+        Head: 1
+        Neck: 2
+        Chest: 2
+        Abdomen: 2
+        Right Leg: 2
+        Left Leg: 2
+        Right Arm: 2
+        Left Arm: 2
+        Ass: 0
     Tactical:
       description: Military-Grade Kevlar Vest and Helmet
       defense: 0
