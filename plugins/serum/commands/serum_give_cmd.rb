@@ -20,7 +20,7 @@ module AresMUSH
         end
   
         def handle
-          self.other_client = Login.find_client(self.target)
+          self.other_client = Login.find_game_client(self.target)
           shorties = Global.read_config("serum", "shortcuts")
           serum_types = Global.read_config("serum", "category")
           Global.logger.debug "Shorties: #{shorties}. Serum types: #{serum_types}"

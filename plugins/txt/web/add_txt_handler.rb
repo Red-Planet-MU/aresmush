@@ -122,7 +122,7 @@ module AresMUSH
                     if (r.page_do_not_disturb)
                       nil
                     elsif r.room.scene_id != scene_id
-                      client = Login.find_client(r)
+                      client = Login.find_game_client(r)
                       client.emit recipient_txt
                     else
                       nil
