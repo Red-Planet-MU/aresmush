@@ -1,6 +1,6 @@
 ---
 fs3combat:
-  default_type: Bandit
+  default_type: Cowboy
   allow_vehicles: true
   allow_mounts: true
   stances:
@@ -28,6 +28,10 @@ fs3combat:
   combatant_types:
     Observer:
       hitloc: Humanoid
+    Cowboy:
+      weapon: Revolver
+      hitloc: Humanoid
+      defense_skill: Reflexes
     Bandit:
       weapon: Revolver
       hitloc: Humanoid

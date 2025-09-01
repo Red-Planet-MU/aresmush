@@ -15,6 +15,7 @@ module AresMUSH
         end
   
         def check_errors
+          Global.logger.debug "enactor: #{enactor}. serum_name: #{self.serum_name}"
           return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
         end
   
