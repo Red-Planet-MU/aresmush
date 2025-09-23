@@ -29,11 +29,11 @@ website:
       route: roster
     - divider: true
     - title: About Red Planet
-      url: https://redplanetmu.com/wiki/ooc:about_us
+      url: https://redplanetmu.com/wiki/about_us
   - title: Game
     menu:
     - title: Policies
-      url: https://redplanetmu.com/wiki/ooc:policies
+      url: https://redplanetmu.com/wiki/policies
     - title: Staff Team
       url: https://redplanetmu.com/wiki/staff_team
     - divider: true
