@@ -23,6 +23,8 @@ website:
   top_navbar:
   - title: Intro
     menu:
+    - title: Join Us
+      route: https://redplanetmu.com/wiki/join_us
     - title: Create a Character
       route: chargen
     - title: Pre-Made Characters
