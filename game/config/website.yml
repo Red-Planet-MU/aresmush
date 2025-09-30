@@ -53,6 +53,8 @@ website:
       url: https://redplanetmu.com/wiki/world
     - title: Creatures
       url: https://redplanetmu.com/wiki/world:creatures
+    - title: FAQ
+      url: https://redplanetmu.com/wiki/faq
   - title: Play
     menu:
     - title: Play
