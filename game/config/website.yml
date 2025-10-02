@@ -51,8 +51,21 @@ website:
     menu:
     - title: World
       url: https://redplanetmu.com/wiki/world
+    - title: Citizens
+      url: https://redplanetmu.com/wiki/world:citizens
     - title: Creatures
       url: https://redplanetmu.com/wiki/world:creatures
+    - divider: true
+    - title: Virtue
+      url: https://redplanetmu.com/wiki/world:virtue
+    - title: Beyond Virtue
+      url: https://redplanetmu.com/wiki/world:beyond_virtue
+    - divider: true
+    - title: Technology
+      url: https://redplanetmu.com/wiki/world:technology
+    - title: Society
+      url: https://redplanetmu.com/wiki/world:society
+    - divider: true
     - title: FAQ
       url: https://redplanetmu.com/wiki/faq
   - title: Play
