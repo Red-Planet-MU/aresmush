@@ -3,7 +3,7 @@ fortune:
   category: Other
   shortcuts:
     fortunes: fortune
-  Fortune_List:
+  fortune_list:
     - "Some of your problems are your fault."
     - "A ship in a hangar is safe, but that's not why ships are built."
     - "Your long life is a testament to the self control of your friends."
