@@ -15,7 +15,7 @@ module AresMUSH
 
       def handle
         
-        Fortune.get_fortune()
+        fortune_to_tell = Fortune.get_fortune()
 
         message = t('fortune.told_fortune', :name => enactor.name, :fortune_told => fortune_to_tell)
         enactor.room.emit message
