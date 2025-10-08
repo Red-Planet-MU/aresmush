@@ -14,16 +14,7 @@ module AresMUSH
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
       when 'fortune'
-        case cmd.switch
-        when "off"
-          return LookingForRpOffCommand
-        when "text"
-          return LookingForRpTextCommand
-        when "announce"
-          return LookingForRpAnnounceCommand
-        when nil
-          return LookingForRpCommand
-        end
+        return FortuneCommand
 
 
       end
