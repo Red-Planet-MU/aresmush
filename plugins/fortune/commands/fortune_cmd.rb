@@ -15,7 +15,7 @@ module AresMUSH
 
       def handle
         
-        Fortune.get_fortune()
+        Fortune.get_fortune(fortune)
       end
     end
   end
