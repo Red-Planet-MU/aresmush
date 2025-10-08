@@ -6,7 +6,7 @@ module AresMUSH
       attr_accessor :duration
 
       def parse_args
-        self.fortune = titlecase_arg(cmd.args)
+        #self.fortune = titlecase_arg(cmd.args)
       end
 
       def check_errors
