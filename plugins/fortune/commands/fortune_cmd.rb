@@ -10,7 +10,7 @@ module AresMUSH
       end
 
       def check_errors
-        return t('fortune.no_machine') if room.can_use_fortune != true
+        return t('fortune.no_machine') if enactor.room.can_use_fortune != true
         puts "Getting a fortune."
       end
 
