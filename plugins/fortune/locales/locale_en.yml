@@ -2,8 +2,8 @@
 en:
   fortune:
     told_fortune: "%{name} cracks open a container of Fortune FizzPop which reads: %r'%{fortune_told}'"
-    no_machine: "There is no Fortune FizzPop in this room."
-    expire: "You have turned off 'looking for RP'."
+    no_machine: "There is no Fortune FizzPop machine in this room."
+    cooldown_on: "You've had enough, you freak. Try again in %{duration} minutes."
     rp_request_emit: "%{name} is looking for RP for the next %{duration} hour(s)."
     announce_off: "You have toggled RP Requests announcements off."
     announce_on: "You have toggled RP Requests announcements on."

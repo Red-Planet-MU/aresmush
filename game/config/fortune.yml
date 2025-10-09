@@ -86,3 +86,9 @@ fortune:
     - "When a steer crosses your path, you have reason for doubt."
     - "Choices made in anger cannot be undone."
     - "Change never changes."
+  cron:
+    minute:
+      - 00
+      - 15
+      - 30
+      - 45

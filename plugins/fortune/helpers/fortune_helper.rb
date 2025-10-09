@@ -10,6 +10,9 @@ module AresMUSH
       return fortune_to_tell
     end
 
+    def self.expire(char)
+      char.update(fortune_cooldown_expires_at: nil)
+    end
 
   end
 end
