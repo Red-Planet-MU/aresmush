@@ -59,3 +59,6 @@ game/scripts/aresconfig.js
 .vscode/settings.json
 engine/aresmush/database.rb
 Gemfile.lock
+
+# Admin managed files
+game/config/fortune.yml
