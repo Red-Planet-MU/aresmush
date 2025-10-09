@@ -2,7 +2,7 @@
 en:
   fortune:
     told_fortune: "%{name} cracks open a container of Fortune FizzPop which reads: %r'%{fortune_told}'"
-    set_txt: "You've been set 'looking for txt RP' for the next %{duration} hour(s)."
+    no_machine: "There is no Fortune FizzPop in this room."
     expire: "You have turned off 'looking for RP'."
     rp_request_emit: "%{name} is looking for RP for the next %{duration} hour(s)."
     announce_off: "You have toggled RP Requests announcements off."
