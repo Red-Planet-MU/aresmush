@@ -27,6 +27,7 @@ demographics:
   - physique
   - played by
   - birthdate
+  - horse
   disable_auto_shortcuts: false
   editable_properties:
   - full name
@@ -34,6 +35,7 @@ demographics:
   - gender
   - hair
   - physique
+  - horse
   genders:
     Male:
       possessive_pronoun: his
@@ -57,49 +59,10 @@ demographics:
       values:
         Exile: You were born on Earth and exiled to Mars for committing crime(s).
         BOMB: You are a Born on Mars Baby, and Mars is all you have ever known.
-    Department:
-      wiki: ''
-      desc: The ship is divided into several departments.  See the wiki for details.
-      values:
-        Air Wing: Viper and Raptor crews and deckhands. (Officers and Enlisted)
-        Marines: Boots on the ground. (Enlisted only)
-        Support: Support personnel - Deck crew, medical. (Officers and Enlisted)
-    Colony:
-      desc: Your character's home world.
-      wiki: ''
-      values:
-        Aerilon: Bread basket of the colonies.
-        Aquaria: Cold, harsh world popular with tourists.
-        Canceron: Crowded and hot, a developing nation.
-        Caprica: Rich center of colonial culture and industry.
-        Gemenon: Fundamentalist religion and isolationist people.
-        Leonis: Old imperialist empire in decline, still known for culture and fashion.
-        Libran: Neutral colony renowned for fostering inter-colonial cooperation.
-        Picon: Water world famous for its beaches and strong navy.
-        Sagittaron: Poor colony, oft-exploited, now carved into several protectorates.
-        Scorpia: Lush jungles and bitter clan warfare. Home to shipyards constructing
-          the Battlestars.
-        Tauron: An up-and-coming socialist republic with a strong agricultural base
-          and developing industries.
-        Virgon: A monarchy in decline, clinging to old traditions.
     Occupation:
       desc: Job.
       wiki: ''
       values:
-        Viper Pilot: Navy Viper pilot.
-        Raptor Pilot: Navy Raptor pilot.
-        Raptor ECO: Navy Raptor Electronic Countermeasures Officer
-        Rifleman: Marine rifleman.
-        Gunner: Marine support/heavy weapons specialist.
-        Combat Engineer: Marine demolitions, construction, maintenance.
-        Recon: Marine scout.
-        Combat Medic: Marine medic.
-        Doctor: Navy doc.
-        Nurse: Navy nurse.
-        Corpsman: Navy medic.
-        Medical Support: Other medical personnel.
-        Deck Crew: Air wing support/maintenance personnel.
-        Other: Any other position.
   help_text:
     played by: "%xcplayedby <actor>%xn - Your 'dream casting' for your character."
     physique: "%xcphysique <build/body type>%xn - athletic, wiry, slim, pudgy, etc."
@@ -127,9 +90,9 @@ demographics:
   - full name
   - gender
   - birthdate
+  - horse
   shortcuts:
     groups: group
-    colonies: group colony
     demographics: demographic
     birthday: birthdate
     actors: census played by
