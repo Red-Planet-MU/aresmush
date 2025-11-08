@@ -10,12 +10,12 @@ demographics:
     value: gender
   - field: group
     width: 20
-    title: Faction
-    value: Faction
+    title: Origin
+    value: Origin
   - field: group
     width: 20
-    title: Position
-    value: Position
+    title: Occupation
+    value: Occupation
   demographics:
   - full name
   - callsign
@@ -51,12 +51,12 @@ demographics:
       objective_pronoun: them
       noun: person
   groups:
-    Faction:
-      desc: Military faction.
+    Origin:
+      desc: Was your character Exiled to Mars, or born there?
       wiki: ''
       values:
-        Navy: Join the fleet, see the worlds.
-        Marines: Semper fi.
+        Exile: You were born on Earth and exiled to Mars for committing crime(s).
+        BOMB: You are a Born on Mars Baby, and Mars is all you have ever known.
     Department:
       wiki: ''
       desc: The ship is divided into several departments.  See the wiki for details.
@@ -82,7 +82,7 @@ demographics:
         Tauron: An up-and-coming socialist republic with a strong agricultural base
           and developing industries.
         Virgon: A monarchy in decline, clinging to old traditions.
-    Position:
+    Occupation:
       desc: Job.
       wiki: ''
       values:
