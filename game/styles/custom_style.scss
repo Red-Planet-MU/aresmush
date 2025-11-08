@@ -9,3 +9,18 @@
   float: right;
   width: 400px;
   transform: rotate(-1deg); }
+
+  .creature-wrap {
+  background: #72191a }
+  .creature-wrap .index-card {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 30px; }
+  .creature-wrap .card-title {
+    display: flex;
+    flex-flow: row nowrap; }
+  .creature-wrap .card-header {
+    height: 60px;
+    background: linear-gradient(#fefbf7, #fefbf7 57px, pink 59px, pink 60px); }
+  .creature-wrap .col-md-4 {
+    padding: 0px; }
