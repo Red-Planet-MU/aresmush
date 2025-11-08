@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: "Dust West";
-  src: url('aresmush/game/uploads/theme_images/dustwest.eot');
-  src: url('aresmush/game/uploads/theme_images/dustwest.eot') format('embedded-opentype'),
-       url('aresmush/game/uploads/theme_images/dustwest.woff2') format('woff2'),
-       url('aresmush/game/uploads/theme_images/dustwest.woff') format('woff'),
-       url('aresmush/game/uploads/theme_images/dustwest.ttf') format('truetype');
+  src: url('dustwest.eot');
+  src: url('dustwest.eot') format('embedded-opentype'),
+       url('dustwest.woff2') format('woff2'),
+       url('dustwest.woff') format('woff'),
+       url('dustwest.ttf') format('truetype');
 }
 
 $body-font: "Open Sans", sans-serif;
