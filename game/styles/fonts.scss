@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+@font-face {
+  font-family: "Dust West";
+  src: url('game/uploads/theme_images/dustwest.eot');
+  src: url('game/uploads/theme_images/dustwest.eot') format('embedded-opentype'),
+       url('game/uploads/theme_images/dustwest.woff2') format('woff2'),
+       url('game/uploads/theme_images/dustwest.woff') format('woff'),
+       url('game/uploads/theme_images/dustwest.ttf') format('truetype');
+}
+
 $body-font: "Open Sans", sans-serif;
-$primary-font: "Big Shoulders Stencil", sans-serif;
+$primary-font: "Dust West", sans-serif;
+//$primary-font: "Big Shoulders Stencil", sans-serif;
 $secondary-font: $body-font;
