@@ -10,6 +10,12 @@
     font-family: $primary-font;
     font-size: 1.5em;
 }
+.site-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 
 /* Wiki Page */
 .toc {
