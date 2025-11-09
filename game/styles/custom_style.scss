@@ -128,3 +128,14 @@ body {
   transform: rotate(1deg);
   z-index: -2;
 }
+
+.sidebar-box-right {
+    border-left: none;
+    padding-left: 10px;
+}
+
+.sidebar-box {
+    border-top: none;
+    margin: 2px;
+    font-size: .9em;
+}
