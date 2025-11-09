@@ -8,14 +8,17 @@
 .site-subtitle {
     text-transform: uppercase;  
     font-family: $primary-font;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 .site-banner {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
+.navbar {
+  text-transform: uppercase;
+}
 
 /* Wiki Page */
 .toc {
