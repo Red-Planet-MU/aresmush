@@ -3,6 +3,9 @@
 /* Site Header Formatting */
 .site-title {
   font-size: 4em;
+  letter-spacing: 0.1em;
+  border-top: 0;
+  border-bottom: 0; 
 }
 
 .site-subtitle {
@@ -36,7 +39,7 @@
   letter-spacing: normal; }
 
 .dropdown-item {
-  font-size: 1em;
+  font-size: 1.15em;
 }
 
 /* Wiki Page */
