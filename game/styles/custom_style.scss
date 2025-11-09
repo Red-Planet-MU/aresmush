@@ -51,7 +51,7 @@ body {
   font-family: $primary-font;
 }
 
-.sidebar-heading .fa-video {
-  font-size: .5em;
-  color: green;
+.sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
+  font-size: .8em;
+  padding: 0.3em;
 }
