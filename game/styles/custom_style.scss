@@ -118,14 +118,14 @@ body {
 .right-sidebar::before {
   right: 15px;
   top: 0;
-  transform: rotate(-1deg);
+  transform: rotate(-3deg);
   z-index: -1;
 }
 
 .right-sidebar::after {
   top: 5px;
   right: -5px;
-  transform: rotate(1deg);
+  transform: rotate(3deg);
   z-index: -2;
 }
 
