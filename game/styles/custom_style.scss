@@ -5,6 +5,12 @@
   font-size: 5em;
 }
 
+.site-subtitle {
+    font-size: 1.2em;
+    text-transform: uppercase;  
+    font-family: $primary-font;
+}
+
 /* Wiki Page */
 .toc {
   position: relative;
