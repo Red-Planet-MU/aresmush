@@ -17,7 +17,16 @@
     font-display: swap;
 }
 
-$header-font: "IM Fell English SC", serif;
+@font-face {
+    font-family: 'kirstyregular';
+    src: url('kirsty_rg-webfont.woff2') format('woff2'),
+         url('kirsty_rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$header-font: "kirstyregular", serif;
+//$header-font: "IM Fell English SC", serif;
 $body-font: "Bellefair", serif;
 //$body-font: "Open Sans", sans-serif;
 $primary-font: "Dust West", sans-serif;
