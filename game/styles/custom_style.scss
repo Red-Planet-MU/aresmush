@@ -78,7 +78,10 @@ body {
 }
 
 .body-container {
-  z-index: -4; }
+  z-index: 1; }
+
+.left-body {
+  z-index: -1; }
 
 /* Sidebar */
 .sidebar-heading h2 {
