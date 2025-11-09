@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+
 @font-face {
     font-family: 'Dust West';
     src: url('DustWest.eot');
@@ -12,6 +15,7 @@
     font-display: swap;
 }
 
+$header-font: "Bellefair", serif;
 $body-font: "Open Sans", sans-serif;
 $primary-font: "Dust West", sans-serif;
 //$primary-font: "Big Shoulders Stencil", sans-serif;

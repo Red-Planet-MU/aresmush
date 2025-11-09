@@ -6,9 +6,9 @@
 }
 
 .site-subtitle {
-    font-size: 1.2em;
     text-transform: uppercase;  
     font-family: $primary-font;
+    font-size: 1.5em;
 }
 
 /* Wiki Page */
@@ -20,6 +20,26 @@
   float: right;
   width: 400px;
   transform: rotate(-1deg); }
+
+/* General HTML Elements */ 
+h1
+{
+    background-color: $primary-color;
+    padding: .1em 1.2em;
+    color: $primary-words-color;
+    font-weight: normal;
+    border: 3px solid $primary-outline-color;
+    letter-spacing: 0.1em;    
+    margin: 0px 0px 10px 0px;
+    font-family: $header-font;
+}
+
+h2
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: $header-font;    
+}
 
 /* Sidebar */
 .sidebar-heading h2 {
