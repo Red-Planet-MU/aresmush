@@ -8,7 +8,11 @@
 .site-subtitle {
     text-transform: uppercase;  
     font-family: $primary-font;
-    font-size: 1.4em;
+    font-size: 1.3em;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    left: 10%;
+    position: relative; 
 }
 .site-banner {
   display: flex;
@@ -18,6 +22,7 @@
 
 .navbar-dark .navbar-nav .nav-link {
   text-transform: uppercase;
+  font-size: .9
 }
 
 /* Wiki Page */
