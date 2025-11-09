@@ -77,6 +77,10 @@ body {
   font-size: 1.15em;
 }
 
+.body-container {
+  z-index: -3;
+}
+
 /* Sidebar */
 .sidebar-heading h2 {
   font-size: 2em;
