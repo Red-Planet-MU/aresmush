@@ -80,10 +80,6 @@ body {
 .body-container {
   z-index: 1; }
 
-.left-body {
-  z-index: -3;
-}
-
 /* Sidebar */
 .sidebar-heading h2 {
   font-size: 2em;
@@ -101,7 +97,6 @@ body {
   background-color: #d6bc9b; 
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: relative;
   z-index: 3
 }
 
