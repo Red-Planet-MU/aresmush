@@ -81,9 +81,11 @@ body {
 .sidebar-heading h2 {
   font-size: 2em;
   font-family: $primary-font;
+  background-color: #b09d8c
 }
 
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
   font-size: .8em;
   padding: 0.3em;
 }
+
