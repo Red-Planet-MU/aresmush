@@ -81,7 +81,7 @@ body {
 .sidebar-heading h2 {
   font-size: 2em;
   font-family: $primary-font;
-  background-color: #b09d8c
+  background-color: #9e7858;
 }
 
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
@@ -89,3 +89,5 @@ body {
   padding: 0.3em;
 }
 
+.right-sidebar {
+  background-color: #9e8570; }
