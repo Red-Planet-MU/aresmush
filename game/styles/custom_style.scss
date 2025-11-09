@@ -54,6 +54,26 @@
   transform: rotate(-1deg); }
 
 /* General HTML Elements */ 
+
+.body-wrap {
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: minmax(75%, 2150px) auto;
+}
+
+@media screen and (min-width: 1470px) {
+	body {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.body-wrap,
+	.body-container {
+		padding: 0px;
+	}
+}
+
 h1
 {
     background-color: $primary-color;
