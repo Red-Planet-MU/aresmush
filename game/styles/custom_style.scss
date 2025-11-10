@@ -251,18 +251,22 @@
 
 h1
 {
-    background-color: $primary-color;
-    padding: .1em 1.2em;
-    color: $primary-words-color;
-    font-weight: normal;
-    border: 3px solid $primary-outline-color;
-    letter-spacing: 0.1em;    
-    margin: 0px 0px 10px 0px;
-    font-family: $primary-font;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 3em;
+  background-color: $primary-color;
+  background-image: url(/game/uploads/theme_images/header-left.png), url(/game/uploads/theme_images/header-right.png);
+  background-size: contain, contain;
+  background-repeat: no-repeat;
+  background-position: left, right;
+  padding: .1em 1.2em;
+  color: $primary-words-color;
+  font-weight: normal;
+  border: 3px solid $primary-outline-color;
+  letter-spacing: 0.1em;    
+  margin: 0px 0px 10px 0px;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 3em;
 }
 
 h2
