@@ -333,8 +333,7 @@ body {
   //padding: 30px;
   min-width: 450px;
   background-image: url("/game/uploads/theme_images/paper_tex.png");
-  background-repeat: no-repeat;
-  background-clip: content-box;
+  max-height: 2000px;
 }
 
 @media screen and (max-width: 1400px) {
