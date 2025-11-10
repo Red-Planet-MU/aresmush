@@ -144,6 +144,7 @@
 //    0 20px 1px -9px rgba(0,0,0,0.15);
     /* Padding for demo purposes */
   padding: 30px;
+  font-family: $script-font2;
 }
 
 .toc,
@@ -317,6 +318,7 @@ body {
     border-left: none;
     padding-left: 10px;
     color:#090909; 
+    font-family: $script-font;
 }
 
 .sidebar-box-right p {
