@@ -207,8 +207,10 @@ h1
     border: 3px solid $primary-outline-color;
     letter-spacing: 0.1em;    
     margin: 0px 0px 10px 0px;
-    font-family: $header-font;
+    font-family: $primary-font;
     text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h2
