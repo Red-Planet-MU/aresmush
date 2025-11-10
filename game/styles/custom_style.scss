@@ -144,9 +144,14 @@
 //    0 20px 1px -9px rgba(0,0,0,0.15);
     /* Padding for demo purposes */
   padding: 30px;
-  font-family: $script-font2;
+  font-family: $type-font;
   background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
+
+.toc h4 {
+  font-family: $fancy-header-font;
+  word-spacing: 10px;
+  }
 
 .toc,
 .toc::before,
@@ -320,7 +325,7 @@ body {
     border-left: none;
     padding-left: 10px;
     color:#090909; 
-    font-family: $script-font;
+    font-family: $type-font;
 }
 
 .sidebar-box-right p {
