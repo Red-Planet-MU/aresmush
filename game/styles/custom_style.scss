@@ -307,6 +307,19 @@ body {
   background-position: left, right;
 }
 
+.sidebar-heading h2::before {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #fc91a1;
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
   font-size: .8em;
   padding: 0.3em;
