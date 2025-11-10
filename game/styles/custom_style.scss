@@ -307,17 +307,15 @@ body {
   background-position: left, right;
 }
 
-.sidebar-heading h2::before {
-  content: "";
-  position: absolute;
-  height: 95%;
-  width: 99%;
-  background-color: #fc91a1;
-  top: 5px;
-  right: -5px;
-  transform: rotate(1deg);
-  z-index: -2;
-  background-image: url("/game/uploads/theme_images/paper_tex.png");
+.sidebar-heading h2:before {
+    content: '';
+    position: absolute;
+    z-index: -1; /* push it to the background */
+    top: 12px; /* position it off the top background */
+    right: 0;
+    bottom: 12px; /* position it off the bottom background */
+    left: 0;
+    background: url(/game/uploads/theme_images/sidebar-header-left.png) top left repeat-y;
 }
 
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
