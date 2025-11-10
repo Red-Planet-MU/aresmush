@@ -301,7 +301,10 @@ body {
   border-bottom: 0px; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("/game/uploads/theme_images/stamp-tex.png");
+  background-image: url(/game/uploads/theme_images/sidebar-header-left.png), url(/game/uploads/theme_images/sidebar-header-right.png);
+  background-size: contain, contain;
+  background-repeat: no-repeat;
+  background-position: left, right;
 }
 
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
