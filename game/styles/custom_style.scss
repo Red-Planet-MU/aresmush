@@ -301,11 +301,10 @@ body {
   border-bottom: 0px; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(/game/uploads/theme_images/sidebar-header-left.png), url(/game/uploads/theme_images/sidebar-header-right.png);
-  background-size: contain, contain;
+  background-image: url(/game/uploads/theme_images/sidebar-header-left.png), linear-gradient(to right, rgba(115,23,46,0), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,23,46,0)), url(/game/uploads/theme_images/sidebar-header-right.png);
+  background-size: contain, auto, contain;
   background-repeat: no-repeat;
-  background-position: left, right;
-  background-clip: content-box;
+  background-position: left, center, right;
 }
 
 
