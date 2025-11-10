@@ -313,7 +313,6 @@ body {
   padding: 0.3em;
 }
 
-
 .right-sidebar {
   background-color: #ffe8cf; 
   padding: 30px;
@@ -333,7 +332,6 @@ body {
   //padding: 30px;
   min-width: 450px;
   background-image: url("/game/uploads/theme_images/paper_tex.png");
-  max-height: 2000px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -347,44 +345,59 @@ body {
   }
 }
 
+.sidebar-box-right {
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+  background-color: #ffe8cf; 
+  position: relative;
+  border-radius: 0;
+  margin-left: 100px;
+  margin-right: 25px;
+  float: right;
+  width: 400px;
+  background-color: #ffe8cf;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15);
+  border-left: none;
+  padding-left: 10px;
+  color:#090909; 
+  font-family: $body-font;
+}
 
-/*.right-sidebar,
-.right-sidebar::before,
-.right-sidebar::after {
-
+.sidebar-box-right,
+.sidebar-box-right::before,
+.sidebar-box-right::after {
+  /* Styles to distinguish sheets from one another */
   box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
   border: 1px solid #bbb;
 }
 
-.right-sidebar::before,
-.right-sidebar::after {
+.sidebar-box-right::before {
   content: "";
   position: absolute;
   height: 95%;
-  width: 120%;
-  background-color: #b59b7b;
-}
-
-.right-sidebar::before {
+  width: 99%;
+  background-color: #d6bc9b;
   right: 15px;
   top: 0;
-  transform: rotate(-3deg);
+  transform: rotate(-1deg);
   z-index: -1;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
-.right-sidebar::after {
+.sidebar-box-right::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
   top: 5px;
   right: -5px;
-  transform: rotate(3deg);
+  transform: rotate(1deg);
   z-index: -2;
-} */
-
-.sidebar-box-right {
-    border-left: none;
-    padding-left: 10px;
-    color:#090909; 
-    font-family: $body-font;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
+
 
 .sidebar-box-right p {
         line-height: 1.6;
