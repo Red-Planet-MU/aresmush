@@ -122,9 +122,25 @@
 }
 
 /* Front Page */
+
+.jumbotron img {
+  width: unset;
+  margin: 15px; }
+
 .jumbotron-tagline {
-  font-family: $header-font
+  font-size: 1.8em;
+  margin: 15px;
+  font-family: $header-font;
+  word-spacing: 3px; }
+
+.jumbotron .splash {
+  width: 90%;
+  font-size: .65em;
 }
+
+.jumbotron p {
+  font-size: unset;
+  text-align: left; }
 
 /* Wiki Page */
 .toc {
