@@ -186,7 +186,7 @@
 .toc ul {
   width: 100%;
   height: fit-content;
-  background: repeating-linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 23px, rgba(156, 156, 156, .5) 24px, rgba(156, 156, 156, .5) 25px);
+  background: repeating-linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 22px, rgba(156, 156, 156, .5) 23px, rgba(156, 156, 156, .5) 24px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -256,8 +256,7 @@ h1
   background-size: contain, contain, contain, contain;
   background-repeat: no-repeat;
   background-position: left, right, top, bottom;
-  border-image: url(/game/uploads/theme_images/header-top.png) 100% 0 0 0;
-  border: transparent;
+  border-image: url(/game/uploads/theme_images/header-border.png) 20% round;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
   padding: .1em 1.2em;
