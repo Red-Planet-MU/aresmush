@@ -20,8 +20,27 @@
 }
 
 @media screen and (max-width: 1400px) {
+	.site-title {
+		font-size: 3em;
+		max-height: unset;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.site-title {
+		border: 0;
+		font-size: 3em;
+		text-align: center;
+	}
 	.site-subtitle {
-		bottom: 0px;
+		font-size: 1.2em;
+		text-align: center;
+	}
+	.title-wrap {
+		background-color: rgba(0, 0, 0, 0.25)!important;
+	}
+	.account-actions {
+		display: none;
 	}
 }
 
