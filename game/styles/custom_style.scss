@@ -256,6 +256,9 @@ h1
   background-size: contain, contain;
   background-repeat: no-repeat;
   background-position: left, right;
+  border: transparent;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
   padding: .1em 1.2em;
   color: $primary-words-color;
   font-weight: normal;
