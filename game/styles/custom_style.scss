@@ -121,6 +121,11 @@
   font-size: 1em;
 }
 
+/* Front Page */
+.jumbotron-tagline {
+  font-family: $header-font
+}
+
 /* Wiki Page */
 .toc {
   color:#3c3932; 
