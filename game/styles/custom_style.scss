@@ -345,6 +345,12 @@ body {
   }
 }
 
+.sidebar-box {
+    border-top: none;
+    font-size: .9em;
+    position: relative;
+}
+
 .sidebar-box-right {
   background-image: url("/game/uploads/theme_images/paper_tex.png");
   background-color: #ffe8cf; 
@@ -405,12 +411,6 @@ body {
 
 .sidebar-box-right a {
   color: #660d0e;
-}
-
-.sidebar-box {
-    border-top: none;
-    font-size: .9em;
-    position: relative;
 }
 
 
