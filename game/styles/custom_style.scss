@@ -58,7 +58,7 @@
 .body-wrap {
 	padding: 0 1rem;
 	display: grid;
-	grid-template-columns: minmax(50%, 2150px) 50%;
+	grid-template-columns: minmax(75%, 2150px) auto;
 }
 
 @media screen and (min-width: 1470px) {
@@ -110,6 +110,9 @@ body {
   font-family: $primary-font;
   background-color: $primary-color;
   color: #FFFFFF;
+  padding: 10px;
+  width: auto;
+  border-bottom: 0px; 
 }
 
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
@@ -179,6 +182,11 @@ body {
 .sidebar-box-right {
     border-left: none;
     padding-left: 10px;
+}
+
+.sidebar-box-right p {
+        line-height: 1.6;
+        margin: 0 0 10px;
 }
 
 .sidebar-box {
