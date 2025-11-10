@@ -176,6 +176,7 @@
   top: 0;
   transform: rotate(-1deg);
   z-index: -1;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
 .toc::after {
@@ -188,6 +189,7 @@
   right: -5px;
   transform: rotate(1deg);
   z-index: -2;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
 /* General HTML Elements */ 
