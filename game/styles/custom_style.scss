@@ -259,7 +259,7 @@ body {
     0 -20px 1px -9px rgba(0,0,0,0.15);
     /* Padding for demo purposes */
   //padding: 30px;
-  //min-width: 450px;
+  min-width: 450px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -320,4 +320,12 @@ body {
     border-top: none;
     margin: 2px;
     font-size: .9em;
+}
+
+/* Grid Flexibility */
+@media screen and (max-width: 1000px) {
+	.body-wrap,
+	.fs3-sheet {
+		grid-template-columns: 100%;
+	}
 }
