@@ -130,7 +130,7 @@
   margin-right: 25px;
   float: right;
   width: 400px;
-  background-color: #d6bc9b;
+  background-color: #e2d1be;
 //  box-shadow:
     /* The top layer shadow */
 //    0 1px 1px rgba(0,0,0,0.15),
@@ -166,16 +166,12 @@
   border: 1px solid #bbb;
 }
 
-.toc::before,
-.toc::after {
+.toc::before {
   content: "";
   position: absolute;
   height: 95%;
   width: 99%;
-  background-color: #b29877;
-}
-
-.toc::before {
+  background-color: #b7cebe;
   right: 15px;
   top: 0;
   transform: rotate(-1deg);
@@ -183,6 +179,11 @@
 }
 
 .toc::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #fc91a1;
   top: 5px;
   right: -5px;
   transform: rotate(1deg);
