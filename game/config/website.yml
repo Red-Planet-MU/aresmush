@@ -27,7 +27,7 @@ website:
       url: https://redplanetmu.com/wiki/join_us
     - title: Create a Character
       route: chargen
-    - title: Pre-Made Characters
+    - title: Roster Characters
       route: roster
     - divider: true
     - title: About Red Planet
@@ -91,8 +91,8 @@ website:
     menu:
     - title: Characters
       route: characters
-    - title: Creatures
-      url: https://redplanetmu.com/wiki/creatures
+    - title: Dangers
+      url: https://redplanetmu.com/wiki/dangers
     - divider: true
     - title: Players
       route: players
