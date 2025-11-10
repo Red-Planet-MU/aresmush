@@ -237,6 +237,8 @@ body {
   padding: 10px;
   width: auto;
   border-bottom: 0px; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .sidebar-heading .fa-video, .fa-users, .fa-calendar, .fa-book, .fa-comments, .fa-file-alt {
