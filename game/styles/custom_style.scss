@@ -252,10 +252,10 @@
 h1
 {
   background-color: $primary-color;
-  background-image: url(/game/uploads/theme_images/header-left.png), url(/game/uploads/theme_images/header-right.png);
-  background-size: contain, contain;
+  background-image: url(/game/uploads/theme_images/header-left.png), url(/game/uploads/theme_images/header-right.png), url(/game/uploads/theme_images/header-top.png),url(/game/uploads/theme_images/header-bottom.png);
+  background-size: contain, contain, contain, contain;
   background-repeat: no-repeat;
-  background-position: left, right;
+  background-position: left, right, top, bottom;
   border: transparent;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
