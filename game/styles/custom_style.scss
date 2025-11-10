@@ -106,6 +106,12 @@
 	}
 }
 
+@media (max-width: 1400px) {
+	.navbar-collapse {
+		background-color: inherit;
+	}
+}
+
 .dropdown-menu {
   //background-color: #0c1119;
   //background-image: url("/game/uploads/theme_files/rust-texture_50opac.png");
