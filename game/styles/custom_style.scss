@@ -1,6 +1,20 @@
 /* Put any custom styles here.  They will override the default styles. */
 
 /* Site Header Formatting */
+
+.header-wrap {
+	height: 300px;
+}
+
+@media screen and (max-width: 991px) {
+	.title-wrap {
+		height: 148px!important;
+	}
+	.header-wrap {
+		height: 200px!important;
+	}
+}
+
 .site-title {
   font-size: 4em;
   letter-spacing: 0.1em;
