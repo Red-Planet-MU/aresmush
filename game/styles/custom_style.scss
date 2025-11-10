@@ -363,15 +363,15 @@ body {
   margin-bottom: 10px;
 }
 
-.sidebar-box-right,
-.sidebar-box-right::before,
-.sidebar-box-right::after {
+.sidebar-box,
+.sidebar-box::before,
+.sidebar-box::after {
   /* Styles to distinguish sheets from one another */
   box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
   border: 1px solid #bbb;
 }
 
-.sidebar-box-right::before {
+.sidebar-box::before {
   content: "";
   position: absolute;
   height: 150%;
@@ -384,7 +384,7 @@ body {
   background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
-.sidebar-box-right::after {
+.sidebar-box::after {
   content: "";
   position: absolute;
   height: 95%;
@@ -410,6 +410,7 @@ body {
 .sidebar-box {
     border-top: none;
     font-size: .9em;
+    position: relative;
 }
 
 
