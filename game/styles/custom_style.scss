@@ -56,14 +56,16 @@
 }
 
 .site-subtitle {
-    text-transform: uppercase;  
-    font-family: $primary-font;
-    font-size: 1.3em;
-    word-spacing: 5px;
-    letter-spacing: 2px;
-    left: 10%;
-    bottom: 10%;
-    position: relative; 
+  text-transform: uppercase;  
+  font-family: $primary-font;
+  font-size: 1.3em;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+  left: 10%;
+  bottom: 10%;
+  position: relative; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .site-banner {
   display: flex;
