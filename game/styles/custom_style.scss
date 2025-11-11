@@ -374,10 +374,10 @@ body {
   color:#090909; 
   font-family: $body-font;
   width: 92%;
-  margin: -2px;
+  margin: 0px;
 }
 
-.sidebar-box-right::after {
+.sidebar-box-right:last-of-type {
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
     /* The top layer shadow */
