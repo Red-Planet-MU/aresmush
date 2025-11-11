@@ -374,7 +374,22 @@ body {
   color:#090909; 
   font-family: $body-font;
   width: 92%;
-  margin: -5px;
+  margin: -2px;
+}
+
+.sidebar-box-right::after {
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #d6bc9b,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #d6bc9b,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
 }
 
 
