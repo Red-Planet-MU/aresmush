@@ -11,41 +11,6 @@
   background-color: unset;
 }
 
-@media screen and (max-width: 991px) {
-	.title-wrap {
-		height: 148px!important;
-	}
-	.header-wrap {
-		height: 200px!important;
-	}
-}
-
-@media screen and (max-width: 1400px) {
-	.site-title {
-		font-size: 3em;
-		max-height: unset;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.site-title {
-		border: 0;
-		font-size: 1.5em;
-		text-align: center;
-	}
-	.site-subtitle {
-		font-size: 1em;
-		text-align: center;
-    left: unset;
-	}
-	.title-wrap {
-		background-color: rgba(0, 0, 0, 0.25)!important;
-	}
-	.account-actions {
-		display: none;
-	}
-}
-
 .site-title,
 .site-title a,
 .site-title a:hover,
@@ -83,6 +48,41 @@
 .navbar-dark .navbar-nav .nav-link {
   text-transform: uppercase;
   font-size: .9em
+}
+
+@media screen and (max-width: 991px) {
+	.title-wrap {
+		height: 148px!important;
+	}
+	.header-wrap {
+		height: 200px!important;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.site-title {
+		font-size: 3em;
+		max-height: unset;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.site-title {
+		border: 0;
+		font-size: 1.5em;
+		text-align: center;
+	}
+	.site-subtitle {
+		font-size: 1em;
+		text-align: center;
+    left: unset;
+	}
+	.title-wrap {
+		background-color: rgba(0, 0, 0, 0.25)!important;
+	}
+	.account-actions {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
