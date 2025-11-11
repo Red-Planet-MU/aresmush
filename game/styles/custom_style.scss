@@ -68,7 +68,7 @@
   word-spacing: 5px;
   letter-spacing: 2px;
   position: relative; 
-  bottom: 10px;
+  bottom: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
@@ -239,7 +239,7 @@
 .body-wrap {
 	padding: 0 1rem;
 	display: grid;
-	grid-template-columns: minmax(70%, 75%) auto;
+	grid-template-columns: minmax(68%, 73%) auto;
 }
 
 @media screen and (min-width: 1470px) {
@@ -372,13 +372,12 @@ body {
   padding-left: 10px;
   color:#090909; 
   font-family: $body-font;
-  width: 92%;
+  width: 90%;
   margin: 0px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
           -5px 10px 0 5px #d6bc9b,
   			  -5px 10px 11px 4px rgba(0,0,0,0.15),
-  			  -10px 20px 0 7px #d6bc9b,
-  			  -10px 20px 11px 6px rgba(0,0,0,0.15);
+  			  -10px 20px 0 7px #d6bc9b;
 }
 
 .sidebar-box-right:last-of-type {
