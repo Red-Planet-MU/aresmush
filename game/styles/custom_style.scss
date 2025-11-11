@@ -58,7 +58,7 @@
   text-shadow: 3px 3px #090909;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #d0412b;
+  color: #d0362b;
   font-weight: normal;
 }
 
@@ -375,6 +375,10 @@ body {
   font-family: $body-font;
   width: 92%;
   margin: 0px;
+  box-shadow: -5px 10px 0 5px #d6bc9b,
+  			  -5px 10px 11px 4px rgba(0,0,0,0.15),
+  			  -10px 20px 0 7px #d6bc9b,
+  			  -10px 20px 11px 6px rgba(0,0,0,0.15);
 }
 
 .sidebar-box-right:last-of-type {
