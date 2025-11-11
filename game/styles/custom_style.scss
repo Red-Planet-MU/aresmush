@@ -58,7 +58,7 @@
   text-shadow: 3px 3px #090909;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #732b1a;
+  color: #a51e00;
   font-weight: normal;
 }
 
@@ -72,7 +72,7 @@
   position: relative; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #732b1a;
+  color: #a51e00;
   text-shadow: 1px 1px #090909;
 }
 .site-banner {
@@ -369,18 +369,6 @@ body {
   position: relative;
   border-radius: 0;
   float: right;
-  box-shadow:
-    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
-    /* The top layer shadow */
-    0 1px 1px rgba(0,0,0,0.15),
-    /* The second layer */
-    0 10px 0 -5px #d6bc9b,
-    /* The second layer shadow */
-    0 10px 1px -4px rgba(0,0,0,0.15),
-     /* The third layer */
-    0 20px 0 -10px #d6bc9b,
-    /* The third layer shadow */
-    0 20px 1px -9px rgba(0,0,0,0.15);
   border-left: none;
   padding-left: 10px;
   color:#090909; 
