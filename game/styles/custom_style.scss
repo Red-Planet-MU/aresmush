@@ -429,6 +429,23 @@ body {
 
 .profile-title {
   font-size: 3em;
+  background-size: contain, contain;
+  background-repeat: no-repeat;
+  background-position: left, right;
+  border: transparent;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: .1em 1.5em;
+  color: $primary-words-color;
+  font-weight: normal;
+  letter-spacing: 0.1em;    
+  margin: 0px 25px 10px 0px;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 3em;
+  width: fit-content; 
 }
 
 
