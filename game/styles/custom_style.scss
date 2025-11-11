@@ -358,6 +358,7 @@ body {
   border-radius: 0;
   float: right;
   box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
     /* The top layer shadow */
     0 1px 1px rgba(0,0,0,0.15),
     /* The second layer */
@@ -372,7 +373,7 @@ body {
   padding-left: 10px;
   color:#090909; 
   font-family: $body-font;
-  width: 90%;
+  width: 95%;
   margin-bottom: 10px;
 }
 
