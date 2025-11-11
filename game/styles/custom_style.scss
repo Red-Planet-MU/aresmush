@@ -406,18 +406,25 @@ body {
   border-color: #f7f1ec; }
 
 .profile-wrap {
-  border-radius: 8px;
-  border: 1px solid #011C26;
-  background-color: #1F252F;
-  margin-top: 5px;
-  padding: 15px;
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("/game/uploads/theme_images/box-bg.png"); 
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+	border: 0;
+	border-radius: 0;
+	display: grid;
+	grid-template-columns: 460px auto;
+	gap: 20px;
+	justify-content: unset;
+	margin-top: 12px;
+}
+
+.profile-box {
+	background-color: $background-color;
+	border-radius: 4px;
+	margin: 0 auto;
+	width: 100%
+}
+
+.profile-image-wrap {
+	flex-basis: 40%;
+	margin: 0 auto 10px auto;
 }
 
 
