@@ -46,7 +46,11 @@
 	}
 }
 
-.site-title {
+.site-title,
+.site-title a,
+.site-title a:hover,
+.site-title a:active,
+.site-title a:focus {
   font-size: 4em;
   letter-spacing: 0.1em;
   border-top: 0;
