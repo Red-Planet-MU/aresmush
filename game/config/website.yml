@@ -80,6 +80,8 @@ website:
       route: scenes-unshared
     - title: Start New Scene
       route: scene-create
+    - title: Combats
+      route: combats
   - title: Story
     menu:
     - title: Scenes
