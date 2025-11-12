@@ -12,22 +12,22 @@ demographics:
     width: 20
     title: Origin
     value: Origin
-  - field: group
+  - field: demographic
     width: 20
     title: Occupation
     value: Occupation
   demographics:
   - full name
-  - callsign
   - gender
   - hair
   - eyes
   - skin
   - height
   - physique
+  - occupation
+  - horse
   - played by
   - birthdate
-  - horse
   disable_auto_shortcuts: false
   editable_properties:
   - full name
@@ -36,6 +36,7 @@ demographics:
   - hair
   - physique
   - horse
+  - occupation
   genders:
     Male:
       possessive_pronoun: his
@@ -59,10 +60,6 @@ demographics:
       values:
         Exile: You were born on Earth and exiled to Mars for committing crime(s).
         BOMB: You are a Born on Mars Baby, and Mars is all you have ever known.
-    Occupation:
-      desc: Job.
-      wiki: ''
-      values:
   help_text:
     played by: "%xcplayedby <actor>%xn - Your 'dream casting' for your character."
     physique: "%xcphysique <build/body type>%xn - athletic, wiry, slim, pudgy, etc."
