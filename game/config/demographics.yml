@@ -24,10 +24,10 @@ demographics:
   - skin
   - height
   - physique
+  - birthdate
+  - played by
   - occupation
   - horse
-  - played by
-  - birthdate
   disable_auto_shortcuts: false
   editable_properties:
   - full name
