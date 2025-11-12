@@ -15,7 +15,7 @@ demographics:
   - field: demographic
     width: 20
     title: Occupation
-    value: Occupation
+    value: occupation
   demographics:
   - full name
   - gender
