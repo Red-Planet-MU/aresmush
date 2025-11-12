@@ -515,15 +515,15 @@ LOCATIONS
 
 .area-entry-summary {
   height: 263px;
-  overflow: scroll; }
+  overflow: auto; }
 
 .location-entry-summary {
   height: 163px;
-  overflow: scroll; }
+  overflow: auto; }
 
 .location-entry-summary {
   height: 163px;
-  overflow: scroll; }
+  overflow: auto; }
 
 .area-entry-summary::-webkit-scrollbar,
 .location-entry-summary::-webkit-scrollbar {
