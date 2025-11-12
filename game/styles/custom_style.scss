@@ -371,20 +371,17 @@ body {
   color:#090909; 
   font-family: $body-font;
   width: 90%;
-  margin: 0px;
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19),
-          -5px 10px 0 5px #d6bc9b,
-  			  -5px 10px 11px 4px rgba(0,0,0,0.15),
-  			  -10px 20px 0 7px #d6bc9b;
-}
-
-.sidebar-box-right:last-of-type {
-  box-shadow:
-    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
-    -5px 10px 0 5px #d6bc9b,
-  			  -5px 10px 11px 4px rgba(0,0,0,0.15),
-  			  -10px 20px 0 7px #d6bc9b,
-  			  -10px 20px 11px 6px rgba(0,0,0,0.15);
+  margin: 10px;
+  box-shadow:     /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #d6bc9b,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #d6bc9b,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
 }
 
 
