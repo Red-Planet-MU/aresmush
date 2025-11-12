@@ -451,7 +451,7 @@ body {
 .profile-box {
   background-color: rgba(20, 32, 42, 0.83); }
 
-.profile-box > .profile-item:first-child {
+.profile-demographics > .profile-item:first-child {
   font-weight: 400;
   font-size: 1.75em;
   padding: 25px 25px 15px;
@@ -462,10 +462,10 @@ body {
   font-family: $header-font;
   border: 0; }
 
-.profile-box > .profile-item:first-child > div:nth-child(2) {
+.profile-demographics > .profile-item:first-child > div:nth-child(2) {
   width: 100% !important; }
 
-.profile-box > .profile-item:first-child > div:first-child {
+.profile-demographics > .profile-item:first-child > div:first-child {
   display: none; }
 
 .box {
