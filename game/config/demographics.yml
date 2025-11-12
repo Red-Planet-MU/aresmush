@@ -31,7 +31,6 @@ demographics:
   disable_auto_shortcuts: false
   editable_properties:
   - full name
-  - callsign
   - gender
   - hair
   - physique
