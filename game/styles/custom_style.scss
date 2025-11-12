@@ -451,6 +451,23 @@ body {
 .profile-box {
   background-color: rgba(20, 32, 42, 0.83); }
 
+.profile-box > .row:first-child {
+  font-weight: 400;
+  font-size: 1.75em;
+  padding: 25px 25px 15px;
+  margin: 0 0 11px;
+  background-color: #732B1A;
+  color: #ebebeb;
+  letter-spacing: .1em;
+  font-family: $header-font;
+  border: 0; }
+
+.profile-box > .row:first-child > div:nth-child(2) {
+  width: 100% !important; }
+
+.profile-box > .row:first-child > div:first-child {
+  display: none; }
+
 .box {
   background-image: url(/game/uploads/theme_images/box-bg.png);
   background-size: cover;
