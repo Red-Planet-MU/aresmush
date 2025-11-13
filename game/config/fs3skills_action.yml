@@ -19,9 +19,6 @@ fs3skills:
     - Rifles
     - Pistols
     linked_attr: Reflexes
-  - name: Gunnery
-    desc: Vehicle/special weapons (cannons, rockets/missiles, ECM packages).
-    linked_attr: Reflexes
   - name: Medicine
     desc: Tending to the ill and injured.
     linked_attr: Wits
