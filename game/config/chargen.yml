@@ -113,4 +113,4 @@ chargen:
     submit_app: Can submit chargen application.
   app_notes_prompt: If you want to make any special notes about your application,
     you can enter them below.
-  max_bg_length: 50
+  max_bg_length: 4000
