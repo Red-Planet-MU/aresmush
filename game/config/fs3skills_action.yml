@@ -28,14 +28,12 @@ fs3skills:
   - name: Melee
     desc: Fighting with fists, knives, and hand-to-hand weapons.
     linked_attr: Brawn
-  - name: Piloting
-    desc: Flying air and spacecraft.
+  - name: Riding
+    desc: Riding a HORSE.
     linked_attr: Reflexes
-    specialties:
-    - Viper
-    - Raptor
-    - Freighter
-    - Other
+  - name: Persuasion
+    desc: Winning people to your point of view.
+    linked_attr: Presence
   - name: Stealth
     desc: Being sneaky.
     linked_attr: Reflexes
