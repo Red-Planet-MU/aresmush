@@ -31,10 +31,12 @@ fs3combat:
     Citizen:
       weapon: Revolver
       hitloc: Humanoid
+      armor: Practical
       defense_skill: Reflexes
     Bandit:
       weapon: Revolver
       hitloc: Humanoid
+      armor: Practical
       defense_skill: Reflexes
     Police:
       weapon: Revolver
