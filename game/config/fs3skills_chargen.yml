@@ -24,9 +24,10 @@ fs3skills:
         Alertness: 2
         Athletics: 2
         Composure: 2
-        Firearms: 2
+        Firearms: 3
         Medicine: 2
-        Melee: 2
+        Melee: 3
+        Riding: 3
         Standard: 3
     Position:
       Viper Pilot:
@@ -112,8 +113,4 @@ fs3skills:
         skills:
           Leonese: 3
   unusual_skills:
-  - Celtan
-  - Scorpian
-  - Sagittaran
-  - Gemenese
   - Demolitions
