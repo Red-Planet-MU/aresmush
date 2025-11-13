@@ -6,7 +6,7 @@ module AresMUSH
         attr_accessor :serum_name, :char, :serum_type, :serum_has, :target, :combat_only_serum
   
         def parse_args
-          args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
+          args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
           self.serum_name = titlecase_arg(args.arg1)
           self.char = titlecase_arg(args.arg2)
           self.serum_type = Serum.find_serums_type(self.serum_name)
