@@ -227,7 +227,8 @@
 }
 
 .danger-wrap {
-  background-image: url("/game/uploads/theme_images/leather-tex.png"); }
+  background-image: url("/game/uploads/theme_images/leather-tex.png"); 
+  background-color: #4c2c1f; 
   .danger-wrap .danger-card {
     width: 95%;
     margin: auto;
@@ -240,7 +241,8 @@
     background: linear-gradient(#fefbf7, #fefbf7 57px, pink 59px, pink 60px); }
   .danger-wrap .col-md-4 {
     padding: 0px; }
-
+  }
+  
 /* General HTML Elements */ 
 
 .body-wrap {
