@@ -20,7 +20,7 @@ module AresMUSH
         Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # Can only use serums one actually has
         self.serum_has = Serum.find_serums_has(combatant.associated_model, self.serum_name) if !combatant.is_npc?
-        return t('serum.dont_have_serum') if !self.serum_has || self.serum_has < 1
+        return t('serum.dont_have_serum') if (!self.serum_has || self.serum_has < 1) && !combatant.is_npc?
 
         error = self.parse_targets(self.targets)
         return error if error
