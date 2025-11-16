@@ -18,6 +18,10 @@ en:
         flesh_wound: "%xgFlesh Wound%xn"
         impaired_wound: "%xyImpaired%xn"
         incap_wound: "%xrIncapacitated%xn"
+        mild_wound: "%xgMild%xn"
+        major_wound: "%xcMajor%xn"
+        severe_wound: "%xySevere%xn"
+        critical_wound: "%xrCritical%xn"
         
         patient_must_pass: "Patients must pass in order to be treated."
         cant_treat_while_fighting: "%{healer} attempts to treat %{patient} but they're moving around too much."

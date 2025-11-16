@@ -211,12 +211,14 @@ module AresMUSH
       
       if (total < FS3Combat.damage_table["GRAZE"])
         damage = "GRAZE"
-      elsif (total < FS3Combat.damage_table["FLESH"])
-        damage = "FLESH"
-      elsif (total < FS3Combat.damage_table["IMPAIR"])
-        damage = "IMPAIR"
+      elsif (total < FS3Combat.damage_table["MILD"])
+        damage = "MILD"
+      elsif (total < FS3Combat.damage_table["MAJOR"])
+        damage = "MAJOR"
+      elsif (total < FS3Combat.damage_table["SEVERE"])
+        damage = "SEVERE"
       else
-        damage = "INCAP"
+        damage = "CRITICAL"
       end
       
       combatant.log "Determined damage: loc=#{hitloc} sev=#{severity} wpn=#{weapon} serum=#{serum_mod}" + #Serums
@@ -514,11 +516,13 @@ module AresMUSH
         case damage
         when "GRAZE"
           shrapnel = 0
-        when "FLESH"
+        when "MILD"
           shrapnel = rand(1)
-        when "IMPAIR"
+        when "MAJOR"
+          shrapnel = rand(2)
+        when "SEVERE"
           shrapnel = rand(3)
-        when "INCAP"
+        when "CRITICAL"
           shrapnel = rand(5)
         end
                 
