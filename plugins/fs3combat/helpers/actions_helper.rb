@@ -67,12 +67,13 @@ module AresMUSH
       FS3Combat.check_for_ko(combatant)
       combatant.update(freshly_damaged: false)
       
-      if (combatant.is_ko && combatant.is_npc?)
-        FS3Combat.leave_combat(combatant.combat, combatant)
-      else
+      #We do not want NPCs to leave combat automatically.
+      #if (combatant.is_ko && combatant.is_npc?)
+      #  FS3Combat.leave_combat(combatant.combat, combatant)
+      #else
         # Be sure to do this AFTER checking for KO up above.
         combatant.update(damaged_by: [])
-      end
+      #end
     end
     
     def self.reset_stress(combatant)
