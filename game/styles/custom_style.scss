@@ -407,11 +407,8 @@ body {
 .log-icon-title-container {
 	background-color: transparent;
 	top: -30px;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	font-family: $primary-font;
+	border-bottom-left-radius: 5;
+	border-bottom-right-radius: 5;
 	font-size: 1.5em;
 }
 
