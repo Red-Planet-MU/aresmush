@@ -66,6 +66,8 @@
 	}
 }
 
+
+
 @media screen and (max-width: 600px) {
 	.site-title {
 		border: 0;
@@ -102,6 +104,7 @@
 	.navbar-collapse {
 		max-width: 320px;
 		width: 100%;
+    background-color: rgba(12,19,25,0.75);
 	}
 	.navbar {
 		max-height: 52px;
@@ -127,6 +130,8 @@
 .dropdown-item {
   font-size: 1em;
 }
+
+
 
 /* Front Page */
 
