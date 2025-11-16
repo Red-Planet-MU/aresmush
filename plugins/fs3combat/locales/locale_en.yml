@@ -19,8 +19,8 @@ en:
         impaired_wound: "%xyImpaired%xn"
         incap_wound: "%xrIncapacitated%xn"
         mild_wound: "%xgMild%xn"
-        major_wound: "%xcMajor%xn"
-        severe_wound: "%xySevere%xn"
+        major_wound: "%xyMajor%xn"
+        severe_wound: "%x166Severe%xn"
         critical_wound: "%xrCritical%xn"
         
         patient_must_pass: "Patients must pass in order to be treated."
