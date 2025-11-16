@@ -227,10 +227,11 @@
 }
 
 .danger-wrap {
+  display: flex;
   background-image: url("/game/uploads/theme_images/leather-tex.png"); 
   background-color: #4c2c1f; 
   float: none;
-  height: auto;
+  height: fit-content;
 }
 
 .danger-wrap img {
