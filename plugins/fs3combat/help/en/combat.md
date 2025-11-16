@@ -33,6 +33,8 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
     * crew - Attack a vehicle crewperson directly instead of the vehicle itself.
     * mount - Attack a mount directly instead of the rider.
 
+`combat/serum <serum>[/<target>]` - Use a serum in combat. Serums with no target will target yourself.
+
 `combat/aim <target>` - Takes careful aim.
 
 `combat/reload` – Reloads a weapon.
