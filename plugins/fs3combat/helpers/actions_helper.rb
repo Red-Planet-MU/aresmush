@@ -92,12 +92,13 @@ module AresMUSH
 
       combatant.log "Checking for KO: #{combatant.name} damaged=#{combatant.freshly_damaged} ko=#{combatant.is_ko} mod=#{combatant.total_damage_mod}"
       
-      if (combatant.is_npc? && (combatant.total_damage_mod <= -7))
-        combatant.log "#{combatant.name} auto-KO'd."
-        roll = 0
-      else
+      #no auto KOs
+      #if (combatant.is_npc? && (combatant.total_damage_mod <= -7))
+      #  combatant.log "#{combatant.name} auto-KO'd."
+      #  roll = 0
+      #else
         roll = FS3Combat.make_ko_roll(combatant)
-      end
+      #end
       
       if (roll <= 0)
         combatant.update(is_ko: true)
