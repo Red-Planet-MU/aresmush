@@ -55,6 +55,9 @@
 		font-size: 2em;
 		max-height: unset;
 	}
+  .navbar-collapse {
+		background-color: inherit;
+	}
 }
 
 @media screen and (max-width: 991px) {
@@ -66,7 +69,21 @@
 	}
 }
 
-
+@media screen and (max-width: 991px) {
+	.navbar > .container-fluid {
+		width: 100%;
+		flex-flow: column;
+		align-items: start;
+	}
+	.navbar-collapse {
+		max-width: 320px;
+		width: 100%;
+    background-color: rgba(12,19,25,0.5);
+	}
+	.navbar {
+		max-height: 52px;
+	}
+}
 
 @media screen and (max-width: 600px) {
 	.site-title {
@@ -83,39 +100,14 @@
 	.account-actions {
 		display: none;
 	}
-}
-
-@media screen and (max-width: 600px) {
-	.header-wrap {
+  .header-wrap {
 		background-position: center bottom;
 	}
-
 	.site-banner {
 		flex-direction: column;
 	}
 }
 
-@media screen and (max-width: 991px) {
-	.navbar > .container-fluid {
-		width: 100%;
-		flex-flow: column;
-		align-items: start;
-	}
-	.navbar-collapse {
-		max-width: 320px;
-		width: 100%;
-    background-color: rgba(12,19,25,0.75);
-	}
-	.navbar {
-		max-height: 52px;
-	}
-}
-
-@media (max-width: 1400px) {
-	.navbar-collapse {
-		background-color: inherit;
-	}
-}
 
 .dropdown-menu {
   //background-color: #0c1119;
