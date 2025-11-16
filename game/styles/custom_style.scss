@@ -403,6 +403,31 @@ body {
   color: #660d0e;
 }
 
+/* Character Gallery */
+.log-icon-title-container {
+	background-color: transparent;
+	top: -30px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	font-family: $primary-font;
+	font-size: 1.5em;
+}
+
+.log-icon-container {
+	height: 185px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background: $log-icon-color;
+	border: 4px solid $log-icon-color;
+}
+
+.log-participants-box .icon-gallery {
+	justify-content: center;
+}
+
 /* Profile */
 .profile-image {
   width: 400px !important;
