@@ -7,7 +7,7 @@ module AresMUSH
       if (combatant.mount_type) 
         #Get the spook rating
         spook_rating = Global.read_config('horse', 'spook_rating')
-        going_to_spook = rand(1...spook_rating)
+        going_to_spook = rand(1...spook_rating+1)
         
         Global.logger.debug "going_to_spook: #{going_to_spook}, spook_rating: #{spook_rating}"
         if going_to_spook == spook_rating 
