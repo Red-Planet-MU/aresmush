@@ -10,8 +10,12 @@ module AresMUSH
     #   }
     def self.custom_actions
       {
+        #Serums
         'serum' => SerumAction,
-        'recover' => RecoverAction
+        #Expanded throwing weapons
+        'recover' => RecoverAction,
+        #Expanded horses
+        'calm' => CalmAction
       }
     end
     
@@ -20,6 +24,7 @@ module AresMUSH
     # hasn't been reset yet.
     def self.custom_new_turn_reset(combatant)
       Serum.serum_new_turn(combatant)
+      Horse.horse_new_turn(combatant)
     end
   end
 end

@@ -1,0 +1,6 @@
+---
+horse:
+  category: Other
+  shortcuts:
+    horses: horse
+  spook_rating: 5
