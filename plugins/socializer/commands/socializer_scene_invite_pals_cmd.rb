@@ -44,7 +44,7 @@ module AresMUSH
               client.emit_success t('socializer.scene_pal_invited', :name => char.name)
             else
               Scenes.uninvite_from_scene(scene, char, enactor)
-              client.emit_success t('soclailizer.scene_pal_uninvited', :name => char.name)            
+              client.emit_success t('socializer.scene_pal_uninvited', :name => char.name)            
             end
           end
         end
