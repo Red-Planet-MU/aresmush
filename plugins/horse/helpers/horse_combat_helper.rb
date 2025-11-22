@@ -24,7 +24,7 @@ module AresMUSH
           combatant.update(mount_type: nil)
         else 
         FS3Combat.emit_to_combat combatant.combat, t('horse.still_spooking', :name => combatant.name), nil, true
-        combatant.update(spook_counter: spook_counter + 1)
+        combatant.update(spook_counter: combatant.spook_counter + 1)
         end
       end
     end
