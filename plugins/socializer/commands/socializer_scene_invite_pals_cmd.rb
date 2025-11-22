@@ -1,5 +1,5 @@
 module AresMUSH
-  module Scenes
+  module Socializer
     class SocializerSceneInvitePalsCommand
       include CommandHandler
       
