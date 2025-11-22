@@ -16,17 +16,18 @@ module AresMUSH
         end
         return 
       #Check if mounted and already spooked
-      elsif (combatant.mount_type && combatant.spook_counter > 0)
-        riding_roll = combatant.roll_ability("Riding")
+      elsif (combatant.mount_type && combatant.spook_counter < 0)
+        riding_roll = combatant.roll_ability("Riding", combatant.spook_counter)
         Global.logger.debug "riding roll: #{riding_roll}"
         #Odds begin at 1 in 5
         thrown_check = rand(1...7-combatant.spook_counter)
         if thrown_check == 1
           FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
           combatant.update(mount_type: nil)
+          combatant.update(spook_counter: 0)
         else 
         FS3Combat.emit_to_combat combatant.combat, t('horse.still_spooking', :name => combatant.name), nil, true
-        combatant.update(spook_counter: combatant.spook_counter + 1)
+        combatant.update(spook_counter: combatant.spook_counter - 1)
         end
       end
     end
