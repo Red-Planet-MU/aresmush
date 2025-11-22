@@ -343,7 +343,7 @@ module AresMUSH
         if (mount_ko)
           
           mount_effect = t('fs3combat.mount_ko')
-          target.inflict_damage('IMPAIR', 'Fall Damage', true, false)
+          target.inflict_damage('MILD', 'Fall Damage', true, false)
           target.update(mount_type: nil)
         else
           mount_effect =  t('fs3combat.mount_injured')
