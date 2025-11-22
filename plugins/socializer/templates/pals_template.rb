@@ -12,6 +12,7 @@ module AresMUSH
       
       def pals_list
         return t('global.none') if @enactor.pals.empty?
+        Global.logger.debug "enactor: #{@enactor}, pals: #{@enactor.pals}"
         @enactor.pals.map { |p| p.name }.sort.join(", ")
       end
 
