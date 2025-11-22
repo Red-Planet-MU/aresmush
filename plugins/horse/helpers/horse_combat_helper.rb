@@ -18,7 +18,7 @@ module AresMUSH
       #Check if mounted and already spooked
       elsif (combatant.mount_type && combatant.spook_counter > 0)
         #Odds begin at 1 in 5
-        thrown_check = rand(1...7-spook_counter)
+        thrown_check = rand(1...7-combatant.spook_counter)
         if thrown_check == 1
           FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
           combatant.update(mount_type: nil)
