@@ -24,7 +24,7 @@ website:
   - title: Intro
     menu:
     - title: Join Us
-      url: https://redplanetmu.com/wiki/join_us
+      url: https://redplanetmu.com/wiki/guide:join_us
     - title: Create a Character
       route: chargen
     - title: Roster Characters
