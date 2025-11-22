@@ -17,6 +17,8 @@ module AresMUSH
         return 
       #Check if mounted and already spooked
       elsif (combatant.mount_type && combatant.spook_counter > 0)
+        riding_roll = combatant.roll_ability("Riding")
+        Global.logger.debug "riding roll: #{riding_roll}"
         #Odds begin at 1 in 5
         thrown_check = rand(1...7-combatant.spook_counter)
         if thrown_check == 1
