@@ -3,7 +3,6 @@ module AresMUSH
 
     def self.horse_new_turn(combatant)
       #Check if mounted
-      Global.logger.debug "combatant.mount_type: #{combatant.mount_type}"
       if (combatant.mount_type) 
         #Get the spook rating
         spook_rating = Global.read_config('horse', 'spook_rating')

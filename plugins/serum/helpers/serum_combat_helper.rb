@@ -3,7 +3,6 @@ module AresMUSH
   module Serum
 
     def self.serum_new_turn(combatant)
-      Global.logger.debug "serum counter: #{combatant.serum_duration_counter}"
       if combatant.serum_duration_counter == 0
         #Get the lethality + init mod numbers to preserve a GM's set mod number
         lethal_mod = Global.read_config('serum',combatant.last_serum,'lethality_mod')
