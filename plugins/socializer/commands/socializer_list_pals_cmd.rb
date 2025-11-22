@@ -10,10 +10,10 @@ module AresMUSH
         end
   
         def handle
-          ClassTargetFinder.with_a_character(enactor, client) do |model|
-             template = SerumTemplate.new(model)
-             client.emit template.render
-          end
+          
+          template = PalsTemplate.new(enactor)
+          client.emit template.render
+          
         end
       end
     end
