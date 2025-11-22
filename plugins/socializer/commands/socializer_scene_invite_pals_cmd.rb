@@ -11,7 +11,7 @@ module AresMUSH
         else 
           self.scene_num = enactor_room.scene ? enactor_room.scene.id : nil
         end
-        self.char_names = enactor.pals.map { |p| p.name }.sort.join(" ")
+        self.char_names = enactor.pals.map { |p| p.name }
         Global.logger.debug "#{self.char_names}"
         self.invited = cmd.switch_is?("invite")
       end
