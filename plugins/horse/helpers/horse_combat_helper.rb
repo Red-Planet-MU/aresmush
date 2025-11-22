@@ -7,6 +7,7 @@ module AresMUSH
         #Get the spook rating and horse bond
         spook_rating = Global.read_config('horse', 'spook_rating')
         bond_with_horse = combatant.associated_model.horse_bond
+        #Horse Bond weighted at 1/3 of rating
         going_to_spook = rand(1...spook_rating + 1 + (bond_with_horse/3))
         
         Global.logger.debug "going_to_spook: #{going_to_spook}, spook_rating: #{spook_rating}"
@@ -19,8 +20,6 @@ module AresMUSH
       #Check if mounted and already spooked
       elsif (combatant.mount_type && combatant.spook_counter < 0)
         riding_roll = combatant.roll_ability("Riding", combatant.spook_counter)
-        Global.logger.debug "riding roll: #{riding_roll}"
-        #Odds begin at 1 in 5
         if riding_roll <= 0
           FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
           combatant.update(mount_type: nil)
