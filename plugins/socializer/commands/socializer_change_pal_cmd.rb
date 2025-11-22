@@ -6,9 +6,7 @@ module AresMUSH
         attr_accessor :pal, :add_pal
       
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
-        self.number = trim_arg(args.arg1)
-        self.pal = titlecase_arg(args.arg2)
+        self.pal = titlecase_arg(cmd.args)
         self.add_pal = cmd.switch_is?("add")
       end
         
