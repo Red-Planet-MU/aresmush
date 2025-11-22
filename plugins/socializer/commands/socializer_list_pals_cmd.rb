@@ -11,7 +11,7 @@ module AresMUSH
   
         def handle
           
-          template = PalsTemplate.new(enactor, client)
+          template = PalsTemplate.new(enactor)
           client.emit template.render
           
         end

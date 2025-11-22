@@ -4,9 +4,8 @@ module AresMUSH
             
       attr_accessor :enactor, :char
       
-      def initialize(enactor, char)
+      def initialize(enactor)
         @enactor = enactor
-        @char = char
         super File.dirname(__FILE__) + "/pals.erb"
       end
       
