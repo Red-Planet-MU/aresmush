@@ -12,7 +12,7 @@ module AresMUSH
         #Check if random number matches spook rating
         if going_to_spook == spook_rating 
           FS3Combat.emit_to_combat combatant.combat, t('horse.going_to_spook', :name => combatant.name), nil, true
-          combatant.update(spook_counter: 1)
+          combatant.update(spook_counter: -1)
         end
         return 
       #Check if mounted and already spooked
