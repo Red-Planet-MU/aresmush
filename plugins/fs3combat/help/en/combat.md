@@ -86,6 +86,7 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 `mount <name>` - See details for a particular mount type.
 `combat/mount <name>` - Mounts an animal.
 `combat/dismount` - Dismounts an animal.
+`combat/calm` - Calms an agitated animal, preventing them from throwing you and increasing their trust.
 
 ## Luck
 
