@@ -1,23 +1,23 @@
 module AresMUSH
   module Scenes
-    class SocializerSceneInvitePalsCmd
+    class SocializerSceneInvitePalsCommand
       include CommandHandler
       
-      attr_accessor :scene_num, :char_names, :invited
+      attr_accessor :scene_num, :char_names, :invited, :pals
       
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
-        self.char_names = list_arg(args.arg1)
-        if (args.arg2)
-          self.scene_num = integer_arg(args.arg2)
-        else
+        if cmd.args
+          self.scene_num = integer_arg(cmd.args)
+        else 
           self.scene_num = enactor_room.scene ? enactor_room.scene.id : nil
         end
+        self.char_names = enactor.pals.map { |p| p.name }.sort.join(" ")
+
         self.invited = cmd.switch_is?("invite")
       end
       
       def required_args
-        [ self.char_names, self.scene_num ]
+        [ self.scene_num ]
       end
       
       def handle        
@@ -41,10 +41,10 @@ module AresMUSH
           
             if (self.invited)
               Scenes.invite_to_scene(scene, char, enactor)
-              client.emit_success t('scenes.scene_char_invited', :name => char.name)
+              client.emit_success t('socializer.scene_pal_invited', :name => char.name)
             else
               Scenes.uninvite_from_scene(scene, char, enactor)
-              client.emit_success t('scenes.scene_char_uninvited', :name => char.name)            
+              client.emit_success t('soclailizer.scene_pal_uninvited', :name => char.name)            
             end
           end
         end

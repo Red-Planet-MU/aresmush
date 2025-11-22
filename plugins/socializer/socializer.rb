@@ -22,6 +22,8 @@ module AresMUSH
         case cmd.switch
         when "add", "remove"
           return SocializerChangePalCommand
+        when "invite"
+          return SocializerSceneInvitePalsCommand
         when nil
           return SocializerListPalsCommand
         end

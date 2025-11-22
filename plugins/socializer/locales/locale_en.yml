@@ -7,3 +7,5 @@ en:
     pal_added: "You have added %{pal} to your Pals List."
     pal_removed: "You have removed %{pal} from your Pals List."
     pal_doesnt_exist: "That person is not on your Pals List."
+    scene_pal_invited: "You invite %{name} to join the scene."
+    scene_pal_uninvited: "You withdraw the invitation for %{name} to join the scene."
