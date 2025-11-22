@@ -14,7 +14,7 @@ module AresMUSH
         Global.logger.debug "enactor: #{@enactor}, pals: #{@enactor.pals}"
         return t('global.none') if @enactor.pals.empty?
         Global.logger.debug "enactor: #{@enactor}, pals: #{@enactor.pals}"
-        @enactor.pals.map { |p| p.name }.sort.join("%r ")
+        @enactor.pals.map { |p| p.name }.sort.join("%r")
       end
 
     end
