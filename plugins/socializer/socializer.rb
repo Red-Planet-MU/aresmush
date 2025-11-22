@@ -18,8 +18,11 @@ module AresMUSH
         when "announce"
           return SocializerAnnounceCommand
         end
-
-
+      when 'pals'
+        case cmd.switch
+        when "add", "remove"
+          return SocializerChangePalCommand
+        end
       end
       nil
     end
