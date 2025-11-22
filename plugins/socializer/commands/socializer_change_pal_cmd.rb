@@ -11,7 +11,7 @@ module AresMUSH
       end
         
         def required_args
-          [ self.toggle ]
+          [ self.pal ]
         end
         
         def handle
