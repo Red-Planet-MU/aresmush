@@ -9,3 +9,5 @@ en:
     pal_doesnt_exist: "That person is not on your Pals List."
     scene_pal_invited: "You invite %{name} to join the scene."
     scene_pal_uninvited: "You withdraw the invitation for %{name} to join the scene."
+    pal_scene_notify_invite: "%{name} has left the door open for you to join scene %{num}. If you're interested in stopping by, use 'scene/join %{num}'"
+    pal_scene_notify_uninvited: "%{name} has closed the door for scene %{num}."
