@@ -1,22 +1,4 @@
 ---
 en:
-  horse:
-    got_serum: "You have obtained a %{serum_name} Serum."
-    use: "You've been set 'looking for txt RP' for the next %{duration} hour(s)."
-    desc_for_list: "'s Serum Vials:"
-    dont_have_serum: "You don't have any of that serum."
-    given_serum: "You have given %{name} a %{serum_name} Serum."
-    received_serum: "%{name} has given you a %{serum_name} Serum."
-    not_in_combat: "You can only use that type of serum in combat."
-    no_healable_wounds: "That target has no wounds that can be treated."
-    used_v_out_of_combat: "%{name} injects %{target} with a %{serum_name} Serum, healing their worst injury for %{heal_points} points. (%{dice_result})"
-    used_v_made_it_worse: "%{name} injects %{target} with a %{serum_name} Serum, making their injury worse! (%{dice_result})"
-    used_v_in_combat: "%{name} injects %{target} with a %{serum_name}, healing their worst injury for %{heal_points} points."
-    c_used_v_made_it_worse: "%{name} injects %{target} with a %{serum_name} Serum, making their injury worse!"
-    use_serum_action_msg_long: "%{name} will inject %{target} with a %{serum_name} this turn."
-    use_serum_action_msg_short: "%{serum_name} %{target}"
-    used_serum_combat: "%{name} injects %{target} with a %{serum_name}!"
-    already_serumed: "That target is already under the effects of a serum."
-    used_revive_serum: "%{name} injects %{target} with an %{serum_name} and revives them back to the fight!"
-    not_ko: "That target is not currently knocked out and cannot be revived."
-    serum_wore_off: "%{name}'s %{serum_name} wore off!"
+  serum:
+    going_to_spook: "%{name}'s horse becomes agitated and is starting to buck!"
