@@ -125,8 +125,8 @@ module AresMUSH
         #  return "#{linebreak}#{b.name}: #{b.rating} #{b.rating_name} :: "
         #end
         b = char.horse_bond  
-        name = "%xh#{b.name}:%xn"
-        rating_text = "#{b.rating_name}#{linked_attr}"
+        #name = "%xh#{b.name}:%xn"
+        rating_text = "#{b.rating_name}"
         rating_dots = b.print_rating
         "#{left(rating_dots, 8)}"
         #"#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
