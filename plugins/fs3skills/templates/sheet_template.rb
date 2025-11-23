@@ -118,16 +118,39 @@ module AresMUSH
         self.screen_reader_on ? title : line_with_text(title)
       end
 
+      def print_horse_rating(bond_rating)
+        case bond_rating
+        when 0
+          return ""
+        when 1
+          return "%xg@%xn"
+        when 2
+          return "%xg@@%xn"
+        when 3
+          return "%xg@@%xy@%xn"
+        when 4
+          return "%xg@@%xy@@%xn"
+        when 5
+          return "%xg@@%xy@@%xr@%xn"
+        when 6
+          return "%xg@@%xy@@%xr@@%xn"
+        when 7
+          return "%xg@@%xy@@%xr@@%xb@%xn"
+        when 8
+          return "%xg@@%xy@@%xr@@%xb@@%xn"
+        end
+      end
+
       def format_bond(char)
         #linebreak = i % 2 == 1 ? "" : "%r"
         
         #if (self.screen_reader_on)
         #  return "#{linebreak}#{b.name}: #{b.rating} #{b.rating_name} :: "
         #end
-        b = char.horse_bond  
+        bond = char.horse_bond  
         #name = "%xh#{b.name}:%xn"
         #rating_text = "#{b.rating_name}"
-        rating_dots = b.print_rating
+        rating_dots = print_horse_rating(bond)
         "#{left(rating_dots, 8)}"
         #"#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
       end
