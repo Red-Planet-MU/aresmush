@@ -8,7 +8,7 @@ module AresMUSH
         spook_rating = Global.read_config('horse', 'spook_rating')
         bond_with_horse = combatant.associated_model.horse_bond
         #Horse Bond weighted at 1/3 of rating
-        going_to_spook = rand(1...spook_rating + 1 + (bond_with_horse/3))
+        going_to_spook = rand(1...spook_rating + 1 + (bond_with_horse))
         
         Global.logger.debug "going_to_spook: #{going_to_spook}, spook_rating: #{spook_rating}"
         #Check if random number matches spook rating

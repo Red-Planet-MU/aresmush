@@ -35,8 +35,8 @@
 <% end %> 
 
 
-<%= section_line t('horse.horse_title') -%>
-%xh<%= t('horse.horse_bond_title') %>%xn <%= left( char.horse_bond, 30 ) %>
+<%= section_line t('horse.horse_title') %>
+<%= Horse.format_bond(char) %>
 
 <% end -%>  
 <% if use_advantages %>
