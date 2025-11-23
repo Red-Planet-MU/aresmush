@@ -141,6 +141,29 @@ module AresMUSH
         end
       end
 
+      def horse_rating_name(bond_rating)
+        case bond_rating
+        when 0
+          return t('horse.no_bond_rating')
+        when 1
+          return t('horse.first_bond_rating')
+        when 2
+          return t('horse.second_bond_rating')
+        when 3
+          return t('horse.third_bond_rating')
+        when 4
+          return t('horse.fourth_bond_rating')
+        when 5
+          return t('horse.fifth_bond_rating')
+        when 6
+          return t('horse.sixth_bond_rating')
+        when 7
+          return t('horse.seventh_bond_rating')
+        when 8
+          return t('horse.eighth_bond_rating')
+        end
+      end
+
       def format_bond(char)
         #linebreak = i % 2 == 1 ? "" : "%r"
         
@@ -148,11 +171,11 @@ module AresMUSH
         #  return "#{linebreak}#{b.name}: #{b.rating} #{b.rating_name} :: "
         #end
         bond = char.horse_bond  
-        #name = "%xh#{b.name}:%xn"
-        #rating_text = "#{b.rating_name}"
+        name = "%xhHorse Bond:%xn"
+        rating_text = horse_rating_name(bond)
         rating_dots = print_horse_rating(bond)
-        "#{left(rating_dots, 8)}"
-        #"#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
+        #"#{left(rating_dots, 8)}"
+        "#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
       end
     end
   end
