@@ -496,7 +496,7 @@ module AresMUSH
           Achievements.award_achievement(attacker.associated_model, "fs3_#{hit}_hit")  
         end
       end
-      if (damage == "INCAP")
+      if (damage == "CRITICAL")
         Achievements.award_achievement(attacker.associated_model, "fs3_hard_hitter")
       end
     end

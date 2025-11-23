@@ -94,7 +94,7 @@ fs3combat:
       - 500
     fs3_hard_hitter:
       type: fs3
-      message: Incapacitated an opponent in combat.
+      message: Inflicted critical damage on an opponent in combat.
     fs3_explosive_hit:
       type: fs3
       message: Did damage with an explosive weapon.
