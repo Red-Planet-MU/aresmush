@@ -7,6 +7,9 @@ fs3skills:
   - name: Athletics
     linked_attr: Brawn
     desc: General running, jumping, climbing, etc.
+  - name: Archery
+    linked_attr: Reflexes
+    desc: Shooting bows.
   - name: Composure
     desc: Coolness under pressure.
     linked_attr: Grit
