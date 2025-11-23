@@ -227,13 +227,14 @@
 }
 
 .danger-wrap {
-  display: flex;
-  flex-wrap: wrap;
+  overflow: auto;
+  position: fixed;
   background-image: url("/game/uploads/theme_images/leather-tex.png"); 
   background-color: #4c2c1f; 
   float: none;
   height: fit-content;
   border-radius: 15px;
+  z-index: -5;
 }
 
 .danger-wrap img {
