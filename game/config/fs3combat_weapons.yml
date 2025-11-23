@@ -270,6 +270,56 @@ fs3combat:
       allowed_specials:
       - Ap
       - Bipod
+    Antlers:
+      description: Antlers
+      skill: Melee
+      lethality: -10
+      penetration: 5
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      accuracy: 1
+      init_mod: 0
+    Beak:
+      description: Bites from a beak
+      skill: Melee
+      lethality: -5
+      penetration: 3
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      init_mod: 0
+    Claws:
+      description: Animal or creature claws
+      skill: Melee
+      lethality: 0
+      penetration: 4
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      accuracy: 1
+      init_mod: 0
+    Horns:
+      description: Horns
+      skill: Melee
+      lethality: -5
+      penetration: 6
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      accuracy: 1
+      init_mod: 0
+    Teeth:
+      description: Animal or creature teeth
+      skill: Melee
+      lethality: 0
+      penetration: 5
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      accuracy: 1
+      init_mod: 0
   weapon specials:
     Ap:
       description: Armor Piercing Rounds
