@@ -51,7 +51,7 @@ fs3combat:
       init_mod: 0
     Bow:
       description: A piece of wood with a string connecting the ends. Silent, compared to firearms.
-      skill: Athletics
+      skill: Archery
       lethality: 0
       penetration: 4
       weapon_type: Ranged
