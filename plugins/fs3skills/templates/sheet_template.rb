@@ -175,7 +175,7 @@ module AresMUSH
         rating_text = horse_rating_name(bond)
         rating_dots = print_horse_rating(bond)
         #"#{left(rating_dots, 8)}"
-        "#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
+        "#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
       end
     end
   end
