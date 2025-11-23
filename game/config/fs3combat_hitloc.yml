@@ -550,3 +550,111 @@ fs3combat:
         - Bullseye
       vital_areas: []
       critical_areas: []
+    Quadruped:
+      areas:
+        Chest:
+        - Rear Left Leg
+        - Rear Right Leg
+        - Front Left Leg
+        - Front Right Leg
+        - Abdomen
+        - Abdomen
+        - Head
+        - Chest
+        - Chest
+        - Chest
+        Rear Left Leg:
+        - Chest
+        - Rear Right Leg
+        - Rear Right Leg
+        - Rear Right Leg
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Rear Left Leg
+        - Rear Left Leg
+        - Rear Left Leg
+        Rear Right Leg:
+        - Chest
+        - Rear Left Leg
+        - Rear Left Leg
+        - Rear Left Leg
+        - Abdomen
+        - Abdomen
+        - Rear Right Leg
+        - Rear Right Leg
+        - Rear Right Leg
+        - Rear Right Leg
+        Groin:
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Rear Left Leg
+        - Rear Right Leg
+        - Rear Left Leg
+        - Rear Right Leg
+        - Groin
+        - Groin
+        - Groin
+        Front Left Leg:
+        - Head
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Front Left Leg
+        - Front Left Leg
+        - Front Left Leg
+        - Front Left Leg
+        Front Right Leg:
+        - Head
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Front Right Leg
+        - Front Right Leg
+        - Front Right Leg
+        - Front Right Leg
+        Head:
+        - Front Right Leg
+        - Front Right Leg
+        - Front Left Leg
+        - Chest
+        - Chest
+        - Neck
+        - Neck
+        - Head
+        - Head
+        - Head
+        Neck:
+        - Front Right Leg
+        - Front Right Leg
+        - Front Left Leg
+        - Chest
+        - Chest
+        - Head
+        - Head
+        - Neck
+        - Neck
+        - Neck
+        Abdomen:
+        - Rear Left Leg
+        - Rear Right Leg
+        - Rear Left Leg
+        - Rear Right Leg
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+      vital_areas:
+      - Chest
+      - Abdomen
+      critical_areas:
+      - Head
+      - Neck
+      - Groin

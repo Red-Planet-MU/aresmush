@@ -118,7 +118,7 @@ fs3combat:
       ammo: 12
       recoil: 0
       damage_type: Physical
-      accuracy: -1
+      accuracy: -2
       has_shrapnel: false
       init_mod: 0
       dual_wield: true
@@ -158,6 +158,22 @@ fs3combat:
       firearm_type: Rifles
       allowed_specials:
       - Ap
+    Energy Rifle:
+      description: Restricted, NILE-issue energy-based long gun equipped with a self-destruct mechanism and palm reader.
+      skill: Firearms
+      lethality: 10
+      penetration: 8
+      weapon_type: Ranged
+      is_automatic: false
+      ammo: 25
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: false
+      init_mod: 0
+      firearm_type: Rifles
+      allowed_specials:
+      - Scope
     Shotgun:
       description: Double-barreled shotgun
       skill: Firearms

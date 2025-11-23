@@ -27,14 +27,19 @@ fs3combat:
         Neck: 5
         Chest: 8
         Abdomen: 7
-    Police:
-      description: Police-Grade Kevlar Vest
+    NILE Armor:
+      description: A system of overlapping ceramic plates and aramid fibers.
       defense: 0
       protection:
-        Chest: 7
-        Abdomen: 6
-      allowed_specials:
-      - Helmet
+        Head: 7
+        Neck: 5
+        Chest: 8
+        Abdomen: 7
+        Right Leg: 6
+        Left Leg: 6
+        Right Arm: 6
+        Left Arm: 6
+        Ass: 5
     Tank:
       description: Tank Armor
       defense: 0
@@ -69,6 +74,64 @@ fs3combat:
         Body: 7
         Controls: 7
         Weapon: 6
+    Hide:
+      description: Ordinary animal hide
+      defense: 0
+      protection:
+        Chest: 4
+        Rear Left Leg: 4
+        Read Right Leg: 4
+        Front Left Leg: 4
+        Front Right Leg: 4
+        Left Leg: 4
+        Right Leg: 4
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 4
+        Head: 3
+        Left Head: 3
+        Center Head: 3
+        Right Head: 3
+        Neck: 3
+        Left Neck: 3
+        Center Neck: 3
+        Right Neck: 3
+        Groin: 2
+        Body: 4
+        Fin: 2
+        Tail: 4
+        Leg: 4
+        Arm: 4
+        Body: 4
+        Fin: 3
+    Tough Hide:
+      description: Thick, tough animal hide for critters that take a lickin' and keep on tickin'
+      defense: 0
+      protection:
+        Chest: 6
+        Rear Left Leg: 6
+        Rear Right Leg: 6
+        Front Left Leg: 6
+        Front Right Leg: 6
+        Left Leg: 6
+        Right Leg: 6
+        Tail: 6
+        Right Wing: 6
+        Left Wing: 6
+        Abdomen: 6
+        Head: 5
+        Left Head: 5
+        Center Head: 5
+        Right Head: 5
+        Neck: 4
+        Left Neck: 4
+        Center Neck: 4
+        Right Neck: 4
+        Groin: 4
+        Leg: 5
+        Arm: 5
+        Body: 6
+        Fin: 4
   armor specials:
     Helmet:
       description: A helmet

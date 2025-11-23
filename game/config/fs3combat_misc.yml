@@ -33,14 +33,19 @@ fs3combat:
       hitloc: Humanoid
       armor: Practical
       defense_skill: Reflexes
-    Bandit:
+    Raider:
       weapon: Revolver
       hitloc: Humanoid
       armor: Practical
       defense_skill: Reflexes
-    Police:
-      weapon: Revolver
-      armor: Police
+    Quadruped:
+      hitloc: Quadruped
+      defense_skill: Reflexes
+      weapon: Claws
+      armor: Hide
+    NILE Officer:
+      weapon: Energy Rifle
+      armor: NILE Armor
       hitloc: Humanoid
       defense_skill: Reflexes
     Unarmed:
