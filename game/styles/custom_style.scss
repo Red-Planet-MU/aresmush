@@ -228,7 +228,7 @@
 
 .danger-wrap {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   background-image: url("/game/uploads/theme_images/leather-tex.png"); 
   background-color: #4c2c1f; 
   float: none;
@@ -247,7 +247,6 @@
 }
 
 .danger-card {  
-  display: flex;
   padding: 10px;
   width: 70%;
   max-width: 100%;
@@ -269,7 +268,6 @@
 .danger-card,
 .danger-card::before,
 .danger-card::after {
-  display: flex;
   /* Styles to distinguish sheets from one another */
   box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
   border: 1px solid #bbb;
