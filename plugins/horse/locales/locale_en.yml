@@ -9,3 +9,4 @@ en:
     calm_action_msg_long: "%{name} will calm their horse."
     calm_action_msg_short: "Calm horse"
     calm_resolution_msg: "%{name} successfully calms their horse and it is no longer agitated."
+    horse_title: "Horse"
