@@ -28,7 +28,7 @@ demographics:
   - played by
   - occupation
   - horse
-  - theme song
+  - theme_song
   disable_auto_shortcuts: false
   editable_properties:
   - full name
@@ -37,7 +37,7 @@ demographics:
   - physique
   - horse
   - occupation
-  - theme song
+  - theme_song
   genders:
     Male:
       possessive_pronoun: his
