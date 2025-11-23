@@ -117,6 +117,20 @@ module AresMUSH
       def section_line(title)
         self.screen_reader_on ? title : line_with_text(title)
       end
+
+      def format_bond(char)
+        #linebreak = i % 2 == 1 ? "" : "%r"
+        
+        #if (self.screen_reader_on)
+        #  return "#{linebreak}#{b.name}: #{b.rating} #{b.rating_name} :: "
+        #end
+        b = char.horse_bond  
+        name = "%xh#{b.name}:%xn"
+        rating_text = "#{b.rating_name}#{linked_attr}"
+        rating_dots = b.print_rating
+        "#{left(rating_dots, 8)}"
+        #"#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
+      end
     end
   end
 end
