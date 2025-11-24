@@ -301,16 +301,9 @@
   background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
-.danger-card h2 {
-  display: inline;
-  text-align: left;
-  float: left;
-}
-
-.danger-card h5 {
-  display: inline;
-  text-align: right;
-  float: right;
+.danger-card header {
+  display: flex;
+  justify-content: space-between; 
 }
 
 .danger-card p {
