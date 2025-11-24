@@ -267,6 +267,8 @@
   background-image: url("/game/uploads/theme_images/paper_tex.png");
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word; 
 }
 
 .danger-card,
