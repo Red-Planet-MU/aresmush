@@ -316,11 +316,12 @@
 }
 
 .danger-header h2 {
-  justify-self: left;
+  flex-basis: calc(100% - 200px);
 }
 
 .danger-header h5 {
-  justify-self: right;
+  flex-basis: 200px;
+  text-align: right;
 }
 
 .danger-card p {
