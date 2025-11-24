@@ -265,10 +265,6 @@
     /* The top layer shadow */
     0 1px 1px rgba(0,0,0,0.15);
   background-image: url("/game/uploads/theme_images/paper_tex.png");
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word; 
 }
 
 .danger-card,
@@ -306,12 +302,12 @@
 }
 
 .danger-card h2 {
-  flex-basis: calc(100% - 200px);
+  float: left;
 }
 
 .danger-card h5 {
-  flex-basis: 200px;
   text-align: right;
+  float: right;
 }
 
 /* General HTML Elements */ 
