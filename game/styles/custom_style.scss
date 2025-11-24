@@ -303,8 +303,10 @@
 
 .danger-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  margin: auto;
 }
 
 .danger-header h2, h5 {
