@@ -334,12 +334,14 @@
 @media screen and (max-width: 700px) {
 	.danger-wrap img {
 		width: 80%;
-    float: center;
+    float: unset;
     max-height: unset;
+    margin: auto;
 	}
 	.danger-card {
 		width: 85%;
-    float: center;
+    float: unset;
+    margin: auto;
 	}
 }
 
