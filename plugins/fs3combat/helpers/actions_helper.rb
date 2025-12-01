@@ -213,8 +213,8 @@ module AresMUSH
       
       if (total < FS3Combat.damage_table["GRAZE"])
         damage = "GRAZE"
-      elsif (total < FS3Combat.damage_table["MILD"])
-        damage = "MILD"
+      elsif (total < FS3Combat.damage_table["MINOR"])
+        damage = "MINOR"
       elsif (total < FS3Combat.damage_table["MAJOR"])
         damage = "MAJOR"
       elsif (total < FS3Combat.damage_table["SEVERE"])
@@ -343,7 +343,7 @@ module AresMUSH
         if (mount_ko)
           
           mount_effect = t('fs3combat.mount_ko')
-          target.inflict_damage('MILD', 'Fall Damage', true, false)
+          target.inflict_damage('MINOR', 'Fall Damage', true, false)
           target.update(mount_type: nil)
         else
           mount_effect =  t('fs3combat.mount_injured')
@@ -518,7 +518,7 @@ module AresMUSH
         case damage
         when "GRAZE"
           shrapnel = 0
-        when "MILD"
+        when "MINOR"
           shrapnel = rand(1)
         when "MAJOR"
           shrapnel = rand(2)

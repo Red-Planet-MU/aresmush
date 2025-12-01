@@ -3,7 +3,7 @@ module AresMUSH
     def self.damage_severities
       # Deliberately leaves off GRAZE wounds as they're not tracked and shouldn't
       # ever be assigned through damage/inflict.
-      [ 'HEAL', 'MILD', 'MAJOR', 'SEVERE', 'CRITICAL' ]
+      [ 'HEAL', 'MINOR', 'MAJOR', 'SEVERE', 'CRITICAL' ]
     end
     
     def self.can_manage_damage?(actor)
@@ -16,8 +16,8 @@ module AresMUSH
         t('fs3combat.healed_wound')
       when 'GRAZE'
         t('fs3combat.graze_wound')
-      when 'MILD'
-        t('fs3combat.mild_wound')
+      when 'MINOR'
+        t('fs3combat.minor_wound')
       when 'MAJOR'
         t('fs3combat.major_wound')
       when 'SEVERE'
