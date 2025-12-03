@@ -10,21 +10,21 @@ Welcome to Mars. Here's your spurs.
 
 <div class="col col-sm-12 col-md-5 pagebox">
 <div class="pageboxh">
-<p><a href="/wiki/ooc:about_us" title="About Red Planet">About Red Planet</a><a href="/wiki/about_us" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+<p><a href="/wiki/about_us" title="About Red Planet">About Red Planet</a><a href="/wiki/about_us" title="Read More"><span class="fas fa-angle-right"></span></a></p>
 </div>
 <div class="pageboxs"><p>Our mission statement, inspirations, and summary of how we play. </p></div>
 </div>
 
 <div class="col col-sm-12 col-md-5 pagebox">
 <div class="pageboxh">
-<p><a href="/wiki/home" title="World Intro">World Intro</a><a href="/wiki/world" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+<p><a href="/wiki/world" title="World Intro">World Intro</a><a href="/wiki/world" title="Read More"><span class="fas fa-angle-right"></span></a></p>
 </div>
 <div class="pageboxs"><p>An introduction to theme and the world we play in.</p></div>
 </div>
 
 <div class="col col-sm-12 col-md-5 pagebox">
 <div class="pageboxh">
-<p><a href="/wiki/ooc:policies" title="Policies">Policies</a><a href="/wiki/policies" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+<p><a href="/wiki/policies" title="Policies">Policies</a><a href="/wiki/policies" title="Read More"><span class="fas fa-angle-right"></span></a></p>
 </div>
 <div class="pageboxs"><p>Our policies on characters, gameplay, OOC behavior, and more. Includes a social contract with expectations around certain types of IC behavior.</p></div>
 </div>
