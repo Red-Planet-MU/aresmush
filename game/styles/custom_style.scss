@@ -153,12 +153,12 @@
   margin: 15px auto; }
   .homebox .pagebox {
     width: 45%;
-    height: 150px;
+    height: 180px;
     min-width: 200px !important; }
 
 .pagebox {
   color:#3c3932; 
-  height: 10em;
+  height: 11em;
   float: left;
   padding: .75em 1em .8em;
   margin: .5em;
@@ -169,6 +169,9 @@
   justify-content: flex-start;
   background-color: #ffe8cf;
   background-image: url("/game/uploads/theme_images/paper_tex.png");
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15);
 }
 
 
