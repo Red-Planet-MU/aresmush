@@ -145,6 +145,19 @@
   font-weight: 400;
 }
 
+.homebox {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  max-width: 720px;
+  margin: 15px auto; }
+  .homebox .pagebox {
+    width: 48%;
+    height: 150px;
+    min-width: 200px !important; }
+
+
+
 /* Wiki Page */
 .toc {
   color:#3c3932; 
