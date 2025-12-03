@@ -26,7 +26,7 @@ Welcome to Mars. Here's your spurs.
 <div class="pageboxh">
 <p><a href="/wiki/ooc:policies" title="Policies">Policies</a><a href="/wiki/policies" title="Read More"><span class="fas fa-angle-right"></span></a></p>
 </div>
-<div class="pageboxs"><p>Our policies on characters, gameplay, OOC behavior, and more. Includes a social contract so that you know what to expect from certain types of IC behavior.</p></div>
+<div class="pageboxs"><p>Our policies on characters, gameplay, OOC behavior, and more. Includes a social contract with expectations around certain types of IC behavior.</p></div>
 </div>
 
 <div class="col col-sm-12 col-md-5 pagebox">
