@@ -4,28 +4,28 @@ fs3skills:
   allow_advantages_xp: false
   attr_dots_beyond_chargen_max: 2
   advantage_dots_beyond_chargen_max: 2
-  days_between_learning: 30
-  max_xp_hoard: 4
-  periodic_xp: 1
+  days_between_learning: 0
+  max_xp_hoard: 10
+  periodic_xp: 2
   xp_costs:
     language:
       '1': 4
       '2': 12
     action:
       '1': 1
-      '2': 2
-      '3': 3
-      '4': 6
-      '5': 8
-      '6': 8
-      '7': 12
+      '2': 3
+      '3': 4
+      '4': 7
+      '5': 9
+      '6': 11
+      '7': 14
     background:
       '1': 4
       '2': 8
     attribute:
       '1': 1
       '2': 4
-      '3': 8
+      '3': 9
     advantage:
       '1': 4
       '2': 12
