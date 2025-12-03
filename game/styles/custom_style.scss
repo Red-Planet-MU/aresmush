@@ -152,7 +152,7 @@
   max-width: 720px;
   margin: 15px auto; }
   .homebox .pagebox {
-    //width: 48%;
+    width: 45%;
     height: 150px;
     min-width: 200px !important; }
 
@@ -167,7 +167,9 @@
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  background-color: #ffe8cf }
+  background-color: #ffe8cf;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
 
 
 /* Wiki Page */
