@@ -156,6 +156,18 @@
     height: 150px;
     min-width: 200px !important; }
 
+.pagebox {
+  height: 10em;
+  float: left;
+  padding: .75em 1em .8em;
+  margin: .5em;
+  overflow-y: auto;
+  width: 31.5%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  min-width: 260px;
+  background-color: #ffe8cf }
 
 
 /* Wiki Page */
