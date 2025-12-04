@@ -62,3 +62,4 @@ Gemfile.lock
 
 # Admin managed files
 game/config/fortune.yml
+game/config/horse.yml
