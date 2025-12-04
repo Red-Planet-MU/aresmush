@@ -17,7 +17,7 @@ chargen:
   - sheet %{name}
   approval_message: Congratulations!  Your application has been approved.  Type %xhonstage%xn
     to go forth and RP.  You may want to customize your character profile on the web
-    portal.
+    portal. You should also check out %xhhelp horse%xn for details on getting your first horse.
   arrivals_category: New Arrivals
   bg_blurb: A background is your character's backstory or history.  You don''t need
     to write a novel. Just cover the basics--who you are, why are you here, and anything
