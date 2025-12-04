@@ -673,9 +673,6 @@ body {
   padding: 12px; }
 
 /* Locations Screen */
-/* --------------------------
-LOCATIONS
----------------------------*/
 .area-entry h2,
 .location-entry h2 {
   border-bottom: 0;
@@ -703,6 +700,15 @@ LOCATIONS
   height: 163px;
   overflow: auto; }
 
+/* Scenes Screen */
+.live_scenes_header a {
+  color: #FFFFFF;
+}
+
+.live_scenes_header a:hover,
+a:focus  {
+  color: #f25e3d;
+}
 
 /* Grid Flexibility */
 @media screen and (max-width: 1000px) {
