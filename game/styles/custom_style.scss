@@ -701,15 +701,11 @@ body {
   overflow: auto; }
 
 /* Scenes Screen */
-.scene_title a {
+.scene-title a {
   color: #FFFFFF;
 }
 
-.scene_title {
-  color: #FFFFFF;
-}
-
-.scene_title a:hover,
+.scene-title a:hover,
 a:focus  {
   color: #f25e3d;
 }
