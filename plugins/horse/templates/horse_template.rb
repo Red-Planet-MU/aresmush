@@ -1,6 +1,6 @@
 module AresMUSH
     module Horse
-      class SerumTemplate < ErbTemplateRenderer
+      class HorseTemplate < ErbTemplateRenderer
         attr_accessor :char
   
         def initialize(char)
