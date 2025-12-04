@@ -61,19 +61,13 @@ module AresMUSH
         #"#{linebreak}#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
       end
   
-      def self.find_serums_type(serum_name)
-        case serum_name
-        when "Revitalizer"
-          "v_serums_has"
-        when "Quickhand"
-          "qh_serums_has"
-        when "Glass Cannon"
-          "gc_serums_has"
-        when "Hardy"
-          "h_serums_has"
-        when "Adreno"
-          "a_serums_has"
-        end
+      def self.generate_horse(char)
+        horse_name = Global.read_config('horse','horse_names')[rand(0...Global.read_config('horse','horse_names').count)]
+        horse_color = Global.read_config('horse','horse_colors')[rand(0...Global.read_config('horse','horse_colors').count)]
+        horse_temperament = Global.read_config('horse','horse_temperaments')[rand(0...Global.read_config('horse','horse_temperaments').count)]
+        char.update(horse_color: horse_color)
+        char.update(horse_temperament: horse_temperament)
+        char.update_demographic :steed, horse_name
       end
   
       def self.find_serums_has(char, serum_name)

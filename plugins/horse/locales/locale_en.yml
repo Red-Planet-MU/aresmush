@@ -10,6 +10,7 @@ en:
     calm_action_msg_short: "Calm horse"
     calm_resolution_msg: "%{name} successfully calms their horse and it is no longer agitated."
     horse_title: "Horse"
+    got_horse: "You have received a new horse named %{horse_name}, a %{horse_temperament} %{horse_color}."
     no_bond_rating: "Flighty"
     first_bond_rating: "Skeptical"
     second_bond_rating: "Doubtful"
