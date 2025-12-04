@@ -21,7 +21,7 @@ module AresMUSH
         when "give"
           return SerumGiveCommand
         when nil
-          return SerumCommand
+          return HorseCommand
         end
 
 
