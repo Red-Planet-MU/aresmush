@@ -11,7 +11,7 @@ en:
     calm_resolution_msg: "%{name} successfully calms their horse and it is no longer agitated."
     horse_title: "Horse"
     desced_horse: "You have updated your horse's description."
-    confirm_get_new_horse: "Are you sure you want to get a new horse? This will reset your current horse's properties (except their description) to something new and cannot be undone. It does not reset your Horse Bond stat.%rIf you are sure you wish to continue, type: %xwhorse/confirm%xn"
+    confirm_get_new_horse: "Are you sure you want to get a new horse? If you already have one, this will cost 1 Luck Point, set your horse's properties (except their description) to something new, and cannot be undone. It does not reset your Horse Bond stat.%rIf you are sure you wish to continue, type: %xwhorse/confirm%xn"
     got_horse: "You have received a new horse named %{horse_name}, a %{horse_temperament} %{horse_color}."
     no_bond_rating: "Flighty"
     first_bond_rating: "Skeptical"
