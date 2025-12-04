@@ -7,7 +7,7 @@ module AresMUSH
         error = Website.check_login(request, true)
         return error if error
         
-        my_scenes = Scene.all.select { |s| !s.completed && (!s.is_private? || s.participant_names.include?(enactor.name))}
+        my_scenes = Scene.all.select { |s| !s.completed && s.participant_names.include?(enactor.name)}
            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
            .map { |s| scene_data(s, enactor) }
         
