@@ -4,3 +4,125 @@ horse:
   shortcuts:
     horses: horse
   spook_rating: 5
+  horse_names: 
+    - Tumbleweed
+    - Thunder Run
+    - Tombstone
+    - Bootscoot
+    - Sweet Tea
+    - Rodeo Clown
+    - Moonshine
+    - Lasso Lou
+    - Haystack
+    - Dumpling
+    - Cactus Flower
+    - Biscuit
+    - Bandana
+    - Juniper
+    - Lucifer
+    - Smokey
+    - Chatter
+    - Teapot
+    - Bluebell
+    - Grub
+    - Potoooooooo
+    - Hayseed
+    - Socks
+    - Halo
+    - Preacher
+    - Rebel
+    - Cash
+    - Coyote
+    - Spider
+    - Blackjack
+    - Noble Feet
+    - Prancer
+    - Rain Sparkle
+    - Swiftie
+    - Violence
+    - Memory
+    - Eagle Eye
+    - Raindrop
+    - Gold Moon
+    - Cricket
+    - Square Dance
+    - Saguaro
+    - Boomerang
+    - Victory
+    - Aftershock
+    - Pandemonium
+    - Calamity
+    - Mischief
+    - Mayhem
+    - Treasure Trap
+    - Parallax
+    - Crawley
+    - Fools Gold
+    - Junta
+    - Mishap
+    - Hotbox
+    - Misdemeanor
+    - Felony
+    - Catch Me
+    - Caper
+  horse_colors:
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black Pinto
+    - Blue Roan
+    - Dappled Black
+    - Black Appaloosa
+    - Black Pintaloosa
+    - Bay Pinto
+    - Bay Roan
+    - Dappled Bay
+    - Bay Appaloosa
+    - Bay Pintaloosa
+    - Chestnut Pinto
+    - Chestnut Roan
+    - Dappled Chestnut
+    - Chestnut Appaloosa
+    - Chestnut Pintaloosa
+    - Sorrel Pinto
+    - Sorrel Roan
+    - Dappled Sorrel
+    - Sorrel Appaloosa
+    - Sorrel Pintaloosa
+    - Gray Pinto
+    - Dappled Gray
+    - Gray Appaloosa
+    - Gray Pintaloosa
+    - Buckskin Pinto
+    - Buckskin Roan
+    - Dappled Buckskin
+    - Buckskin Appaloosa
+    - Buckskin Pintaloosa
+    - Palomino Pinto
+    - Palomino Roan
+    - Dappled Palomino
+    - Palomino Appaloosa
+    - Palomino Pintaloosa
+    - Grullo Pinto
+    - Grullo Roan
+    - Dappled Grullo
+    - Grullo Appaloosa
+    - Grullo Pintaloosa
+    - Dun Pinto
+    - Dun Roan
+    - Dappled Dun
+    - Dun Appaloosa
+    - Dun Pintaloosa
+    - Red Dun Pinto
+    - Red Dun Roan
+    - Dappled Red Dun
+    - Red Dun Appaloosa
+    - Red Dun Pintaloosa
