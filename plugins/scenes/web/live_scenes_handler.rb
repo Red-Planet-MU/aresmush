@@ -11,11 +11,11 @@ module AresMUSH
            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
            .map { |s| scene_data(s, enactor) }
         
-        open_scenes = Scene.all.select { |s| !s.completed && (!s.is_private? || !s.participant_names.include?(enactor.name))}
+        open_scenes = Scene.all.select { |s| !s.completed && (!s.is_private? && !s.participant_names.include?(enactor.name))}
            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
            .map { |s| scene_data(s, enactor) }
 
-        private_scenes = Scene.all.select { |s| !s.completed && (s.is_private? || !s.participant_names.include?(enactor.name))}
+        private_scenes = Scene.all.select { |s| !s.completed && (s.is_private? && !s.participant_names.include?(enactor.name))}
            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
            .map { |s| scene_data(s, enactor) }
            
