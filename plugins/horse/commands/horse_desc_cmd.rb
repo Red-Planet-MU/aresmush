@@ -4,7 +4,7 @@ module AresMUSH
         include CommandHandler
 
         def parse_args
-          self.horsedesc = cmd.args
+          horsedesc = cmd.args
         end
 
         def check_errors
@@ -13,7 +13,7 @@ module AresMUSH
   
         def handle
           
-          enactor.update(horse_desc: self.horsedesc)
+          enactor.update(horse_desc: horsedesc)
           client.emit_success t('horse.desced_horse')
           
 
