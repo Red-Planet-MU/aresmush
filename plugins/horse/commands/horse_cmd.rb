@@ -11,7 +11,7 @@ module AresMUSH
   
         def handle
           ClassTargetFinder.with_a_character(self.target_name, client, enactor) do |model|
-             template = SerumTemplate.new(model)
+             template = HorseTemplate.new(model)
              client.emit template.render
           end
         end

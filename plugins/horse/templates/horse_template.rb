@@ -5,12 +5,9 @@ module AresMUSH
   
         def initialize(char)
           @char = char
-          super File.dirname(__FILE__) + "/serum.erb"
+          super File.dirname(__FILE__) + "/horse.erb"
         end
   
-        def serums_has
-          @char.serums_has
-        end 
   
       end
     end
