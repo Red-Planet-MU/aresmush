@@ -18,8 +18,8 @@ module AresMUSH
           return HorseGetCommand
         when "confirm"
           return HorseGetConfirmCommand
-        when "use"
-          return SerumUseCommand
+        when "desc"
+          return HorseDescCommand
         when "give"
           return SerumGiveCommand
         when nil
