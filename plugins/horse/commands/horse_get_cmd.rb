@@ -12,12 +12,8 @@ module AresMUSH
           if enactor.horse_color
             enactor.spend_luck(1)
           end
-          Horse.generate_horse(enactor)
-
-          horse_name = enactor.demographic("steed")
-          horse_color = enactor.horse_color
-          horse_temperament = enactor.horse_temperament
-          client.emit_success t('horse.got_horse', :horse_name => horse_name, :horse_color => horse_color, :horse_temperament => horse_temperament)
+          
+          client.emit_success t('horse.confirm_get_new_horse')
           
 
         end

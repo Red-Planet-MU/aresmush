@@ -16,6 +16,8 @@ module AresMUSH
         case cmd.switch
         when "get"
           return HorseGetCommand
+        when "confirm"
+          return HorseGetConfirmCommand
         when "use"
           return SerumUseCommand
         when "give"
