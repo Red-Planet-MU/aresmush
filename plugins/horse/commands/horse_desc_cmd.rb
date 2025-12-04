@@ -3,8 +3,10 @@ module AresMUSH
       class HorseDescCommand
         include CommandHandler
 
+        attr_accessor :horse_desc
+
         def parse_args
-          horsedesc = cmd.args
+          self.horse_desc = cmd.args
         end
 
         def check_errors
@@ -13,7 +15,7 @@ module AresMUSH
   
         def handle
           
-          enactor.update(horse_desc: horsedesc)
+          enactor.update(horse_desc: self.horse_desc)
           client.emit_success t('horse.desced_horse')
           
 
