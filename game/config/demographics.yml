@@ -27,7 +27,7 @@ demographics:
   - birthdate
   - played by
   - occupation
-  - horse
+  - steed
   - song
   disable_auto_shortcuts: false
   editable_properties:
@@ -35,7 +35,7 @@ demographics:
   - gender
   - hair
   - physique
-  - horse
+  - steed
   - occupation
   - song
   genders:
