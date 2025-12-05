@@ -6,7 +6,7 @@ fs3skills:
     linked_attr: Perception
   - name: Athletics
     linked_attr: Brawn
-    desc: General running, jumping, climbing, etc.
+    desc: General running, jumping, climbing, etc. Includes roping and throwing.
   - name: Archery
     linked_attr: Reflexes
     desc: Shooting bows.
@@ -17,7 +17,7 @@ fs3skills:
     desc: Blowing stuff up.
     linked_attr: Wits
   - name: Firearms
-    desc: Shooting guns.
+    desc: Shooting guns. Specialties are optional but give a bonus when using that type of firearm.
     specialties:
     - Rifles
     - Pistols
@@ -29,7 +29,7 @@ fs3skills:
     desc: Fighting with fists, knives, and hand-to-hand weapons.
     linked_attr: Brawn
   - name: Riding
-    desc: Riding a HORSE.
+    desc: Riding a horse.
     linked_attr: Reflexes
   - name: Persuasion
     desc: Winning people to your point of view.
@@ -38,7 +38,7 @@ fs3skills:
     desc: Being sneaky.
     linked_attr: Reflexes
   - name: Technician
-    desc: General mechanics/electronics and fixing things.
+    desc: General mechanics and fixing things.
     linked_attr: Wits
   action_skills_blurb: 'Action Skills represent your ability in areas deemed important
     for gameplay.  Action Skills are rated from 0-8, but some games limit the highest
