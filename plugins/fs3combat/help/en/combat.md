@@ -39,6 +39,8 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 
 `combat/reload` – Reloads a weapon.
 
+`combat/recover` - Recovers a single throwing weapon.
+
 `combat/treat <name>` - Treat an injured person's worst treatable wound.
 
 `combat/rally <name>` - Rally a knocked out person (without first aid).
