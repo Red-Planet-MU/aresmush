@@ -89,6 +89,10 @@ website:
     - title: Plots
       route: plots
     - divider: true
+    - title: Bounties & One-Shot Adventures
+      url: https://redplanetmu.com/wiki/system:bounties_oneshot
+    - title: Player-Run Plots
+      url: https://redplanetmu.com/wiki/system:prps
   - title: Directory
     menu:
     - title: Characters
@@ -113,22 +117,25 @@ website:
       route: files
   - title: System
     menu:
-    - title: Abilities List
+    - title: Custom Mechanics
+      url: https://redplanetmu.com/wiki/guide:custom_mechanics
+    - divider: true
+    - title: XP
+      url: https://redplanetmu.com/wiki/system:xp
+    - title: Luck Points
+      url: https://redplanetmu.com/wiki/system:luck_points
+    - divider: true
+    - title: Abilities and Skills
       route: fs3skills-abilities
     - title: Gear List
       route: fs3combat-gear
-    - title: Groups List
-      route: groups
+    - divider: true
     - title: Achievements
       route: achievements
     - title: Skill Limits
       route: fs3-limits
-    - title: XP Costs
-      route: fs3-xp-costs
     - title: Skill Scan
       route: fs3skills-scan
-    - title: Roles
-      route: roles
     - divider: true
     - target: blank
       title: FS3 Player's Guide <i class="fa fa-external-link-alt" aria-hidden="true">
