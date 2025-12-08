@@ -1,27 +1,31 @@
 module AresMUSH
   module Chargen
     def self.custom_app_review(char)
-            
-      # If you don't want to have any custom app review steps, return nil
-      return nil
-            
-      # Otherwise, return a message to display.  Here's an example of how to 
-      # give an alert if the character has chosen an invalid position for their 
-      # faction.
-      #
-      #  faction = char.group("Faction")
-      #  position = char.group("Position")
-      #  
-      #  if (position == "Knight" && faction != "Noble")
-      #    msg = "%xrOnly nobles can be knights.%xn"
-      #  else
-      #    msg = t('chargen.ok')
-      #  end
-      #
-      #  return Chargen.format_review_status "Checking groups.", msg
-      #
-      # You can also use other built-in chargen status messages, like t('chargen.not_set').  
-      # See https://www.aresmush.com/tutorials/config/chargen.html for details.
+      age = char.age
+      points = AbilityPointCounter.total_points(char) 
+  
+      messages = []
+      error_found = false
+  
+      case age
+      when 20..25 && points <= 35
+        messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
+      when 26..30 && points <= 38
+        messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
+      when 31..35 && points <= 41
+        messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
+      when 36..40 && points <= 43
+        messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
+      when 41..45 && points <= 47
+        messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
+      when 46..99 && points <= 50
+        messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
+      else 
+        messages << Chargen.format_review_status("Checking Points", "You have spent too many points for your age.")
+      end
+
+      return messages.join("\n")  
+
     end
   end
 end
