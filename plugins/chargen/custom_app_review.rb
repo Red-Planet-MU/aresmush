@@ -20,7 +20,7 @@ module AresMUSH
       elsif ((46..99) === age) && points <= 50
         messages << Chargen.format_review_status("Checking the right points for your age",  t('chargen.ok'))
       else 
-        messages << Chargen.format_review_status("Checking the right points for your age", "%xh%xr  < You have spent too many points for your age. >%xn")
+        messages << Chargen.format_review_status("Checking the right points for your age", "%r%xh%xr     < You have spent too many points for your age. >%xn")
       end
 
       return messages.join("\n")  
