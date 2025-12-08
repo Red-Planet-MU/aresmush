@@ -2,9 +2,7 @@ module AresMUSH
   module Chargen
     def self.custom_app_review(char)
       age = char.age.to_i
-      Global.logger.debug "age: #{age}"
       points = FS3Skills::AbilityPointCounter.total_points(char) 
-      Global.logger.debug "points: #{points}"
   
       messages = []
       error_found = false
