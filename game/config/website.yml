@@ -47,6 +47,9 @@ website:
       route: mail
     - title: Events
       route: events
+    - divider: true
+    - title: Guides
+      url: https://redplanetmu.com/wiki/guide
   - title: World
     menu:
     - title: World
