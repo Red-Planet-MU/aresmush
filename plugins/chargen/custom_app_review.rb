@@ -1,7 +1,7 @@
 module AresMUSH
   module Chargen
     def self.custom_app_review(char)
-      age = char.age
+      age = char.age.to_i
       points = FS3Skills::AbilityPointCounter.total_points(char) 
   
       messages = []
