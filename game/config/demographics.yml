@@ -71,8 +71,8 @@ demographics:
     birthdate: "%xcbirthdate <mm/dd/yyy>%xn or %xcage <years>%xn"
     callsign: "%xccallsign <callsign>%xn - Non-pilots may leave blank or enter a nickname."
     full name: "%xcfullname <name>%xn - Your character's full name."
-  max_age: 65
-  min_age: 18
+  max_age: 99
+  min_age: 20
   nickname_field: ''
   nickname_format: "%{name} (%{nickname})"
   permissions:
