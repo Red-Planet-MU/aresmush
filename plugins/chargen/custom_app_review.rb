@@ -9,18 +9,17 @@ module AresMUSH
       messages = []
       error_found = false
   
-      case age
-      when 20..25 && points <= 35
+      if ((20..25) === age) && points <= 35
         messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
-      when 26..30 && points <= 38
+      elsif ((26..30) === age) && points <= 38
         messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
-      when 31..35 && points <= 41
+      elsif ((31..35) === age) && points <= 41
         messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
-      when 36..40 && points <= 43
+      elsif ((36..40) === age) && points <= 43
         messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
-      when 41..45 && points <= 47
+      elsif ((41..45) === age) && points <= 47
         messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
-      when 46..99 && points <= 50
+      elsif ((46..99) === age) && points <= 50
         messages << Chargen.format_review_status("Checking Points",  t('chargen.ok'))
       else 
         messages << Chargen.format_review_status("Checking Points", "You have spent too many points for your age.")
