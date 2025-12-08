@@ -5,6 +5,7 @@ module AresMUSH
 
 
         def check_errors
+          return t('horse.not_approved') if !enactor.is_approved?
           return t('fs3skills.not_enough_points') if enactor.luck < 1 && enactor.horse_color
         end
   

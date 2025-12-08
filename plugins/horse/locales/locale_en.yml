@@ -1,6 +1,7 @@
 ---
 en:
   horse:
+    not_approved: "You must be approved to use that command."
     going_to_spook: "%{name}'s horse becomes agitated and is starting to buck!"
     spook_thrown: "%{name}'s horse throws them off!"
     still_spooking: "%{name}'s horse is becoming increasingly agitated!"
