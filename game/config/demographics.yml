@@ -88,7 +88,6 @@ demographics:
   - full name
   - gender
   - birthdate
-  - steed
   shortcuts:
     groups: group
     demographics: demographic
