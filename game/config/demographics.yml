@@ -27,19 +27,19 @@ demographics:
   - birthdate
   - played by
   - occupation
-  - steed
-  - song title
-  - song link
+  - horse name
+  - theme song title
+  - theme song link
   disable_auto_shortcuts: false
   editable_properties:
   - full name
   - gender
   - hair
   - physique
-  - steed
+  - horse name
   - occupation
-  - song title
-  - song link
+  - theme song title
+  - theme song link
   genders:
     Male:
       possessive_pronoun: his
