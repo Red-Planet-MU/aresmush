@@ -29,6 +29,8 @@ demographics:
   - occupation
   - steed
   - song
+  - song title
+  - song link
   disable_auto_shortcuts: false
   editable_properties:
   - full name
