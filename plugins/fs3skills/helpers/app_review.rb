@@ -107,7 +107,7 @@ module AresMUSH
 
       #max = Global.read_config("fs3skills", "max_ap")
       error = points > points_for_age ? t('chargen.too_many') : t('chargen.ok')
-      Chargen.format_review_status(t('fs3skills.total_points_spent', :total => points, :max => max), error)
+      Chargen.format_review_status(t('fs3skills.total_points_spent', :total => points, :max => points_for_age), error)
     end
     
     def self.starting_skills_check(char)
