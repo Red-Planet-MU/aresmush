@@ -1,45 +1,26 @@
 module AresMUSH
   module Chargen
     def self.custom_app_review(char)
-      age = char.age.to_i
-      points = FS3Skills::AbilityPointCounter.total_points(char) 
-      
-      case age
-      when 20..25
-        points_for_age = 35
-      when 26..30
-        points_for_age = 38
-      when 31..35
-        points_for_age = 41
-      when 36..40
-        points_for_age = 43
-      when 41..45
-        points_for_age = 47
-      when 46..99
-        points_for_age = 50
-      end
-
-      messages = []
-      error_found = false
-  
-      if ((20..25) === age) && points <= 35
-        messages << Chargen.format_review_status("Checking the right points for your age. (35 max)",  t('chargen.ok'))
-      elsif ((26..30) === age) && points <= 38
-        messages << Chargen.format_review_status("Checking the right points for your age. (38 max)",  t('chargen.ok'))
-      elsif ((31..35) === age) && points <= 41
-        messages << Chargen.format_review_status("Checking the right points for your age. (41 max)",  t('chargen.ok'))
-      elsif ((36..40) === age) && points <= 43
-        messages << Chargen.format_review_status("Checking the right points for your age. (43 max)",  t('chargen.ok'))
-      elsif ((41..45) === age) && points <= 47
-        messages << Chargen.format_review_status("Checking the right points for your age. (47 max)",  t('chargen.ok'))
-      elsif ((46..99) === age) && points <= 50
-        messages << Chargen.format_review_status("Checking the right points for your age. (50 max)",  t('chargen.ok'))
-      else 
-        messages << Chargen.format_review_status("Checking the right points for your age. (#{points_for_age} max)", "%r%xh%xr     < You have spent too many points for your age. >%xn")
-      end
-
-      return messages.join("\n")  
-
+      # If you don't want to have any custom app review steps, return nil
+      return nil
+            
+      # Otherwise, return a message to display.  Here's an example of how to 
+      # give an alert if the character has chosen an invalid position for their 
+      # faction.
+      #
+      #  faction = char.group("Faction")
+      #  position = char.group("Position")
+      #  
+      #  if (position == "Knight" && faction != "Noble")
+      #    msg = "%xrOnly nobles can be knights.%xn"
+      #  else
+      #    msg = t('chargen.ok')
+      #  end
+      #
+      #  return Chargen.format_review_status "Checking groups.", msg
+      #
+      # You can also use other built-in chargen status messages, like t('chargen.not_set').  
+      # See https://www.aresmush.com/tutorials/config/chargen.html for details.
     end
   end
 end
