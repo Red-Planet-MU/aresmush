@@ -38,7 +38,8 @@ demographics:
   - physique
   - steed
   - occupation
-  - song
+  - song title
+  - song link
   genders:
     Male:
       possessive_pronoun: his
