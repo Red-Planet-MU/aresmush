@@ -38,8 +38,7 @@ chargen:
   lastwill_blurb: The fate of idled-out characters is at the game admin's discretion,
     but you can register a preference with your character's 'last will'. You may ask
     to be killed off, or turned into a NPC, or whatever.
-  post_approval_message: Please make sure they have a profile image for their log
-    icon.
+  post_approval_message: 
   rank_blurb: Military rank.
   rejection_message: Sorry, your character could not be approved at the present time
     for the reasons described below.  Please see %xhhelp app%xn for help making changes
