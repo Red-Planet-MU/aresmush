@@ -16,14 +16,21 @@ chargen:
   - hooks %{name}
   - sheet %{name}
   approval_message: Welcome to Red Planet! We are glad you're here.
+  
     First things first, make sure you get a HORSE! See [`help horse`](/help/horse) .
+
     Next, check out the [Getting Started](/wiki/guide:getting_started) guide for what to do next. This guide will help you - 
       
       * Join the Game Discord
+
       * Set up your IC home
+
       * Start finding RP
+
       * Customize your character profile
+
       * And much more!
+
 
       If you need help with anything, please feel free to submit a request, use the Questions channel, or message the [[[staff_team|Staff Team]]] and we will help as promptly as possible.
   arrivals_category: New Arrivals
