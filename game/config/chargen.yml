@@ -15,9 +15,17 @@ chargen:
   - bg %{name}
   - hooks %{name}
   - sheet %{name}
-  approval_message: Congratulations!  Your application has been approved.  Type %xhonstage%xn
-    to go forth and RP.  You may want to customize your character profile on the web
-    portal. You should also check out %xhhelp horse%xn for details on getting your first horse.
+  approval_message: Welcome to Red Planet! We are glad you're here.
+    First things first, make sure you get a HORSE! See `help horse`.
+    Next, check out the [[[guide:getting_started|Getting Started]]] guide for what to do next. This guide will help you:
+      
+      * Join the Game Discord
+      * Set up your IC home
+      * Start finding RP
+      * Customize your character profile
+      * And much more!
+
+      If you need help with anything, please feel free to submit a request, use the Questions channel, or message the [[[staff_team|Staff Team]]] and we will help as promptly as possible.
   arrivals_category: New Arrivals
   bg_blurb: A background is your character's backstory or history.  You don''t need
     to write a novel. Just cover the basics--who you are, why are you here, and anything
