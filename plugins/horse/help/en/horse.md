@@ -14,5 +14,5 @@ Your first horse is free. You can generate new qualities for your horse by using
 ## Commands
 `horse [<name>]` - View your horse's qualities or someone else's.
 `horse/get` - Obtain a horse.
-`steed <name>` - Rename your horse.
+`horsename <name>` - Rename your horse.
 `horse/desc <desc>` - Give your horse a more detailed description.
