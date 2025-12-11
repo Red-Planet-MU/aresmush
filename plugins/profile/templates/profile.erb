@@ -12,7 +12,7 @@
 
 %xh<%= left( t('profile.birthdate_title'), 12 ) %>%xn <%= left( birthdate, 25 ) %>%xh<%= left( t('profile.age_title'), 12 ) %>%xn <%= left( age, 25 ) -%>
 <% end %>
-
+%xh<%= left( "Theme Song", 12) %>%xn <% char.demographic("theme song link") %>
 %xh<%= left( t('profile.wiki_title'), 12) %>%xn <%= wiki %>
 <%= divider -%>
 <% groups.each_with_index do |g, i| %>
