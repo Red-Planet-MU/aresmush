@@ -5,12 +5,12 @@
 <%= divider %>
 <% visible_demographics.each_with_index do |d, i| %>
 <% if #{d} == "Theme Song Title %>
+<% end %>
 <% if i % 2 == 0 %>%R<% end %>%xh<%= left( "#{d.titlecase}", 12 ) %>%xn <%= left( demographic(d), 25 ) -%>
 <% end %>
 <% if show_age %>
 
 %xh<%= left( t('profile.birthdate_title'), 12 ) %>%xn <%= left( birthdate, 25 ) %>%xh<%= left( t('profile.age_title'), 12 ) %>%xn <%= left( age, 25 ) -%>
-<% end %>
 <% end %>
 
 %xh<%= left( t('profile.wiki_title'), 12) %>%xn <%= wiki %>
