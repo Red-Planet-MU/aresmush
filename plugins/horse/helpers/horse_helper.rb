@@ -67,7 +67,7 @@ module AresMUSH
         horse_temperament = Global.read_config('horse','horse_temperaments')[rand(0...Global.read_config('horse','horse_temperaments').count)]
         char.update(horse_color: horse_color)
         char.update(horse_temperament: horse_temperament)
-        char.update_demographic :horsename, horse_name
+        char.update_demographic "horse name", horse_name
       end
   
       def self.find_serums_has(char, serum_name)
