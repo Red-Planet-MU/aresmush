@@ -23,7 +23,7 @@ module AresMUSH
           horse_name: char.demographic("horse name"),
           horse_color: char.horse_color,
           horse_temperament: char.horse_temperament,
-          horse_desc: char.horse_desc
+          horse_desc: char.horse_desc,
           song_link: char.demographic("theme song link")
         }
       end
