@@ -4,7 +4,7 @@
 <% end -%>
 <%= divider %>
 <% visible_demographics.each_with_index do |d, i| %>
-<% unless "#{d.titlecase}" == "Theme Song Title" %>
+<% unless "#{d.titlecase}" == "Theme Song Title" || "#{d.titlecase}" == "Theme Song Link" %>
 <% if i % 2 == 0 %>%R<% end %>%xh<%= left( "#{d.titlecase}", 12 ) %>%xn <%= left( demographic(d), 25 ) -%>
 <% end %>
 <% end %>
