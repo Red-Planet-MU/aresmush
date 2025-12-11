@@ -10,9 +10,6 @@ module AresMUSH
         end
   
         def handle
-          if enactor.horse_color
-            enactor.spend_luck(1)
-          end
           
           client.emit_success t('horse.confirm_get_new_horse')
           
