@@ -720,7 +720,11 @@ a:focus  {
 	.play-screen {
 		display: block!important;
 	}
-  
+  .play-main h3 {
+		width: calc(100% - 170px);
+	}
+}
+
 .play-sidebar {
   border: 1px solid #3d5954;
 }
