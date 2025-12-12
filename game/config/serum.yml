@@ -38,9 +38,9 @@ serum:
     display_name: "%x22%X166Glass Cannon Serum%xn"
   serum_cron:
     day_of_week:
-    - Sat
+    - Fri
     hour:
-    - 21
+    - 19
     minute:
-    - 0
-  periodic_serum: "revitalizer"
+    - 40
+  periodic_serum: "Revitalizer"

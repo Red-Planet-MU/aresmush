@@ -8,7 +8,6 @@ module AresMUSH
         Global.logger.debug "Serum distribution."
         
         periodic_serum = Global.read_config("serum", "periodic_serum")
-        #max_xp = Global.read_config("fs3skills", "max_xp_hoard")
         
         approved = Chargen.approved_chars
         approved.each do |a|
