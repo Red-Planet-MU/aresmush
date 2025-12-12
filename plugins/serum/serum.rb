@@ -29,7 +29,12 @@ module AresMUSH
       nil
     end
 
-    def self.get_event_handler(event_name)
+    def self.get_event_handler(event_name) 
+      case event_name
+      when "CronEvent"
+        return SerumCronHandler
+      end
+      
       nil
     end
 
