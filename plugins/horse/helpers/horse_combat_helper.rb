@@ -18,7 +18,7 @@ module AresMUSH
         end
         return 
       #Check if mounted and already spooked
-      elsif (combatant.mount_type && combatant.spook_counter < 0)
+      elsif (combatant.mount_type && combatant.spook_counter < 0 && !combatant.is_npc?)
         riding_roll = combatant.roll_ability("Riding", combatant.spook_counter)
         if riding_roll <= 0
           FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
