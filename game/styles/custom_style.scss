@@ -710,6 +710,15 @@ a:focus  {
   color: #f25e3d;
 }
 
+/* Play Screen */
+.play-sidebar {
+  border: 1px solid #3d5954;
+}
+.play-section-title {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Grid Flexibility */
 @media screen and (max-width: 1000px) {
 	.body-wrap,
