@@ -566,6 +566,10 @@ body {
 }
 
 /* Character Gallery */
+.icon-gallery-item {
+  margin: 5px 20px 0px 0px;
+}
+
 .log-icon-title-container {
   height: 35px;
   top: -25px;
@@ -584,6 +588,12 @@ body {
   height: 175px;
   border-radius: 0px;
   border: 5px solid #f9f9ef; }
+
+.log-icon-title {
+  padding-top: 5px;
+  font-family: $header-font;
+  padding-right: 15px;
+}
 
 .log-icon {
   height: 175px;
