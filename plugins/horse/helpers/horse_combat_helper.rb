@@ -3,7 +3,7 @@ module AresMUSH
 
     def self.horse_new_turn(combatant)
       #Check if mounted and unspooked
-      if (combatant.mount_type && combatant.spook_counter == 0)
+      if (combatant.mount_type && combatant.spook_counter == 0 && !combatant.is_npc?)
         #Get the spook rating and horse bond
         spook_rating = Global.read_config('horse', 'spook_rating')
         bond_with_horse = combatant.associated_model.horse_bond
