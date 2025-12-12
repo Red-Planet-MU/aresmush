@@ -725,14 +725,30 @@ a:focus  {
 	}
 }
 
+@media screen and (max-width: 1024px) {
+	.body-wrap {
+		display: block!important;
+	}
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1470px) {
+	.body-wrap {
+		grid-template-columns: minmax(70%, 2150px) auto;
+	}
+}
+
 .play-sidebar {
   border: 1px solid #3d5954;
+  margin: 10px;
 }
 .play-section-title {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.chat-window {
+	border: 0;
+}
 
 /* Grid Flexibility */
 @media screen and (max-width: 1000px) {
