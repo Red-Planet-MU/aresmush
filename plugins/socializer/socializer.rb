@@ -36,6 +36,10 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
+      case request.cmd
+      when "webPalsInvite"
+        return WebPalsInviteHandler
+      end
       nil
     end
 
