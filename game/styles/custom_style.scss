@@ -711,6 +711,16 @@ a:focus  {
 }
 
 /* Play Screen */
+.play-screen {
+	display: grid;
+	grid-template-columns: 350px auto;
+}
+
+@media screen and (max-width: 991.98px) {
+	.play-screen {
+		display: block!important;
+	}
+  
 .play-sidebar {
   border: 1px solid #3d5954;
 }
