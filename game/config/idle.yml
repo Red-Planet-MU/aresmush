@@ -48,12 +48,8 @@ idle:
     value: gender
   - field: group
     width: 17
-    title: Faction
-    value: Faction
-  - field: group
-    width: 17
-    title: Position
-    value: Position
+    title: Origin
+    value: Origin
   shortcuts:
     idle/add: idle/action
     roster/update: roster/add
