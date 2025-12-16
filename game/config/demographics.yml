@@ -51,7 +51,12 @@ demographics:
       subjective_pronoun: she
       objective_pronoun: her
       noun: woman
-    Other:
+    Non-Binary:
+      possessive_pronoun: their
+      subjective_pronoun: they
+      objective_pronoun: them
+      noun: person
+    Gender Fluid:
       possessive_pronoun: their
       subjective_pronoun: they
       objective_pronoun: them
