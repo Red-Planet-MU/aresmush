@@ -26,6 +26,7 @@ module AresMUSH
         invitees.each do |name|
           char = Character.find_one_by_name(name)
           Socializer.pal_invite_to_scene(scene, char, enactor)
+        end
         Scenes.invite_to_scene(scene, invitee, enactor)
                     
         {}
