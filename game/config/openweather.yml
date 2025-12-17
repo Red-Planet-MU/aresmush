@@ -27,6 +27,19 @@ openweather:
         coords:
           lat: 34.45477
           lon: -111.53323
+      High Altitude:
+        coords:
+          lat: 35.1829479
+          lon: -111.695436
+      Mid-Elevation:
+        coords:
+          lat: 34.854204
+          lon: -111.836359
+      Low Elevation:
+        coords:
+          lat: 33.603493
+          lon: -112.7157645
+
 
   # Runs every hour to update weather data.
 
