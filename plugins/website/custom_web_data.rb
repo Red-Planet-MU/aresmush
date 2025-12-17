@@ -15,6 +15,7 @@ module AresMUSH
     def self.custom_sidebar_data(viewer)
       return {
         looking_for_rp: LookingForRp.char_names,
+        looking_for_rp_ids: LookingForRp.char_ids,
       }
     end
   end

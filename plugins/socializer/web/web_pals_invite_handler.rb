@@ -2,19 +2,33 @@ module AresMUSH
   module Socializer
     class WebPalsInviteHandler
       def handle(request)
-        puts request.args
-        ## probably also need the scene ID
-        char_name_or_id = request.auth[:id]
-        char = Character.find_one_by_name(char_name_or_id)
-        ## Need a helper function to loop through the pal list using only the requesting char id
-        Socializer.add_comp([char], comp_msg, Character[comper_id])
+        scene = Scene[request.args['id']]
+        enactor = request.enactor
+
+
+        invitees = enactor.pals.map { |p| p.name }
+        
+        if (!scene || !invitee)
+          return { error: t('webportal.not_found') }
+        end
+        
         error = Website.check_login(request)
         return error if error
-        if comper_id == char_name_or_id
-          return { error: t('compliments.cant_comp_self') }
+        
+        if (!Scenes.can_read_scene?(enactor, scene))
+          return { error: t('scenes.scene_is_private') }
         end
-        {
-        }
+        
+        if (scene.participants.include?(invitee))
+          return { error: t('scenes.scene_already_in_scene') }
+        end
+        
+        invitees.each do |name|
+          char = Character.find_one_by_name(name)
+          Socializer.pal_invite_to_scene(scene, char, enactor)
+        Scenes.invite_to_scene(scene, invitee, enactor)
+                    
+        {}
       end
     end
   end
