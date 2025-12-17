@@ -3,7 +3,9 @@ module AresMUSH
     class SetLFRPHandler
       def handle(request)
         puts request.args
-        web_enactor = request.auth[:id]
+        web_enactor_id = request.auth[:id]
+        Global.logger.debug "Web_enactor_id: #{web_enactor_id}"
+        web_enactor = web_enactor_id
         LookingForRp.set(web_enactor, 1)
         if web_enactor.looking_for_rp_announce == "on"
           Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit', :name => Character[web_enactor].name, :duration => 1))
