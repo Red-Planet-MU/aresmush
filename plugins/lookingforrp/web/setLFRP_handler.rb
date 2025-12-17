@@ -1,6 +1,6 @@
 module AresMUSH
   module LookingForRp
-    class setLFRPHandler
+    class SetLFRPHandler
       def handle(request)
         puts request.args
         web_enactor = request.auth[:id]
