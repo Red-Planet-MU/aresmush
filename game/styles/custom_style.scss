@@ -620,6 +620,16 @@ body {
   color: #660d0e;
 }
 
+.lfrp-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: rgba(156, 156, 156, .5);
+  padding: 10px 0px 10px 0px;
+}
+
 /* Character Gallery */
 .icon-gallery .icon-gallery-item {
   margin: 5px 20px 0px 0px;
