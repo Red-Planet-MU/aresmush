@@ -7,6 +7,7 @@ module AresMUSH
           chars: LookingForRp.web_list
         }
 
+      end
     end
   end
 end
