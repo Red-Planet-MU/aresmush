@@ -815,7 +815,7 @@ a:focus  {
 
 /* Grid Flexibility */
 @media screen and (max-width: 1000px) {
-	body-wrap,
+	.body-wrap,
 	.fs3-sheet {
 		grid-template-columns: 100%;
 	}
