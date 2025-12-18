@@ -37,8 +37,12 @@ module AresMUSH
       chars_looking_for_rp.map { |c| c.name }
     end
 
-    def self.char_ids
-      chars_looking_for_rp.map { |c| c.id }
+    def build_web_LFRP_data(char)
+      {
+        name: char.name,
+        icon: Website.icon_for_char(char),
+        status: Website.activity_status(char)
+      }
     end
 
     def self.announce_toggle_on(char)

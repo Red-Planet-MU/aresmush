@@ -105,7 +105,7 @@ en:
         # GENERAL
         # ----------------------------
         
-        organizer_emit: "%xb<FS3Combat>%xn %{message}"
+        organizer_emit: "%x27<FS3Combat>%xn %{message}"
         combat_emit: "%xc<FS3Combat>%xn %{message}"
         npcmaster_text: " %xh%xx(by %{name})%xn"
         invalid_combat_number: "That is not a valid combat number.  See combats for a list."
