@@ -10,8 +10,8 @@ module AresMUSH
 
         Global.logger.debug "scene arg: #{scene}"
         Global.logger.debug "enactor arg: #{enactor}"
-        Global.logger.debug "target_from_web arg: #{}"
-        Global.logger.debug "serum_name arg: #{}"
+        Global.logger.debug "target_from_web arg: #{target_from_web}"
+        Global.logger.debug "serum_name arg: #{serum_name}"
         #If no target, target is enactor
         if !target_from_web
           target = enactor
