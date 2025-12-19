@@ -7,6 +7,11 @@ module AresMUSH
         enactor = request.enactor
         target_from_web = request.args['target_name']
         serum_name = request.args['serum_name']
+
+        Global.logger.debug "scene arg: #{scene}"
+        Global.logger.debug "enactor arg: #{enactor}"
+        Global.logger.debug "target_from_web arg: #{}"
+        Global.logger.debug "serum_name arg: #{}"
         #If no target, target is enactor
         if !target_from_web
           target = enactor
