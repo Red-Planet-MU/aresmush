@@ -44,7 +44,7 @@ module AresMUSH
       message = t('fs3skills.unusual_abilities_check')
       
       all_skills = char.fs3_background_skills.map { |s| s.name }
-      all_skills.concat char.fs3_action_skills.select { |s| s.rating > 1 }.map { |s| s.name }
+      all_skills.concat char.fs3_action_skills.select { |s| s.rating > 3 }.map { |s| s.name }
       all_skills.concat char.fs3_languages.map { |s| s.name }
       
       uncommon_skills = Global.read_config("fs3skills", "unusual_skills") || []
