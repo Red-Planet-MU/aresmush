@@ -8,9 +8,9 @@ module AresMUSH
 
         invitees = enactor.pals.map { |p| p.name }
         
-        if (!scene || !invitee)
-          return { error: t('webportal.not_found') }
-        end
+        #if (!scene || !invitee)
+        #  return { error: t('webportal.not_found') }
+        #end
         
         error = Website.check_login(request)
         return error if error
