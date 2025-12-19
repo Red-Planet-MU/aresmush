@@ -1,6 +1,6 @@
 module AresMUSH
   module Serum
-    class WebUseSerumHandler
+    class WebUseSerumRequestHandler
       def handle(request)
         #Parse args
         scene = Scene[request.args['id']]
