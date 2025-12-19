@@ -67,7 +67,7 @@ module AresMUSH
           heal_amount = 3
         when 3..4
           heal_amount = 5
-        when 5..7
+        when 5..15
           heal_amount = 7
         when 16..99
           heal_amount = 9
