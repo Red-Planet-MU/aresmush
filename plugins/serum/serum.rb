@@ -42,6 +42,8 @@ module AresMUSH
       case request.cmd
       when "getSerum"
         return GetSerumRequestHandler
+      when "webUseSerum"
+        return WebUseSerumRequestHandler
       end
       nil
     end
