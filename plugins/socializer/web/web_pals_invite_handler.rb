@@ -19,9 +19,9 @@ module AresMUSH
           return { error: t('scenes.scene_is_private') }
         end
         
-        if (scene.participants.include?(invitee))
-          return { error: t('scenes.scene_already_in_scene') }
-        end
+        #if (scene.participants.include?(invitee))
+        #  return { error: t('scenes.scene_already_in_scene') }
+        #end
         
         invitees.each do |name|
           char = Character.find_one_by_name(name)
