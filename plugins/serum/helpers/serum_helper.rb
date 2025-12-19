@@ -84,6 +84,41 @@ module AresMUSH
         end
       end
 
+      def self.non_combat_healing_serum(char, target, serum_name)
+        heal_roll = TDD.parse_and_roll(char, "Medicine")
+        heal_success_level = TDD.get_success_level(heal_roll)
+        dice_message = TDD.print_dice(heal_roll)
+        wound = FS3Combat.worst_treatable_wound(target)
+        display_name = Global.read_config('serum',serum_name,'display_name')
+        case heal_success_level
+        when -1
+          heal_amount = 0
+          dice_message = t('tdd.botch')
+          FS3Combat.inflict_damage(target, "Minor", "Botched Serum")
+          return t('serum.used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
+        when 0
+          heal_amount = 1
+        when 1
+          heal_amount = 3
+        when 2
+          heal_amount = 4
+        when 3
+          heal_amount = 6
+        when 4
+          heal_amount = 7
+        when 5..15
+          heal_amount = 8
+        when 16..99
+          heal_amount = 10
+          dice_message = t('tdd.critical_success')
+        end
+
+        if heal_success_level >= 0
+          FS3Combat.heal(wound, heal_amount)
+          message = t('serum.used_v_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
+        end
+      end
+
       def self.fetch_serum(char, viewer)
         return {serums: Website.format_markdown_for_html(char.v_serums_has)#, 
         #a_serums: Website.format_markdown_for_html(char.a_serums_has), 

@@ -2,31 +2,35 @@ module AresMUSH
   module Serum
     class WebUseSerumHandler
       def handle(request)
+        #Parse args
         scene = Scene[request.args['id']]
         enactor = request.enactor
+        target_from_web = request.args['target_name']
+        serum_name = request.args['serum_name']
+        #If no target, target is enactor
+        if !target_from_web
+          target = enactor
+        else 
+          target = target_from_web
+        end
 
-
-        invitees = enactor.pals.map { |p| p.name }
-        
-        #if (!scene || !invitee)
-        #  return { error: t('webportal.not_found') }
-        #end
+        #As of now, only non-combat serum is healing, so need wound
+        wound = FS3Combat.worst_treatable_wound(target)
         
         error = Website.check_login(request)
         return error if error
         
-        if (!Scenes.can_read_scene?(enactor, scene))
-          return { error: t('scenes.scene_is_private') }
+        #Must have that serum
+        if Serum.find_serums_has(enactor, serum_name) < 1
+          return { error: t('serum.dont_have_serum') }
         end
         
-        #if (scene.participants.include?(invitee))
-        #  return { error: t('scenes.scene_already_in_scene') }
-        #end
-        
-        invitees.each do |name|
-          char = Character.find_one_by_name(name)
-          Socializer.pal_invite_to_scene(scene, char, enactor)
+        #Must have a wound (as currently only serum is healing)
+        if !wound
+          return { error: t('serum.no_healable_wounds', :target => target.name) }
         end
+        
+        Serum.non_combat_healing_serum(enactor, target, serum_name)
                     
         {}
       end
