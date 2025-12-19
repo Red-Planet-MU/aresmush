@@ -10,6 +10,7 @@ module AresMUSH
     end
 
     def self.pal_invite_to_scene(scene, char, enactor)
+      Global.logger.debug "scene participant test: #{!scene.participants.include?(char)}"
       if (!scene.participants.include?(char))
         if (!scene.invited.include?(char))
           scene.invited.add char
