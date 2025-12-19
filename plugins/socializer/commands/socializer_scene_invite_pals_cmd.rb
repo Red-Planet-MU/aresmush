@@ -34,14 +34,12 @@ module AresMUSH
               client.emit_failure t("db.object_not_found")
               return
             end
-            
-            if (scene.participants.include?(char))
-              client.emit_failure t('scenes.scene_already_in_scene')
-            end
           
             if (self.invited)
-              Socializer.pal_invite_to_scene(scene, char, enactor)
-              client.emit_success t('socializer.scene_pal_invited', :name => char.name)
+              if (!scene.participants.include?(char))
+                Socializer.pal_invite_to_scene(scene, char, enactor)
+                client.emit_success t('socializer.scene_pal_invited', :name => char.name)
+              end
             else
               Socializer.pal_uninvite_from_scene(scene, char, enactor)
               client.emit_success t('socializer.scene_pal_uninvited', :name => char.name)            
