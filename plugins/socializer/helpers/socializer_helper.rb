@@ -12,13 +12,18 @@ module AresMUSH
     def self.pal_invite_to_scene(scene, char, enactor)
       if (!scene.invited.include?(char))
         scene.invited.add char
+        message = t('socializer.pal_scene_notify_invite', :name => enactor.name, :num => scene.id)
+        Global.notifier.notify_ooc(:scene_message, message) do |notify_char|
+          notify_char == char
+        end
+        Login.notify(char, :scene, message, scene.id)
       end
-      message = t('socializer.pal_scene_notify_invite', :name => enactor.name, :num => scene.id)
-      Global.notifier.notify_ooc(:scene_message, message) do |notify_char|
-        notify_char == char
-      end
+      #message = t('socializer.pal_scene_notify_invite', :name => enactor.name, :num => scene.id)
+      #Global.notifier.notify_ooc(:scene_message, message) do |notify_char|
+      #  notify_char == char
+      #end
       
-      Login.notify(char, :scene, message, scene.id)
+      #Login.notify(char, :scene, message, scene.id)
     end
 
     def self.pal_uninvite_from_scene(scene, char, enactor)
