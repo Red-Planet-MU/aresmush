@@ -2,9 +2,9 @@ module AresMUSH
     module Serum
       class GetSerumRequestHandler
         def handle(request)
-          char_name_or_id = request.args[:char_id]
+          char_name_or_id = request.args['char_id']
           char = Character.find_one_by_name(char_name_or_id)
-          serum_name = request.args[:serum_type]
+          serum_name = request.args['serum_type']
           Global.logger.debug "char: #{char} serum_name: #{serum_name}"
           puts "Char: #{char}"
           enactor = request.auth[:id]
