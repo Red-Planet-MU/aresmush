@@ -8,7 +8,7 @@ module AresMUSH
           enactor = request.enactor
           error = Website.check_login(request)
           return error if error
-          if enactor.name != char_name_or_id.name
+          if enactor.name != char.name
             return { error: t('serum.cant_get_serum_for_others') }
           end
           Serum.modify_serum(char, serum_name, 1)
