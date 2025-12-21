@@ -42,6 +42,8 @@ module AresMUSH
       case request.cmd
       when "getSerum"
         return GetSerumRequestHandler
+      when "giveSerum"
+        return GiveSerumRequestHandler
       when "webUseSerum"
         return WebUseSerumRequestHandler
       end
