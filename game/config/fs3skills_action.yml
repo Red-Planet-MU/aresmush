@@ -13,8 +13,8 @@ fs3skills:
   - name: Composure
     desc: Coolness under pressure.
     linked_attr: Grit
-  - name: Demolitions
-    desc: Blowing stuff up.
+  - name: Handy
+    desc: A general aptitude for working with materials raw and refined.
     linked_attr: Wits
   - name: Firearms
     desc: Shooting guns. Specialties are optional but give a bonus when using that type of firearm.
@@ -37,8 +37,11 @@ fs3skills:
   - name: Stealth
     desc: Being sneaky.
     linked_attr: Reflexes
-  - name: Technician
-    desc: General mechanics and fixing things.
+  - name: Trapping
+    desc: Setting traps, snares, and explosives.
+    specialties: 
+    - Snares 
+    - Explosives
     linked_attr: Wits
   action_skills_blurb: 'Action Skills represent your ability in areas deemed important
     for gameplay.  Action Skills are rated from 0-8, but some games limit the highest
