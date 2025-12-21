@@ -37,8 +37,8 @@ module AresMUSH
 
     def self.get_web_request_handler(request)
       case request.cmd
-      when "getSerum"
-        return GetSerumRequestHandler
+      when "getHorse"
+        return GetHorseRequestHandler
       end
       nil
     end
