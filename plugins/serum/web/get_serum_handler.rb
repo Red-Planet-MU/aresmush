@@ -5,6 +5,7 @@ module AresMUSH
           char_name_or_id = request.args[:char_id]
           char = Character.find_one_by_name(char_name_or_id)
           serum_name = request.args[:serum_type]
+          Global.logger.debug "char: #{char} serum_name: #{serum_name}"
           puts "Char: #{char}"
           enactor = request.auth[:id]
           Serum.modify_serum(char, serum_name, 1)
