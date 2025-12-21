@@ -7,7 +7,7 @@ module AresMUSH
           serum_name = request.args['serum_type']
           Global.logger.debug "char: #{char} serum_name: #{serum_name}"
           puts "Char: #{char}"
-          enactor = request.auth[:id]
+          enactor = request.enactor
           Serum.modify_serum(char, serum_name, 1)
           char.spend_luck(1)
           error = Website.check_login(request)
