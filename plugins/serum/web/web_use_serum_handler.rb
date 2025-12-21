@@ -16,7 +16,7 @@ module AresMUSH
         if !target_from_web
           target = enactor
         else 
-          target = target_from_web
+          target = Character.find_one_by_name(target_from_web)
         end
 
         #As of now, only non-combat serum is healing, so need wound
