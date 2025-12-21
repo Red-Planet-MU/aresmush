@@ -6,11 +6,12 @@ module AresMUSH
           char = Character.find_one_by_name(char_name_or_id)
           serum_name = request.args[:serum_type]
           puts "Char: #{char}"
-          serum_getter_id = request.auth[:id]
+          enactor = request.auth[:id]
           Serum.modify_serum(char, serum_name, 1)
+          char.spend_luck(1)
           error = Website.check_login(request)
           return error if error
-          if serum_getter_id != char_name_or_id
+          if enactor != char_name_or_id
             return { error: t('serum.cant_get_serum_for_others') }
           end
         end
