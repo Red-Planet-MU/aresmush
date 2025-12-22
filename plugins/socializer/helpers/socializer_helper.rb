@@ -36,7 +36,7 @@ module AresMUSH
     end
 
     def self.list_pals(enactor)
-      enactor.pals.map { |p| p.name }
+      enactor.pals.map { |p| { name: p.name, icon: Website.icon_for_char(p) }}
     end
   end
 end
