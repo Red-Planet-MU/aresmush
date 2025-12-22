@@ -9,7 +9,7 @@ module AresMUSH
         error = Website.check_login(request)
         return error if error
         
-        if (enactor.pals.include?(model))
+        if (enactor.pals.include?(target))
           return { error: t('socializer.pal_already_exists', :name => target.name) }
         end
 
