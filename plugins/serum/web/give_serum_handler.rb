@@ -10,7 +10,7 @@ module AresMUSH
           enactor = request.enactor
           error = Website.check_login(request)
           return error if error
-          if Serum.find_serums_has(enactor, self.serum_name) < 1
+          if Serum.find_serums_has(enactor, serum_name) < 1
             return { error: t('serum.dont_have_serum') }
           end
           if enactor.name != char.name
