@@ -12,7 +12,7 @@ module AresMUSH
           end
           if !enactor.is_approved?
             return { error: t('horse.not_approved')}
-            
+          end
           #First horse
           if !enactor.horse_color
             Horse.generate_horse(enactor)
