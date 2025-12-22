@@ -26,7 +26,11 @@ module AresMUSH
           horse_desc: char.horse_desc,
           song_link: char.demographic("theme song link"),
           approved_chars: Character.all.select { |c| c.is_approved? },
-          viewer: viewer,
+          viewer: if viewer
+                    viewer.name
+                  else 
+                    nil
+                  end,
         }
       end
     
