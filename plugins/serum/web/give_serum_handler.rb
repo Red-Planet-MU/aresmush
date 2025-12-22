@@ -22,7 +22,7 @@ module AresMUSH
           Serum.modify_serum(char, serum_name, -1)
           Serum.modify_serum(target, serum_name, 1)
           message = t('serum.received_serum', :name => enactor.name, :serum_name => serum_name)
-          Login.emit_if_logged_in(target, message)
+          Login.emit_if_logged_in target, message
           Login.notify(target, :luck, message, nil)
           
         end
