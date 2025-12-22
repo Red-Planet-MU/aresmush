@@ -39,6 +39,10 @@ module AresMUSH
       case request.cmd
       when "webPalsInvite"
         return WebPalsInviteHandler
+      when "addPal"
+        return WebPalsAddHandler
+      when "removePal"
+        return WebPalsRemoveHandler
       end
       nil
     end
