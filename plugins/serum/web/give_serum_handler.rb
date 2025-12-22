@@ -16,7 +16,7 @@ module AresMUSH
           if enactor.name != char.name
             return { error: t('serum.cant_give_serum_for_others') }
           end
-          if enactor.name = target.name
+          if enactor.name == target.name
             return { error: t('serum.cant_give_serum_to_yourself') }
           end
           Serum.modify_serum(char, serum_name, -1)
