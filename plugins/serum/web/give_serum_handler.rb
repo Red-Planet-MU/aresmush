@@ -12,6 +12,7 @@ module AresMUSH
           return error if error
           if Serum.find_serums_has(enactor, self.serum_name) < 1
             return { error: t('serum.dont_have_serum') }
+          end
           if enactor.name != char.name
             return { error: t('serum.cant_give_serum_for_others') }
           end
