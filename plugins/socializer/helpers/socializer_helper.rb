@@ -35,5 +35,8 @@ module AresMUSH
       Login.emit_ooc_if_logged_in(char, t('socializer.pal_scene_notify_uninvited', :name => enactor.name, :num => scene.id))
     end
 
+    def self.list_pals(enactor)
+      enactor.pals.map { |p| p.name }
+    end
   end
 end

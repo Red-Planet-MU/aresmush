@@ -31,6 +31,7 @@ module AresMUSH
                   else 
                     nil
                   end,
+          pals: Socializer.list_pals(char),
         }
       end
     
