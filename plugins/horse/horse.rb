@@ -39,6 +39,8 @@ module AresMUSH
       case request.cmd
       when "getHorse"
         return GetHorseRequestHandler
+      when "updateHorse"
+        return UpdateHorseRequestHandler
       end
       nil
     end
