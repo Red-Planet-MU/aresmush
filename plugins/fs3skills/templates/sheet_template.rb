@@ -20,7 +20,7 @@ module AresMUSH
       end
       
       def show_section(section)
-        sections = ['attributes', 'action', 'background', 'languages', 'advantages']
+        sections = ['attributes', 'action', 'background', 'advantages']
         return true if self.section.blank?
         return true if !sections.include?(section)
         return true if !sections.include?(self.section)
