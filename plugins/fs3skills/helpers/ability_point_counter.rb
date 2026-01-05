@@ -17,7 +17,7 @@ module AresMUSH
       
       def self.points_on_specialties(char)
         char.fs3_action_skills.inject(0) { |count, a| count + 
-            (a.specialties.count > 0 ? a.specialties.count - 1 : 0) }
+            (a.specialties.count > 0 ? a.specialties.count : 0) }
       end
       
       def self.points_on_background(char)
