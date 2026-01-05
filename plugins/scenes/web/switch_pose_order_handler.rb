@@ -2,6 +2,7 @@ module AresMUSH
   module Scenes
     class SwitchPoseOrderRequestHandler
       def handle(request)
+        Global.logger.debug "We got there"
         scene = Scene[request.args['id']]
         enactor = request.enactor
         
