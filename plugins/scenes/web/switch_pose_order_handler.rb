@@ -2,9 +2,10 @@ module AresMUSH
   module Scenes
     class SwitchPoseOrderRequestHandler
       def handle(request)
-        Global.logger.debug "We got there"
         scene = Scene[request.args['id']]
         enactor = request.enactor
+
+        Global.logger.debug "scene: #{scene}, enactor: #{enactor}"
         
         if (!scene)
           return { error: t('webportal.not_found') }
