@@ -781,6 +781,11 @@ body {
     text-align: left;
   }
 
+.char-ability-title 
+  {
+    font-family: $header-font;
+  }
+
 .box {
   background-image: url(/game/uploads/theme_images/box-bg.png);
   background-size: cover;
