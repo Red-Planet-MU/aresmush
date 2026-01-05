@@ -4,5 +4,4 @@ fs3skills:
     have a descriptive rating.   See <a href="https://aresmush.com/fs3/fs3-3/chargen.html#languages"
     target="_blank">FS3: Languages</a> for details.'
   languages:
-  - name: English
-    desc: Spoken across Mars.
+  
