@@ -82,6 +82,7 @@ en:
         starting_skills_check: "Checking for starting skills."
         missing_starting_skill: "%xh%xy< Missing %{skill} at rating %{rating} or higher. >%xn"
         missing_specialty: "%xh%xr< Missing specialty for %{skill}. >%xn"
+        too_many_specialties: "%xh%xr< Too many specialties for %{skill}. >%xn"
         missing_group_specialty: "%xh%xy< Missing %{spec} specialty for %{skill}. >%xn"
         too_many_attributes: "%xh%xr< Too many points on attributes. (%{max} max) >%xn"
         too_many_action_skills: "%xh%xr< Too many points on action skills. (%{max} max) >%xn"
