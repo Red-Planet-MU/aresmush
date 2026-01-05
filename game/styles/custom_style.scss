@@ -746,31 +746,31 @@ body {
 	padding: 3px;
 }
 
-.systemfs3sheet > div > .row {
+.fs3-sheet > div > .row {
   display: flex;
   flex-flow: column; }
 
-.systemfs3sheet > div > .row > .col {
+.fs3-sheet > div > .row > .col {
   width: 100%;
   max-width: 100%; }
 
-.systemfs3sheet > div > .row > .col table {
+.fs3-sheet > div > .row > .col table {
   display: flex;
   flex-flow: row wrap; }
 
-.systemfs3sheet > div > .row > .col table tr {
+.fs3-sheet > div > .row > .col table tr {
   min-width: 50%;
   display: flex;
   flex-flow: row wrap; }
 
-.systemfs3sheet > div > .row > .col table tr td {
+.fs3-sheet > div > .row > .col table tr td {
   flex: 0 1 135px;
   white-space: nowrap;
   min-width: 135px;
   max-width: 135px;
   border: none; }
 
-.systemfs3sheet > div > .row > .col table tr td:nth-of-type(2) {
+.fs3-sheet > div > .row > .col table tr td:nth-of-type(2) {
   flex: 0 1 150px;
   overflow: visible;
   min-width: 150px;
