@@ -9,7 +9,6 @@ module AresMUSH
       messages = []
       Global.logger.debug "action_skills_above_2: #{action_skills_above_2}
       combat_skills: #{combat_skills}
-      combat_skills_above_2: #{combat_skills_above_2}
       "
       combat_skills.each do |c|
         if (action_skills_above_2.include?(c))
