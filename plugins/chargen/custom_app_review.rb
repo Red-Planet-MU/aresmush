@@ -6,24 +6,23 @@ module AresMUSH
             
       action_skills_above_2 = char.fs3_action_skills.select { |s| s.rating > 2 }.map { |s| s.name }
       combat_skills = Array(["Firearms", "Melee", "Archery"])
-      combat_skills_above_2 = 0
       messages = []
       Global.logger.debug "action_skills_above_2: #{action_skills_above_2}
       combat_skills: #{combat_skills}
       combat_skills_above_2: #{combat_skills_above_2}
       "
-      combat_skills.each do |s|
-        if (action_skills_above_2.include?(s))
-          combat_skills_above_2 + 1
+      combat_skills.each do |c|
+        if (action_skills_above_2.include?(c))
+          combat_skills_above_2 = true
           Global.logger.debug "combat_skills_above_2 after math: #{combat_skills_above_2}"
         end
       end
 
       Global.logger.debug "combat_skills_above_2 after loop: #{combat_skills_above_2}"
-      if combat_skills_above_2 == 0
-        messages << Chargen.format_review_status("Checking for combat skills.", "%xr< Missing combat skill at 3+! >%xn")
-      else 
+      if combat_skills_above_2
         messages << Chargen.format_review_status("Checking for combat skills.",  t('chargen.ok'))
+      else 
+        messages << Chargen.format_review_status("Checking for combat skills.", "%xr< Missing combat skill at 3+! >%xn")
       end
       
 
