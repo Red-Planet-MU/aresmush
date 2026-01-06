@@ -133,6 +133,7 @@ module AresMUSH
       luck_tracker = char.fs3_scene_luck
       luck_config = Global.read_config('fs3skills', 'luck_for_scene') || {}
       regular_luck = luck_config[0] || 0.1
+      private_scene = scene.private_scene
       
       scene.participants.each do |p|
         next if p == char
@@ -162,6 +163,9 @@ module AresMUSH
       end
       
       if (luck_for_scene > 0)
+        if !private_scene
+          luck_for_scene = luck_for_scene * 2
+        end
         char.award_luck(luck_for_scene)
         char.update(fs3_scene_luck: luck_tracker)
       end
