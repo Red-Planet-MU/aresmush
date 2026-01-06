@@ -6,16 +6,17 @@ module AresMUSH
             
       action_skills_above_2 = char.fs3_action_skills.select { |s| s.rating > 2 }.map { |s| s.name }
       combat_skills = Array(["Firearms", "Melee", "Archery"])
+      messages = []
 
       combat_skills.each do |s|
         if (!combat_skills.include?(s))
-          msg = "%xrMissing combat skill at 3+.%xn"
+          messages << Chargen.format_review_status("Checking for combat skills.", "%xrMissing combat skill at 3+.%xn")
         else 
-          msg = t('chargen.ok')
+          messages << Chargen.format_review_status("Checking for combat skills.",  t('chargen.ok'))
         end
       end
 
-      return Chargen.format_review_status "Checking for combat skills.", msg
+      return messages.join("\n")  
       # Otherwise, return a message to display.  Here's an example of how to 
       # give an alert if the character has chosen an invalid position for their 
       # faction.
