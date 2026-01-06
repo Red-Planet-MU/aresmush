@@ -2,7 +2,7 @@ module AresMUSH
   module Chargen
     def self.custom_app_review(char)
       # If you don't want to have any custom app review steps, return nil
-      return nil
+      #return nil
             
       action_skills_above_2 = char.fs3_action_skills.select { |s| s.rating > 2 }.map { |s| s.name }
       combat_skills = Array(["Firearms", "Melee", "Archery"])
