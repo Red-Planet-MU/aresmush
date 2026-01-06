@@ -21,12 +21,6 @@ fs3skills:
   starting_skills:
     Everyone:
       skills:
-        Alertness: 2
-        Athletics: 2
-        Composure: 2
-        Firearms: 3
-        Medicine: 2
-        Melee: 3
-        Riding: 3
+        Athletics: 3
   unusual_skills:
 

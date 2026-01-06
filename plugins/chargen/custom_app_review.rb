@@ -4,6 +4,18 @@ module AresMUSH
       # If you don't want to have any custom app review steps, return nil
       return nil
             
+      action_skills_above_2 = char.fs3_action_skills.select { |s| s.rating > 2 }.map { |s| s.name }
+      combat_skills = Array(["Firearms", "Melee", "Archery"])
+
+      combat_skills.each do |s|
+        if (!combat_skills.include?(s))
+          msg = "%xrMissing combat skill at 3+.%xn"
+        else 
+          msg = t('chargen.ok')
+        end
+      end
+
+      return Chargen.format_review_status "Checking for combat skills.", msg
       # Otherwise, return a message to display.  Here's an example of how to 
       # give an alert if the character has chosen an invalid position for their 
       # faction.
