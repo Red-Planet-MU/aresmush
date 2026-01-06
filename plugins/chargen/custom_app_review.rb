@@ -6,7 +6,9 @@ module AresMUSH
             
       action_skills_above_2 = char.fs3_action_skills.select { |s| s.rating > 2 }.map { |s| s.name }
       combat_skills = Array(["Firearms", "Melee", "Archery"])
+      combat_skills_above_2 = false
       messages = []
+      
       Global.logger.debug "action_skills_above_2: #{action_skills_above_2}
       combat_skills: #{combat_skills}
       "
