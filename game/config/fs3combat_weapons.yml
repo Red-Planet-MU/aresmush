@@ -62,7 +62,6 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       allowed_specials:
-      - Dynamite
     Shrapnel:
       description: Random Shrapnel
       skill: 3
