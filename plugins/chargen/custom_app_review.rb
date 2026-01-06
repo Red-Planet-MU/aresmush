@@ -6,15 +6,21 @@ module AresMUSH
             
       action_skills_above_2 = char.fs3_action_skills.select { |s| s.rating > 2 }.map { |s| s.name }
       combat_skills = Array(["Firearms", "Melee", "Archery"])
+      combat_skills_above_2 = 0
       messages = []
 
       combat_skills.each do |s|
-        if (!combat_skills.include?(s))
-          messages << Chargen.format_review_status("Checking for combat skills.", "%xrMissing combat skill at 3+.%xn")
-        else 
-          messages << Chargen.format_review_status("Checking for combat skills.",  t('chargen.ok'))
+        if (action_skills_above_2.include?(s))
+          combat_skills_above_2 + 1
         end
       end
+
+      if combat_skills_above_2 == 0
+        messages << Chargen.format_review_status("Checking for combat skills.", "%xrMissing combat skill at 3+.%xn")
+      else 
+        messages << Chargen.format_review_status("Checking for combat skills.",  t('chargen.ok'))
+      end
+      
 
       return messages.join("\n")  
       # Otherwise, return a message to display.  Here's an example of how to 
