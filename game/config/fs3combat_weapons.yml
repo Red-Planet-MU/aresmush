@@ -50,7 +50,7 @@ fs3combat:
       has_shrapnel: true
       init_mod: 0
     Bow:
-      description: A piece of wood with a string connecting the ends. Silent, compared to firearms.
+      description: A piece of wood with a string connecting the ends. Silent, and less deadly, compared to firearms.
       skill: Archery
       lethality: 0
       penetration: 4
