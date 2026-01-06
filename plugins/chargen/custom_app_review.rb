@@ -16,7 +16,7 @@ module AresMUSH
       end
 
       if combat_skills_above_2 == 0
-        messages << Chargen.format_review_status("Checking for combat skills.", "%xrMissing combat skill at 3+.%xn")
+        messages << Chargen.format_review_status("Checking for combat skills.", "%xr< Missing combat skill at 3+! >%xn")
       else 
         messages << Chargen.format_review_status("Checking for combat skills.",  t('chargen.ok'))
       end
