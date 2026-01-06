@@ -163,9 +163,11 @@ module AresMUSH
       end
       
       if (luck_for_scene > 0)
+        #double luck for open scenes
         if !private_scene
           luck_for_scene = luck_for_scene * 2
         end
+        #/end of core changes
         char.award_luck(luck_for_scene)
         char.update(fs3_scene_luck: luck_tracker)
       end
