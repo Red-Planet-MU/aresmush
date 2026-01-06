@@ -8,13 +8,18 @@ module AresMUSH
       combat_skills = Array(["Firearms", "Melee", "Archery"])
       combat_skills_above_2 = 0
       messages = []
-
+      Global.logger.debug "action_skills_above_2: #{action_skills_above_2}
+      combat_skills: #{combat_skills}
+      combat_skills_above_2: #{combat_skills_above_2}
+      "
       combat_skills.each do |s|
         if (action_skills_above_2.include?(s))
           combat_skills_above_2 + 1
+          Global.logger.debug "combat_skills_above_2 after math: #{combat_skills_above_2}"
         end
       end
 
+      Global.logger.debug "combat_skills_above_2 after loop: #{combat_skills_above_2}"
       if combat_skills_above_2 == 0
         messages << Chargen.format_review_status("Checking for combat skills.", "%xr< Missing combat skill at 3+! >%xn")
       else 
