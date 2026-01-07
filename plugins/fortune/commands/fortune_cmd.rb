@@ -7,14 +7,13 @@ module AresMUSH
 
       def parse_args
         #self.fortune = titlecase_arg(cmd.args)
-      end
-
-      if !enactor.fortunes_told_alltime
-        fortunes_told_lately = 0
-        fortunes_told_alltime = 0
-      else
-        fortunes_told_lately = enactor.fortunes_told_lately
-        fortunes_told_alltime = enactor.fortunes_told_alltime
+        if !enactor.fortunes_told_alltime
+          fortunes_told_lately = 0
+          fortunes_told_alltime = 0
+        else
+          fortunes_told_lately = enactor.fortunes_told_lately
+          fortunes_told_alltime = enactor.fortunes_told_alltime
+        end
       end
 
       def check_errors
