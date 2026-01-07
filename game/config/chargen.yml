@@ -17,7 +17,7 @@ chargen:
   - sheet %{name}
   approval_message: Welcome to Red Planet! We are glad you're here.
 
-    First things first, make sure you get a HORSE! See [`help horse`](/help/horse) .
+    First things first, make sure you get a HORSE! See [`help horse`](/help/horse) or visit the 'Horse' tab on your profile.
 
     Next, check out the [Getting Started](/wiki/guide:getting_started) guide for what to do next. This guide will help you - 
       
@@ -33,7 +33,7 @@ chargen:
       * And much more!
 
 
-      If you need help with anything, please feel free to submit a request, use the Questions channel, or message the [staff team](wiki/staff_team) and we will help as promptly as possible.
+      If you need help with anything, please feel free to submit a request, use the Questions channel, or message the [staff team](/wiki/staff_team) and we will help as promptly as possible.
   arrivals_category: New Arrivals
   bg_blurb: A background is your character's backstory or history.  You don''t need
     to write a novel. Just cover the basics--who you are, why are you here, and anything
