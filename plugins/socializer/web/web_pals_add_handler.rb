@@ -13,6 +13,10 @@ module AresMUSH
           return { error: t('socializer.pal_already_exists', :name => target.name) }
         end
 
+        if !target 
+          return { error: t('socializer.no_such_pal', :name => target.name) }
+        end
+
         enactor.pals.add target
                     
         {}
