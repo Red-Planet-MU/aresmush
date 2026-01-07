@@ -9,6 +9,14 @@ module AresMUSH
         #self.fortune = titlecase_arg(cmd.args)
       end
 
+      if !enactor.fortunes_told_alltime
+        fortunes_told_lately = 0
+        fortunes_told_alltime = 0
+      else
+        fortunes_told_lately = enactor.fortunes_told_lately
+        fortunes_told_alltime = enactor.fortunes_told_alltime
+      end
+
       def check_errors
         return t('fortune.no_machine') if enactor.room.can_use_fortune != true
         return t('fortune.cooldown_on') if enactor.fortunes_told_lately > 3
