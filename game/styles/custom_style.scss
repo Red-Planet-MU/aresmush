@@ -466,6 +466,10 @@
 	grid-template-columns: minmax(68%, 73%) auto;
 }
 
+.modal-header .btn-close {
+  color: #ebebeb;
+}
+
 @media screen and (min-width: 1470px) {
 	body {
 		font-size: 1em;
@@ -836,6 +840,10 @@ a:focus  {
 .play-screen {
 	display: grid;
 	grid-template-columns: 350px auto;
+}
+
+.scene-pose-header {
+  font-size: 1em;
 }
 
 @media screen and (max-width: 991.98px) {
