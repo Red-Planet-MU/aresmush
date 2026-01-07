@@ -17,8 +17,8 @@ openweather:
       Offstage: none
       Virtue Town:
         coords:
-          lat: 34.52028 
-          lon: -111.45305
+          lat: 34.854204
+          lon: -111.836359
       Wilderness:
         coords:
           lat: 34.865511
