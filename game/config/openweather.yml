@@ -23,7 +23,7 @@ openweather:
         coords:
           lat: 34.865511
           lon: -111.838252
-      High Altitude:
+      High Elevation:
         coords:
           lat: 35.1829479
           lon: -111.695436
