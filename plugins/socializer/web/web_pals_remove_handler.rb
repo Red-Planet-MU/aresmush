@@ -10,11 +10,11 @@ module AresMUSH
         return error if error
 
         if !target 
-          return { error: t('socializer.no_such_pal', :name => target.name) }
+          return { error: t('socializer.no_such_pal') }
         end
         
         if (!enactor.pals.include?(target))
-          return { error: t('socializer.pal_doesnt_exist', :name => target.name) }
+          return { error: t('socializer.pal_doesnt_exist') }
         end
         
         enactor.pals.delete target

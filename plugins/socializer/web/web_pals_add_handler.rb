@@ -6,18 +6,16 @@ module AresMUSH
         target_name = request.args['target']
         target = Character.named(target_name)
         
-        Global.logger.debug "enactor = #{enactor}
-        target_name = #{target_name}
-        target = #{target}"
+
         error = Website.check_login(request)
         return error if error
         
         if !target 
-          return { error: t('socializer.no_such_pal', :name => target.name) }
+          return { error: t('socializer.no_such_pal') }
         end
 
         if (enactor.pals.include?(target))
-          return { error: t('socializer.pal_already_exists', :name => target.name) }
+          return { error: t('socializer.pal_already_exists') }
         end
 
         enactor.pals.add target
