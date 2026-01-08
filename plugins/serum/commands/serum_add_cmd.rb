@@ -15,7 +15,7 @@ module AresMUSH
       end
   
       def check_errors
-        return "Only admins may use that command." if !enactor.is_admin
+        return "You do not have permission to use that command." if !actor.has_permission?("manage_serums")
       end
   
       def handle

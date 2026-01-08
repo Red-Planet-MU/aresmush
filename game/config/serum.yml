@@ -44,3 +44,5 @@ serum:
     minute:
     - 0
   periodic_serum: "Revitalizer"
+  permissions:
+    manage_serums: Give out serums without costing luck.
