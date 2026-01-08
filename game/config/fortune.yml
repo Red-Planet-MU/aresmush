@@ -113,7 +113,7 @@ fortune:
       - 45
   achievements:
     fortune_count:
-      type: story
+      type: red_planet
       message: Told %{count} fortunes from the FizzPop.
       levels:
       - 1
