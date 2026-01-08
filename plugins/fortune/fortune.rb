@@ -30,7 +30,9 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
-      nil
+      case request.cmd
+      when "getFortune"
+        return GetFortuneRequestHandler
     end
 
     def self.achievements
