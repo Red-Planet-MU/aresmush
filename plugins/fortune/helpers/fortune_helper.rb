@@ -8,8 +8,12 @@ module AresMUSH
       return fortune_to_tell
     end
 
-    def self.expire(char)
-      char.update(fortune_cooldown_expires_at: nil)
+    def self.handle_fortune_given_achievement(char)
+      Achievements.achievement_levels("fortune_count")..reverse.each do |count|
+        if (char.fortunes_told_alltime >= count)
+          Achievements.award_achievement(char, "fortune_count", char.fortunes_told_alltime)
+        end
+      end
     end
 
   end

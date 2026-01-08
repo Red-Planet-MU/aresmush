@@ -21,7 +21,7 @@ module AresMUSH
         enactor.update(fortunes_told_alltime: enactor.fortunes_told_alltime + 1)
         message = t('fortune.told_fortune', :name => enactor.name, :fortune_told => fortune_to_tell)
         enactor.room.emit message
-        Achievements.award_achievement(enactor, "fortune_count", enactor.fortunes_told_alltime)
+        Fortune.handle_fortune_given_achievement(enactor)
         if enactor.room.scene
           Scenes.add_to_scene(enactor.room.scene, message)
         end
