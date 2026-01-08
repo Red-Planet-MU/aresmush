@@ -7,6 +7,7 @@ module AresMUSH
         char = Character.find_one_by_name(char_name_or_id)
         enactor = request.enactor
         error = Website.check_login(request)
+        scene = Scene[request.args['id']]
           
         return error if error
         if enactor.fortunes_told_lately >= 3
@@ -17,9 +18,9 @@ module AresMUSH
         enactor.update(fortunes_told_alltime: enactor.fortunes_told_alltime + 1)
         message = t('fortune.told_fortune', :name => enactor.name, :fortune_told => fortune_to_tell)
         Fortune.handle_fortune_given_achievement(enactor)
-        enactor.room.emit message
+        Scenes.add_to_scene(scene, message)
         if enactor.room.scene
-          Scenes.add_to_scene(enactor.room.scene, message)
+          enactor.room.emit message
         end
 
       end
