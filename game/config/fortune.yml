@@ -92,3 +92,15 @@ fortune:
       - 15
       - 30
       - 45
+  achievements:
+    fortune_count:
+      type: story
+      message: Told %{count} fortunes from the FizzPop.
+      levels:
+      - 1
+      - 5
+      - 10
+      - 25
+      - 50
+      - 100
+      - 150

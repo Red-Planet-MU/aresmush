@@ -20,6 +20,8 @@ module AresMUSH
           return SerumUseCommand
         when "give"
           return SerumGiveCommand
+        when "add"
+          return SerumAddCommand
         when nil
           return SerumCommand
         end
