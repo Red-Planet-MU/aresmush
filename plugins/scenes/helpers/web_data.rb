@@ -115,6 +115,7 @@ module AresMUSH
     
     def self.build_location_web_data(scene)
       {
+        id: scene.id,
         name: scene.location,
         description: scene.room ? Website.format_markdown_for_html(scene.room.expanded_desc) : nil,
         scene_set: scene.room ? Website.format_markdown_for_html(scene.room.scene_set) : nil,
