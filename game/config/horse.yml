@@ -54,7 +54,7 @@ horse:
     - Calamity
     - Mischief
     - Mayhem
-    - Treasure Trap
+    - Treasure
     - Parallax
     - Crawley
     - Fools Gold
@@ -65,6 +65,14 @@ horse:
     - Felony
     - Catch Me
     - Caper
+    - Nugget
+    - Tequila
+    - Bourbon
+    - Whiskey
+    - Bucky
+    - Cider
+    - Perry
+    - Chicha
   horse_colors:
     - Black
     - Bay
@@ -126,6 +134,116 @@ horse:
     - Dappled Red Dun
     - Red Dun Appaloosa
     - Red Dun Pintaloosa
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
+    - Black
+    - Bay
+    - Chestnut
+    - Sorrel
+    - Gray
+    - White
+    - Buckskin
+    - Palomino
+    - Grullo
+    - Dun
+    - Red Dun
   horse_temperaments:
     - Mean
     - Prissy
@@ -162,7 +280,7 @@ horse:
     - Dull
     - Forgiving
     - Kind
-    - Spooky
+    - Jumpy
     - Pushy
     - Loyal
     - Goofy
@@ -175,3 +293,4 @@ horse:
     - Playful
     - Headstrong
     - Sassy
+    - Slow

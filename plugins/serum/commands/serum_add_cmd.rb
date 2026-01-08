@@ -1,7 +1,7 @@
 module AresMUSH
   module Serum
     class SerumAddCommand
-      include CommandHandle
+      include CommandHandler
   
       attr_accessor :char, :target, :other_client, :serum_name, :serum_type, :serum_has
   

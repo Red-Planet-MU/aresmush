@@ -4,88 +4,107 @@ fortune:
   shortcuts:
     fortunes: fortune
   fortune_list:
-    - "Some of your problems are your fault."
-    - "A ship in a hangar is safe, but that's not why ships are built."
-    - "Your long life is a testament to the self control of your friends."
-    - "Your allure draws many men to your place of residence."
-    - "Your current path leads you to danger."
-    - "A strange man does not have your best interests at heart."
-    - "A strange woman does not have your best interests at heart."
-    - "It's not worth the trouble."
-    - "You are being watched."
-    - "Look at your life. Look at your choices."
-    - "You will die alone and poorly dressed."
-    - "There is no shortcut to any place worth going."
-    - "Avoid the badlands."
-    - "Your good nature will bring you unbounded happiness."
-    - "Danger awaits you in Prudence."
-    - "Mind your own business."
-    - "Tell them what you really think. Otherwise, nothing will change."
-    - "You will get what you deserve."
-    - "You will succeed in spite of yourself."
-    - "Run."
-    - "A loved one is of utmost importance at this time."
-    - "Your trouble will pass away soon."
-    - "You are only young once, but you can stay immature indefinitely."
-    - "Good choices come from experience, experience comes from bad choices."
-    - "Every solution breeds new problems."
-    - "Great things await you on Neptune."
-    - "Open your mind to new ideas."
-    - "Trust your friends."
-    - "Don't trust your friends."
-    - "Reach out to others."
-    - "Things can always get worse."
-    - "Follow your heart's strong desire."
-    - "You will be an inspiration to others."
-    - "Your life is a cautionary tale for those around you."
-    - "This is the time for caution, but not for fear."
-    - "Someone close to you will find great fortune and success."
-    - "Respect your mother."
-    - "You are afraid of commitment."
-    - "Share a secret with someone close to you."
-    - "You will find what you are searching for on Eriadu."
-    - "Avoid making changes today."
-    - "Don't trust the ranchhand."
-    - "You are your own worst enemy."
-    - "Financial prosperity is coming your way!"
-    - "You were born under a bad sign."
-    - "Yours is an auspicious destiny."
-    - "You will get all that you desire, and come to regret it."
-    - "Good luck comes from good planning."
-    - "You have a secret admirer."
-    - "You are cautious in showing your true self to others."
-    - "A different world cannot be built by indifferent people."
-    - "Admit you are wrong."
-    - "You are worthy of gossip."
-    - "You are a treasure to your friends and a thorn to your enemies."
-    - "You will triumph despite your lack of talent and charm."
-    - "You are less interesting than you imagine."
-    - "You are more interesting than you imagine."
-    - "Hope brings about a better future."
-    - "Don't trust the Bounty Hunter."
-    - "You will need a doctor soon."
-    - "Many exciting adventures await you!"
-    - "Don't say maybe if you want to say no."
-    - "Live. Laugh. Love."
-    - "You are lost."
-    - "A Martian will soon bring you an exciting adventure."
-    - "You wear your colors well."
-    - "Your nemesis lurks in the shadows."
-    - "Turn from your dark path before it brings you woe."
-    - "Your wits will get you out of some trouble, but into more."
-    - "Sometimes you must go deep inside yourself to solve your problems."
-    - "The root of your anxieties lies in the mirror."
-    - "Give away something cherished and it will come back to you twofold."
-    - "There are worse fates than death."
-    - "To love is to risk."
-    - "If you believe in yourself, anything you do is right."
-    - "Treat yourself to another Fizzpop and your future will be bright."
-    - "A child will bring joy to your life."
-    - "A child will destroy your future happiness."
-    - "When a steer crosses your path, don't question his intentions."
-    - "When a steer crosses your path, you have reason for doubt."
-    - "Choices made in anger cannot be undone."
-    - "Change never changes."
+    - Some of your problems are your fault.
+    - A ship in a harbor is safe, but that's not why ships are built.
+    - Your long life is a testament to the self control of your friends.
+    - Your allure draws many men to your place of residence.
+    - Your current path leads you to danger.
+    - A strange man does not have your best interests at heart.
+    - A strange woman does not have your best interests at heart.
+    - It's not worth the trouble.
+    - You are being watched.
+    - Look at your life. Look at your choices.
+    - You will die alone and poorly dressed.
+    - There is no shortcut to any place worth going.
+    - Avoid the badlands.
+    - Your good nature will bring you unbounded happiness.
+    - Danger awaits you.
+    - Mind your own business.
+    - Tell them what you really think. Otherwise, nothing will change.
+    - You will get what you deserve.
+    - You will succeed in spite of yourself.
+    - Run.
+    - A loved one is of utmost importance at this time.
+    - Your trouble will pass away soon.
+    - You are only young once, but you can stay immature indefinitely.
+    - Good choices come from experience, experience comes from bad choices.
+    - Every solution breeds new problems.
+    - Great things await you. Don't mess it up.
+    - Open your mind to new ideas.
+    - Trust your friends.
+    - Don't trust your friends.
+    - Reach out to others.
+    - Things can always get worse.
+    - Follow your heart's strong desire.
+    - You will be an inspiration to others.
+    - Your life is a cautionary tale for those around you.
+    - This is the time for caution, but not for fear.
+    - Someone close to you will find great fortune and success.
+    - Respect your mother.
+    - You are afraid of commitment.
+    - Share a secret with someone close to you.
+    - You will find what you are seeking.
+    - Avoid making changes today.
+    - Don't trust the person next to you.
+    - You are your own worst enemy.
+    - Congratulations! You are on your way.
+    - You were born under a bad sign.
+    - Yours is an auspicious destiny.
+    - You will get all that you desire, and come to regret it.
+    - Good luck comes from good planning.
+    - You have a secret admirer.
+    - You are cautious in showing your true self to others.
+    - A different world cannot be built by indifferent people.
+    - Admit you are wrong.
+    - You are worthy of gossip.
+    - You are a treasure to your friends and a thorn to your enemies.
+    - You will triumph despite your lack of talent and charm.
+    - You are less interesting than you imagine.
+    - You are more interesting than you imagine.
+    - Hope brings about a better future.
+    - Don't trust the voices.
+    - You will need a doctor soon.
+    - Many exciting adventures await you!
+    - Don't say maybe if you want to say no.
+    - Live. Laugh. Love.
+    - You are lost.
+    - A stranger will soon bring you an exciting adventure.
+    - You wear your colors well.
+    - Your nemesis lurks in the shadows.
+    - Turn from your dark path before it brings you woe.
+    - Your wits will get you out of some trouble, but into more.
+    - Sometimes you must go deep inside yourself to solve your problems.
+    - The root of your anxieties lies in the mirror.
+    - Give away something cherished and it will come back to you twofold.
+    - There are worse fates than death.
+    - To love is to risk.
+    - If you believe in yourself, anything you do is right.
+    - Treat yourself to another Fizzpop and your future will be bright.
+    - A child will bring joy to your life.
+    - A child will destroy your future happiness.
+    - Choices made in anger cannot be undone.
+    - Change never changes.
+    - You can open doors with your charm and patience.
+    - An unpleasant surprise is waiting for you.
+    - If you don't participate in it, you will feel left out from it.
+    - You will be hungry again in one hour.
+    - Hard work pays off in the future, but laziness pays off now.
+    - You will travel to many exotic places in your lifetime.
+    - A short stranger will soon enter your life with blessings to share.
+    - If you won't be a foolish beginner, you can never become a graceful master.
+    - Now is the time to try something new.
+    - Mistakes are the best way to learn. You will learn a lot today.
+    - A very attractive person has a message for you.
+    - Keep your eye out for someone special.
+    - Your hairstyle could be improved.
+    - Play the hand you're dealt.
+    - Do not mistake temptation for opportunity.
+    - Your heart is pure and full of light.
+    - Measure twice, cut once.
+    - Don't nap too long.
+    - Your friend can't keep a secret.
+    - You will be famous, but not for the reasons you hoped.
+    - Have the conversation you have been avoiding.
   cron:
     minute:
       - 00
