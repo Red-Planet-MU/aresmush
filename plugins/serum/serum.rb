@@ -51,5 +51,9 @@ module AresMUSH
       nil
     end
 
+    def self.achievements
+      Global.read_config('serum', 'achievements')
+    end
+
   end
 end
