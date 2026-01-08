@@ -33,6 +33,7 @@ module AresMUSH
       case request.cmd
       when "getFortune"
         return GetFortuneRequestHandler
+      end
     end
 
     def self.achievements
