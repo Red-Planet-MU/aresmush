@@ -8,7 +8,8 @@ achievements:
   types:
     community: fa-users
     portal: fa-globe
-    fs3: fa-cubes
+    fs3: fa-gamepad
     story: fa-book
     red_planet: fa-star
     comps: fa-heart
+    serums: fa-medkit
