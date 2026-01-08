@@ -5,13 +5,12 @@ module AresMUSH
       def on_event(event)
         fortune_cron = Global.read_config("fortune", "cron")
        if Cron.is_cron_match?(fortune_cron, event.time)
-          Global.logger.debug "Expiring fortune cooldowns."
 
-          chars = Fortune.chars_on_cooldown.select { |c| c.fortune_cooldown_expires_at < Time.now }
+          chars = Chargen.approved_chars.select { |c| c.fortunes_told_lately > 0 }
 
           chars.each do |c|
             Global.logger.debug "Expiring fortune cooldown for #{c.name}"
-            Fortune.expire(c)
+            c.update(fortunes_told_lately: c.fortunes_told_lately - 1)
           end
         end
       end

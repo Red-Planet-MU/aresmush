@@ -34,7 +34,6 @@ module AresMUSH
       when "CronEvent"
         return SerumCronHandler
       end
-      
       nil
     end
 

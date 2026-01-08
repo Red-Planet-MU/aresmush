@@ -21,6 +21,14 @@ module AresMUSH
       nil
     end
 
+    def self.get_event_handler(event_name) 
+      case event_name
+      when "CronEvent"
+        return FortuneCronEventHandler
+      end
+      nil
+    end
+
     def self.get_web_request_handler(request)
       nil
     end
