@@ -750,6 +750,14 @@ body {
 	padding: 3px;
 }
 
+.char-achievements {
+     column-count: 2; }
+
+@media (max-width: 992px) {
+  .char-achievements {
+     column-count: 1; }
+  }
+
 #systemfs3sheet > div > .row {
   display: flex;
   flex-flow: column; }
