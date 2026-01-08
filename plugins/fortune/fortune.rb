@@ -33,5 +33,10 @@ module AresMUSH
       nil
     end
 
+    def self.achievements
+      Global.read_config('fortune', 'achievements')
+    end
+
+
   end
 end
