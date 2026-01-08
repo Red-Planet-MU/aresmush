@@ -66,6 +66,8 @@ module AresMUSH
             Scenes.add_to_scene(enactor.room.scene, message)
           end
           Serum.modify_serum(enactor, self.serum_name, -1)
+          enactor.update(serums_used: enactor.serums_used + 1)
+          Serum.handle_serum_used_given_achievement(enactor)
         end
       end
     end

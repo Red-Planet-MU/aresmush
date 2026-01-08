@@ -46,3 +46,30 @@ serum:
   periodic_serum: "Revitalizer"
   permissions:
     manage_serums: Give out serums without costing luck.
+  achievements:
+    serum_obtained_count:
+      type: serums
+      message: Got %{count} serums.
+      levels:
+      - 1
+      - 10
+      - 25
+      - 50
+      - 100
+      - 150
+      - 200
+      - 250
+      - 300
+    serum_used_count:
+      type: serums
+      message: Used %{count} serums.
+      levels:
+      - 1
+      - 10
+      - 25
+      - 50
+      - 100
+      - 150
+      - 200
+      - 250
+      - 300

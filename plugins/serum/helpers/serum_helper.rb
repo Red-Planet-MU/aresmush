@@ -141,6 +141,24 @@ module AresMUSH
         #gc_serums: Website.format_markdown_for_html(char.gc_serums_has)
       }
       end
+
+      def self.handle_serum_obtained_given_achievement(char)
+        Achievements.achievement_levels("serum_obtained_count").reverse.each do |count|
+          if (char.serums_bought == count)
+            Achievements.award_achievement(char, "serum_obtained_count", char.serums_bought)
+            break
+          end
+        end
+      end
+
+      def self.handle_serum_used_given_achievement(char)
+        Achievements.achievement_levels("serum_used_count").reverse.each do |count|
+          if (char.serums_used == count)
+            Achievements.award_achievement(char, "serum_used_count", char.serums_used)
+            break
+          end
+        end
+      end
   
     end
   end

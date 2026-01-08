@@ -113,6 +113,8 @@ module AresMUSH
           self.target.update(last_serum: self.serum_name)
 
           Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
+          combatant.associated_model.update(serums_used: combatant.associated_model.serums_used + 1)
+          Serum.handle_serum_used_given_achievement(combatant.associated_model)
         end
         
         [message]
