@@ -10,7 +10,7 @@ module AresMUSH
 
     def self.handle_fortune_given_achievement(char)
       Achievements.achievement_levels("fortune_count").reverse.each do |count|
-        if (char.fortunes_told_alltime >= count)
+        if (char.fortunes_told_alltime = count)
           Achievements.award_achievement(char, "fortune_count", char.fortunes_told_alltime)
         end
       end
