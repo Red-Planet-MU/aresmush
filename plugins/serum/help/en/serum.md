@@ -22,4 +22,7 @@ Everyone in Virtue is given one dose of Revitalizer Serum per X from the communi
 `serum [<name>]` - View your inventory of serums or someone else's.
 `serum/get <serum>` - Obtain an additional dose of a given serum.
 `serum/use <serum>[/<name>]` - Use a dose of serum on yourself or someone else.
-`serum/give <serum>/<name>` - Give a dose of serum to someone else.
+`serum/give <serum>=<name>` - Give a dose of serum to someone else.
+
+## Admin Commands
+`serum/add <serum>=<name>` - Adds a dose of serum to someone.
