@@ -69,10 +69,10 @@ fs3combat:
     newturn: combat/newturn
   achievements:
     fs3_hero:
-      type: fs3
+      type: combat
       message: Heroed from a knockout.
     fs3_joined_combat:
-      type: fs3
+      type: combat
       message: Joined %{count} combats.
       levels:
       - 1
@@ -84,7 +84,7 @@ fs3combat:
       - 500
       - 1000
     fs3_wounded:
-      type: fs3
+      type: combat
       message: Wounded %{count} times in combat.
       levels:
       - 1
@@ -98,31 +98,31 @@ fs3combat:
       - 250
       - 500
     fs3_hard_hitter:
-      type: fs3
+      type: combat
       message: Inflicted critical damage on an opponent in combat.
     fs3_explosive_hit:
-      type: fs3
+      type: combat
       message: Did damage with an explosive weapon.
     fs3_melee_hit:
-      type: fs3
+      type: combat
       message: Did damage with a melee weapon.
     fs3_ranged_hit:
-      type: fs3
+      type: combat
       message: Did damage with a ranged weapon.
     fs3_suppressed:
-      type: fs3
+      type: combat
       message: Suppressed a target in combat.
     fs3_subdued:
-      type: fs3
+      type: combat
       message: Subdued a target in combat.
     fs3_distracted:
-      type: fs3
+      type: combat
       message: Distracted a target in combat.
     fs3_rallied:
-      type: fs3
+      type: combat
       message: Rallied someone in combat.
     fs3_treated:
-      type: fs3
+      type: combat
       message: Treated someone in combat.
   permissions:
     manage_combat: Control combats that you didn't organize.
