@@ -41,6 +41,29 @@ module AresMUSH
     def self.background_skills
       Global.read_config("fs3skills", "background_skills")
     end
+
+    def web_horse_rating_name(bond_rating)
+      case bond_rating
+      when 0
+        return t('horse.no_bond_rating')
+      when 1
+        return t('horse.first_bond_rating')
+      when 2
+        return t('horse.second_bond_rating')
+      when 3
+        return t('horse.third_bond_rating')
+      when 4
+        return t('horse.fourth_bond_rating')
+      when 5
+        return t('horse.fifth_bond_rating')
+      when 6
+        return t('horse.sixth_bond_rating')
+      when 7
+        return t('horse.seventh_bond_rating')
+      when 8
+        return t('horse.eighth_bond_rating')
+      end
+    end
     
     def self.get_ability_desc(metadata_list, name)
       entry = metadata_list.select { |m| m['name'].upcase == name.upcase }.first
