@@ -19,6 +19,12 @@ module AresMUSH
       FS3Combat.weapons.select { |k, v| k.upcase == name_upcase}.values.first
     end
 
+    #Allow restricting some weapons to NPCs
+    def self.pc_equippable_weapon(name)
+      name_upcase = name ? name.upcase : nil
+      FS3Combat.pc_equippable_weapons.select { |k, v| k.upcase == name_upcase}.values.first
+    end
+
     def self.weapon_specials
       Global.read_config("fs3combat", "weapon specials")
     end
@@ -77,6 +83,10 @@ module AresMUSH
 
     def self.armor(name)
       FS3Combat.armors.select { |k, v| k.upcase == name.upcase}.values.first
+    end
+
+    def self.pc_equippable_armor(name)
+      FS3Combat.pc_equippable_armors.select { |k, v| k.upcase == name.upcase}.values.first
     end
 
     def self.armor_stat(name_with_specials, stat)
