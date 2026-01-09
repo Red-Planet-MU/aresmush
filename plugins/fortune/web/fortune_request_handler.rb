@@ -7,9 +7,10 @@ module AresMUSH
         char = Character.find_one_by_name(char_name_or_id)
         enactor = request.enactor
         error = Website.check_login(request)
+        scene_id = request.args['id']
         scene = Scene[request.args['id']]
 
-        Global.logger.debug "scene: #{scene}, char_name_or_id: #{char_name_or_id}"
+        Global.logger.debug "scene: #{scene}, id: #{scene_id}"
           
         return error if error
         if enactor.fortunes_told_lately >= 3
