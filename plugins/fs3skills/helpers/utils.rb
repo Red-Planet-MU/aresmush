@@ -42,7 +42,7 @@ module AresMUSH
       Global.read_config("fs3skills", "background_skills")
     end
 
-    def web_horse_rating_name(bond_rating)
+    def self.web_horse_rating_name(bond_rating)
       case bond_rating
       when 0
         return t('horse.no_bond_rating')
