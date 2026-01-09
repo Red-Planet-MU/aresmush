@@ -67,6 +67,7 @@ fs3combat:
     weapons: weapon
     mounts: mount
     newturn: combat/newturn
+    combat/drive: combat/pilot
   achievements:
     fs3_hero:
       type: combat

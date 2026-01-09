@@ -79,7 +79,7 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 
 `vehicles` - List all types of vehicles.
 `vehicle <name>` - See details for a particular vehicle type.
-`combat/pilot <vehicle type or name>` - Pilots a vehicle.
+`combat/drive <vehicle type or name>` - Drives a vehicle.
 `combat/passenger <vehicle type or name>` - Becomes a passenger in a vehicle.
         You can also use a person's name to join them in a vehicle.
 `combat/disembark` - Leaves a vehicle.

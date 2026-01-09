@@ -93,7 +93,7 @@ en:
         
         invalid_vehicle_name: "That is not a valid vehicle name or vehicle type."
         not_in_vehicle: "%{name} is not in a vehicle."
-        new_pilot: "%{name} takes over piloting %{vehicle}."
+        new_pilot: "%{name} takes over driving %{vehicle}."
         new_passenger: "%{name} is now a passenger in %{vehicle}."
         disembarks_vehicle: "%{name} disembarks from %{vehicle}."
                     
@@ -217,7 +217,7 @@ en:
         vehicle_title_armor: "Armor:"
         vehicle_title_hitloc_chart: "Hit Locations:"
         vehicle_title_toughness: "Toughness:"
-        vehicles_summary_title: "Vehicle         Pilot               Passengers"
+        vehicles_summary_title: "Vehicle         Driver              Passengers"
         vehicles_disabled: "Vehicles are disabled here."
         
         # ----------------------------
@@ -258,9 +258,9 @@ en:
         combat_hud_organizer: "Organized by %{org}"
         combat_mock_notice: "** Mock Combat.  Damage is temporary. **"
         observers_title: "Observers"
-        piloting_hud: "%{vehicle}(Plt)"
+        piloting_hud: "%{vehicle}(Drv)"
         passenger_hud: "%{vehicle}(Pas)"
-        vehicles_hud_title: "Vehicles          %xhDamage%xn  %xhPilot%xn            %xhPassengers%xn"
+        vehicles_hud_title: "Vehicles          %xhDamage%xn  %xhDriver%xn           %xhPassengers%xn"
         no_pilot: "None"
         
         # ----------------------------
@@ -287,7 +287,7 @@ en:
         
         stance_changed: "%{name} has changed %{poss} stance to %{stance}."
         invalid_stance: "That is not a valid stance."
-        passenger_stance_warning: "Passengers are often at the mercy of the pilot's stance.  Make sure this stance makes sense under the circumstances."
+        passenger_stance_warning: "Passengers are often at the mercy of the driver's stance.  Make sure this stance makes sense under the circumstances."
         stances_title: "Combat Stances"
         stance_subtitle: "Name                Attack   Defense"
         
