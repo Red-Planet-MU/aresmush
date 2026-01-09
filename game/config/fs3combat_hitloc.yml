@@ -131,104 +131,6 @@ fs3combat:
       - Head
       - Neck
       - Ass
-    Fighter:
-      areas:
-        Body:
-        - Controls
-        - Tail
-        - Weapon
-        - Wing
-        - Wing
-        - Cockpit
-        - Nose
-        - Body
-        - Body
-        - Body
-        Engine:
-        - Controls
-        - Wing
-        - Weapon
-        - Body
-        - Body
-        - Tail
-        - Tail
-        - Engine
-        - Engine
-        - Engine
-        Tail:
-        - Controls
-        - Wing
-        - Weapon
-        - Body
-        - Body
-        - Engine
-        - Engine
-        - Tail
-        - Tail
-        - Tail
-        Wing:
-        - Controls
-        - Cockpit
-        - Weapon
-        - Body
-        - Body
-        - Tail
-        - Tail
-        - Wing
-        - Wing
-        - Wing
-        Weapon:
-        - Controls
-        - Controls
-        - Body
-        - Body
-        - Wing
-        - Wing
-        - Wing
-        - Weapon
-        - Weapon
-        - Weapon
-        Nose:
-        - Controls
-        - Weapon
-        - Wing
-        - Wing
-        - Cockpit
-        - Body
-        - Body
-        - Nose
-        - Nose
-        - Nose
-        Cockpit:
-        - Controls
-        - Weapon
-        - Wing
-        - Body
-        - Body
-        - Nose
-        - Nose
-        - Cockpit
-        - Cockpit
-        - Cockpit
-        Controls:
-        - Cockpit
-        - Weapon
-        - Wing
-        - Body
-        - Body
-        - Nose
-        - Nose
-        - Controls
-        - Controls
-        - Controls
-      vital_areas:
-      - Body
-      - Engine
-      critical_areas:
-      - Cockpit
-      - Controls
-      crew_areas:
-      - Cockpit
     Transport:
       areas:
         Body:
@@ -482,6 +384,82 @@ fs3combat:
       - Engine
       crew_areas:
       - Cabin
+    Wagon:
+      areas:
+        Bed:
+        - Wheel
+        - Wheel
+        - Tongue
+        - Tongue
+        - Canopy
+        - Canopy
+        - Canopy
+        - Bed
+        - Bed
+        - Bed
+        Tongue:
+        - Wheel
+        - Wheel
+        - Animal
+        - Animal
+        - Bed
+        - Bed
+        - Tongue
+        - Tongue
+        - Tongue
+        - Tongue
+        Animal:
+        - Wheel
+        - Wheel
+        - Tongue
+        - Tongue
+        - Tongue
+        - Bed
+        - Bed
+        - Animal
+        - Animal
+        - Animal
+        Wheel:
+        - Animal
+        - Animal
+        - Tongue
+        - Tongue
+        - Bed
+        - Bed
+        - Wheel
+        - Wheel
+        - Wheel
+        - Wheel
+        Feedbox:
+        - Animal
+        - Wheel
+        - Wheel
+        - Bed
+        - Bed
+        - Bed
+        - Feedbox
+        - Feedbox
+        - Feedbox
+        - Feedbox
+        Canopy:
+        - Feedbox
+        - Feedbox
+        - Wheel
+        - Wheel
+        - Bed
+        - Bed
+        - Bed
+        - Canopy
+        - Canopy
+        - Canopy
+      vital_areas:
+      - Bed
+      critical_areas:
+      - Wheel
+      - Tongue
+      - Animal
+      crew_areas:
+      - Bed
     Aa Battery:
       areas:
         Weapon:

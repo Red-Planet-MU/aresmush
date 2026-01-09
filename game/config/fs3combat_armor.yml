@@ -102,6 +102,11 @@ fs3combat:
         Arm: 5
         Body: 6
         Fin: 4
+    Wagon:
+      description: A wagon.
+      defense: 0
+      protection:
+        Bed: 5
   armor specials:
     Helmet:
       description: A helmet
