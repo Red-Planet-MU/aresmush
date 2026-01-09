@@ -41,7 +41,8 @@ module AresMUSH
       end
 
       def check_pc_valid_weapon
-        return t('fs3combat.npc_only_weapon') if !FS3Combat.pc_equippable_weapon(self.weapon) && !combatant.is_npc?
+        self.names.each do |n|
+        return t('fs3combat.npc_only_weapon') if !FS3Combat.pc_equippable_weapon(self.weapon) && !n.is_npc?
         return nil
       end
       
