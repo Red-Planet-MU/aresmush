@@ -9,6 +9,11 @@ module AresMUSH
       Global.read_config("fs3combat", "weapons").reject { |name, details| details.to_s.include?('"is_hidden"=>true') }
     end
     
+    #Allow restricting some weapons to NPCs
+    def self.pc_equippable_weapons
+      Global.read_config("fs3combat", "weapons").reject { |name, details| details.to_s.include?('"npc_only"=>true') }
+    end
+
     def self.weapon(name)
       name_upcase = name ? name.upcase : nil
       FS3Combat.weapons.select { |k, v| k.upcase == name_upcase}.values.first
@@ -63,6 +68,11 @@ module AresMUSH
     #Allow hiding some armors
     def self.visible_armors
       Global.read_config("fs3combat", "armor").reject { |name, details| details.to_s.include?('"is_hidden"=>true') }
+    end
+
+    #Allow restricting some armors to NPCs
+    def self.pc_equippable_armors
+      Global.read_config("fs3combat", "armor").reject { |name, details| details.to_s.include?('"npc_only"=>true') }
     end
 
     def self.armor(name)
