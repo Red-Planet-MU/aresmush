@@ -45,6 +45,7 @@ fs3combat:
     Hide:
       description: Ordinary animal hide
       defense: 0
+      npc_only: true
       protection:
         Chest: 4
         Rear Left Leg: 4
@@ -75,6 +76,7 @@ fs3combat:
     Tough Hide:
       description: Thick, tough animal hide for critters that take a lickin' and keep on tickin'
       defense: 0
+      npc_only: true
       protection:
         Chest: 6
         Rear Left Leg: 6
