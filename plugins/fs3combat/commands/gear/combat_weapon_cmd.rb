@@ -20,7 +20,6 @@ module AresMUSH
         end
         
         self.specials = specials_str ? specials_str.split('+') : nil
-        Global.logger.debug "self.names: #{self.names} , self.weapon: #{self.weapon}"
       end
 
 

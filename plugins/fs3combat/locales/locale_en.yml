@@ -168,6 +168,7 @@ en:
 
         weapons_title: "Weapons List"
         invalid_weapon: "That is not a valid weapon."
+        npc_only_weapon: "That weapon can only be used by NPCs."
         weapon_title_description: "Description:"
         weapon_title_attack_skill: "Attack Skill:"
         weapon_title_defense_skill: "Defense Skill:"
@@ -197,6 +198,7 @@ en:
 
         armor_title: "Armor List"
         invalid_armor: "That is not a valid armor type."
+        npc_only_armor: "That armor can only be used by NPCs."
         armor_title_description: "Description:"
         armor_title_protection: "Protection:"
         armor_title_allowed_specials: "Allowed Specials:"

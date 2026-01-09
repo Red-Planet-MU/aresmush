@@ -30,6 +30,15 @@ module AresMUSH
         return t('fs3combat.invalid_armor') if !FS3Combat.armor(self.armor)
         return nil
       end
+
+      def check_pc_valid_armor
+        self.names.each do |n|
+          FS3Combat.with_a_combatant(n, client, enactor) do |combat, combatant| 
+            return t('fs3combat.npc_only_armor') if !FS3Combat.pc_equippable_armor(self.armor) && !combatant.is_npc?
+          end
+        end
+        return nil
+      end
       
       def check_special_allowed
         return nil if !self.specials
