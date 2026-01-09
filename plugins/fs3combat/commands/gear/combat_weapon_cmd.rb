@@ -22,6 +22,7 @@ module AresMUSH
         self.specials = specials_str ? specials_str.split('+') : nil
       end
 
+      Global.logger.debug "self.names: #{self.names} , self.weapon: #{self.weapon}"
       def required_args
         [ self.names, self.weapon ]
       end
