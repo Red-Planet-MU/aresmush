@@ -16,6 +16,7 @@ module AresMUSH
       end
 
       def handle
+        Global.logger.debug "enactor.room.scene: #{enactor.room.scene}"
         fortune_to_tell = Fortune.get_fortune()
         enactor.update(fortunes_told_lately: enactor.fortunes_told_lately + 1)
         enactor.update(fortunes_told_alltime: enactor.fortunes_told_alltime + 1)
