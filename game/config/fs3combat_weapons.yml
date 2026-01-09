@@ -38,9 +38,9 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
     Mine:
-      description: Mine or other anti-personnel explosive
-      skill: Demolitions
-      lethality: 20
+      description: Improvised explosive.
+      skill: Trapping
+      lethality: 5
       penetration: 8
       weapon_type: Explosive
       is_automatic: false
@@ -74,23 +74,6 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-    Lmg:
-      description: Light machinegun/SAW
-      skill: Firearms
-      lethality: 0
-      penetration: 6
-      weapon_type: Ranged
-      is_automatic: true
-      ammo: 100
-      recoil: 4
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-      firearm_type: Rifles
-      allowed_specials:
-      - Ap
-      - Bipod
     Revolver:
       description: A basic six-shooter. 
       skill: Firearms
@@ -253,24 +236,6 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      allowed_specials:
-      - Sparring
-    Hmg:
-      description: Heavy machinegun.
-      skill: Firearms
-      lethality: 20
-      penetration: 8
-      weapon_type: Ranged
-      is_automatic: true
-      ammo: 100
-      recoil: 6
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Ap
-      - Bipod
     Antlers:
       description: Antlers
       skill: Melee
@@ -279,6 +244,7 @@ fs3combat:
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
+      npc_only: true
       accuracy: 1
       init_mod: 0
     Beak:
@@ -289,6 +255,8 @@ fs3combat:
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
+      is_hidden: true
+      npc_only: true
       accuracy: 0
       init_mod: 0
     Claws:
@@ -299,6 +267,7 @@ fs3combat:
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
+      npc_only: true
       accuracy: 1
       init_mod: 0
     Horns:
@@ -309,6 +278,7 @@ fs3combat:
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
+      npc_only: true
       accuracy: 1
       init_mod: 0
     Teeth:
@@ -319,6 +289,7 @@ fs3combat:
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
+      npc_only: true
       accuracy: 1
       init_mod: 0
   weapon specials:
@@ -336,9 +307,3 @@ fs3combat:
       description: Shotgun pellets
       accuracy: 3
       penetration: -2
-    Sparring:
-      description: Padded sparring equipment
-      lethality: -50
-    Dynamite:
-      description: A stick of dynamite tied to an arrow.
-      has_shrapnel: true

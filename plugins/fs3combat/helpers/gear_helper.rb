@@ -3,6 +3,11 @@ module AresMUSH
     def self.weapons
       Global.read_config("fs3combat", "weapons")
     end
+
+    #Allow hiding some weapons
+    def self.visible_weapons
+      Global.read_config("fs3combat", "weapons").reject { |name, details| details.to_s.include?('"is_hidden"=>true') }
+    end
     
     def self.weapon(name)
       name_upcase = name ? name.upcase : nil
