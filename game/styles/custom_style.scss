@@ -777,7 +777,6 @@ body {
 
 #systemfs3sheet > div > .row > .col table tr td {
   flex: 0 1 120px;
-  white-space: nowrap;
   min-width: 120px;
   max-width: 120px;
   border: none; }
@@ -786,7 +785,9 @@ body {
   flex: 0 1 150px;
   overflow: visible;
   min-width: 150px;
-  text-align: left; }
+  text-align: left;
+  white-space: nowrap; 
+  }
 
 .fs3-luck 
   {
