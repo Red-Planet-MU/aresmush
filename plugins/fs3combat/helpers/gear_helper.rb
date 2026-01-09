@@ -54,7 +54,12 @@ module AresMUSH
     def self.armors
       Global.read_config("fs3combat", "armor")
     end
-    
+
+    #Allow hiding some armors
+    def self.visible_armors
+      Global.read_config("fs3combat", "armor").reject { |name, details| details.to_s.include?('"is_hidden"=>true') }
+    end
+
     def self.armor(name)
       FS3Combat.armors.select { |k, v| k.upcase == name.upcase}.values.first
     end
