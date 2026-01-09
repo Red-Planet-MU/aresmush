@@ -43,6 +43,7 @@ module AresMUSH
             luck_points: char.luck.floor,
             xp: xp,
             horse_bond: char.horse_bond
+            horse_rating: FS3Skills.horse_rating_name(char.horse_bond)
           }
         else
           {
