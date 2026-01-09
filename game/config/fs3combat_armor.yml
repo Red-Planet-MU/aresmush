@@ -29,6 +29,8 @@ fs3combat:
         Abdomen: 7
     NILE Armor:
       description: A system of overlapping ceramic plates and aramid fibers.
+      is_hidden: true
+      npc_only: true
       defense: 0
       protection:
         Head: 7

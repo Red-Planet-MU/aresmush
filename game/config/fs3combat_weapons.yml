@@ -171,6 +171,8 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       firearm_type: Rifles
+      is_hidden: true
+      npc_only: true
       allowed_specials:
       - Scope
     Shotgun:
