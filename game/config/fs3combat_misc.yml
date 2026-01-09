@@ -1,7 +1,7 @@
 ---
 fs3combat:
   default_type: Citizen
-  allow_vehicles: true
+  allow_vehicles: false
   allow_mounts: true
   stances:
     Aggressive:
