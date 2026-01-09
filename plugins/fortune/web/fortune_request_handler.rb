@@ -30,7 +30,7 @@ module AresMUSH
           enactor.room.emit scene_message
           Global.logger.debug "Not broken yet 3"
         end
-        Global.logger.debug "Not broken yet 4"
+        
       end
     end
   end
