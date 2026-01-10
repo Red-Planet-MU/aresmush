@@ -33,18 +33,19 @@ module AresMUSH
         #  messages << t('fs3combat.continues_subduing', :name => self.name, :target => print_target_names)
         #  return messages
         #end
-        if FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Stun"
-          is_snare = true
-          if FS3Skills.find_specialty(self.combatant.character, "Trapping") == "Snares"
-          snare_spec_boost = 1
-          else 
-          snare_spec_boost = 0
-          end
-          Global.logger.debug "snare_spec_boost: #{snare_spec_boost}"
-        end
+        #if FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Stun"
+        #  is_snare = true
+        #  if FS3Skills.find_specialty(self.combatant.character, "Trapping") == "Snares"
+        #  snare_spec_boost = 1
+        #  else 
+        #  snare_spec_boost = 0
+        #  end
+        #  Global.logger.debug "snare_spec_boost: #{snare_spec_boost}"
+        #end
 
 
-        margin = FS3Combat.determine_attack_margin(self.combatant, target, snare_spec_boost)
+        #margin = FS3Combat.determine_attack_margin(self.combatant, target, snare_spec_boost)
+        margin = FS3Combat.determine_attack_margin(self.combatant, target)
         if (margin[:hit])
           target.update(snared_by: self.combatant)
           target.update(is_snared: true)
