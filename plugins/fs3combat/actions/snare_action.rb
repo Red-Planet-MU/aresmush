@@ -15,7 +15,7 @@ module AresMUSH
       
         return t('fs3combat.only_one_target') if (self.targets.count > 1)
 
-        return t('fs3combat.already_snared') if (self.targets.is_snared == true)
+        return t('fs3combat.already_snared') if (self.target.is_snared == true)
         
         return nil
       end
