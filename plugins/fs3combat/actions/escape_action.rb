@@ -20,6 +20,7 @@ module AresMUSH
           self.combatant.subdued_by.name 
         else
           self.combatant.snared_by.name
+        end
       end
       
       def subduer
@@ -27,6 +28,7 @@ module AresMUSH
           self.combatant.subdued_by
         else 
           self.combatant.snared_by
+        end
       end
       
       def reset_subdue
