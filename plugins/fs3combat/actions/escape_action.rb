@@ -56,7 +56,7 @@ module AresMUSH
               self.reset_subdue
             end
           else 
-            margin = self.combatant.snare_roll - self.combatant.roll_ability(athletics)
+            margin = self.combatant.snare_roll - self.combatant.roll_ability("Athletics")
             if margin >= 0 
               messages << t('fs3combat.escape_action_failed', :name => self.name, :target => self.subduer_name)
             else
