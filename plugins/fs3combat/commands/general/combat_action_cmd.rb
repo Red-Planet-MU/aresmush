@@ -49,8 +49,8 @@ module AresMUSH
         end
         
         self.names.each do |name|
-          Global.logger.debug "combatant.is_subdued: #{combatant.is_subdued}"
           FS3Combat.with_a_combatant(name, client, enactor) do |combat, combatant|
+            Global.logger.debug "combatant.is_subdued: #{combatant.is_subdued}"
             if combatant.is_ko
               client.emit t('fs3combat.cannot_act_while_koed')
             elsif (combatant.is_subdued? && self.combat_command != "escape")
