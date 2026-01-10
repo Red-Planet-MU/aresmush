@@ -7,7 +7,7 @@ module AresMUSH
         #LASSO
         damage_type = FS3Combat.weapon_stat(self.combatant.weapon, "damage_type")
         Global.logger.debug "damage type: #{damage_type}"
-        return t('fs3combat.subdue_uses_melee') if damage_type != "Stun" && weapon_type != "Melee" 
+        return t('fs3combat.snares_only') if damage_type != "Stun" && weapon_type != "Melee" 
         #/LASSO
         
         error = self.parse_targets(self.action_args)
@@ -33,7 +33,7 @@ module AresMUSH
         #  messages << t('fs3combat.continues_subduing', :name => self.name, :target => print_target_names)
         #  return messages
         #end
-        if FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Snares"
+        if FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Stun"
           is_snare = true
           if FS3Skills.find_specialty(combatant.character, "Trapping") == "Snares"
           snare_spec_boost = 1
