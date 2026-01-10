@@ -43,7 +43,7 @@ fs3combat:
       defense_skill: Reflexes
       weapon: Claws
       armor: Hide
-    GourdyPlant:
+    Gourdyplant:
       hitloc: GourdyPlant
       defense_skill: Reflexes
       weapon: Vines
