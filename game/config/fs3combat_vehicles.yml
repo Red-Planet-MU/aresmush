@@ -1,13 +1,5 @@
 ---
 fs3combat:
   vehicles:
-    Wagon:
-      description: Pulled by a draft animal or two.
-      pilot_skill: Riding
-      toughness: 3
-      hitloc_chart: Wagon
-      armor: Wagon
-      weapons:
-      - Unarmed
-      dodge: 0
+    
     
