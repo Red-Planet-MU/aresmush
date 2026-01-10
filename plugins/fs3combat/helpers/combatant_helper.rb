@@ -25,7 +25,7 @@ module AresMUSH
         trapping_specialty = FS3Combat.weapon_stat(combatant.weapon, "trap_type")
         #then need to find if character has that specialty
         combatant_specialty = FS3Skills.find_specialty(combatant.character, ability)
-        Global.logger.debug "trapping_specialty: #{trapping_specialty}, combatant_specialty: #{combatant_specialty}"
+        
         #If weapon and character's specialty match then give a 1 boost to attack roll
         if firearm_specialty == combatant_specialty || trapping_specialty == combatant_specialty then specialty_mod = 1
         end
