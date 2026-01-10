@@ -37,6 +37,8 @@ module AresMUSH
           is_snare = true
           if FS3Skills.find_specialty(combatant.character, "Trapping") == "Snares"
           snare_spec_boost = 1
+          else 
+          snare_spec_boost = 0
           end
         end
 
