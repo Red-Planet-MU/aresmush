@@ -16,6 +16,8 @@ module AresMUSH
         'recover' => RecoverAction,
         #Expanded horses
         'calm' => CalmAction
+        #Snares
+        'snare' => SnareAction
       }
     end
     

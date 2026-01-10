@@ -1,0 +1,57 @@
+module AresMUSH
+  module FS3Combat
+    class SnareAction < CombatAction
+      
+      def prepare
+        weapon_type = FS3Combat.weapon_stat(self.combatant.weapon, "weapon_type")
+        #LASSO
+        damage_type = FS3Combat.weapon_stat(self.combatant.weapon, "damage_type")
+        Global.logger.debug "damage type: #{damage_type}"
+        return t('fs3combat.subdue_uses_melee') if damage_type != "Stun" && weapon_type != "Melee" 
+        #/LASSO
+        
+        error = self.parse_targets(self.action_args)
+        return error if error
+      
+        return t('fs3combat.only_one_target') if (self.targets.count > 1)
+        
+        return nil
+      end
+
+      def print_action
+        t('fs3combat.snare_action_msg_long', :name => self.name, :target => print_target_names)
+      end
+      
+      def print_action_short
+        t('fs3combat.snare_action_msg_short', :target => print_target_names)
+      end
+      
+      def resolve
+        messages = []
+        
+        #if (target.subdued_by == self.combatant)
+        #  messages << t('fs3combat.continues_subduing', :name => self.name, :target => print_target_names)
+        #  return messages
+        #end
+        if FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Snares"
+          is_snare = true
+          if FS3Skills.find_specialty(combatant.character, "Trapping") == "Snares"
+          snare_spec_boost = 1
+          end
+        end
+
+
+        margin = FS3Combat.determine_attack_margin(self.combatant, target, snare_spec_boost)
+        if (margin[:hit])
+          target.update(is_snared: true)
+          target.update(snare_roll: margin[:attacker_net_successes])
+          messages << t('fs3combat.snare_action_success', :name => self.name, :target => print_target_names)
+        else
+          messages << t('fs3combat.snare_action_failed', :name => self.name, :target => print_target_names)
+        end
+        
+        messages
+      end
+    end
+  end
+end

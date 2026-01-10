@@ -26,6 +26,8 @@ module AresMUSH
     attribute :team, :type => DataType::Integer, :default => 1
     attribute :stress, :type => DataType::Integer, :default => 0
     attribute :freshly_damaged, :type => DataType::Boolean, :default => false
+    attribute :is_snared, :type => DataType::Boolean
+    attribute :snare_roll, :type => DataType::Integer
     
     attribute :damage_lethality_mod, :type => DataType::Integer, :default => 0
     attribute :defense_mod, :type => DataType::Integer, :default => 0
