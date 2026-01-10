@@ -15,7 +15,7 @@ module AresMUSH
         #Expanded throwing weapons
         'recover' => RecoverAction,
         #Expanded horses
-        'calm' => CalmAction
+        'calm' => CalmAction,
         #Snares
         'snare' => SnareAction
       }
