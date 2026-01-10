@@ -15,7 +15,9 @@ module AresMUSH
         
         dual_wield = FS3Combat.weapon_stat(self.combatant.weapon, "dual_wield")
         weapon_type = FS3Combat.weapon_stat(self.combatant.weapon, "weapon_type")
+        snare = FS3Combat.weapon_stat(self.combatant.weapon, "trap_type")
         return t('fs3combat.use_explode_command') if weapon_type == "Explosive"
+        return t('fs3combat.use_snare_command') if snare == "Snares"
         return t('fs3combat.use_suppress_command') if weapon_type == "Suppressive"
         
         error = self.parse_targets(names)
