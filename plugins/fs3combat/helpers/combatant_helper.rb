@@ -285,6 +285,8 @@ module AresMUSH
         combatant.update(snare_roll: snare_roll - 1)
         Global.logger.debug "combatant.snare_roll: #{combatant.snare_roll}"
       end
+    end 
+    
       return nil
     end
   end
