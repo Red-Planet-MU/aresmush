@@ -102,12 +102,17 @@ fs3combat:
         Arm: 5
         Body: 6
         Fin: 4
-    Wagon:
-      description: A wagon.
+    Plant:
+      description: Plant skin.
       defense: 0
       is_hidden: true
+      npc_only: true
       protection:
-        Bed: 5
+        Left Vines: 3
+        Right Vines: 3
+        Stem: 3
+        Gourd: 3
+        Flower: 2
   armor specials:
     Helmet:
       description: A helmet

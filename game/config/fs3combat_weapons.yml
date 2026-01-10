@@ -292,6 +292,18 @@ fs3combat:
       npc_only: true
       accuracy: 1
       init_mod: 0
+    Vines:
+      description: A grasping plant appendage.
+      skill: Athletics
+      lethality: 5
+      penetration: 3
+      weapon_type: Ranged
+      is_automatic: false
+      recoil: 0
+      damage_type: Stun
+      accuracy: 0
+      has_shrapnel: false
+      init_mod: 0
   weapon specials:
     Ap:
       description: Armor Piercing Rounds

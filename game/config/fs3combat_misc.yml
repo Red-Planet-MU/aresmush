@@ -43,6 +43,11 @@ fs3combat:
       defense_skill: Reflexes
       weapon: Claws
       armor: Hide
+    GourdyPlant:
+      hitloc: GourdyPlant
+      defense_skill: Reflexes
+      weapon: Vines
+      armor: Plant
     NILE Officer:
       weapon: Energy Rifle
       armor: NILE Armor
