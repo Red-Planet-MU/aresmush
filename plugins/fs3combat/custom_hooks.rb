@@ -27,6 +27,7 @@ module AresMUSH
     def self.custom_new_turn_reset(combatant)
       Serum.serum_new_turn(combatant)
       Horse.horse_new_turn(combatant)
+      FS3Combat.snare_countdown(combatant)
     end
   end
 end

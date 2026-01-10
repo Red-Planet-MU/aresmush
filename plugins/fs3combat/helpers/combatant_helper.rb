@@ -279,7 +279,12 @@ module AresMUSH
           FS3Combat.join_vehicle(combat, combatant, vehicle, passenger_type.titlecase) 
         end
       end
-      
+
+    def self.snare_countdown(combatant)
+      if combatant.is_snared && combatant.snare_roll > 0
+        combatant.update(snare_roll: snare_roll - 1)
+        Global.logger.debug "combatant.snare_roll: #{combatant.snare_roll}"
+      end
       return nil
     end
   end
