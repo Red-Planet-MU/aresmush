@@ -16,11 +16,17 @@ module AresMUSH
       end
       
       def subduer_name
-        self.combatant.subdued_by ? self.combatant.subdued_by.name : ""
+        if self.combatant.subdued_by 
+          self.combatant.subdued_by.name 
+        else
+          self.combatant.snared_by.name
       end
       
       def subduer
-        self.combatant.subdued_by
+        if self.combatant.subdued_by 
+          self.combatant.subdued_by
+        else 
+          self.combatant.snared_by
       end
       
       def reset_subdue
@@ -54,6 +60,7 @@ module AresMUSH
             else
               messages << t('fs3combat.escape_action_success', :name => self.name, :target => self.subduer_name)
               self.combatant.update(is_snared: false)
+              self.combatant.update(snared_by: nil)
               self.combatant.update(snare_roll: 0)
             end
           end
