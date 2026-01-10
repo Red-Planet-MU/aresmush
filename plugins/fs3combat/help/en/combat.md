@@ -57,6 +57,7 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 `combat/distract <target>` - Distracts a target
 
 `combat/subdue <target>` - Subdues or disarms a target. 
+`combat/snare <target>` - Entraps a target with a snare.
 `combat/escape` – Attempts to escape while subdued.
 
 `combat/randtarget <number of targets>` - Suggests a couple potential targets at random.

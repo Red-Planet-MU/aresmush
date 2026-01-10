@@ -187,6 +187,7 @@ en:
         weapon_title_skill: "Skill:"
         invalid_weapon_special: "%{special} is not a valid special for that weapon."
         use_explode_command: "Use the combat/explode command for this weapon."
+        use_snare_command: "Use the combat/snare command for this weapon."
         use_suppress_command: "Use the combat/suppress command for this weapon."
         weapon_specials:  "Available Weapon Specials"
         invalid_gear_type: "Invalid gear type."
