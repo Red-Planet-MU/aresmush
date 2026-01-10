@@ -42,7 +42,13 @@ module AresMUSH
     end
     
     def self.roll_defense(combatant, attacker_weapon)
-      ability = FS3Combat.weapon_defense_skill(combatant, attacker_weapon)
+      #Snares
+      if FS3Combat.weapon_stat(attacker_weapon, "trap_type") == "Snares"
+        ability = "Alertness"
+      else
+        ability = FS3Combat.weapon_defense_skill(combatant, attacker_weapon)
+      end
+      #/end snares
       stance_mod = combatant.defense_stance_mod
       luck_mod = (combatant.luck == "Defense") ? 3 : 0
       damage_mod = combatant.total_damage_mod
