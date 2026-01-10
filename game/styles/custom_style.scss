@@ -846,6 +846,10 @@ a:focus  {
 }
 
 /* Play Screen */
+.fortunes_detail a {
+  cursor: pointer;
+}
+
 .play-screen {
 	display: grid;
 	grid-template-columns: 350px auto;
