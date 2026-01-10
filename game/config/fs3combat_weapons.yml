@@ -48,6 +48,7 @@ fs3combat:
       damage_type: Physical
       accuracy: 0
       has_shrapnel: true
+      trap_type: Explosives
       init_mod: 0
     Bow:
       description: A piece of wood with a string connecting the ends. Silent, and less deadly, compared to firearms.
@@ -62,6 +63,19 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       allowed_specials:
+    Snare:
+      description: A looped cord set in place to entangle something.
+      skill: Trapping
+      lethality: -50
+      penetration: 50
+      weapon_type: Melee
+      is_automatic: false
+      recoil: 0
+      damage_type: Stun
+      accuracy: 0
+      has_shrapnel: false
+      trap_type: Snares
+      init_mod: 0
     Shrapnel:
       description: Random Shrapnel
       skill: 3
