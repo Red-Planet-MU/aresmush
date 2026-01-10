@@ -142,7 +142,7 @@ module AresMUSH
     end
         
     def self.ai_action(combat, combatant, enactor = nil)
-      if (combatant.is_subdued?)
+      if (combatant.is_subdued? || combatant.is_snared)
         FS3Combat.set_action(enactor, combat, combatant, FS3Combat::EscapeAction, "")
       elsif (!FS3Combat.check_ammo(combatant, 1))
         FS3Combat.set_action(enactor, combat, combatant, FS3Combat::ReloadAction, "")
