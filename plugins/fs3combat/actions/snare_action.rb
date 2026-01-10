@@ -40,6 +40,7 @@ module AresMUSH
           else 
           snare_spec_boost = 0
           end
+          Global.logger.debug "snare_spec_boost: #{snare_spec_boost}"
         end
 
 
