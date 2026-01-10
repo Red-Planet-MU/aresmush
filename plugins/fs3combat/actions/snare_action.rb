@@ -46,6 +46,7 @@ module AresMUSH
 
         margin = FS3Combat.determine_attack_margin(self.combatant, target, snare_spec_boost)
         if (margin[:hit])
+          target.update(snared_by: self.combatant)
           target.update(is_snared: true)
           target.update(snare_roll: margin[:attacker_net_successes])
           messages << t('fs3combat.snare_action_success', :name => self.name, :target => print_target_names)

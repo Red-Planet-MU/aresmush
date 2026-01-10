@@ -28,6 +28,7 @@ module AresMUSH
     attribute :freshly_damaged, :type => DataType::Boolean, :default => false
     attribute :is_snared, :type => DataType::Boolean
     attribute :snare_roll, :type => DataType::Integer
+    reference :snared_by, "AresMUSH::Combatant"
     
     attribute :damage_lethality_mod, :type => DataType::Integer, :default => 0
     attribute :defense_mod, :type => DataType::Integer, :default => 0
