@@ -3,9 +3,9 @@ fs3combat:
   damage_mods:
     HEAL: 0
     MINOR: 0.25
-    MAJOR: 2
-    SEVERE: 4
-    CRITICAL: 7
+    MAJOR: 1
+    SEVERE: 2
+    CRITICAL: 4
   damage_table:
     GRAZE: -25
     MINOR: 0
@@ -22,4 +22,4 @@ fs3combat:
     MAJOR: 7
     SEVERE: 10
     CRITICAL: 7
-  pc_knockout_bonus: 1
+  pc_knockout_bonus: 2
