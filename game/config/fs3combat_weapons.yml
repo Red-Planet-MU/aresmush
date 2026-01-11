@@ -175,7 +175,7 @@ fs3combat:
     Shotgun:
       description: Double-barreled shotgun
       skill: Firearms
-      lethality: 10
+      lethality: 20
       penetration: 2
       weapon_type: Ranged
       is_automatic: false
