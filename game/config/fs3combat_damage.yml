@@ -7,7 +7,7 @@ fs3combat:
     SEVERE: 2
     CRITICAL: 4
   damage_table:
-    GRAZE: -25
+    GRAZE: -90
     MINOR: 15
     MAJOR: 65
     SEVERE: 95
