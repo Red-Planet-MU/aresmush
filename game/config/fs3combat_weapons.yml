@@ -114,7 +114,7 @@ fs3combat:
       ammo: 12
       recoil: 0
       damage_type: Physical
-      accuracy: -3
+      accuracy: -4
       has_shrapnel: false
       init_mod: 0
       dual_wield: true
