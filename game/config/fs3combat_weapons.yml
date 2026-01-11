@@ -17,7 +17,7 @@ fs3combat:
       description: A thrown stick of dynamite.
       skill: Athletics
       lethality: 0
-      penetration: 8
+      penetration: 7
       weapon_type: Explosive
       is_automatic: false
       recoil: 0
@@ -29,7 +29,7 @@ fs3combat:
       description: Longer than a knife, meant for clearing brush, but can be an intimidating weapon in the right hands.
       skill: Melee
       lethality: 5
-      penetration: 3
+      penetration: 2
       weapon_type: Melee
       is_automatic: false
       recoil: 0
@@ -41,7 +41,7 @@ fs3combat:
       description: Improvised explosive.
       skill: Trapping
       lethality: 5
-      penetration: 8
+      penetration: 7
       weapon_type: Explosive
       is_automatic: false
       recoil: 0
@@ -54,7 +54,7 @@ fs3combat:
       description: A piece of wood with a string connecting the ends. Silent, and less deadly, compared to firearms.
       skill: Archery
       lethality: 0
-      penetration: 4
+      penetration: 3
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
@@ -80,7 +80,7 @@ fs3combat:
       description: Random Shrapnel
       skill: 3
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
@@ -92,7 +92,7 @@ fs3combat:
       description: A basic six-shooter. 
       skill: Firearms
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       ammo: 6
@@ -108,7 +108,7 @@ fs3combat:
       description: TWO basic six-shooters.
       skill: Firearms
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       ammo: 12
@@ -125,7 +125,7 @@ fs3combat:
       description: A long rifle. Bolt action.
       skill: Firearms
       lethality: 0
-      penetration: 6
+      penetration: 5
       weapon_type: Ranged
       is_automatic: false
       ammo: 5
@@ -142,7 +142,7 @@ fs3combat:
       description: A lever-action long gun that can shoot more rapidly than a rifle but with less power and accuracy.
       skill: Firearms
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       ammo: 10
@@ -158,7 +158,7 @@ fs3combat:
       description: Restricted, NILE-issue energy-based long gun equipped with a self-destruct mechanism and palm reader.
       skill: Firearms
       lethality: 10
-      penetration: 8
+      penetration: 7
       weapon_type: Ranged
       is_automatic: false
       ammo: 25
@@ -176,7 +176,7 @@ fs3combat:
       description: Double-barreled shotgun
       skill: Firearms
       lethality: 10
-      penetration: 3
+      penetration: 2
       weapon_type: Ranged
       is_automatic: false
       ammo: 2
@@ -204,7 +204,7 @@ fs3combat:
       description: Knife
       skill: Melee
       lethality: -5
-      penetration: 4
+      penetration: 3
       weapon_type: Melee
       is_automatic: false
       recoil: 0
@@ -216,7 +216,7 @@ fs3combat:
       description: A thrown axe.
       skill: Athletics
       lethality: 5
-      penetration: 3
+      penetration: 2
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
@@ -229,7 +229,7 @@ fs3combat:
       description: A thrown knife.
       skill: Athletics
       lethality: 0
-      penetration: 4
+      penetration: 3
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
@@ -254,7 +254,7 @@ fs3combat:
       description: Antlers
       skill: Melee
       lethality: -10
-      penetration: 5
+      penetration: 4
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
@@ -265,7 +265,7 @@ fs3combat:
       description: Bites from a beak
       skill: Melee
       lethality: -5
-      penetration: 3
+      penetration: 2
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
@@ -277,7 +277,7 @@ fs3combat:
       description: Animal or creature claws
       skill: Melee
       lethality: 0
-      penetration: 4
+      penetration: 3
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
@@ -288,7 +288,7 @@ fs3combat:
       description: Horns
       skill: Melee
       lethality: -5
-      penetration: 6
+      penetration: 5
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
@@ -299,7 +299,7 @@ fs3combat:
       description: Animal or creature teeth
       skill: Melee
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Melee
       recoil: 0
       damage_type: Physical
@@ -310,7 +310,7 @@ fs3combat:
       description: A grasping plant appendage.
       skill: Athletics
       lethality: 5
-      penetration: 3
+      penetration: 2
       weapon_type: Ranged
       is_automatic: false
       recoil: 0

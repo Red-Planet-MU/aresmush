@@ -8,8 +8,8 @@ fs3combat:
     CRITICAL: 4
   damage_table:
     GRAZE: -25
-    MINOR: 0
-    MAJOR: 50
+    MINOR: 15
+    MAJOR: 65
     SEVERE: 95
   healing_cron:
     hour:

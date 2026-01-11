@@ -15,7 +15,7 @@ fs3combat:
         - Chest
         - Chest
         Left Leg:
-        - Chest
+        - Ass
         - Right Foot
         - Right Leg
         - Right Leg
@@ -26,7 +26,7 @@ fs3combat:
         - Left Leg
         - Left Leg
         Right Leg:
-        - Chest
+        - Ass
         - Left Foot
         - Left Leg
         - Left Leg
@@ -70,7 +70,7 @@ fs3combat:
         - Right Hand
         - Right Hand
         Left Arm:
-        - Head
+        - Chest
         - Chest
         - Chest
         - Abdomen
@@ -81,7 +81,7 @@ fs3combat:
         - Left Arm
         - Left Arm
         Right Arm:
-        - Head
+        - Chest
         - Chest
         - Chest
         - Abdomen
@@ -97,14 +97,15 @@ fs3combat:
         - Left Arm
         - Chest
         - Chest
+        - Chest
         - Neck
         - Neck
-        - Head
         - Head
         - Head
         Neck:
         - Right Arm
         - Right Arm
+        - Left Arm
         - Left Arm
         - Chest
         - Chest
@@ -112,13 +113,12 @@ fs3combat:
         - Head
         - Neck
         - Neck
-        - Neck
         Abdomen:
         - Left Leg
         - Right Leg
         - Left Leg
         - Right Leg
-        - Chest
+        - Ass
         - Chest
         - Chest
         - Abdomen
@@ -130,7 +130,6 @@ fs3combat:
       critical_areas:
       - Head
       - Neck
-      - Ass
     GourdyPlant:
       areas:
         Gourd:
