@@ -42,6 +42,8 @@ module AresMUSH
       case request.cmd
       when "setLFRP"
         return SetLFRPHandler
+      when "unsetLFRP"
+        return UnsetLFRPHandler
       else 
         nil
       end

@@ -16,6 +16,14 @@ module AresMUSH
       char.update(looking_for_rp: false)
     end
 
+    def self.is_lfrp(char)
+      if !char
+        false
+      else
+        char.is_looking_for_rp
+      end
+    end
+
     def self.chars_looking_for_rp
       Chargen.approved_chars.select { |c| c.looking_for_rp == true }
     end
