@@ -40,7 +40,7 @@ module AresMUSH
             }
         end
 
-        age_value = demographics['age']
+        age_value = char.demographics['age']
         
         if (Demographics.age_enabled?)
           demographics['age'] = { name: t('profile.age_title'), value: char.birthdate ? OOCTime.format_date_for_entry(char.birthdate) : char.age }
