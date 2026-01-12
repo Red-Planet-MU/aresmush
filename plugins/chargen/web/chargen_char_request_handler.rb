@@ -87,7 +87,7 @@ module AresMUSH
           can_approve: can_approve,
           name: char.name,
           demographics: demographics,
-          age_value: age_value
+          age_value: age_value,
           groups: groups,
           background: Website.format_input_for_html(char.background),
           rp_hooks: hooks,
