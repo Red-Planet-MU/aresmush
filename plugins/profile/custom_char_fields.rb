@@ -97,7 +97,7 @@ module AresMUSH
         # By default, this calls the old method for backwards compatibility. The old one didn't
         # use enactor. Replace this with your own code.
         Global.logger.debug "#{char_data}"
-        char.update(txt_color: Website.format_input_for_mush(char_data[:custom][:txt_color]))
+        char.update(txt_color: Website.format_input_for_mush(char_data["custom"]["txt_color"]))
       end
 
       
