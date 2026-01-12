@@ -64,7 +64,7 @@ fs3combat:
       init_mod: 0
       allowed_specials:
     Snare:
-      description: A looped cord set in place to entangle something.
+      description: A rudimentary mechanism set in place to entangle something.
       skill: Trapping
       lethality: -50
       penetration: 50
