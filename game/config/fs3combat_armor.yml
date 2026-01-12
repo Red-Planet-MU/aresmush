@@ -19,14 +19,6 @@ fs3combat:
         Right Arm: 2
         Left Arm: 2
         Ass: 0
-    Tactical:
-      description: Military-Grade Kevlar Vest and Helmet
-      defense: 0
-      protection:
-        Head: 7
-        Neck: 5
-        Chest: 8
-        Abdomen: 7
     NILE Armor:
       description: A system of overlapping ceramic plates and aramid fibers.
       is_hidden: true
