@@ -59,6 +59,8 @@ module AresMUSH
       
       def print_action
         display_name = Global.read_config('serum',self.serum_name,'display_name')
+        if display_name = "%x230%X18Equine Elixir%xn"
+          msg = t('use_serum_action_on_horse_msg_long',  :name => self.name, :target => print_target_names, :serum_name => display_name)
         msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => display_name)
       end
       
