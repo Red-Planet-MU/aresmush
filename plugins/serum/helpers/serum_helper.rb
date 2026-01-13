@@ -13,6 +13,8 @@ module AresMUSH
           "h_serums_has"
         when "Adreno"
           "a_serums_has"
+        when "Equine Elixir"
+          "e_serums_has"
         end
       end
   
@@ -28,6 +30,8 @@ module AresMUSH
           char.h_serums_has
         when "Adreno"
           char.a_serums_has
+        when "Equine Elixir"
+          char.e_serums_has
         end
       end
   
@@ -46,6 +50,8 @@ module AresMUSH
           char.update(h_serums_has: serum)
         when "a_serums_has"
           char.update(a_serums_has: serum)
+        when "e_serums_has"
+          char.update(e_serums_has: serum)
         end
       end
   
