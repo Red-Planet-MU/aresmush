@@ -313,8 +313,9 @@ en:
         attack_hits_cover: "%{name} attacks %{target} with %{weapon} but hits the COVER they're behind."
         attack_hits_mount: "%{name} attacks %{target} with %{weapon} and hits their MOUNT. %{effect}"
         
-        mount_ko: "(Mount %xrKOed%xn - %xyImpaired%xn wound from fall damage)"
+        mount_ko: "(Mount %xrKOed%xn - %xgMinor%xn wound from fall damage)"
         mount_injured: "(Mount INJURED)"
+        horse_is_kod: "Your horse is currently incapacitated."
         
         burst_fire_not_allowed: "You need an automatic weapon to do burst or fullauto fire."
         invalid_called_shot_loc: "That is not a valid called shot location.  See combat/hitlocs <target>."
