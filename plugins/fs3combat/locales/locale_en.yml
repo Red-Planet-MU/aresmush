@@ -315,7 +315,7 @@ en:
         
         mount_ko: "(Mount %xrKOed%xn - %xgMinor%xn wound from fall damage)"
         mount_injured: "(Mount INJURED)"
-        horse_is_kod: "Your horse is currently incapacitated. Use an %x230%X18Equine Elixir%xn to revive it."
+        horse_is_kod: "Your horse is currently incapacitated. Use an %x230%X18Equine Elixir%xr to revive it."
         
         burst_fire_not_allowed: "You need an automatic weapon to do burst or fullauto fire."
         invalid_called_shot_loc: "That is not a valid called shot location.  See combat/hitlocs <target>."
