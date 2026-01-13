@@ -10,7 +10,7 @@ serum:
     combat_only: false
     display_name: "%xw%X35Revitalizer Serum%xn"
   Adreno:
-    desc: "This blend of ingredients will instantly revive anything from a dog to a horse. Too powerful to use on anything smaller."
+    desc: "This blend of ingredients will instantly revive a human being. Not recommended for animal use."
     duration: -1
     is_revive: true
     combat_only: true
@@ -36,6 +36,11 @@ serum:
     lethality_mod: 10
     combat_only: true
     display_name: "%x22%X166Glass Cannon Serum%xn"
+  Equine Elixir:
+    desc: "A powerful mix that will revive a horse and mend some of its injuries almost instantly. Incredibly potent."
+    duration: -1
+    combat_only: true
+    display_name: "Equine Elixir"
   serum_cron:
     day_of_week:
     - Sat

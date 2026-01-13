@@ -20,6 +20,7 @@ module AresMUSH
           h_serums: char.h_serums_has,
           qh_serums: char.qh_serums_has,
           gc_serums: char.gc_serums_has,
+          e_serums: char.e_serums_has,
           horse_name: char.demographic("horse name"),
           horse_color: char.horse_color,
           horse_temperament: char.horse_temperament,
