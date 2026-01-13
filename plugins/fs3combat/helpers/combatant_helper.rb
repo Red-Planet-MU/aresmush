@@ -3,7 +3,12 @@ module AresMUSH
     
     def self.roll_attack(combatant, target, mod = 0)
       ability = FS3Combat.weapon_stat(combatant.weapon, "skill")
-      accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "accuracy")
+      mounted_acc = FS3Combat.weapon_stat(combatant.weapon, "mounted_accuracy")
+      if combatant.mount_type && mounted_acc
+        accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "mounted_accuracy")
+      else 
+        accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "accuracy")
+      end
       special_mod = combatant.attack_mod
       damage_mod = combatant.total_damage_mod
       stance_mod = combatant.attack_stance_mod

@@ -135,6 +135,7 @@ fs3combat:
       has_shrapnel: false
       init_mod: -1
       firearm_type: Rifles
+      mounted_accuracy: -2
       allowed_specials:
       - Ap
       - Scope
@@ -151,6 +152,7 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
+      mounted_accuracy: -1
       firearm_type: Rifles
       allowed_specials:
       - Ap
@@ -186,6 +188,7 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       firearm_type: Rifles
+      mounted_accuracy: -1
       allowed_specials:
       - Buckshot
     Club:
