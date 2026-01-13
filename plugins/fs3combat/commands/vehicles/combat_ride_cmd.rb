@@ -4,7 +4,7 @@ module AresMUSH
       include CommandHandler
       include NotAllowedWhileTurnInProgress
       
-      attr_accessor :name, :mount
+      attr_accessor :name, :mount, :target
       
       def parse_args
         if (cmd.args =~ /=/)
