@@ -3,7 +3,7 @@ en:
   horse:
     not_approved: "You must be approved to use that command."
     going_to_spook: "%{name}'s horse becomes agitated and is starting to buck!"
-    spook_thrown: "%{name}'s horse throws them off!"
+    spook_thrown: "%{name}'s horse throws them off! (%xgMinor%xn wound from fall damage)"
     still_spooking: "%{name}'s horse is becoming increasingly agitated!"
     not_mounted: "You are not mounted."
     not_spooked: "Your horse is not agitated."

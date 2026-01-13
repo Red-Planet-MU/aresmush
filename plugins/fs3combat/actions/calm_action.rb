@@ -18,6 +18,7 @@ module AresMUSH
       
       def resolve
         self.combatant.update(spook_counter: 0)
+        self.combatant.update(just_calmed: true)
         self.combatant.associated_model.update(horse_bond_counter: self.combatant.associated_model.horse_bond_counter + 1)
         #check whether to increment horse bond
         case self.combatant.associated_model.horse_bond_counter
