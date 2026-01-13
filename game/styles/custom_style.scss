@@ -466,7 +466,8 @@
 	grid-template-columns: minmax(68%, 73%) auto;
 }
 
-.button {background-color: $primary-color;
+.button {
+  background-color: $primary-color;
   border-color: $primary-outline-color;
   outline: 0;
   border-style: none;
