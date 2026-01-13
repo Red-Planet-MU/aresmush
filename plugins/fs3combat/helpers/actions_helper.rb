@@ -341,7 +341,10 @@ module AresMUSH
       elsif (hit_mount)
         mount_ko = FS3Combat.resolve_mount_ko(target)
         if (mount_ko)
-          
+
+          #Serums Mount KO
+          target.update(horse_kod: true)
+          target.update(horse_ko_counter: target.horse_ko_counter + 1)
           mount_effect = t('fs3combat.mount_ko')
           target.inflict_damage('MINOR', 'Fall Damage', true, false)
           target.update(mount_type: nil)

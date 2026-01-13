@@ -30,6 +30,11 @@ module AresMUSH
         return t('fs3combat.invalid_mount') if !FS3Combat.mount(self.mount)
         return nil
       end
+
+      def check_mount_kod
+        return t('fs3combat.horse_is_kod') if self.name.horse_kod == true
+        return nil
+      end
       
       def handle
         FS3Combat.with_a_combatant(name, client, enactor) do |combat, combatant|     

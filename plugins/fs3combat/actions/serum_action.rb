@@ -34,6 +34,12 @@ module AresMUSH
         if (!wound) && self.serum_type == "v_serums_has"
           return t('fs3combat.target_has_no_treatable_wounds', :name => self.target.name)
         end
+
+        #If this is horse juice, the target's horse must be KO'd 
+        horse_down = self.target.horse_kod
+        if horse_down == false
+          return t(fs3combat.target_horse_is_not_kod, :name => self.target.name)
+        end
         
         #If this is a serum with a lasting effect, the last serum must expire first
         serum_duration = self.target.serum_duration_counter
@@ -105,6 +111,11 @@ module AresMUSH
         if is_revive
           self.target.update(is_ko: false)
           message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
+        end
+
+        if horse_reviver
+          self.target.update(horse_kod: false)
+          message = t('serum.used_horse_elixir', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 
         #do not track NPC serum use
