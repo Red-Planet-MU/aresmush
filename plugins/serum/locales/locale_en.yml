@@ -15,7 +15,7 @@ en:
     used_v_in_combat: "%{name} injects %{target} with a %{serum_name}, healing their worst injury for %{heal_points} points."
     c_used_v_made_it_worse: "%{name} injects %{target} with a %{serum_name} Serum, making their injury worse!"
     use_serum_action_msg_long: "%{name} will inject %{target} with a %{serum_name} this turn."
-    use_serum_action_on_horse_msg_long: "%{name} will inject %{target}'s horse with a %{serum_name} this turn."
+    use_serum_action_on_horse_msg_long: "%{name} will inject %{target}'s horse with an %{serum_name} this turn."
     use_serum_action_msg_short: "%{serum_name} %{target}"
     used_serum_combat: "%{name} injects %{target} with a %{serum_name}!"
     already_serumed: "That target is already under the effects of a serum."

@@ -315,9 +315,10 @@ module AresMUSH
     
     def self.resolve_mount_ko(target)
       toughness = FS3Combat.mount_stat(target.mount_type, 'toughness').to_i
-      roll = FS3Skills.one_shot_die_roll(toughness)[:successes]
+      mod = target.horse_ko_counter
+      roll = FS3Skills.one_shot_die_roll(toughness - mod)[:successes]
       
-      target.log "Determined mount damage: tough=#{toughness} roll=#{roll}"
+      target.log "Determined mount damage: tough=#{toughness} mod = #{mod} roll=#{roll}"
       
       roll <= 0
     end
