@@ -466,6 +466,14 @@
 	grid-template-columns: minmax(68%, 73%) auto;
 }
 
+.event-signup-item button {
+  margin-top: 6px;
+}
+
+.event-signup-item-comment {
+  padding: 2% 0;
+}
+
 button {
   background-color: $primary-color;
   border-color: $primary-outline-color;
