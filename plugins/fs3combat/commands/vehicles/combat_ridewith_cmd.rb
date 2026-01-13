@@ -39,17 +39,27 @@ module AresMUSH
             return
           end
 
-          if !name.mount_type 
-            client.emit_failure t('fs3combat.not_mounted_to_ride')
-          end
-
-          if name.horse_kod == true
-            client.emit_failure t('fs3combat.their_horse_is_kod')
+          if (combatant.mount_type) 
+            client.emit_failure t('fs3combat.cant_be_mounted_and_ride')
             return
           end
-             
-          combatant.update(mount_type: name.mount_type)
-          FS3Combat.emit_to_combat combat, t('fs3combat.riding', :name => combatant.name, :mount => self.mount)
+
+          FS3Combat.with_a_combatant(target, client, enactor) do |combat2, combatant2|
+
+            if !combatant2.mount_type 
+              client.emit_failure t('fs3combat.not_mounted_to_ride')
+              return
+            end
+
+            if combatant2.horse_kod == true
+              client.emit_failure t('fs3combat.their_horse_is_kod')
+            return
+            end
+
+            combatant.update(mount_type: combatant2.mount_type)
+            combatant2.update(is_carrying: combatant)
+            FS3Combat.emit_to_combat combat, t('fs3combat.riding', :name => combatant.name, :riding_with_name => combatant2.name)
+          end
         end
       end
     end
