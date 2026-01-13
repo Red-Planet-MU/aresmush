@@ -1,6 +1,6 @@
 module AresMUSH
   module FS3Combat
-    class CombatRideCmd
+    class CombatRidewithCmd
       include CommandHandler
       include NotAllowedWhileTurnInProgress
       
