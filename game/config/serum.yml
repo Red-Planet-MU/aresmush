@@ -40,6 +40,7 @@ serum:
     desc: "A powerful mix that will revive a horse and mend some of its injuries almost instantly. Incredibly potent."
     duration: -1
     combat_only: true
+    horse_reviver: true
     display_name: "%x230%X18Equine Elixir%xn"
   serum_cron:
     day_of_week:

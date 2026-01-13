@@ -75,6 +75,7 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
+        is_revive = Global.read_config('serum',self.serum_name,'horse_reviver')
         display_name = Global.read_config('serum',self.serum_name,'display_name')
 
         Global.logger.debug "Duration: #{duration} Init_mod: #{init_mod} Lethal_mod: #{lethal_mod} Lethality: #{lethality} armor_mod: #{armor_mod} is_healing: #{is_healing} is_revive: #{is_revive}"
