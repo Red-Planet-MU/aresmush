@@ -4,6 +4,7 @@ en:
     not_approved: "You must be approved to use that command."
     going_to_spook: "%{name}'s horse becomes agitated and is starting to buck!"
     spook_thrown: "%{name}'s horse throws them off! (%xgMinor%xn wound from fall damage)"
+    spook_thrown_riding: "%{name}'s horse throws them and %{passenger} off! (%xgMinor%xn wounds from fall damage)"
     still_spooking: "%{name}'s horse is becoming increasingly agitated!"
     not_mounted: "You are not mounted."
     not_spooked: "Your horse is not agitated."

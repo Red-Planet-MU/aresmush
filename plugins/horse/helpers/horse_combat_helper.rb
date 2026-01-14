@@ -3,7 +3,7 @@ module AresMUSH
 
     def self.horse_new_turn(combatant)
       #Check if mounted and unspooked
-      if (combatant.mount_type && combatant.spook_counter == 0 && !combatant.is_npc? && combatant.just_calmed == false)
+      if (combatant.mount_type && combatant.spook_counter == 0 && !combatant.is_npc? && combatant.just_calmed == false && !combatant.is_riding_with)
         #Get the spook rating and horse bond
         spook_rating = Global.read_config('horse', 'spook_rating')
         bond_with_horse = combatant.associated_model.horse_bond
@@ -21,10 +21,21 @@ module AresMUSH
       elsif (combatant.mount_type && combatant.spook_counter < 0 && !combatant.is_npc?)
         riding_roll = combatant.roll_ability("Riding", combatant.spook_counter)
         if riding_roll <= 0
-          FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
-          combatant.update(mount_type: nil)
-          combatant.update(spook_counter: 0)
-          combatant.inflict_damage('MINOR', 'Fall Damage', true, false)
+          giving_ride_to = combatant.is_carrying
+          if giving_ride_to
+            FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown_riding', :name => combatant.name, :passenger => giving_ride_to.name), nil, true
+            combatant.update(mount_type: nil)
+            combatant.update(spook_counter: 0)
+            combatant.inflict_damage('MINOR', 'Fall Damage', true, false)
+            giving_ride_to.update(mount_type: nil)
+            giving_ride_to.update(spook_counter: 0)
+            giving_ride_to.inflict_damage('MINOR', 'Fall Damage', true, false)
+          else
+            FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
+            combatant.update(mount_type: nil)
+            combatant.update(spook_counter: 0)
+            combatant.inflict_damage('MINOR', 'Fall Damage', true, false)
+          end
         else 
         FS3Combat.emit_to_combat combatant.combat, t('horse.still_spooking', :name => combatant.name), nil, true
         combatant.update(spook_counter: combatant.spook_counter - 1)

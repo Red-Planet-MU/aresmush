@@ -4,7 +4,8 @@ module AresMUSH
             
       def prepare
         return t('horse.not_mounted') if !self.combatant.mount_type
-        return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0
+        riding_with_spooked = self.combatant.is_riding_with.spook_counter
+        return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0 && !riding_with_spooked
         return nil
       end
 
@@ -17,6 +18,12 @@ module AresMUSH
       end
       
       def resolve
+        riding_with_spooked = self.combatant.is_riding_with.spook_counter
+        if riding_with_spooked
+          main_rider = self.combatant.is_riding_with
+          main_rider.update(spook_counter: 0)
+          main_rider.update(just_calmed: true)
+        end
         self.combatant.update(spook_counter: 0)
         self.combatant.update(just_calmed: true)
         self.combatant.associated_model.update(horse_bond_counter: self.combatant.associated_model.horse_bond_counter + 1)

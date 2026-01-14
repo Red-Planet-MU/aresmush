@@ -118,9 +118,10 @@ module AresMUSH
             combatant.update(mount_type: nil)
             FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_mounted', :name => combatant.name, :damaged_by => damaged_by), nil, true
           end
-        end
+        else
         #/Extra horse jazz
         FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed', :name => combatant.name, :damaged_by => damaged_by), nil, true
+        end
       end
     end
       
