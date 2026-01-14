@@ -44,6 +44,8 @@ module AresMUSH
         return SetLFRPHandler
       when "unsetLFRP"
         return UnsetLFRPHandler
+      when "LFRPData"
+        return LookingForRpRequestHandler
       else 
         nil
       end
