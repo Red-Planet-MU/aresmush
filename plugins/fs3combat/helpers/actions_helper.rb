@@ -351,7 +351,9 @@ module AresMUSH
             mount_effect = t('fs3combat.mount_ko_ridewith')
             primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
             primary_rider.update(mount_type: nil)
+            primary_rider.update(is_carrying: nil)
             passenger_rider.update(mount_type: nil)
+            passenger_rider.update(is_riding_with: nil)
             passenger_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
           elsif target.is_carrying
             primary_rider = target
@@ -361,7 +363,9 @@ module AresMUSH
             mount_effect = t('fs3combat.mount_ko_ridewith')
             primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
             primary_rider.update(mount_type: nil)
+            primary_rider.update(is_carrying: nil)
             passenger_rider.update(mount_type: nil)
+            passenger_rider.update(is_riding_with: nil)
             passenger_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
           else
             #Serums Mount KO
