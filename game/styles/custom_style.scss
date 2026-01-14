@@ -487,6 +487,10 @@ button {
   color: #ebebeb; 
 }
 
+.toastui-editor-defaultUI-toolbar button {
+  min-width: unset;
+}
+
 .modal-header .btn-close {
   background-color: #3d5954;
 }
