@@ -343,9 +343,19 @@ module AresMUSH
         mount_ko = FS3Combat.resolve_mount_ko(target)
         if (mount_ko)
           #Horse Ridewith
-          if target.is_carrying || target.is_riding_with
-            primary_rider = target.is_carrying
-            passenger_rider = target.is_riding_with
+          if target.is_riding_with
+            primary_rider = target.is_riding_with
+            passenger_rider = target
+            primary_rider.update(horse_kod: true)
+            primary_rider.update(horse_ko_counter: primary_rider.horse_ko_counter + 1)
+            mount_effect = t('fs3combat.mount_ko_ridewith')
+            primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+            primary_rider.update(mount_type: nil)
+            passenger_rider.update(mount_type: nil)
+            passenger_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+          elsif target.is_carrying
+            primary_rider = target
+            passenger_rider = target.is_carrying
             primary_rider.update(horse_kod: true)
             primary_rider.update(horse_ko_counter: primary_rider.horse_ko_counter + 1)
             mount_effect = t('fs3combat.mount_ko_ridewith')
@@ -363,9 +373,12 @@ module AresMUSH
           end
 
         else
-          if target.is_carrying || target.is_riding_with
-            primary_rider = target.is_carrying
-            passenger_rider = target.is_riding_with
+          if target.is_carrying
+            primary_rider = target
+            passenger_rider = target.is_carrying
+          elsif target.is_riding_with
+            primary_rider = target.is_riding_with
+            passenger_rider = target
           end
           mount_effect =  t('fs3combat.mount_injured')
         end
