@@ -242,6 +242,7 @@ en:
         their_horse_is_kod: "That combatant's horse is currently incapacitated."
         cant_be_mounted_and_ride: "You cannot ride another person's horse while mounted."
         dismounted_from_ride: "%{name} has dismounted %{ride_giver}'s horse."
+        horse_is_spooked: "Your horse is still too wound up to ride."
             
         # ----------------------------
         # HITLOCS

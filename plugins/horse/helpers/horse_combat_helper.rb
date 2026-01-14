@@ -25,6 +25,7 @@ module AresMUSH
           if giving_ride_to
             FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown_riding', :name => combatant.name, :passenger => giving_ride_to.name), nil, true
             combatant.update(mount_type: nil)
+            combatant.update(thrown_from_spooking: true)
             combatant.update(spook_counter: 0)
             combatant.inflict_damage('MINOR', 'Fall Damage', true, false)
             giving_ride_to.update(mount_type: nil)
@@ -33,6 +34,7 @@ module AresMUSH
           else
             FS3Combat.emit_to_combat combatant.combat, t('horse.spook_thrown', :name => combatant.name), nil, true
             combatant.update(mount_type: nil)
+            combatant.update(thrown_from_spooking: 2)
             combatant.update(spook_counter: 0)
             combatant.inflict_damage('MINOR', 'Fall Damage', true, false)
           end
@@ -42,6 +44,9 @@ module AresMUSH
         end
       elsif combatant.just_calmed == true
         combatant.update(just_calmed: false)
+      end
+      if combatant.thrown_from_spooking > 0
+        combatant.update(thrown_from_spooking: combatant.thrown_from_spooking - 1)
       end
     end
 

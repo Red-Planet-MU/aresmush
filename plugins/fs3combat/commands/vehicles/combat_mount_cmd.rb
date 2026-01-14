@@ -47,6 +47,11 @@ module AresMUSH
             client.emit_failure t('fs3combat.horse_is_kod')
             return
           end
+
+          if combatant.thrown_from_spooking > 0
+            client.emit_failure t('fs3combat.horse_is_spooked')
+            return
+          end
              
           combatant.update(mount_type: self.mount)
           FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => self.mount)
