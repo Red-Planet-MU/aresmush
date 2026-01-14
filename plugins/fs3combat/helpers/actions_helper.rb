@@ -342,18 +342,39 @@ module AresMUSH
       elsif (hit_mount)
         mount_ko = FS3Combat.resolve_mount_ko(target)
         if (mount_ko)
+          #Horse Ridewith
+          if target.is_carrying || target.is_riding_with
+            primary_rider = target.is_carrying
+            passenger_rider = target.is_riding_with
+            primary_rider.update(horse_kod: true)
+            primary_rider.update(horse_ko_counter: primary_rider.horse_ko_counter + 1)
+            mount_effect = t('fs3combat.mount_ko_ridewith')
+            primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+            primary_rider.update(mount_type: nil)
+            passenger_rider.update(mount_type: nil)
+            passenger_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+          else
+            #Serums Mount KO
+            target.update(horse_kod: true)
+            target.update(horse_ko_counter: target.horse_ko_counter + 1)
+            mount_effect = t('fs3combat.mount_ko')
+            target.inflict_damage('MINOR', 'Fall Damage', true, false)
+            target.update(mount_type: nil)
+          end
 
-          #Serums Mount KO
-          target.update(horse_kod: true)
-          target.update(horse_ko_counter: target.horse_ko_counter + 1)
-          mount_effect = t('fs3combat.mount_ko')
-          target.inflict_damage('MINOR', 'Fall Damage', true, false)
-          target.update(mount_type: nil)
         else
+          if target.is_carrying || target.is_riding_with
+            primary_rider = target.is_carrying
+            passenger_rider = target.is_riding_with
+          end
           mount_effect =  t('fs3combat.mount_injured')
         end
 
-        message = t('fs3combat.attack_hits_mount', :name => combatant.name, :target => target.name, :weapon => weapon, :effect => mount_effect)
+        if target == passenger_rider
+          message = t('fs3combat.attack_hits_mount_with_rider', :name => combatant.name, :target => target.name, :weapon => weapon, :effect => mount_effect, :rider => primary_rider.name)
+        else
+          message = t('fs3combat.attack_hits_mount', :name => combatant.name, :target => target.name, :weapon => weapon, :effect => mount_effect)
+        end
       elsif (stopped_by_cover)
         message = t('fs3combat.attack_hits_cover', :name => combatant.name, :target => target.name, :weapon => weapon)
       elsif (attacker_net_successes < 0)
