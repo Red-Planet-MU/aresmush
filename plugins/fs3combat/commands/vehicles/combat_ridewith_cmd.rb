@@ -57,6 +57,7 @@ module AresMUSH
             end
 
             combatant.update(mount_type: combatant2.mount_type)
+            combatant.update(is_riding_with: combatant2)
             combatant2.update(is_carrying: combatant)
             FS3Combat.emit_to_combat combat, t('fs3combat.riding', :name => combatant.name, :riding_with_name => combatant2.name)
           end

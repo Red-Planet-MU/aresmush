@@ -235,6 +235,10 @@ en:
         mount_title_description: "Description:"
         mount_title_toughness: "Toughness:"
         mount_title_mod_vs_unmounted: "Mod vs Unmounted:"
+        riding: "%{name} is now riding with %{riding_with_name}"
+        not_mounted_to_ride: "That combatant is not mounted."
+        their_horse_is_kod: "That combatant's horse is currently incapacitated."
+        cant_be_mounted_and_ride: "You cannot ride another person's horse while mounted."
             
         # ----------------------------
         # HITLOCS
