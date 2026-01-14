@@ -141,6 +141,8 @@ en:
         # ----------------------------
         
         is_koed: "%{name} has been %xr**KO'd**%xn! (Damaged This Turn By: %{damaged_by})"
+        is_koed_rider_with: "%{name} has been %xr**KO'd**%xn and is THROWN, taking %{passenger} with them! (Damaged This Turn By: %{damaged_by})"
+        is_koed_mounted: "%{name} has been %xr**KO'd**%xn and is THROWN! (Damaged This Turn By: %{damaged_by})"
         is_no_longer_koed: "%{name} is %xgno longer KOed%xn!"
         not_koed: "You are not KOed!"
         back_in_the_fight: "%{name} spends a luck point and is back in the fight!"
@@ -321,6 +323,7 @@ en:
         
         mount_ko: "(Mount %xrKOed%xn - %xgMinor%xn wound from fall damage)"
         mount_ko_ridewith: "(Mount %xrKOed%xn - Both take a %xgMinor%xn wound from fall damage)"
+        mount_ko_ridewith_rider: "(Mount %xrKOed%xn - Both (%{passenger}) take a %xgMinor%xn wound from fall damage)"
         mount_injured: "(Mount INJURED)"
         horse_is_kod: "Your horse is currently incapacitated. Use an %x230%X18Equine Elixir%xn%xr to revive it."
         

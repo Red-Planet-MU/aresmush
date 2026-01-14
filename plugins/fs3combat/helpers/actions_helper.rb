@@ -105,6 +105,21 @@ module AresMUSH
         combatant.update(action_klass: nil)
         combatant.update(action_args: nil)
         damaged_by = combatant.damaged_by.join(", ")
+        #Extra horse jazz
+        if combatant.mount_type
+          if combatant.is_carrying
+            passenger_rider = combatant.is_carrying
+            passenger_rider.update(mount_type: nil)
+            passenger_rider.update(is_riding_with: nil)
+            combatant.update(mount_type: nil)
+            combatant.update(is_carrying: nil)
+            FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_rider_with', :name => combatant.name, :damaged_by => damaged_by, :passenger => passenger_rider.name), nil, true
+          else
+            combatant.update(mount_type: nil)
+            FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_mounted', :name => combatant.name, :damaged_by => damaged_by), nil, true
+          end
+        end
+        #/Extra horse jazz
         FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed', :name => combatant.name, :damaged_by => damaged_by), nil, true
       end
     end
@@ -360,7 +375,7 @@ module AresMUSH
             passenger_rider = target.is_carrying
             primary_rider.update(horse_kod: true)
             primary_rider.update(horse_ko_counter: primary_rider.horse_ko_counter + 1)
-            mount_effect = t('fs3combat.mount_ko_ridewith')
+            mount_effect = t('fs3combat.mount_ko_ridewith_rider', :passenger => passenger_rider.name)
             primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
             primary_rider.update(mount_type: nil)
             primary_rider.update(is_carrying: nil)
