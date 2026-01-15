@@ -9,7 +9,7 @@ module AresMUSH
         timezone = request.args['timezone']
         pw = request.args['confirm_password']
         unified_play_screen = (request.args['unified_play_screen'] || "").to_bool
-        editor = request.args['editor'] || "WYSIWYG"
+        editor = request.args['editor'] || "Classic"
 
         error = Website.check_login(request)
         return error if error
