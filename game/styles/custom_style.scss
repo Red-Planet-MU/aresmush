@@ -663,6 +663,7 @@ body {
 .log-wrap {
   background-color: #4c2c1f; 
   background-image: url("/game/uploads/theme_images/leather-tex.png");
+  border: none;
   //border-radius: 15px 0px 0px 15px;
   //height: fit-content;
   //padding: 15px 10px 20px 0px;
@@ -689,6 +690,12 @@ body {
     0 20px 0 -10px #d6bc9b,
     /* The third layer shadow */
     0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+.pose-divider {
+  margin: 20px 25px 20px 25px;
+  border: 2px solid rgba(156, 156, 156, .5);
+  height: 1px;
 }
 
 /* Character Gallery */
