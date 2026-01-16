@@ -92,17 +92,17 @@ module AresMUSH
       age = char.age.to_i
       case age
       when 20..25
-        points_for_age = 35
+        points_for_age = 30
       when 26..30
-        points_for_age = 38
+        points_for_age = 33
       when 31..35
-        points_for_age = 41
+        points_for_age = 36
       when 36..40
-        points_for_age = 43
+        points_for_age = 38
       when 41..45
-        points_for_age = 47
+        points_for_age = 42
       when 46..99
-        points_for_age = 50
+        points_for_age = 45
       end
 
       #max = Global.read_config("fs3skills", "max_ap")
