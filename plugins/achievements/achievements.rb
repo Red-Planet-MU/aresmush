@@ -31,10 +31,8 @@ module AresMUSH
     end
 
     def self.get_event_handler(event_name)
-      case event_name
-      when "CronEvent"
-        return CronEventHandler
-      end
+      #take achievement cron back out
+      nil
     end
 
     def self.get_web_request_handler(request)
