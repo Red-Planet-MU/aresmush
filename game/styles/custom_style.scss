@@ -842,6 +842,10 @@ body {
 .profile-demographics > .profile-item:first-child > div:nth-child(2) {
   width: 100% !important; }
 
+.profile-demographics > .profile-item:first-child > div:nth-child(2) .profile-item-value {
+	flex-basis: 100%;
+}
+
 .profile-demographics > .profile-item:first-child > div:first-child {
   display: none; }
 
