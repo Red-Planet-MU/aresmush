@@ -760,6 +760,16 @@ body {
 	transition: transform 0.75s ease;
 }
 
+.profile-tab .card img:hover {
+  transform: scale(2);
+  z-index: 100;
+  position: relative;
+  left: 30%;
+  outline: 0;
+  border: 6px solid transparent;
+  box-shadow: 10px 10px 20px #090909;
+  border: 6px solid #f9f9ef; }
+
 .profile-wrap {
 	border: 0;
 	border-radius: 5px;
