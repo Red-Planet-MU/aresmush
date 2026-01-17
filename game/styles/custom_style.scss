@@ -820,6 +820,14 @@ body {
 .profile-box {
   background-color: rgba(20, 32, 42, 0.83); }
 
+.profile-item-name {
+  padding-left: 20px;
+}
+
+.profile-item-value {
+  padding-left: 10px;
+}
+
 .profile-demographics > .profile-item:first-child {
   font-weight: 400;
   font-size: 1.75em;
@@ -836,14 +844,6 @@ body {
 
 .profile-demographics > .profile-item:first-child > div:first-child {
   display: none; }
-
-.profile-item-name {
-  padding-left: 20px;
-}
-
-.profile-item-value {
-  padding-left: 10px;
-}
 
 .profile-divider {
 	margin-left: 10px;
