@@ -16,9 +16,9 @@ module AresMUSH
           end
         end
         
-        if (!@validator.config["notification_category"].blank?)
-          @validator.check_forum_exists("notification_category")
-        end
+        #if (!@validator.config["notification_category"].blank?)
+        #  @validator.check_forum_exists("notification_category")
+        #end
         
         @validator.check_cron("notification_cron")
         @validator.require_int("notification_days", 0, 60)
