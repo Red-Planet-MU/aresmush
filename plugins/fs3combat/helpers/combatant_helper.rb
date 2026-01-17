@@ -3,7 +3,12 @@ module AresMUSH
     
     def self.roll_attack(combatant, target, mod = 0)
       ability = FS3Combat.weapon_stat(combatant.weapon, "skill")
-      accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "accuracy")
+      mounted_acc = FS3Combat.weapon_stat(combatant.weapon, "mounted_accuracy")
+      if combatant.mount_type && mounted_acc
+        accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "mounted_accuracy")
+      else 
+        accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "accuracy")
+      end
       special_mod = combatant.attack_mod
       damage_mod = combatant.total_damage_mod
       stance_mod = combatant.attack_stance_mod
@@ -19,16 +24,36 @@ module AresMUSH
         mount_mod = 0
       end
 
-      combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod}"
+      if combatant.is_npc? == false then
+        #Find if weapon has specialty to add to attack roll
+        firearm_specialty = FS3Combat.weapon_stat(combatant.weapon, "firearm_type")
+        trapping_specialty = FS3Combat.weapon_stat(combatant.weapon, "trap_type")
+        #then need to find if character has that specialty
+        combatant_specialty = FS3Skills.find_specialty(combatant.character, ability)
+        
+        #If weapon and character's specialty match then give a 1 boost to attack roll
+        if firearm_specialty == combatant_specialty || trapping_specialty == combatant_specialty then specialty_mod = 1
+        end
+      else specialty_mod = 0
+      end
+      #/end firearm specialty
 
-      mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod
+      combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod} specialty=#{specialty_mod}" #TC
+
+      mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod + specialty_mod #TC
       
       
       combatant.roll_ability(ability, mod)
     end
     
     def self.roll_defense(combatant, attacker_weapon)
-      ability = FS3Combat.weapon_defense_skill(combatant, attacker_weapon)
+      #Snares
+      if FS3Combat.weapon_stat(attacker_weapon, "trap_type") == "Snares"
+        ability = "Alertness"
+      else
+        ability = FS3Combat.weapon_defense_skill(combatant, attacker_weapon)
+      end
+      #/end snares
       stance_mod = combatant.defense_stance_mod
       luck_mod = (combatant.luck == "Defense") ? 3 : 0
       damage_mod = combatant.total_damage_mod
@@ -153,6 +178,26 @@ module AresMUSH
         nil
       end
     end
+
+    #Trashcan's Throwing Weapons
+    def self.check_throws(combatant, throwing_items)
+      return true if combatant.max_throws == 0
+      combatant.throws >= throwing_items
+    end
+    
+    def self.update_throws(combatant, throwing_items)
+      return nil if combatant.max_throws == 0
+
+      throws = combatant.throws - throwing_items
+      combatant.update(throws: throws)
+      
+      if (throws == 0)
+        t('fs3combat.weapon_out_of_throws', :name => combatant.name)
+      else
+        nil
+      end
+    end
+    #/Trashcan's Throwing Weapons
     
     def self.change_team(combat, combatant, enactor, team)
       combatant.update(team: team)

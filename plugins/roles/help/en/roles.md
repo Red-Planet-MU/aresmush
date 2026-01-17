@@ -3,6 +3,7 @@ toc: ~admin~ Managing the Game
 summary: Managing roles.
 aliases:
 - manage_roles
+- permissions
 ---
 # Roles
 
@@ -45,3 +46,5 @@ Once a role exists, you can add and remove permissions to it.
 
 `role/addpermission <role>=<permission>` - Adds a permission to a role.
 `role/removepermission <role>=<permission>` - Removes a permission from a role.
+
+`permissions` - Lists available permissions.

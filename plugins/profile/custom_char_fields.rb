@@ -20,6 +20,20 @@ module AresMUSH
           h_serums: char.h_serums_has,
           qh_serums: char.qh_serums_has,
           gc_serums: char.gc_serums_has,
+          e_serums: char.e_serums_has,
+          horse_name: char.demographic("horse name"),
+          horse_color: char.horse_color,
+          horse_temperament: char.horse_temperament,
+          horse_desc: char.horse_desc,
+          song_link: char.demographic("theme song link"),
+          approved_chars: Character.all.select { |c| c.is_approved? },
+          viewer: if viewer
+                    viewer.name
+                  else 
+                    nil
+                  end,
+          pals: Socializer.list_pals(char),
+          
         }
       end
     
@@ -33,7 +47,9 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_input_for_html(char.goals) }
       def self.get_fields_for_editing(char, viewer)
-        return {}
+        return {
+          txt_color: char.txt_color,
+        }
       end
 
       # Gets custom fields for character creation (chargen).
@@ -81,7 +97,8 @@ module AresMUSH
       def self.save_fields_from_profile_edit2(char, enactor, char_data)
         # By default, this calls the old method for backwards compatibility. The old one didn't
         # use enactor. Replace this with your own code.
-        return CustomCharFields.save_fields_from_profile_edit(char, char_data)
+        Global.logger.debug "#{char_data}"
+        char.update(txt_color: Website.format_input_for_mush(char_data["custom"]["txt_color"]))
       end
 
       

@@ -6,136 +6,105 @@ fs3combat:
       defense: 0
       protection:
         Nowhere: 0
-    Tactical:
-      description: Military-Grade Kevlar Vest and Helmet
+    Practical:
+      description: Everyday, no-nonsense attire designed to offer protection from the usual dangers and inconveniences of life on the frontier.
+      defense: 0
+      protection:
+        Head: 1
+        Neck: 2
+        Chest: 2
+        Abdomen: 2
+        Right Leg: 2
+        Left Leg: 2
+        Right Arm: 2
+        Left Arm: 2
+        Ass: 0
+    NILE Armor:
+      description: A system of overlapping ceramic plates and aramid fibers.
+      is_hidden: true
+      npc_only: true
       defense: 0
       protection:
         Head: 7
         Neck: 5
         Chest: 8
         Abdomen: 7
-    Police:
-      description: Police-Grade Kevlar Vest
+        Right Leg: 6
+        Left Leg: 6
+        Right Arm: 6
+        Left Arm: 6
+        Ass: 5
+    Hide:
+      description: Ordinary animal hide
       defense: 0
+      npc_only: true
       protection:
-        Chest: 7
-        Abdomen: 6
-      allowed_specials:
-      - Helmet
-    Centurion:
-      description: Cylon Centurion Armor
+        Chest: 4
+        Rear Left Leg: 4
+        Read Right Leg: 4
+        Front Left Leg: 4
+        Front Right Leg: 4
+        Left Leg: 4
+        Right Leg: 4
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 4
+        Head: 3
+        Left Head: 3
+        Center Head: 3
+        Right Head: 3
+        Neck: 3
+        Left Neck: 3
+        Center Neck: 3
+        Right Neck: 3
+        Groin: 2
+        Body: 4
+        Fin: 2
+        Tail: 4
+        Leg: 4
+        Arm: 4
+        Body: 4
+        Fin: 3
+    Tough Hide:
+      description: Thick, tough animal hide for critters that take a lickin' and keep on tickin'
       defense: 0
+      npc_only: true
       protection:
-        Head: 9
-        Neck: 9
-        Chest: 10
-        Abdomen: 10
-        Left Arm: 8
-        Right Arm: 8
-        Left Hand: 7
-        Right Hand: 7
-        Left Leg: 9
-        Right Leg: 9
-        Left Foot: 7
-        Right Foot: 7
-    Cylon:
-      description: Cylon (Non-Centurion) Skeleton
-      defense: 0
-      protection:
-        Head: 6
-        Neck: 7
-        Chest: 7
-        Abdomen: 7
-        Left Arm: 5
-        Right Arm: 5
-        Left Hand: 6
-        Right Hand: 5
+        Chest: 6
+        Rear Left Leg: 6
+        Rear Right Leg: 6
+        Front Left Leg: 6
+        Front Right Leg: 6
         Left Leg: 6
         Right Leg: 6
-        Left Foot: 5
-        Right Foot: 5
-    Viper:
-      description: Viper Vehicle Armor
+        Tail: 6
+        Right Wing: 6
+        Left Wing: 6
+        Abdomen: 6
+        Head: 5
+        Left Head: 5
+        Center Head: 5
+        Right Head: 5
+        Neck: 4
+        Left Neck: 4
+        Center Neck: 4
+        Right Neck: 4
+        Groin: 4
+        Leg: 5
+        Arm: 5
+        Body: 6
+        Fin: 4
+    Plant:
+      description: Plant skin.
       defense: 0
+      is_hidden: true
+      npc_only: true
       protection:
-        Body: 8
-        Engine: 8
-        Tail: 8
-        Wing: 8
-        Weapon: 7
-        Nose: 8
-        Cockpit: 6
-        Controls: 7
-    Raider:
-      description: Cylon Raider Vehicle Armor
-      defense: 0
-      protection:
-        Body: 8
-        Engine: 8
-        Tail: 8
-        Wing: 8
-        Weapon: 7
-        Nose: 8
-        Cockpit: 6
-        Controls: 7
-    Raptor:
-      description: Raptor Vehicle Armor
-      defense: 0
-      protection:
-        Body: 10
-        Engine: 10
-        Tail: 8
-        Wing: 8
-        Weapon: 6
-        Nose: 8
-        Cockpit: 6
-        Controls: 8
-    Heavy Raider:
-      description: Cylon Heavy Raider Vehicle Armor
-      defense: 0
-      protection:
-        Body: 10
-        Engine: 10
-        Tail: 8
-        Wing: 8
-        Weapon: 6
-        Nose: 8
-        Cockpit: 6
-        Controls: 8
-    Tank:
-      description: Tank Armor
-      defense: 0
-      protection:
-        Body: 22
-        Engine: 22
-        Weapon: 10
-        Track: 15
-        Side: 15
-        Cabin: 22
-    Apc:
-      description: Light Armored Vehicle Armor
-      defense: 0
-      protection:
-        Body: 12
-        Engine: 12
-        Weapon: 6
-        Track: 8
-        Side: 10
-        Cabin: 12
-    Truck:
-      description: Cylon Heavy Raider Vehicle Armor
-      defense: 0
-      protection:
-        Body: 7
-        Cab: 6
-        Engine: 8
-    Aa Battery:
-      description: Anti-Aircraft Battery
-      defense: 0
-      protection:
-        Body: 7
-        Controls: 7
-        Weapon: 6
+        Left Vines: 3
+        Right Vines: 3
+        Stem: 3
+        Gourd: 3
+        Flower: 2
   armor specials:
     Helmet:
       description: A helmet

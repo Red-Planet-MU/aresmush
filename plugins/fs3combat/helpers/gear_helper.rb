@@ -3,10 +3,26 @@ module AresMUSH
     def self.weapons
       Global.read_config("fs3combat", "weapons")
     end
+
+    #Allow hiding some weapons
+    def self.visible_weapons
+      Global.read_config("fs3combat", "weapons").reject { |name, details| details.to_s.include?('"is_hidden"=>true') }
+    end
     
+    #Allow restricting some weapons to NPCs
+    def self.pc_equippable_weapons
+      Global.read_config("fs3combat", "weapons").reject { |name, details| details.to_s.include?('"npc_only"=>true') }
+    end
+
     def self.weapon(name)
       name_upcase = name ? name.upcase : nil
       FS3Combat.weapons.select { |k, v| k.upcase == name_upcase}.values.first
+    end
+
+    #Allow restricting some weapons to NPCs
+    def self.pc_equippable_weapon(name)
+      name_upcase = name ? name.upcase : nil
+      FS3Combat.pc_equippable_weapons.select { |k, v| k.upcase == name_upcase}.values.first
     end
 
     def self.weapon_specials
@@ -54,9 +70,23 @@ module AresMUSH
     def self.armors
       Global.read_config("fs3combat", "armor")
     end
-    
+
+    #Allow hiding some armors
+    def self.visible_armors
+      Global.read_config("fs3combat", "armor").reject { |name, details| details.to_s.include?('"is_hidden"=>true') }
+    end
+
+    #Allow restricting some armors to NPCs
+    def self.pc_equippable_armors
+      Global.read_config("fs3combat", "armor").reject { |name, details| details.to_s.include?('"npc_only"=>true') }
+    end
+
     def self.armor(name)
       FS3Combat.armors.select { |k, v| k.upcase == name.upcase}.values.first
+    end
+
+    def self.pc_equippable_armor(name)
+      FS3Combat.pc_equippable_armors.select { |k, v| k.upcase == name.upcase}.values.first
     end
 
     def self.armor_stat(name_with_specials, stat)
@@ -165,7 +195,21 @@ module AresMUSH
       
       max_ammo = FS3Combat.weapon_stat("#{weapon}#{special_text}", "ammo") || 0
       prior_ammo = combatant.prior_ammo || {}
-      
+
+      #Trashcan's expanded throwing weapons
+      max_throws = FS3Combat.weapon_stat("#{weapon}#{special_text}", "throws") || 0
+      prior_throws = combatant.prior_throws || {}
+
+      current_throws = max_throws
+      if (weapon && prior_throws[weapon] != nil)
+        current_throws = prior_throws[weapon]
+      end
+      if (combatant.weapon_name)
+        prior_throws[combatant.weapon_name] = combatant.throws
+        combatant.update(prior_throws: prior_throws)
+      end
+      #/Trashcan's expanded throwing weapons
+
       current_ammo = max_ammo
       if (weapon && prior_ammo[weapon] != nil)
         current_ammo = prior_ammo[weapon]
@@ -178,6 +222,10 @@ module AresMUSH
       combatant.update(weapon_specials: specials)
       combatant.update(ammo: current_ammo)
       combatant.update(max_ammo: max_ammo)
+      #Trashcan's expanded throwing weapons
+      combatant.update(throws: current_throws)
+      combatant.update(max_throws: max_throws)
+      #/Trashcan's expanded throwing weapons
       combatant.update(action_klass: nil)
       combatant.update(action_args: nil)
 

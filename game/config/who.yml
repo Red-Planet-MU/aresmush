@@ -12,13 +12,9 @@ who:
     width: 20
     title: Name
   - field: group
-    value: department
+    value: origin
     width: 16
-    title: Department
-  - field: group
-    value: position
-    width: 18
-    title: Position
+    title: Origin
   - field: connected
     width: 7
     title: Conn

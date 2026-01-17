@@ -13,14 +13,18 @@ module AresMUSH
           specials = []
         end
         
+        dual_wield = FS3Combat.weapon_stat(self.combatant.weapon, "dual_wield")
         weapon_type = FS3Combat.weapon_stat(self.combatant.weapon, "weapon_type")
+        snare = FS3Combat.weapon_stat(self.combatant.weapon, "trap_type")
         return t('fs3combat.use_explode_command') if weapon_type == "Explosive"
+        return t('fs3combat.use_snare_command') if snare == "Snares"
         return t('fs3combat.use_suppress_command') if weapon_type == "Suppressive"
         
         error = self.parse_targets(names)
         return error if error
       
-        return t('fs3combat.only_one_target') if (self.targets.count > 1)
+        return t('fs3combat.only_one_target') if (self.targets.count > 1) && !dual_wield
+        return t('fs3combat.only_two_targets') if (self.targets.count > 2) && dual_wield
       
         self.is_burst = false
         self.called_shot = nil
@@ -40,6 +44,10 @@ module AresMUSH
         
         return t('fs3combat.out_of_ammo') if !FS3Combat.check_ammo(self.combatant, 1)
         return t('fs3combat.not_enough_ammo_for_burst') if self.is_burst && !FS3Combat.check_ammo(self.combatant, 2)
+
+        #Trashcan's expanded Throwing Weapons
+        return t('fs3combat.out_of_throws') if !FS3Combat.check_throws(self.combatant, 1)
+        #/Trashcan's expanded Throwing Weapons
         
         return nil
       end
@@ -98,16 +106,42 @@ module AresMUSH
         if (self.is_burst)
           messages << t('fs3combat.fires_burst', :name => self.name)
         end
+
+        #Trashcan's Expanded Throwing Weapons
+        throws = FS3Combat.weapon_stat(self.combatant.weapon, "throws")
         
-        bullets = self.is_burst ? [3, self.combatant.ammo].min : 1
-        bullets.times.each do |b|
-          messages.concat FS3Combat.attack_target(combatant, target, self.mod, self.called_shot, self.crew_hit, self.mount_hit)
+        #bullets = self.is_burst ? [3, self.combatant.ammo].min : 1
+        #NEW DUAL WIELDING LOGIC
+        bullets = nil
+        dual_wield = FS3Combat.weapon_stat(self.combatant.weapon, "dual_wield")
+
+        if self.is_burst then bullets = [3, self.combatant.ammo].min
+        elsif dual_wield then bullets = [2, self.combatant.ammo].min
+        else bullets = 1
         end
 
+        if bullets == 2 && self.targets.count == 2 then 
+          bullets_per_target = 1
+          self.targets.each do |target, num|
+            bullets_per_target.times.each do |n|
+              messages.concat FS3Combat.attack_target(combatant, target)
+            end
+          end
+        else
+        #end Dual-Wielding logic
+          bullets.times.each do |b|
+            messages.concat FS3Combat.attack_target(combatant, target, self.mod, self.called_shot, self.crew_hit, self.mount_hit)
+          end
+        end
         ammo_message = FS3Combat.update_ammo(combatant, bullets)
         if (ammo_message)
           messages << ammo_message
         end
+        throw_message = FS3Combat.update_throws(combatant, 1)
+        if (throw_message)
+          messages << throw_message
+        end
+        Global.logger.debug "Throws remaining: #{combatant.throws}"
         
         messages
       end

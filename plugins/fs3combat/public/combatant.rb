@@ -11,6 +11,7 @@ module AresMUSH
     attribute :weapon_specials, :type => DataType::Array, :default => []
     attribute :armor_specials, :type => DataType::Array, :default => []
     attribute :prior_ammo, :type => DataType::Hash, :default => {}
+    attribute :prior_throws, :type => DataType::Hash, :default => {}
     attribute :stance, :default => "Normal"
     attribute :armor_name
     attribute :is_ko, :type => DataType::Boolean
@@ -18,11 +19,16 @@ module AresMUSH
     attribute :luck
     attribute :ammo, :type => DataType::Integer
     attribute :max_ammo, :type => DataType::Integer, :default => 0
+    attribute :throws, :type => DataType::Integer
+    attribute :max_throws, :type => DataType::Integer, :default => 0
     attribute :posed, :type => DataType::Boolean
     attribute :recoil, :type => DataType::Integer, :default => 0
     attribute :team, :type => DataType::Integer, :default => 1
     attribute :stress, :type => DataType::Integer, :default => 0
     attribute :freshly_damaged, :type => DataType::Boolean, :default => false
+    attribute :is_snared, :type => DataType::Boolean
+    attribute :snare_roll, :type => DataType::Integer
+    reference :snared_by, "AresMUSH::Combatant"
     
     attribute :damage_lethality_mod, :type => DataType::Integer, :default => 0
     attribute :defense_mod, :type => DataType::Integer, :default => 0

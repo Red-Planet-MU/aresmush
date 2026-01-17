@@ -39,7 +39,16 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
-      nil
+      case request.cmd
+      when "setLFRP"
+        return SetLFRPHandler
+      when "unsetLFRP"
+        return UnsetLFRPHandler
+      when "LFRPData"
+        return LookingForRpRequestHandler
+      else 
+        nil
+      end
     end
 
   end

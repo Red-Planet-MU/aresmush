@@ -13,6 +13,12 @@ module AresMUSH
         
         error = Website.check_login(request)
         return error if error
+
+        #Socializer Changes
+        if (privacy.blank?)
+          return { error: t('webportal.missing_required_fields', :fields => "Privacy") }
+        end
+        #/Socializer Changes
         
         if (!enactor.is_approved?)
           return { error: t('dispatcher.not_allowed') }
@@ -44,9 +50,10 @@ module AresMUSH
           
         Global.logger.info "Web scene #{scene.id} created by #{enactor.name}."
         #Socializer Changes
-        if enactor.open_scene_announce == "on"
+        if enactor.open_scene_announce == "on" && privacy != "Private"
             Channels.send_to_channel("RP Requests", t('socializer.rp_request_emit', :name => enactor.name, :location => request.args['location']))
         end
+
         #End Socializer Changes
 
         plot_ids = request.args['plots'] || []

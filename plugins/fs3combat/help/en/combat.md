@@ -33,9 +33,13 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
     * crew - Attack a vehicle crewperson directly instead of the vehicle itself.
     * mount - Attack a mount directly instead of the rider.
 
+`combat/serum <serum>[/<target>]` - Use a serum in combat. Serums with no target will target yourself.
+
 `combat/aim <target>` - Takes careful aim.
 
 `combat/reload` – Reloads a weapon.
+
+`combat/recover` - Recovers a single throwing weapon.
 
 `combat/treat <name>` - Treat an injured person's worst treatable wound.
 
@@ -53,6 +57,7 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 `combat/distract <target>` - Distracts a target
 
 `combat/subdue <target>` - Subdues or disarms a target. 
+`combat/snare <target>` - Entraps a target with a snare.
 `combat/escape` – Attempts to escape while subdued.
 
 `combat/randtarget <number of targets>` - Suggests a couple potential targets at random.
@@ -71,19 +76,12 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 
 ## Vehicles and Mounts
 
-> **Note:** Vehicles and mounts may not be supported on all games.
-
-`vehicles` - List all types of vehicles.
-`vehicle <name>` - See details for a particular vehicle type.
-`combat/pilot <vehicle type or name>` - Pilots a vehicle.
-`combat/passenger <vehicle type or name>` - Becomes a passenger in a vehicle.
-        You can also use a person's name to join them in a vehicle.
-`combat/disembark` - Leaves a vehicle.
-
 `mounts` - Lists all types of mounts.
 `mount <name>` - See details for a particular mount type.
 `combat/mount <name>` - Mounts an animal.
 `combat/dismount` - Dismounts an animal.
+`combat/ridewith <name>` - Ride on someone else's animal as a passenger.
+`combat/calm` - Calms an agitated animal, preventing them from throwing you and increasing their trust.
 
 ## Luck
 

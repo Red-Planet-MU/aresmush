@@ -8,8 +8,8 @@ website:
       type: portal
       message: Edited a wiki page.
   allow_html_in_markdown: true
-  character_gallery_group: Faction
-  character_gallery_subgroup: Position
+  character_gallery_group: Origin
+  character_gallery_subgroup: ""
   left_sidebar: false
   max_folder_size_kb: 2000
   max_upload_size_kb: 300
@@ -23,17 +23,19 @@ website:
   top_navbar:
   - title: Intro
     menu:
+    - title: Join Us
+      url: https://redplanetmu.com/wiki/guide:join_us
     - title: Create a Character
       route: chargen
-    - title: Pre-Made Characters
+    - title: Roster Characters
       route: roster
     - divider: true
     - title: About Red Planet
-      url: https://redplanetmu.com/wiki/ooc:about_us
+      url: https://redplanetmu.com/wiki/about_us
   - title: Game
     menu:
     - title: Policies
-      url: https://redplanetmu.com/wiki/ooc:policies
+      url: https://redplanetmu.com/wiki/policies
     - title: Staff Team
       url: https://redplanetmu.com/wiki/staff_team
     - divider: true
@@ -45,12 +47,32 @@ website:
       route: mail
     - title: Events
       route: events
+    - divider: true
+    - title: Guides
+      url: https://redplanetmu.com/wiki/guide
   - title: World
     menu:
     - title: World
       url: https://redplanetmu.com/wiki/world
+    - title: Citizens
+      url: https://redplanetmu.com/wiki/world:citizens
     - title: Creatures
       url: https://redplanetmu.com/wiki/world:creatures
+    - divider: true
+    - title: Virtue
+      url: https://redplanetmu.com/wiki/world:virtue
+    - title: Beyond Virtue
+      url: https://redplanetmu.com/wiki/world:beyond_virtue
+    - title: NILE
+      url: https://redplanetmu.com/wiki/world:nile
+    - divider: true
+    - title: Technology
+      url: https://redplanetmu.com/wiki/world:technology
+    - title: Society
+      url: https://redplanetmu.com/wiki/world:society
+    - divider: true
+    - title: FAQ
+      url: https://redplanetmu.com/wiki/faq
   - title: Play
     menu:
     - title: Play
@@ -61,6 +83,8 @@ website:
       route: scenes-unshared
     - title: Start New Scene
       route: scene-create
+    - title: Combats
+      route: combats
   - title: Story
     menu:
     - title: Scenes
@@ -68,12 +92,16 @@ website:
     - title: Plots
       route: plots
     - divider: true
+    - title: Bounties & One-Shot Adventures
+      url: https://redplanetmu.com/wiki/system:bounties_oneshot
+    - title: Player-Run Plots
+      url: https://redplanetmu.com/wiki/system:prps
   - title: Directory
     menu:
     - title: Characters
       route: characters
-    - title: Creatures
-      url: https://redplanetmu.com/wiki/creatures
+    - title: Dangers
+      url: https://redplanetmu.com/wiki/dangers
     - divider: true
     - title: Players
       route: players
@@ -92,22 +120,25 @@ website:
       route: files
   - title: System
     menu:
-    - title: Abilities List
+    - title: Custom Mechanics
+      url: https://redplanetmu.com/wiki/guide:custom_mechanics
+    - divider: true
+    - title: XP
+      url: https://redplanetmu.com/wiki/system:xp
+    - title: Luck Points
+      url: https://redplanetmu.com/wiki/system:luck_points
+    - divider: true
+    - title: Abilities and Skills
       route: fs3skills-abilities
     - title: Gear List
       route: fs3combat-gear
-    - title: Groups List
-      route: groups
+    - divider: true
     - title: Achievements
       route: achievements
     - title: Skill Limits
       route: fs3-limits
-    - title: XP Costs
-      route: fs3-xp-costs
     - title: Skill Scan
       route: fs3skills-scan
-    - title: Roles
-      route: roles
     - divider: true
     - target: blank
       title: FS3 Player's Guide <i class="fa fa-external-link-alt" aria-hidden="true">

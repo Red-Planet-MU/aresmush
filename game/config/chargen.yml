@@ -15,9 +15,25 @@ chargen:
   - bg %{name}
   - hooks %{name}
   - sheet %{name}
-  approval_message: Congratulations!  Your application has been approved.  Type %xhonstage%xn
-    to go forth and RP.  You may want to customize your character profile on the web
-    portal.
+  approval_message: Welcome to Red Planet! We are glad you're here.
+
+    First things first, make sure you get a HORSE! See [`help horse`](/help/horse) or visit the 'Horse' tab on your profile.
+
+    Next, check out the [Getting Started](/wiki/guide:getting_started) guide for what to do next. This guide will help you - 
+      
+
+      * Join the Game Discord
+
+      * Set up your IC home
+
+      * Start finding RP
+
+      * Customize your character profile
+
+      * And much more!
+
+
+      If you need help with anything, please feel free to submit a request, use the Questions channel, or message the [staff team](/wiki/staff_team) and we will help as promptly as possible.
   arrivals_category: New Arrivals
   bg_blurb: A background is your character's backstory or history.  You don''t need
     to write a novel. Just cover the basics--who you are, why are you here, and anything
@@ -38,8 +54,7 @@ chargen:
   lastwill_blurb: The fate of idled-out characters is at the game admin's discretion,
     but you can register a preference with your character's 'last will'. You may ask
     to be killed off, or turned into a NPC, or whatever.
-  post_approval_message: Please make sure they have a profile image for their log
-    icon.
+  post_approval_message: 
   rank_blurb: Military rank.
   rejection_message: Sorry, your character could not be approved at the present time
     for the reasons described below.  Please see %xhhelp app%xn for help making changes
@@ -101,7 +116,7 @@ chargen:
         given the background, and that you haven't missed anything important in chargen.
         See `help apps` for additional help on the app review process.
   welcome_message: |-
-    Please welcome %{name}, our latest %{position} to be approved!
+    Please welcome %{name}, our latest %{origin} to be approved!
 
     Profile: %{profile_link}
 
@@ -113,4 +128,4 @@ chargen:
     submit_app: Can submit chargen application.
   app_notes_prompt: If you want to make any special notes about your application,
     you can enter them below.
-  max_bg_length: 50
+  max_bg_length: 4000

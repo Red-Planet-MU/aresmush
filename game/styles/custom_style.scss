@@ -1,11 +1,964 @@
 /* Put any custom styles here.  They will override the default styles. */
 
-/* Page */
+/* Site Header Formatting */
+
+.header-wrap {
+	height: 300px;
+}
+
+.title-wrap {
+	height: 240px;
+  background-color: unset;
+}
+
+.site-title,
+.site-title a,
+.site-title a:hover,
+.site-title a:active,
+.site-title a:focus {
+  font-size: 2.5em;
+  letter-spacing: 0.1em;
+  border-top: 0;
+  border-bottom: 0; 
+  text-shadow: 3px 3px #090909;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #d64228;
+  font-weight: normal;
+}
+
+.site-subtitle {  
+  font-family: $body-font;
+  font-size: 1.1em;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+  position: relative; 
+  bottom: 30px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  text-shadow: 1px 1px #090909;
+}
+.site-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  text-transform: uppercase;
+  font-size: .9em
+}
+
+@media screen and (max-width: 1400px) {
+	.site-title {
+		font-size: 2em;
+		max-height: unset;
+	}
+  .navbar-collapse {
+		background-color: inherit;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.title-wrap {
+		height: 148px!important;
+	}
+	.header-wrap {
+		height: 200px!important;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.navbar > .container-fluid {
+		width: 100%;
+		flex-flow: column;
+		align-items: start;
+	}
+	.navbar-collapse {
+		max-width: 320px;
+		width: 100%;
+    background-color: rgba(12,19,25,0.7);
+	}
+	.navbar {
+		max-height: 52px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.site-title {
+		border: 0;
+		font-size: 1.5em;
+		text-align: center;
+	}
+	.site-subtitle {
+		font-size: .8em;
+		text-align: center;
+    left: unset;
+    bottom: 20px;
+	}
+	.account-actions {
+		display: none;
+	}
+  .header-wrap {
+		background-position: center bottom;
+	}
+	.site-banner {
+		flex-direction: column;
+	}
+}
+
+
+.dropdown-menu {
+  //background-color: #0c1119;
+  background-image: url("/game/uploads/theme_images/star_tex.png");
+  background-position: top;
+  text-transform: none;
+  letter-spacing: normal; }
+
+.dropdown-item {
+  font-size: 1em;
+}
+
+
+
+/* Front Page */
+
+.jumbotron img {
+  width: 550px;
+  margin: 15px; }
+
+.jumbotron-tagline {
+  font-size: 1.8em;
+  margin: 15px;
+  font-family: $header-font;
+  word-spacing: 3px; }
+
+.jumbotron .splash {
+  width: 90%;
+  font-size: .65em;
+}
+
+.jumbotron p {
+  font-size: 1em;
+  text-align: left;
+  font-weight: 400;
+}
+
+.homebox {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  max-width: 720px;
+  margin: 15px auto; }
+  .homebox .pagebox {
+    width: 45%;
+    height: 180px;
+    min-width: 200px !important; }
+
+.pagebox {
+  color:#3c3932; 
+  height: 11em;
+  float: left;
+  padding: .75em 1em .8em;
+  margin: .5em;
+  width: 31.5%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  background-color: #ffe8cf;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+  box-shadow:     
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #d6bc9b,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #d6bc9b,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+.pageboxh {
+  font-family: $header-font;
+  font-size: 1.2em;
+  border-bottom: 2px solid rgba(156, 156, 156, .5);
+  }
+
+.pageboxh p {
+  position: relative; }
+
+.pageboxh .fas,
+.pageboxh-pic .fas {
+  position: absolute;
+  right: .125em;
+  top: .2em; }
+
+.pagebox a {
+  color: #660d0e;
+  }
+
+
+
+/* Wiki Page */
 .toc {
+  color:#3c3932; 
   position: relative;
   border-radius: 0;
   margin-left: 100px;
   margin-right: 25px;
   float: right;
   width: 400px;
-  transform: rotate(-1deg); }
+  background-color: #ffe8cf;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15);
+    /* The second layer */
+//    0 10px 0 -5px #b29877,
+    /* The second layer shadow */
+//    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+//    0 20px 0 -10px #b29877,
+    /* The third layer shadow */
+//    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+  padding: 30px;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.toc h4 {
+  font-family: $header-font;
+  word-spacing: 10px;
+  font-size: 1.5em;
+  }
+
+.toc a {
+  color: #660d0e;
+  }
+
+.toc ul {
+  width: 100%;
+  height: fit-content;
+  background: repeating-linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 22px, rgba(156, 156, 156, .5) 23px, rgba(156, 156, 156, .5) 24px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+}
+
+.toc,
+.toc::before,
+.toc::after {
+  /* Styles to distinguish sheets from one another */
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
+}
+
+.toc::before {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.toc::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.danger-wrap {
+  overflow: auto;
+  position: relative;
+  background-image: url("/game/uploads/theme_images/leather-tex.png"); 
+  background-color: #4c2c1f; 
+  float: none;
+  height: fit-content;
+  border-radius: 15px;
+  z-index: -5;
+}
+
+.danger-wrap img {
+  width: 35%;
+  max-height: 400px;
+  border: 10px solid #f9f9ef;
+  margin: 15px 15px 15px 0px;
+  //box-shadow: 2px 2px 2px rgba(54, 38, 9, 0.3);
+  box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0;
+  border-color: #f7f1ec; 
+  float: left;
+  display: block;
+}
+
+.danger-card {  
+  padding: 10px;
+  width: 60%;
+  max-width: 100%;
+  border: 1px solid $border-color;
+  padding: 15px;
+  margin: 15px 15px 15px 0px;
+  border-radius: 8px;
+  color:#3c3932; 
+  position: relative;
+  border-radius: 0;
+  float: right;
+  background-color: #ffe8cf;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15);
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.danger-card,
+.danger-card::before,
+.danger-card::after {
+  /* Styles to distinguish sheets from one another */
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
+}
+
+.danger-card::before {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.danger-card::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.danger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: center;
+  margin: auto;
+}
+
+.danger-header h2, h5 {
+  margin: 0px;
+  display: inline;
+  padding: 0px;
+}
+
+.danger-header h2 {
+  flex-basis: calc(100% - 200px);
+  text-align: left;
+}
+
+.danger-header h5 {
+  flex-basis: 200px;
+  text-align: right;
+  font-size: 1em;
+}
+
+.danger-card p {
+  clear: both;
+}
+
+@media screen and (max-width: 700px) {
+	.danger-wrap img {
+		width: 80%;
+    float: unset;
+    max-height: unset;
+    margin: auto;
+	}
+	.danger-card {
+		width: 85%;
+    float: unset;
+    margin: auto;
+	}
+}
+
+.one-shot-card {
+  color:#3c3932; 
+  position: relative;
+  border-radius: 0;
+  background-color: #ffe8cf;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15);
+    /* The second layer */
+//    0 10px 0 -5px #b29877,
+    /* The second layer shadow */
+//    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+//    0 20px 0 -10px #b29877,
+    /* The third layer shadow */
+//    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+  padding: 30px;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.one-shot-card,
+.one-shot-card::before,
+.one-shot-card::after {
+  /* Styles to distinguish sheets from one another */
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
+}
+
+.one-shot-card::before {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+.one-short-card::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #d6bc9b;
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+/* General HTML Elements */ 
+
+.body-wrap {
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: minmax(68%, 73%) auto;
+}
+
+.event-signup-item button {
+  margin-top: 6px;
+}
+
+.event-signup-item-comment {
+  padding-top: 24px;
+  padding-left: 15px;
+}
+
+button {
+  background-color: $primary-color;
+  border-color: $primary-outline-color;
+  outline: 0;
+  border-style: none;
+  border-radius: 4px;
+  padding: .225em .75em .35em;
+  min-width: 40px;
+  padding-top: 8px;
+  color: #ebebeb; 
+}
+
+.toastui-editor-defaultUI-toolbar button {
+  min-width: unset;
+}
+
+.modal-header .btn-close {
+  background-color: #3d5954;
+}
+
+@media screen and (min-width: 1470px) {
+	body {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.body-wrap,
+	.body-container {
+		padding: 0px;
+	}
+}
+
+h1
+{
+  background-color: $primary-color;
+  background-image: url(/game/uploads/theme_images/header-left.png), url(/game/uploads/theme_images/header-right.png);
+  background-size: contain, contain;
+  background-repeat: no-repeat;
+  background-position: left, right;
+  border: transparent;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: .1em 1.5em;
+  color: $primary-words-color;
+  font-weight: normal;
+  letter-spacing: 0.1em;    
+  margin: 0px 25px 10px 0px;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 3em;
+  width: fit-content; 
+
+}
+
+h2
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: $header-font;    
+}
+
+body {
+  font-size: 1em;
+}
+
+.body-container {
+  z-index: 1; }
+
+.left-body {
+  z-index: 1; }
+
+/* Sidebar */
+.sidebar-heading h2 {
+  font-size: 2em;
+  font-family: $primary-font;
+  //background-color: $primary-color;
+  color: #FFFFFF;
+  padding: 10px;
+  width: auto;
+  border-bottom: 0px; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(/game/uploads/theme_images/sidebar-header-left.png), linear-gradient(to right, rgba(115,43,26,0), rgba(115,43,26,0), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1), rgba(115,43,26,1),rgba(115,43,26,0), rgba(115,43,26,0)), url(/game/uploads/theme_images/sidebar-header-right.png);
+  background-size: contain, auto, contain;
+  background-repeat: no-repeat;
+  background-position: left, center, right;
+}
+
+
+.sidebar-heading .fa-video, .sidebar-heading .fa-users, .sidebar-heading .fa-calendar, .sidebar-heading .fa-book, .sidebar-heading .fa-comments, .sidebar-heading .fa-file-alt {
+  font-size: .8em;
+  padding: 0.3em;
+}
+
+.right-sidebar {
+  background-color: #4c2c1f; 
+  background-image: url("/game/uploads/theme_images/leather-tex.png");
+  border-radius: 15px 0px 0px 15px;
+  height: fit-content;
+  padding: 15px 10px 20px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ // padding: 30px;
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ // box-shadow:
+    /* The top layer shadow */
+  //  0 -1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+  //  0 -10px 0 -5px #d6bc9b,
+    /* The second layer shadow */
+ //   0 -10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+  //  0 -20px 0 -10px #d6bc9b,
+    /* The third layer shadow */
+  //  0 -20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+  //padding: 30px;
+  min-width: 450px;
+  //background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+@media screen and (max-width: 1400px) {
+	.sidebar {
+		min-width: unset;
+		width: 100%;
+	}
+  .right-sidebar {
+    min-width: unset;
+		width: auto;
+  }
+}
+
+.sidebar-box {
+    border-top: none;
+    font-size: .9em;
+    position: relative;
+}
+
+.sidebar-box-right {
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+  background-color: #ffe8cf; 
+  position: relative;
+  border-radius: 0;
+  float: right;
+  border-left: none;
+  padding-left: 10px;
+  color:#090909; 
+  font-family: $body-font;
+  width: 90%;
+  margin: 10px;
+  box-shadow:     /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #d6bc9b,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #d6bc9b,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+
+.sidebar-box-right p {
+        line-height: 1.6;
+        margin: 0 0 10px;
+}
+
+.sidebar-box-right a {
+  color: #660d0e;
+}
+
+.lfrp-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 8px;
+  border-bottom: 2px solid rgba(156, 156, 156, .5);
+}
+
+/* Scene Logs */
+.log-wrap {
+  background-color: #4c2c1f; 
+  background-image: url("/game/uploads/theme_images/leather-tex.png");
+  border: none;
+  //border-radius: 15px 0px 0px 15px;
+  //height: fit-content;
+  //padding: 15px 10px 20px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.log-box {
+  background-image: url("/game/uploads/theme_images/paper_tex.png");
+  background-color: #ffe8cf; 
+  border-radius: 0;
+  border: none;
+  padding-left: 10px;
+  color:#090909; 
+  font-family: $body-font;
+  //width: 90%;
+  //margin: 10px;
+  box-shadow:     /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #d6bc9b,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #d6bc9b,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+.pose-divider {
+  margin: 20px 25px 20px 25px;
+  border: 1px solid rgba(156, 156, 156, .5);
+  height: 1px;
+}
+
+/* Character Gallery */
+.icon-gallery .icon-gallery-item {
+  margin: 5px 20px 0px 0px;
+}
+
+.log-icon-title-container {
+  height: 35px;
+  top: -25px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: url(/game/uploads/theme_images/name-tag2.png);
+  background-repeat: no-repeat;
+  background-size: 170px;
+  background-position: -10px;
+  left: -3px;
+  width: 170px;
+  transform: rotate(1deg);
+  opacity: 1; }
+
+.log-icon-container {
+  height: 175px;
+  border-radius: 0px;
+  border: 5px solid #f9f9ef; }
+
+.log-icon-title {
+  padding-top: 5px;
+  font-family: $header-font;
+  padding-right: 15px;
+}
+
+.log-icon {
+  height: 175px;
+  object-position: center; }
+
+.log-participants-box .icon-gallery {
+	justify-content: center;
+}
+
+/* Profile */
+.profile-image {
+  width: 400px !important;
+  border: 10px solid #f9f9ef;
+  //box-shadow: 2px 2px 2px rgba(54, 38, 9, 0.3);
+  box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0;
+  border-color: #f7f1ec; }
+
+.profile-wrap {
+	border: 0;
+	border-radius: 5px;
+	display: grid;
+	grid-template-columns: 460px auto;
+	gap: 20px;
+	justify-content: unset;
+	margin-top: 12px;
+}
+
+.profile-box {
+	background-color: $background-color;
+	border-radius: 4px;
+	margin: 0 auto;
+	width: 100%
+}
+
+.profile-image-wrap {
+	flex-basis: 40%;
+	margin: 0 auto 10px auto;
+}
+
+.profile-title {
+  font-size: 3em;
+  background-size: contain, contain;
+  background-repeat: no-repeat;
+  background-position: left, right;
+  border: transparent;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: .1em 1.5em;
+  color: $primary-words-color;
+  font-weight: normal;
+  letter-spacing: 0.1em;    
+  margin: 0px 25px 10px 0px;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 3em;
+  width: fit-content; 
+}
+
+.profile-box {
+  background-color: rgba(20, 32, 42, 0.83); }
+
+.profile-demographics > .profile-item:first-child {
+  font-weight: 400;
+  font-size: 1.75em;
+  padding: 25px 25px 15px;
+  margin: 0 0 11px;
+  background-color: #732B1A;
+  color: #ebebeb;
+  letter-spacing: .1em;
+  font-family: $header-font;
+  border: 0; }
+
+.profile-demographics > .profile-item:first-child > div:nth-child(2) {
+  width: 100% !important; }
+
+.profile-demographics > .profile-item:first-child > div:first-child {
+  display: none; }
+
+.profile-divider {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 3px;
+}
+
+.char-achievements {
+     column-count: 2; }
+
+@media (max-width: 992px) {
+  .char-achievements {
+     column-count: 1; }
+  }
+
+#systemfs3sheet > div > .row {
+  display: flex;
+  flex-flow: column; }
+
+#systemfs3sheet > div > .row > .col {
+  width: 100%;
+  max-width: 100%; }
+
+#systemfs3sheet > div > .row > .col table {
+  display: flex;
+  flex-flow: row wrap; }
+
+#systemfs3sheet > div > .row > .col table tr {
+  min-width: 50%;
+  display: flex;
+  flex-flow: row wrap; }
+
+#systemfs3sheet > div > .row > .col table tr td {
+  flex: 0 1 120px;
+  min-width: 120px;
+  max-width: 120px;
+  border: none; }
+
+#systemfs3sheet > div > .row > .col table tr td:nth-of-type(2) {
+  flex: 0 1 150px;
+  overflow: visible;
+  min-width: 150px;
+  text-align: left;
+  white-space: nowrap; 
+  }
+
+.fs3-luck 
+  {
+    text-align: left;
+  }
+
+.char-ability-title 
+  {
+    font-family: $header-font;
+    border: 3px solid #732B1A;
+  }
+
+.box {
+  background-image: url(/game/uploads/theme_images/box-bg.png);
+  background-size: cover;
+  background-position: left top;
+  margin: 10px;
+  padding: 12px; }
+
+/* Locations Screen */
+.area-entry h2,
+.location-entry h2 {
+  border-bottom: 0;
+}
+
+.area-entry,
+.location-entry {
+  border-top: 0;
+  min-height: 360px;
+  height: 360px;
+  margin-bottom: 0px; }
+
+.location-entry {
+  height: 200px !important; }
+
+.area-entry-summary {
+  height: 263px;
+  overflow: auto; }
+
+.location-entry-summary {
+  height: 163px;
+  overflow: auto; }
+
+.location-entry-summary {
+  height: 163px;
+  overflow: auto; }
+
+/* Scenes Screen */
+.scene-title {
+  color: #FFFFFF;
+}
+
+.scene-title a:hover,
+a:focus  {
+  color: #f25e3d;
+}
+
+/* Play Screen */
+.fortunes_detail a {
+  cursor: pointer;
+}
+
+.play-screen {
+	display: grid;
+	grid-template-columns: 350px auto;
+}
+
+.scene-pose-header {
+  font-size: 1em;
+}
+
+@media screen and (max-width: 991.98px) {
+	.play-screen {
+		display: block!important;
+	}
+  .play-main h3 {
+		width: calc(100% - 170px);
+	}
+}
+
+.play-sidebar {
+  border: 1px solid #3d5954;
+  margin: 10px;
+}
+.play-section-title {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.play-selector-active {
+  color: #ebebeb!important;
+}
+
+#chat-window {
+	border: 0;
+}
+
+/* Grid Flexibility */
+@media screen and (max-width: 1000px) {
+	.body-wrap
+  {
+		grid-template-columns: 100%;
+	}
+}
+
+@media screen and (max-width: 1130px) {
+	.profile-wrap {
+		grid-template-columns: 100%;
+	}
+}

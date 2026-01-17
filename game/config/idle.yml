@@ -16,7 +16,7 @@ idle:
   reminder_category: MISC
   use_roster: true
   idle_category: Announcements
-  days_before_idle: 30
+  days_before_idle: 60
   arrivals_category: New Arrivals
   default_contact: Admin
   idle_warn_msg: You haven't played in awhile and your character is in danger of idling
@@ -48,12 +48,8 @@ idle:
     value: gender
   - field: group
     width: 17
-    title: Faction
-    value: Faction
-  - field: group
-    width: 17
-    title: Position
-    value: Position
+    title: Origin
+    value: Origin
   shortcuts:
     idle/add: idle/action
     roster/update: roster/add

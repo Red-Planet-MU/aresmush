@@ -6,18 +6,21 @@ fs3skills:
     linked_attr: Perception
   - name: Athletics
     linked_attr: Brawn
-    desc: General running, jumping, climbing, etc.
+    desc: General running, jumping, climbing, etc. Includes roping and throwing.
+  - name: Archery
+    linked_attr: Reflexes
+    desc: Shooting bows.
   - name: Composure
     desc: Coolness under pressure.
     linked_attr: Grit
-  - name: Demolitions
-    desc: Blowing stuff up.
+  - name: Handy
+    desc: A general aptitude for working with materials raw and refined.
     linked_attr: Wits
   - name: Firearms
-    desc: Shooting guns.
-    linked_attr: Reflexes
-  - name: Gunnery
-    desc: Vehicle/special weapons (cannons, rockets/missiles, ECM packages).
+    desc: Shooting guns. Specialties are optional but give a bonus when using that type of firearm.
+    specialties:
+    - Rifles
+    - Pistols
     linked_attr: Reflexes
   - name: Medicine
     desc: Tending to the ill and injured.
@@ -25,21 +28,22 @@ fs3skills:
   - name: Melee
     desc: Fighting with fists, knives, and hand-to-hand weapons.
     linked_attr: Brawn
-  - name: Piloting
-    desc: Flying air and spacecraft.
+  - name: Riding
+    desc: Riding a horse.
     linked_attr: Reflexes
-    specialties:
-    - Viper
-    - Raptor
-    - Freighter
-    - Other
+  - name: Persuasion
+    desc: Winning people to your point of view.
+    linked_attr: Presence
   - name: Stealth
     desc: Being sneaky.
     linked_attr: Reflexes
-  - name: Technician
-    desc: General mechanics/electronics and fixing things.
+  - name: Trapping
+    desc: Setting traps, snares, and explosives.
+    specialties: 
+    - Snares 
+    - Explosives
     linked_attr: Wits
   action_skills_blurb: 'Action Skills represent your ability in areas deemed important
     for gameplay.  Action Skills are rated from 0-8, but some games limit the highest
-    and lowest ratings. See <a href="https://aresmush.com/fs3/fs3-3/chargen.html#action-skills"
-    target="_blank">FS3: Action Skills</a> for details.'
+    and lowest ratings. See <a href="https://redplanetmu.com/wiki/guide:join_us#character-information"
+    target="_blank">Join Us</a> and click on the Action Skills tab for details.'

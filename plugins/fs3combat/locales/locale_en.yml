@@ -18,6 +18,10 @@ en:
         flesh_wound: "%xgFlesh Wound%xn"
         impaired_wound: "%xyImpaired%xn"
         incap_wound: "%xrIncapacitated%xn"
+        minor_wound: "%xgMinor%xn"
+        major_wound: "%xyMajor%xn"
+        severe_wound: "%x166Severe%xn"
+        critical_wound: "%xrCritical%xn"
         
         patient_must_pass: "Patients must pass in order to be treated."
         cant_treat_while_fighting: "%{healer} attempts to treat %{patient} but they're moving around too much."
@@ -57,7 +61,7 @@ en:
         active_combats_titlebar: "#   Scene Organizer       Participants"
         invalid_combat_type: "That is no a valid combat type.  Try one of these: %{types}."
         summary_title: "Combatant       Skill      Weapon            Armor          Stance     Vehicle\nAct/Pose        Damage     Mods              Action"
-        hud_subtitle: "%xhCombatant           Damage    Weapon(ammo)             Action(stance)%xn"
+        hud_subtitle: "%xhCombatant      Damage    Weapon(ammo)     Armor        Action(stance)%xn"
         marked_idle: "%{name} has been marked idle."
         marked_unidle: "%{name} has been marked un-idle."
         targets_title: "Combatant        Targets                        Targeted By"
@@ -89,7 +93,7 @@ en:
         
         invalid_vehicle_name: "That is not a valid vehicle name or vehicle type."
         not_in_vehicle: "%{name} is not in a vehicle."
-        new_pilot: "%{name} takes over piloting %{vehicle}."
+        new_pilot: "%{name} takes over driving %{vehicle}."
         new_passenger: "%{name} is now a passenger in %{vehicle}."
         disembarks_vehicle: "%{name} disembarks from %{vehicle}."
                     
@@ -101,7 +105,7 @@ en:
         # GENERAL
         # ----------------------------
         
-        organizer_emit: "%xb<FS3Combat>%xn %{message}"
+        organizer_emit: "%x27<FS3Combat>%xn %{message}"
         combat_emit: "%xc<FS3Combat>%xn %{message}"
         npcmaster_text: " %xh%xx(by %{name})%xn"
         invalid_combat_number: "That is not a valid combat number.  See combats for a list."
@@ -137,6 +141,8 @@ en:
         # ----------------------------
         
         is_koed: "%{name} has been %xr**KO'd**%xn! (Damaged This Turn By: %{damaged_by})"
+        is_koed_rider_with: "%{name} has been %xr**KO'd**%xn and is THROWN, taking %{passenger} with them! (Damaged This Turn By: %{damaged_by})"
+        is_koed_mounted: "%{name} has been %xr**KO'd**%xn and is THROWN! (Damaged This Turn By: %{damaged_by})"
         is_no_longer_koed: "%{name} is %xgno longer KOed%xn!"
         not_koed: "You are not KOed!"
         back_in_the_fight: "%{name} spends a luck point and is back in the fight!"
@@ -164,6 +170,7 @@ en:
 
         weapons_title: "Weapons List"
         invalid_weapon: "That is not a valid weapon."
+        npc_only_weapon: "That weapon can only be used by NPCs."
         weapon_title_description: "Description:"
         weapon_title_attack_skill: "Attack Skill:"
         weapon_title_defense_skill: "Defense Skill:"
@@ -182,6 +189,7 @@ en:
         weapon_title_skill: "Skill:"
         invalid_weapon_special: "%{special} is not a valid special for that weapon."
         use_explode_command: "Use the combat/explode command for this weapon."
+        use_snare_command: "Use the combat/snare command for this weapon."
         use_suppress_command: "Use the combat/suppress command for this weapon."
         weapon_specials:  "Available Weapon Specials"
         invalid_gear_type: "Invalid gear type."
@@ -193,6 +201,7 @@ en:
 
         armor_title: "Armor List"
         invalid_armor: "That is not a valid armor type."
+        npc_only_armor: "That armor can only be used by NPCs."
         armor_title_description: "Description:"
         armor_title_protection: "Protection:"
         armor_title_allowed_specials: "Allowed Specials:"
@@ -211,7 +220,7 @@ en:
         vehicle_title_armor: "Armor:"
         vehicle_title_hitloc_chart: "Hit Locations:"
         vehicle_title_toughness: "Toughness:"
-        vehicles_summary_title: "Vehicle         Pilot               Passengers"
+        vehicles_summary_title: "Vehicle         Driver              Passengers"
         vehicles_disabled: "Vehicles are disabled here."
         
         # ----------------------------
@@ -228,6 +237,12 @@ en:
         mount_title_description: "Description:"
         mount_title_toughness: "Toughness:"
         mount_title_mod_vs_unmounted: "Mod vs Unmounted:"
+        riding: "%{name} is now riding with %{riding_with_name}."
+        not_mounted_to_ride: "That combatant is not mounted."
+        their_horse_is_kod: "That combatant's horse is currently incapacitated."
+        cant_be_mounted_and_ride: "You cannot ride another person's horse while mounted."
+        dismounted_from_ride: "%{name} has dismounted %{ride_giver}'s horse."
+        horse_is_spooked: "Your horse is still too wound up to ride."
             
         # ----------------------------
         # HITLOCS
@@ -252,9 +267,9 @@ en:
         combat_hud_organizer: "Organized by %{org}"
         combat_mock_notice: "** Mock Combat.  Damage is temporary. **"
         observers_title: "Observers"
-        piloting_hud: "%{vehicle}(Plt)"
+        piloting_hud: "%{vehicle}(Drv)"
         passenger_hud: "%{vehicle}(Pas)"
-        vehicles_hud_title: "Vehicles          %xhDamage%xn  %xhPilot%xn            %xhPassengers%xn"
+        vehicles_hud_title: "Vehicles          %xhDamage%xn  %xhDriver%xn           %xhPassengers%xn"
         no_pilot: "None"
         
         # ----------------------------
@@ -281,7 +296,7 @@ en:
         
         stance_changed: "%{name} has changed %{poss} stance to %{stance}."
         invalid_stance: "That is not a valid stance."
-        passenger_stance_warning: "Passengers are often at the mercy of the pilot's stance.  Make sure this stance makes sense under the circumstances."
+        passenger_stance_warning: "Passengers are often at the mercy of the driver's stance.  Make sure this stance makes sense under the circumstances."
         stances_title: "Combat Stances"
         stance_subtitle: "Name                Attack   Defense"
         
@@ -305,9 +320,13 @@ en:
         attack_hits: "%{name} attacks %{target} with %{weapon} and HITS!  %{damage} wound to %{hitloc}. %{armor}"
         attack_hits_cover: "%{name} attacks %{target} with %{weapon} but hits the COVER they're behind."
         attack_hits_mount: "%{name} attacks %{target} with %{weapon} and hits their MOUNT. %{effect}"
+        attack_hits_mount_with_rider: "%{name} attacks %{target} with %{weapon} and hits their MOUNT (riding with %{rider}). %{effect}"
         
-        mount_ko: "(Mount %xrKOed%xn - %xyImpaired%xn wound from fall damage)"
+        mount_ko: "(Mount %xrKOed%xn - %xgMinor%xn wound from fall damage)"
+        mount_ko_ridewith: "(Mount %xrKOed%xn - Both take a %xgMinor%xn wound from fall damage)"
+        mount_ko_ridewith_rider: "(Mount %xrKOed%xn - Both (%{passenger}) take a %xgMinor%xn wound from fall damage)"
         mount_injured: "(Mount INJURED)"
+        horse_is_kod: "Your horse is currently incapacitated. Use an %x230%X18Equine Elixir%xn%xr to revive it."
         
         burst_fire_not_allowed: "You need an automatic weapon to do burst or fullauto fire."
         invalid_called_shot_loc: "That is not a valid called shot location.  See combat/hitlocs <target>."
@@ -382,11 +401,15 @@ en:
         # SUBDUE AND ESCAPE
         # ----------------------------
         
-        subdue_uses_melee: "You must use a melee weapon to subdue."
+        subdue_uses_melee: "You must use a melee weapon or a lasso to subdue."
         subdue_action_msg_long: "%{name} will subdue %{target} this turn."
         subdue_action_msg_short: "Subdue %{target}"
         subdue_action_success: "%{name} successfully subdues %{target}."
         subdue_action_failed: "%{name} tries to subdue %{target} but FAILS."
+        snare_action_msg_long: "%{name} will snare %{target} this turn."
+        snare_action_msg_short: "Snare %{target}"
+        snare_action_success: "%{name} successfully snares %{target}."
+        snare_action_failed: "%{name} tries to snare %{target} but FAILS."
         not_subdued: "You are not subdued."
         escape_action_msg_long: "%{name} will try to escape from %{target} this turn."
         escape_action_msg_short: "Escape %{target}"
@@ -402,13 +425,22 @@ en:
         not_enough_ammo_for_burst: "You need 3 rounds for burst fire."
         not_enough_ammo_for_fullauto: "You need 8 rounds for fullauto fire."
         out_of_ammo: "You are out of ammo."
+        out_of_throws: "You are out of throws."
         weapon_clicks_empty: "%{name}'s weapon clicks empty."
+        weapon_out_of_throws: "%{name} runs out of throwing weapons."
         weapon_empty: "%{name}'s weapon is empty."
         
         reload_action_msg_long: "%{name} will reload this turn."
         reload_action_msg_short: "Reload"
         reload_resolution_msg: "%{name} reloads."
         cant_reload: "That weapon can't be reloaded."      
+
+        #Trashcan's extended throwing items
+        recover_action_msg_long: "%{name} will recover a throwing item this turn."
+        recover_action_msg_short: "Recover"
+        recover_resolution_msg: "%{name} recovers a throwing item."
+        cant_recover: "That weapon can't be recovered."    
+        #/Trashcan's extended throwing items
         
         cant_link_scene: "You are not a part of that scene, so you can't link combat to it."
         unrecognized_combat_cmd: "That is not a valid combat command."

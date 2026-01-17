@@ -20,6 +20,8 @@ module AresMUSH
           return SerumUseCommand
         when "give"
           return SerumGiveCommand
+        when "add"
+          return SerumAddCommand
         when nil
           return SerumCommand
         end
@@ -29,12 +31,28 @@ module AresMUSH
       nil
     end
 
-    def self.get_event_handler(event_name)
+    def self.get_event_handler(event_name) 
+      case event_name
+      when "CronEvent"
+        return SerumCronHandler
+      end
       nil
     end
 
     def self.get_web_request_handler(request)
+      case request.cmd
+      when "getSerum"
+        return GetSerumRequestHandler
+      when "giveSerum"
+        return GiveSerumRequestHandler
+      when "webUseSerum"
+        return WebUseSerumRequestHandler
+      end
       nil
+    end
+
+    def self.achievements
+      Global.read_config('serum', 'achievements')
     end
 
   end

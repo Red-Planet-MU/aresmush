@@ -1,24 +1,23 @@
 ---
 fs3combat:
   weapons:
-    Flash Grenade:
-      description: Flashbang Hand Grenade which blinds/deafens human targets for 5
-        secs.  No effect on Centurions.
+    Lasso:
+      description: A looped rope thrown to entangle something.
       skill: Athletics
-      lethality: 0
-      penetration: 8
-      weapon_type: Suppressive
+      lethality: -50
+      penetration: 50
+      weapon_type: Ranged
       is_automatic: false
       recoil: 0
       damage_type: Stun
-      accuracy: 5
+      accuracy: 0
       has_shrapnel: false
       init_mod: 0
-    Frag Grenade:
-      description: Fragmentation Hand Grenade
+    Dynamite:
+      description: A thrown stick of dynamite.
       skill: Athletics
       lethality: 0
-      penetration: 8
+      penetration: 7
       weapon_type: Explosive
       is_automatic: false
       recoil: 0
@@ -26,87 +25,62 @@ fs3combat:
       accuracy: 0
       has_shrapnel: true
       init_mod: 0
-    Grenade Launcher:
-      description: Grenade Launcher
-      skill: Gunnery
-      lethality: 0
-      penetration: 8
-      weapon_type: Explosive
+    Machete:
+      description: Longer than a knife, meant for clearing brush, but can be an intimidating weapon in the right hands.
+      skill: Melee
+      lethality: 5
+      penetration: 2
+      weapon_type: Melee
       is_automatic: false
-      ammo: 4
       recoil: 0
       damage_type: Physical
       accuracy: 0
-      has_shrapnel: true
+      has_shrapnel: false
       init_mod: 0
     Mine:
-      description: Mine or other anti-personnel explosive
-      skill: Demolitions
-      lethality: 20
-      penetration: 8
+      description: Improvised explosive.
+      skill: Trapping
+      lethality: 5
+      penetration: 7
       weapon_type: Explosive
       is_automatic: false
       recoil: 0
       damage_type: Physical
       accuracy: 0
       has_shrapnel: true
+      trap_type: Explosives
       init_mod: 0
-    Missile:
-      description: Guided Anti-Vehicle Missile
-      skill: Gunnery
-      lethality: 80
-      penetration: 17
-      weapon_type: Ranged
-      is_automatic: false
-      ammo: 2
-      recoil: 0
-      damage_type: Physical
-      accuracy: 3
-      has_shrapnel: false
-      init_mod: 0
-    Talons:
-      description: Unguided Anti-Vehicle Rockets
-      skill: Gunnery
+    Bow:
+      description: A piece of wood with a string connecting the ends. Silent, and less deadly, compared to firearms.
+      skill: Archery
       lethality: 0
-      penetration: 9
+      penetration: 3
       weapon_type: Ranged
       is_automatic: false
-      ammo: 20
       recoil: 0
       damage_type: Physical
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-    Rocket:
-      description: Unguided Anti-Personnel Rocket
-      skill: Gunnery
-      lethality: 40
-      penetration: 8
-      weapon_type: Explosive
-      is_automatic: false
-      Ammo: 4
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: true
-      init_mod: 0
-    Shaped Charge:
-      description: Anti-Vehicle explosive
-      skill: Demolitions
-      lethality: 15
-      penetration: 25
-      weapon_type: Explosive
+      allowed_specials:
+    Snare:
+      description: A rudimentary mechanism set in place to entangle something.
+      skill: Trapping
+      lethality: -50
+      penetration: 50
+      weapon_type: Melee
       is_automatic: false
       recoil: 0
-      damage_type: Physical
+      damage_type: Stun
       accuracy: 0
-      has_shrapnel: true
+      has_shrapnel: false
+      trap_type: Snares
       init_mod: 0
     Shrapnel:
       description: Random Shrapnel
       skill: 3
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
@@ -114,112 +88,109 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-    Lmg:
-      description: Light machinegun/SAW
+    Revolver:
+      description: A basic six-shooter. 
       skill: Firearms
       lethality: 0
-      penetration: 6
+      penetration: 4
       weapon_type: Ranged
-      is_automatic: true
-      ammo: 100
-      recoil: 4
+      is_automatic: false
+      ammo: 6
+      recoil: 0
       damage_type: Physical
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
+      firearm_type: Pistols
       allowed_specials:
       - Ap
-      - Bipod
-    Pistol:
-      description: Pistol
+    Dual Revolvers:
+      description: TWO basic six-shooters.
       skill: Firearms
       lethality: 0
-      penetration: 5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
-      ammo: 10
+      ammo: 12
       recoil: 0
       damage_type: Physical
-      accuracy: 0
+      accuracy: -5
       has_shrapnel: false
-      init_mod: 0
+      init_mod: -1
+      dual_wield: true
+      firearm_type: Pistols
       allowed_specials:
       - Ap
     Rifle:
-      description: Assault Rifle
+      description: A long rifle. Bolt action.
       skill: Firearms
       lethality: 0
-      penetration: 6
-      weapon_type: Ranged
-      is_automatic: true
-      ammo: 20
-      recoil: 3
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Ap
-      - Scope
-    Sniper Rifle:
-      description: Sniper Rifle
-      skill: Firearms
-      lethality: 0
-      penetration: 8
-      weapon_type: Ranged
-      is_automatic: false
-      ammo: 10
-      recoil: 0
-      damage_type: Physical
-      accuracy: 2
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Ap
-      - Scope
-    Shotgun:
-      description: Shotgun using solid shot
-      skill: Firearms
-      lethality: 10
-      penetration: 3
-      weapon_type: Ranged
-      is_automatic: false
-      ammo: 8
-      recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Buckshot
-    Smg:
-      description: Sub-machinegun
-      skill: Firearms
-      lethality: 0
-      penetration: 6
-      weapon_type: Ranged
-      is_automatic: true
-      ammo: 30
-      recoil: 4
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-      allowed_specials:
-      - Ap
-    Tazer:
-      description: Stun gun
-      skill: Firearms
-      lethality: 70
-      penetration: 10
+      penetration: 5
       weapon_type: Ranged
       is_automatic: false
       ammo: 5
-      recoil: 0
-      damage_type: Stun
+      recoil: 3
+      damage_type: Physical
+      accuracy: 1
+      has_shrapnel: false
+      init_mod: -1
+      firearm_type: Rifles
+      mounted_accuracy: -2
+      allowed_specials:
+      - Ap
+      - Scope
+    Repeater:
+      description: A lever-action long gun that can shoot more rapidly than a rifle but with less power and accuracy.
+      skill: Firearms
+      lethality: 0
+      penetration: 4
+      weapon_type: Ranged
+      is_automatic: false
+      ammo: 10
+      recoil: 1
+      damage_type: Physical
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
+      mounted_accuracy: -1
+      firearm_type: Rifles
+      allowed_specials:
+      - Ap
+    Energy Rifle:
+      description: Restricted, NILE-issue energy-based long gun equipped with a self-destruct mechanism and palm reader.
+      skill: Firearms
+      lethality: 10
+      penetration: 7
+      weapon_type: Ranged
+      is_automatic: false
+      ammo: 25
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: false
+      init_mod: 0
+      firearm_type: Rifles
+      is_hidden: true
+      npc_only: true
+      allowed_specials:
+      - Scope
+    Shotgun:
+      description: Double-barreled shotgun
+      skill: Firearms
+      lethality: 20
+      penetration: 3
+      weapon_type: Ranged
+      is_automatic: false
+      ammo: 2
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: false
+      init_mod: 0
+      firearm_type: Rifles
+      mounted_accuracy: -1
+      allowed_specials:
+      - Buckshot
     Club:
       description: Mace/club/baton
       skill: Melee
@@ -236,7 +207,7 @@ fs3combat:
       description: Knife
       skill: Melee
       lethality: -5
-      penetration: 4
+      penetration: 3
       weapon_type: Melee
       is_automatic: false
       recoil: 0
@@ -244,6 +215,32 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
+    Throwing Axe:
+      description: A thrown axe.
+      skill: Athletics
+      lethality: 5
+      penetration: 2
+      weapon_type: Ranged
+      is_automatic: false
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: true
+      init_mod: 0
+      throws: 3
+    Throwing Knife:
+      description: A thrown knife.
+      skill: Athletics
+      lethality: 0
+      penetration: 3
+      weapon_type: Ranged
+      is_automatic: false
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: true
+      init_mod: 0
+      throws: 5
     Unarmed:
       description: Unarmed
       skill: Melee
@@ -256,58 +253,71 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      allowed_specials:
-      - Sparring
-    Ecm:
-      description: ECM Package
-      skill: Gunnery
-      lethality: 0
-      penetration: 0
-      weapon_type: Suppressive
-      is_automatic: false
+    Antlers:
+      description: Antlers
+      skill: Melee
+      lethality: -10
+      penetration: 4
+      weapon_type: Melee
       recoil: 0
       damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
+      npc_only: true
+      accuracy: 1
       init_mod: 0
-    Hmg:
-      description: Heavy machinegun.
-      skill: Firearms
-      lethality: 20
-      penetration: 8
-      weapon_type: Ranged
-      is_automatic: true
-      ammo: 100
-      recoil: 6
+    Beak:
+      description: Bites from a beak
+      skill: Melee
+      lethality: -5
+      penetration: 2
+      weapon_type: Melee
+      recoil: 0
       damage_type: Physical
+      is_hidden: true
+      npc_only: true
       accuracy: 0
-      has_shrapnel: false
       init_mod: 0
-      allowed_specials:
-      - Ap
-      - Bipod
-    Kew:
-      description: KEW Assault Cannon.  This is a chain gun and always burst fires,
-        so that's factored into the damage.
-      skill: Gunnery
+    Claws:
+      description: Animal or creature claws
+      skill: Melee
       lethality: 0
-      penetration: 9
+      penetration: 3
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      npc_only: true
+      accuracy: 1
+      init_mod: 0
+    Horns:
+      description: Horns
+      skill: Melee
+      lethality: -5
+      penetration: 5
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      npc_only: true
+      accuracy: 1
+      init_mod: 0
+    Teeth:
+      description: Animal or creature teeth
+      skill: Melee
+      lethality: 0
+      penetration: 4
+      weapon_type: Melee
+      recoil: 0
+      damage_type: Physical
+      npc_only: true
+      accuracy: 1
+      init_mod: 0
+    Vines:
+      description: A grasping plant appendage.
+      skill: Athletics
+      lethality: 5
+      penetration: 2
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
-      damage_type: Physical
-      accuracy: 0
-      has_shrapnel: false
-      init_mod: 0
-    Cannon:
-      description: Tank cannon.
-      skill: Gunnery
-      lethality: 0
-      penetration: 23
-      weapon_type: Ranged
-      is_automatic: false
-      recoil: 0
-      damage_type: Physical
+      damage_type: Stun
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
@@ -321,10 +331,8 @@ fs3combat:
     Scope:
       description: Sniper scope
       accuracy: 2
+      init_mod: -1
     Buckshot:
       description: Shotgun pellets
       accuracy: 3
       penetration: -2
-    Sparring:
-      description: Padded sparring equipment
-      lethality: -50

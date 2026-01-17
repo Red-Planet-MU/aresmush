@@ -93,6 +93,7 @@ module AresMUSH
           description = location
         else
           description = "%xh#{room.name}%xn%R#{room.description}"
+          can_use_fortune = room.can_use_fortune
           area = room.area
           vistas = room.vistas
           details = room.details
@@ -107,6 +108,7 @@ module AresMUSH
         #location = (location =~ /\//) ? location.after("/") : location
         scene.room.update(name: "Scene #{scene.id} - #{location}")
         scene.room.update(description: description)
+        scene.room.update(can_use_fortune: can_use_fortune)
         scene.room.update(area: area)
         scene.room.update(vistas: vistas)
         scene.room.update(details: details)

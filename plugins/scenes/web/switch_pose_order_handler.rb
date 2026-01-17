@@ -4,6 +4,8 @@ module AresMUSH
       def handle(request)
         scene = Scene[request.args['id']]
         enactor = request.enactor
+
+        Global.logger.debug "scene: #{scene}, enactor: #{enactor}"
         
         if (!scene)
           return { error: t('webportal.not_found') }

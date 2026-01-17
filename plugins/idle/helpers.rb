@@ -37,10 +37,11 @@ module AresMUSH
     
     def self.idle_cleanup(char, idle_status)
       Global.logger.debug "Starting idle cleanup for #{char.name}"
-      Login.set_random_password(char)
-      if (char.handle)
-        AresCentral.unlink_handle(char)
-      end
+      #Do not unlink or reset password.
+      #Login.set_random_password(char)
+      #if (char.handle)
+      #  AresCentral.unlink_handle(char)
+      #end
       Global.dispatcher.queue_event CharIdledOutEvent.new(char.id, idle_status)
     end
     

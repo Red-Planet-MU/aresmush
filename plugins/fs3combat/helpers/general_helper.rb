@@ -109,6 +109,7 @@ module AresMUSH
     end
     
     def self.combatant_type_stat(type, stat)
+      Global.logger.debug "type: #{type}, stat: #{stat}"
       type_config = FS3Combat.combatant_types[type]
       type_config[stat]
     end
@@ -277,7 +278,11 @@ module AresMUSH
         armor: combatant.armor,
         is_npc: combatant.is_npc?,
         team: combatant.team,
-        ammo: combatant.ammo ? "(#{combatant.ammo})" : '',
+        #Trashcan's extended throwing weapons
+        ammo: if combatant.ammo then "(#{combatant.ammo})" 
+              elsif combatant.throws then "(#{combatant.throws})" 
+              else '' 
+              end,
         damage_boxes: ([-combatant.total_damage_mod.floor, 5].min).times.map { |d| d },
         damage: FS3Combat.damage_list_web_data(combatant.associated_model, false),
         damage_mod: combatant.total_damage_mod.floor,
@@ -300,5 +305,13 @@ module AresMUSH
                   severity: MushFormatter.format(FS3Combat.display_severity(d.current_severity))
                   }}
     end
+
+    def self.snare_countdown(combatant)
+      if combatant.is_snared && combatant.snare_roll > 0
+        combatant.update(snare_roll: combatant.snare_roll - 1)
+        Global.logger.debug "combatant.snare_roll: #{combatant.snare_roll}"
+      end
+    end 
+
   end
 end

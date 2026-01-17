@@ -41,7 +41,9 @@ module AresMUSH
             damage_mod: damage_mod,
             show_sheet: show_sheet,
             luck_points: char.luck.floor,
-            xp: xp
+            xp: xp,
+            horse_bond: char.horse_bond,
+            horse_rating: FS3Skills.web_horse_rating_name(char.horse_bond)
           }
         else
           {

@@ -20,7 +20,7 @@ module AresMUSH
       end
       
       def show_section(section)
-        sections = ['attributes', 'action', 'background', 'languages', 'advantages']
+        sections = ['attributes', 'action', 'background', 'advantages']
         return true if self.section.blank?
         return true if !sections.include?(section)
         return true if !sections.include?(self.section)
@@ -116,6 +116,66 @@ module AresMUSH
       
       def section_line(title)
         self.screen_reader_on ? title : line_with_text(title)
+      end
+
+      def print_horse_rating(bond_rating)
+        case bond_rating
+        when 0
+          return ""
+        when 1
+          return "%xg@%xn"
+        when 2
+          return "%xg@@%xn"
+        when 3
+          return "%xg@@%xy@%xn"
+        when 4
+          return "%xg@@%xy@@%xn"
+        when 5
+          return "%xg@@%xy@@%xr@%xn"
+        when 6
+          return "%xg@@%xy@@%xr@@%xn"
+        when 7
+          return "%xg@@%xy@@%xr@@%xb@%xn"
+        when 8
+          return "%xg@@%xy@@%xr@@%xb@@%xn"
+        end
+      end
+
+      def horse_rating_name(bond_rating)
+        case bond_rating
+        when 0
+          return t('horse.no_bond_rating')
+        when 1
+          return t('horse.first_bond_rating')
+        when 2
+          return t('horse.second_bond_rating')
+        when 3
+          return t('horse.third_bond_rating')
+        when 4
+          return t('horse.fourth_bond_rating')
+        when 5
+          return t('horse.fifth_bond_rating')
+        when 6
+          return t('horse.sixth_bond_rating')
+        when 7
+          return t('horse.seventh_bond_rating')
+        when 8
+          return t('horse.eighth_bond_rating')
+        end
+      end
+
+      def format_bond(char)
+        #linebreak = i % 2 == 1 ? "" : "%r"
+        
+        #if (self.screen_reader_on)
+        #  return "#{linebreak}#{b.name}: #{b.rating} #{b.rating_name} :: "
+        #end
+        bond = char.horse_bond  
+        name = "%xhHorse Bond:%xn"
+        rating_text = horse_rating_name(bond)
+        rating_dots = print_horse_rating(bond)
+        #"#{left(rating_dots, 8)}"
+        "#{left(name, 14)} #{left(rating_dots, 8)} #{left(rating_text, 16)}"
       end
     end
   end

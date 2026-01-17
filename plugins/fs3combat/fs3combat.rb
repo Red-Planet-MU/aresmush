@@ -98,6 +98,8 @@ module AresMUSH
            return CombatLuckCmd
          when "mount"
            return CombatMountCmd
+         when "ridewith"
+          return CombatRidewithCmd
          when "dismount"
            return CombatDismountCmd
          when "npc"

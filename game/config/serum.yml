@@ -5,29 +5,77 @@ serum:
     serums: serum
   Revitalizer:
     desc: "A healing concoction."
-    duration: 0
+    duration: -1
     is_healing: true
     combat_only: false
+    display_name: "%xw%X35Revitalizer Serum%xn"
   Adreno:
-    desc: "This blend of ingredients will instantly revive anything from a dog to a horse. Too powerful to use on anything smaller."
-    duration: 0
+    desc: "This blend of ingredients will instantly revive a human being. Not recommended for animal use."
+    duration: -1
     is_revive: true
     combat_only: true
+    display_name: "%x17%X14Adreno Serum%xn"
   Quickhand:
     desc: "Increases speed at the expense of caution."
     duration: 4
     init_mod: +2
     armor_mod: -3
     combat_only: true
+    display_name: "%x9%X11Quickhand Serum%xn"
   Hardy:
     desc: "Increases the toughness of one's skin. Freaky. Slows you down."
     duration: 4
     init_mod: -2
     armor_mod: 3
     combat_only: true
+    display_name: "%x223%X56Hardy Serum%xn"
   Glass Cannon:
     desc: "A danger to yourself and others"
     duration: 4
     lethality: 10
     lethality_mod: 10
     combat_only: true
+    display_name: "%x22%X166Glass Cannon Serum%xn"
+  Equine Elixir:
+    desc: "A powerful mix that will revive a horse and mend some of its injuries almost instantly. Incredibly potent."
+    duration: -1
+    combat_only: true
+    horse_reviver: true
+    display_name: "%x230%X18Equine Elixir%xn"
+  serum_cron:
+    day_of_week:
+    - Sat
+    hour:
+    - 21
+    minute:
+    - 0
+  periodic_serum: "Revitalizer"
+  permissions:
+    manage_serums: Give out serums without costing luck.
+  achievements:
+    serum_obtained_count:
+      type: serums
+      message: Got %{count} serums.
+      levels:
+      - 1
+      - 10
+      - 25
+      - 50
+      - 100
+      - 150
+      - 200
+      - 250
+      - 300
+    serum_used_count:
+      type: serums
+      message: Used %{count} serums.
+      levels:
+      - 1
+      - 10
+      - 25
+      - 50
+      - 100
+      - 150
+      - 200
+      - 250
+      - 300

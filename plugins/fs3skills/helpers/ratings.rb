@@ -19,6 +19,19 @@ module AresMUSH
         nil
       end
     end
+
+    #Trashcan changes to support using specialties in code
+  def self.find_specialty(char, ability_name)
+    ability_name = ability_name.titlecase
+      ability_type = FS3Skills.get_ability_type(ability_name)
+      case ability_type
+      when :action
+        char.fs3_action_skills.find(name: ability_name).first.specialties.first
+      else
+        nil
+      end
+    end
+    #/End Trashcan changes to support using specialties in code
     
     def self.get_linked_attr(ability_name)
       case FS3Skills.get_ability_type(ability_name)

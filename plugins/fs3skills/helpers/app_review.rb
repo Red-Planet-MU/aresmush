@@ -44,7 +44,7 @@ module AresMUSH
       message = t('fs3skills.unusual_abilities_check')
       
       all_skills = char.fs3_background_skills.map { |s| s.name }
-      all_skills.concat char.fs3_action_skills.select { |s| s.rating > 1 }.map { |s| s.name }
+      all_skills.concat char.fs3_action_skills.select { |s| s.rating > 3 }.map { |s| s.name }
       all_skills.concat char.fs3_languages.map { |s| s.name }
       
       uncommon_skills = Global.read_config("fs3skills", "unusual_skills") || []
@@ -88,9 +88,26 @@ module AresMUSH
         
     def self.total_point_review(char)
       points =  AbilityPointCounter.total_points(char)
-      max = Global.read_config("fs3skills", "max_ap")
-      error = points > max ? t('chargen.too_many') : t('chargen.ok')
-      Chargen.format_review_status(t('fs3skills.total_points_spent', :total => points, :max => max), error)
+      #Age restrictions on XP #
+      age = char.age.to_i
+      case age
+      when 20..25
+        points_for_age = 30
+      when 26..30
+        points_for_age = 33
+      when 31..35
+        points_for_age = 36
+      when 36..40
+        points_for_age = 38
+      when 41..45
+        points_for_age = 42
+      when 46..99
+        points_for_age = 45
+      end
+
+      #max = Global.read_config("fs3skills", "max_ap")
+      error = points > points_for_age ? t('chargen.too_many') : t('chargen.ok')
+      Chargen.format_review_status(t('fs3skills.total_points_spent', :total => points, :max => points_for_age), error)
     end
     
     def self.starting_skills_check(char)
@@ -117,8 +134,8 @@ module AresMUSH
       
       char.fs3_action_skills.each do |a|
         config = FS3Skills.action_skill_config(a.name)
-        if (config['specialties'] && a.specialties.empty? && a.rating > 2)
-          missing << t('fs3skills.missing_specialty', :skill => a.name)
+        if (config['specialties'] && !a.specialties.empty? && a.specialties.count > 1)
+          missing << t('fs3skills.too_many_specialties', :skill => a.name)
         end
       end
       

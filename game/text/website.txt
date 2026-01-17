@@ -1,3 +1,39 @@
-<div class="jumbotron-tagline">A New Breed of MUSH Server</div>
+<div class="jumbotron-tagline">This is home now, the red-dirt edge of nothing.</div>
 
-Welcome to AresMUSH!
+300 years in the future, Earth is a playground for the rich and a hellscape for the poor. Political corruption and corporate power have led to the establishment of the Penitentiary Colonies of Mars, where Earth's convicts are sent to permanent exile, and where the descendants of the first prisoners still share that same fate.
+
+Trapped at a 19th-century tech level by their prison wardens, the mysterious NILE corporation, the inhabitants of the town of Virtue make their way as best they can: wrangling cattle and fighting bears and bandits under the forever unreachable stars.
+
+Welcome to Mars. Here's your spurs.
+
+<div class="homebox">
+
+<div class="col col-sm-12 col-md-5 pagebox">
+<div class="pageboxh">
+<p><a href="/wiki/about_us" title="About Red Planet">About Red Planet</a><a href="/wiki/about_us" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+</div>
+<div class="pageboxs"><p>Our mission statement, inspirations, and summary of how we play. </p></div>
+</div>
+
+<div class="col col-sm-12 col-md-5 pagebox">
+<div class="pageboxh">
+<p><a href="/wiki/world" title="World Intro">World Intro</a><a href="/wiki/world" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+</div>
+<div class="pageboxs"><p>An introduction to theme and the world we play in.</p></div>
+</div>
+
+<div class="col col-sm-12 col-md-5 pagebox">
+<div class="pageboxh">
+<p><a href="/wiki/policies" title="Policies">Policies</a><a href="/wiki/policies" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+</div>
+<div class="pageboxs"><p>Our policies on characters, gameplay, OOC behavior, and more. Includes a social contract with expectations around certain types of IC behavior.</p></div>
+</div>
+
+<div class="col col-sm-12 col-md-5 pagebox">
+<div class="pageboxh">
+<p><a href="/wiki/guide:join_us" title="Join Us">Join Us</a><a href="/wiki/guide:join_us" title="Read More"><span class="fas fa-angle-right"></span></a></p>
+</div>
+<div class="pageboxs"><p>A guide to character creation, claiming roster characters, and logging onto the game for a tour.</p></div>
+</div>
+
+</div>

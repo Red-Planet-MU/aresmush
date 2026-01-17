@@ -16,6 +16,14 @@ module AresMUSH
       char.update(looking_for_rp: false)
     end
 
+    def self.is_lfrp(char)
+      if !char
+        false
+      else
+        char.is_looking_for_rp
+      end
+    end
+
     def self.chars_looking_for_rp
       Chargen.approved_chars.select { |c| c.looking_for_rp == true }
     end
@@ -30,11 +38,18 @@ module AresMUSH
     end
 
     def self.web_list
-      chars_looking_for_rp.map { |c| { name: c.name, type_maker: type_marker(c) } }
+      chars_looking_for_rp.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }
     end
 
     def self.char_names
       chars_looking_for_rp.map { |c| c.name }
+    end
+
+    def build_web_LFRP_data(char)
+      {
+        name: char.name,
+        icon: Website.icon_for_char(char),
+      }
     end
 
     def self.announce_toggle_on(char)

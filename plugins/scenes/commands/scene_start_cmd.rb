@@ -60,7 +60,7 @@ module AresMUSH
           
         scene = Scenes.start_scene(enactor, self.location, private_scene, Scenes.scene_types.first, self.temp)
         #Socializer Changes
-        if enactor.open_scene_announce == "on"
+        if enactor.open_scene_announce == "on" && !private_scene
             Channels.send_to_channel("RP Requests", t('socializer.rp_request_emit', :name => enactor.name, :location => self.location))
         end
         #end Socializer Changes

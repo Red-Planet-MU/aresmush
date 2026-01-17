@@ -3,6 +3,7 @@ channels:
   announce_channel: Game
   approved_channels:
   - RP Requests
+  - Chat
   clear_history_cron:
     hour:
     - 4
@@ -10,11 +11,10 @@ channels:
     - 47
   default_channels:
   - Questions
-  - Chat
   discord_gravatar_style: retro
   discord_prefix: "[D]"
   discord_debug: false
-  end_marker: ">"
+  end_marker: "]"
   ooc_lounge_channel: ''
   permissions:
     manage_channels: Create and modify channels.
@@ -36,7 +36,7 @@ channels:
     delcom: channel/leave
     comtitle: channel/title
     channel/name: channel/rename
-  start_marker: "<"
+  start_marker: "["
   discord_name_subs:
     wumpus: wumpu5
     nelly: nell4

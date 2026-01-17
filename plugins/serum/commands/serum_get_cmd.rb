@@ -17,7 +17,8 @@ module AresMUSH
           enactor.spend_luck(1)
           Serum.modify_serum(enactor, self.serum_name, 1)
           client.emit_success t('serum.got_serum', :serum_name => serum_name)
-          
+          enactor.update(serums_bought: enactor.serums_bought + 1)
+          Serum.handle_serum_obtained_given_achievement(enactor)
         end
       end
     end

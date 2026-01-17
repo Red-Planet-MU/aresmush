@@ -12,9 +12,9 @@ fs3skills:
   - name: Perception
     desc: Senses and general awareness.
   - name: Presence
-    desc: Charisma and beauty.
+    desc: Charisma and social intuition.
   attributes_blurb: 'Attributes represent basic abilities that everyone has to some
     extent. Attributes boost related skills, and come into play when no skill directly
-    applies.  Attributes are rated from 1-4. See <a href="https://aresmush.com/fs3/fs3-3/chargen.html#attributes"
-    target="_blank">FS3: Attributes</a> for details.'
+    applies.  Attributes are rated from 1-4. See <a href="https://redplanetmu.com/wiki/guide:join_us#character-information"
+    target="_blank">Join Us</a> and click on the Attributes tab for details.'
   default_linked_attr: Wits

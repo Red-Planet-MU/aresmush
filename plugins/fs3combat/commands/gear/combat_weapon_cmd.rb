@@ -22,6 +22,7 @@ module AresMUSH
         self.specials = specials_str ? specials_str.split('+') : nil
       end
 
+
       def required_args
         [ self.names, self.weapon ]
       end
@@ -37,6 +38,15 @@ module AresMUSH
       
       def check_valid_weapon
         return t('fs3combat.invalid_weapon') if !FS3Combat.weapon(self.weapon)
+        return nil
+      end
+
+      def check_pc_valid_weapon
+        self.names.each do |n|
+          FS3Combat.with_a_combatant(n, client, enactor) do |combat, combatant| 
+            return t('fs3combat.npc_only_weapon') if !FS3Combat.pc_equippable_weapon(self.weapon) && !combatant.is_npc?
+          end
+        end
         return nil
       end
       

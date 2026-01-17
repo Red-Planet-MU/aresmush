@@ -39,6 +39,8 @@ module AresMUSH
               value: char.demographic(d)
             }
         end
+
+        age_value = char.age
         
         if (Demographics.age_enabled?)
           demographics['age'] = { name: t('profile.age_title'), value: char.birthdate ? OOCTime.format_date_for_entry(char.birthdate) : char.age }
@@ -85,6 +87,7 @@ module AresMUSH
           can_approve: can_approve,
           name: char.name,
           demographics: demographics,
+          age_value: age_value,
           groups: groups,
           background: Website.format_input_for_html(char.background),
           rp_hooks: hooks,

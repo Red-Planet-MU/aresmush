@@ -27,15 +27,11 @@ module AresMUSH
     
       def self.weather(room)
         weather = nil
-        if Manage.is_extra_installed?("openweather")
+
           if (AresMUSH::Openweather.is_enabled?)
             weather = Openweather.weather_for_area(room.area_name)
           end
-        elsif Manage.is_extra_installed?("weather")
-          if Weather.is_enabled? 
-            weather = Weather.weather_for_area(room.area_name)
-          end
-        end
+
         weather ? "%R%R#{weather}" : nil
       end
     end

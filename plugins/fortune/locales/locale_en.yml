@@ -1,0 +1,6 @@
+---
+en:
+  fortune:
+    told_fortune: "%{name} cracks open a container of Fortune FizzPop which reads: %r'%xc%{fortune_told}%xn'"
+    no_machine: "There is no Fortune FizzPop machine in this room."
+    cooldown_on: "You've had enough, you freak. Try again later."

@@ -19,8 +19,8 @@ module AresMUSH
         
         Global.logger.debug "self.name = #{self.name}; self.serum_name = #{self.serum_name}; self.targets = #{self.targets}"
         # Can only use serums one actually has
-        self.serum_has = Serum.find_serums_has(combatant.associated_model, self.serum_name)
-        return t('serum.dont_have_serum') if !self.serum_has
+        self.serum_has = Serum.find_serums_has(combatant.associated_model, self.serum_name) if !combatant.is_npc?
+        return t('serum.dont_have_serum') if (!self.serum_has || self.serum_has < 1) && !combatant.is_npc?
 
         error = self.parse_targets(self.targets)
         return error if error
@@ -34,10 +34,17 @@ module AresMUSH
         if (!wound) && self.serum_type == "v_serums_has"
           return t('fs3combat.target_has_no_treatable_wounds', :name => self.target.name)
         end
+
+        #If this is horse juice, the target's horse must be KO'd 
+        horse_down = self.target.horse_kod
+        if horse_down == false
+          return t(fs3combat.target_horse_is_not_kod, :name => self.target.name)
+        end
         
         #If this is a serum with a lasting effect, the last serum must expire first
         serum_duration = self.target.serum_duration_counter
-        if serum_duration > 0
+        duration = Global.read_config('serum',self.serum_name,'duration')
+        if duration > 0 && serum_duration > 0
           return t('serum.already_serumed', :name => self.target.name)
         end
 
@@ -51,11 +58,17 @@ module AresMUSH
       end
       
       def print_action
-        msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+        display_name = Global.read_config('serum',self.serum_name,'display_name')
+        if display_name = "%x230%X18Equine Elixir%xn"
+          msg = t('serum.use_serum_action_on_horse_msg_long',  :name => self.name, :target => print_target_names, :serum_name => display_name)
+        else
+          msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => display_name)
+        end
       end
       
       def print_action_short
-        t('serum.use_serum_action_msg_short', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+        display_name = Global.read_config('serum',self.serum_name,'display_name')
+        t('serum.use_serum_action_msg_short', :name => self.name, :target => print_target_names, :serum_name => display_name)
       end
       
       def resolve
@@ -66,6 +79,8 @@ module AresMUSH
         armor_mod = Global.read_config('serum',self.serum_name,'armor_mod')
         is_healing = Global.read_config('serum',self.serum_name,'is_healing')
         is_revive = Global.read_config('serum',self.serum_name,'is_revive')
+        horse_reviver = Global.read_config('serum',self.serum_name,'horse_reviver')
+        display_name = Global.read_config('serum',self.serum_name,'display_name')
 
         Global.logger.debug "Duration: #{duration} Init_mod: #{init_mod} Lethal_mod: #{lethal_mod} Lethality: #{lethality} armor_mod: #{armor_mod} is_healing: #{is_healing} is_revive: #{is_revive}"
         #Healing serums
@@ -74,14 +89,14 @@ module AresMUSH
         end
 
         #Serums that have a lasting effect
-        if duration
+        if duration > 0
           self.target.update(serum_duration_counter: duration)
-          #ride on the default FS3 mod, which a GM may have set
+          #ride on the default FS3 mod, which a GM may have set 8/31 Note, I don't think this is true anymore, this looks like a new custom mod value
           if init_mod
             self.target.update(serum_init_mod: init_mod)
           end
 
-          #ride on the default FS3 mod, which a GM may have set
+          #ride on the default FS3 mod, which a GM may have set 8/31 Note, I don't think this is true anymore, this looks like a new custom mod value
           if lethal_mod
             self.target.update(serum_damage_lethality_mod: lethal_mod)
           end
@@ -95,15 +110,29 @@ module AresMUSH
           if armor_mod
             self.target.update(serum_armor_mod: armor_mod)
           end
-          message = t('serum.used_serum_combat', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+          message = t('serum.used_serum_combat', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 
         if is_revive
           self.target.update(is_ko: false)
-          message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => self.serum_name)
+          message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 
-        Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
+        if horse_reviver
+          self.target.update(horse_kod: false)
+          message = t('serum.used_horse_elixir', :name => self.name, :target => print_target_names, :serum_name => display_name)
+        end
+
+        #do not track NPC serum use
+        if !combatant.is_npc?
+        #track Last used serum
+          self.target.update(last_serum: self.serum_name)
+
+          Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
+          combatant.associated_model.update(serums_used: combatant.associated_model.serums_used + 1)
+          Serum.handle_serum_used_given_achievement(combatant.associated_model)
+        end
+        
         [message]
       end
     end

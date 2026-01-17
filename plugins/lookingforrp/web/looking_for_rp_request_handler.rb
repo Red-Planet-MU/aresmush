@@ -4,7 +4,9 @@ module AresMUSH
       def handle(request)
 
         {
-          chars: LookingForRp.chars_looking_for_rp
+        looking_for_rp: LookingForRp.char_names,
+        looking_for_rp_chars: LookingForRp.chars_looking_for_rp,
+        lfrp_icons: LookingForRp.web_list
         }
 
       end

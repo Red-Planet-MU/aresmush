@@ -18,8 +18,15 @@ module AresMUSH
         when "announce"
           return SocializerAnnounceCommand
         end
-
-
+      when 'pals'
+        case cmd.switch
+        when "add", "remove"
+          return SocializerChangePalCommand
+        when "invite", "uninvite"
+          return SocializerSceneInvitePalsCommand
+        when nil
+          return SocializerListPalsCommand
+        end
       end
       nil
     end
@@ -29,6 +36,14 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
+      case request.cmd
+      when "webPalsInvite"
+        return WebPalsInviteHandler
+      when "addPal"
+        return WebPalsAddHandler
+      when "removePal"
+        return WebPalsRemoveHandler
+      end
       nil
     end
 

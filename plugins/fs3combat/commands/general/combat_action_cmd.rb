@@ -49,9 +49,11 @@ module AresMUSH
         end
         
         self.names.each do |name|
-        
           FS3Combat.with_a_combatant(name, client, enactor) do |combat, combatant|
-            if (combatant.is_subdued? && self.combat_command != "escape")
+            
+            if combatant.is_ko
+              client.emit t('fs3combat.cannot_act_while_koed')
+            elsif ((combatant.is_subdued? || combatant.is_snared) && self.combat_command != "escape")
               client.emit_failure t('fs3combat.must_escape_first') 
               next
             end

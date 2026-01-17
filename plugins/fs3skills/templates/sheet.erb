@@ -25,16 +25,11 @@
 <% background_skills.each do |b| -%>
 <%= b -%>
 <% end %> 
-
-
 <% end -%>  
-<% if show_section('languages') -%>
-<%= section_line t('fs3skills.languages_title') -%>
-<% languages.each do |l| -%>
-<%= l -%>
-<% end %> 
 
-<% end -%>  
+<%= section_line t('horse.horse_title') %>
+<%= format_bond(char) %>
+
 <% if use_advantages %>
 <% if show_section('advantages') -%>
 

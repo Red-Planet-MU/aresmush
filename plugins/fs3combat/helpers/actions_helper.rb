@@ -67,12 +67,13 @@ module AresMUSH
       FS3Combat.check_for_ko(combatant)
       combatant.update(freshly_damaged: false)
       
-      if (combatant.is_ko && combatant.is_npc?)
-        FS3Combat.leave_combat(combatant.combat, combatant)
-      else
+      #We do not want NPCs to leave combat automatically.
+      #if (combatant.is_ko && combatant.is_npc?)
+      #  FS3Combat.leave_combat(combatant.combat, combatant)
+      #else
         # Be sure to do this AFTER checking for KO up above.
         combatant.update(damaged_by: [])
-      end
+      #end
     end
     
     def self.reset_stress(combatant)
@@ -91,19 +92,36 @@ module AresMUSH
 
       combatant.log "Checking for KO: #{combatant.name} damaged=#{combatant.freshly_damaged} ko=#{combatant.is_ko} mod=#{combatant.total_damage_mod}"
       
-      if (combatant.is_npc? && (combatant.total_damage_mod <= -7))
-        combatant.log "#{combatant.name} auto-KO'd."
-        roll = 0
-      else
+      #no auto KOs
+      #if (combatant.is_npc? && (combatant.total_damage_mod <= -7))
+      #  combatant.log "#{combatant.name} auto-KO'd."
+      #  roll = 0
+      #else
         roll = FS3Combat.make_ko_roll(combatant)
-      end
+      #end
       
       if (roll <= 0)
         combatant.update(is_ko: true)
         combatant.update(action_klass: nil)
         combatant.update(action_args: nil)
         damaged_by = combatant.damaged_by.join(", ")
+        #Extra horse jazz
+        if combatant.mount_type
+          if combatant.is_carrying
+            passenger_rider = combatant.is_carrying
+            passenger_rider.update(mount_type: nil)
+            passenger_rider.update(is_riding_with: nil)
+            combatant.update(mount_type: nil)
+            combatant.update(is_carrying: nil)
+            FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_rider_with', :name => combatant.name, :damaged_by => damaged_by, :passenger => passenger_rider.name), nil, true
+          else
+            combatant.update(mount_type: nil)
+            FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_mounted', :name => combatant.name, :damaged_by => damaged_by), nil, true
+          end
+        else
+        #/Extra horse jazz
         FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed', :name => combatant.name, :damaged_by => damaged_by), nil, true
+        end
       end
     end
       
@@ -140,7 +158,7 @@ module AresMUSH
     end
         
     def self.ai_action(combat, combatant, enactor = nil)
-      if (combatant.is_subdued?)
+      if (combatant.is_subdued? || combatant.is_snared)
         FS3Combat.set_action(enactor, combat, combatant, FS3Combat::EscapeAction, "")
       elsif (!FS3Combat.check_ammo(combatant, 1))
         FS3Combat.set_action(enactor, combat, combatant, FS3Combat::ReloadAction, "")
@@ -211,12 +229,14 @@ module AresMUSH
       
       if (total < FS3Combat.damage_table["GRAZE"])
         damage = "GRAZE"
-      elsif (total < FS3Combat.damage_table["FLESH"])
-        damage = "FLESH"
-      elsif (total < FS3Combat.damage_table["IMPAIR"])
-        damage = "IMPAIR"
+      elsif (total < FS3Combat.damage_table["MINOR"])
+        damage = "MINOR"
+      elsif (total < FS3Combat.damage_table["MAJOR"])
+        damage = "MAJOR"
+      elsif (total < FS3Combat.damage_table["SEVERE"])
+        damage = "SEVERE"
       else
-        damage = "INCAP"
+        damage = "CRITICAL"
       end
       
       combatant.log "Determined damage: loc=#{hitloc} sev=#{severity} wpn=#{weapon} serum=#{serum_mod}" + #Serums
@@ -311,9 +331,10 @@ module AresMUSH
     
     def self.resolve_mount_ko(target)
       toughness = FS3Combat.mount_stat(target.mount_type, 'toughness').to_i
-      roll = FS3Skills.one_shot_die_roll(toughness)[:successes]
+      mod = target.horse_ko_counter
+      roll = FS3Skills.one_shot_die_roll(toughness - mod)[:successes]
       
-      target.log "Determined mount damage: tough=#{toughness} roll=#{roll}"
+      target.log "Determined mount damage: tough=#{toughness} mod = #{mod} roll=#{roll}"
       
       roll <= 0
     end
@@ -337,15 +358,56 @@ module AresMUSH
       elsif (hit_mount)
         mount_ko = FS3Combat.resolve_mount_ko(target)
         if (mount_ko)
-          
-          mount_effect = t('fs3combat.mount_ko')
-          target.inflict_damage('IMPAIR', 'Fall Damage', true, false)
-          target.update(mount_type: nil)
+          #Horse Ridewith
+          if target.is_riding_with
+            primary_rider = target.is_riding_with
+            passenger_rider = target
+            primary_rider.update(horse_kod: true)
+            primary_rider.update(horse_ko_counter: primary_rider.horse_ko_counter + 1)
+            mount_effect = t('fs3combat.mount_ko_ridewith')
+            primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+            primary_rider.update(mount_type: nil)
+            primary_rider.update(is_carrying: nil)
+            passenger_rider.update(mount_type: nil)
+            passenger_rider.update(is_riding_with: nil)
+            passenger_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+          elsif target.is_carrying
+            primary_rider = target
+            passenger_rider = target.is_carrying
+            primary_rider.update(horse_kod: true)
+            primary_rider.update(horse_ko_counter: primary_rider.horse_ko_counter + 1)
+            mount_effect = t('fs3combat.mount_ko_ridewith_rider', :passenger => passenger_rider.name)
+            primary_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+            primary_rider.update(mount_type: nil)
+            primary_rider.update(is_carrying: nil)
+            passenger_rider.update(mount_type: nil)
+            passenger_rider.update(is_riding_with: nil)
+            passenger_rider.inflict_damage('MINOR', 'Fall Damage', true, false)
+          else
+            #Serums Mount KO
+            target.update(horse_kod: true)
+            target.update(horse_ko_counter: target.horse_ko_counter + 1)
+            mount_effect = t('fs3combat.mount_ko')
+            target.inflict_damage('MINOR', 'Fall Damage', true, false)
+            target.update(mount_type: nil)
+          end
+
         else
+          if target.is_carrying
+            primary_rider = target
+            passenger_rider = target.is_carrying
+          elsif target.is_riding_with
+            primary_rider = target.is_riding_with
+            passenger_rider = target
+          end
           mount_effect =  t('fs3combat.mount_injured')
         end
 
-        message = t('fs3combat.attack_hits_mount', :name => combatant.name, :target => target.name, :weapon => weapon, :effect => mount_effect)
+        if target == passenger_rider
+          message = t('fs3combat.attack_hits_mount_with_rider', :name => combatant.name, :target => target.name, :weapon => weapon, :effect => mount_effect, :rider => primary_rider.name)
+        else
+          message = t('fs3combat.attack_hits_mount', :name => combatant.name, :target => target.name, :weapon => weapon, :effect => mount_effect)
+        end
       elsif (stopped_by_cover)
         message = t('fs3combat.attack_hits_cover', :name => combatant.name, :target => target.name, :weapon => weapon)
       elsif (attacker_net_successes < 0)
@@ -377,7 +439,7 @@ module AresMUSH
       
     def self.attack_target(combatant, target, mod = 0, called_shot = nil, crew_hit = false, mount_hit = false)
       return [ t('fs3combat.has_no_target', :name => combatant.name) ] if !target
-      
+      Global.logger.debug "combatant #{combatant}, target #{target}, mod #{mod}, called_shot #{called_shot}, crew_hit #{crew_hit}, mount_hit #{mount_hit}"
       # If targeting a passenger, adjust target to the pilot instead.  Unless of course there isn't one.
       if (target.riding_in && target.riding_in.pilot)
         target = target.riding_in.pilot
@@ -432,7 +494,9 @@ module AresMUSH
       end
       
       #Serums
-      serum_mod = attacker.serum_lethality_mod
+      if attacker.nil? then serum_mod = 0
+      else serum_mod = attacker.serum_lethality_mod
+      end
       #Serums
 
       total_damage_mod = hit_mod + melee_damage_mod + attack_luck_mod - defense_luck_mod - armor + serum_mod #Serums
@@ -490,7 +554,7 @@ module AresMUSH
           Achievements.award_achievement(attacker.associated_model, "fs3_#{hit}_hit")  
         end
       end
-      if (damage == "INCAP")
+      if (damage == "CRITICAL")
         Achievements.award_achievement(attacker.associated_model, "fs3_hard_hitter")
       end
     end
@@ -512,11 +576,13 @@ module AresMUSH
         case damage
         when "GRAZE"
           shrapnel = 0
-        when "FLESH"
+        when "MINOR"
           shrapnel = rand(1)
-        when "IMPAIR"
+        when "MAJOR"
+          shrapnel = rand(2)
+        when "SEVERE"
           shrapnel = rand(3)
-        when "INCAP"
+        when "CRITICAL"
           shrapnel = rand(5)
         end
                 

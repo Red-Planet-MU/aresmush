@@ -4,7 +4,7 @@ module AresMUSH
       include CommandHandler
       
       def handle
-        template = GearListTemplate.new FS3Combat.armors, t('fs3combat.armor_title')
+        template = GearListTemplate.new FS3Combat.visible_armors, t('fs3combat.armor_title')
         client.emit template.render
       end
       
