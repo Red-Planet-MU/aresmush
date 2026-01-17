@@ -19,7 +19,7 @@ module AresMUSH
           timezones: timezones,
           unified_play_screen: enactor.unified_play_screen,
           editor: enactor.website_editor || "Classic",
-          editors: [ "Classic", "WYSIWYG" ]
+          editors: [ "Classic", "WYSIWYG" ],
           backup: enactor.wiki_char_backup ? enactor.wiki_char_backup.download_path : nil
         }
       end
