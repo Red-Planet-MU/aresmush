@@ -229,6 +229,7 @@ en:
         
         dismounted: "%{name} has dismounted."
         mounted: "%{name} has mounted a %{mount}."
+        mounted_horse: "%{name} has mounted their %{mount} %{horse_name}."
         invalid_mount: "That is not a valid mount type."
         not_mounted: "You are not mounted."
         cant_be_in_both_vehicle_and_mount: "%{name} can't be in both a vehicle and on a mount at the same time."
