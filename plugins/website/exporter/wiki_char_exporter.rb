@@ -6,7 +6,8 @@ module AresMUSH
     class WikiCharExporter
       def initialize(char)
         @char = char
-        @export_path = File.join(AresMUSH.root_path, "wiki_export", @char.id)
+        @id = SecureRandom.uuid
+        @export_path = File.join(AresMUSH.root_path, "tmp_export", @id)
       end
       
       def path_for_folder(folder)
@@ -28,7 +29,7 @@ module AresMUSH
           export_scenes
          
                   
-          backup_filename = "export_#{@char.id}.zip"
+          backup_filename = "export_#{@char.id}_#{@id}.zip"
           backup_path = File.join(AresMUSH.game_path, backup_filename)
           FileUtils.rm backup_path, :force=>true
           Zip::File.open(backup_path, 'w') do |zipfile|
@@ -50,7 +51,7 @@ module AresMUSH
       def export_uploads
         Global.logger.debug "Exporting uploads for #{@char.name}."
 
-        upload_path = File.join(AresMUSH.game_path, 'uploads', @char.name)
+        upload_path = File.join(AresMUSH.game_path, 'uploads', Profile.character_page_folder(@char))
         
         if (File.exist?(upload_path))
           FileUtils.cp_r upload_path, self.path_for_folder("uploads")
@@ -101,6 +102,11 @@ module AresMUSH
         
         File.open(File.join(self.path_for_folder("profile"), "descs.txt"), "w") do |file|
           descs = Describe.export_descs(@char)
+          file.write AnsiFormatter.strip_ansi(MushFormatter.format(descs))
+        end
+        
+        File.open(File.join(self.path_for_folder("profile"), "achievements.txt"), "w") do |file|
+          descs = Achievements.export_achievements(@char)
           file.write AnsiFormatter.strip_ansi(MushFormatter.format(descs))
         end
         

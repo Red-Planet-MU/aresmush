@@ -55,21 +55,6 @@ module AresMUSH
       char.update(last_on: Time.now)
     end
     
-    def self.check_for_suspect(char)
-      suspects = Global.read_config("sites", "suspect")
-      return false if !suspects
-      
-      suspects.each do |s|
-        if (char.is_site_match?(s, s))
-          Global.logger.warn "SUSPECT LOGIN! #{char.name} from #{char.last_ip} #{char.last_hostname} matches #{s}"
-          Jobs.create_job(Jobs.trouble_category, 
-            t('login.suspect_login_title'), 
-            t('login.suspect_login', :name => char.name, :ip => char.last_ip, :host => char.last_hostname, :match => s), 
-            Game.master.system_character)
-        end
-      end
-    end
-    
     # Char may be nil
     def self.is_banned?(char, ip_addr, hostname)
       hostname = hostname ? hostname.downcase : "" 
@@ -78,13 +63,10 @@ module AresMUSH
       return false if char && char.is_admin?
 
       # Check explicitly banned sites.
-      banned = Game.master.banned_sites || {}
-      banned.each do |s, desc|
-        if (Login.is_site_match?(ip_addr, hostname, s, s))
-          return true
-        end
+      if (Game.master.is_banned_site?(ip_addr, hostname))
+        return true
       end
-      
+            
       # If the character is not approved and proxy ban is enabled, check the proxy list.
       return false if !Global.read_config("sites", "ban_proxies")
       return false if char && char.is_approved?
@@ -141,7 +123,7 @@ module AresMUSH
       Login.blacklist = nil
     end
     
-    def self.check_login(char, password, ip_addr, hostname)
+    def self.check_login_allowed_status(char, password, ip_addr, hostname)
       if (!Login.can_login?(char))
         return { status: 'error', error: t('login.login_restricted', :reason => Login.restricted_login_message) }
       end
@@ -294,6 +276,11 @@ module AresMUSH
       return nil
     end
     
+    def self.expire_web_login(char)
+      char.update(login_api_token: nil)
+      char.update(login_api_token_expiry: Time.now - 86400*5)
+      Global.client_monitor.web_clients.select { |c| c.char_id == char.id.to_s }.each { |c| c.disconnect }
+    end
     
     def self.boot_char(enactor, bootee, boot_reason)
       
@@ -321,8 +308,7 @@ module AresMUSH
       end
       
       # Boot from portal
-      bootee.update(login_api_token: nil)
-      Global.client_monitor.web_clients.select { |c| c.char_id == bootee.id.to_s }.each { |c| c.disconnect }
+      Login.expire_web_login(bootee)
       
       host_and_ip = "IP: #{bootee.last_ip}  Host: #{bootee.last_hostname}"
       Global.logger.warn "#{bootee.name} booted by #{enactor.name}.  #{host_and_ip}"

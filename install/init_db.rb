@@ -69,7 +69,7 @@ module AresMUSH
   
       admin_role = Role.create(name: "admin", is_restricted: true)
       everyone_role = Role.create(name: "everyone")
-      everyone_role.update(permissions: ["login"])
+      everyone_role.update(permissions: ["login", "submit_app"])
       builder_role = Role.create(name: "builder")
       builder_role.update(permissions: ["build", "teleport", "desc_places", "access_jobs" ] )
       approved_role = Role.create(name: "approved")
@@ -107,20 +107,20 @@ module AresMUSH
         
       puts "Creating channels and BBS."
   
-      board = BbsBoard.create(name: "Announcements", order: 1)
+      board = BbsBoard.create(name: "Announcements", order: 1, description: "Important game notices.")
       board.write_roles.add admin_role
       board.save
       
-      board = BbsBoard.create(name: "Admin", order: 2)
+      board = BbsBoard.create(name: "Admin", order: 2, description: "Admin-only discussions.")
       board.read_roles.add admin_role
       board.write_roles.add admin_role
       board.save
       
-      board = BbsBoard.create(name: "New Arrivals", order: 3)
+      board = BbsBoard.create(name: "New Arrivals", order: 3, description: "New characters.")
       board.write_roles.add approved_role
       board.save
       
-      board = BbsBoard.create(name: "Trending Scenes", order: 4)
+      board = BbsBoard.create(name: "System Notices", order: 4, description: "System messages.")
       board.write_roles.add admin_role
       board.save
   

@@ -9,19 +9,9 @@ module AresMUSH
       return tos_text.blank? ? nil : tos_text
     end
     
-    # Checks to see if either the IP or hostname is a match with the specified string.
-    # For IP we check the first few numbers because they're most meaningful.  
-    # For the hostname, it's reversed.
+    # Moved to engine - method stays for backwards compatibility
     def self.is_site_match?(char_ip, char_host, ip, hostname)
-      host_search = "#{hostname}".chars.last(20).join.to_s.downcase
-      ip_search = "#{ip}".chars.first(10).join.to_s
-
-      ip = char_ip || ""
-      host = char_host || ""
-      
-      return true if !ip_search.blank? && ip.include?(ip_search)
-      return true if !host_search.blank? && host.include?(host_search)
-      return false
+      Client.is_site_match?(char_ip, char_host, ip, hostname)
     end
     
     def self.is_online?(char)
@@ -79,12 +69,12 @@ module AresMUSH
     def self.set_random_password(char)
       password = Login.generate_random_password
       char.change_password(password)
-      char.update(login_api_token: '')
-      char.update(login_api_token_expiry: Time.now - 86400*5)
-      char.update(login_failures: 0)      
+      char.update(login_failures: 0)
+      Login.expire_web_login(char)
       password
     end
     
+    # Creates a bell notification - does NOT emit any messages to online chars
     def self.notify(char, type, message, reference_id, data = "", notify_if_online = true)
       unless notify_if_online
         status = Website.activity_status(char)
