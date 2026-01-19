@@ -38,7 +38,7 @@ module AresMUSH
         #If this is horse juice, the target's horse must be KO'd 
         horse_down = self.target.horse_kod
         if horse_down == false
-          return t(fs3combat.target_horse_is_not_kod, :name => self.target.name)
+          return t('fs3combat.target_horse_is_not_kod', :name => self.target.name)
         end
         
         #If this is a serum with a lasting effect, the last serum must expire first
