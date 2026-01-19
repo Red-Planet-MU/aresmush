@@ -113,9 +113,11 @@ module AresMUSH
             passenger_rider.update(is_riding_with: nil)
             combatant.update(mount_type: nil)
             combatant.update(is_carrying: nil)
+            combatant.update(spook_counter: 0)
             FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_rider_with', :name => combatant.name, :damaged_by => damaged_by, :passenger => passenger_rider.name), nil, true
           else
             combatant.update(mount_type: nil)
+            combatant.update(spook_counter: 0)
             FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed_mounted', :name => combatant.name, :damaged_by => damaged_by), nil, true
           end
         else
