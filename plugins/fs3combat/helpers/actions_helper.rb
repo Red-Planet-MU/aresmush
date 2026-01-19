@@ -153,7 +153,7 @@ module AresMUSH
       if !combatant.is_npc?
         composure_score = FS3Skills.ability_rating(combatant.associated_model, composure)
         grit_score = FS3Skills.ability_rating(combatant.associated_model, "Grit")
-        if composure_score + grit_score - mod <= 2
+        if composure_score + grit_score + mod <= 2
           composure_mod_override = true
           case composure_score + grit_score
           when 1
@@ -186,7 +186,7 @@ module AresMUSH
           
       roll = combatant.roll_ability(composure, mod)
       
-      combatant.log "#{combatant.name} checking KO. override =#{composure_mod_override} roll=#{roll} composure=#{composure} damage=#{damage_mod} vehicle=#{vehicle_mod} pc=#{pc_mod} mod=#{ko_mod}"
+      combatant.log "#{combatant.name} checking KO. override=#{composure_mod_override} roll=#{roll} composure=#{composure} damage=#{damage_mod} vehicle=#{vehicle_mod} pc=#{pc_mod} mod=#{ko_mod}"
       
       roll
     end
