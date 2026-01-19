@@ -999,7 +999,11 @@ a:focus  {
 }
 
 /* ANSI Colors */
-.ansi-red-bg, .ansi-red-fg {
+.ansi-red-bg {
+  color: #D14F43;
+}
+
+.ansi-red-fg {
   color: #D14F43;
 }
 
