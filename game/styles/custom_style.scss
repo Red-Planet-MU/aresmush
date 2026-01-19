@@ -1024,12 +1024,12 @@ a:focus  {
 
 @media screen and (max-width: 700px) {
   h1 {
-    font-size: calc(max(7vw, 10px));
+    font-size: calc(clamp(1.5em, 8vw, 3em));
   }
 }
 
 @media screen and (max-width: 575px) {
   h1 {
-    font-size: calc(max(7vw, 10px));
+    font-size: calc(clamp(2em, 8vw, 3em));
   }
 }
