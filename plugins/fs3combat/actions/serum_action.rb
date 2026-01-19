@@ -91,6 +91,8 @@ module AresMUSH
         #Serums that have a lasting effect
         if duration > 0
           self.target.update(serum_duration_counter: duration)
+          #track Last used serum
+          self.target.update(last_serum: self.serum_name)
           #ride on the default FS3 mod, which a GM may have set 8/31 Note, I don't think this is true anymore, this looks like a new custom mod value
           if init_mod
             self.target.update(serum_init_mod: init_mod)
@@ -127,8 +129,6 @@ module AresMUSH
 
         #do not track NPC serum use
         if !combatant.is_npc?
-        #track Last used serum
-          self.target.update(last_serum: self.serum_name)
 
           Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
           combatant.associated_model.update(serums_used: combatant.associated_model.serums_used + 1)
