@@ -115,7 +115,7 @@ module AresMUSH
 
         if is_revive
           self.target.update(is_ko: false)
-          wound = FS3Combat.worst_treatable_wound(self.target)
+          wound = FS3Combat.worst_treatable_wound(self.target.associated_model)
           FS3Combat.heal(wound, 1)
           message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
