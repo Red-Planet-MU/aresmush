@@ -53,8 +53,8 @@ fs3combat:
     Bow:
       description: A piece of wood with a string connecting the ends. Silent, and less deadly, compared to firearms.
       skill: Archery
-      lethality: 0
-      penetration: 3
+      lethality: -5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
