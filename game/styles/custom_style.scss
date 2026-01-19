@@ -998,6 +998,11 @@ a:focus  {
 	border: 0;
 }
 
+/* ANSI Colors */
+.ansi-red-bg, .ansi-red-fg {
+  color: #D14F43;
+}
+
 /* Grid Flexibility */
 @media screen and (max-width: 1000px) {
 	.body-wrap
