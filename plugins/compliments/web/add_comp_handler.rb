@@ -3,8 +3,8 @@ module AresMUSH
     class AddCompHandler
       def handle(request)
         puts request.args
-        comp_msg = request.args[:comp_msg]
-        char_name_or_id = request.args[:char_id]
+        comp_msg = request.args['comp_msg']
+        char_name_or_id = request.args['char_id']
         char = Character.find_one_by_name(char_name_or_id)
         comper_id = request.auth[:id]
         Compliments.add_comp([char], comp_msg, Character[comper_id])
