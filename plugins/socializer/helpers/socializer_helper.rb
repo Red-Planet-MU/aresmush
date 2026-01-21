@@ -38,5 +38,10 @@ module AresMUSH
     def self.list_pals(enactor)
       enactor.pals.map { |p| { name: p.name, icon: Website.icon_for_char(p) }}
     end
+
+    def self.possible_pals 
+      Chargen.approved_chars.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }
+    end
+    
   end
 end

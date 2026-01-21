@@ -33,7 +33,7 @@ module AresMUSH
                     nil
                   end,
           pals: Socializer.list_pals(char),
-          
+          possible_pals: Socializer.possible_pals(),
         }
       end
     
