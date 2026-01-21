@@ -6,7 +6,7 @@ en:
     desc_for_list: "'s Serum Vials:"
     dont_have_serum: "You don't have any of that serum."
     given_serum: "You have given %{name} a %{serum_name} Serum."
-    received_serum: "%{name} has given you a %{serum_name} Serum."
+    received_serum: "%xg%% %{name} has given you a %{serum_name} Serum."
     added_serum: "You have added a %{serum_name} Serum to %{name}'s inventory."
     not_in_combat: "You can only use that type of serum in combat."
     no_healable_wounds: "That target has no wounds that can be treated."
