@@ -1,5 +1,5 @@
 module AresMUSH
-  module Socializer
+  module Serum
     class WebManagePatientsHandler
       def handle(request)
         enactor = request.enactor
