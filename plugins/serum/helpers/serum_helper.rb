@@ -166,8 +166,9 @@ module AresMUSH
         end
       end
 
-      def self.possible_serum_receivers(char)
-        Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }.reject {|element| element.to_s.start_with?('{:name=>"'char'"')}
+      def self.possible_serum_receivers(char_name)
+        char_to_exclude = '{:name=>"'+char_name+'"'
+        Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }.reject {|element| element.to_s.start_with?(char_to_exclude)}
       end
 
     end
