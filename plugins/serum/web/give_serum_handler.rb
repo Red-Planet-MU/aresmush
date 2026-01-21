@@ -24,7 +24,7 @@ module AresMUSH
           message = t('serum.received_serum', :name => enactor.name, :serum_name => serum_name)
           Login.emit_if_logged_in target, message
           Login.notify(target, :luck, message, nil)
-          
+          {}
         end
       end
     end
