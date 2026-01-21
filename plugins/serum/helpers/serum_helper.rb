@@ -165,6 +165,10 @@ module AresMUSH
           end
         end
       end
-  
+
+      def self.possible_serum_receivers()
+        Chargen.approved_chars.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }
+      end
+
     end
   end
