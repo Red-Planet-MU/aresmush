@@ -34,6 +34,8 @@ module AresMUSH
                   end,
           pals: Socializer.list_pals(char),
           possible_pals: Socializer.possible_pals(char.name),
+          patients: Serum.list_patients(char),
+          possible_pals: Serum.possible_patients(char.name),
         }
       end
     
