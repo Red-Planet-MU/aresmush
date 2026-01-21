@@ -13,8 +13,12 @@ module AresMUSH
         error = Website.check_login(request)
         return error if error
         
-
-        enactor.pals.clear
+        current_pals = enactor.pals.map { |p| p.name }
+        enactor.pals.each do |p|
+          if !pal_names.include?(p)
+            enactor.pals.delete p
+          end
+        end
         pal_names.each do |p|
           pal = Character.find_one_by_name(p.strip)
           if (pal)
