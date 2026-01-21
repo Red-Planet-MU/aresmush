@@ -36,6 +36,7 @@ module AresMUSH
           possible_pals: Socializer.possible_pals(char.name),
           patients: Serum.list_patients(char),
           possible_patients: Serum.possible_patients(char.name),
+          max_patients: FS3Combat.max_patients(char),
         }
       end
     
