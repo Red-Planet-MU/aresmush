@@ -6,7 +6,7 @@ module AresMUSH
           char = Character.find_one_by_name(char_name_or_id)
           serum_name = request.args['serum_type']
           web_target = request.args['target']
-          target = Character.named(web_target)
+          target = Character.named(web_target.to_a[0][1])
           enactor = request.enactor
           error = Website.check_login(request)
           return error if error
