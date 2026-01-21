@@ -26,7 +26,7 @@ module AresMUSH
           horse_temperament: char.horse_temperament,
           horse_desc: char.horse_desc,
           song_link: char.demographic("theme song link"),
-          possible_serum_receivers: Serum.possible_serum_receivers(),
+          possible_serum_receivers: Serum.possible_serum_receivers(char.name),
           viewer: if viewer
                     viewer.name
                   else 
