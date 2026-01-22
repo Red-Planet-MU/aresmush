@@ -149,6 +149,10 @@ module AresMUSH
       if (ability.specialties.include?(spec_name))
         return t('fs3skills.specialty_already_exists', :name => char.name)
       end
+
+      if ability.specialties
+        return t('fs3skills.specialty_one_per_ability', :name => skill_name)
+      end
     
       new_specs = ability.specialties
       new_specs << spec_name
