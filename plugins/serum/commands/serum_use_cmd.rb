@@ -65,8 +65,8 @@ module AresMUSH
           if enactor.room.scene
             Scenes.add_to_scene(enactor.room.scene, message)
           end
-          if target.room != char.room && message.to_s.include?(target.name)
-            Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
+          if self.target.room != enactor.room && message.to_s.include?(self.target.name)
+            Login.emit_ooc_if_logged_in(self.target, "<OOC>%xn In another grid location, " + message)
           end
           Serum.modify_serum(enactor, self.serum_name, -1)
           enactor.update(serums_used: enactor.serums_used + 1)
