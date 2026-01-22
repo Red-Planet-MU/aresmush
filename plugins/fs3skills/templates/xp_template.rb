@@ -11,6 +11,10 @@ module AresMUSH
       end
               
       def display(a)
+        "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
+      end
+
+      def display_with_specs(a)
         if a.specialties != []
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
         else
