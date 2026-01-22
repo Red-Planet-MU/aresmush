@@ -18,21 +18,21 @@ serum:
   Quickhand:
     desc: "Increases speed at the expense of caution."
     duration: 4
-    init_mod: +2
-    armor_mod: -3
+    init_mod: +3
+    armor_mod: -2
     combat_only: true
     display_name: "%x9%X11Quickhand Serum%xn"
   Hardy:
     desc: "Increases the toughness of one's skin. Freaky. Slows you down."
     duration: 4
     init_mod: -2
-    armor_mod: 3
+    armor_mod: 4
     combat_only: true
     display_name: "%x223%X56Hardy Serum%xn"
   Glass Cannon:
     desc: "A danger to yourself and others"
     duration: 4
-    lethality: 10
+    lethality: 15
     lethality_mod: 10
     combat_only: true
     display_name: "%x22%X166Glass Cannon Serum%xn"
