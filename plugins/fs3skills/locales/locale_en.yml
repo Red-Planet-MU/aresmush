@@ -154,7 +154,7 @@ en:
         specialty_learned: "You spend some time learning a specialty for %{name}."
         specialty_ready_to_acquire: "You can now take a specialty for %{name}. Use `specialty/add %{name}=<specialty>` and choose either of: %{spec_names}"
         specialty_already_ready_to_acquire: "You have already learned enough to take a specialty for %{name}. Use `specialty/add %{name}=<specialty>` and choose either of: %{spec_names}"
-        specialty_already_aquired: "You have already taken a specialty for %{name}."
+        specialty_already_acquired: "You have already taken a specialty for %{name}."
 
         skill_census_title: "Skill Scan - %{type} Abilities"
         skill_scan_title: "Skill Scan"
