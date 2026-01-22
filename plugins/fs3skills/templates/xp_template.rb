@@ -21,7 +21,7 @@ module AresMUSH
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
         else
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}
- #{left("Specialty", 20)} #{progress_spec(a)} #{detail_spec(a)}"
+ #{left("Specialty", 19)} #{progress_spec(a)} #{detail_spec(a)}"
         end
       end
       
