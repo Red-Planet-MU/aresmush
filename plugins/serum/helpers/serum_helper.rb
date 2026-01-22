@@ -127,6 +127,9 @@ module AresMUSH
           if char.room.scene
             Scenes.add_to_scene(char.room.scene, message)
           end
+          if target.room != char.room && message.to_s.include?(target.name)
+            Login.emit_ooc_if_logged_in target, "<OOC>%xn In another grid location, " + message
+          end
         Serum.modify_serum(char, serum_name, -1)
       end
 
