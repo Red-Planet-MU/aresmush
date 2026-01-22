@@ -15,7 +15,7 @@ module AresMUSH
       end
 
       def display_with_specs(a)
-        if !FS3Skills.action_specialties(a) 
+        if !FS3Skills.action_specialties(a.name) 
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
         elsif a.specialties != []
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
