@@ -675,7 +675,55 @@ body {
 
 /* Scene Logs */
 .scene-text {
-  background: #732B1A;
+  background: $custom-maroon;
+}
+
+.scene-journal {
+  background: $custom-sienna;
+}
+
+.scene-letter {
+  background: $wysteria;
+}
+
+.scene-event {
+	background-color: $saturated-blue;
+}
+
+.scene-social {
+	background-color: $olive-green;
+}
+
+.scene-vignette {
+	background-color: $blue-gray;
+}
+
+.scene-privacy-open {
+	background-color: $dark-green;
+}
+
+.scene-privacy-private {
+	background-color: $unsaturated-blue;
+}
+
+.scene-privacy-limited,
+.scene-privacy-openstar {
+  background-color: $muted-magenta;
+}
+
+.scene-pacing-traditional {
+	background-color: $mt-dew-green;
+  color: white;
+}
+
+.scene-pacing-asynchronous {
+	background-color: $custom-brown;
+  color: white;
+}
+
+.scene-pacing-distracted {
+	background-color: $muted-magenta;
+  color: white;
 }
 
 .log-wrap {
