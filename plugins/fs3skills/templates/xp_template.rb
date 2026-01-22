@@ -19,13 +19,18 @@ module AresMUSH
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
         else
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}
-           #{left("Specialty", 20)} #{progress_spec(a)} #{detail(a)} #{days_left(a)}"
+ #{left("Specialty", 20)} #{progress_spec(a)} #{detail_spec(a)}"
         end
       end
       
       def detail(a)
         can_raise = !FS3Skills.check_can_learn(@char, a.name, a.rating)
         status = can_raise ? "(#{a.xp}/#{a.xp_needed})" : "(---)"
+        status.ljust(16)
+      end
+
+      def detail_spec(a)
+        status = "(#{a.spec_xp}/8)"
         status.ljust(16)
       end
       
