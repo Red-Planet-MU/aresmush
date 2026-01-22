@@ -43,12 +43,12 @@ module AresMUSH
           ability.update(spec_xp: ability.spec_xp + 1)
           client.emit_success t('fs3skills.specialty_learned', :name => self.name)
           FS3Skills.modify_xp(enactor, -1) 
-        elsif ability.spec_xp = 7
+        elsif ability.spec_xp == 7
           ability.update(spec_last_learned: Time.now)
           ability.update(spec_xp: ability.spec_xp + 1)
           client.emit_success t('fs3skills.specialty_ready_to_acquire', :name => self.name, :spec_names => specialties.join(", "))
           FS3Skills.modify_xp(enactor, -1) 
-        elsif ability.spec_xp = 8 && ability.specialties == []
+        elsif ability.spec_xp == 8 && ability.specialties == []
           client.emit_failure t('fs3skills.specialty_already_ready_to_acquire', :name => self.name, :spec_names => specialties.join(", "))
         else 
           client.emit_failure t('fs3skills.specialty_already_acquired', :name => self.name)
