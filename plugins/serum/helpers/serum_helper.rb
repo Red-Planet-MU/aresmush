@@ -90,6 +90,7 @@ module AresMUSH
         end
       end
 
+      #apparently not in use lol.
       def self.non_combat_healing_serum(char, target, serum_name)
         heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
@@ -127,7 +128,7 @@ module AresMUSH
         if char.room.scene
           Scenes.add_to_scene(char.room.scene, message)
         end
-        if target.room != char.room
+        if target.room != char.room && message.to_s.include?(target.name)
           Global.logger.debug "target.room: #{target.room} char.room: #{char.room}"
           Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
         end
