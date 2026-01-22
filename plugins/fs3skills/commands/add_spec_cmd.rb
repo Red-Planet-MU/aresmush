@@ -42,7 +42,7 @@ module AresMUSH
         ability = FS3Skills.find_ability(enactor, self.name)
         return nil if enactor_name == self.target
         return nil if FS3Skills.can_manage_abilities?(enactor)
-        return nil if ability.spec_xp == 8 && !ability.specialties
+        return nil if ability.spec_xp == 8 && ability.specialties == []
         return t('fs3skills.specialty_one_per_ability', :name => self.name) if ability.specialties
         return t('dispatcher.not_allowed')
       end    
