@@ -7,6 +7,9 @@ module AresMUSH
     attribute :name
     attribute :rating, :type => DataType::Integer, :default => 0
     attribute :specialties, :type => DataType::Array, :default => []
+    attribute :spec_last_learned, :type => Ohm::DataTypes::DataType::Time, :default => Time.now
+    attribute :spec_xp, :type => Ohm::DataTypes::DataType::Integer, :default => 0
+
     index :name
     
     def print_rating

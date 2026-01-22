@@ -34,12 +34,16 @@ module AresMUSH
       
       def check_chargen_locked
         return nil if FS3Skills.can_manage_abilities?(enactor)
+        return nil if FS3Skills.find_ability(enactor, self.name).spec_xp == 8
         Chargen.check_chargen_locked(enactor)
       end
       
       def check_can_set
+        ability = FS3Skills.find_ability(enactor, self.name)
         return nil if enactor_name == self.target
         return nil if FS3Skills.can_manage_abilities?(enactor)
+        return nil if ability.spec_xp == 8
+        return t('fs3skills.specialty_one_per_ability', :name => self.name) if ability.specialties
         return t('dispatcher.not_allowed')
       end    
       

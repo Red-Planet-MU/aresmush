@@ -42,6 +42,7 @@ en:
         specialty_not_found: "%{name} doesn't have that specialty."
         specialty_removed: "Specialty %{name} removed."
         specialty_already_exists: "%{name} already has that specialty."
+        specialty_one_per_ability: "%{name} already has a specialty for that ability."
         
         # Reset
         reset_complete: "Your abilities have been reset to default values based on your groups.  Note that nothing comes for free, so even default items cost character points."
@@ -150,7 +151,10 @@ en:
         xp_undone: "You undo %{name}'s XP spend on %{skill} and refund them 1XP."
         max_ability_points_reached: "You have reached the maximum number of points in that kind of ability."
         cant_learn_advantages_xp: "You can't raise advantages directly with XP.  Submit a request to staff."
-        
+        specialty_learned: "You spend some time learning a specialty for %{name}."
+        specialty_ready_to_acquire: "You can now take a specialty for %{name}. Use `specialty/add %{name}=<specialty>` and choose either of: %{spec_names}"
+        specialty_already_ready_to_acquire: "You have already learned enough to take a specialty for %{name}. Use `specialty/add %{name}=<specialty>` and choose either of: %{spec_names}"
+
         skill_census_title: "Skill Scan - %{type} Abilities"
         skill_scan_title: "Skill Scan"
         skill_scan_subtitle: "Characters with ability %{skill} (%{type}) at higher levels:"

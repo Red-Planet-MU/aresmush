@@ -25,7 +25,11 @@ module AresMUSH
           return RemoveSpecialtyCmd
         end
       when "learn"
-        return LearnAbilityCmd
+        if (cmd.switch_is?("specialty"))
+          return LearnSpecialtyCmd
+        else
+          return LearnAbilityCmd
+        end
       when "luck"
         case cmd.switch
         when "award"
