@@ -97,6 +97,8 @@ module AresMUSH
         return SkillScanRequestHandler
       when "learnAbility"
         return LearnAbilityRequestHandler
+      when "learnSpecAbility"
+        return LearnSpecAbilityRequestHandler
       when"spendLuck"
         return SpendLuckRequestHandler
       end
