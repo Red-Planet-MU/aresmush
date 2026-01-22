@@ -16,6 +16,7 @@ module AresMUSH
         else
           "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}
            #{left("Specialty", 20)} #{progress_spec(a)} #{detail(a)} #{days_left(a)}"
+        end
       end
       
       def detail(a)
