@@ -34,6 +34,12 @@ module AresMUSH
           return t('fs3skills.invalid_specialty_skill')
         end
       end
+
+      def check_ability_not_already_specialized
+        if FS3Skills.find_ability(enactor, self.name).specialties != []
+          return t('fs3skills.specialty_already_acquired', :name => self.name)
+        end
+      end
     
       def handle
         ability = FS3Skills.find_ability(enactor, self.name)
