@@ -124,12 +124,12 @@ module AresMUSH
           message = t('serum.used_v_out_of_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
         char.room.emit message
-          if char.room.scene
-            Scenes.add_to_scene(char.room.scene, message)
-          end
-          if target.room != char.room && message.to_s.include?(target.name)
-            Login.emit_ooc_if_logged_in target, "<OOC>%xn In another grid location, " + message
-          end
+        if char.room.scene
+          Scenes.add_to_scene(char.room.scene, message)
+        end
+        if target.room != char.room
+          Login.emit_ooc_if_logged_in target, "<OOC>%xn In another grid location, " + message
+        end
         Serum.modify_serum(char, serum_name, -1)
       end
 
