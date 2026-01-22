@@ -150,7 +150,7 @@ module AresMUSH
         return t('fs3skills.specialty_already_exists', :name => char.name)
       end
 
-      if ability.specialties
+      if ability.specialties != []
         return t('fs3skills.specialty_one_per_ability', :name => skill_name)
       end
     
