@@ -2,6 +2,7 @@ module AresMUSH
   module FS3Skills
     class FinishSpecAbilityRequestHandler
       def handle(request)
+        Global.logger.debug "Made it to handler"
         ability_arg = request.args['ability']
         spec_arg = request.args['spec']
         enactor = request.enactor
