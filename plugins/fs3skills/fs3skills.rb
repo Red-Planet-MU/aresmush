@@ -99,6 +99,8 @@ module AresMUSH
         return LearnAbilityRequestHandler
       when "learnSpecAbility"
         return LearnSpecAbilityRequestHandler
+      when "webFinishSpecAbility"
+        return FinishSpecAbilityRequestHandler
       when"spendLuck"
         return SpendLuckRequestHandler
       end
