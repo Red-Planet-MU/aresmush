@@ -19,13 +19,9 @@ module AresMUSH
         
         ability = FS3Skills.find_ability(char, ability_arg)
         specialties = FS3Skills.action_specialties(ability_arg)
-        ClassTargetFinder.with_a_character(char.name, client, enactor.name) do |model|        
-          error = FS3Skills.add_specialty(model, ability.name, spec_arg)
-          if (error)
-            client.emit_failure error
-          else
-            client.emit_success t('fs3skills.specialty_added', :name => self.specialty)
-          end
+       
+        FS3Skills.add_specialty(char, ability.name, spec_arg)
+        
         end
         {
         }
