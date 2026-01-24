@@ -8,9 +8,9 @@ achievements:
   types:
     community: fa-users
     portal: fa-globe
-    fs3: fa-gamepad
+    fs3: fa-dice-d20
     story: fa-book
-    red_planet: fa-star
+    red_planet: fa-hat-cowboy
     comp: fa-heart
-    serums: fa-medkit
+    serums: fa-syringe
     combat: fa-crosshairs
