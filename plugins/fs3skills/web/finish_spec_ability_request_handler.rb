@@ -22,7 +22,7 @@ module AresMUSH
        
         FS3Skills.add_specialty(char, ability.name, spec_arg)
         
-        end
+        
         {
         }
       end
