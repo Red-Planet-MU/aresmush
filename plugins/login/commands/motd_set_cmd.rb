@@ -3,7 +3,7 @@ module AresMUSH
     class MotdSetCmd
       include CommandHandler
 
-      attr_accessor :notice
+      attr_accessor :notice, :subject
       
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
