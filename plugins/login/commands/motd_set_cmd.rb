@@ -6,7 +6,9 @@ module AresMUSH
       attr_accessor :notice
       
       def parse_args
-        self.notice = cmd.args
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+        self.subject = args.arg1
+        self.notice = args.arg2
       end
       
       def check_can_set
@@ -20,6 +22,10 @@ module AresMUSH
         if (!self.notice.blank?)
           Manage.announce t('login.motd_announce', :enactor => enactor_name, :message => self.notice)
         end
+        Forum.system_post(
+          "Message of the Day Archive", 
+          self.subject, 
+          self.notice)
       end
     end
   end
