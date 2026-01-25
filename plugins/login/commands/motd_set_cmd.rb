@@ -25,7 +25,7 @@ module AresMUSH
         Forum.system_post(
           "Message of the Day Archive", 
           self.subject, 
-          self.notice)
+          Website.format_markdown_for_html(self.notice))
       end
     end
   end
