@@ -156,10 +156,14 @@ module AresMUSH
       #Serums
       serum_mod = combatant.serum_init_mod
       #/Serums
-      roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod + serum_mod) #Serums
+      if serum_mod 
+        roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod) + serum_mod #Serums
+      else
+        roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod) #Serums
+      end
 
-      combatant.log "Initiative roll for #{combatant.name} ability=#{ability} action=#{action_mod} weapon=#{weapon_mod} luck=#{luck_mod} gm=#{gm_mod} serum=#{serum_mod} roll=#{roll}"
- 
+      combatant.log "Initiative roll for #{combatant.name} ability=#{ability} action=#{action_mod} weapon=#{weapon_mod} luck=#{luck_mod} gm=#{gm_mod} roll=#{roll} serum=#{serum_mod}"
+      
       roll
     end
     
