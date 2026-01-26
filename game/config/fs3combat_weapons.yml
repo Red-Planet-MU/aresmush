@@ -118,8 +118,6 @@ fs3combat:
       init_mod: -1
       dual_wield: true
       firearm_type: Pistols
-      allowed_specials:
-      - Ap
     Rifle:
       description: A long rifle. Bolt action.
       skill: Firearms
@@ -136,7 +134,6 @@ fs3combat:
       firearm_type: Rifles
       mounted_accuracy: -2
       allowed_specials:
-      - Ap
       - Scope
     Repeater:
       description: A lever-action long gun that can shoot more rapidly than a rifle but with less power and accuracy.
@@ -153,8 +150,6 @@ fs3combat:
       init_mod: 0
       mounted_accuracy: -1
       firearm_type: Rifles
-      allowed_specials:
-      - Ap
     Energy Rifle:
       description: Restricted, NILE-issue energy-based long gun equipped with a self-destruct mechanism and palm reader.
       skill: Firearms
