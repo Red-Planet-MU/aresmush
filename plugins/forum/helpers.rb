@@ -334,6 +334,7 @@ module AresMUSH
         category = b
         first_unread = b.first_unread(enactor)
         break if first_unread
+      return first_unread
       end
      end
   end
