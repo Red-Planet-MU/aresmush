@@ -62,7 +62,6 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      allowed_specials:
     Snare:
       description: A rudimentary mechanism set in place to entangle something.
       skill: Trapping
