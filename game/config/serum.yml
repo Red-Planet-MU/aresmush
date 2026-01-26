@@ -18,7 +18,7 @@ serum:
   Quickhand:
     desc: "Increases speed at the expense of caution."
     duration: 4
-    init_mod: +3
+    init_mod: +4
     armor_mod: -2
     combat_only: true
     display_name: "%x9%X11Quickhand Serum%xn"
