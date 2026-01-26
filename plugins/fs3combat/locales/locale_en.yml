@@ -183,6 +183,8 @@ en:
         weapon_title_damage_type: "Damage Type:"
         weapon_title_accuracy: "Accuracy Mod:"
         weapon_title_mounted_accuracy: "Mounted Accuracy Mod:"
+        weapon_title_throws: "Throws:"
+        weapon_title_firearm_type: "Firearm Type:"
         weapon_title_has_shrapnel: "Has Shrapnel:" 
         weapon_title_reload_turns: "Reload Time:"
         weapon_title_allowed_specials: "Allowed Specials:"
