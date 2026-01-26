@@ -92,8 +92,6 @@ chargen:
       help: demographics
     groups:
       help: groups
-    ranks:
-      help: ranks
     abilities:
       help: skills
     background:
