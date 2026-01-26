@@ -62,7 +62,7 @@ module AresMUSH
           allow_web_registration: Login.allow_web_registration?,
           alts: alt_data,
           editor: (enactor ? enactor.website_editor : nil) || "Classic",
-          
+          has_unread: Forum.has_unread_posts(enactor),
         }
       end
     end
