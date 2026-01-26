@@ -326,17 +326,6 @@ module AresMUSH
        topic.update(bbs_board: category)
        Forum.reply(category, topic, author, message)
      end
-
-     def self.has_unread_posts(enactor)
-      first_unread = nil
-      category = nil
-      BbsBoard.all_sorted.each do |b|
-        category = b
-        first_unread = b.first_unread(enactor)
-        break if first_unread
-      return first_unread
-      end
-     end
   end
 end
   
