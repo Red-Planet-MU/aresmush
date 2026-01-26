@@ -56,9 +56,10 @@ module AresMUSH
             horse_name = combatant.associated_model.demographic("horse name")
             combatant.update(mount_type: self.mount)
             FS3Combat.emit_to_combat combat, t('fs3combat.mounted_horse', :name => combatant.name, :mount => self.mount, :horse_name => horse_name)
+          else
+            combatant.update(mount_type: self.mount)
+            FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => self.mount)
           end
-          combatant.update(mount_type: self.mount)
-          FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => self.mount)
         end
       end
     end
