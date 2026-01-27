@@ -537,6 +537,10 @@ button {
   font-weight: unset;
 }
 
+.nav-tabs .nav-link.active:hover {
+  font-weight: bold;
+}
+
 .toastui-editor-defaultUI-toolbar button {
   min-width: unset;
 }
