@@ -1,5 +1,8 @@
 /* Put any custom styles here.  They will override the default styles. */
 
+a {
+  font-weight: bold; }
+
 /* Site Header Formatting */
 
 .header-wrap {
@@ -248,7 +251,7 @@
 
 .toc a {
   color: #3c3932;
-  font-weight: normal;
+  font-weight: unset;
   }
 
 .toc a:hover {
@@ -476,8 +479,7 @@
 }
 
 /* General HTML Elements */ 
-a {
-  font-weight: bold; }
+
 
 .body-wrap {
 	padding: 0 1rem;
