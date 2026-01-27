@@ -16,6 +16,7 @@ module AresMUSH
   
       def check_errors
         return "You do not have permission to use that command." if !enactor.has_permission?("manage_serums")
+        return t('serum.invalid_serum') if !self.serum_type
       end
   
       def handle
