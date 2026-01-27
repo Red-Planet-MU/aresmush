@@ -547,7 +547,7 @@ button {
 .nav-tabs .nav-link:hover {
   font-weight: unset;
   background-color: #292d31;
-  color: #ebebeb;
+  color: $secondary-color;
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:hover {
