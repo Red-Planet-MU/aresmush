@@ -726,6 +726,10 @@ body {
   color: #660d0e;
 }
 
+.sidebar-box-right a:hover {
+  color: $border-color;
+}
+
 .lfrp-row {
   display: flex;
   flex-direction: row;
