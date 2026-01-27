@@ -251,7 +251,7 @@ a {
 
 .toc a {
   color: #3c3932;
-  font-weight: unset;
+  font-weight: 500;
   }
 
 .toc a:hover {
@@ -622,6 +622,9 @@ body {
 
 .left-body {
   z-index: 1; }
+
+.left-body p a:hover {
+  color: $border-color;}
 
 /* Sidebar */
 .sidebar-heading h2 {
