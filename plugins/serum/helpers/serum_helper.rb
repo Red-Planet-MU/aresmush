@@ -176,6 +176,10 @@ module AresMUSH
         Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }.reject {|element| element.to_s.start_with?(char_to_exclude)}
       end
 
+      def self.possible_serum_targets()
+        Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }.reject {|element| element.to_s.start_with?(char_to_exclude)}
+      end
+
       def self.list_patients(enactor)
         enactor.patients.map { |p| { name: p.name, icon: Website.icon_for_char(p) }}
       end
