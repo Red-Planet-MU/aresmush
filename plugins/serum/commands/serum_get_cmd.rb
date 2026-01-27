@@ -11,6 +11,7 @@ module AresMUSH
   
         def check_errors
           return t('fs3skills.not_enough_points') if enactor.luck < 1
+          return t('serum.invalid_serum') if !Serum.find_serums_type(self.serum_name)
         end
   
         def handle
