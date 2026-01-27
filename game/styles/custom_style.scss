@@ -517,7 +517,9 @@ button {
   text-shadow: none;
   background-color: #292d31;
   color: #ebebeb !important;
-  text-shadow: 1px 1px 1px #191919; }
+  text-shadow: 1px 1px 1px #191919; 
+  font-weight: unset;
+}
 
 .btn-collapse:hover,
 .btn-default:hover,
@@ -527,7 +529,9 @@ button {
   background-color: #734034;
   border-color: #8C3420;
   color: #ebebeb !important;
-  text-shadow: 1px 1px 1px #191919; }
+  text-shadow: 1px 1px 1px #191919; 
+  font-weight: unset;
+}
 
 .toastui-editor-defaultUI-toolbar button {
   min-width: unset;
