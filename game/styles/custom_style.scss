@@ -503,6 +503,32 @@ button {
   color: #ebebeb; 
 }
 
+.btn-link:hover, 
+.btn-link:focus, 
+.btn-link:active {
+  font-weight: unset;
+}
+
+.btn-secondary:hover {
+  text-shadow: none;
+  background-color: #292d31;
+  color: #ebebeb !important;
+  padding-top: 8px;
+  letter-spacing: .03em;
+  text-shadow: 1px 1px 1px #191919; }
+
+.btn-collapse:hover,
+.btn-default:hover,
+.btn-primary:hover,
+.btn-danger:hover {
+  text-shadow: none;
+  background-color: #734034;
+  border-color: #8C3420;
+  color: #ebebeb !important;
+  padding-top: 8px;
+  letter-spacing: .03em;
+  text-shadow: 1px 1px 1px #191919; }
+
 .toastui-editor-defaultUI-toolbar button {
   min-width: unset;
 }
