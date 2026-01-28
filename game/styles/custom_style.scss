@@ -1203,6 +1203,20 @@ a:focus  {
   animation: fa-spin 2s infinite linear;
 }
 
+.fa-shake-hover:hover {
+  -webkit-animation-name: fa-shake-hover;
+          animation-name: fa-shake-hover;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear); }
+
 .change-icon > .fa + .fa,
 .change-icon:hover > .fa {
   display: none;
