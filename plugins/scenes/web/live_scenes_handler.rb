@@ -29,6 +29,7 @@ module AresMUSH
           private_scenes = Scene.all.select { |s| !s.completed && (s.is_private?)}
             .sort { |s1, s2| sort_scene(s1, s2, enactor) }
             .map { |s| scene_data(s, enactor) }
+        end
            
         if (enactor)        
           unshared = enactor.unshared_scenes.sort_by { |s| s.id.to_i }.reverse.map { |s| {
