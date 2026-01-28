@@ -1204,10 +1204,10 @@ a:focus  {
 }
 
 .fa-shake-hover:hover {
-  -webkit-animation: fa-shake 2s .5 linear;
-  -moz-animation: fa-shake 2s .5 linear;
-  -o-animation: fa-shake 2s .5 linear;
-  animation: fa-shake 2s .5 linear;
+  -webkit-animation: fa-shake 2.5s .5 linear;
+  -moz-animation: fa-shake 2.5s .5 linear;
+  -o-animation: fa-shake 2.5s .5 linear;
+  animation: fa-shake 2.5s .5 linear;
  }
 
 .fa-bounce-hover:hover {
@@ -1232,6 +1232,7 @@ a:focus  {
   padding-bottom: .3em;
   margin-right: 3px;
   border-radius: .3em;
+  transition: background-color 1s;
 }
 
 .badge-navbar-bgs:hover {
