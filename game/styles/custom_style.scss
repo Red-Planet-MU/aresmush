@@ -1210,6 +1210,13 @@ a:focus  {
   animation: fa-shake 2s .5 linear;
  }
 
+.fa-bounce-hover:hover {
+  -webkit-animation: fa-bounce 2s .5 linear;
+  -moz-animation: fa-bounce 2s .5 linear;
+  -o-animation: fa-bounce 2s .5 linear;
+  animation: fa-bounce 2s .5 linear;
+ }
+
 .change-icon > .fa + .fa,
 .change-icon:hover > .fa {
   display: none;
