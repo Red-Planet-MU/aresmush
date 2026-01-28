@@ -23,13 +23,12 @@ module AresMUSH
           my_scenes = nil
 
           open_scenes = Scene.all.select { |s| !s.completed && !s.is_private?}
-            .sort { |s1, s2| sort_scene(s1, s2) }
-            .map { |s| scene_data(s) }
+            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
+            .map { |s| scene_data(s, enactor) }
 
           private_scenes = Scene.all.select { |s| !s.completed && (s.is_private?)}
-            .sort { |s1, s2| sort_scene(s1, s2) }
-            .map { |s| scene_data(s) }
-        end
+            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
+            .map { |s| scene_data(s, enactor) }
            
         if (enactor)        
           unshared = enactor.unshared_scenes.sort_by { |s| s.id.to_i }.reverse.map { |s| {
