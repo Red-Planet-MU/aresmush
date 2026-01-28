@@ -7,17 +7,29 @@ module AresMUSH
         error = Website.check_login(request, true)
         return error if error
         
-        my_scenes = Scene.all.select { |s| !s.completed && s.participant_names.include?(enactor.name)}
-           .sort { |s1, s2| sort_scene(s1, s2, enactor) }
-           .map { |s| scene_data(s, enactor) }
-        
-        open_scenes = Scene.all.select { |s| !s.completed && !s.is_private? && !s.participant_names.include?(enactor.name)}
-           .sort { |s1, s2| sort_scene(s1, s2, enactor) }
-           .map { |s| scene_data(s, enactor) }
+        if enactor
+          my_scenes = Scene.all.select { |s| !s.completed && s.participant_names.include?(enactor.name)}
+            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
+            .map { |s| scene_data(s, enactor) }
+          
+          open_scenes = Scene.all.select { |s| !s.completed && !s.is_private? && !s.participant_names.include?(enactor.name)}
+            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
+            .map { |s| scene_data(s, enactor) }
 
-        private_scenes = Scene.all.select { |s| !s.completed && (s.is_private? && !s.participant_names.include?(enactor.name))}
-           .sort { |s1, s2| sort_scene(s1, s2, enactor) }
-           .map { |s| scene_data(s, enactor) }
+          private_scenes = Scene.all.select { |s| !s.completed && (s.is_private? && !s.participant_names.include?(enactor.name))}
+            .sort { |s1, s2| sort_scene(s1, s2, enactor) }
+            .map { |s| scene_data(s, enactor) }
+        else
+          my_scenes = nil
+
+          open_scenes = Scene.all.select { |s| !s.completed && !s.is_private?}
+            .sort { |s1, s2| sort_scene(s1, s2) }
+            .map { |s| scene_data(s) }
+
+          private_scenes = Scene.all.select { |s| !s.completed && (s.is_private?)}
+            .sort { |s1, s2| sort_scene(s1, s2) }
+            .map { |s| scene_data(s) }
+        end
            
         if (enactor)        
           unshared = enactor.unshared_scenes.sort_by { |s| s.id.to_i }.reverse.map { |s| {
