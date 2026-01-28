@@ -1226,9 +1226,20 @@ a:focus  {
 }
 
 .badge-navbar-bgs {
-  background-color: #d8b091;
-  box-shadow: none;
-  padding-right: 1px;
-  margin-right: 5px;
-  margin-bottom: 1px;
+  padding-left: .5em;
+  padding-right: .3em;
+  padding-top: .4em;
+  padding-bottom: .3em;
+  margin-right: 3px;
+  border-radius: .3em;
+}
+
+.badge-navbar-bgs:hover {
+  background-color: rgba(216, 179, 151, 0.8)
+  padding-left: .5em;
+  padding-right: .3em;
+  padding-top: .4em;
+  padding-bottom: .3em;
+  margin-right: 3px;
+  border-radius: .3em;
 }
