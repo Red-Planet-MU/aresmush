@@ -1226,21 +1226,21 @@ a:focus  {
 }
 
 .badge-navbar-bgs {
-  padding-left: .5em;
-  padding-right: .3em;
-  padding-top: .4em;
-  padding-bottom: .3em;
+  padding-left: .42em;
+  padding-right: .22em;
+  padding-top: .32em;
+  padding-bottom: .22em;
   margin-right: 3px;
   border-radius: .3em;
-  transition: background-color 1s;
+  transition: background-color .5s;
 }
 
 .badge-navbar-bgs:hover {
   background-color: rgba(216, 179, 151, 0.8);
-  padding-left: .5em;
-  padding-right: .3em;
-  padding-top: .4em;
-  padding-bottom: .3em;
+  padding-left: .42em;
+  padding-right: .22em;
+  padding-top: .32em;
+  padding-bottom: .22em;
   margin-right: 3px;
   border-radius: .3em;
 }
