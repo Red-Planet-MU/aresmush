@@ -4,10 +4,10 @@ module AresMUSH
             
       def prepare
         return t('horse.not_mounted') if !self.combatant.mount_type
-        if self.combatant.is_riding_with.spook_counter
+        if self.combatant.is_riding_with
           riding_with_spooked = self.combatant.is_riding_with.spook_counter
           return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0 && !riding_with_spooked
-        end 
+        end
         return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0
         return nil
       end
