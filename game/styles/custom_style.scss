@@ -1119,6 +1119,10 @@ a:focus  {
   cursor: pointer;
 }
 
+.markdown-control-toggle:hover {
+  background-color: #5d6164;
+}
+
 .play-screen {
 	display: grid;
 	grid-template-columns: 350px auto;
