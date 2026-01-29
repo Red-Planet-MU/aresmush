@@ -7,6 +7,7 @@ module AresMUSH
         dice = request.args['dice']
         faces = request.args['faces']
         private_dice = request.args['private_dice']
+        Global.logger.debug "dice: #{dice} faces: #{faces} private: #{private_dice}"
         
         if (!scene)
           return { error: t('webportal.not_found') }
