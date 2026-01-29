@@ -21,11 +21,13 @@ module AresMUSH
       end
       
       def resolve
-        riding_with_spooked = self.combatant.is_riding_with.spook_counter
-        if riding_with_spooked
-          main_rider = self.combatant.is_riding_with
-          main_rider.update(spook_counter: 0)
-          main_rider.update(just_calmed: true)
+        if self.combatant.is_riding_with 
+          riding_with_spooked = self.combatant.is_riding_with.spook_counter
+          if riding_with_spooked
+            main_rider = self.combatant.is_riding_with
+            main_rider.update(spook_counter: 0)
+            main_rider.update(just_calmed: true)
+          end
         end
         self.combatant.update(spook_counter: 0)
         self.combatant.update(just_calmed: true)
