@@ -2,5 +2,7 @@
 en:
   fortune:
     told_fortune: "%{name} cracks open a container of Fortune FizzPop which reads: %r'%xc%{fortune_told}%xn'"
+    got_book: "%{name} cranks the lever on the Biblio-Mat and a book drops into the slot: %r'%xc%{book_got}%xn'"
     no_machine: "There is no Fortune FizzPop machine in this room."
     cooldown_on: "You've had enough, you freak. Try again later."
+    no_book_machine: "There is no Biblio-Mat machine in this room."
