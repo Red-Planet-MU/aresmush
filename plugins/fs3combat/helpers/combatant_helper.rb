@@ -218,7 +218,7 @@ module AresMUSH
     
     def self.update_combatant(combat, combatant, enactor, team, stance, 
       weapon, selected_weapon_specials, armor, selected_armor_specials, npc_level, action, action_args,
-      vehicle_name, passenger_type)
+      vehicle_name, passenger_type, mounted, riding_with)
       
       if (team != combatant.team)
         combatant.update(team: team)
@@ -299,6 +299,62 @@ module AresMUSH
           end
           FS3Combat.join_vehicle(combat, combatant, vehicle, passenger_type.titlecase) 
         end
+      end
+
+      if mounted == true && !combatant.mount_type
+        #do mount action
+        if combatant.thrown_from_spooking > 0
+          return t('fs3combat.horse_is_spooked')
+        end
+        if combatant.horse_kod == true
+          return t('fs3combat.horse_is_kod')
+        end
+        if combatant.is_riding_with 
+          return t('fs3combat.cant_be_riding_and_mount')
+        end
+
+        if !combatant.is_npc?
+          horse_name = combatant.associated_model.demographic("horse name")
+          combatant.update(mount_type: "Horse")
+          FS3Combat.emit_to_combat combat, t('fs3combat.mounted_horse', :name => combatant.name, :mount => "Horse", :horse_name => horse_name), FS3Combat.npcmaster_text(combatant.name, enactor)
+        else
+          combatant.update(mount_type: "Horse")
+          FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => "Horse"), FS3Combat.npcmaster_text(combatant.name, enactor)
+        end
+      
+      elsif mounted == false && combatant.mount_type
+        #do dismount action; while code is_riding_with to also mean mount_type will not be nill
+        #the web will only interpret the mounted checkbox as riding THEIR OWN horse.
+        combatant.update(mount_type: nil)
+        FS3Combat.emit_to_combat combat, t('fs3combat.dismounted', :name => combatant.name), FS3Combat.npcmaster_text(combatant.name, enactor)
+      end
+
+      if riding_with && !combatant.is_riding_with
+        #do ride with action
+        if combatant.mount_type
+          return t('fs3combat.cant_be_mounted_and_ride')
+        end
+        FS3Combat.with_a_combatant(riding_with, client, enactor) do |combat2, combatant2|
+
+            if !combatant2.mount_type 
+              return t('fs3combat.not_mounted_to_ride')
+            end
+
+            if combatant2.horse_kod == true
+              return t('fs3combat.their_horse_is_kod')
+            end
+
+            combatant.update(mount_type: combatant2.mount_type)
+            combatant.update(is_riding_with: combatant2)
+            combatant2.update(is_carrying: combatant)
+            FS3Combat.emit_to_combat combat, t('fs3combat.riding', :name => combatant.name, :riding_with_name => combatant2.name), FS3Combat.npcmaster_text(combatant.name, enactor)
+          end
+      elsif !riding_with && combatant.is_riding_with 
+        carrier = combatant.is_riding_with
+        combatant.update(mount_type: nil)
+        combatant.update(is_riding_with: nil)
+        carrier.update(is_carrying: nil)
+        FS3Combat.emit_to_combat combat, t('fs3combat.dismounted', :name => combatant.name), FS3Combat.npcmaster_text(combatant.name, enactor)
       end
       
       return nil

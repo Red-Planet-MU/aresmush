@@ -245,6 +245,7 @@ en:
         not_mounted_to_ride: "That combatant is not mounted."
         their_horse_is_kod: "That combatant's horse is currently incapacitated."
         cant_be_mounted_and_ride: "You cannot ride another person's horse while mounted."
+        cant_be_riding_and_mount: "You cannot mount your horse while riding someone else's."
         dismounted_from_ride: "%{name} has dismounted %{ride_giver}'s horse."
         horse_is_spooked: "Your horse is still too wound up to ride."
             
