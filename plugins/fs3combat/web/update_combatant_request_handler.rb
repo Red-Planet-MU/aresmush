@@ -44,7 +44,7 @@ module AresMUSH
         npc_level = request.args['npc_skill']
         vehicle = request.args['vehicle'] || ''
         mounted = request.args['mounted']
-        riding_with = request.args['riding_with'] || ''
+        riding_with = request.args['riding_with'] || nil
         passenger_type = request.args['passenger_type'] || 'none'
         
         error = FS3Combat.update_combatant(combat, combatant, enactor, team, stance, weapon, selected_weapon_specials, armor, selected_armor_specials, npc_level, action, action_args, vehicle, passenger_type, mounted, riding_with)
