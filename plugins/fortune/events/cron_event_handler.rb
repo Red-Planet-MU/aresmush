@@ -11,7 +11,7 @@ module AresMUSH
           fortune_chars.each do |c|
             Global.logger.debug "Expiring fortune cooldown for #{c.name}"
             c.update(fortunes_told_lately: c.fortunes_told_lately - 1)
-          end
+          end 
 
           book_chars = Chargen.approved_chars.select { |c| c.books_got_lately > 0 }
 
