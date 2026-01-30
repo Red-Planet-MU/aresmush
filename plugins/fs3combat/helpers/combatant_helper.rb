@@ -336,6 +336,10 @@ module AresMUSH
         end
         combatant2 = combat.find_combatant(riding_with)
 
+        if !combatant2
+          return t('fs3combat.not_in_combat', :name => riding_with)
+        end
+
         if !combatant2.mount_type 
           return t('fs3combat.not_mounted_to_ride')
         end
