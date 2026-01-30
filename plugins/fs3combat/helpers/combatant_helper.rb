@@ -334,21 +334,20 @@ module AresMUSH
         if combatant.mount_type
           return t('fs3combat.cant_be_mounted_and_ride')
         end
-        FS3Combat.with_a_combatant(riding_with, client, enactor) do |combat2, combatant2|
+        combatant2 = find_combatant(riding_with)
 
-            if !combatant2.mount_type 
-              return t('fs3combat.not_mounted_to_ride')
-            end
+        if !combatant2.mount_type 
+          return t('fs3combat.not_mounted_to_ride')
+        end
 
-            if combatant2.horse_kod == true
-              return t('fs3combat.their_horse_is_kod')
-            end
+        if combatant2.horse_kod == true
+          return t('fs3combat.their_horse_is_kod')
+        end
 
-            combatant.update(mount_type: combatant2.mount_type)
-            combatant.update(is_riding_with: combatant2)
-            combatant2.update(is_carrying: combatant)
-            FS3Combat.emit_to_combat combat, t('fs3combat.riding', :name => combatant.name, :riding_with_name => combatant2.name), FS3Combat.npcmaster_text(combatant.name, enactor)
-          end
+        combatant.update(mount_type: combatant2.mount_type)
+        combatant.update(is_riding_with: combatant2)
+        combatant2.update(is_carrying: combatant)
+        FS3Combat.emit_to_combat combat, t('fs3combat.riding', :name => combatant.name, :riding_with_name => combatant2.name), FS3Combat.npcmaster_text(combatant.name, enactor)
       elsif !riding_with && combatant.is_riding_with 
         carrier = combatant.is_riding_with
         combatant.update(mount_type: nil)
