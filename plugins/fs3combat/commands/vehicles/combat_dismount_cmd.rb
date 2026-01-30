@@ -28,6 +28,13 @@ module AresMUSH
           if (combatant.mount_type && !combatant.is_riding_with)                
             combatant.update(mount_type: nil)
             FS3Combat.emit_to_combat combat, t('fs3combat.dismounted', :name => combatant.name)
+            if combatant.is_carrying
+              riding_with = combatant.is_carrying
+              combatant.update(is_carrying: nil)
+              riding_with.update(mount_type: nil)
+              riding_with.update(is_riding_with: nil)
+              FS3Combat.emit_to_combat combat, t('fs3combat.dismounted', :name => riding_with.name)
+            end
           elsif (combatant.mount_type && combatant.is_riding_with)
             combatant2 = combatant.is_riding_with
             combatant.update(mount_type: nil)
