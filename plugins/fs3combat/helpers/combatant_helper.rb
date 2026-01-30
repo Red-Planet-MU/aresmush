@@ -322,7 +322,7 @@ module AresMUSH
           FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => "Horse"), FS3Combat.npcmaster_text(combatant.name, enactor)
         end
       
-      elsif mounted == false && combatant.mount_type
+      elsif mounted == false && combatant.mount_type && !combatant.is_riding_with
         #do dismount action; while code is_riding_with to also mean mount_type will not be nill
         #the web will only interpret the mounted checkbox as riding THEIR OWN horse.
         combatant.update(mount_type: nil)
