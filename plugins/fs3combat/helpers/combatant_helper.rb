@@ -334,7 +334,7 @@ module AresMUSH
         if combatant.mount_type
           return t('fs3combat.cant_be_mounted_and_ride')
         end
-        combatant2 = find_combatant(riding_with)
+        combatant2 = combat.find_combatant(riding_with)
 
         if !combatant2.mount_type 
           return t('fs3combat.not_mounted_to_ride')
