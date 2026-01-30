@@ -44,7 +44,6 @@ module AresMUSH
         npc_level = request.args['npc_skill']
         vehicle = request.args['vehicle'] || ''
         mounted = request.args['mounted']
-        end
         riding_with = request.args['riding_with'] || ''
         passenger_type = request.args['passenger_type'] || 'none'
         
