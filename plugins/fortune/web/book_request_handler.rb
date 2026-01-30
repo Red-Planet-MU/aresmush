@@ -13,11 +13,11 @@ module AresMUSH
         if enactor.books_got_lately >= 3
           return { error: t('fortune.cooldown_on')  }
         end
-        book_to_Get = Fortune.get_book()
+        book_to_get = Fortune.get_book()
 
         enactor.update(books_got_lately: enactor.books_got_lately + 1)
         enactor.update(books_got_alltime: enactor.books_got_alltime + 1)
-        scene_message = t('fortune.got_book', :name => enactor.name, :book_got => fortune_to_tell)
+        scene_message = t('fortune.got_book', :name => enactor.name, :book_got => book_to_get)
         Fortune.handle_book_given_achievement(enactor)
         Scenes.add_to_scene(scene, scene_message)
         if enactor.room.scene
