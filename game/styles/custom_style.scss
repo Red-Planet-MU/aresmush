@@ -139,7 +139,7 @@ a {
   transition: 0.3s ease;
 }
 
-.navbar .dropdown-menu {
+/*.navbar .dropdown-menu {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -152,10 +152,10 @@ a {
     opacity: 0;
 }
 
-.dropdown-toggle.show .dropdown-menu { /* For Bootstrap 4, use .dropdown.show instead of .dropdown.open */
+.dropdown-toggle.show .dropdown-menu { 
     max-height: 300px;
     opacity: 1;
-}
+} */
 
 .dropdown-item {
   font-size: 1em;
