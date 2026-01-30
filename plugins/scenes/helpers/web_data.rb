@@ -121,6 +121,7 @@ module AresMUSH
         scene_set: scene.room ? Website.format_markdown_for_html(scene.room.scene_set) : nil,
         details: scene.room ? scene.room.details.map { |k, v| { name: k, desc: Website.format_markdown_for_html(v) } } : [],
         can_use_fortune: scene.room ? scene.room.can_use_fortune : nil
+        can_use_book: scene.room ? scene.room.can_use_book : nil
       }
     end
     
