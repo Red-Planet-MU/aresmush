@@ -11,8 +11,8 @@ website:
   character_gallery_group: Origin
   character_gallery_subgroup: ""
   left_sidebar: false
-  max_folder_size_kb: 2000
-  max_upload_size_kb: 300
+  max_folder_size_kb: 25000
+  max_upload_size_kb: 3000
   restricted_pages:
   - home
   sitemap_update_cron:
