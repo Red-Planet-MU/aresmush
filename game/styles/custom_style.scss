@@ -123,7 +123,10 @@ a {
 	.site-banner {
 		flex-direction: column;
 	}
-
+  .body-container {
+	padding: 0px 15px 0px 5px;
+	flex-grow: 3;
+  }
 }
 
 
