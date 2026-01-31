@@ -299,14 +299,6 @@ a {
   background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
-@media screen and (max-width: 992px) {
-  .toc {
-    float: unset;
-    margin-top: unset;
-    margin-left: unset;
-  }
-}
-
 .toc h4 {
   font-family: $header-font;
   word-spacing: 10px;
@@ -365,6 +357,18 @@ a {
   transform: rotate(1deg);
   z-index: -2;
   background-image: url("/game/uploads/theme_images/paper_tex.png");
+}
+
+@media screen and (max-width: 992px) {
+  .toc {
+    float: unset;
+    margin-top: unset;
+    margin-left: unset;
+  }
+
+  .toc ul {
+    background: repeating-linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 21px, rgba(156, 156, 156, .5) 22px, rgba(156, 156, 156, .5) 23px);
+  }
 }
 
 .danger-wrap {
