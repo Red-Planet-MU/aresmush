@@ -299,6 +299,12 @@ a {
   background-image: url("/game/uploads/theme_images/paper_tex.png");
 }
 
+@media screen and (max-width: 992px) {
+  .toc {
+    float: unset;
+  }
+}
+
 .toc h4 {
   font-family: $header-font;
   word-spacing: 10px;
