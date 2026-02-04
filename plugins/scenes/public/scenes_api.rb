@@ -43,6 +43,7 @@ module AresMUSH
           notifications[alt.id] = data
         end
         #TEXT SHIT
+        Global.logger.debug "p: #{p} character: #{character}"
         if !pose.include? "TXT to" && character != p
           if p.room.scene.nil? || (!p.room.scene.nil? && scene.id != p.room.scene.id)
           message = t('txt.pose_in_portal', :id => scene.id)
