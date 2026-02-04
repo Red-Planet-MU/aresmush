@@ -1,6 +1,7 @@
 module AresMUSH
     module Txt
 
+      #no longer used, refer to scenes_api.rb
       def self.notify_if_portal_pose(room, char)
         poses = room.sorted_pose_order
         if poses.empty? || poses[0][0] != char.name

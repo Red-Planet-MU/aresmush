@@ -19,7 +19,7 @@ To talk to other players or do much of anything, you'll need to log in with a ch
 
 ## Creating a Character
 
-When you're ready, you'll want to create your own character.  Your character name can be your first name, last name, or a nickname.  Some games have traditions for how they prefer to name characters.  
+When you're ready, you'll want to create your own character.  Your character name can be your first name, last name, or a nickname. 
 
 > **Tip:** Multi-word names are not permitted in AresMUSH, but some games permit you to set a multi-word nickname that shows up next to your character's name in select places.  For example: `Steve (Captain America)`.
 
