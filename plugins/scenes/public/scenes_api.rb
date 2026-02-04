@@ -42,6 +42,12 @@ module AresMUSH
 
           notifications[alt.id] = data
         end
+        #TEXT SHIT
+        if p.room.scene.nil? || (!p.room.scene.nil? && scene.id != p.room.scene.id)
+          message = t('txt.pose_in_portal', :id => scene.id)
+          Login.emit_ooc_if_logged_in(p, message)
+        end
+        #end of txt shit
       end
               
       # Can't use notify_web_clients here because the notification is different for each person.
