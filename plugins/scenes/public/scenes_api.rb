@@ -43,10 +43,12 @@ module AresMUSH
           notifications[alt.id] = data
         end
         #TEXT SHIT
-        if (character != p) && (!pose.include? "TXT to")
-          if p.room.scene.nil? || (!p.room.scene.nil? && scene.id != p.room.scene.id)
-          message = t('txt.pose_in_portal', :id => scene.id)
-          Login.emit_ooc_if_logged_in(p, message)
+        if scene.scene_type == "Text"
+          if (character != p) && (!pose.include? "TXT to")
+            if p.room.scene.nil? || (!p.room.scene.nil? && scene.id != p.room.scene.id)
+            message = t('txt.pose_in_portal', :id => scene.id)
+            Login.emit_ooc_if_logged_in(p, message)
+            end
           end
         end
         #end of txt shit
