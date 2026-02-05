@@ -62,7 +62,11 @@ module AresMUSH
       end
   
       def self.generate_horse(char)
-        horse_name = Global.read_config('horse','horse_names')[rand(0...Global.read_config('horse','horse_names').count)]
+        duplicate_horse = true
+        until duplicate_horse == false
+          horse_name_to_try = Global.read_config('horse','horse_names')[rand(0...Global.read_config('horse','horse_names').count)]
+          duplicate_horse = Chargen.approved_chars.any? { |c| c.demographic('horse name') == horse_name_to_try }
+        end
         horse_color = Global.read_config('horse','horse_colors')[rand(0...Global.read_config('horse','horse_colors').count)]
         horse_temperament = Global.read_config('horse','horse_temperaments')[rand(0...Global.read_config('horse','horse_temperaments').count)]
         char.update(horse_color: horse_color)
