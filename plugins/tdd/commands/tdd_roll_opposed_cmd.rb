@@ -60,13 +60,13 @@ module AresMUSH
            :name2 => !model2 ? t('fs3skills.npc', :name => self.name2) : model2.name,
            :roll1 => self.roll_str1,
            :roll2 => self.roll_str2,
-           case successes1
+           :dice1 => case successes1
            when 16
-            :dice1 => crit_emit,
+            crit_emit,
            when -1 
-            :dice1 => botch_emit,
+            botch_emit,
            else 
-            :dice1 => TDD.print_dice(die_result1),
+            TDD.print_dice(die_result1),
            end
            case successes2 
            when 16
