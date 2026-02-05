@@ -61,14 +61,7 @@ module AresMUSH
            :roll1 => self.roll_str1,
            :roll2 => self.roll_str2,
            :dice1 => if successes1 == 16 then crit_emit elsif successes1 == -1 then botch_emit else TDD.print_dice(die_result1) end,
-           case successes2 
-           when 16
-            :dice2 => crit_emit,
-           when -1
-            :dice2 => botch_emit,
-           else
-            :dice2 => TDD.print_dice(die_result2),
-           end
+           :dice2 => if successes2 == 16 then crit_emit elsif successes2 == -1 then botch_emit else TDD.print_dice(die_result2) end,
            :result => results)  
           
         FS3Skills.emit_results message, client, enactor_room, self.private_roll
