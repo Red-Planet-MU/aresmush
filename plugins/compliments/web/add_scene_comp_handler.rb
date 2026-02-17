@@ -11,9 +11,9 @@ module AresMUSH
         targets = scene.participants.to_a
         error = Website.check_login(request)
         return error if error
-        if comper_id == char_name_or_id
-          return { error: t('compliments.cant_comp_self') }
-        end
+        #if comper_id == char_name_or_id
+        #  return { error: t('compliments.cant_comp_self') }
+        #end
         
         Compliments.add_comp(targets, comp_msg, Character[comper_id])
         Compliments.handle_comps_given_achievement(Character[comper_id])
