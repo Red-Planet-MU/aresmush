@@ -33,6 +33,8 @@ module AresMUSH
       case request.cmd
       when "addComp"
         return AddCompHandler
+      when "addSceneComp"
+        return AddSceneCompHandler
       when "comps"
         return GetCompsRequestHandler
       end
