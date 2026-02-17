@@ -27,6 +27,7 @@ module AresMUSH
       
       def check_stance        
         return t('fs3combat.invalid_stance') if !FS3Combat.stances.keys.include?(self.stance)
+        return t('fs3combat.no_cover_mounted') if self.stance == "Cover" && enactor.mount_type 
         return nil
       end
       
