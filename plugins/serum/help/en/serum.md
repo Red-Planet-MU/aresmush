@@ -27,3 +27,4 @@ Everyone in Virtue is given one dose of Revitalizer Serum per X from the communi
 
 ## Admin Commands
 `serum/add <serum>=<name>` - Adds a dose of serum to someone.
+`serum/remove <serum>=<name>` - Removes a dose of serum from someone.
