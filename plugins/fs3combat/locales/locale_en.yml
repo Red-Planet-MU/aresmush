@@ -301,6 +301,7 @@ en:
         
         stance_changed: "%{name} has changed %{poss} stance to %{stance}."
         invalid_stance: "That is not a valid stance."
+        no_cover_mounted: "You may not take cover while mounted."
         passenger_stance_warning: "Passengers are often at the mercy of the driver's stance.  Make sure this stance makes sense under the circumstances."
         stances_title: "Combat Stances"
         stance_subtitle: "Name                Attack   Defense"
