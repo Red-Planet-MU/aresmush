@@ -32,7 +32,7 @@ module AresMUSH
       end
 
       def detail_spec(a)
-        status = "(#{a.spec_xp}/8)"
+        status = "(#{a.spec_xp}/15)"
         status.ljust(16)
       end
       
@@ -49,7 +49,7 @@ module AresMUSH
       end
 
       def progress_spec(a)
-        ProgressBarFormatter.format(a.spec_xp, 8)
+        ProgressBarFormatter.format(a.spec_xp, 15)
       end
       
       def show_advantages

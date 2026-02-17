@@ -17,7 +17,7 @@ module AresMUSH
         
         ability = FS3Skills.find_ability(char, ability_arg)
         specialties = FS3Skills.action_specialties(ability_arg)
-        if ability.spec_xp <=7
+        if ability.spec_xp <=14
           ability.update(spec_last_learned: Time.now)
           ability.update(spec_xp: ability.spec_xp + 1)
           FS3Skills.modify_xp(char, -1)
