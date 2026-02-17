@@ -6,6 +6,7 @@ module AresMUSH
         comp_msg = request.args['comp_msg']
         scene_id = request.args['id']
         scene = Scene[scene_id]
+        comper_id = request.auth['id']
         comp_scenes = Global.read_config("compliments", "comp_scenes")
         targets = scene.participants.to_a
         error = Website.check_login(request)
