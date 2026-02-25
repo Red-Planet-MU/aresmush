@@ -138,23 +138,14 @@ a {
   letter-spacing: normal; 
 }
 
-@media (min-width: 991px) {
+//@media (min-width: 991px) {
   .animate {
     animation-duration: 0.3s;
     -webkit-animation-duration: 0.3s;
     animation-fill-mode: both;
     -webkit-animation-fill-mode: both;
   }
-}
-
-@media (max-width: 990.9px) {
-  .animate {
-    animation-duration: 0s;
-    -webkit-animation-duration: 0s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
-}
+//}
 
 @keyframes slideIn {
   0% {
