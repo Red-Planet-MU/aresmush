@@ -147,6 +147,15 @@ a {
   }
 }
 
+@media (max-width: 990.9px) {
+  .animate {
+    animation-duration: 0s;
+    -webkit-animation-duration: 0s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
 @keyframes slideIn {
   0% {
     transform: translateY(1rem);
