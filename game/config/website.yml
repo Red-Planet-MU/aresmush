@@ -15,6 +15,20 @@ website:
   max_upload_size_kb: 3000
   restricted_pages:
   - home
+  - inc:*
+  - world:*
+  - guide:*
+  - faq:*
+  - dangers:*
+  - system:*
+  - a*
+  - d*
+  - f*
+  - g*
+  - h*
+  - p*
+  - s*
+  - w*
   sitemap_update_cron:
     hour:
     - 2
@@ -68,6 +82,8 @@ website:
     - divider: true
     - title: Technology
       url: https://redplanetmu.com/wiki/world:technology
+    - title: Serums
+      url: https://redplanetmu.com/wiki/world:serums
     - title: Society
       url: https://redplanetmu.com/wiki/world:society
     - divider: true
@@ -140,6 +156,8 @@ website:
     - title: Skill Scan
       route: fs3skills-scan
   - title: Wiki
+    roles:
+    - admin
     menu:
     - title: Home
       route: wiki
