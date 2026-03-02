@@ -1088,9 +1088,13 @@ body {
 
 @media (max-width: 992px) {
   .char-achievements {
-     column-count: 1; }
+     column-count: 1; 
+    }
+  .fs3-damage-block {
+	  flex-direction: column;
+    }
   }
-
+  
 #systemfs3sheet > div > .row {
   display: flex;
   flex-flow: column; }
