@@ -58,7 +58,7 @@ module AresMUSH
 
           if heal_success_level >= 0
             FS3Combat.heal(wound, heal_amount)
-            wound.update(serumable: false)
+            wound.update(is_serumable: false)
             message = t('serum.used_v_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
           end
           enactor.room.emit message
