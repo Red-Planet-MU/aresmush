@@ -21,14 +21,14 @@ website:
   - faq:*
   - dangers:*
   - system:*
-  - a*
-  - d*
-  - f*
-  - g*
-  - h*
-  - p*
-  - s*
-  - w*
+  - about_us
+  - dangers
+  - frequently asked questions
+  - guides
+  - policies
+  - staff team
+  - system
+  - world
   sitemap_update_cron:
     hour:
     - 2
