@@ -1093,17 +1093,13 @@ body {
     }
   }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   .fs3-damage-block {
 	  flex-direction: row;
     }
   }
 
-@media (max-width: 1400) {
-  .fs3-damage-block {
-	  flex-direction: row;
-    }
-  }
+
 #systemfs3sheet > div > .row {
   display: flex;
   flex-flow: column; }
