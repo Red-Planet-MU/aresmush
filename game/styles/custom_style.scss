@@ -1084,7 +1084,11 @@ body {
   margin: 15px;
 }
 
-
+@media (max-width: 1400) {
+  .fs3-damage-block {
+	  flex-direction: unset;
+    }
+  }
 
 @media (max-width: 991.9px) {
   .char-achievements {
