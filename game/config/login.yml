@@ -3,10 +3,10 @@ login:
   activity_cron:
     minute:
     - 0
-  allow_game_registration: true
-  allow_game_tour: true
-  allow_web_registration: true
-  allow_web_tour: true
+  allow_game_registration: false
+  allow_game_tour: false
+  allow_web_registration: false
+  allow_web_tour: false
   blacklist_cron:
     day:
     - 1
