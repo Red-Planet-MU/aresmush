@@ -20,7 +20,7 @@ module AresMUSH
       def treatable(d)
         #serum changes
         if d.is_treatable? then t('global.y')
-        elsif d.is_serumable then 'Serum'
+        elsif d.is_serumable == true then 'Serum'
         else '-'
         end
         #d.is_treatable? ? t('global.y') : '-'
