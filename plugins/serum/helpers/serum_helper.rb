@@ -59,7 +59,7 @@ module AresMUSH
         heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
-        wound = FS3Combat.worst_treatable_wound(target)
+        wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
         case heal_success_level
         when -1
@@ -86,6 +86,7 @@ module AresMUSH
 
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
+          wound.update(serumable: false)
           return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
       end
@@ -95,7 +96,7 @@ module AresMUSH
         heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
-        wound = FS3Combat.worst_treatable_wound(target)
+        wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
         case heal_success_level
         when -1
@@ -122,6 +123,7 @@ module AresMUSH
 
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
+          wound.update(serumable: false)
           message = t('serum.used_v_out_of_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
         char.room.emit message

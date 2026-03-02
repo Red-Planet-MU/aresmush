@@ -125,6 +125,15 @@ module AresMUSH
               
        treatable.sort_by { |d| FS3Combat.damage_severities.index(d.current_severity) }.reverse.first
      end
+
+     #Serum Changes
+     def self.worst_serumable_wound(char_or_npc)
+       serumable = char_or_npc.damage.select { |d| d.is_serumable }
+       return nil if serumable.empty?
+
+       serumable.sort_by { |d| FS3Combat.damage_severities.index(d.current_severity) }.reverse.first
+     end
+     #end Serum Changes
      
      def self.treat(patient_char_or_npc, healer_char_or_npc)
        wound = FS3Combat.worst_treatable_wound(patient_char_or_npc)

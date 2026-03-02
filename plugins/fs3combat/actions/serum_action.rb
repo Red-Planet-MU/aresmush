@@ -28,11 +28,11 @@ module AresMUSH
         # Serums can only target one target
         return t('fs3combat.only_one_target') if (self.targets.count > 1)
         
-        # If this is a healing serum, the target must have a treatable wound
-        wound = FS3Combat.worst_treatable_wound(self.target.associated_model)
+        # If this is a healing serum, the target must have a serumable wound
+        wound = FS3Combat.worst_serumable_wound(self.target.associated_model)
         self.serum_type = Serum.find_serums_type(self.serum_name)
         if (!wound) && self.serum_type == "v_serums_has"
-          return t('fs3combat.target_has_no_treatable_wounds', :name => self.target.name)
+          return t('serum.no_healable_wounds', :name => self.target.name)
         end
 
         #If this is horse juice, the target's horse must be KO'd 
@@ -117,8 +117,9 @@ module AresMUSH
 
         if is_revive
           self.target.update(is_ko: false)
-          wound = FS3Combat.worst_treatable_wound(self.target.associated_model)
+          wound = FS3Combat.worst_serumable_wound(self.target.associated_model)
           FS3Combat.heal(wound, 1)
+          wound.update(is_serumable: false)
           message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 

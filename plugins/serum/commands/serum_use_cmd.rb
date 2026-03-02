@@ -23,7 +23,7 @@ module AresMUSH
           return t('serum.invalid_serum') if !self.serum_type
           return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
           return t('serum.not_in_combat') if self.combat_only_serum == true && !enactor.combat
-          wound = FS3Combat.worst_treatable_wound(self.target)
+          wound = FS3Combat.worst_serumable_wound(self.target)
           return t('serum.no_healable_wounds', :target => self.target.name) if !wound
         end      
   
@@ -31,7 +31,7 @@ module AresMUSH
           heal_roll = TDD.parse_and_roll(enactor, "Medicine")
           heal_success_level = TDD.get_success_level(heal_roll)
           dice_message = TDD.print_dice(heal_roll)
-          wound = FS3Combat.worst_treatable_wound(self.target)
+          wound = FS3Combat.worst_serumable_wound(self.target)
           case heal_success_level
           when -1
             heal_amount = 0
@@ -58,6 +58,7 @@ module AresMUSH
 
           if heal_success_level >= 0
             FS3Combat.heal(wound, heal_amount)
+            wound.update(serumable: false)
             message = t('serum.used_v_out_of_combat', :name => enactor.name, :target => self.target.name, :serum_name => self.serum_name, :heal_points => heal_amount, :dice_result => dice_message)
           end
           enactor.room.emit message

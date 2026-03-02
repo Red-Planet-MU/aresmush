@@ -11,6 +11,7 @@ module AresMUSH
     attribute :description
     attribute :is_stun, :type => DataType::Boolean
     attribute :is_mock, :type => DataType::Boolean
+    attribute :is_serumable, :type => DataType::Boolean, :default => true
   
     reference :character, "AresMUSH::Character"
     reference :npc, "AresMUSH::Npc"
@@ -26,6 +27,7 @@ module AresMUSH
       return true if time_to_go > 0
       return false
     end
+
   
     def wound_mod
       config = Global.read_config("fs3combat", "damage_mods")
