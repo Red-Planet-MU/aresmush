@@ -661,8 +661,7 @@ a:focus{
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link:focus,
-.navbar-dark .navbar-nav .nav-link.active {
+.navbar-dark .navbar-nav .nav-link:focus {
   color: $secondary-color;
 }
 
@@ -711,7 +710,6 @@ h2, .h2,
 h3, .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
-  word-break: break-word;
 }
 
 h1
@@ -1221,7 +1219,6 @@ SIDEBAR
     border-top: 1px solid $border-color;
     margin: 2px;
     font-size: .9em;
-    word-break: break-word;
 }
 
 .sidebar-heading {
@@ -3105,14 +3102,6 @@ ul.reference-help-list > li:not(:last-child)::after {
 
 @media (max-width:1400px)  { 
 
-  .left-sidebar {
-    order: 2;
-  }
-
-  .right-sidebar {
-    order: 2;
-  }
-  
   .site-title {
       font-size: 2em;
       max-height: 50px;
@@ -3189,6 +3178,12 @@ ul.reference-help-list > li:not(:last-child)::after {
     color:  $text-color;
   }
 
+  .navbar-dark .navbar-nav .nav-link:hover,
+  .navbar-dark .navbar-nav .nav-link:focus, 
+  .navbar-dark .navbar-nav .nav-link.active {
+    color: $secondary-color;
+  }
+    
   .form-item {
     flex-direction: column;
     

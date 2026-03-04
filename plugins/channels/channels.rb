@@ -43,7 +43,7 @@ module AresMUSH
           return ChannelLeaveCmd
         when "list", nil
           return ChannelListCmd
-        when "recall", "review"
+        when "recall"
           return ChannelRecallCmd
         when "removechar"
           return ChannelForceLeaveCmd

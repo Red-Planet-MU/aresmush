@@ -64,7 +64,7 @@ module AresMUSH
       
       when "scene"
         case cmd.switch
-        when "active", "all", "open", "unshared", "profile"
+        when "all", "open"
           return ScenesCmd
         when nil
           if (cmd.args)
@@ -112,6 +112,8 @@ module AresMUSH
           return SceneShareCmd
         when "unshare"
           return SceneUnshareCmd
+        when "unshared"
+          return ScenesCmd
         when "webstart"
           return SceneWebStartCmd
         end
