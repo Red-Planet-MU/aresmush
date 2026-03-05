@@ -48,8 +48,7 @@ module AresMUSH
           else specialty_mod = 0
           end
           botch_roll = combatant.roll_ability(ability, specialty_mod)
-          successes = TDD.get_success_level(botch_roll)
-          if successes < 0
+          if botch_roll < 0
             messages << t('fs3combat.explode_self_message', :name => self.name, :weapon => self.combatant.weapon)
             messages.concat FS3Combat.resolve_explosion(combatant, combatant)
             messages
