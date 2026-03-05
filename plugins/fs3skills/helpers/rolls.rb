@@ -11,6 +11,13 @@ module AresMUSH
     def self.roll_ability(char, roll_params)
       dice = FS3Skills.dice_to_roll_for_ability(char, roll_params)
       roll = FS3Skills.roll_dice(dice)
+      autocritical = 1 + rand(34)
+      Global.logger.debug "Autocrit roll: #{autocritical}"
+      if autocritical == 34
+        roll = 16
+      elsif autocritical == 1
+        roll = -1
+      end
       Global.logger.info "#{char.name} rolling #{roll_params} dice=#{dice} result=#{roll}"
       Achievements.award_achievement(char, "fs3_roll")
       roll
