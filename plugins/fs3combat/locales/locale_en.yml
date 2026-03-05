@@ -377,6 +377,7 @@ en:
         explode_action_msg_long: "%{name} will blow up %{targets}."
         explode_action_msg_short: "Explode %{targets}"
         explode_resolution_message: "%{name} uses %{weapon}.  EXPLOSION!"
+        explode_self_message: "%{name} uses %{weapon}, but BLOWS THEMSELVES UP.  EXPLOSION!"
         concussion_from: "%{weapon}(Concussion)"
         # ----------------------------
         # PASS

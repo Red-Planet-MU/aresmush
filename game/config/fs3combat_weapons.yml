@@ -38,7 +38,7 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
     Mine:
-      description: Improvised explosive.
+      description: Improvised explosive, usually dynamite.
       skill: Trapping
       lethality: 5
       penetration: 7
@@ -101,8 +101,6 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       firearm_type: Pistols
-      allowed_specials:
-      - Ap
     Dual Revolvers:
       description: TWO basic six-shooters.
       skill: Firearms
@@ -183,8 +181,6 @@ fs3combat:
       init_mod: 0
       firearm_type: Rifles
       mounted_accuracy: -1
-      allowed_specials:
-      - Buckshot
     Club:
       description: Mace/club/baton
       skill: Melee
