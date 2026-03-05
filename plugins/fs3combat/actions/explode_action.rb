@@ -48,14 +48,14 @@ module AresMUSH
           else specialty_mod = 0
           end
           botch_roll = combatant.roll_ability(ability, specialty_mod)
-          if botch_roll < 0
-            messages << t('fs3combat.explode_self_message', :name => self.name, :weapon => self.combatant.weapon)
-            messages.concat FS3Combat.resolve_explosion(combatant, combatant)
-            messages
-          end
+        end 
+
+        if botch_roll < 0
+          messages << t('fs3combat.explode_self_message', :name => self.name, :weapon => self.combatant.weapon)
+          messages.concat FS3Combat.resolve_explosion(combatant, combatant)
         else
           messages << t('fs3combat.explode_resolution_message', :name => self.name, :weapon => self.combatant.weapon)
-        
+          
           self.targets.each do |target, num|
             messages.concat FS3Combat.resolve_explosion(combatant, target)
           end
@@ -64,9 +64,8 @@ module AresMUSH
           if (ammo_message)
             messages << ammo_message
           end
-        
-          messages
         end
+        messages
       end
     end
   end
