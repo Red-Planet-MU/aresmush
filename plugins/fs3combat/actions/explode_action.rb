@@ -48,6 +48,7 @@ module AresMUSH
           else specialty_mod = 0
           end
           botch_roll = combatant.roll_ability(ability, specialty_mod)
+          Global.logger.debug "botch roll: #{botch_roll}"
         end 
 
         if botch_roll < 0
