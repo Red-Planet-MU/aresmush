@@ -3,6 +3,7 @@ jobs:
   active_statuses:
   - NEW
   - OPEN
+  - HOLD
   archive_cron:
     hour:
     - 4
@@ -10,7 +11,7 @@ jobs:
     - 18
     day_of_week:
     - Sun
-  archive_job_days: 10
+  archive_job_days: 90
   archived_status: ARCHIVED
   closed_statuses:
   - DONE
