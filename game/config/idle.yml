@@ -50,6 +50,10 @@ idle:
     width: 17
     title: Origin
     value: Origin
+  - field: demographic
+    width: 20
+    title: Occupation
+    value: occupation
   shortcuts:
     idle/add: idle/action
     roster/update: roster/add
