@@ -19,6 +19,9 @@ module AresMUSH
       def handle
         Game.master.update(login_motd: self.notice)
         client.emit_success t('login.motd_set')
+        if !self.subject
+          self.subject = Date.today
+        end
         if (!self.notice.blank?)
           Manage.announce t('login.motd_announce', :enactor => enactor_name, :message => self.notice)
         end
