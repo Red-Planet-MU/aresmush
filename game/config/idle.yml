@@ -22,9 +22,9 @@ idle:
   idle_warn_msg: You haven't played in awhile and your character is in danger of idling
     out.
   roster_arrival_msg: |-
-    %{name} has been claimed off the roster.
+    Please welcome %{name}, our latest %{origin} to be approved!
 
-    Position: %{position}
+    Profile: %{profile_link}
 
     RP Hooks:
     %{rp_hooks}
