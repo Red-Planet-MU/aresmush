@@ -1376,3 +1376,71 @@ a:focus  {
   border-radius: .3em;
 }
 
+/* Badges */
+.bg-warning {
+	background-color: #7D212E
+}
+
+.job-status-DONE {
+    background-color: gray;
+    color: white;
+}
+
+.job-status-NEW {
+    background-color: #f4bd56;
+    color: black;
+}
+
+.job-status-OPEN {
+    background-color: #818846;
+    color: white;
+}
+
+.job-status-HOLD {
+    background-color: #c55b42;
+    color: white;
+}
+
+.job-category-APP {
+	background-color: #7D212E;
+}
+
+.job-category-BUILD {
+	background-color: #B94F1B;
+}
+
+.job-category-BUG {
+	background-color: #322E2F;
+}
+
+.job-category-CODE {
+	background-color: $muted-green;
+}
+
+.job-category-ALERT {
+	background-color: $muted-teal;
+}
+
+.job-category-MISC {
+	background-color: $muted-blue;
+}
+
+.job-category-PLOT {
+	background-color: $muted-slate;
+}
+
+.job-category-REQ {
+	background-color: #7FAED7;
+}
+
+.job-category-RP {
+	background-color: $muted-magenta;
+}
+
+.job-category-SYS {
+	background-color: #6E4429;
+}
+
+.job-category-general {
+	background-color: $dark-grey;
+}
