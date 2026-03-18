@@ -105,8 +105,6 @@ website:
     menu:
     - title: Scenes
       route: scenes
-    - title: Plots
-      route: plots
     - divider: true
     - title: Bounties & One-Shot Adventures
       url: https://redplanetmu.com/wiki/system:bounties_oneshot
