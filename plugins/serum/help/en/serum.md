@@ -17,7 +17,7 @@ Serums are the primary method of administering chemical agents to the body on Ma
 - **Equine Elixir**: A loyal steed's best friend.
 
 ## Getting Serums
-Everyone in Virtue is given one dose of Revitalizer Serum per X from the community stockpiles. Additional serums can be obtained through the use of bargaining chits ICly, and are purchased with Luck OOCly.
+Everyone in Virtue is given one dose of serum per week from the community stockpiles. Additional serums can be obtained through the use of bargaining chits ICly, and are purchased with Luck OOCly.
 
 ## Commands
 `serum [<name>]` - View your inventory of serums or someone else's.
