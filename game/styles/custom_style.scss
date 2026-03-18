@@ -1182,45 +1182,12 @@ body {
     0 20px 1px -9px rgba(0,0,0,0.15);
 }
 
-.roster-info,
-.roster-info::before,
-.roster-info::after {
-  /* Styles to distinguish sheets from one another */
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
-  border: 1px solid #bbb;
-}
-
-.roster-info::before {
-  content: "";
-  position: absolute;
-  height: 95%;
-  width: 99%;
-  background-color: #d6bc9b;
-  right: 15px;
-  top: 0;
-  transform: rotate(-1deg);
-  z-index: -1;
-  background-image: url("/game/uploads/theme_images/paper_tex.png");
-}
-
-.roster-info::after {
-  content: "";
-  position: absolute;
-  height: 95%;
-  width: 99%;
-  background-color: #d6bc9b;
-  top: 5px;
-  right: -5px;
-  transform: rotate(1deg);
-  z-index: -2;
-  background-image: url("/game/uploads/theme_images/paper_tex.png");
-}
 
 .roster-char-title {
   font-family: "kirstyregular", serif;
 	font-size: 1.5em;
 	background-color: unset;
-	padding: .1em 1.2em;
+	padding: none;
 	color: #3c3932;
 	font-weight: normal;
 	border: none;
