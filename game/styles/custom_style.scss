@@ -1378,8 +1378,12 @@ a:focus  {
 }
 
 /* Badges */
-.bg-warning {
+.bg-warning-custom {
 	background-color: #7D212E
+}
+
+.bg-danger-custom {
+  background-color: #c15d38
 }
 
 .job-status-DONE {
@@ -1423,7 +1427,7 @@ a:focus  {
 }
 
 .job-category-MISC {
-	background-color: $muted-blue;
+	background-color: #465464;
 }
 
 .job-category-PLOT {
