@@ -1367,14 +1367,12 @@ a:focus  {
   transition: background-color .5s;
 }
 
+.user-bar .tooltip-button {
+  transition: background-color .5s;
+}
+
 .user-bar .tooltip-button:hover {
   background-color: rgba(216, 179, 151, 0.8);
-  padding-left: .42em;
-  padding-right: .22em;
-  padding-top: .32em;
-  padding-bottom: .22em;
-  margin-right: 3px;
-  border-radius: .3em;
 }
 
 .badge-navbar-bgs:hover {
