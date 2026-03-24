@@ -932,6 +932,8 @@ body {
   padding-top: 5px;
   font-family: $header-font;
   padding-right: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .log-icon {
