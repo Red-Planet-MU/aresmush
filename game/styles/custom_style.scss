@@ -1198,6 +1198,16 @@ body {
 	margin: 20px 0px 10px 0px;
 }
 
+@media screen and (max-width: 600px) {
+	.roster-image-wrap {
+		margin: auto;
+	}
+  
+  .roster-image-wrap .log-icon-title-container {
+    left: 7px;
+  }
+}
+
 /* Locations Screen */
 .area-entry h2,
 .location-entry h2 {
