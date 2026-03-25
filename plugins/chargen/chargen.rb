@@ -80,6 +80,8 @@ module AresMUSH
         return ChargenSaveRequestHandler
       when "chargenSubmit"
         return ChargenSubmitRequestHandler
+      when "chargenProfile"
+        return ChargenProfileRequestHandler
       when "chargenUnsubmit"
         return ChargenUnsubmitRequestHandler
       when "appApprove"
