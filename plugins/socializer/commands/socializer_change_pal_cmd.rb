@@ -22,6 +22,9 @@ module AresMUSH
               client.emit_failure t('socializer.pal_already_exists', :name => model.name)
               return
             end
+            if (!model.is_approved?)
+              client.emit_failure t('socializer.pal_is_not_approved', :name => model.name)
+            end
             enactor.pals.add model
             message = t('socializer.pal_added', :name => enactor.name, :pal => model.name)
             #Add something to emit the message
