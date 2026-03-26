@@ -13,8 +13,8 @@ module AresMUSH
         roster = []
         
         groups = Character.all.select { |c| c.on_roster? }
-          .group_by { |c| c.group(gallery_group) || "" }
-          .sort_by { |group, chars| [group_order.find_index(group.downcase) || 99, group] }
+          #.group_by { |c| c.group(gallery_group) || "" }
+          #.sort_by { |group, chars| [group_order.find_index(group.downcase) || 99, group] }
         
         groups.each_with_index do |(group, chars), index|
           name = group.blank? ? "No #{gallery_group}" : group
