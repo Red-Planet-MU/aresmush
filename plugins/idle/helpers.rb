@@ -42,6 +42,13 @@ module AresMUSH
       #if (char.handle)
       #  AresCentral.unlink_handle(char)
       #end
+      Character.all.each do |c|
+        Global.logger.debug "Pal cleanup for #{c.name}"
+        if c.pals.include?(char)
+          Global.logger.debug "Removing pal #{char.name} from #{c.name}'s list"
+          c.pals.delete char
+        end
+      end
       Global.dispatcher.queue_event CharIdledOutEvent.new(char.id, idle_status)
     end
     
