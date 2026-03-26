@@ -82,14 +82,12 @@ module AresMUSH
         #More Socializer Changes
         if invite_pals 
           pal_names = enactor.pals.map { |p| p.name }
-          Scenes.with_a_scene(scene.id) do |scene|
 
-            pal_names.each do |name|
-              pal = Character.find_one_by_name(name)
+          pal_names.each do |name|
+            pal = Character.find_one_by_name(name)
             
-              if (!scene.participants.include?(pal))
-                Socializer.pal_invite_to_scene(scene, pal, enactor)
-              end
+            if (!scene.participants.include?(pal))
+              Socializer.pal_invite_to_scene(scene, pal, enactor)
             end
           end
         end
