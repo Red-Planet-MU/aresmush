@@ -82,7 +82,7 @@ module AresMUSH
         #More Socializer Changes
         if invite_pals 
           pal_names = enactor.pals.map { |p| p.name }
-          Scenes.with_a_scene(scene.id, client) do |scene|
+          Scenes.with_a_scene(scene.id) do |scene|
 
             pal_names.each do |name|
               pal = Character.find_one_by_name(name)
