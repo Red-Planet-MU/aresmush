@@ -42,6 +42,10 @@ module AresMUSH
       if (char.handle)
         AresCentral.unlink_handle(char)
       end
+      approved_role = Role.find_one_by_name("approved")
+      if (char.has_role?("approved"))
+        char.roles.delete approved_role
+      end
       Character.all.each do |c|
         if c.pals.include?(char)
           c.pals.delete char
