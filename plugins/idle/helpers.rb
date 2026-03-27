@@ -39,9 +39,9 @@ module AresMUSH
       Global.logger.debug "Starting idle cleanup for #{char.name}"
       #Do not unlink or reset password.
       #Login.set_random_password(char)
-      #if (char.handle)
-      #  AresCentral.unlink_handle(char)
-      #end
+      if (char.handle)
+        AresCentral.unlink_handle(char)
+      end
       Character.all.each do |c|
         if c.pals.include?(char)
           c.pals.delete char
