@@ -42,7 +42,25 @@ en:
         removed_from_roster: "%{name} has been removed from the roster."
         roster_app_approved: "You approve the roster app for %{name}."
         roster_app_rejected: "You reject the roster app for %{name}."
-        roster_approval_msg: Your roster app has been approved.
+        roster_approval_msg: "Welcome to Red Planet! We are glad you're here.
+
+          First things first, make sure you get a HORSE! See [`help horse`](/help/horse) or visit the 'Horse' tab on your profile.
+
+          Next, check out the [Getting Started](/wiki/guide:getting_started) guide for what to do next. This guide will help you - 
+      
+
+            * Join the Game Discord
+
+            * Set up your IC home
+
+            * Start finding RP
+
+            * Customize your character profile
+
+            * And much more!
+
+
+          If you need help with anything, please feel free to submit a request, use the Questions channel, or message the [staff team](/wiki/staff_team) and we will help as promptly as possible."
         roster_rejection_msg: Sorry, your roster app could not be approved at this time.
         played_before: "Previously Played?:"
         played_by: "Played By:"
