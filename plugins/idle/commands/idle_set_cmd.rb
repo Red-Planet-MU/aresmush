@@ -36,6 +36,11 @@ module AresMUSH
           if (self.status == 'None')
             model.update(idle_state: nil)
             model.update(is_npc: false)
+            if model.approved_at
+              approved_role = Role.find_one_by_name("approved")
+              char.roles.add approved_role
+              Global.dispatcher.queue_event RoleChangedEvent.new(char, false)
+            end
           elsif (self.status == 'Npc')
             model.update(idle_state: nil)
             model.update(is_npc: true)
