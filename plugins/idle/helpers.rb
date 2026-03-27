@@ -45,6 +45,7 @@ module AresMUSH
       approved_role = Role.find_one_by_name("approved")
       if (char.has_role?("approved"))
         char.roles.delete approved_role
+        Global.dispatcher.queue_event RoleChangedEvent.new(char, true) 
       end
       Character.all.each do |c|
         if c.pals.include?(char)
