@@ -13,7 +13,8 @@ module AresMUSH
       
       def group_levels(type, levels)
         groups = type.all
-           .select { |s| s.character && ((s.character.is_approved? && s.character.is_active?) || s.character.on_roster?) }
+           .select { |s| s.character && (s.character.is_approved? && s.character.is_active?) }
+           #.select { |s| s.character && ((s.character.is_approved? && s.character.is_active?) || s.character.on_roster?) }
            .group_by { |a| a.name }
            .sort
            
@@ -32,7 +33,8 @@ module AresMUSH
       
       def group_specialties
         groups = FS3ActionSkill.all
-           .select { |s| s.character && ((s.character.is_approved? && s.character.is_active?) || s.character.on_roster?) }
+           .select { |s| s.character && (s.character.is_approved? && s.character.is_active?) }
+           #.select { |s| s.character && ((s.character.is_approved? && s.character.is_active?) || s.character.on_roster?) }
            .group_by { |a| a.name }
            .sort
            
