@@ -242,6 +242,7 @@ module AresMUSH
                  "#{t('idle.roster_password_set', :password => newpass)}%R%R" +
                  "#{comment}"
        Jobs.close_job(enactor, job, message)
+       Roles.add_role(model, "approved")
        model.update(roster_job: nil)
        return nil
      end
