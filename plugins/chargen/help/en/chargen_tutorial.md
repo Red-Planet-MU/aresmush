@@ -7,19 +7,13 @@ order: 1
 
 # Character Creation
 
-Character creation, or chargen, is where you set up your character's basic information and stats, depending on what skills system your game has in place.
+Character creation, or chargen, is where you set up your character's basic information and stats.
 
 [[toc]]
 
 ## Web and Game Chargen
 
-On some games, you can complete chargen entirely on the web portal (typically under Play -> Create a Character).
-
-![Chargen Page Screenshot](https://aresmush.com/images/help-images/chargen.png)
-
-Even if your game doesn't support web chargen fully, you can still set up your basic information on the portal and do the rest from a MU client.  The `cg` command will walk you through the necessary steps.  
-
-Chargen consists of several stages.  You can go back and forth through the stages of chargen as much as you need to.
+On Red Planet, you can complete chargen entirely on the web portal (Under Intro -> Create a Character). Chargen consists of several stages.  You can go back and forth through the stages of chargen as much as you need to.
 
 > **Tip:** When doing chargen on the MU client, your changes are immediately saved with every command. On the web portal, you must click "Save" to save your character.
 

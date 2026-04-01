@@ -105,6 +105,23 @@ fortune:
     - Your friend can't keep a secret.
     - You will be famous, but not for the reasons you hoped.
     - Have the conversation you have been avoiding.
+  book_list:
+    - "Pheasants and Their Enemies"
+    - "How to Care for the Insane"
+    - "John Carter: A Princess of Mars"
+    - "A Meditation on the Lives of Cougars by Hector Navarro"
+    - "The 100 Deadliest Karate Moves"
+    - "Contingency Cannibalism: Superhardcore Survivalism"
+    - "How to Profit from the Coming Rapture"
+    - "Easy-to-Make Puppets"
+    - "Danger! How to Handle Fear and Dangerous Things, Places, and Situations"
+    - "The Joys of Gelatin Cookbook"
+    - "The Secret Power of the Pyramids"
+    - "How To Recognize and Handle Abnormal People"
+    - "Illustrated Color Guide to Healthful Yoga"
+    - "Evidence of Alien Abduction"
+    - "Macrame: Why Knot?"
+    - "1000 Fashion & Beauty Tricks"
   cron:
     minute:
       - 00
@@ -115,6 +132,17 @@ fortune:
     fortune_count:
       type: red_planet
       message: Told %{count} fortunes from the FizzPop.
+      levels:
+      - 1
+      - 5
+      - 10
+      - 25
+      - 50
+      - 100
+      - 150
+    book_count:
+      type: red_planet
+      message: Got %{count} books from the Biblio-Mat.
       levels:
       - 1
       - 5

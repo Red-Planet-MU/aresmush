@@ -26,14 +26,17 @@ module AresMUSH
           horse_temperament: char.horse_temperament,
           horse_desc: char.horse_desc,
           song_link: char.demographic("theme song link"),
-          approved_chars: Character.all.select { |c| c.is_approved? },
+          possible_serum_receivers: Serum.possible_serum_receivers(char.name),
           viewer: if viewer
                     viewer.name
                   else 
                     nil
                   end,
           pals: Socializer.list_pals(char),
-          
+          possible_pals: Socializer.possible_pals(char.name),
+          patients: Serum.list_patients(char),
+          possible_patients: Serum.possible_patients(char.name),
+          max_patients: FS3Combat.max_patients(char),
         }
       end
     

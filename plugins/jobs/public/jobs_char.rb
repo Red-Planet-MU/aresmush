@@ -27,7 +27,7 @@ module AresMUSH
       return [] if !Jobs.can_access_jobs?(self)
       tracker = self.get_or_create_read_tracker
       read_jobs = tracker ? tracker.read_jobs : []
-      staff_jobs = Jobs.accessible_jobs(self).select { |j| !read_jobs.include?(j.id) }
+      staff_jobs = Jobs.accessible_jobs(self, nil, true).select { |j| !read_jobs.include?(j.id) }
       their_jobs = self.unread_requests
       
       return staff_jobs.concat(their_jobs).uniq

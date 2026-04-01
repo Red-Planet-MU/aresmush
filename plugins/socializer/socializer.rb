@@ -43,6 +43,8 @@ module AresMUSH
         return WebPalsAddHandler
       when "removePal"
         return WebPalsRemoveHandler
+      when "webManagePals"
+        return WebManagePalsHandler
       end
       nil
     end

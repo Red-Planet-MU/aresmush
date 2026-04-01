@@ -13,10 +13,26 @@ module AresMUSH
       def display(a)
         "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
       end
+
+      def display_with_specs(a)
+        if !FS3Skills.action_specialties(a.name) 
+          "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
+        elsif a.specialties != []
+          "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}"
+        else
+          "#{left(a.name, 20)} #{progress(a)} #{detail(a)} #{days_left(a)}
+ #{left("Specialty", 19)} #{progress_spec(a)} #{detail_spec(a)}"
+        end
+      end
       
       def detail(a)
         can_raise = !FS3Skills.check_can_learn(@char, a.name, a.rating)
         status = can_raise ? "(#{a.xp}/#{a.xp_needed})" : "(---)"
+        status.ljust(16)
+      end
+
+      def detail_spec(a)
+        status = "(#{a.spec_xp}/15)"
         status.ljust(16)
       end
       
@@ -30,6 +46,10 @@ module AresMUSH
         can_raise = !FS3Skills.check_can_learn(@char, a.name, a.rating)
         return ".........." if !can_raise
         ProgressBarFormatter.format(a.xp, a.xp_needed)
+      end
+
+      def progress_spec(a)
+        ProgressBarFormatter.format(a.spec_xp, 15)
       end
       
       def show_advantages

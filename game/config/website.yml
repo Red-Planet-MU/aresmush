@@ -11,10 +11,24 @@ website:
   character_gallery_group: Origin
   character_gallery_subgroup: ""
   left_sidebar: false
-  max_folder_size_kb: 2000
-  max_upload_size_kb: 300
+  max_folder_size_kb: 25000
+  max_upload_size_kb: 3000
   restricted_pages:
   - home
+  - inc:*
+  - world:*
+  - guide:*
+  - faq:*
+  - dangers:*
+  - system:*
+  - about_us
+  - dangers
+  - faq
+  - guides
+  - policies
+  - staff team
+  - system
+  - world
   sitemap_update_cron:
     hour:
     - 2
@@ -68,6 +82,8 @@ website:
     - divider: true
     - title: Technology
       url: https://redplanetmu.com/wiki/world:technology
+    - title: Serums
+      url: https://redplanetmu.com/wiki/world:serums
     - title: Society
       url: https://redplanetmu.com/wiki/world:society
     - divider: true
@@ -89,8 +105,6 @@ website:
     menu:
     - title: Scenes
       route: scenes
-    - title: Plots
-      route: plots
     - divider: true
     - title: Bounties & One-Shot Adventures
       url: https://redplanetmu.com/wiki/system:bounties_oneshot
@@ -139,18 +153,9 @@ website:
       route: fs3-limits
     - title: Skill Scan
       route: fs3skills-scan
-    - divider: true
-    - target: blank
-      title: FS3 Player's Guide <i class="fa fa-external-link-alt" aria-hidden="true">
-      url: https://aresmush.com/fs3/fs3-3
-    - target: blank
-      title: FS3 Combat Quick Reference <i class="fa fa-external-link-alt" aria-hidden="true">
-      url: https://aresmush.com/fs3/fs3-3/combat-quickref.html
-    - target: blank
-      title: FS3 Interactive Combat Walkthrough <i class="fa fa-external-link-alt"
-        aria-hidden="true">
-      url: https://aresmush.com/fs3/fs3-3/combat-walkthrough.html
   - title: Wiki
+    roles:
+    - admin
     menu:
     - title: Home
       route: wiki
@@ -191,10 +196,6 @@ website:
       route: emoji
     - title: Terms of Service
       route: tos
-    - divider: true
-    - target: blank
-      title: MUSH 101 Tutorial <i class="fa fa-external-link-alt" aria-hidden="true">
-      url: https://aresmush.com/mush-101/
   - title: Admin
     roles:
     - admin

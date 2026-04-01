@@ -18,7 +18,13 @@ module AresMUSH
       end
       
       def treatable(d)
-        d.is_treatable? ? t('global.y') : '-'
+        #serum changes
+        if d.is_treatable? then t('global.y')
+        elsif d.is_serumable == true then 'Serum'
+        else '-'
+        end
+        #d.is_treatable? ? t('global.y') : '-'
+        #end serum changes
       end   
          
       def healing(d)

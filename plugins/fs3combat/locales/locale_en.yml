@@ -182,6 +182,9 @@ en:
         weapon_title_recoil: "Recoil:"
         weapon_title_damage_type: "Damage Type:"
         weapon_title_accuracy: "Accuracy Mod:"
+        weapon_title_mounted_accuracy: "Mounted Accuracy Mod:"
+        weapon_title_throws: "Throws:"
+        weapon_title_firearm_type: "Firearm Type:"
         weapon_title_has_shrapnel: "Has Shrapnel:" 
         weapon_title_reload_turns: "Reload Time:"
         weapon_title_allowed_specials: "Allowed Specials:"
@@ -229,6 +232,7 @@ en:
         
         dismounted: "%{name} has dismounted."
         mounted: "%{name} has mounted a %{mount}."
+        mounted_horse: "%{name} has mounted their %{mount} %{horse_name}."
         invalid_mount: "That is not a valid mount type."
         not_mounted: "You are not mounted."
         cant_be_in_both_vehicle_and_mount: "%{name} can't be in both a vehicle and on a mount at the same time."
@@ -241,6 +245,7 @@ en:
         not_mounted_to_ride: "That combatant is not mounted."
         their_horse_is_kod: "That combatant's horse is currently incapacitated."
         cant_be_mounted_and_ride: "You cannot ride another person's horse while mounted."
+        cant_be_riding_and_mount: "You cannot mount your horse while riding someone else's."
         dismounted_from_ride: "%{name} has dismounted %{ride_giver}'s horse."
         horse_is_spooked: "Your horse is still too wound up to ride."
             
@@ -296,6 +301,7 @@ en:
         
         stance_changed: "%{name} has changed %{poss} stance to %{stance}."
         invalid_stance: "That is not a valid stance."
+        no_cover_mounted: "You may not take cover while mounted."
         passenger_stance_warning: "Passengers are often at the mercy of the driver's stance.  Make sure this stance makes sense under the circumstances."
         stances_title: "Combat Stances"
         stance_subtitle: "Name                Attack   Defense"
@@ -371,6 +377,7 @@ en:
         explode_action_msg_long: "%{name} will blow up %{targets}."
         explode_action_msg_short: "Explode %{targets}"
         explode_resolution_message: "%{name} uses %{weapon}.  EXPLOSION!"
+        explode_self_message: "%{name} uses %{weapon}, but BLOWS THEMSELVES UP.  EXPLOSION!"
         concussion_from: "%{weapon}(Concussion)"
         # ----------------------------
         # PASS

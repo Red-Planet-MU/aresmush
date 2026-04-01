@@ -22,6 +22,8 @@ module AresMUSH
           return SerumGiveCommand
         when "add"
           return SerumAddCommand
+        when "remove"
+          return SerumRemoveCommand
         when nil
           return SerumCommand
         end
@@ -47,6 +49,8 @@ module AresMUSH
         return GiveSerumRequestHandler
       when "webUseSerum"
         return WebUseSerumRequestHandler
+      when "webManagePatients"
+        return WebManagePatientsHandler
       end
       nil
     end

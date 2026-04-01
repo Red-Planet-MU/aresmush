@@ -55,7 +55,7 @@ module AresMUSH
       end
           
       char.fs3_background_skills.each do |b|
-        if (b.rating > 1)
+        if (b.rating > 2)
           too_high << t('fs3skills.high_bg', :skill => b.name)
         end
       end

@@ -33,6 +33,8 @@ module AresMUSH
         end
         
         Serum.non_combat_healing_serum(enactor, target, serum_name)
+        enactor.update(serums_used: enactor.serums_used + 1)
+        Serum.handle_serum_used_given_achievement(enactor)
                     
         {}
       end

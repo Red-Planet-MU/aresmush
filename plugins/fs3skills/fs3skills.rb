@@ -25,7 +25,11 @@ module AresMUSH
           return RemoveSpecialtyCmd
         end
       when "learn"
-        return LearnAbilityCmd
+        if (cmd.switch_is?("specialty"))
+          return LearnSpecialtyCmd
+        else
+          return LearnAbilityCmd
+        end
       when "luck"
         case cmd.switch
         when "award"
@@ -93,6 +97,10 @@ module AresMUSH
         return SkillScanRequestHandler
       when "learnAbility"
         return LearnAbilityRequestHandler
+      when "learnSpecAbility"
+        return LearnSpecAbilityRequestHandler
+      when "webFinishSpecAbility"
+        return FinishSpecAbilityRequestHandler
       when"spendLuck"
         return SpendLuckRequestHandler
       end

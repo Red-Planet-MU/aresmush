@@ -15,8 +15,8 @@ module AresMUSH
       case cmd.root
       when 'fortune'
         return FortuneCommand
-
-
+      when 'book'
+        return BookCommand
       end
       nil
     end
@@ -33,6 +33,8 @@ module AresMUSH
       case request.cmd
       when "getFortune"
         return GetFortuneRequestHandler
+      when "getBook"
+        return GetBookRequestHandler
       end
     end
 

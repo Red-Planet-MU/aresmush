@@ -4,8 +4,11 @@ module AresMUSH
             
       def prepare
         return t('horse.not_mounted') if !self.combatant.mount_type
-        riding_with_spooked = self.combatant.is_riding_with.spook_counter
-        return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0 && !riding_with_spooked
+        if self.combatant.is_riding_with
+          riding_with_spooked = self.combatant.is_riding_with.spook_counter
+          return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0 && !riding_with_spooked
+        end
+        return t('horse.not_spooked') if self.combatant.mount_type && self.combatant.spook_counter == 0
         return nil
       end
 
@@ -18,32 +21,34 @@ module AresMUSH
       end
       
       def resolve
-        riding_with_spooked = self.combatant.is_riding_with.spook_counter
-        if riding_with_spooked
-          main_rider = self.combatant.is_riding_with
-          main_rider.update(spook_counter: 0)
-          main_rider.update(just_calmed: true)
+        if self.combatant.is_riding_with 
+          riding_with_spooked = self.combatant.is_riding_with.spook_counter
+          if riding_with_spooked
+            main_rider = self.combatant.is_riding_with
+            main_rider.update(spook_counter: 0)
+            main_rider.update(just_calmed: true)
+          end
         end
         self.combatant.update(spook_counter: 0)
         self.combatant.update(just_calmed: true)
         self.combatant.associated_model.update(horse_bond_counter: self.combatant.associated_model.horse_bond_counter + 1)
         #check whether to increment horse bond
         case self.combatant.associated_model.horse_bond_counter
-        when 3
+        when 1
           self.combatant.associated_model.update(horse_bond: 1)
-        when 5
+        when 3
           self.combatant.associated_model.update(horse_bond: 2)
-        when 8
+        when 5
           self.combatant.associated_model.update(horse_bond: 3)
-        when 13
+        when 8
           self.combatant.associated_model.update(horse_bond: 4)
-        when 21
+        when 13
           self.combatant.associated_model.update(horse_bond: 5)
-        when 34
+        when 21
           self.combatant.associated_model.update(horse_bond: 6)
-        when 55
+        when 34
           self.combatant.associated_model.update(horse_bond: 7)
-        when 89
+        when 55
           self.combatant.associated_model.update(horse_bond: 8)
         end
         [t('horse.calm_resolution_msg', :name => self.name)]

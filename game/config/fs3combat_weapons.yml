@@ -38,7 +38,7 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
     Mine:
-      description: Improvised explosive.
+      description: Improvised explosive, usually dynamite.
       skill: Trapping
       lethality: 5
       penetration: 7
@@ -53,8 +53,8 @@ fs3combat:
     Bow:
       description: A piece of wood with a string connecting the ends. Silent, and less deadly, compared to firearms.
       skill: Archery
-      lethality: 0
-      penetration: 3
+      lethality: -5
+      penetration: 4
       weapon_type: Ranged
       is_automatic: false
       recoil: 0
@@ -62,7 +62,6 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
-      allowed_specials:
     Snare:
       description: A rudimentary mechanism set in place to entangle something.
       skill: Trapping
@@ -102,8 +101,6 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       firearm_type: Pistols
-      allowed_specials:
-      - Ap
     Dual Revolvers:
       description: TWO basic six-shooters.
       skill: Firearms
@@ -119,8 +116,6 @@ fs3combat:
       init_mod: -1
       dual_wield: true
       firearm_type: Pistols
-      allowed_specials:
-      - Ap
     Rifle:
       description: A long rifle. Bolt action.
       skill: Firearms
@@ -137,7 +132,6 @@ fs3combat:
       firearm_type: Rifles
       mounted_accuracy: -2
       allowed_specials:
-      - Ap
       - Scope
     Repeater:
       description: A lever-action long gun that can shoot more rapidly than a rifle but with less power and accuracy.
@@ -154,8 +148,6 @@ fs3combat:
       init_mod: 0
       mounted_accuracy: -1
       firearm_type: Rifles
-      allowed_specials:
-      - Ap
     Energy Rifle:
       description: Restricted, NILE-issue energy-based long gun equipped with a self-destruct mechanism and palm reader.
       skill: Firearms
@@ -189,8 +181,6 @@ fs3combat:
       init_mod: 0
       firearm_type: Rifles
       mounted_accuracy: -1
-      allowed_specials:
-      - Buckshot
     Club:
       description: Mace/club/baton
       skill: Melee

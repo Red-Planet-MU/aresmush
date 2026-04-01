@@ -6,7 +6,7 @@ module AresMUSH
           char = Character.find_one_by_name(char_name_or_id)
           serum_name = request.args['serum_type']
           web_target = request.args['target']
-          target = Character.named(web_target)
+          target = Character.named(web_target.to_a[0][1])
           enactor = request.enactor
           error = Website.check_login(request)
           return error if error
@@ -24,7 +24,7 @@ module AresMUSH
           message = t('serum.received_serum', :name => enactor.name, :serum_name => serum_name)
           Login.emit_if_logged_in target, message
           Login.notify(target, :luck, message, nil)
-          
+          {}
         end
       end
     end

@@ -52,9 +52,20 @@ module AresMUSH
             client.emit_failure t('fs3combat.horse_is_spooked')
             return
           end
-             
-          combatant.update(mount_type: self.mount)
-          FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => self.mount)
+
+          if combatant.is_riding_with 
+            client.emit_failure t('fs3combat.cant_be_riding_and_mount')
+            return
+          end 
+          
+          if !combatant.is_npc?
+            horse_name = combatant.associated_model.demographic("horse name")
+            combatant.update(mount_type: self.mount)
+            FS3Combat.emit_to_combat combat, t('fs3combat.mounted_horse', :name => combatant.name, :mount => self.mount, :horse_name => horse_name)
+          else
+            combatant.update(mount_type: self.mount)
+            FS3Combat.emit_to_combat combat, t('fs3combat.mounted', :name => combatant.name, :mount => self.mount)
+          end
         end
       end
     end

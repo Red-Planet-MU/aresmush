@@ -76,6 +76,9 @@ scenes:
   - Social
   - Event
   - Vignette
+  - Text
+  - Letter
+  - Journal
   shortcuts:
     scenes: scene
     scene/close: scene/stop

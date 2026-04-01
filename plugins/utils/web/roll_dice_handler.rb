@@ -4,7 +4,9 @@ module AresMUSH
       def handle(request)
         scene = Scene[request.args['id']]
         enactor = request.enactor
-        dice_str = request.args['dice_string']
+        dice = request.args['dice']
+        faces = request.args['faces']
+        private_dice = request.args['private_dice']
         
         if (!scene)
           return { error: t('webportal.not_found') }
@@ -25,21 +27,22 @@ module AresMUSH
           raise "Trying to emit to a scene that doesn't have a room."
         end
 
-        Global.logger.debug "#{enactor.name} rolling #{dice_str} in scene #{scene.id}."
-        args = ArgParser.parse(/(?<num>[\d]*)[dD](?<sides>[\d]+$)/, dice_str)
-        num = (args.num || "0").to_i
-        sides =( args.sides || "0").to_i
+        Global.logger.debug "#{enactor.name} rolling #{dice}d#{faces} in scene #{scene.id}."
+        num = (dice|| "0").to_i
+        sides =(faces || "0").to_i
 
         message = Utils.roll_dice(enactor.name, num, sides)
         
         if (!message)
           return { error: t('dice.invalid_dice_string') }
         end
-
-        scene.room.emit_ooc message
-        Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
-        
-        {}
+        if !private_dice
+          scene.room.emit_ooc message
+          Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
+          {}
+        else
+          return { private_dice_result: message}
+        end
       end
     end
   end

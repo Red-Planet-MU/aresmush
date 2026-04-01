@@ -44,6 +44,5 @@ fs3skills:
     - Explosives
     linked_attr: Wits
   action_skills_blurb: 'Action Skills represent your ability in areas deemed important
-    for gameplay.  Action Skills are rated from 0-8, but some games limit the highest
-    and lowest ratings. See <a href="https://redplanetmu.com/wiki/guide:join_us#character-information"
+    for gameplay.  Action Skills are rated from 0-8. See <a href="https://redplanetmu.com/wiki/guide:join_us#character-information"
     target="_blank">Join Us</a> and click on the Action Skills tab for details.'

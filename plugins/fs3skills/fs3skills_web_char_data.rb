@@ -74,6 +74,11 @@ module AresMUSH
           progress: a.xp_needed ? a.xp * 100.0 / a.xp_needed : 0,
           xp: a.xp,
           xp_needed: a.xp_needed,
+          spec_xp: FS3Skills.get_ability_type(a.name) == :action ? a.spec_xp : 0,
+          spec_xp_needed: 15,
+          spec_progress: FS3Skills.get_ability_type(a.name) == :action ? a.spec_xp * 100.0 / 15 : 0,
+          a_has_spec: FS3Skills.get_ability_type(a.name) == :action ? FS3Skills.action_specialties(a.name) : nil,
+          c_has_spec: FS3Skills.get_ability_type(a.name) == :action ? a.specialties : nil,
           days_to_learn: FS3Skills.days_to_next_learn(a)
         }}
       end

@@ -28,17 +28,17 @@ module AresMUSH
         # Serums can only target one target
         return t('fs3combat.only_one_target') if (self.targets.count > 1)
         
-        # If this is a healing serum, the target must have a treatable wound
-        wound = FS3Combat.worst_treatable_wound(self.target.associated_model)
+        # If this is a healing serum, the target must have a serumable wound
+        wound = FS3Combat.worst_serumable_wound(self.target.associated_model)
         self.serum_type = Serum.find_serums_type(self.serum_name)
         if (!wound) && self.serum_type == "v_serums_has"
-          return t('fs3combat.target_has_no_treatable_wounds', :name => self.target.name)
+          return t('serum.no_healable_wounds', :name => self.target.name)
         end
 
         #If this is horse juice, the target's horse must be KO'd 
         horse_down = self.target.horse_kod
-        if horse_down == false
-          return t(fs3combat.target_horse_is_not_kod, :name => self.target.name)
+        if horse_down == false && self.serum_type == "e_serums_has"
+          return t('fs3combat.target_horse_is_not_kod', :name => self.target.name)
         end
         
         #If this is a serum with a lasting effect, the last serum must expire first
@@ -59,7 +59,7 @@ module AresMUSH
       
       def print_action
         display_name = Global.read_config('serum',self.serum_name,'display_name')
-        if display_name = "%x230%X18Equine Elixir%xn"
+        if display_name == "%x230%X18Equine Elixir%xn"
           msg = t('serum.use_serum_action_on_horse_msg_long',  :name => self.name, :target => print_target_names, :serum_name => display_name)
         else
           msg = t('serum.use_serum_action_msg_long', :name => self.name, :target => print_target_names, :serum_name => display_name)
@@ -91,6 +91,8 @@ module AresMUSH
         #Serums that have a lasting effect
         if duration > 0
           self.target.update(serum_duration_counter: duration)
+          #track Last used serum
+          self.target.update(last_serum: self.serum_name)
           #ride on the default FS3 mod, which a GM may have set 8/31 Note, I don't think this is true anymore, this looks like a new custom mod value
           if init_mod
             self.target.update(serum_init_mod: init_mod)
@@ -115,6 +117,9 @@ module AresMUSH
 
         if is_revive
           self.target.update(is_ko: false)
+          wound = FS3Combat.worst_serumable_wound(self.target.associated_model)
+          FS3Combat.heal(wound, 1)
+          wound.update(is_serumable: false)
           message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 
@@ -125,8 +130,6 @@ module AresMUSH
 
         #do not track NPC serum use
         if !combatant.is_npc?
-        #track Last used serum
-          self.target.update(last_serum: self.serum_name)
 
           Serum.modify_serum(combatant.associated_model, self.serum_name, -1)
           combatant.associated_model.update(serums_used: combatant.associated_model.serums_used + 1)

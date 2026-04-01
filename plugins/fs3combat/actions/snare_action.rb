@@ -51,6 +51,8 @@ module AresMUSH
         if (margin[:hit])
           target.update(snared_by: self.combatant)
           target.update(is_snared: true)
+          target.update(action_klass: nil)
+          target.update(action_args: nil)
           target.update(snare_roll: margin[:attacker_net_successes] + 1)
           messages << t('fs3combat.snare_action_success', :name => self.name, :target => print_target_names)
           #self.combatant.update(action_klass: nil)

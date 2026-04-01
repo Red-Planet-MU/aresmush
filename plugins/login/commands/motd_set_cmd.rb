@@ -3,10 +3,12 @@ module AresMUSH
     class MotdSetCmd
       include CommandHandler
 
-      attr_accessor :notice
+      attr_accessor :notice, :subject
       
       def parse_args
-        self.notice = cmd.args
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+        self.subject = args.arg1
+        self.notice = args.arg2
       end
       
       def check_can_set
@@ -17,9 +19,16 @@ module AresMUSH
       def handle
         Game.master.update(login_motd: self.notice)
         client.emit_success t('login.motd_set')
+        if !self.subject
+          self.subject = Date.today
+        end
         if (!self.notice.blank?)
           Manage.announce t('login.motd_announce', :enactor => enactor_name, :message => self.notice)
         end
+        Forum.system_post(
+          "Message of the Day Archive", 
+          self.subject, 
+          Website.format_markdown_for_html(self.notice))
       end
     end
   end

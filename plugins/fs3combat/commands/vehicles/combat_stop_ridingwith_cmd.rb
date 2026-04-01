@@ -28,8 +28,11 @@ module AresMUSH
       
       def handle
         FS3Combat.with_a_combatant(name, client, enactor) do |combat, combatant|    
-          if (combatant.mount_type)                
+          if (combatant.mount_type && combatant.is_riding_with)   
+            carrier = combatant.is_riding_with             
             combatant.update(mount_type: nil)
+            combatant.update(is_riding_with: nil)
+            carrier.update(is_carrying: nil)
             FS3Combat.emit_to_combat combat, t('fs3combat.dismounted', :name => combatant.name)
           else
             client.emit_failure t('fs3combat.not_mounted')

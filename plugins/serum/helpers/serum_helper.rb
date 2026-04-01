@@ -59,7 +59,7 @@ module AresMUSH
         heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
-        wound = FS3Combat.worst_treatable_wound(target)
+        wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
         case heal_success_level
         when -1
@@ -86,15 +86,17 @@ module AresMUSH
 
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
+          wound.update(is_serumable: false)
           return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
       end
 
+      #apparently not in use lol.
       def self.non_combat_healing_serum(char, target, serum_name)
         heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
-        wound = FS3Combat.worst_treatable_wound(target)
+        wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
         case heal_success_level
         when -1
@@ -121,12 +123,17 @@ module AresMUSH
 
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
+          wound.update(is_serumable: false)
           message = t('serum.used_v_out_of_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
         char.room.emit message
-          if char.room.scene
-            Scenes.add_to_scene(char.room.scene, message)
-          end
+        if char.room.scene
+          Scenes.add_to_scene(char.room.scene, message)
+        end
+        if target.room != char.room && message.to_s.include?(target.name)
+          Global.logger.debug "target.room: #{target.room} char.room: #{char.room}"
+          Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
+        end
         Serum.modify_serum(char, serum_name, -1)
       end
 
@@ -165,6 +172,24 @@ module AresMUSH
           end
         end
       end
-  
+
+      def self.possible_serum_receivers(char_name)
+        char_to_exclude = '{:name=>"'+char_name+'"'
+        Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }.reject {|element| element.to_s.start_with?(char_to_exclude)}
+      end
+
+      def self.possible_serum_targets()
+        Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }
+      end
+
+      def self.list_patients(enactor)
+        enactor.patients.map { |p| { name: p.name, icon: Website.icon_for_char(p) }}
+      end
+
+      def self.possible_patients(char_name)
+        char_to_exclude = '{:name=>"'+char_name+'"'
+        Chargen.approved_chars.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }.reject {|element| element.to_s.start_with?(char_to_exclude)}
+      end
+
     end
   end

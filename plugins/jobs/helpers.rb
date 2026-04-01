@@ -92,7 +92,7 @@ module AresMUSH
         status = Jobs.archived_status
         jobs = Jobs.accessible_jobs(char, nil, true).select { |j| j.status == status }
       when "ALL"
-        jobs = Jobs.accessible_jobs(char)
+        jobs = Jobs.accessible_jobs(char, nil, true)
       else 
         # Category or status filter
         if (Jobs.status_filters.include?(filter))

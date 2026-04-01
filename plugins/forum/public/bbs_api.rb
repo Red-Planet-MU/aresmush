@@ -1,9 +1,13 @@
 module AresMUSH
   module Forum
     def self.has_unread_forum_posts?(char)
-      BbsBoard.all.each do |b|
-        if (b.has_unread?(char))
-          return true
+      if !char
+        return false
+      else
+        BbsBoard.all.each do |b|
+          if (b.has_unread?(char))
+            return true
+          end
         end
       end
       return false

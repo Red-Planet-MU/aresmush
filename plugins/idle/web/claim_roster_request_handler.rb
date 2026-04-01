@@ -5,7 +5,7 @@ module AresMUSH
                 
         enactor = request.enactor
 
-        error = Website.check_login(request, true)
+        error = Website.check_login(request)
         return error if error
 
         request.log_request

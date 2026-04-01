@@ -22,9 +22,9 @@ idle:
   idle_warn_msg: You haven't played in awhile and your character is in danger of idling
     out.
   roster_arrival_msg: |-
-    %{name} has been claimed off the roster.
+    Please welcome %{name}, our latest %{origin} to be approved!
 
-    Position: %{position}
+    Profile: %{profile_link}
 
     RP Hooks:
     %{rp_hooks}
@@ -37,7 +37,7 @@ idle:
 
     If you're submitting this from an existing character, check your messages to follow up. Otherwise, provide an email where we can get back to you:
   roster_app_category: APP
-  restrict_roster: false
+  restrict_roster: true
   roster_fields:
   - field: name
     width: 20
@@ -50,6 +50,10 @@ idle:
     width: 17
     title: Origin
     value: Origin
+  - field: demographic
+    width: 20
+    title: Occupation
+    value: occupation
   shortcuts:
     idle/add: idle/action
     roster/update: roster/add

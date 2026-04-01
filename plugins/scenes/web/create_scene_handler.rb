@@ -10,6 +10,7 @@ module AresMUSH
         pacing = request.args['scene_pacing'] || Scenes.scene_pacing.first
         scene_type = request.args['scene_type'] || Scenes.scene_types.first
         tags = (request.args['tags'] || "").split(" ")
+        invite_pals = request.args['invitePals']
         
         error = Website.check_login(request)
         return error if error
@@ -53,7 +54,6 @@ module AresMUSH
         if enactor.open_scene_announce == "on" && privacy != "Private"
             Channels.send_to_channel("RP Requests", t('socializer.rp_request_emit', :name => enactor.name, :location => request.args['location']))
         end
-
         #End Socializer Changes
 
         plot_ids = request.args['plots'] || []
@@ -78,6 +78,20 @@ module AresMUSH
             participants << participant
           end
         end
+
+        #More Socializer Changes
+        if invite_pals 
+          pal_names = enactor.pals.map { |p| p.name }
+
+          pal_names.each do |name|
+            pal = Character.find_one_by_name(name)
+            
+            if (!scene.participants.include?(pal))
+              Socializer.pal_invite_to_scene(scene, pal, enactor)
+            end
+          end
+        end
+        #/More Socializer Changes
       
         related_scene_ids = request.args['related_scenes'] || []
       

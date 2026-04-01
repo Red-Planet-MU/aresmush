@@ -13,6 +13,7 @@ Experience Points (XP) are gained periodically to reflect what your character ha
 > Learn how the FS3 skills system works in the [FS3 Tutorial](/help/fs3).
 
 `learn <ability>` - Spends XP to learn an ability.
+`learn/specialty <ability>` - Spends XP to learn a specialty in an ability.
 `xp` - Shows your progress towards the next rating level.
 
 > **Tip:** If you ever mess up an XP spend, like by typing the wrong skill name, an admin can help you reset it.
