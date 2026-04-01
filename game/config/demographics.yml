@@ -16,6 +16,10 @@ demographics:
     width: 20
     title: Occupation
     value: occupation
+  - field: age
+    width: 5
+    title: Age
+    value: age
   - field: demographic
     width: 20
     title: Horse Name
