@@ -106,22 +106,107 @@ fortune:
     - You will be famous, but not for the reasons you hoped.
     - Have the conversation you have been avoiding.
   book_list:
-    - "Pheasants and Their Enemies"
-    - "How to Care for the Insane"
-    - "John Carter: A Princess of Mars"
-    - "A Meditation on the Lives of Cougars by Hector Navarro"
-    - "The 100 Deadliest Karate Moves"
-    - "Contingency Cannibalism: Superhardcore Survivalism"
-    - "How to Profit from the Coming Rapture"
-    - "Easy-to-Make Puppets"
-    - "Danger! How to Handle Fear and Dangerous Things, Places, and Situations"
-    - "The Joys of Gelatin Cookbook"
-    - "The Secret Power of the Pyramids"
-    - "How To Recognize and Handle Abnormal People"
-    - "Illustrated Color Guide to Healthful Yoga"
-    - "Evidence of Alien Abduction"
-    - "Macrame: Why Knot?"
-    - "1000 Fashion & Beauty Tricks"
+    - Pheasants and Their Enemies
+    - How to Care for the Insane
+    - 'John Carter: A Princess of Mars'
+    - A Meditation on the Lives of Cougars by Hector Navarro
+    - The 100 Deadliest Karate Moves
+    - 'Contingency Cannibalism: Superhardcore Survivalism'
+    - How to Profit from the Coming Rapture
+    - Easy-to-Make Puppets
+    - Danger! How to Handle Fear and Dangerous Things, Places, and Situations
+    - The Joys of Gelatin Cookbook
+    - The Secret Power of the Pyramids
+    - How To Recognize and Handle Abnormal People
+    - Illustrated Color Guide to Healthful Yoga
+    - Evidence of Alien Abduction
+    - 'Macrame: Why Knot?'
+    - 1000 Fashion & Beauty Tricks
+    - The Gentle Art of Smoking
+    - Wonders of Dust
+    - The New Banana Fruit Dispatch
+    - 'Knitting with Balls: A Hands-On Guide'
+    - 45 Fine and Fanciful Hats to Knit
+    - 'Flying Saucers: Serious Business'
+    - The Joy of Home Winemaking
+    - Correct Salads for All Occasions
+    - Dating Tips for the Desperate
+    - Psychic Sasquatch and their UFO Connection
+    - Astrology for Beginners
+    - A Pocket Guide to Mushrooms
+    - Get Yourself Together
+    - Fancy Coffins to Make Yourself
+    - Harnessing the Power of Your Feminine Energy
+    - Bread Sculpture
+    - The 15-Minute-A-Day Natural Face Lift
+    - Surviving Hostage Situations
+    - How To Spot Liars
+    - Comforting Your Neurotic Friends & Family
+    - Sausage Production
+    - Canning and Preservation of Meats
+    - Witches' Potions and Spells
+    - Home Firearm Safety
+    - The Eat-A-Bug Cookbook
+    - How to Be More Sensitive
+    - Activate Your Psychic Powers
+    - How to Defend Yourself Against Alien Abduction
+    - 'Knife Throwing: A Practical Guide'
+    - The Shy Person's Guide to Success With Others
+    - 'Armwrestling: How to Become a Champion'
+    - 'Overcoming Clumsiness: Physical Dexterity for Awkward People'
+    - Making Pigeons Pay
+    - Explorations in Hypnosis
+    - How to Enjoy Your Weeds
+    - Curses & Blessings for All Occasions
+    - Be Bold With Bananas
+    - Zombie Sharks with Metal Teeth
+    - A History of Thimbles
+    - 'Mole Catching: A Practical Guide'
+    - All About Pockets
+    - Fancy Goldfish Culture
+    - The Best Fences
+    - Land Snails and Slugs
+    - Successful Muskrat Farming
+    - How to Live with an Idiot
+    - An Intellectual History of Cannibalism
+    - How to Avoid Huge Ships
+    - How to Disappear Completely and Never Be Found
+    - Old Age, Its Cause and Prevention
+    - Outwitting Squirrels
+    - An Incomplete History of the Art of the Funerary Violin
+    - Numerology for Beginners
+    - 'Seventy Eight Degrees of Wisdom: A Book of Tarot'
+    - The Deer-Smellers of Haunted Mountain
+    - The Art and Science of Embalming
+    - Dancing Lessons for the Advanced in Age
+    - How to Clear Your Home of Ghosts & Spirits
+    - 'Short-Horn Cattle: Historical Sketches, Memoirs, & Records'
+    - The Complete Dictionary of Livestock
+    - Hot Pterodactyl Boy-Friend
+    - Astral Projection for Psychic Empowerment
+    - The Ultimate Guide to Astrology
+    - 'Endless Quest: Dragon of Doom'
+    - The Principles of Occult Healing
+    - An Illustrated History of Furniture
+    - Mold Identification
+    - Health, Harmony, and Peak Performance
+    - A Passion for Donkeys
+    - God Speaks Through Cats
+    - Reusing Old Graves
+    - I Reincarnated Into A Lizardman Shaman
+    - The Fire Clown
+    - No Man Knows My Pastries
+    - My Gun Shoots Bullets
+    - Eating People Is Wrong
+    - How To Avoid Huge Ships
+    - Wet Hot Allosaurus Summer
+    - The Origin of Consciousness in the Breakdown of the Bicameral Mind
+    - Guns Will Keep Us Together
+    - 'Aura Reading for Beginners: Develop Your Psychic Awareness for Health & Success'
+    - Bayou Fever
+    - Lightweight Sandwich Construction
+    - 'An Essay on the Art of Ingeniously Tormenting: with Proper Rules for the Exercise
+      of that Pleasant Art'
   cron:
     minute:
       - 00
