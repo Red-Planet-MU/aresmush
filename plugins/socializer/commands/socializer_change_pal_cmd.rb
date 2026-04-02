@@ -26,7 +26,7 @@ module AresMUSH
               client.emit_failure t('socializer.pal_is_not_approved', :name => model.name)
               return
             end
-            if (model.idle_state != "None")
+            if (model.idle_state == "Gone")
               client.emit_failure t('socializer.pal_is_not_approved', :name => model.name)
               return
             end
