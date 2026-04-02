@@ -18,8 +18,8 @@ The Pals List is an easy way to let your character's close connections know that
 ## Pals Commands
 
 `pals` - Shows your Pals List.
-`pals/add` - Adds a character to your Pals List.
-`pals/remove` - Removes a character from your Pals List.
+`pals/add <character>` - Adds a character to your Pals List.
+`pals/remove <character>` - Removes a character from your Pals List.
 `pals/invite` - Notifies all of your Pals that they're able to join your active scene, if they're interested.
 `pals/uninvite` - Notifies all of your Pals that you have closed the door to join your active scene.
 
