@@ -109,6 +109,7 @@ module AresMUSH
         Login.notify(s.character, :event, message, event.id)
       end
       Channels.announce_notification(message)
+      if Global.read_config("postevent", "reply_on_edit") then PostEvent.reply_to_forum_post(event) end
     end
    
     def self.format_timestamp(time)
