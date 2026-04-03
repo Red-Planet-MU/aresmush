@@ -87,6 +87,8 @@ module AresMUSH
         everyone.each { |c| everyone_plus_alts.concat AresCentral.play_screen_alts(c) }
         
         everyone_plus_alts.uniq.each do |char|    
+          is_unread = Page.is_thread_unread?(thread, enactor)
+          Global.logger.debug "is_unread: #{is_unread}"
           data = {
             id: thread.id,
             key: thread.id,
@@ -221,7 +223,6 @@ module AresMUSH
       
       is_hidden = thread.is_hidden?(enactor)
       is_unread = Page.is_thread_unread?(thread, enactor)
-      Global.logger.debug "is_unread: #{is_unread}, new_messages: #{is_unread ? 1 : nil}"
       {
          key: thread.id,
          title: thread.title_customized(enactor),
