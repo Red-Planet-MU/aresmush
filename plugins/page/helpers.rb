@@ -97,7 +97,8 @@ module AresMUSH
             message: Website.format_markdown_for_html(message),
 	    poseable_chars: Page.build_poseable_web_chars_data(char, thread),
             message_id: page_message.id,
-            is_page: true
+            is_page: true,
+            is_unread_for_play: is_unread
           }
           clients = Global.client_monitor.web_clients.select { |client| client.char_id == char.id }
           clients.each do |client|
