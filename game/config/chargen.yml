@@ -56,10 +56,9 @@ chargen:
     to be killed off, or turned into a NPC, or whatever.
   post_approval_message: 
   rank_blurb: Military rank.
-  rejection_message: Sorry, your character could not be approved at the present time
-    for the reasons described below.  Please see %xhhelp app%xn for help making changes
-    and resubmitting, and contact the person handling your application if you have
-    any questions.
+  rejection_message: Staff has requested changes on your application as described below.
+    Please see %xhhelp app%xn for help making changes and resubmitting, and respond to 
+    this request if you have any questions.
   shortcuts:
     chargen: cg
     cg/back: cg/prev
