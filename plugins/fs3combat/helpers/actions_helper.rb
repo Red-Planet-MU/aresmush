@@ -88,7 +88,7 @@ module AresMUSH
     end
     
     def self.check_for_ko(combatant)
-      return if (!combatant.freshly_damaged || combatant.is_ko || combatant.total_damage_mod > -1.25)
+      return if (!combatant.freshly_damaged || combatant.is_ko || combatant.total_damage_mod > -1.26)
 
       combatant.log "Checking for KO: #{combatant.name} damaged=#{combatant.freshly_damaged} ko=#{combatant.is_ko} mod=#{combatant.total_damage_mod}"
       
