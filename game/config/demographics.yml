@@ -48,7 +48,6 @@ demographics:
   - occupation
   - theme song title
   - theme song link
-  - played by
   genders:
     Male:
       possessive_pronoun: his
