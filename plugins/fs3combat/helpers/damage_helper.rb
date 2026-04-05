@@ -185,6 +185,9 @@ module AresMUSH
          new_severity = FS3Combat.damage_severities[new_severity_index]
          wound.update(current_severity: new_severity)
          wound.update(healing_points: FS3Combat.healing_points(new_severity))
+         if wound.current_severity == "HEAL"
+            wound.update(serumable: false)
+         end
        else
          wound.update(healing_points: healing)
        end
