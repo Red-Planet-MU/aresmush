@@ -3,5 +3,5 @@ fs3combat:
   mounts:
     Horse:
       description: A horse
-      toughness: 6
+      toughness: 7
       mod_vs_unmounted: 1
