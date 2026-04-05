@@ -1283,6 +1283,13 @@ a:focus  {
 	}
 }
 
+@media screen and (min-width: 1001px) {
+  .play-main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
 .play-sidebar {
   border: 1px solid #3d5954;
   margin: 10px;
