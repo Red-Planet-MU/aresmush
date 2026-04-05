@@ -111,6 +111,7 @@ module AresMUSH
             passenger_rider = combatant.is_carrying
             passenger_rider.update(mount_type: nil)
             passenger_rider.update(is_riding_with: nil)
+            Global.logger.debug("passenger_rider: #{passenger_rider.name} passenger_rider.mount_type: #{passenger_rider.mount_type} passenger_rider.is_riding_with: #{passenger_rider.is_riding_with}")
             combatant.update(mount_type: nil)
             combatant.update(is_carrying: nil)
             combatant.update(spook_counter: 0)
