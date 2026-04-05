@@ -289,7 +289,7 @@ module AresMUSH
         vehicle: combatant.vehicle ? "#{combatant.vehicle.name} #{combatant.piloting ? 'Pilot' : 'Passenger'}" : "" ,
         mount: combatant.mount_type,
         stance: combatant.stance,
-        action: combatant.action ? combatant.action.print_action_short : "",
+        action: combatant.action ? format_markdown_for_html(combatant.action.print_action_short) : "",
         can_edit: can_manage || (viewer && viewer.name == combatant.name)
       }
     end
