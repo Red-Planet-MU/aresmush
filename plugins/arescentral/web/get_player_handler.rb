@@ -62,7 +62,7 @@ module AresMUSH
            profile: profile,
            rp_prefs: prefs,
            roles: roles,
-           custom: CustomCharFields.get_fields_for_viewing(player, enactor),
+           comps: Compliments.get_comps(player),
            siteinfo: (enactor && enactor.is_admin?) ? Login.build_web_site_info(player, enactor) : nil
          }
        end
