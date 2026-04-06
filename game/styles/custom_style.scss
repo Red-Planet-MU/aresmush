@@ -1065,6 +1065,10 @@ body {
 .char-achievements {
      column-count: 2; }
 
+.relationship-row {
+  flex-wrap: unset;
+}
+
 .comp {
   background-image: url("/game/uploads/theme_images/paper_tex.png");
   background-color: #ffe8cf; 
