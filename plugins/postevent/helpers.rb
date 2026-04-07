@@ -19,7 +19,7 @@ module AresMUSH
       author = Character.named(event.organizer_name)
       category = BbsBoard.find_one_by_name(category_name)
       if post == "error"
-        client = Global.client_monitor.find_client(author)
+        client = Global.client_monitor.find_web_client(author)
         return client.emit_failure "Cannot reply to event forum post with updates; you may want to do it manually. This happens when the event name has changed."
       else
         Forum.reply(category, post, author, reply)
