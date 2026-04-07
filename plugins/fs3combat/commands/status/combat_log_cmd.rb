@@ -19,6 +19,11 @@ module AresMUSH
           client.emit_failure t('fs3combat.you_are_not_in_combat')
           return
         end
+
+        if (combat.organizer != enactor && !enactor.is_admin?)
+          client.emit_failure t('fs3combat.only_organizer_can_do')
+          return
+        end
         
         if (combat.debug_log)
           list = combat.debug_log.combat_log_messages.sort_by(:timestamp).map { |l| "#{l.created_at} #{l.message}"}.reverse
