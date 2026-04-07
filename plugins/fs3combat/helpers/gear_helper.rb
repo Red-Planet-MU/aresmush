@@ -226,8 +226,8 @@ module AresMUSH
       combatant.update(throws: current_throws)
       combatant.update(max_throws: max_throws)
       #/Trashcan's expanded throwing weapons
-      combatant.update(action_klass: nil)
-      combatant.update(action_args: nil)
+      #combatant.update(action_klass: nil)
+      #combatant.update(action_args: nil)
 
       message = t('fs3combat.weapon_changed', :name => combatant.name, 
         :weapon => combatant.weapon)
