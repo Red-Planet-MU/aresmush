@@ -23,7 +23,7 @@ module AresMUSH
       
       dice = [dice, 1].max.ceil
       dice.times.collect { 1 + rand(10) }
-      
+
     end
     
     # Determines the success level based on the raw die result.
@@ -123,7 +123,7 @@ module AresMUSH
         roll = FS3Skills.parse_and_roll(char, pc_skill)
         roll_result = FS3Skills.get_success_level(roll)
         success_title = FS3Skills.get_success_title(roll_result)
-        if success_level == -1 || success_level == 16
+        if roll_result == -1 || roll_result == 16
           message = t('tdd.auto_roll_result', 
             :name => char ? char.name : "#{pc_name} (#{enactor.name})",
             :roll => pc_skill,
@@ -146,7 +146,7 @@ module AresMUSH
         roll = FS3Skills.parse_and_roll(enactor, roll_str)
         roll_result = FS3Skills.get_success_level(roll)
         success_title = FS3Skills.get_success_title(roll_result)
-        if success_level == -1 || success_level == 16
+        if roll_result == -1 || roll_result == 16
           message = t('tdd.auto_roll_result', 
             :name => enactor.name,
             :roll => roll_str,
