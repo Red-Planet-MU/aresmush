@@ -60,6 +60,7 @@ fs3combat:
     Target:
       hitloc: Target
       weapon: Unarmed
+      npc_type: Target
   shortcuts:
     combat/skill: combat/summary
     combat/skills: combat/summary
