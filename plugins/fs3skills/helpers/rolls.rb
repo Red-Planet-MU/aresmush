@@ -127,12 +127,20 @@ module AresMUSH
         roll = FS3Skills.parse_and_roll(char, pc_skill)
         roll_result = FS3Skills.get_success_level(roll)
         success_title = FS3Skills.get_success_title(roll_result)
-        message = t('fs3skills.simple_roll_result', 
-          :name => char ? char.name : "#{pc_name} (#{enactor.name})",
-          :roll => pc_skill,
-          :dice => FS3Skills.print_dice(roll),
-          :success => success_title
+        if success_level == -1 || success_level == 16
+          message = t('tdd.auto_roll_result', 
+            :name => char ? char.name : "#{pc_name} (#{enactor.name})",
+            :roll => pc_skill,
+            :success => success_title
           )
+        else
+          message = t('fs3skills.simple_roll_result', 
+            :name => char ? char.name : "#{pc_name} (#{enactor.name})",
+            :roll => pc_skill,
+            :dice => FS3Skills.print_dice(roll),
+            :success => success_title
+            )
+        end
           
       # ------------------
       # SELF ROLL
@@ -142,12 +150,20 @@ module AresMUSH
         roll = FS3Skills.parse_and_roll(enactor, roll_str)
         roll_result = FS3Skills.get_success_level(roll)
         success_title = FS3Skills.get_success_title(roll_result)
-        message = t('fs3skills.simple_roll_result', 
-          :name => enactor.name,
-          :roll => roll_str,
-          :dice => FS3Skills.print_dice(roll),
-          :success => success_title
+        if success_level == -1 || success_level == 16
+          message = t('tdd.auto_roll_result', 
+            :name => enactor.name,
+            :roll => roll_str,
+            :success => success_title
           )
+        else
+          message = t('fs3skills.simple_roll_result', 
+            :name => enactor.name,
+            :roll => roll_str,
+            :dice => FS3Skills.print_dice(roll),
+            :success => success_title
+            )
+        end
       end
       
       return { message: message }
