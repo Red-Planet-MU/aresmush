@@ -88,7 +88,6 @@ module AresMUSH
         
         everyone_plus_alts.uniq.each do |char|    
           is_unread = Page.is_thread_unread?(thread, char)
-          Global.logger.debug "is_unread: #{is_unread}"
           data = {
             id: thread.id,
             key: thread.id,
