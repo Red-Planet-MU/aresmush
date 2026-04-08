@@ -91,8 +91,9 @@ module AresMUSH
         return AbilitiesRequestHandler
       when "addJobRoll"
         return AddJobRollRequestHandler
-      when "addSceneRoll"
-        return AddSceneRollRequestHandler
+      #Allow TDD to override
+      #when "addSceneRoll"
+      #  return AddSceneRollRequestHandler
       when "fs3Scan"
         return SkillScanRequestHandler
       when "learnAbility"
