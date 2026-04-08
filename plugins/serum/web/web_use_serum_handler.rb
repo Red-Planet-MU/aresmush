@@ -32,7 +32,7 @@ module AresMUSH
           return { error: t('serum.no_healable_wounds', :target => target.name) }
         end
         
-        Serum.non_combat_healing_serum(enactor, target, serum_name)
+        Serum.non_combat_healing_serum(enactor, target, serum_name, scene)
         enactor.update(serums_used: enactor.serums_used + 1)
         Serum.handle_serum_used_given_achievement(enactor)
                     

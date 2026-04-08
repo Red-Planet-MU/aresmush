@@ -91,8 +91,8 @@ module AresMUSH
         end
       end
 
-      #apparently not in use lol.
-      def self.non_combat_healing_serum(char, target, serum_name)
+      #apparently IS in use by the web serum command
+      def self.non_combat_healing_serum(char, target, serum_name, scene)
         heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
