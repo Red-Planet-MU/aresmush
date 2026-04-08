@@ -440,7 +440,8 @@ en:
         reload_action_msg_long: "%{name} will reload this turn."
         reload_action_msg_short: "Reload"
         reload_resolution_msg: "%{name} reloads."
-        cant_reload: "That weapon can't be reloaded."      
+        cant_reload: "That weapon can't be reloaded."
+        reload_already_full: "That weapon is already full."   
 
         #Trashcan's extended throwing items
         recover_action_msg_long: "%{name} will recover a throwing item this turn."

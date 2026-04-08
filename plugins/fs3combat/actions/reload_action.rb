@@ -3,7 +3,8 @@ module AresMUSH
     class ReloadAction < CombatAction
       
       def prepare
-        return t('fs3combat.cant_reload') if self.combatant.max_ammo == self.combatant.ammo
+        return t('fs3combat.reload_already_full') if self.combatant.max_ammo == self.combatant.ammo
+        return t('fs3combat.cant_reload') if !self.combatant.max_ammo 
         return nil
       end
 
