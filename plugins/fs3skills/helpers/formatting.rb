@@ -8,6 +8,7 @@ module AresMUSH
     
     def self.get_success_title(success_level)
       case success_level
+      when -1
         #t('fs3skills.embarrassing_failure')
         t('tdd.botch')
       when 0
