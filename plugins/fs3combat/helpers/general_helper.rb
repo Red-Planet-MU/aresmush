@@ -304,7 +304,11 @@ module AresMUSH
                   original_severity: MushFormatter.format(FS3Combat.display_severity(d.initial_severity)),
                   severity: MushFormatter.format(FS3Combat.display_severity(d.current_severity)),
                   is_treatable: d.is_treatable?,
-                  is_serumable: d.is_serumable
+                  is_serumable: d.is_serumable,
+                  points_to_heal: FS3Combat.healing_points(d.current_severity),
+                  points_healed: d.healing_points,
+                  healing: (FS3Combat.healing_points(d.current_severity) - d.healing_points) > 0 ? true : nil, 
+                  healing_progress: ProgressBarFormatter.format((FS3Combat.healing_points(d.current_severity) - d.healing_points), FS3Combat.healing_points(d.current_severity), 5)
                   }}
     end
 
