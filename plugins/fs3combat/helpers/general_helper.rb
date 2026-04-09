@@ -308,7 +308,7 @@ module AresMUSH
                   points_to_heal: FS3Combat.healing_points(d.current_severity),
                   points_healed: d.healing_points,
                   healing: (FS3Combat.healing_points(d.current_severity) - d.healing_points) > 0 ? true : nil, 
-                  healing_progress: (FS3Combat.healing_points(d.current_severity) - d.healing_points) > 0 ? ((FS3Combat.healing_points(d.current_severity) - d.healing_points)/FS3Combat.healing_points(d.current_severity))*5 : nil
+                  healing_progress: (FS3Combat.healing_points(d.current_severity) - d.healing_points) > 0 ? ((FS3Combat.healing_points(d.current_severity) - d.healing_points).to_f / FS3Combat.healing_points(d.current_severity).to_f )*5 : nil
                   }}
     end
 
