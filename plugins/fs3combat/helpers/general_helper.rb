@@ -302,7 +302,9 @@ module AresMUSH
                   date: d.ictime_str,
                   description: d.description,
                   original_severity: MushFormatter.format(FS3Combat.display_severity(d.initial_severity)),
-                  severity: MushFormatter.format(FS3Combat.display_severity(d.current_severity))
+                  severity: MushFormatter.format(FS3Combat.display_severity(d.current_severity)),
+                  is_treatable: d.is_treatable?,
+                  is_serumable: d.is_serumable
                   }}
     end
 
