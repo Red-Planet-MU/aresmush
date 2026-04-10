@@ -26,11 +26,11 @@ module AresMUSH
           if riding_with_spooked
             main_rider = self.combatant.is_riding_with
             main_rider.update(spook_counter: 0)
-            main_rider.update(just_calmed: true)
+            main_rider.update(calm_counter: 2)
           end
         end
         self.combatant.update(spook_counter: 0)
-        self.combatant.update(just_calmed: true)
+        self.combatant.update(calm_counter: 2)
         self.combatant.associated_model.update(horse_bond_counter: self.combatant.associated_model.horse_bond_counter + 1)
         #check whether to increment horse bond
         case self.combatant.associated_model.horse_bond_counter

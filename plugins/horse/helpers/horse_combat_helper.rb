@@ -3,7 +3,7 @@ module AresMUSH
 
     def self.horse_new_turn(combatant)
       #Check if mounted and unspooked
-      if (combatant.mount_type && combatant.spook_counter == 0 && !combatant.is_npc? && combatant.just_calmed == false && !combatant.is_riding_with)
+      if (combatant.mount_type && combatant.spook_counter == 0 && !combatant.is_npc? && combatant.calm_counter == 0 && !combatant.is_riding_with)
         #Get the spook rating and horse bond
         spook_rating = Global.read_config('horse', 'spook_rating')
         bond_with_horse = combatant.associated_model.horse_bond
@@ -42,8 +42,8 @@ module AresMUSH
         FS3Combat.emit_to_combat combatant.combat, t('horse.still_spooking', :name => combatant.name), nil, true
         combatant.update(spook_counter: combatant.spook_counter - 1)
         end
-      elsif combatant.just_calmed == true
-        combatant.update(just_calmed: false)
+      elsif combatant.calm_counter > 0
+        combatant.update(calm_counter: combatant.calm_counter - 1)
       end
       if combatant.thrown_from_spooking > 0
         combatant.update(thrown_from_spooking: combatant.thrown_from_spooking - 1)
