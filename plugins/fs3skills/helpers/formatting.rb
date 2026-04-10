@@ -19,8 +19,10 @@ module AresMUSH
         t('fs3skills.good_success')
       when 5, 6
         t('fs3skills.great_success')
-      when 7..99
+      when 7..15
         t('fs3skills.amazing_success')
+      when 16..99
+        t('tdd.critical_success')
       else
         raise "Unexpected roll result: #{success_level}"
       end
