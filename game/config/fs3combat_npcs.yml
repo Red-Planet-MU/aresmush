@@ -5,44 +5,44 @@ fs3combat:
     Target:
       Default: 1
     Trivial:
-      Default: 4
-      Firearms: 5
-      Archery: 5
-      Melee: 5
+      Default: 3
+      Firearms: 4
+      Archery: 4
+      Melee: 4
       Wounds: 20
     Easy:
-      Default: 6
-      Firearms: 7
-      Archery: 7
-      Melee: 7
+      Default: 5
+      Firearms: 6
+      Archery: 6
+      Melee: 6
       Wounds: 10
     Normal:
-      Default: 8
-      Archery: 9
-      Firearms: 9
-      Melee: 9
+      Default: 7
+      Archery: 8
+      Firearms: 8
+      Melee: 8
       Wounds: 0
     Hard:
-      Default: 10
-      Archery: 11
-      Firearms: 11
-      Melee: 11
+      Default: 9
+      Archery: 10
+      Firearms: 10
+      Melee: 10
       Wounds: -5
     Difficult:
-      Default: 12
-      Archery: 13
-      Firearms: 13
-      Melee: 13
+      Default: 11
+      Archery: 12
+      Firearms: 12
+      Melee: 12
       Wounds: -10
     Nightmare:
-      Default: 14
-      Archery: 15
-      Firearms: 15
-      Melee: 15
+      Default: 13
+      Archery: 14
+      Firearms: 14
+      Melee: 14
       Wounds: -15
     Impossible:
-      Default: 22
-      Archery: 24
-      Firearms: 24
-      Melee: 24
+      Default: 21
+      Archery: 23
+      Firearms: 23
+      Melee: 23
       Wounds: -25
