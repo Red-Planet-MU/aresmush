@@ -636,7 +636,11 @@ button {
 	}
 }
 
-
+@media screen and (max-width: 700px) {
+  .ember-basic-dropdown-trigger {
+	  min-width: unset;
+  }
+}
 
 .scene-set-pose {
   margin-left: 25px;
