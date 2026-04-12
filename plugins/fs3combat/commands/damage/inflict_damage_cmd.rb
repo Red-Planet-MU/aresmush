@@ -36,7 +36,8 @@ module AresMUSH
             
         FS3Combat.inflict_damage(target, self.severity, self.desc)
         client.emit_success t('fs3combat.damage_inflicted', :name => target.name) 
-      
+        Login.emit_ooc_if_logged_in(target, "<OOC>%xn Staff have added damage to you.")
+        Login.notify(target, :damage, "Staff have added damage to you.", true)
       end
     end
   end
