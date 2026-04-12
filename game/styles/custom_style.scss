@@ -1178,6 +1178,15 @@ body {
   margin: 10px;
   padding: 12px; }
 
+/* Heal Scan */
+.heal-scan-row {
+	display: flex;
+	justify-content: space-evenly;
+}
+.heal-scan-mod {
+  align-self: center;
+}
+
 /* Roster Page */
 .roster-wrap {
   background-color: #4c2c1f; 
