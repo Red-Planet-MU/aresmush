@@ -16,13 +16,13 @@ module AresMUSH
             damage[c.name] = damage_mod
           end
         end
+
+        damaged_chars = Chargen.approved_chars.select { |c| FS3Combat.total_damage_mod(c) < 0}
+
+
+        heal_scan_chars = damaged_chars.sort_by { |pc| FS3Combat.total_damage_mod(c)}.map { |c| { name: c.name, icon: Website.icon_for_char(c), damage_mod: FS3Combat.total_damage_mod(c) } }
         
-        list = damage.sort_by { |k, v| v }.map { |name, damage_mod| "#{name.ljust(30)} #{damage_mod}" }
-        
-        template = BorderedListTemplate.new list, t('fs3combat.damage_scan_title'), nil, t('fs3combat.damage_scan_subtitle')
-        client.emit template.render
-        
-        FS3Combat.build_combat_web_data(combat, enactor)
+        {heal_scan_list: heal_scan_chars}
       end
     end
   end
