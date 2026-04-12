@@ -1195,6 +1195,13 @@ body {
 .heal-scan-mod {
   align-self: center;
 }
+
+@media screen and (max-width: 600px) {
+  .heal-scan-row {
+    grid-template-columns: 80% 20%;
+  }
+}
+
 /* Roster Page */
 .roster-wrap {
   background-color: #4c2c1f; 
