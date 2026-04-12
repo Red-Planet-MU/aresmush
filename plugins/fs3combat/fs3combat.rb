@@ -205,6 +205,8 @@ module AresMUSH
         return StartCombatRequestHandler
       when "stopCombat"
         return StopCombatRequestHandler
+      when "healScan"
+        return HealScanRequestHandler
       end
     end
     

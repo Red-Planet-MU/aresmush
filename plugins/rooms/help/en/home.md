@@ -13,3 +13,4 @@ The `home` command lets you return quickly to a place of your choosing on the ga
 `home/set` and `work/set` - Sets your home/workplace to your current location.
 `home` - Go home.
 `work` - Go to work.
+`scene/home <home, work, ooc>` - Sets your scene home preference.
