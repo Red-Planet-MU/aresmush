@@ -6,7 +6,7 @@ module AresMUSH
         
         if (FS3Combat.is_enabled?)
           damage = FS3Combat.damage_list_web_data(char)
-          damage_mod = FS3Combat.total_damage_mod(char).floor
+          damage_mod = FS3Combat.total_damage_mod(char)
         else
           damage = nil
           damage_mod = nil
