@@ -40,6 +40,7 @@ module AresMUSH
         end
 
         temperature = weather[:main][:temp] || 0
+        celsiustemp = (temperature - 32) / 1.8 || 0
         humidity = weather[:main][:humidity] || 0
         wind_speed = weather[:wind][:speed] || 0
         wind_deg = weather[:wind][:deg] || 0
