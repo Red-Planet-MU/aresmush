@@ -4,7 +4,7 @@ en:
         weather_reset: "Forcing API update to update weather."
         default: "Everywhere Else"
         condition: "The weather is %{condition}."
-        temperature: "It is %{temperature}%{degree}%{unit}/%{celsiustemp}%{degree}C with a humidity of %{humidity}% on this %{season} %{time_of_day}."
+        temperature: "It is %{temperature}%{degree}%{unit}%{degree}C with a humidity of %{humidity}% on this %{season} %{time_of_day}."
         winds: "There are %{wind_speed} %{unit} winds from the %{wind_dir}."
         
 # from https://www.campbellsci.com/blog/convert-wind-directions
