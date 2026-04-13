@@ -17,7 +17,7 @@ module AresMUSH
         end
 
         #As of now, only non-combat serum is healing, so need wound
-        wound = FS3Combat.worst_treatable_wound(target)
+        wound = FS3Combat.worst_serumable_wound(target)
         
         error = Website.check_login(request)
         return error if error
