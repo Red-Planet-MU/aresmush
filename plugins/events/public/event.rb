@@ -10,6 +10,7 @@ module AresMUSH
     attribute :reminded, :type => DataType::Boolean
     attribute :ical_uid
     attribute :content_warning
+    attribute :is_archived, :type => DataType::Boolean, :default => false
     
     reference :character, "AresMUSH::Character"
     collection :signups, "AresMUSH::EventSignup"
