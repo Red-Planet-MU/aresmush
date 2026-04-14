@@ -5,7 +5,8 @@ module AresMUSH
       include CommandHandler
 
       def handle
-        events = Event.sorted_events
+        #events = Event.sorted_events
+        events = Event.sorted_events.select { |e| !e.is_archived }
         title = t('events.all_events_title')
         template = EventsListTemplate.new(events, title, enactor)
         client.emit template.render
