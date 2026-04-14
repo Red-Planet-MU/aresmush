@@ -14,7 +14,7 @@ fs3skills:
     desc: Coolness under pressure.
     linked_attr: Grit
   - name: Handy
-    desc: A general aptitude for working with materials raw and refined.
+    desc: A general aptitude for working with materials raw and refined; building, repairing, and inventing objects, tools, and structures.
     linked_attr: Wits
   - name: Firearms
     desc: Shooting guns. Specialties are optional but give a bonus when using that type of firearm.
