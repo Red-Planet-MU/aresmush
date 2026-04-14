@@ -46,7 +46,7 @@ module AresMUSH
     
     
     def self.with_an_event(num, client, enactor, &block)
-      events = Event.sorted_events
+      events = Event.sorted_events.select { |e| !e.is_archived }
       if (num < 0 || num > events.count)
         client.emit_failure t('events.invalid_event')
         return
