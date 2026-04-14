@@ -22,9 +22,10 @@ module AresMUSH
             e.update(reminded: true)
           end
           
-          timeout_secs = 60 * 60 * 1 # 1 hour
+          timeout_secs = 60 * 60 * 4 # 4 hours
           if (e.time_until_event < (0 - timeout_secs))
             #e.delete
+            e.update(is_archived: true)
           end
         end
       end

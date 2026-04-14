@@ -7,7 +7,7 @@ module AresMUSH
         error = Website.check_login(request, true)
         return error if error
         
-        events = Event.sorted_events.map { |e| {
+        events = Event.sorted_events.select { |e| !e.is_archived }.map { |e| {
           id: e.id,
           title: e.title,
           organizer: { 
