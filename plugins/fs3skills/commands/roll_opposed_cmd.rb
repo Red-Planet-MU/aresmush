@@ -51,14 +51,15 @@ module AresMUSH
         successes2 = FS3Skills.get_success_level(die_result2)
             
         results = FS3Skills.opposed_result_title(self.name1, successes1, self.name2, successes2)
-          
-        message = t('fs3skills.opposed_roll_result', 
+        crit_emit = "xh%xyCRIT!%xn"
+        botch_emit = "%xRBOTCH!%xn"  
+        message = t('tdd.opposed_roll_result', 
            :name1 => !model1 ? t('fs3skills.npc', :name => self.name1) : model1.name,
            :name2 => !model2 ? t('fs3skills.npc', :name => self.name2) : model2.name,
            :roll1 => self.roll_str1,
            :roll2 => self.roll_str2,
-           :dice1 => FS3Skills.print_dice(die_result1),
-           :dice2 => FS3Skills.print_dice(die_result2),
+           :dice1 => if successes1 == 16 then crit_emit elsif successes1 == -1 then botch_emit else FS3Skills.print_dice(die_result1) end,
+           :dice2 => if successes2 == 16 then crit_emit elsif successes2 == -1 then botch_emit else FS3Skills.print_dice(die_result2) end,
            :result => results)  
           
         FS3Skills.emit_results message, client, enactor_room, self.private_roll
