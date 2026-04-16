@@ -51,7 +51,7 @@ module AresMUSH
         successes2 = FS3Skills.get_success_level(die_result2)
             
         results = FS3Skills.opposed_result_title(self.name1, successes1, self.name2, successes2)
-        crit_emit = "xh%xyCRIT!%xn"
+        crit_emit = "%xh%xyCRIT!%xn"
         botch_emit = "%xRBOTCH!%xn"  
         message = t('tdd.opposed_roll_result', 
            :name1 => !model1 ? t('fs3skills.npc', :name => self.name1) : model1.name,
