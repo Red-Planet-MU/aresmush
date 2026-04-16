@@ -58,7 +58,7 @@ module AresMUSH
           msg:  Website.format_markdown_for_html(c.comp_msg),
           date: OOCTime.format_date_for_entry(c.created_at),
           scene: c.scene_id,
-          scene_title: Scene[c.scene_id].title
+          scene_title: Scene[c.scene_id].title || nil
         }},
         pages: paginator.total_pages.times.to_a.map { |i| i+1 }
     }
