@@ -4,8 +4,15 @@
 <%= "%xn"  %>
 
 <% paginator.page_items.each do |c| -%>
+<% if c.scene_id %>
 <%= "%xcFrom "  -%>
 <%=  c.from -%>
+<%= " for Scene "  -%>
+<%=  c.scene_id -%>
+<% else %>
+<%= "%xcFrom "  -%>
+<%=  c.from -%>
+<% end %>
 <%=  right(date(c), 65 ) -%>
 <%= "%xn"  %>
 <%=  c.comp_msg %>
