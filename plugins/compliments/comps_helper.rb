@@ -26,13 +26,13 @@ module AresMUSH
       Login.notify(target, :comp, message, target.id)
     end
 
-    def self.add_comp(targets, msg, comper_char)
+    def self.add_comp(targets, msg, comper_char, scene = nil)
       target_names = []
       targets.each do |target|
         if target == comper_char
           #skip self if in a comp'd scene
         else
-          Comps.create(character: target, comp_msg: msg, from: comper_char.name)
+          Comps.create(character: target, comp_msg: msg, from: comper_char.name, scene: scene)
         give_luck = Global.read_config("compliments", "give_luck")
         if give_luck
           Compliments.give_comp_luck(target, comper_char)

@@ -129,6 +129,12 @@ module AresMUSH
 
         Scenes.add_to_scene(scene, message)
 
+
+        char.room.emit message
+        if target.room != char.room && message.to_s.include?(target.name)
+          Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
+        end
+
         #if target.room != char.room && message.to_s.include?(target.name)
         #  Global.logger.debug "target.room: #{target.room} char.room: #{char.room}"
         #  Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)

@@ -10,8 +10,10 @@ module AresMUSH
     include ObjectModel
 
     reference :character, "AresMUSH::Character"
+    reference :scene, "AresMUSH::Scene"
     attribute :comp_msg
     attribute :from
+    
   end
 end
 

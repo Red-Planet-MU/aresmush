@@ -15,7 +15,7 @@ module AresMUSH
         #  return { error: t('compliments.cant_comp_self') }
         #end
         
-        Compliments.add_comp(targets, comp_msg, Character[comper_id])
+        Compliments.add_comp(targets, comp_msg, Character[comper_id], scene)
         Compliments.handle_comps_given_achievement(Character[comper_id])
         {
         }

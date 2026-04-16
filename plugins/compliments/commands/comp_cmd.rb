@@ -45,8 +45,11 @@ module AresMUSH
             targets << target
           end
         end
-
-        Compliments.add_comp(targets, self.comp_msg, enactor)
+        if scene
+          Compliments.add_comp(targets, self.comp_msg, enactor, scene)
+        else
+          Compliments.add_comp(targets, self.comp_msg, enactor)
+        end
         Compliments.handle_comps_given_achievement(enactor)
       end
 
