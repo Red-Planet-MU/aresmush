@@ -65,7 +65,7 @@ module AresMUSH
         when -1
           heal_amount = 0
           dice_message = t('tdd.botch')
-          FS3Combat.inflict_damage(target, "Minor", "Botched Serum")
+          FS3Combat.inflict_damage(target, "MINOR", "Botched Serum")
           return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
         when 0
           heal_amount = 1
@@ -102,7 +102,7 @@ module AresMUSH
         when -1
           heal_amount = 0
           dice_message = t('tdd.botch')
-          FS3Combat.inflict_damage(target, "Minor", "Botched Serum")
+          FS3Combat.inflict_damage(target, "MINOR", "Botched Serum")
           return t('serum.used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
         when 0
           heal_amount = 1
