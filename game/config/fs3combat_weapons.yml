@@ -38,7 +38,7 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
     Mine:
-      description: Improvised explosive, usually dynamite.
+      description: Improvised explosive, usually dynamite. Maximum of 3 targets.
       skill: Trapping
       lethality: 5
       penetration: 7
