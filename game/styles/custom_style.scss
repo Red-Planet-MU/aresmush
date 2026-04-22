@@ -1379,11 +1379,11 @@ a:focus  {
 }
 
 .play-section-title .modal-content {
-	font-variant: unset;
-	font-weight: unset;
-	font-family: unset;
-	text-transform: unset;
-	font-size: unset; 
+	font-variant: normal;
+	//font-weight: normal;
+	font-family: $body-font;
+	text-transform: none;
+	font-size: 1em; 
 }
 
 #chat-window {
