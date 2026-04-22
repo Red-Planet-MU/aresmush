@@ -9,7 +9,7 @@ module AresMUSH
 
         LookingForRp.set(enactor, time)
         if enactor.looking_for_rp_announce == "on"
-          Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit', :name => enactor.name, :duration => 1))
+          Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit', :name => enactor.name, :duration => time))
         end
         error = Website.check_login(request)
         return error if error
