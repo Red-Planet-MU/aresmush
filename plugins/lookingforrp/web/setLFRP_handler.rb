@@ -4,8 +4,10 @@ module AresMUSH
       def handle(request)
         puts request.args
         enactor = request.enactor
+        time = request.args['hours']
 
-        LookingForRp.set(enactor, 1)
+
+        LookingForRp.set(enactor, time)
         if enactor.looking_for_rp_announce == "on"
           Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit', :name => enactor.name, :duration => 1))
         end
