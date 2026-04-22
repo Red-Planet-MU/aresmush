@@ -803,6 +803,26 @@ body {
   color: #ebebeb
 }
 
+.badge-sidebar-bgs {
+  padding-left: .42em;
+  padding-right: .22em;
+  padding-top: .32em;
+  padding-bottom: .22em;
+  margin-right: 3px;
+  border-radius: .3em;
+  transition: background-color .5s;
+}
+
+.badge-sidebar-bgs:hover {
+  background-color: rgba(216, 179, 151, 0.8);
+  padding-left: .42em;
+  padding-right: .22em;
+  padding-top: .32em;
+  padding-bottom: .22em;
+  margin-right: 3px;
+  border-radius: .3em;
+}
+
 .lfrp-row {
   display: flex;
   flex-direction: row;
