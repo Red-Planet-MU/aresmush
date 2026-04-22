@@ -4,7 +4,7 @@ module AresMUSH
       def handle(request)
         puts request.args
         enactor = request.enactor
-        time = request.args['hours']
+        time = request.args['hours'].to_i
 
 
         LookingForRp.set(enactor, time)
