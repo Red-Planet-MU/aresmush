@@ -75,7 +75,12 @@ module AresMUSH
         last_activity = scene.last_activity || Time.now
         idle_timeout = Global.read_config("scenes", "idle_scene_timeout_days")
         elapsed_days = (Time.now - last_activity) / 86400
-        return (elapsed_days >= idle_timeout)
+        elapsed_hours = (Time.now - last_activity) / 3600
+        if scene.private_scene
+          return (elapsed_days >= idle_timeout)
+        else
+          return (elapsed_hours >= 3)
+        end
       end
       
       def post_trending_scenes
