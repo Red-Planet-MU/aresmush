@@ -7,7 +7,7 @@ module AresMUSH
         char_id = request.args['char_id']
         char = Character.find_one_by_name(char_id)
 
-        AresCentral.alts(enactor).all.each do |c|
+        AresCentral.alts(enactor).each do |c|
           if enactor.name == c.name
             Login.mark_notices_read(enactor, :comp)
           end
