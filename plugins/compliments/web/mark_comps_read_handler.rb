@@ -4,7 +4,12 @@ module AresMUSH
       def handle(request)
         puts request.args
         enactor = request.enactor
-        Login.mark_notices_read(enactor, :comp)
+        char_id = request.args['char_id']
+        char = Character.find_one_by_name(char_id)
+
+        if enactor.name == char.name
+          Login.mark_notices_read(enactor, :comp)
+        end
         
         {
         }
