@@ -20,6 +20,7 @@ en:
         signups: "Signups"
         signed_up: "You sign up for the event."
         not_signed_up: "%{name} is not signed up for that event."
+        cant_cancel_after_start: "You cannot cancel your signup after the event has begun."
         signup_cancelled: "You cancel %{name}'s signup for the event."
         signup_added: "%{name} has signed up for event %{title}."
         signup_removed: "%{name} has cancelled their signup for event %{title}."

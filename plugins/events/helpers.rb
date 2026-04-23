@@ -145,6 +145,9 @@ module AresMUSH
       if (!signup)
         return t('events.not_signed_up', :name => char.name)
       end
+      if event.time_until_event < 0
+        return t('events.cant_cancel_after_start')
+      end
       signup.delete
       
       return nil
