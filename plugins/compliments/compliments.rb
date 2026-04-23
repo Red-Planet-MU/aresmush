@@ -37,6 +37,8 @@ module AresMUSH
         return AddSceneCompHandler
       when "comps"
         return GetCompsRequestHandler
+      when "markCompsRead"
+        return MarkCompsReadRequestHandler
       end
       nil
     end
