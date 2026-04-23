@@ -39,6 +39,8 @@ module AresMUSH
       case request.cmd
       when "achievements"
         return ListAchievementsRequestHandler
+      when "markAchievementsRead"
+        return MarkAchievementsReadRequestHandler
       end
     end
 
