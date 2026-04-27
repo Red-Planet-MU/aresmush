@@ -4,6 +4,7 @@ module AresMUSH
       def handle(request)
 
         char_name_or_id = request.args['char_id']
+        char = Character.find_one_by_name(char_id)
         enactor = request.enactor
         error = Website.check_login(request)
         scene_id = request.args['id']
@@ -15,10 +16,10 @@ module AresMUSH
         end
         fortune_to_tell = Fortune.get_fortune()
 
-        enactor.update(fortunes_told_lately: enactor.fortunes_told_lately + 1)
-        enactor.update(fortunes_told_alltime: enactor.fortunes_told_alltime + 1)
+        char.update(fortunes_told_lately: char.fortunes_told_lately + 1)
+        char.update(fortunes_told_alltime: char.fortunes_told_alltime + 1)
         scene_message = t('fortune.told_fortune', :name => enactor.name, :fortune_told => fortune_to_tell)
-        Fortune.handle_fortune_given_achievement(enactor)
+        Fortune.handle_fortune_given_achievement(char)
         Scenes.add_to_scene(scene, scene_message)
         if enactor.room.scene
           enactor.room.emit scene_message
