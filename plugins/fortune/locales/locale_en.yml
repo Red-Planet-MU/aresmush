@@ -6,3 +6,4 @@ en:
     no_machine: "There is no Fortune FizzPop machine in this room."
     cooldown_on: "You've had enough, you freak. Try again later."
     no_book_machine: "There is no Biblio-Mat machine in this room."
+    must_be_in_scene: "You must be in a scene to do that."

@@ -13,6 +13,7 @@ module AresMUSH
       def check_errors
         return t('fortune.no_machine') if enactor.room.can_use_fortune != true
         return t('fortune.cooldown_on') if enactor.fortunes_told_lately >= 3
+        return t('fortune.must_be_in_scene') if !enactor.room.scene
       end
 
       def handle
