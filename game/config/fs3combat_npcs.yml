@@ -17,7 +17,7 @@ fs3combat:
       Melee: 6
       Wounds: 10
     Normal:
-      Default: 7
+      Default: 6
       Archery: 7
       Firearms: 7
       Melee: 7
