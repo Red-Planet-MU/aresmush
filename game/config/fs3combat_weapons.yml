@@ -124,7 +124,7 @@ fs3combat:
       weapon_type: Ranged
       is_automatic: false
       ammo: 5
-      recoil: 3
+      recoil: 0
       damage_type: Physical
       accuracy: 1
       has_shrapnel: false
@@ -141,7 +141,7 @@ fs3combat:
       weapon_type: Ranged
       is_automatic: false
       ammo: 10
-      recoil: 1
+      recoil: 0
       damage_type: Physical
       accuracy: 0
       has_shrapnel: false
