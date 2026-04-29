@@ -22,8 +22,8 @@ module AresMUSH
         def check_errors
           return t('serum.invalid_serum') if !self.serum_type
           return t('serum.dont_have_serum') if Serum.find_serums_has(enactor, self.serum_name) < 1
-          return t('serum.combat_only') if self.combat_only_serum == true
           return t('serum.you_are_in_combat') if enactor.combat
+          return t('serum.combat_only') if self.combat_only_serum == true
           wound = FS3Combat.worst_serumable_wound(self.target)
           return t('serum.no_healable_wounds', :target => self.target.name) if !wound
         end      
