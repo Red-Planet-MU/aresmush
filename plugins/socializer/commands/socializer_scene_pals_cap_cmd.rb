@@ -32,10 +32,10 @@ module AresMUSH
 
           if self.pals_cap_for_scene == "off"
             scene.update(pals_cap: nil)
-            client.emit_success t('socializer.cap_unset') 
+            client.emit_success t('socializer.cap_unset', :num => self.scene_num) 
           else
             scene.update(pals_cap: self.pals_cap_for_scene + 1)
-            client.emit_success t('socializer.cap_set', :cap => self.pals_cap_for_scene)  
+            client.emit_success t('socializer.cap_set', :cap => self.pals_cap_for_scene, :num => self.scene_num)
           end
         end
       end

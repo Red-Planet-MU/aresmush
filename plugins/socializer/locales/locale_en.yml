@@ -14,3 +14,5 @@ en:
     scene_pal_uninvited: "You withdraw the invitation for %{name} to join the scene."
     pal_scene_notify_invite: "%{name} has left the door open for you to join scene %{num}. If you're interested in stopping by, use 'scene/join %{num}'"
     pal_scene_notify_uninvited: "%{name} has closed the door for scene %{num}."
+    cap_set: "You set a cap of %{cap} pals for scene %{num}."
+    cap_unset: "You remove the cap for pals from scene %{num}."
