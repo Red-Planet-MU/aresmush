@@ -833,6 +833,18 @@ body {
   border-bottom: 2px solid rgba(156, 156, 156, .5);
 }
 
+.lfrp-row .fa-solid {
+  color: #f25e3d;
+  font-size: 1em;
+  padding-left: 15px;
+  padding-top: 27px;
+}
+
+.fa-mobile-retro::before {
+	background-color: black;
+	border-radius: 5px;
+}
+
 /* Scene Logs */
 .scene-text {
   background: $custom-maroon;

@@ -38,7 +38,7 @@ module AresMUSH
     end
 
     def self.web_list
-      chars_looking_for_rp.map { |c| { name: c.name, icon: Website.icon_for_char(c) } }
+      chars_looking_for_rp.map { |c| { name: c.name, icon: Website.icon_for_char(c) , lfrp_type: c.looking_for_rp_type} }
     end
 
     def self.char_names
@@ -49,6 +49,7 @@ module AresMUSH
       {
         name: char.name,
         icon: Website.icon_for_char(char),
+        lfrp_type: char.looking_for_rp_type
       }
     end
 
