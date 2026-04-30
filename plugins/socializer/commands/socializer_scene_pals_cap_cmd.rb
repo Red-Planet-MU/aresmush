@@ -8,7 +8,7 @@ module AresMUSH
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
         if args.arg1 == "off"
-          self.pals_cap_for_scene = nil
+          self.pals_cap_for_scene = "off"
         else
           self.pals_cap_for_scene = integer_arg(args.arg1)
         end
@@ -30,8 +30,8 @@ module AresMUSH
             return
           end
 
-          if !self.pals_cap_for_scene
-            scene.update(pals_cap: self.pals_cap_for_scene)
+          if self.pals_cap_for_scene == "off"
+            scene.update(pals_cap: nil)
             client.emit_success t('socializer.cap_unset') 
           else
             scene.update(pals_cap: self.pals_cap_for_scene + 1)
