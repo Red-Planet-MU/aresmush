@@ -3,13 +3,11 @@ module AresMUSH
     class SocializerSceneInvitePalsCommand
       include CommandHandler
       
-      attr_accessor :scene_num, :char_names, :invited, :pals, :pals_cap_for_scene
+      attr_accessor :scene_num, :char_names, :invited, :pals
       
       def parse_args
-        if (cmd.args =~ /\=/)
-          args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
-          self.scene_num = integer_arg(args.arg1)
-          self.pals_cap_for_scene = args.arg2
+        if cmd.args
+          self.scene_num = integer_arg(cmd.args)
         else 
           self.scene_num = enactor_room.scene ? enactor_room.scene.id : nil
         end
@@ -24,9 +22,6 @@ module AresMUSH
       
       def handle        
         Scenes.with_a_scene(self.scene_num, client) do |scene|
-          if pals_cap_for_scene
-            scene.update(pals_cap: pals_cap_for_scene )
-          end
           if (!Scenes.can_read_scene?(enactor, scene))
             client.emit_failure t('dispatcher.not_allowed')
             return
