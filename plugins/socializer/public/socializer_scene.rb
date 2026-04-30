@@ -1,6 +1,6 @@
 module AresMUSH
   class Scene
-    attribute :pals_cap, :type => DataType::Integer
+    attribute :pals_cap
 
   end
 end

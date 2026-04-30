@@ -7,7 +7,7 @@ module AresMUSH
       
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
-        self.pals_cap_for_scene = args.arg1
+        self.pals_cap_for_scene = integer_arg(args.arg1)
         if args.arg2
           self.scene_num = integer_arg(args.arg2)
         else 
