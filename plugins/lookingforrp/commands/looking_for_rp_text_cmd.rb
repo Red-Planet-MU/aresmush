@@ -28,6 +28,9 @@ module AresMUSH
         else
           LookingForRp.set(enactor, self.duration.to_i, "text")
           client.emit_success t('lookingforrp.set_txt', :duration => self.duration)
+          if enactor.looking_for_rp_announce == "on"
+            Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit_txt', :name => enactor.name, :duration => self.duration))
+          end
         end
       end
     end
