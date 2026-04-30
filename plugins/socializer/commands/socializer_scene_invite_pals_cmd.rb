@@ -3,13 +3,13 @@ module AresMUSH
     class SocializerSceneInvitePalsCommand
       include CommandHandler
       
-      attr_accessor :scene_num, :char_names, :invited, :pals
+      attr_accessor :scene_num, :char_names, :invited, :pals, :pals_cap_for_scene
       
       def parse_args
         if (cmd.args =~ /\=/)
           args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
           self.scene_num = integer_arg(args.arg1)
-          pals_cap_for_scene = args.arg2
+          self.pals_cap_for_scene = args.arg2
         else 
           self.scene_num = enactor_room.scene ? enactor_room.scene.id : nil
         end
