@@ -71,6 +71,20 @@ module AresMUSH
             c && alts.include?(c)
           end
           
+          # Socializer Changes
+          if scene.pals_cap 
+            if scene.participants.count >= (scene.pals_cap + 1)
+              scene.invited.each do |ic|
+                message = t('socializer.pal_scene_hit_cap', :num => scene.id)
+                Global.notifier.notify_ooc(:scene_message, message) do |notify_char|
+                  notify_char == ic
+                end
+                Login.notify(ic, :scene, message, scene.id)
+                scene.invited.delete ic
+              end
+            end
+          end
+          # End Socializer Changes
           
           if (char != enactor)
             message = t('scenes.scene_notify_added_to_scene', :num => scene.id)

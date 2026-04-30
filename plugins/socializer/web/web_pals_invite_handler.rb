@@ -4,7 +4,7 @@ module AresMUSH
       def handle(request)
         scene = Scene[request.args['id']]
         enactor = request.enactor
-
+        pals_cap_for_scene = request.args['palsCapForScene']
 
         invitees = enactor.pals.map { |p| p.name }
         
@@ -15,6 +15,9 @@ module AresMUSH
         error = Website.check_login(request)
         return error if error
         
+        if pals_cap_for_scene
+          scene.update(pals_cap: pals_cap_for_scene )
+        end
         if (!Scenes.can_read_scene?(enactor, scene))
           return { error: t('scenes.scene_is_private') }
         end
