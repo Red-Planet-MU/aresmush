@@ -849,6 +849,19 @@ body {
 	border-radius: 5px;
 }
 
+/* Forum */ 
+@media (max-width: 649.9px) {
+  .hidden-xs.hidden-sm {
+    display: none;
+  }
+}
+
+@media (max-width: 394.9px) {
+  .action-buttons {
+    display: inherit;
+  }
+}
+
 /* Scene Logs */
 .scene-text {
   background: $custom-maroon;
