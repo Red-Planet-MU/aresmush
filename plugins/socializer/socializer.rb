@@ -24,6 +24,8 @@ module AresMUSH
           return SocializerChangePalCommand
         when "invite", "uninvite"
           return SocializerSceneInvitePalsCommand
+        when "cap"
+          return SocializerScenePalsCapCommand
         when nil
           return SocializerListPalsCommand
         end
