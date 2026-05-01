@@ -16,3 +16,4 @@ en:
     pal_scene_notify_uninvited: "%{name} has closed the door for scene %{num}."
     cap_set: "You set a cap of %{cap} pals for scene %{num}."
     cap_unset: "You remove the cap for pals from scene %{num}."
+    pal_scene_hit_cap: "Scene %{num} has hit the cap of pals and the door has closed. Reach out if you'd like."
