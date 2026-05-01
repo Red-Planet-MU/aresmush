@@ -22,6 +22,7 @@ The Pals List is an easy way to let your character's close connections know that
 `pals/remove <character>` - Removes a character from your Pals List.
 `pals/invite` - Notifies all of your Pals that they're able to join your active scene, if they're interested.
 `pals/uninvite` - Notifies all of your Pals that you have closed the door to join your active scene.
+`pals/cap <#/off>` - Sets or removes a cap on scene participants to automatically close the door when it is reached.
 
 # Open Scenes
 
