@@ -40,16 +40,29 @@ module AresMUSH
           self.combatant.associated_model.update(horse_bond: 2)
         when 5
           self.combatant.associated_model.update(horse_bond: 3)
+          trigger_job = true
         when 8
           self.combatant.associated_model.update(horse_bond: 4)
+          trigger_job = true
         when 13
           self.combatant.associated_model.update(horse_bond: 5)
+          trigger_job = true
         when 21
           self.combatant.associated_model.update(horse_bond: 6)
+          trigger_job = true
         when 34
           self.combatant.associated_model.update(horse_bond: 7)
+          trigger_job = true
         when 55
           self.combatant.associated_model.update(horse_bond: 8)
+          trigger_job = true
+        end
+        if trigger_job == true
+          message = t('horse.bond_raised_job', :name => self.combatant.associated_model.name, :rating => self.combatant.associated_model.horse_bond)
+          status = Jobs.create_job(Jobs.system_category, t('horse.bond_job_title', :name => self.combatant.associated_model.name), message, Game.master.system_character)
+          if (status[:job])
+            Jobs.close_job(Game.master.system_character, status[:job])
+          end
         end
         [t('horse.calm_resolution_msg', :name => self.name)]
       end
