@@ -73,7 +73,7 @@ module AresMUSH
           
           # Socializer Changes
           if scene.pals_cap 
-            if scene.participants.count >= (scene.pals_cap.to_i)
+            if scene.participants.count >= (scene.pals_cap.to_i + 1)
               scene.invited.each do |ic|
                 message = t('socializer.pal_scene_hit_cap', :num => scene.id)
                 Global.notifier.notify_ooc(:scene_message, message) do |notify_char|
