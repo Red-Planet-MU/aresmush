@@ -7,13 +7,22 @@ module AresMUSH
       
       def parse_args
         if cmd.args
-          self.scene_num = integer_arg(cmd.args)
-        else 
+          if cmd.args.to_i == 0
+            args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
+            self.char_names = list_arg(args.arg1)
+            if args.arg2
+              self.scene_num = integer_arg(args.arg2)
+            else 
+              self.scene_num = enactor_room.scene ? enactor_room.scene.id : nil
+            end
+          else 
+            self.scene_num = integer_arg(cmd.args)
+          end
+        else
+          self.char_names = enactor.pals.map { |p| p.name }
           self.scene_num = enactor_room.scene ? enactor_room.scene.id : nil
         end
-        self.char_names = enactor.pals.map { |p| p.name }
-
-        self.invited = cmd.switch_is?("invite")
+          self.invited = cmd.switch_is?("invite")
       end
       
       def required_args
