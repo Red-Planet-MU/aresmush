@@ -125,7 +125,10 @@ module AresMUSH
 
         if horse_reviver
           self.target.update(horse_kod: false)
-          message = t('serum.used_horse_elixir', :name => self.name, :target => print_target_names, :serum_name => display_name)
+          if !self.target.is_npc?
+            message = t('serum.used_horse_elixir_pc', :name => self.name, :target => print_target_names, :target_horse => self.target.associated_model.demographic("horse name"), :serum_name => display_name)
+          else
+            message = t('serum.used_horse_elixir', :name => self.name, :target => print_target_names, :serum_name => display_name)
         end
 
         #do not track NPC serum use
