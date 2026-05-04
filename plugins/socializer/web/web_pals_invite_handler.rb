@@ -4,9 +4,10 @@ module AresMUSH
       def handle(request)
         scene = Scene[request.args['id']]
         enactor = request.enactor
-        pals_cap_for_scene = request.args['palsCapForScene']
+        pals_cap_for_scene = request.args['pals_cap']
+        invitees = request.args['pals_list']
 
-        invitees = enactor.pals.map { |p| p.name }
+        #invitees = enactor.pals.map { |p| p.name }
         
         #if (!scene || !invitee)
         #  return { error: t('webportal.not_found') }
