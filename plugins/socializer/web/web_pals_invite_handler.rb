@@ -18,6 +18,8 @@ module AresMUSH
         
         if pals_cap_for_scene
           scene.update(pals_cap: pals_cap_for_scene )
+        else
+          scene.update(pals_cap: nil)
         end
         if (!Scenes.can_read_scene?(enactor, scene))
           return { error: t('scenes.scene_is_private') }
