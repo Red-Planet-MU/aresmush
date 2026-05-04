@@ -7,7 +7,8 @@ module AresMUSH
       
       # Otherwise return a hash of data.  For example, if you want to use your custom plugin's abilities, you might do:
       {
-        serumTargets: Serum.possible_serum_targets()
+        serumTargets: Serum.possible_serum_targets(),
+        allPalsList: Socializer.possible_pals(enactor)
       }
     end
   end
