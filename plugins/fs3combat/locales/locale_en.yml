@@ -42,7 +42,7 @@ en:
         stop_heal: "%{name} is no longer your patient."
         healing_patients: "Patients Under Your Care"
         max_patients: "You can have up to %{max} patients at once."
-        healed_by_title: "Healed By:"
+        healed_by_title: "Cared For By:"
         damage_scan_title: "Injured Characters"
         damage_scan_subtitle: "Name                      Damage Modifier"
         

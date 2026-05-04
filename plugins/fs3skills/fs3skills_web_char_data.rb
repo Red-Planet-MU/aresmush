@@ -39,6 +39,7 @@ module AresMUSH
             use_advantages: FS3Skills.use_advantages?,
             damage: damage,
             damage_mod: damage_mod,
+            healed_by: char.doctors.map { |h| h.name }.count > 0 ? char.doctors.map { |h| h.name }.join(", ") : t('global.none'),
             show_sheet: show_sheet,
             luck_points: char.luck.floor,
             xp: xp,
