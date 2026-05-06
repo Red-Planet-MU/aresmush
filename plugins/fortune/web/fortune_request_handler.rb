@@ -21,8 +21,8 @@ module AresMUSH
         scene_message = t('fortune.told_fortune', :name => char.name, :fortune_told => fortune_to_tell)
         Fortune.handle_fortune_given_achievement(char)
         Scenes.add_to_scene(scene, scene_message)
-        if enactor.room.scene
-          enactor.room.emit scene_message
+        if char.room.scene
+          char.room.emit scene_message
         end
         Global.logger.debug "For some reason the fortune code requires me to be here"
       end
