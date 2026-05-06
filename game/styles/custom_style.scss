@@ -1358,6 +1358,8 @@ a:focus  {
 	grid-template-columns: 350px auto;
 }
 
+
+
 .scene-pose-header {
   font-size: 1em;
 }
@@ -1401,6 +1403,10 @@ a:focus  {
 
 #chat-window {
 	border: 0;
+}
+
+#chat-window p {
+  overflow-wrap: anywhere;
 }
 
 /* ANSI Colors */
