@@ -3,7 +3,7 @@ module AresMUSH
     class GetBookRequestHandler
       def handle(request)
 
-        char_name_or_id = request.args['char_id']
+        char_id = request.args['char_id']
         char = Character.find_one_by_name(char_id)
         enactor = request.enactor
         error = Website.check_login(request)
