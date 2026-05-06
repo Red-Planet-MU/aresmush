@@ -18,7 +18,7 @@ module AresMUSH
 
         char.update(fortunes_told_lately: char.fortunes_told_lately + 1)
         char.update(fortunes_told_alltime: char.fortunes_told_alltime + 1)
-        scene_message = t('fortune.told_fortune', :name => enactor.name, :fortune_told => fortune_to_tell)
+        scene_message = t('fortune.told_fortune', :name => char.name, :fortune_told => fortune_to_tell)
         Fortune.handle_fortune_given_achievement(char)
         Scenes.add_to_scene(scene, scene_message)
         if enactor.room.scene

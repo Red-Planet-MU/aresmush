@@ -18,7 +18,7 @@ module AresMUSH
 
         char.update(books_got_lately: char.books_got_lately + 1)
         char.update(books_got_alltime: char.books_got_alltime + 1)
-        scene_message = t('fortune.got_book', :name => enactor.name, :book_got => book_to_get)
+        scene_message = t('fortune.got_book', :name => char.name, :book_got => book_to_get)
         Fortune.handle_book_given_achievement(char)
         Scenes.add_to_scene(scene, scene_message)
         if enactor.room.scene
