@@ -123,7 +123,7 @@ module AresMUSH
     
     def self.pose_to_channel(channel, enactor, msg, title)
       name = enactor.ooc_name
-      formatted_msg = PoseFormatter.format(name, msg)
+      formatted_msg = PoseFormatter.format(name, msg.strip)
       Channels.emit_to_channel channel, formatted_msg, enactor, title
       Channels.notify_discord_webhook(channel, msg, enactor)
       return formatted_msg
