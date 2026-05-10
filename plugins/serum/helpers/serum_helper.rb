@@ -56,11 +56,7 @@ module AresMUSH
       end
   
       def self.combat_healing_serum(char, target, serum_name)
-        if !char.npc
-          heal_roll = TDD.parse_and_roll(char, "Medicine")
-        else 
-          heal_roll = char.roll_ability("Medicine")
-        end
+        heal_roll = TDD.parse_and_roll(char, "Medicine")
         heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
         wound = FS3Combat.worst_serumable_wound(target)
