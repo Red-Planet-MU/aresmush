@@ -15,8 +15,10 @@ module AresMUSH
     end
 
     def self.reply_to_forum_post(event)
+      Global.logger.debug "#{event}"
       category_name = Global.read_config("postevent", "event_forum")
       post = PostEvent.find_event_post_by_id(event)
+      Global.logger.debug "#{post}"
       reply = "%xcUPDATED EVENT DETAILS%xn\n\n#{PostEvent.format_msg(event)}"
       author = Character.named(event.organizer_name)
       category = BbsBoard.find_one_by_name(category_name)
