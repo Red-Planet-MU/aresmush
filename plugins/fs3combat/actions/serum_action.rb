@@ -84,8 +84,10 @@ module AresMUSH
 
         Global.logger.debug "Duration: #{duration} Init_mod: #{init_mod} Lethal_mod: #{lethal_mod} Lethality: #{lethality} armor_mod: #{armor_mod} is_healing: #{is_healing} is_revive: #{is_revive}"
         #Healing serums
-        if is_healing == true 
+        if is_healing == true & !combatant.is_npc?
           message = Serum.combat_healing_serum(combatant.associated_model,self.target.associated_model,self.serum_name)
+        else
+          message = Serum.combat_healing_serum_npc(combatant.associated_model,self.target.associated_model,self.serum_name)
         end
 
         #Serums that have a lasting effect

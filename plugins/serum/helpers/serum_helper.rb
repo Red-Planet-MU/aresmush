@@ -56,14 +56,44 @@ module AresMUSH
       end
   
       def self.combat_healing_serum(char, target, serum_name)
-        if !char.level
-          heal_roll = TDD.parse_and_roll(char, "Medicine")
-        else 
-          npc_heal_roll = char.roll_ability("Medicine")
-          Global.logger.debug "#{npc_heal_roll}"
-          heal_roll = npc_heal_roll[:successes]
+        heal_roll = TDD.parse_and_roll(char, "Medicine")
+        heal_success_level = TDD.get_success_level(heal_roll)
+        dice_message = TDD.print_dice(heal_roll)
+        wound = FS3Combat.worst_serumable_wound(target)
+        display_name = Global.read_config('serum',serum_name,'display_name')
+        case heal_success_level
+        when -1
+          heal_amount = 0
+          dice_message = t('tdd.botch')
+          FS3Combat.inflict_damage(target, "MINOR", "Botched Serum")
+          return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
+        when 0
+          heal_amount = 1
+        when 1
+          heal_amount = 3
+        when 2
+          heal_amount = 4
+        when 3
+          heal_amount = 6
+        when 4
+          heal_amount = 7
+        when 5..15
+          heal_amount = 8
+        when 16..99
+          heal_amount = 10
+          dice_message = t('tdd.critical_success')
         end
-        #heal_success_level = TDD.get_success_level(heal_roll)
+
+        if heal_success_level >= 0
+          FS3Combat.heal(wound, heal_amount)
+          wound.update(is_serumable: false)
+          return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+        end
+      end
+
+       def self.combat_healing_serum_npc(char, target, serum_name)
+        heal_roll = TDD.parse_and_roll(char, "Medicine")
+        heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
         wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
