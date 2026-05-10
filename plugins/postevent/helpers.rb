@@ -18,6 +18,7 @@ module AresMUSH
       Global.logger.debug "event: #{event} event id: #{event.id}"
       category_name = Global.read_config("postevent", "event_forum")
       post = PostEvent.find_event_post_by_id(event.id)
+      title_changed = PostEvent.find_event_post_by_name(event)
       Global.logger.debug "#{post}"
       reply = "%xcUPDATED EVENT DETAILS%xn\n\n#{PostEvent.format_msg(event)}"
       author = Character.named(event.organizer_name)
@@ -27,6 +28,9 @@ module AresMUSH
         return client.emit_failure "Cannot reply to event forum post with updates; you may want to do it manually. This happens when the event name has changed."
       else
         Forum.reply(category, post, author, reply)
+        if title_changed == "error"
+          post.update(subject: event.title+" ("+post.subject+")")
+        end
       end
     end
 
