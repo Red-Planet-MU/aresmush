@@ -6,6 +6,8 @@ module AresMUSH
       msg = PostEvent.format_msg(event)
       author = Character.named(event.organizer_name)
       Forum.post(category_name, event.title, msg, author)
+      post = PostEvent.find_event_post_by_name(event)
+      post.update(event_id: event.id)
     end
 
     def self.format_msg(event)
@@ -14,7 +16,7 @@ module AresMUSH
 
     def self.reply_to_forum_post(event)
       category_name = Global.read_config("postevent", "event_forum")
-      post = PostEvent.find_event_post(event)
+      post = PostEvent.find_event_post_by_id(event)
       reply = "%xcUPDATED EVENT DETAILS%xn\n\n#{PostEvent.format_msg(event)}"
       author = Character.named(event.organizer_name)
       category = BbsBoard.find_one_by_name(category_name)
@@ -26,7 +28,18 @@ module AresMUSH
       end
     end
 
-    def self.find_event_post(event)
+    def self.find_event_post_by_id(event)
+      category_name = Global.read_config("postevent", "event_forum")
+      category = BbsBoard.find_one_by_name(category_name)
+      post = category.bbs_posts.select { |post| post.event_id == event.id}.last
+      if !post
+        return "error"
+      else
+        return post
+      end
+    end
+
+    def self.find_event_post_by_name(event)
       category_name = Global.read_config("postevent", "event_forum")
       category = BbsBoard.find_one_by_name(category_name)
       post = category.bbs_posts.select { |post| post.subject == event.title}.last
