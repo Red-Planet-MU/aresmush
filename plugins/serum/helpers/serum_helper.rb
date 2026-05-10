@@ -63,7 +63,7 @@ module AresMUSH
           Global.logger.debug "#{npc_heal_roll}"
           heal_roll = npc_heal_roll[:successes]
         end
-        heal_success_level = TDD.get_success_level(heal_roll)
+        #heal_success_level = TDD.get_success_level(heal_roll)
         dice_message = TDD.print_dice(heal_roll)
         wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
