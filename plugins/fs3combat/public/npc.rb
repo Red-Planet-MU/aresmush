@@ -25,6 +25,12 @@ module AresMUSH
       Global.logger.info "#{self.name} rolling #{ability} skill=#{rating} mod=#{mod}"
       FS3Skills.one_shot_die_roll(rating + mod)
     end
+
+    def parse_ability_roll(ability, mod = 0)
+      rating = self.ability_rating(ability)
+      Global.logger.info "#{self.name} rolling #{ability} skill=#{rating} mod=#{mod}"
+      FS3Skills.one_shot_die_roll(rating + mod)
+    end
     
     def ability_rating(ability)
       if ("#{ability}".is_integer?)

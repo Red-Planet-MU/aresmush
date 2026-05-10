@@ -44,6 +44,7 @@ module AresMUSH
       Global.logger.info "Rolling raw dice=#{dice} result=#{roll}"
       
       {
+        :raw_roll => roll,
         :successes => roll_result,
         :success_title => success_title
       }
