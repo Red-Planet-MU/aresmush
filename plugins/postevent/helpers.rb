@@ -35,6 +35,7 @@ module AresMUSH
       category = BbsBoard.find_one_by_name(category_name)
       Global.logger.debug "#{event_id}"
       post = category.bbs_posts.select { |post| post.event_id == event_id}.last
+      Global.logger.debug "#{post}"
       if !post
         return "error"
       else
