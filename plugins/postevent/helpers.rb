@@ -15,7 +15,7 @@ module AresMUSH
     end
 
     def self.reply_to_forum_post(event)
-      Global.logger.debug "#{event}"
+      Global.logger.debug "event: #{event} event id: #{event.id}"
       category_name = Global.read_config("postevent", "event_forum")
       post = PostEvent.find_event_post_by_id(event)
       Global.logger.debug "#{post}"
