@@ -33,6 +33,7 @@ module AresMUSH
     def self.find_event_post_by_id(event_id)
       category_name = Global.read_config("postevent", "event_forum")
       category = BbsBoard.find_one_by_name(category_name)
+      Global.logger.debug "#{event_id}"
       post = category.bbs_posts.select { |post| post.event_id == event_id}.last
       if !post
         return "error"
