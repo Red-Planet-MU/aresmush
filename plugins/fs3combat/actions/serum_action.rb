@@ -86,7 +86,7 @@ module AresMUSH
         #Healing serums
         if is_healing == true && !combatant.is_npc?
           message = Serum.combat_healing_serum(combatant.associated_model,self.target.associated_model,self.serum_name)
-        else
+        elsif is_healing == true 
           message = Serum.combat_healing_serum_npc(combatant.associated_model,self.target.associated_model,self.serum_name)
         end
 
