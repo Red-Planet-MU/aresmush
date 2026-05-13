@@ -70,7 +70,7 @@ module AresMUSH
         
         {
           id: scene.id,
-          title: scene.date_title,
+          title: scene.date_title+".txt",
           log: AnsiFormatter.strip_ansi(MushFormatter.format(text)),
           completed: scene.completed,
           shared: scene.shared
