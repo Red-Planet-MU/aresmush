@@ -15,7 +15,7 @@ module AresMUSH
     def self.custom_sidebar_data(viewer)
       return {
         looking_for_rp: LookingForRp.char_names,
-        looking_for_rp_chars: LookingForRp.chars_looking_for_rp,
+        #looking_for_rp_chars: LookingForRp.chars_looking_for_rp,
         lfrp_icons: LookingForRp.web_list
         #is_looking_for_rp: LookingForRp.is_lfrp(viewer)
       }
