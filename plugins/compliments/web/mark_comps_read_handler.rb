@@ -6,12 +6,12 @@ module AresMUSH
         enactor = request.enactor
         char_id = request.args['char_id']
         char = Character.find_one_by_name(char_id)
+        logged_out = Website.check_login(request)
+        return {} if logged_out
 
-        if AresCentral.alts(enactor)
-          AresCentral.alts(enactor).each do |c|
-            if char.name == c.name
-              Login.mark_notices_read(char, :comp)
-            end
+        AresCentral.alts(enactor).each do |c|
+          if char.name == c.name
+            Login.mark_notices_read(char, :comp)
           end
         end
         {
