@@ -15,11 +15,11 @@ module AresMUSH
         t('fs3skills.failure')
       when 1, 2
         t('fs3skills.success')
-      when 3, 4
+      when 3
         t('fs3skills.good_success')
-      when 5, 6
+      when 4, 5
         t('fs3skills.great_success')
-      when 7..15
+      when 6..15
         t('fs3skills.amazing_success')
       when 16..99
         t('tdd.critical_success')
