@@ -174,6 +174,7 @@ module AresMUSH
          wound.update(current_severity: "HEAL")
          wound.update(healing_points: 0)
          wound.update(healed: true)
+         wound.update(is_serumable: false)
          return
        end
        
