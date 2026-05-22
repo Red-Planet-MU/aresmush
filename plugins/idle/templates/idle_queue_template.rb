@@ -33,6 +33,21 @@ module AresMUSH
         char = entry[:char]
         char.idle_notes
       end
+
+      def days_out(entry)
+        char = entry[:char]
+        last_scene_shared = char.scenes_starring.sort_by { |s| s.date_shared }.reverse[0]
+        if !c.approved_at
+          idle_days = (Time.now - char.last_on) / 86400 
+          idle_days - Global.read_config("idle", "days_before_very_idle")
+        elsif !last_scene_shared 
+          idle_days = (Time.now - c.approved_at) / 86400 
+          idle_days - Global.read_config("idle", "days_before_very_idle")
+        else 
+          idle_days = (Time.now - last_scene_shared.date_shared) / 86400 
+          idle_days - Global.read_config("idle", "days_before_very_idle")
+        end
+      end
       
       def last_on(entry)
         char = entry[:char]
