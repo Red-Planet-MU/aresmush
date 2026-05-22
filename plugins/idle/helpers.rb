@@ -150,7 +150,6 @@ module AresMUSH
          idle_timeout = Global.read_config("idle", "days_before_idle")
          secs_since_last_scene_shared_was_shared = Time.now - last_scene_shared.date_shared
          secs_since_last_scene_shared_started = Time.now - last_scene_shared.created_at
-         secs_since_last_scene_started_was_shared = Time.now - last_scene_started.date_shared
          #First check last scene shared for start and share dates both within timeout window
          if (secs_since_last_scene_shared / 86400 > idle_timeout) || (secs_since_last_scene_shared_started / 86400 > idle_timeout)
          #Then check last scene started for start and share dates both within timeout window
