@@ -262,6 +262,7 @@ module AresMUSH
        Roles.add_role(model, "approved")
        Global.dispatcher.queue_event CharApprovedEvent.new(Login.find_game_client(model), model.id)
        model.update(roster_job: nil)
+       model.update(approved_at: Time.now)
        return nil
      end
      
