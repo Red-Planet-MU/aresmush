@@ -151,10 +151,18 @@ module AresMUSH
         if !last_scene_started
           secs_since_last_scene_started_started = Time.now - Time.at(0)
           secs_since_last_scene_started_was_shared = Time.now - Time.at(0)
-          if (c.is_approved?)
-            queue[c.id] = "Warn"
-          else
-            queue[c.id] = "Destroy"
+          if !c.approved_at
+            if (c.is_approved?)
+              queue[c.id] = "Warn"
+            else
+              queue[c.id] = "Destroy"
+            end
+          elsif (Time.now - c.approved_at) / 86400 > idle_timeout
+            if (c.is_approved?)
+              queue[c.id] = "Warn"
+            else
+              queue[c.id] = "Destroy"
+            end
           end
         else
           secs_since_last_scene_started_started = Time.now - last_scene_started.created_at
