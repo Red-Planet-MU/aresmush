@@ -1,7 +1,7 @@
 en:
     idle:
         idle_title: "Idle Queue"
-        idle_subtitle: "Name                 Last On      Idle Action     Last Will"
+        idle_subtitle: "Name                 Last On      Days Out      Idle Action     Last Will"
         idle_not_started: "Idle sweep not started."
         idle_action_set: "%{name}'s idle action is now %{action}."
         idle_removed: "%{name} removed from idle queue."

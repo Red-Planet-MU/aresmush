@@ -40,13 +40,13 @@ module AresMUSH
         Global.logger.debug "char: #{char.name}"
         if !char.approved_at
           idle_days = (Time.now - char.last_on) / 86400 
-          idle_days - Global.read_config("idle", "days_before_very_idle")
+          idle_days.round(1) - Global.read_config("idle", "days_before_very_idle")
         elsif !last_scene_shared 
           idle_days = (Time.now - char.approved_at) / 86400 
-          idle_days - Global.read_config("idle", "days_before_very_idle")
+          idle_days.round(1) - Global.read_config("idle", "days_before_very_idle")
         else 
           idle_days = (Time.now - last_scene_shared.date_shared) / 86400 
-          idle_days - Global.read_config("idle", "days_before_very_idle")
+          idle_days.round(1) - Global.read_config("idle", "days_before_very_idle")
         end
       end
       
