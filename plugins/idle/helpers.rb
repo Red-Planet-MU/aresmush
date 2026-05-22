@@ -154,7 +154,7 @@ module AresMUSH
           if !c.approved_at
             if (c.is_approved?)
               queue[c.id] = "Warn"
-            elsif idle_secs > idle_timeout
+            elsif idle_secs / 86400 > idle_timeout
               queue[c.id] = "Destroy"
             end
           elsif (Time.now - c.approved_at) / 86400 > idle_timeout
