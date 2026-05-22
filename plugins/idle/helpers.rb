@@ -154,7 +154,7 @@ module AresMUSH
           if !c.approved_at
             if (c.is_approved?)
               queue[c.id] = "Warn"
-            else
+            elsif idle_secs > idle_timeout
               queue[c.id] = "Destroy"
             end
           elsif (Time.now - c.approved_at) / 86400 > idle_timeout
@@ -166,7 +166,7 @@ module AresMUSH
           end
         else
           secs_since_last_scene_started_started = Time.now - last_scene_started.created_at
-          secs_since_last_scene_shared_was_shared = Time.now - last_scene_started.date_shared
+          secs_since_last_scene_started_was_shared = Time.now - last_scene_started.date_shared
          
           if !last_scene_shared 
             secs_since_last_scene_shared_started = Time.now - Time.at(0)
@@ -175,11 +175,11 @@ module AresMUSH
             secs_since_last_scene_shared_started = Time.now - last_scene_shared.created_at
             secs_since_last_scene_shared_was_shared = Time.now - last_scene_shared.date_shared
           end 
-          #First check last scene shared for start and share dates both within timeout window
-          if (secs_since_last_scene_shared_was_shared / 86400 > idle_timeout) || (secs_since_last_scene_shared_started / 86400 > idle_timeout)
-          #Then check last scene started for start and share dates both within timeout window
+          #First check last scene shared for start and share dates either of which are outside timeout window
+          if (secs_since_last_scene_shared_was_shared / 86400 > idle_timeout) && (secs_since_last_scene_shared_started / 86400 > idle_timeout)
+          #Then check last scene started for start and share dates either of which are outside timeout window
           #This ensures you do not get caught in the sweep because your last scene shared was started forever ago but you were in a more recent scene as well.
-            if (last_scene_started.created_at > last_scene_shared.created_at) || (secs_since_last_scene_started_was_shared / 86400 > idle_timeout)
+            if (secs_since_last_scene_started_was_shared / 86400 > idle_timeout) && (secs_since_last_scene_started_started / 86400 > idle_timeout)
               if (c.is_approved?)
                 queue[c.id] = "Warn"
               else
