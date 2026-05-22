@@ -37,6 +37,7 @@ module AresMUSH
       def days_out(entry)
         char = entry[:char]
         last_scene_shared = char.scenes_starring.sort_by { |s| s.date_shared }.reverse[0]
+        Global.logger.debug "char: #{char.name}"
         if !char.approved_at
           idle_days = (Time.now - char.last_on) / 86400 
           idle_days - Global.read_config("idle", "days_before_very_idle")
