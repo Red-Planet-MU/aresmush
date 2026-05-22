@@ -140,40 +140,46 @@ module AresMUSH
      def self.build_idle_queue
        queue = {}
        Idle.active_chars.each do |c|
-         last_scene_started = c.scenes_starring.sort_by { |s| s.created_at }.reverse[0]
-         last_scene_shared = c.scenes_starring.sort_by { |s| s.date_shared }.reverse[0]
-         last_on = c.last_on || Time.at(0)
-         next if Idle.is_exempt?(c)
-         next if c.is_npc?
-         next if c.on_roster?
-         idle_secs = Time.now - last_on
-         idle_timeout = Global.read_config("idle", "days_before_idle")
-         if !last_scene_started
+        last_scene_started = c.scenes_starring.sort_by { |s| s.created_at }.reverse[0]
+        last_scene_shared = c.scenes_starring.sort_by { |s| s.date_shared }.reverse[0]
+        last_on = c.last_on || Time.at(0)
+        next if Idle.is_exempt?(c)
+        next if c.is_npc?
+        next if c.on_roster?
+        idle_secs = Time.now - last_on
+        idle_timeout = Global.read_config("idle", "days_before_idle")
+        if !last_scene_started
           secs_since_last_scene_started_started = Time.now - Time.at(0)
           secs_since_last_scene_started_was_shared = Time.now - Time.at(0)
-         else
+          if (c.is_approved?)
+            queue[c.id] = "Warn"
+          else
+            queue[c.id] = "Destroy"
+          end
+        else
           secs_since_last_scene_started_started = Time.now - last_scene_started.created_at
           secs_since_last_scene_shared_was_shared = Time.now - last_scene_started.date_shared
-         end
-         if !last_scene_shared 
-          secs_since_last_scene_shared_started = Time.now - Time.at(0)
-          secs_since_last_scene_shared_was_shared = Time.now - Time.at(0)
-         else 
-          secs_since_last_scene_shared_started = Time.now - last_scene_shared.created_at
-          secs_since_last_scene_shared_was_shared = Time.now - last_scene_shared.date_shared
-         end 
-         #First check last scene shared for start and share dates both within timeout window
-         if (secs_since_last_scene_shared_was_shared / 86400 > idle_timeout) || (secs_since_last_scene_shared_started / 86400 > idle_timeout)
-         #Then check last scene started for start and share dates both within timeout window
-         #This ensures you do not get caught in the sweep because your last scene shared was started forever ago but you were in a more recent scene as well.
-          if (last_scene_started.created_at > last_scene_shared.created_at) || (secs_since_last_scene_started_was_shared / 86400 > idle_timeout)
-           if (c.is_approved?)
-             queue[c.id] = "Warn"
-           else
-             queue[c.id] = "Destroy"
-           end
+         
+          if !last_scene_shared 
+            secs_since_last_scene_shared_started = Time.now - Time.at(0)
+            secs_since_last_scene_shared_was_shared = Time.now - Time.at(0)
+          else 
+            secs_since_last_scene_shared_started = Time.now - last_scene_shared.created_at
+            secs_since_last_scene_shared_was_shared = Time.now - last_scene_shared.date_shared
+          end 
+          #First check last scene shared for start and share dates both within timeout window
+          if (secs_since_last_scene_shared_was_shared / 86400 > idle_timeout) || (secs_since_last_scene_shared_started / 86400 > idle_timeout)
+          #Then check last scene started for start and share dates both within timeout window
+          #This ensures you do not get caught in the sweep because your last scene shared was started forever ago but you were in a more recent scene as well.
+            if (last_scene_started.created_at > last_scene_shared.created_at) || (secs_since_last_scene_started_was_shared / 86400 > idle_timeout)
+              if (c.is_approved?)
+                queue[c.id] = "Warn"
+              else
+                queue[c.id] = "Destroy"
+              end
+            end
           end
-         end
+        end
        end
        Hash[ queue.sort_by { |k, v| v == "Warn" ? 0 : 1 } ]
      end
