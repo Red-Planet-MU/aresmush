@@ -76,10 +76,10 @@ module AresMUSH
         idle_timeout = Global.read_config("scenes", "idle_scene_timeout_days")
         elapsed_days = (Time.now - last_activity) / 86400
         elapsed_hours = (Time.now - last_activity) / 3600
-        if scene.private_scene && scene.scene_pacing != "Asynchronous"
-          return (elapsed_days >= idle_timeout)
-        else
+        if !scene.private_scene && scene.scene_pacing != "Asynchronous"
           return (elapsed_hours >= 3)
+        else
+          return (elapsed_days >= idle_timeout)
         end
       end
       
