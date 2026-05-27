@@ -136,7 +136,7 @@ module AresMUSH
     end
     
     def self.leave_channel(char, channel)
-      Channels.emit_to_channel channel, t('channels.left_channel', :name => char.name)
+      #Channels.emit_to_channel channel, t('channels.left_channel', :name => char.name)
       channel.characters.delete char
     end
     
