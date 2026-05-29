@@ -118,6 +118,7 @@ chargen:
     Profile: %{profile_link}
 
     RP Hooks:
+    
     %{rp_hooks}
   permissions:
     manage_apps: Approve and reject character apps.
