@@ -11,6 +11,7 @@ module AresMUSH
         search_date = (request.args['searchDate'] || "").strip
         search_location = (request.args['searchLocation'] || "").strip
         search_token = request.args['searchToken'] || ""
+        search_case_sensitive = request.args['searchCaseSensitive']
         
         page = (request.args['page'] || "1").to_i
         
@@ -56,7 +57,9 @@ module AresMUSH
               scenes = scenes.select { |s| s.location =~ /\b#{search_location}\b/i }
             end
           
-            if (!search_log.blank?)
+            if (!search_log.blank? && search_case_sensitive)
+              scenes = scenes.select { |s| "#{s.summary} #{s.scene_log.log}" =~ /\b#{search_log}\b/ }
+            elsif (!search_log.blank?)
               scenes = scenes.select { |s| "#{s.summary} #{s.scene_log.log}" =~ /\b#{search_log}\b/i }
             end
       
