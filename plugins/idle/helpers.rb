@@ -201,7 +201,7 @@ module AresMUSH
          chars = ids.map { |id, action| Character[id] }
 
          # Don't log destroyed chars who never hit the grid
-         if (action != "Destroy")   
+         if (action != "Destroy" && action != "Warn")   
            title = t("idle.idle_#{action.downcase}")
            color = Idle.idle_action_color(action)
            report << "%R%r#{color}#{title}%xn"
@@ -210,7 +210,7 @@ module AresMUSH
          chars.sort_by { |c| c.name }.each do |idle_char|
 
            idle_name = idle_char.name
-           if (action != "Destroy")   
+           if (action != "Destroy" && action != "Warn")   
              report << "%R#{idle_name}"
            end
            

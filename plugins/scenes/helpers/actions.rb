@@ -170,6 +170,21 @@ module AresMUSH
       return message
     end
     
+
+    def self.handle_roll_command(pose, enactor, char, scene)
+      command = pose.after("/").before(" ")
+      args = pose.after(" ")
+
+      custom = CustomSceneCommands.new
+      message = custom.handle(enactor, char, scene, command, args)
+      if (message)
+        return message
+      end
+      
+      parser = Scenes::BaseSceneCommands.new
+      message = parser.handle(enactor, char, scene, command, args)
+      return message
+    end
     
     def self.move_to_trash(scene, enactor)
       

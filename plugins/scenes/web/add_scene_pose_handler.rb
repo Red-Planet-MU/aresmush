@@ -48,6 +48,14 @@ module AresMUSH
             return message
           end
         end
+
+        # Custom Command
+        if (pose.start_with?("roll"))
+          message = Scenes.handle_roll_command(pose, enactor, char, scene)
+          if (message)
+            return message
+          end
+        end
           
         # Regular Pose or Emit
         Scenes.emit_pose(char, parse_results[:pose], parse_results[:is_emit], 
