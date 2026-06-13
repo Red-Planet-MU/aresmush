@@ -39,7 +39,6 @@ module AresMUSH
           }
           
           Global.client_monitor.notify_web_clients(:new_lfrp_activity, "#{data.to_json}", true) do |char|
-            Global.logger.debug "Made it in here: #{data}"
             true 
           end
         end
