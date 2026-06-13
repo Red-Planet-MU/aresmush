@@ -33,6 +33,14 @@ module AresMUSH
           if enactor.looking_for_rp_announce == "on"
             Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit', :name => enactor.name, :duration => self.duration))
           end
+          data = {
+            lfrp_icons: LookingForRp.web_list
+            type: 'lfrp_set'
+          }
+          
+          Global.client_monitor.notify_web_clients(:new_lfrp_activity, "#{data.to_json}", true) do |char|
+            char 
+          end
         end
       end
     end
