@@ -23,7 +23,7 @@ module AresMUSH
       char.update(looking_for_rp: false)
       data = {
         lfrp_icons: LookingForRp.web_list,
-        type: 'lfrp_expire'
+        type: 'lfrp_expired'
       }
       Global.client_monitor.notify_web_clients(:new_lfrp_activity, "#{data.to_json}", true) do |char|
         true 
