@@ -34,7 +34,7 @@ module AresMUSH
             Channels.send_to_channel("RP Requests", t('lookingforrp.rp_request_emit', :name => enactor.name, :duration => self.duration))
           end
           data = {
-            lfrp_icons: LookingForRp.web_list
+            lfrp_icons: LookingForRp.web_list,
             type: 'lfrp_set'
           }
           
