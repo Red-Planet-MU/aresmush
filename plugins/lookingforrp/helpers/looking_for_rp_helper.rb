@@ -6,6 +6,13 @@ module AresMUSH
       char.update(looking_for_rp_expires_at: end_at)
       char.update(looking_for_rp: true)
       char.update(looking_for_rp_type: type)
+      data = {
+        lfrp_icons: LookingForRp.web_list,
+        type: 'lfrp_set'
+      }
+      Global.client_monitor.notify_web_clients(:new_lfrp_activity, "#{data.to_json}", true) do |char|
+        true 
+      end
     end
 
     def self.end_at(duration)
@@ -14,6 +21,13 @@ module AresMUSH
 
     def self.expire(char)
       char.update(looking_for_rp: false)
+      data = {
+        lfrp_icons: LookingForRp.web_list,
+        type: 'lfrp_expire'
+      }
+      Global.client_monitor.notify_web_clients(:new_lfrp_activity, "#{data.to_json}", true) do |char|
+        true 
+      end
     end
 
     def self.is_lfrp(char)
