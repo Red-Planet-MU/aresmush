@@ -103,7 +103,7 @@ module AresMUSH
         # use enactor. Replace this with your own code.
         Global.logger.debug "#{char_data}"
         char.update(txt_color: Website.format_input_for_mush(char_data["custom"]["txt_color"]))
-        char.update(looking_for_rp_announce: Website.format_input_for_mush(char_data["custom"]["looking_for_rp_announce"]))
+        char.update(looking_for_rp_announce: Website.format_input_for_mush(char_data["custom"]["looking_for_rp_announce"] == true ? "on" : "off"))
       end
 
       
