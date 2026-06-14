@@ -6,6 +6,7 @@ aliases:
 - rp_ok
 - findrp
 - rp
+- lfrp
 ---
 ---
 # Finding RP
@@ -20,7 +21,7 @@ The 'looking for RP' flag is used to indicate that you are actively seeking a di
 
 By default, the 'looking for RP' flag expires after one hour. If you know you will be searching for RP longer, you can set it for 2 or 3 hours, after which it will be automatically cleared.
 
-See who is looking for RP on the webportal or by using `who` or `where`.
+See who is looking for RP on the webportal or by using `who`.
 
 ## Commands
 `lookingforrp` - Set yourself as looking for RP.
