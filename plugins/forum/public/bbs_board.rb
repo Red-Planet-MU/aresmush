@@ -41,7 +41,7 @@ module AresMUSH
       bbs_posts.select { |p| p.is_unread?(char) }
     end
       
-    def has_unread?(char)
+    def self.has_unread?(char)
       !unread_posts(char).empty?
     end
         
