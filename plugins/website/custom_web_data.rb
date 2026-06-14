@@ -15,14 +15,14 @@ module AresMUSH
     def self.custom_sidebar_data(viewer)
       return {
         lfrp_icons: LookingForRp.web_list,
-        txtExtraInstalled: Manage.is_extra_installed?("txt")
+        txt_extra_installed: Manage.is_extra_installed?("txt")
       }
     end
 
     def self.custom_play_data(viewer)
       return {
         lfrp_icons: LookingForRp.web_list,
-        txtExtraInstalled: Manage.is_extra_installed?("txt")
+        txt_extra_installed: Manage.is_extra_installed?("txt")
       }
     end
   end
