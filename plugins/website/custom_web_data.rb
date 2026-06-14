@@ -14,19 +14,15 @@ module AresMUSH
     #    about performance. Avoid intensive database queries here.
     def self.custom_sidebar_data(viewer)
       return {
-        looking_for_rp: LookingForRp.char_names,
-        #looking_for_rp_chars: LookingForRp.chars_looking_for_rp,
-        lfrp_icons: LookingForRp.web_list
-        #is_looking_for_rp: LookingForRp.is_lfrp(viewer)
+        lfrp_icons: LookingForRp.web_list,
+        txtExtraInstalled: Manage.is_extra_installed?("txt")
       }
     end
 
     def self.custom_play_data(viewer)
       return {
-        looking_for_rp: LookingForRp.char_names,
-        #looking_for_rp_chars: LookingForRp.chars_looking_for_rp,
-        lfrp_icons: LookingForRp.web_list
-        #is_looking_for_rp: LookingForRp.is_lfrp(viewer)
+        lfrp_icons: LookingForRp.web_list,
+        txtExtraInstalled: Manage.is_extra_installed?("txt")
       }
     end
   end
