@@ -52,6 +52,7 @@ module AresMUSH
       def self.get_fields_for_editing(char, viewer)
         return {
           txt_color: char.txt_color,
+          looking_for_rp_announce: char.looking_for_rp_announce,
         }
       end
 
