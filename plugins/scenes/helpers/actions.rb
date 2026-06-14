@@ -63,6 +63,13 @@ module AresMUSH
       
       Scenes.new_scene_activity(scene, :status_changed, nil)  
       Global.dispatcher.queue_event SceneSharedEvent.new(scene.id)
+      data = {
+        recent_scenes: Scenes.get_recent_scenes_web_data,
+        type: 'new_scene'
+      }
+      Global.client_monitor.notify_web_clients(:scene_shared_activity, "#{data.to_json}", true) do |char|
+        true 
+      end
             
       return true
     end
