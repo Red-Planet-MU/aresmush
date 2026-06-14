@@ -1150,6 +1150,10 @@ body {
   margin: 15px;
 }
 
+.comp p {
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 991.9px) {
   .char-achievements {
      column-count: 1; 
