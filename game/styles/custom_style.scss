@@ -651,6 +651,10 @@ button {
   background-color: #14202a;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); }
 
+.scene-log textarea {
+    min-height: 150px;
+}
+
 h1
 {
   background-color: $primary-color;
