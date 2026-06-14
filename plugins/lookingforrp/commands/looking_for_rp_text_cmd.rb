@@ -19,6 +19,7 @@ module AresMUSH
       def check_errors
         return "Incorrect syntax. See 'qr lookingforrp' for help." if self.duration && !self.duration.integer?
         return "You can't set yourself 'Looking for RP' for longer than 3 hours." if duration.to_i > 3
+        return "Text plugin is not installed." if Manage.is_extra_installed?("txt") == false
       end
 
       def handle
