@@ -44,6 +44,13 @@ module AresMUSH
         Forum.mark_read(post, alt)
       end
       Login.mark_notices_read(char, :forum, post.id)
+      data = {
+        has_unread: Forum.has_unread?(char),
+        type: 'forum_read'
+      }
+      Global.client_monitor.notify_web_clients(:forum_read_activity, "#{data.to_json}", true) do |char|
+        true 
+      end
     end    
       
     def self.notify(post, category, type, message, data)
