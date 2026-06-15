@@ -81,8 +81,9 @@ module AresMUSH
       Events.events_updated
       Achievements.award_achievement(enactor, "event_created")
       PostEvent.create_forum_post(event)
+
+      #Kick off web update of sidebar event data
       data = {
-        upcoming_events: LookingForRp.web_list,
         type: 'new_event'
       }
       Global.client_monitor.notify_web_clients(:event_posted_activity, "#{data.to_json}", true) do |char|
