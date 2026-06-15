@@ -2,6 +2,7 @@ module AresMUSH
   module Website
     class GetSidebarInfoRequestHandler
       def handle(request)
+        Global.logger.debug "request: #{request}"
         enactor = request.enactor
         
         error = Website.check_login(request, true)
