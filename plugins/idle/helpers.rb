@@ -25,6 +25,15 @@ module AresMUSH
       char.update(roster_played: char.is_approved?)  # Assume played if approved.
       char.update(roster_job: nil)
       Idle.idle_cleanup(char, "Roster")
+      #horse shit
+      if char.demographic('horse name')
+        char.update_demographic "horse name", nil
+      end
+      if char.horse_color
+        char.update(horse_color: nil)
+        char.update(horse_temperament: nil)
+      end
+      #/horse shit
     end
     
     def self.remove_from_roster(char)
@@ -47,11 +56,22 @@ module AresMUSH
         char.roles.delete approved_role
         Global.dispatcher.queue_event RoleChangedEvent.new(char, true) 
       end
+      #pal shit
       Character.all.each do |c|
         if c.pals.include?(char)
           c.pals.delete char
         end
       end
+      #/pal shit
+      #horse shit
+      if char.demographic('horse name')
+        char.update_demographic "horse name", nil
+      end
+      if char.horse_color
+        char.update(horse_color: nil)
+        char.update(horse_temperament: nil)
+      end
+      #/horse shit
       Global.dispatcher.queue_event CharIdledOutEvent.new(char.id, idle_status)
     end
     
