@@ -4,6 +4,7 @@ module AresMUSH
     set :pals, "AresMUSH::Character"
     attribute :highlight_name, :type => DataType::Boolean, :default => false
     attribute :highlight_name_color, :default => "#6edff6"
+    attribute :highlight_name_bg_color
 
   end
 end

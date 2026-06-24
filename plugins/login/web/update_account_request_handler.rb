@@ -6,6 +6,7 @@ module AresMUSH
         name = request.args['name']
         highlight_name = request.args['highlight_name'] || ""
         highlight_name_color = request.args['highlight_name_color'] || ""
+        highlight_name_bg_color = request.args['highlight_name_bg_color'] || ""
         char_alias = request.args['alias'] || ""
         email = request.args['email']
         timezone = request.args['timezone']
@@ -67,6 +68,7 @@ module AresMUSH
           alt.update(website_editor: editor)
           alt.update(highlight_name: highlight_name)
           alt.update(highlight_name_color: highlight_name_color)
+          alt.update(highlight_name_bg_color: highlight_name_bg_color)
         end
         
         {

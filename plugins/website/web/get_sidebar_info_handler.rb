@@ -65,6 +65,7 @@ module AresMUSH
           has_unread: Forum.has_unread_forum_posts?(enactor),
           highlight_name: enactor.highlight_name,
           highlight_name_color: enactor.highlight_name_color,
+          highlight_name_bg_color: enactor.highlight_name_bg_color,
         }
       end
     end
