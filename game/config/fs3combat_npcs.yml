@@ -23,23 +23,23 @@ fs3combat:
       Melee: 7
       Wounds: 0
     Hard:
-      Default: 8
-      Archery: 9
-      Firearms: 9
-      Melee: 9
-      Wounds: -5
+      Default: 9
+      Archery: 10
+      Firearms: 10
+      Melee: 10
+      Wounds: -10
     Difficult:
       Default: 10
       Archery: 11
       Firearms: 11
       Melee: 11
-      Wounds: -10
+      Wounds: -15
     Nightmare:
       Default: 12
       Archery: 13
       Firearms: 13
       Melee: 13
-      Wounds: -15
+      Wounds: -20
     Impossible:
       Default: 20
       Archery: 22
