@@ -20,7 +20,10 @@ module AresMUSH
           unified_play_screen: enactor.unified_play_screen,
           editor: enactor.website_editor || "Classic",
           editors: [ "Classic", "WYSIWYG" ],
-          backup: enactor.wiki_char_backup ? enactor.wiki_char_backup.download_path : nil
+          backup: enactor.wiki_char_backup ? enactor.wiki_char_backup.download_path : nil,
+          highlight_name: enactor.highlight_name,
+          highlight_name_color: enactor.highlight_name_color,
+          highlight_name_bg_color: enactor.highlight_name_bg_color,
         }
       end
     end
