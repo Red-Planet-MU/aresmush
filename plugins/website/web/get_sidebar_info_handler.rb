@@ -63,6 +63,8 @@ module AresMUSH
           alts: alt_data,
           editor: (enactor ? enactor.website_editor : nil) || "Classic",
           has_unread: Forum.has_unread_forum_posts?(enactor),
+          highlight_name: enactor.highlight_name,
+          highlight_name_color: enactor.highlight_name_color,
         }
       end
     end
