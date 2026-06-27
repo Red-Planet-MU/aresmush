@@ -115,7 +115,9 @@ website:
     - title: Characters
       route: characters
     - title: Dangers
-      url: https://redplanetmu.com/wiki/dangers
+      route: wiki
+      ids:
+      - dangers
     - divider: true
     - title: Players
       route: players
