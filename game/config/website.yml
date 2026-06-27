@@ -114,10 +114,9 @@ website:
     menu:
     - title: Characters
       route: characters
-    - title: Dangers
-      route: wiki
-      ids:
-      - dangers
+    - id: dangers
+      title: Dangers
+      route: wiki-page
     - divider: true
     - title: Players
       route: players
