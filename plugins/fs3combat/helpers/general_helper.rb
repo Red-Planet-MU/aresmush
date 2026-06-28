@@ -68,10 +68,18 @@ module AresMUSH
         end
       end
       
-      web_msg = "#{combat.id}|#{Website.format_markdown_for_html(message)}"
-       Global.client_monitor.notify_web_clients(:combat_activity, web_msg, true) do |c|
+      #web_msg = "#{combat.id}|#{Website.format_markdown_for_html(message)}"
+      web_msg = "#{Website.format_markdown_for_html(message)}"
+       #Global.client_monitor.notify_web_clients(:combat_activity, web_msg, true) do |c|
+       data = {
+        combat_data: FS3Combat.build_combat_web_data(combat, nil),
+        web_msg: web_msg
+       }
+       Global.client_monitor.notify_web_clients(:combat_activity, "#{data.to_json}", true) do |c|
          c && c.combatant && c.combatant.combat == combat
       end
+
+
 
       messages = combat.messages
       messages << message
