@@ -45,14 +45,17 @@ website:
     - title: Roster Characters
       route: roster
     - divider: true
-    - title: About Red Planet
-      url: https://redplanetmu.com/wiki/about_us
+    - id: about_us
+      title: About Red Planet
+      route: wiki-page
   - title: Game
     menu:
-    - title: Policies
-      url: https://redplanetmu.com/wiki/policies
-    - title: Staff Team
-      url: https://redplanetmu.com/wiki/staff_team
+    - id: policies
+      title: Policies
+      route: wiki-page
+    - id: staff_team
+      title: Staff Team
+      route: wiki-page
     - divider: true
     - title: Who's Online
       route: who
@@ -63,33 +66,44 @@ website:
     - title: Events
       route: events
     - divider: true
-    - title: Guides
-      url: https://redplanetmu.com/wiki/guide
+    - id: guide
+      title: Guides
+      route: wiki-page
   - title: World
     menu:
-    - title: World
-      url: https://redplanetmu.com/wiki/world
-    - title: Citizens
-      url: https://redplanetmu.com/wiki/world:citizens
-    - title: Creatures
-      url: https://redplanetmu.com/wiki/world:creatures
+    - id: world
+      title: World
+      route: wiki-page
+    - id: world:citizens
+      title: Citizens
+      route: wiki-page
+    - id: world:creatures
+      title: Creatures
+      route: wiki-page
     - divider: true
-    - title: Virtue
-      url: https://redplanetmu.com/wiki/world:virtue
-    - title: Beyond Virtue
-      url: https://redplanetmu.com/wiki/world:beyond_virtue
-    - title: NILE
-      url: https://redplanetmu.com/wiki/world:nile
+    - id: world:virtue
+      title: Virtue
+      route: wiki-page
+    - id: world:beyond_virtue
+      title: Beyond Virtue
+      route: wiki-page
+    - id: world:nile
+      title: NILE
+      route: wiki-page
     - divider: true
-    - title: Technology
-      url: https://redplanetmu.com/wiki/world:technology
-    - title: Serums
-      url: https://redplanetmu.com/wiki/world:serums
-    - title: Society
-      url: https://redplanetmu.com/wiki/world:society
+    - id: world:technology
+      title: Technology
+      route: wiki-page
+    - id: world:serums
+      title: Serums
+      route: wiki-page
+    - id: world:society
+      title: Society
+      route: wiki-page
     - divider: true
-    - title: FAQ
-      url: https://redplanetmu.com/wiki/faq
+    - id: faq
+      title: FAQ
+      route: wiki-page
   - title: Play
     menu:
     - title: Play
@@ -107,10 +121,12 @@ website:
     - title: Scenes
       route: scenes
     - divider: true
-    - title: Bounties & One-Shot Adventures
-      url: https://redplanetmu.com/wiki/system:bounties_oneshot
-    - title: Player-Run Plots
-      url: https://redplanetmu.com/wiki/system:prps
+    - id: system:bounties_oneshot
+      title: Bounties & One-Shot Adventures
+      route: wiki-page
+    - id: system:prps
+      title: Player-Run Plots
+      route: wiki-page
   - title: Directory
     menu:
     - title: Characters
@@ -136,13 +152,16 @@ website:
       route: files
   - title: System
     menu:
-    - title: Custom Mechanics
-      url: https://redplanetmu.com/wiki/guide:custom_mechanics
+    - id: guide:custom_mechanics
+      title: Custom Mechanics
+      route: wiki-page
     - divider: true
-    - title: XP
-      url: https://redplanetmu.com/wiki/system:xp
-    - title: Luck Points
-      url: https://redplanetmu.com/wiki/system:luck_points
+    - id: system:xp
+      title: XP
+      route: wiki-page
+    - id: system:luck_points
+      title: Luck Points
+      route: wiki-page
     - divider: true
     - title: Abilities and Skills
       route: fs3skills-abilities
