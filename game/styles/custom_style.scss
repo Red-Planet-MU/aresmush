@@ -1418,7 +1418,8 @@ a:focus  {
 
 #chat-window p {
   overflow-wrap: anywhere;
-  margin-bottom: 0px
+  margin-bottom: 0px;
+  margin-left: 58px;
 }
 
 #chat-window .scene-pose:hover {
@@ -1449,9 +1450,14 @@ a:focus  {
   margin-left: 10px;
 }
 
-#chat-window p {
-	margin-left: 58px;
+#chat-window .tooltip-button {
+  display: none;
 }
+
+#chat-window .scene-pose:hover + .tooltip-button {
+  display: block;
+}
+
 
 /* ANSI Colors */
 .ansi-red-bg {
