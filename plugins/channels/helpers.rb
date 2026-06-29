@@ -399,7 +399,7 @@ module AresMUSH
             brief_message: Website.format_markdown_for_html(m.message)[0, ("<p>"+m.author.ooc_name+" says,").size] == "<p>"+m.author.ooc_name+" says,"  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ","")) : Website.format_markdown_for_html(m.message),
             id: m.id,
             flagged: m.flagged,
-            timestamp: OOCTime.short_timestr(Time.now) != OOCTime.short_timestr(m.created_at) ? OOCTime.local_short_actual_timestr(enactor, m.created_at) : OOCTime.local_short_date_and_time(enactor, m.created_at),
+            timestamp: OOCTime.short_timestr(Time.now) == OOCTime.short_timestr(m.created_at) ? OOCTime.local_short_actual_timestr(enactor, m.created_at) : OOCTime.local_short_date_and_time(enactor, m.created_at),
             author: {
               name: m.author_name,
               icon: m.author ? Website.icon_for_char(m.author) : nil,
