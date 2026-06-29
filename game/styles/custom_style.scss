@@ -1426,6 +1426,11 @@ a:focus  {
 .chat-msg-author-name {
   display: inline;
   vertical-align: top;
+  margin-left: 5px;
+}
+
+#chat-window p {
+	margin-left: 63px;
 }
 
 /* ANSI Colors */
