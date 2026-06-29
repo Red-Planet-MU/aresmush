@@ -1419,6 +1419,15 @@ a:focus  {
   overflow-wrap: anywhere;
 }
 
+.chat-msg-author-icon {
+  display: inline
+}
+
+.chat-msg-author-icon {
+  display: inline;
+  vertical-align: top;
+}
+
 /* ANSI Colors */
 .ansi-red-bg {
   background-color: #D14F43;
