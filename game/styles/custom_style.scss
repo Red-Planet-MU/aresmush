@@ -1470,6 +1470,10 @@ a:focus  {
   transition: opacity 0.2s ease;
 }
 
+#chat-window .rounded-pill {
+  vertical-align: top;
+}
+
 #chat-window .scene-pose:hover .tooltip-button,
 #chat-window .scene-pose:hover .tooltip-button {
   opacity: 1;
