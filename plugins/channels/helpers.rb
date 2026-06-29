@@ -107,7 +107,7 @@ module AresMUSH
         id: channel.id,
         key: channel.name.downcase,
         title: channel.name,
-        author: {name: enactor.name, icon: Website.icon_for_char(enactor), id: enactor.id},
+        author: {name: enactor.name, icon: Website.icon_for_char(enactor), id: enactor.id, ooc_name: enactor.ooc_name},
         message: Website.format_markdown_for_html(formatted_msg),
         message_id: channel_message.id,
         is_page: false
