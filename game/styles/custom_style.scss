@@ -1414,6 +1414,7 @@ a:focus  {
 
 #chat-window {
 	border: 0;
+  height: calc(100vh - 300px);
 }
 
 #chat-window p {
