@@ -109,7 +109,7 @@ module AresMUSH
         title: channel.name,
         author: {name: enactor.name, icon: Website.icon_for_char(enactor), id: enactor.id, handle: "@"+enactor.handle.name},
         message: Website.format_markdown_for_html(formatted_msg),
-        brief_message: Website.format_markdown_for_html(formatted_msg)[0, enactor.ooc_name.size] == enactor.ooc_name  ? Website.format_markdown_for_html(formatted_msg.sub(enactor.ooc_name+" says, ",""))
+        brief_message: Website.format_markdown_for_html(formatted_msg)[0, enactor.ooc_name.size] == enactor.ooc_name  ? Website.format_markdown_for_html(formatted_msg.sub(enactor.ooc_name+" says, ","")),
         message_id: channel_message.id,
         is_page: false
       }
@@ -392,7 +392,7 @@ module AresMUSH
             .select { |m| Channels.is_message_visible?(enactor, m) }
             .map { |m| {
             message: Website.format_markdown_for_html(m.message),
-            brief_message: Website.format_markdown_for_html(m.message)[0, m.author.ooc_name.size] == m.author.ooc_name  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ",""))
+            brief_message: Website.format_markdown_for_html(m.message)[0, m.author.ooc_name.size] == m.author.ooc_name  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ","")),
             id: m.id,
             flagged: m.flagged,
             timestamp: OOCTime.local_short_date_and_time(enactor, m.created_at),
