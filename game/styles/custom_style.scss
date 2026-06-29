@@ -1451,12 +1451,16 @@ a:focus  {
 }
 
 #chat-window .tooltip-button {
-  display: none;
+  float: right;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
 }
 
+#chat-window .scene-pose:hover .tooltip-button,
 #chat-window .scene-pose:hover .tooltip-button {
-  display: block;
-  float: right;
+  opacity: 1;
+  visibility: visible;
 }
 
 
