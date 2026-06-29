@@ -218,7 +218,7 @@ module AresMUSH
             author: {
               name: p.author_name,
               icon: p.author ? Website.icon_for_char(p.author) : nil,
-              handle: p.author ? "@"+p.author.handle.name : nil,
+              handle: p.author.handle ? "@"+p.author.handle.name : nil,
             }
             }}        
       end
