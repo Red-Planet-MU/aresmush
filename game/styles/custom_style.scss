@@ -1440,6 +1440,15 @@ a:focus  {
   height: 40px;
 }
 
+.chat-header {
+  display: inline;
+  font-size: 1.5em;
+}
+
+.chat-controls {
+  float: right;
+}
+
 .chat-msg-author-icon {
   display: inline
 }
