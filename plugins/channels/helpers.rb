@@ -396,7 +396,7 @@ module AresMUSH
             .select { |m| Channels.is_message_visible?(enactor, m) }
             .map { |m| {
             message: Website.format_markdown_for_html(m.message),
-            brief_message: Website.format_markdown_for_html(m.message)[0, ("<p>"+m.author.ooc_name+" says,").size] == "<p>"m.author.ooc_name+" says,"  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ","")) : Website.format_markdown_for_html(m.message),
+            brief_message: Website.format_markdown_for_html(m.message)[0, ("<p>"+m.author.ooc_name+" says,").size] == "<p>"+m.author.ooc_name+" says,"  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ","")) : Website.format_markdown_for_html(m.message),
             id: m.id,
             flagged: m.flagged,
             timestamp: OOCTime.local_short_date_and_time(enactor, m.created_at),
