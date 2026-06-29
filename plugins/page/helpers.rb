@@ -214,7 +214,7 @@ module AresMUSH
             message: Website.format_markdown_for_html(p.message),
             brief_message: Website.format_markdown_for_html(p.message)[0, ("<p>"+p.author.ooc_name+" says,").size] == "<p>"+p.author.ooc_name+" says," ? Website.format_markdown_for_html(p.message.sub(p.author.ooc_name+" says, ","")) : Website.format_markdown_for_html(p.message),
             id: p.id,
-            timestamp: OOCTime.local_short_date_and_time(enactor, p.created_at),
+            timestamp: OOCTime.short_timestr(Time.now) == OOCTime.short_timestr(p.created_at) ? OOCTime.local_short_actual_timestr(enactor, p.created_at) : OOCTime.local_short_date_and_time(enactor, p.created_at),
             author: {
               name: p.author_name,
               icon: p.author ? Website.icon_for_char(p.author) : nil,
