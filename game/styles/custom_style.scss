@@ -1421,6 +1421,7 @@ a:focus  {
   overflow-wrap: anywhere;
   margin-bottom: 0px;
   margin-left: 58px;
+  margin-top: 2px;
 }
 
 #chat-window .scene-pose:hover {
@@ -1472,6 +1473,7 @@ a:focus  {
 
 #chat-window .rounded-pill {
   vertical-align: top;
+  border-radius: 5px;
 }
 
 #chat-window .scene-pose:hover .tooltip-button,
