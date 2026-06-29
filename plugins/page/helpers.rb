@@ -212,11 +212,14 @@ module AresMUSH
       else
         messages = thread.sorted_messages.map { |p| {
             message: Website.format_markdown_for_html(p.message),
+            brief_message: Website.format_markdown_for_html(p.message)[0, p.author.ooc_name.size] == p.author.ooc_name  ? Website.format_markdown_for_html(p.message.sub(p.author.ooc_name+" says, ",""))
+            id: m.id,
             id: p.id,
             timestamp: OOCTime.local_short_date_and_time(enactor, p.created_at),
             author: {
               name: p.author_name,
-              icon: p.author ? Website.icon_for_char(p.author) : nil }
+              icon: p.author ? Website.icon_for_char(p.author) : nil,
+              handle: "@"+p.author.handle.name }
             }}        
       end
       
