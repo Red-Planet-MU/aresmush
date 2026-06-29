@@ -1366,7 +1366,9 @@ a:focus  {
 	grid-template-columns: 350px auto;
 }
 
-
+#sceneMenuCollapseButton {
+    display: block;
+  }
 
 .scene-pose-header {
   font-size: 1em;
