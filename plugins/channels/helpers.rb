@@ -110,7 +110,7 @@ module AresMUSH
         author: {name: enactor.name, 
                  icon: Website.icon_for_char(enactor), 
                  id: enactor.id, 
-                 #handle: "@"+enactor.handle.name
+                 handle: enactor.handle ? "@"+enactor.handle.name : nil,
                 },
         message: Website.format_markdown_for_html(formatted_msg),
         brief_message: Website.format_markdown_for_html(formatted_msg)[0, (enactor.ooc_name+" says,").size] == enactor.ooc_name+" says," ? Website.format_markdown_for_html(formatted_msg.sub(enactor.ooc_name+" says, ","")) : Website.format_markdown_for_html(formatted_msg),
@@ -403,7 +403,7 @@ module AresMUSH
             author: {
               name: m.author_name,
               icon: m.author ? Website.icon_for_char(m.author) : nil,
-              #handle: "@"+m.author.handle.name 
+              handle: m.author.handle ? "@"+m.author.handle.name : nil,
             }
             }
           }
