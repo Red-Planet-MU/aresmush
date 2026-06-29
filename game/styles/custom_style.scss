@@ -1374,6 +1374,7 @@ a:focus  {
   font-size: 1em;
 }
 
+
 @media screen and (max-width: 991.98px) {
 	.play-screen {
 		display: block!important;
@@ -1417,6 +1418,11 @@ a:focus  {
 
 #chat-window p {
   overflow-wrap: anywhere;
+}
+
+#chat-window .scene-pose {
+	padding: 0px;
+	margin: 0px 0px 0px 0px; 
 }
 
 #chat-window .scene-pose-header {
