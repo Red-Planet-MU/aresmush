@@ -25,6 +25,12 @@ module AresMUSH
       time = l(lt, format: Global.read_config("datetime", "time_format"))
       "#{date} #{time}"
     end
+
+    def self.local_short_actual_timestr(viewer, datetime)
+      return "" if !datetime
+      lt = localtime(viewer, datetime)
+      l(lt, format: Global.read_config("datetime", "time_format"))
+    end
     
     
     def self.localtime(viewer, datetime)
