@@ -1419,6 +1419,10 @@ a:focus  {
   overflow-wrap: anywhere;
 }
 
+#chat-window .scene-pose-header {
+	margin-bottom: -32px;
+}
+
 .chat-msg-author-icon {
   display: inline
 }
