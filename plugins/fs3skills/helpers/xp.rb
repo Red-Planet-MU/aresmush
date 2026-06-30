@@ -100,11 +100,10 @@ module AresMUSH
       FS3Skills.modify_xp(char, -1)    
       data = {
         char_name: char.name,
-        char_xp: char.xp,
-        ability: ability,
-        type: 'xp_spent'
+        fs3: FS3Skills.build_web_char_data(char, nil),
+        type: 'ability_learned',
       }
-      Global.client_monitor.notify_web_clients(:xp_spent_activity, "#{data.to_json}", true) do |char|
+      Global.client_monitor.notify_web_clients(:ability_learn_activity, "#{data.to_json}", true) do |char|
         true 
       end
       return nil
