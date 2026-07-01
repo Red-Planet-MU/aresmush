@@ -1448,8 +1448,15 @@ a:focus  {
   font-size: 1.5em;
 }
 
-.chat-controls {
-  float: right;
+.chat-controls-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 499.98px) {
+	.chat-controls {
+  flex-basis: 35%;
+  }
 }
 
 .chat-msg-author-icon {
