@@ -23,7 +23,6 @@ module AresMUSH
       
       def handle
         target = FS3Combat.find_named_thing(self.name, enactor)
-        target_is_npc = !target.level ? false : true
 
         if (!target)
           client.emit_failure t('db.object_not_found')
