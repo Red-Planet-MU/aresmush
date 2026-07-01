@@ -75,6 +75,13 @@ fs3combat:
     newturn: combat/newturn
     combat/drive: combat/pilot
   achievements:
+    has_died:
+      type: died
+      message: Died %{count} times.
+      levels:
+      - 1
+      - 2
+      - 3
     fs3_hero:
       type: combat
       message: Heroed from a knockout.
