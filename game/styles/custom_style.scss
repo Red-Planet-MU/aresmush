@@ -1458,6 +1458,11 @@ a:focus  {
   flex-basis: 35%;
   }
 }
+@media screen and (max-width: 452.98px) {
+	.chat-controls {
+  flex-basis: 50%;
+  }
+}
 
 .chat-msg-author-icon {
   display: inline
