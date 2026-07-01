@@ -35,7 +35,7 @@ module AresMUSH
         self.names.each do |name|
           FS3Combat.with_a_combatant(name, client, enactor) do |combat, combatant|        
             combatant.update(stance: stance)
-            message = t('fs3combat.stance_changed', :stance => self.stance, :name => name, :poss => combatant.poss_pronoun)
+            message = t('fs3combat.stance_changed', :stance => self.stance, :name => name.capitalize, :poss => combatant.poss_pronoun)
             FS3Combat.emit_to_combat combat, message, FS3Combat.npcmaster_text(name, enactor)
           
             if (combatant.riding_in)
