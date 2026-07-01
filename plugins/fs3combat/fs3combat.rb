@@ -16,6 +16,8 @@ module AresMUSH
  
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
+      when "kill"
+        return CombatKillCmd
       when"damage"
          case cmd.switch
          when "inflict"

@@ -2,6 +2,7 @@ module AresMUSH
   class Character    
     collection :damage, "AresMUSH::Damage"
     attribute :combats_participated_in, :type => DataType::Integer
+    attribute :has_died, :type => DataType::Integer
     
     before_delete :delete_damage
       

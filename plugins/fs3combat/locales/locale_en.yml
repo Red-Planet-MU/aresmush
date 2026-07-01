@@ -148,6 +148,7 @@ en:
         back_in_the_fight: "%{name} spends a luck point and is back in the fight!"
         ko_status: "-KO-"
         target_not_koed: "Target is not KOed."
+        died: "%xR%{name} has died.%xn"
         
         # ----------------------------
         # TYPES

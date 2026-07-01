@@ -183,6 +183,25 @@ module AresMUSH
       return nil if !actor
       actor.name == name ? nil : t('fs3combat.npcmaster_text', :name => actor.name)
     end
+
+    def self.handle_has_died_achievement(char)
+      char.update(has_died: char.has_died + 1)
+      [ 1, 10, 20, 50, 100 ].each do |count|
+        if (char.has_died >= count)
+          Achievements.award_achievement(char, "has_died", count)
+        end
+      end
+    end
+    
+
+    def self.kill(char)
+      if char.combat
+        combatant = char.combatant || char
+        FS3Combat.emit_to_combat(combatant.combat, t('fs3combat.died', :name => combatant.name), npcmaster = nil, add_to_scene = true)
+      end
+      char.update(dead: true)
+      FS3Combat.handle_has_died_achievement(char)
+    end
     
     def self.new_turn(enactor, combat)
       combat.log "****** NEW COMBAT TURN ******"
