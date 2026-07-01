@@ -23,6 +23,7 @@ module AresMUSH
       
       def handle
         target = FS3Combat.find_named_thing(self.name, enactor)
+        target_is_npc = !target.level ? false : true
 
         if (!target)
           client.emit_failure t('db.object_not_found')
@@ -36,7 +37,7 @@ module AresMUSH
             
         FS3Combat.inflict_damage(target, self.severity, self.desc)
         client.emit_success t('fs3combat.damage_inflicted', :name => target.name)
-        if !target.level 
+        if !target.respond_to?(:level) 
           Login.emit_ooc_if_logged_in(target, "Staff have added damage to you.")
           Login.notify(target, :damage, "Staff have added damage to you.", true)
         end
