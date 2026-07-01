@@ -1484,6 +1484,12 @@ a:focus  {
   visibility: visible;
 }
 
+.chat-header {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 
 /* ANSI Colors */
 .ansi-red-bg {
