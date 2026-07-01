@@ -233,8 +233,8 @@ module AresMUSH
       is_unread = Page.is_thread_unread?(thread, enactor)
       {
          key: thread.id,
-         title: thread.title_customized(enactor).sub(" ", ", "),
-         short_title: thread.title_customized(enactor).sub(enactor.name+" ").sub(" ", ", "),
+         title: thread.title_customized(enactor).gsub(" ", ", "),
+         short_title: thread.title_customized(enactor).sub(enactor.name+" ","").gsub(" ", ", "),
          enabled: true,
          can_join: true,
          can_talk: true,
