@@ -234,6 +234,7 @@ module AresMUSH
       {
          key: thread.id,
          title: thread.title_customized(enactor).sub(" ", ", "),
+         short_title: thread.title_customized(enactor).sub(enactor.name+" ").sub(" ", ", ")
          enabled: true,
          can_join: true,
          can_talk: true,
