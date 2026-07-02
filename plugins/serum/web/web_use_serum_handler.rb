@@ -25,6 +25,8 @@ module AresMUSH
         #Must have that serum
         if Serum.find_serums_has(enactor, serum_name) < 1
           return { error: t('serum.dont_have_serum') }
+        elsif enactor.combat
+          return {error: t('serum.you_are_in_combat') } 
         end
         
         #Must have a wound (as currently only serum is healing)
