@@ -50,7 +50,8 @@ module AresMUSH
       found = find(name_upcase: name_or_id.upcase).union(alias_upcase: name_or_id.upcase).to_a
       return found if found.any?
       
-      found = Character.all.select { |c| c.name_upcase.start_with?(name_or_id.upcase) }
+      #Disable partial matches
+      #found = Character.all.select { |c| c.name_upcase.start_with?(name_or_id.upcase) }
       if (found.count == 1)
         return found
       else
