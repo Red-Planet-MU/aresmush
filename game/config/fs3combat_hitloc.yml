@@ -1,6 +1,135 @@
 ---
 fs3combat:
   hitloc:
+    Citizen:
+      areas:
+        Chest:
+        - Left Leg
+        - Right Leg
+        - Left Arm
+        - Right Arm
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Chest
+        - Chest
+        - Chest
+        Left Leg:
+        - Ass
+        - Ass
+        - Right Leg
+        - Right Leg
+        - Abdomen
+        - Abdomen
+        - Left Foot
+        - Left Leg
+        - Left Leg
+        - Left Leg
+        Right Leg:
+        - Ass
+        - Ass
+        - Left Leg
+        - Left Leg
+        - Abdomen
+        - Abdomen
+        - Right Foot
+        - Right Leg
+        - Right Leg
+        - Right Leg
+        Ass:
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Left Leg
+        - Right Leg
+        - Ass
+        - Ass
+        - Ass
+        - Ass
+        - Ass
+        Left Hand:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Left Arm
+        - Left Arm
+        - Left Arm
+        - Left Hand
+        - Left Hand
+        - Left Hand
+        Right Hand:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Right Arm
+        - Right Arm
+        - Right Arm
+        - Right Hand
+        - Right Hand
+        - Right Hand
+        Left Arm:
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Left Hand
+        - Left Hand
+        - Left Arm
+        - Left Arm
+        - Left Arm
+        Right Arm:
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Right Hand
+        - Right Hand
+        - Right Arm
+        - Right Arm
+        - Right Arm
+        Head:
+        - Right Arm
+        - Right Arm
+        - Left Arm
+        - Chest
+        - Chest
+        - Chest
+        - Neck
+        - Neck
+        - Head
+        - Head
+        Neck:
+        - Right Arm
+        - Right Arm
+        - Left Arm
+        - Left Arm
+        - Chest
+        - Chest
+        - Head
+        - Head
+        - Neck
+        - Neck
+        Abdomen:
+        - Left Leg
+        - Right Leg
+        - Left Leg
+        - Right Leg
+        - Ass
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+      vital_areas:
+      - Chest
+      - Abdomen
+      critical_areas:
+      - Head
+      - Neck
     Humanoid:
       areas:
         Chest:

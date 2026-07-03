@@ -30,7 +30,7 @@ fs3combat:
       hitloc: Humanoid
     Citizen:
       weapon: Revolver
-      hitloc: Humanoid
+      hitloc: Citizen
       armor: Practical
       defense_skill: Reflexes
     Raider:
