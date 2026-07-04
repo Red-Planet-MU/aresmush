@@ -1350,6 +1350,8 @@ a:focus  {
   margin-right: 10px;
   border-radius: 10px;
   transition: width 0.35s ease;
+  max-height: unset;
+  height: unset;
 }
 
 .play-sidebar.is-collapsed {
@@ -1369,7 +1371,6 @@ a:focus  {
 
 .sidebar-collapsible {
   transition: width 0.35s ease, height 0.35s ease;
-  overflow: hidden;
   width: 330px;
   height: 570px; 
 }
@@ -1431,6 +1432,10 @@ a:focus  {
   .play-main h3 {
 		width: calc(100% - 170px);
 	}
+  .play-sidebar {
+    max-height: 800px;
+    height: fit-content;
+  }
 }
 
 @media screen and (min-width: 1401px) {
