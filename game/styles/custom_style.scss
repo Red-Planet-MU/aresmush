@@ -1345,6 +1345,17 @@ a:focus  {
 }
 
 /* Play Screen */
+.sidebar-collapsible {
+  transition: width 0.35s ease, height 0.35s ease;
+  overflow: hidden;
+  width: 330px;
+  height: 570px; 
+}
+.sidebar-collapsible.is-collapsed {
+  width: 0;
+  height: 0;
+}
+
 .fortunes_detail a {
   cursor: pointer;
 }
