@@ -1353,6 +1353,7 @@ a:focus  {
 
 .play-sidebar.is-collapsed {
     flex-basis: 0;
+    min-width: 0;
 }
 
 .sidebar-collapsible {
