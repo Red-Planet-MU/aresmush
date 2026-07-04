@@ -1356,6 +1356,17 @@ a:focus  {
     width: 52px;
 }
 
+.play-screen {
+	display: grid;
+	grid-template-columns: 350px auto;
+  transition: grid-template-columns 0.35s ease;
+}
+
+.play-screen.sidebar-is-collapsed {
+	display: grid;
+	grid-template-columns: 52px auto;
+}
+
 .sidebar-collapsible {
   transition: width 0.35s ease, height 0.35s ease;
   overflow: hidden;
@@ -1381,11 +1392,6 @@ a:focus  {
 
 .bg-ooc {
   border: none;
-}
-
-.play-screen {
-	display: grid;
-	grid-template-columns: 350px auto;
 }
 
 #sceneMenuCollapseButton {
