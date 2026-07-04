@@ -148,6 +148,7 @@ module AresMUSH
           end # if
         end # each
       end # with error handling
+      Global.logger.error("Unhandled web request: #{request.json}. User-Agent: #{request.headers['User-Agent'] rescue 'n/a'}, Referer: #{request.headers['Referer'] rescue 'n/a'}, IP: #{request.ip rescue 'n/a'}")
       Global.logger.error("Unhandled web request: #{request.json}.")
       return { error: "Oops!  Something went wrong when the website talked to the game.  Please try again and alert staff is the problem persists." }
     end
