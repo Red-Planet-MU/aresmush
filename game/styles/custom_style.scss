@@ -1345,6 +1345,16 @@ a:focus  {
 }
 
 /* Play Screen */
+.play-sidebar {
+  border: 0px solid #3d5954;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.play-sidebar.is-collapsed {
+    flex-basis: 0;
+}
+
 .sidebar-collapsible {
   transition: width 0.35s ease, height 0.35s ease;
   overflow: hidden;
@@ -1402,10 +1412,7 @@ a:focus  {
   }
 }
 
-.play-sidebar {
-  border: 1px solid #3d5954;
-  margin: 10px;
-}
+
 .play-section-title {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
