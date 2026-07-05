@@ -37,7 +37,7 @@ module AresMUSH
           patients: Serum.list_patients(char),
           possible_patients: Serum.possible_patients(char.name),
           max_patients: FS3Combat.max_patients(char),
-          comp_count: char.comps_given,
+          comps_given: char.comps_given,
         }
       end
     
