@@ -36,24 +36,24 @@ module AresMUSH
         case self.combatant.associated_model.horse_bond_counter
         when 1
           self.combatant.associated_model.update(horse_bond: 1)
-        when 3
+        when 2
           self.combatant.associated_model.update(horse_bond: 2)
-        when 5
+        when 3
           self.combatant.associated_model.update(horse_bond: 3)
           trigger_job = true
-        when 8
+        when 5
           self.combatant.associated_model.update(horse_bond: 4)
           trigger_job = true
-        when 13
+        when 8
           self.combatant.associated_model.update(horse_bond: 5)
           trigger_job = true
-        when 21
+        when 13
           self.combatant.associated_model.update(horse_bond: 6)
           trigger_job = true
-        when 34
+        when 21
           self.combatant.associated_model.update(horse_bond: 7)
           trigger_job = true
-        when 55
+        when 34
           self.combatant.associated_model.update(horse_bond: 8)
           trigger_job = true
         end

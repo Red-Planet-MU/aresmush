@@ -24,6 +24,9 @@ module AresMUSH
       char.update(idle_state: "Roster")
       char.update(roster_played: char.is_approved?)  # Assume played if approved.
       char.update(roster_job: nil)
+      if char.is_approved?
+        Login.set_random_password(char)
+      end
       Idle.idle_cleanup(char, "Roster")
       #horse shit
       if char.demographic('horse name')

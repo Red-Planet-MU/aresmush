@@ -172,28 +172,16 @@ module AresMUSH
           Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
         end
 
-        #if target.room != char.room && message.to_s.include?(target.name)
-        #  Global.logger.debug "target.room: #{target.room} char.room: #{char.room}"
-        #  Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
-        #end
         Serum.modify_serum(char, serum_name, -1)
       end
 
       def self.fetch_serum(char, viewer)
-        return {serums: Website.format_markdown_for_html(char.v_serums_has)#, 
-        #a_serums: Website.format_markdown_for_html(char.a_serums_has), 
-        #qh_serums: Website.format_markdown_for_html(char.qh_serums_has), 
-        #h_serums: Website.format_markdown_for_html(char.h_serums_has), 
-        #gc_serums: Website.format_markdown_for_html(char.gc_serums_has)
+        return {serums: Website.format_markdown_for_html(char.v_serums_has)
       }
       end
 
       def self.get_serum(char, viewer)
-        return {serums: Website.format_markdown_for_html(char.v_serums_has)#, 
-        #a_serums: Website.format_markdown_for_html(char.a_serums_has), 
-        #qh_serums: Website.format_markdown_for_html(char.qh_serums_has), 
-        #h_serums: Website.format_markdown_for_html(char.h_serums_has), 
-        #gc_serums: Website.format_markdown_for_html(char.gc_serums_has)
+        return {serums: Website.format_markdown_for_html(char.v_serums_has)
       }
       end
 
