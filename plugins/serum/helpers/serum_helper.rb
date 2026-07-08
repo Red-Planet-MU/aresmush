@@ -164,6 +164,7 @@ module AresMUSH
           wound.update(is_serumable: false)
           message = t('serum.used_v_out_of_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
+        Serum.modify_serum(char, serum_name, -1)
         if scene
           Scenes.add_to_scene(scene, message)
 
@@ -172,11 +173,8 @@ module AresMUSH
             Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
           end
         else
-          Global.logger.debug ("#{message}, serum_name: #{serum_name}")
           return message
         end
-
-        Serum.modify_serum(char, serum_name, -1)
       end
 
       def self.fetch_serum(char, viewer)

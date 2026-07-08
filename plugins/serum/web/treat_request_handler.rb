@@ -22,15 +22,11 @@ module AresMUSH
           return { error: t('fs3combat.use_combat_treat_instead') }
         end
         
-        #Must have a wound (as currently only serum is healing)
         if !wound
-          return { error: t('serum.no_healable_wounds', :target => target.name) }
+          return { error: t('fs3combat.target_has_no_treatable_wounds', :name => target.name) }
         end
         
-        FS3Combat.treat(model, enactor)
-        message_for_web = Serum.non_combat_healing_serum(enactor, target, serum_name, scene)
-        enactor.update(serums_used: enactor.serums_used + 1)
-        Serum.handle_serum_used_given_achievement(enactor)
+        FS3Combat.treat(target, enactor)
                     
         {message: message_for_web}
       end
