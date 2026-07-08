@@ -4,7 +4,6 @@ module AresMUSH
       def handle(request)
         #Parse args
         enactor = request.enactor
-        Global.logger.debug ("#{request.args['target']}")
         target_from_web = request.args['target']
         serum_name = request.args['serum_type']
 
@@ -35,7 +34,7 @@ module AresMUSH
         end
         
         message_for_web = Serum.non_combat_healing_serum(enactor, target, serum_name, nil)
-        #enactor.update(serums_used: enactor.serums_used + 1) Let's not run this up for test lady
+        #enactor.update(serums_used: enactor.serums_used + 1) 
         Serum.handle_serum_used_given_achievement(enactor)
                     
         {message: message_for_web}

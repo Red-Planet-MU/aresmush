@@ -36,6 +36,7 @@ module AresMUSH
       end
   
       def self.modify_serum(char, serum_name, amount)
+        Global.logger.debug "Made it"
         serum = Serum.find_serums_has(char, serum_name) + amount
         update_serum_type = Serum.find_serums_type(serum_name)
   
