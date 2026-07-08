@@ -38,7 +38,7 @@ module AresMUSH
         #enactor.update(serums_used: enactor.serums_used + 1) Let's not run this up for test lady
         Serum.handle_serum_used_given_achievement(enactor)
                     
-        {message_for_web}
+        message_for_web
       end
     end
   end
