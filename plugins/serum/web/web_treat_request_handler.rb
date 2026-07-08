@@ -28,7 +28,7 @@ module AresMUSH
         
         message = FS3Combat.treat(target, enactor)
                     
-        {message: message_for_web}
+        {message: message}
       end
     end
   end
