@@ -34,7 +34,7 @@ module AresMUSH
           return { error: t('serum.no_healable_wounds', :target => target.name) }
         end
         
-        message_for_web = Serum.non_combat_healing_serum(enactor, target, serum_name, scene)
+        message_for_web = Serum.non_combat_healing_serum(enactor, target, serum_name, nil)
         enactor.update(serums_used: enactor.serums_used + 1)
         Serum.handle_serum_used_given_achievement(enactor)
                     

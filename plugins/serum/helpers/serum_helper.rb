@@ -166,7 +166,6 @@ module AresMUSH
         if scene?
           Scenes.add_to_scene(scene, message)
 
-
           char.room.emit message
           if target.room != char.room && message.to_s.include?(target.name)
             Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
