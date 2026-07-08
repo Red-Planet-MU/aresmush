@@ -53,7 +53,7 @@ module AresMUSH
         return WebManagePatientsHandler
       when "useSerum"
         return UseSerumRequestHandler
-      when "webTreat"
+      when "webTreatRequest"
         return WebTreatRequestHandler
       end
       nil
