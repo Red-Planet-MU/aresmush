@@ -14,7 +14,6 @@ module AresMUSH
         end
         
         Scenes.build_char_card_web_data(char, enactor)
-        Global.logger.debug "Char Card Data: #{Scenes.build_char_card_web_data(char, enactor)}"
       end
     end
   end
