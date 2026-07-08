@@ -1,6 +1,6 @@
 module AresMUSH
   module Serum
-    class TreatRequestHandler
+    class WebTreatRequestHandler
       def handle(request)
         #Parse args
         enactor = request.enactor
@@ -26,7 +26,7 @@ module AresMUSH
           return { error: t('fs3combat.target_has_no_treatable_wounds', :name => target.name) }
         end
         
-        FS3Combat.treat(target, enactor)
+        message = FS3Combat.treat(target, enactor)
                     
         {message: message_for_web}
       end
