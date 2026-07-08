@@ -37,7 +37,7 @@ module AresMUSH
         enactor.update(serums_used: enactor.serums_used + 1) 
         Serum.handle_serum_used_given_achievement(enactor)
                     
-        {message: Website.format_markdown_for_html(message_for_web)}
+        {message: Website.format_output_for_html(message_for_web)}
       end
     end
   end
