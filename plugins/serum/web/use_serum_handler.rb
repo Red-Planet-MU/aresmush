@@ -5,7 +5,7 @@ module AresMUSH
         #Parse args
         enactor = request.enactor
         Global.logger.debug ("#{request.args['target']}")
-        target_from_web = request.args['target'].name
+        target_from_web = request.args['target']
         serum_name = request.args['serum_type']
 
 
