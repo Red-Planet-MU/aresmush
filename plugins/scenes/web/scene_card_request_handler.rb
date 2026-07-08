@@ -2,6 +2,7 @@ module AresMUSH
   module Scenes
     class GetSceneCardRequestHandler
       def handle(request)
+        Global.logger.debug "#{request.args['char']}"
         char = Character.find_one_by_name request.args['char']
         enactor = request.enactor
         
