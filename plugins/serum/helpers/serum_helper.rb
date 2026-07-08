@@ -171,7 +171,7 @@ module AresMUSH
             Login.emit_ooc_if_logged_in(target, "<OOC>%xn In another grid location, " + message)
           end
         else
-          Global.logger.debug ("#{message}")
+          Global.logger.debug ("#{message}, serum_name: #{serum_name}")
           return message
         end
 

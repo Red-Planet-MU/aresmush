@@ -35,7 +35,7 @@ module AresMUSH
         end
         
         message_for_web = Serum.non_combat_healing_serum(enactor, target, serum_name, nil)
-        enactor.update(serums_used: enactor.serums_used + 1)
+        #enactor.update(serums_used: enactor.serums_used + 1) Let's not run this up for test lady
         Serum.handle_serum_used_given_achievement(enactor)
                     
         {message: message_for_web}
