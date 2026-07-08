@@ -38,7 +38,7 @@ module AresMUSH
           possible_patients: Serum.possible_patients(char.name),
           max_patients: FS3Combat.max_patients(char),
           comps_given: char.comps_given,
-          hurt_chars: Chargen.approved_chars.select { |c| FS3Combat.total_damage_mod(c) < 0},
+          hurt_chars: Chargen.approved_chars.select { |c| FS3Combat.total_damage_mod(c) < 0}.sort_by { |c| c.name}.map { |c| { name: c.name, icon: Website.icon_for_char(c) } },
         }
       end
     
