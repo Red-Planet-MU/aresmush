@@ -163,7 +163,7 @@ module AresMUSH
           wound.update(is_serumable: false)
           message = t('serum.used_v_out_of_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
         end
-        if scene?
+        if scene
           Scenes.add_to_scene(scene, message)
 
           char.room.emit message
