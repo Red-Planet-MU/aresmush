@@ -126,6 +126,7 @@ module AresMUSH
         scene.room.update(description: description)
         scene.room.update(can_use_fortune: can_use_fortune)
         scene.room.update(can_use_book: can_use_book)
+        scene.room.update(fish_biome: fish_biome)
         scene.room.update(area: area)
         scene.room.update(vistas: vistas)
         scene.room.update(details: details)
