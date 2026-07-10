@@ -16,10 +16,10 @@ module AresMUSH
     end
 
     def self.get_fish(char, room)
-      fish_biome = room.fish_biome
-      rarity = [1, 1, 1, 1, 2, 2, 2, 3, 3][rand(9)]
-      fish_list = Global.read_config('fortune','fish_list').select { |name, details| details.to_s.include?('"biome"=>fish_biome') }
-      filter_fish_list = fish_list.select { |name, details| details.to_s.include?('"rarity"=>rarity') }
+      fish_biome = `"biome"=>"`+room.fish_biome+`"`
+      rarity = `"rarity"=>"`+[1, 1, 1, 1, 2, 2, 2, 3, 3][rand(9)]+`"`
+      fish_list = Global.read_config('fortune','fish_list').select { |name, details| details.to_s.include?(fish_biome) }
+      filter_fish_list = fish_list.select { |name, details| details.to_s.include?(rarity) }
       max_fish = filter_fish_list.count
       fish_to_catch = filter_fish_list.to_a[rand(max_fish-1)]
       fish_size_count = fish_to_catch[1].to_a[1][1].count
