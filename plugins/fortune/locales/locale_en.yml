@@ -8,5 +8,5 @@ en:
     no_book_machine: "There is no Biblio-Mat machine in this room."
     must_be_in_scene: "You must be in a scene to do that."
     caught_fish: "%{name} casts out a line and reels in a %xg%{fish_size}%xn %xc%{fish_caught}%xn!"
-    fish_got_away: "%{name} hooks a %xg%{fish_size}%xn %xg%{fish_caught}%xn, but it GOT AWAY!"
+    fish_got_away: "%{name} hooks a %xg%{fish_size}%xn %xc%{fish_caught}%xn, but it GOT AWAY!"
     no_biome: "You are not in the right place to fish."
