@@ -37,6 +37,8 @@ module AresMUSH
         return GetFortuneRequestHandler
       when "getBook"
         return GetBookRequestHandler
+      when "catchFish"
+        return CatchFishRequestHandler
       end
     end
 
