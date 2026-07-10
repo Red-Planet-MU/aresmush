@@ -22,6 +22,7 @@ module AresMUSH
       filter_fish_list = fish_list.select { |name, details| details.to_s.include?(rarity) }
       max_fish = filter_fish_list.count
       fish_to_catch = filter_fish_list.to_a[rand(max_fish-1)]
+      fish_to_catch_name = fish_to_catch[0]
       fish_size_count = fish_to_catch[1].to_a[1][1].count
       fish_size = fish_to_catch[1].to_a[1][1][rand(fish_size_count-1)]
       case fish_size
@@ -73,10 +74,10 @@ module AresMUSH
       end
       roll = char.roll_ability("Athletics",roll_mod).to_a[0][1]
       if roll > 0 
-        message = t('fortune.caught_fish', :name => char.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
+        message = t('fortune.caught_fish', :name => char.name, :fish_caught => fish_to_catch_name, :fish_size => fish_size)
         return message
       else 
-        message = t('fortune.fish_got_away', :name => char.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
+        message = t('fortune.fish_got_away', :name => char.name, :fish_caught => fish_to_catch_name, :fish_size => fish_size)
         return message
       end
     end
