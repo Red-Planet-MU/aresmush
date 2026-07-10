@@ -15,8 +15,70 @@ module AresMUSH
       return book_to_get
     end
 
-    def self.get_fish()
-      fish_list = Global.read_config('fortune','fish_list')
+    def self.get_fish(char, room)
+      fish_biome = room.fish_biome
+      rarity = [1, 1, 1, 1, 2, 2, 2, 3, 3][rand(9)]
+      fish_list = Global.read_config('fortune','fish_list').select { |name, details| details.to_s.include?('"biome"=>'fish_biome) }
+      filter_fish_list = fish_list.select { |name, details| details.to_s.include?('"rarity"=>'rarity) }
+      max_fish = filter_fish_list.count
+      fish_to_catch = filter_fish_list.to_a[rand(max_fish-1)]
+      fish_size_count = fish_to_catch[1].to_a[1][1].count
+      fish_size = fish_to_catch[1].to_a[1][1][rand(fish_size_count-1)]
+      case fish_size
+      when "tiny"
+        case rarity 
+        when 1
+          roll_mod = 2
+        when 2
+          roll_mod = 1
+        when 3
+          roll_mod = 0
+        end
+      when "small"
+        case rarity 
+        when 1
+          roll_mod = 2
+        when 2
+          roll_mod = 1
+        when 3
+          roll_mod = 0
+        end
+      when "medium"
+        case rarity 
+        when 1
+          roll_mod = 1
+        when 2
+          roll_mod = 0
+        when 3
+          roll_mod = -1
+        end
+      when "large"
+        case rarity 
+        when 1
+          roll_mod = 0
+        when 2
+          roll_mod = -1
+        when 3
+          roll_mod = -2
+        end
+      when "gigantic"
+        case rarity 
+        when 1
+          roll_mod = -2
+        when 2
+          roll_mod = -3
+        when 3
+          roll_mod = -4
+        end
+      end
+      roll = char.roll_ability("Athletics",roll_mod)
+      if roll > 0 
+        message = t('fortune.caught_fish', :name => enactor.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
+        return message
+      else 
+        message = t('fortune.fish_got_away', :name => enactor.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
+        return message
+      end
     end
 
     def self.handle_fortune_given_achievement(char)

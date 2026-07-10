@@ -4,5 +4,7 @@ module AresMUSH
     attribute :fortunes_told_lately, :type => DataType::Integer, :default => 0
     attribute :books_got_alltime, :type => DataType::Integer, :default => 0
     attribute :books_got_lately, :type => DataType::Integer, :default => 0
+    attribute :fish_caught_alltime, :type => DataType::Integer, :default => 0
+    attribute :fish_caught_lately, :type => DataType::Integer, :default => 0
   end
 end

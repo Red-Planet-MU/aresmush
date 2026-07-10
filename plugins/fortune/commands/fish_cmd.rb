@@ -17,12 +17,11 @@ module AresMUSH
       end
 
       def handle
-        fish_to_catch = Fortune.get_fish()
-        enactor.update(fortunes_told_lately: enactor.fortunes_told_lately + 1)
-        enactor.update(fortunes_told_alltime: enactor.fortunes_told_alltime + 1)
-        message = t('fortune.told_fortune', :name => enactor.name, :fortune_told => fortune_to_tell)
+        message = Fortune.get_fish(enactor, enactor.room)
+        #enactor.update(fish_caught_lately: enactor.fish_caught_lately + 1)
+        #enactor.update(fish_caught_alltime: enactor.fish_caught_alltime + 1)
         enactor.room.emit message
-        Fortune.handle_fortune_given_achievement(enactor)
+        #Fortune.handle_fish_caught_achievement(enactor)
         if enactor.room.scene
           Scenes.add_to_scene(enactor.room.scene, message)
         end
