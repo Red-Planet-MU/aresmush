@@ -15,6 +15,10 @@ module AresMUSH
       return book_to_get
     end
 
+    def self.get_fish()
+      fish_list = Global.read_config('fortune','fish_list')
+    end
+
     def self.handle_fortune_given_achievement(char)
       Achievements.achievement_levels("fortune_count").reverse.each do |count|
         if (char.fortunes_told_alltime == count)

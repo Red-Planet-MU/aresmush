@@ -207,6 +207,144 @@ fortune:
     - Lightweight Sandwich Construction
     - 'An Essay on the Art of Ingeniously Tormenting: with Proper Rules for the Exercise
       of that Pleasant Art'
+  fish_list:
+    Apache Trout:
+      rarity: 1
+      sizes: 
+        - small
+        - medium
+      biome: Mountain
+    Arctic Grayling:
+      rarity: 2
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Bigmouth Buffalo:
+      rarity: 3
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Black Crappie:
+      rarity: 1
+      sizes: 
+        - tiny
+        - small
+      biome: Mountain
+    Brook Trout:
+      rarity: 2
+      sizes: 
+        - small
+        - medium
+      biome: Mountain
+    Channel Catfish:
+      rarity: 1
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Woozy Catfish:
+      rarity: 2
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Rainbow Trout:
+      rarity: 2
+      sizes: 
+        - small
+        - medium
+      biome: Mountain
+    Largemouth Bass:
+      rarity: 1
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Goliath Cougarfish:
+      rarity: 3
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Yellow Perch:
+      rarity: 1
+      sizes: 
+        - tiny
+        - small
+      biome: Mountain
+    Tiger Trout:
+      rarity: 3
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Gila Trout:
+      rarity: 3
+      sizes: 
+        - medium
+        - large
+      biome: Mountain
+    Pikeminnow:
+      rarity: 3
+      sizes: 
+        - tiny
+        - small
+      biome: Mountain
+    Bonytail:
+      rarity: 3
+      sizes: 
+        - small
+        - medium
+      biome: Mountain
+    Fathead Minnow:
+      rarity: 1
+      sizes: 
+        - tiny
+      biome: Mountain
+    Humpback Chub:
+      rarity: 3
+      sizes: 
+        - small
+        - medium
+      biome: Mountain
+    Red Walleye:
+      rarity: 2
+      sizes: 
+        - large
+        - gigantic
+      biome: Mountain
+    Red Bass:
+      rarity: 2
+      sizes: 
+        - tiny
+        - small
+        - medium
+      biome: Mountain
+    Martian Sucker:
+      rarity: 1
+      sizes: 
+        - small
+        - medium
+      biome: Mountain
+    Spikedace:
+      rarity: 3
+      sizes: 
+        - tiny
+      biome: Mountain
+    Bonethrasher:
+      rarity: 3
+      sizes: 
+        - large
+        - gigantic
+      biome: Mountain
+    Threadfin Shad:
+      rarity: 1
+      sizes: 
+        - tiny
+        - small
+      biome: Mountain
   cron:
     minute:
       - 00
