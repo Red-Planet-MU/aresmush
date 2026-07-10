@@ -15,4 +15,4 @@ Some rooms have a Fortune FizzPop machine that will dispense fortunes. You can i
 Some rooms have a Biblio-Mat machine that will dispense books. You can identify these rooms by checking their Details (see `help details`). 
 
 # Fishing
-Some rooms have a fishing spot that characters can fishi in. You can identify these rooms by checking their Details (see `help details`). 
+Some rooms have a fishing spot that characters can fish in. You can identify these rooms by checking their Details (see `help details`). 
