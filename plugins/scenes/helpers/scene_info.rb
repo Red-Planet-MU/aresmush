@@ -109,6 +109,7 @@ module AresMUSH
           description = "%xh#{room.name}%xn%R#{room.description}"
           can_use_fortune = room.can_use_fortune
           can_use_book = room.can_use_book
+          fish_biome = room.fish_biome
           area = room.area
           vistas = room.vistas
           details = room.details
