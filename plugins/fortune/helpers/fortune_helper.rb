@@ -100,5 +100,14 @@ module AresMUSH
       end
     end
 
+    def self.handle_fish_caught_achievement(char)
+      Achievements.achievement_levels("fish_caught").reverse.each do |count|
+        if (char.fish_caught_alltime == count)
+          Achievements.award_achievement(char, "fish_caught", char.fish_caught_alltime)
+          break
+        end
+      end
+    end
+
   end
 end

@@ -18,8 +18,10 @@ module AresMUSH
 
       def handle
         message = Fortune.get_fish(enactor, enactor.room)
-        #enactor.update(fish_caught_lately: enactor.fish_caught_lately + 1)
-        #enactor.update(fish_caught_alltime: enactor.fish_caught_alltime + 1)
+        if message.include? "reels"
+          enactor.update(fish_caught_lately: enactor.fish_caught_lately + 1)
+          enactor.update(fish_caught_alltime: enactor.fish_caught_alltime + 1)
+        end
         enactor.room.emit message
         #Fortune.handle_fish_caught_achievement(enactor)
         if enactor.room.scene

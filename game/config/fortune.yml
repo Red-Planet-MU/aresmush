@@ -374,3 +374,14 @@ fortune:
       - 50
       - 100
       - 150
+    fish_caught:
+      type: red_planet
+      message: Caught %{count} fish.
+      levels:
+      - 1
+      - 5
+      - 10
+      - 20
+      - 30
+      - 50
+      - 100
