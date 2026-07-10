@@ -19,6 +19,13 @@ module AresMUSH
             Global.logger.debug "Expiring book cooldown for #{c.name}"
             c.update(books_got_lately: c.books_got_lately - 1)
           end
+
+          fish_chars = Chargen.approved_chars.select { |c| c.fish_caught_lately > 0 }
+          fish_chars.each do |c|
+            Global.logger.debug "Expiring fish cooldown for #{c.name}"
+            c.update(fish_caught_lately: c.fish_caught_lately - 1)
+          end
+
         end
       end
 
