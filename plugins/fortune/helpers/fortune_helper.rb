@@ -73,10 +73,10 @@ module AresMUSH
       end
       roll = char.roll_ability("Athletics",roll_mod).to_a[0][1]
       if roll > 0 
-        message = t('fortune.caught_fish', :name => enactor.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
+        message = t('fortune.caught_fish', :name => char.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
         return message
       else 
-        message = t('fortune.fish_got_away', :name => enactor.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
+        message = t('fortune.fish_got_away', :name => char.name, :fish_caught => fish_to_catch, :fish_size => fish_size)
         return message
       end
     end
