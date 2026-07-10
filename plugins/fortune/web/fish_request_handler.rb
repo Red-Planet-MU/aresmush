@@ -16,9 +16,9 @@ module AresMUSH
         end
         message = Fortune.get_fish(char, scene.room)
         if message.include? "reels"
-          char.update(fish_caught_lately: enactor.fish_caught_lately + 1)
-          char.update(fish_caught_alltime: enactor.fish_caught_alltime + 1)
-          #Fortune.handle_fish_caught_achievement(enactor)
+          char.update(fish_caught_lately: char.fish_caught_lately + 1)
+          char.update(fish_caught_alltime: char.fish_caught_alltime + 1)
+          Fortune.handle_fish_caught_achievement(char)
         end
         scene_message = message
         Scenes.add_to_scene(scene, scene_message)
