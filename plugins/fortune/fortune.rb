@@ -17,6 +17,8 @@ module AresMUSH
         return FortuneCommand
       when 'book'
         return BookCommand
+      when 'fish'
+        return FishCommand
       end
       nil
     end
