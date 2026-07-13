@@ -114,6 +114,8 @@ module AresMUSH
           if (@client)
             @client.char_id = @char_id
           end
+        elsif (json_input["type"] == "pong")
+          #Do something maybe??
         else
           Global.logger.warn "Unexpected input from web client: #{data}"
         end
