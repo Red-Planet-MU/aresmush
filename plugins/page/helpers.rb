@@ -98,7 +98,7 @@ module AresMUSH
                      handle: enactor.handle ? "@"+enactor.handle.name : nil,
                     },
             message: Website.format_markdown_for_html(message),
-            brief_message: Website.format_markdown_for_html(message)[0, (`\u003cp\u003e`+enactor.ooc_name+" says,").size] == `\u003cp\u003e`+enactor.ooc_name+" says," ? Website.format_markdown_for_html(message.sub(enactor.ooc_name+" says, ","")) : Website.format_markdown_for_html(message),
+            brief_message: Website.format_markdown_for_html(message)[0, (`\u003cp\u003e`+enactor.name+" says,").size] == `\u003cp\u003e`+enactor.name+" says," ? Website.format_markdown_for_html(message.sub(enactor.name+" says, ","")) : Website.format_markdown_for_html(message),
 	          poseable_chars: Page.build_poseable_web_chars_data(char, thread),
             message_id: page_message.id,
             is_page: true,
