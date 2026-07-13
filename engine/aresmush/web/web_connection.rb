@@ -12,6 +12,7 @@ module AresMUSH
       websocket.onopen { |handshake| connection_opened(handshake) }
       websocket.onclose { connection_closed }
       websocket.onmessage { |msg| receive_data(msg) }
+      @track_heartbeat = nil
     end
 
     def ping
@@ -24,6 +25,28 @@ module AresMUSH
         }
       }
       send_data data.to_json.to_s
+    end
+
+    def handle_heartbeat
+      if @track_heartbeat
+        @track_heartbeat.kill
+      end
+      @track_heartbeat = Thread.new do
+        begin
+          loop do
+            sleep(5)
+            
+            if @client && Time.now - @client.last_activity > 60.seconds
+              Global.logger.warn "Closing stale websocket connection: char_id=#{@char_id}, ip=#{@ip_addr}"
+              close_connection
+              break
+            end
+          end
+        rescue ThreadError
+        rescue Exception => e
+          Global.logger.warn "Error in heartbeat monitor: error=#{e} backtrace=#{e.backtrace[0,10]}."
+        end
+      end
     end
         
     def connection_opened(handshake)
@@ -50,6 +73,7 @@ module AresMUSH
     
     def connect_client(client)
       @client = client
+      handle_heartbeat
     end
     
     def send_data(msg)
@@ -85,12 +109,20 @@ module AresMUSH
     
     # Just announces that the websocket was closed.
     def connection_closed
+      # Not sure if I need this here but I'm not sure what is actually closing it
+      if @track_heartbeat
+        @track_heartbeat.kill
+      end
       if (@client)
         @client.connection_closed        
       end
     end
     
     def close_connection(dummy = nil)  # Dummy for compatibility with the other connection class.
+      # Not sure if I need this here but I'm not sure what is actually closing it
+      if @track_heartbeat
+        @track_heartbeat.kill
+      end
       begin
         self.websocket.close
       rescue Exception => e
