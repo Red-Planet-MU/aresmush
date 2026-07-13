@@ -4,9 +4,9 @@ module AresMUSH
       def on_event(event)
         # Ping on every cron event
         # Ping the web clients if I ever think they need it; right now I do not
-        #Global.client_monitor.web_clients.each do |client|
-        #  client.ping
-        #end
+        Global.client_monitor.web_clients.each do |client|
+          client.ping
+        end
 
         Global.client_monitor.client_to_char_map.each do |client, char| 
           if (char.login_keepalive)
