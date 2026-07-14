@@ -386,6 +386,17 @@ module AresMUSH
           end
         end
       end
+
+      def self.brief_channel_message(message)
+        case message
+        when message.message[0, (" "+message.author.ooc_name+" says,").size]== " "+message.author.ooc_name+" says,"
+          message.message.sub(message.author.ooc_name+" says, ","")
+        when message.message.include? message.author.handle
+          message.message.sub(message.author.handle+" ","")
+        else
+          message.message
+        end
+      end
     
       def self.build_channel_web_data(channel, enactor, lazy_load = false)
         chars_on_channel = Channels.alts_on_channel(enactor, channel)
@@ -396,7 +407,8 @@ module AresMUSH
             .select { |m| Channels.is_message_visible?(enactor, m) }
             .map { |m| {
             message: Website.format_markdown_for_html(m.message),
-            brief_message: Website.format_markdown_for_html(m.message)[0, ("<p>"+m.author.ooc_name+" says,").size] == "<p>"+m.author.ooc_name+" says,"  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ","")) : Website.format_markdown_for_html(m.message),
+            brief_message: Website.format_markdown_for_html(Channels.brief_channel_message(m)),
+            # Website.format_markdown_for_html(m.message)[0, ("<p>"+m.author.ooc_name+" says,").size] == "<p>"+m.author.ooc_name+" says,"  ? Website.format_markdown_for_html(m.message.sub(m.author.ooc_name+" says, ","")) : Website.format_markdown_for_html(m.message),
             id: m.id,
             flagged: m.flagged,
             timestamp: OOCTime.short_timestr(Time.now) == OOCTime.short_timestr(m.created_at) ? OOCTime.local_short_actual_timestr(enactor, m.created_at) : OOCTime.local_short_date_and_time(enactor, m.created_at),
