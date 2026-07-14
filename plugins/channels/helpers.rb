@@ -388,8 +388,10 @@ module AresMUSH
       end
 
       def self.brief_channel_message(message)
+        Global.logger.debug "#{message.message[0, (" "+message.author.ooc_name+" says,").size]}"
+        Global.logger.debug "#{" "+message.author.ooc_name+" says,"}"
         case message
-        when message.message[0, (" "+message.author.ooc_name+" says,").size]== " "+message.author.ooc_name+" says,"
+        when message.message[0, (" "+message.author.ooc_name+" says,").size] == " "+message.author.ooc_name+" says,"
           return "yup"
           message.message.sub(message.author.ooc_name+" says, ","")
         when message.author.handle && message.message.include?(message.author.handle.to_s)
