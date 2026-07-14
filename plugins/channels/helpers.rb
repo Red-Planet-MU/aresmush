@@ -113,7 +113,8 @@ module AresMUSH
                  handle: enactor.handle ? "@"+enactor.handle.name : nil,
                 },
         message: Website.format_markdown_for_html(formatted_msg),
-        brief_message: Website.format_markdown_for_html(formatted_msg)[0, ("<p>"+enactor.ooc_name+" says,").size] == "<p>"+enactor.ooc_name+" says," ? Website.format_markdown_for_html(formatted_msg.sub(enactor.ooc_name+" says, ","")) : Website.format_markdown_for_html(formatted_msg),
+        brief_message: Website.format_markdown_for_html(Channels.brief_channel_message(channel_message)),
+        #brief_message: Website.format_markdown_for_html(formatted_msg)[0, ("<p>"+enactor.ooc_name+" says,").size] == "<p>"+enactor.ooc_name+" says," ? Website.format_markdown_for_html(formatted_msg.sub(enactor.ooc_name+" says, ","")) : Website.format_markdown_for_html(formatted_msg),
         message_id: channel_message.id,
         is_page: false
       }
