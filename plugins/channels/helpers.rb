@@ -391,7 +391,7 @@ module AresMUSH
         case message
         when message.message[0, (" "+message.author.ooc_name+" says,").size]== " "+message.author.ooc_name+" says,"
           message.message.sub(message.author.ooc_name+" says, ","")
-        when message.message.include?(message.author.handle)
+        when message.author.handle && message.message.include?(message.author.handle)
           message.message.sub(message.author.handle+" ","")
         else
           message.message
