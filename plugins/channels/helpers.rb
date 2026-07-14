@@ -391,7 +391,7 @@ module AresMUSH
       def self.brief_channel_message(message)
         if message.message[0, (" "+message.author.ooc_name+" says,").size] == " "+message.author.ooc_name+" says,"
           return message.message.sub(message.author.ooc_name+" says, ","")
-        elsif message.message[0, (" "+message.author.name+" says,").size] == " "+message.author.name+" says,"
+        elsif message.message[0, ("<p>"+message.author.name+" says,").size] == "<p>"+message.author.name+" says,"
           return message.message.sub(message.author.name+" says, ","")
         elsif message.author.handle && message.message.include?("@"+message.author.handle.name)
           message.message.sub("(@"+message.author.handle.name+") ","")
