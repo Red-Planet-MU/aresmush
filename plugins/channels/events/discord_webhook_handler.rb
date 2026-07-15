@@ -36,10 +36,11 @@ module AresMUSH
         prefix = Global.read_config('channels', 'discord_prefix') || "[D]"
         #enactor = Character.named(name)
         enactor = Character.all.select { |c| c.ooc_name == name }.first
+        enactor_ooc_name = enactor.ooc_name
         says = ' says, "'
         says_end = '"'
         if enactor 
-          Channels.emit_to_channel(channel, "#{prefix}#{says}#{message}#{says_end}", enactor, title = nil)
+          Channels.emit_to_channel(channel, "#{prefix} #{enactor_ooc_name}#{says}#{message}#{says_end}", enactor, title = nil)
         else
           Channels.emit_to_channel(channel, "#{prefix} #{name}: #{message}", title = nil)
         end
