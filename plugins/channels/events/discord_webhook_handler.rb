@@ -33,9 +33,11 @@ module AresMUSH
           Global.logger.debug("Discord #{discord_channel_name} matches #{channel.name}.")
         end
                 
+        Global.logger.debug("Discord Message: user=#{user} nick=#{nickname} message=#{message} channel=#{discord_channel_name}")
         prefix = Global.read_config('channels', 'discord_prefix') || "[D]"
         #enactor = Character.named(name)
         enactor = Character.all.select { |c| c.ooc_name == name }.first
+        Global.logger.debug("Discord Message: enactor=#{enactor}")
         Channels.emit_to_channel(channel, "#{prefix} #{name}: #{message}", title = nil)
       end
     end
