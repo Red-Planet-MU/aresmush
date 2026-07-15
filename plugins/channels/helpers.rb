@@ -389,16 +389,26 @@ module AresMUSH
       end
 
       def self.brief_channel_message(message)
-        if message.message[0, (" "+message.author.ooc_name+" says,").size] == " "+message.author.ooc_name+" says,"
-          return message.message.sub(message.author.ooc_name+" says, ","")
-        elsif message.message[0, ("<p>[D] "+message.author.ooc_name+" says,").size] == "<p>[D] "+message.author.ooc_name+" says,"
-          return message.message.sub(message.author.ooc_name+" says, ","")
-        elsif message.message[0, ("<p>"+message.author.name+" says,").size] == "<p>"+message.author.name+" says,"
-          return message.message.sub(message.author.name+" says, ","")
-        elsif message.author.handle && message.message.include?("@"+message.author.handle.name)
-          message.message.sub("(@"+message.author.handle.name+") ","")
+        ooc_name = message.author.ooc_name
+        name = message.author.name
+        handle = message.author.handle
+        check = "<p>[D] #{ooc_name} says,"
+        raw_message = message.message
+
+        Global.logger.debug "text  : #{raw_message[0, check.length].inspect}"
+        Global.logger.debug "check : #{check.inspect}"
+        Global.logger.debug "equal?: #{raw_message[0, check.length] == check}"
+
+        if raw_message[0, (" "+ooc+" says,").size] == " "+ooc_name+" says,"
+          return raw_message.sub(ooc_name+" says, ","")
+        elsif raw_message[0, ("<p>[D] "+ooc_name+" says,").size] == "<p>[D] "+ooc_name+" says,"
+          return raw_message.sub(ooc_name+" says, ","")
+        elsif raw_message[0, ("<p>"+name+" says,").size] == "<p>"+name+" says,"
+          return raw_message.sub(name+" says, ","")
+        elsif handle && raw_message.include?("@"+handle.name)
+          raw_message.sub("(@"+handle.name+") ","")
         else
-          message.message
+          raw_message
         end
       end
     
