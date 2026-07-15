@@ -395,10 +395,6 @@ module AresMUSH
         check = " [D] #{ooc_name} says,"
         raw_message = message.message
 
-        Global.logger.debug "text  : #{raw_message[0, check.length].inspect}"
-        Global.logger.debug "check : #{check.inspect}"
-        Global.logger.debug "equal?: #{raw_message[0, check.length] == check}"
-
         if raw_message[0, (" "+ooc_name+" says,").size] == " "+ooc_name+" says,"
           return raw_message.sub(ooc_name+" says, ","")
         elsif raw_message[0, (" [D] "+ooc_name+" says,").size] == " [D] "+ooc_name+" says,"
