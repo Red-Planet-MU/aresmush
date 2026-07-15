@@ -392,7 +392,7 @@ module AresMUSH
         ooc_name = message.author.ooc_name
         name = message.author.name
         handle = message.author.handle
-        check = "<p>[D] #{ooc_name} says,"
+        check = " [D] #{ooc_name} says,"
         raw_message = message.message
 
         Global.logger.debug "text  : #{raw_message[0, check.length].inspect}"
@@ -401,7 +401,7 @@ module AresMUSH
 
         if raw_message[0, (" "+ooc_name+" says,").size] == " "+ooc_name+" says,"
           return raw_message.sub(ooc_name+" says, ","")
-        elsif raw_message[0, ("<p>[D] "+ooc_name+" says,").size] == "<p>[D] "+ooc_name+" says,"
+        elsif raw_message[0, (" [D] "+ooc_name+" says,").size] == " [D] "+ooc_name+" says,"
           return raw_message.sub(ooc_name+" says, ","")
         elsif raw_message[0, ("<p>"+name+" says,").size] == "<p>"+name+" says,"
           return raw_message.sub(name+" says, ","")
