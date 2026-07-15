@@ -399,7 +399,7 @@ module AresMUSH
         Global.logger.debug "check : #{check.inspect}"
         Global.logger.debug "equal?: #{raw_message[0, check.length] == check}"
 
-        if raw_message[0, (" "+ooc+" says,").size] == " "+ooc_name+" says,"
+        if raw_message[0, (" "+ooc_name+" says,").size] == " "+ooc_name+" says,"
           return raw_message.sub(ooc_name+" says, ","")
         elsif raw_message[0, ("<p>[D] "+ooc_name+" says,").size] == "<p>[D] "+ooc_name+" says,"
           return raw_message.sub(ooc_name+" says, ","")
