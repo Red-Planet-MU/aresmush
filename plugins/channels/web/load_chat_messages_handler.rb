@@ -32,6 +32,7 @@ module AresMUSH
           end
           
           if !Channels.has_alt_on_channel?(enactor, channel)
+            Global.logger.debug "enactor: #{enactor} channel: #{channel}"
             return { error: t('dispatcher.not_allowed') }
           end
         
