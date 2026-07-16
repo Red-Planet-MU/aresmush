@@ -17,6 +17,7 @@ module AresMUSH
           end
         
           if (!thread.can_view?(enactor))
+            Global.logger.debug "enactor: #{enactor} thread: #{thread}"
             return { error: t('dispatcher.not_allowed') }
           end
         
