@@ -17,7 +17,6 @@ module AresMUSH
           end
         
           if (!thread.can_view?(enactor))
-            Global.logger.debug "enactor: #{enactor} thread: #{thread}"
             return { error: t('dispatcher.not_allowed') }
           end
         
@@ -32,7 +31,7 @@ module AresMUSH
           end
           
           if !Channels.has_alt_on_channel?(enactor, channel)
-            Global.logger.debug "enactor: #{enactor} channel: #{channel}"
+            Global.logger.debug "enactor: #{enactor.name} channel: #{channel.name}"
             return { error: t('dispatcher.not_allowed') }
           end
         
