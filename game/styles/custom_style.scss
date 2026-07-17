@@ -1437,6 +1437,7 @@ a:focus  {
   .play-sidebar {
     max-height: 800px;
     height: fit-content;
+    overflow-y: auto;
   }
 }
 
