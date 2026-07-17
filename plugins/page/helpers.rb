@@ -230,7 +230,14 @@ module AresMUSH
       
       
       is_hidden = thread.is_hidden?(enactor)
-      is_unread = Page.is_thread_unread?(thread, enactor)
+      if AresCentral.play_screen_alts(enactor).count > 1
+        alts = AresCentral.play_screen_alts(enactor)
+        read_by_any_alt = alts.any? { |a| !Page.is_thread_unread?(thread, a) }
+        is_unread = !read_by_any_alt
+      else
+        is_unread = Page.is_thread_unread?(thread, enactor)
+      end
+      #is_unread = Page.is_thread_unread?(thread, enactor)
       {
          key: thread.id,
          title: thread.title_customized(enactor).gsub(" ", ", "),
