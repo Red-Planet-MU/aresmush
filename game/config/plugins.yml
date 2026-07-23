@@ -17,6 +17,7 @@ plugins:
   - ranks
   extras: 
   - txt
+  - lookingforrp
   optional_plugins:
   - achievements
   - chargen
