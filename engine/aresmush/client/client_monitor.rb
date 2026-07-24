@@ -73,7 +73,7 @@ module AresMUSH
     # @engineinternal true
     def connection_established(connection)
       begin
-        max_connections = Global.read_config("sites", "max_connections") || 20
+        max_connections = Global.read_config("sites", "max_connections") || 50
         if (self.total_connections(connection.ip_addr) > max_connections)
           Global.logger.debug "Too many connections from #{connection.ip_addr}."
           connection.close_connection
