@@ -121,7 +121,14 @@ module AresMUSH
           wound = FS3Combat.worst_serumable_wound(self.target.associated_model)
           FS3Combat.heal(wound, 1)
           wound.update(is_serumable: false)
-          message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
+          if self.target.sys_attack_mod > 0
+            self.target.update(sys_attack_mod: 0)
+            self.target.update(sys_initiative_mod: 0)
+            self.target.update(sys_defense_mod: 0)
+            message = t('serum.used_revive_serum_venom', :name => self.name, :target => print_target_names, :serum_name => display_name)
+          else
+            message = t('serum.used_revive_serum', :name => self.name, :target => print_target_names, :serum_name => display_name)
+          end
         end
 
         if horse_reviver

@@ -20,6 +20,14 @@ module AresMUSH
         combatant.update(serum_duration_counter: combatant.serum_duration_counter - 1)
         return
       end
+      if combatant.sys_acid_counter == 0
+        combatant.update(sys_armor_mod: 0)
+        FS3Combat.emit_to_combat combatant.combat, t('serum.acid_wore_off', :name => combatant.name), nil, true
+        return 
+      elsif combatant.sys_acid_counter > 0 
+        combatant.update(sys_acid_counter: combatant.sys_acid_counter - 1)
+        return
+      end
     end
 
 

@@ -87,7 +87,14 @@ module AresMUSH
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
           wound.update(is_serumable: false)
-          return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+          if target.sys_defense_mod > 0
+            target.update(sys_attack_mod: 0)
+            target.update(sys_initiative_mod: 0)
+            target.update(sys_defense_mod: 0)
+            return t('serum.used_v_in_combat_venom', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+          else
+            return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+          end
         end
       end
 
