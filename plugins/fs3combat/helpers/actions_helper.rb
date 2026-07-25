@@ -269,7 +269,7 @@ module AresMUSH
       elsif weapon.include? "+Acid" 
         inflict_acid_mod = FS3Combat.weapon_specials["Acid"]["target_armor_mod"]
         combatant.update(sys_armor_mod: inflict_acid_mod)
-        combatant.update(sys_acid_counter: 4)
+        combatant.update(sys_acid_counter: 3)
       end
       #/Serums
       
