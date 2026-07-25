@@ -669,7 +669,7 @@ module AresMUSH
         if stun
           target.update(stun_counter: 2)
           target.update(is_stunned: true)
-          messages.concat t('serum.explosive_stun', :name => combatant.name, :target_name => target.name)
+          messages << t('serum.explosive_stun', :name => combatant.name, :target_name => target.name)
         else
           attacker_net_successes = margin[:attacker_net_successes]
           messages.concat FS3Combat.resolve_attack(combatant, combatant.name, target, combatant.weapon, attacker_net_successes)
