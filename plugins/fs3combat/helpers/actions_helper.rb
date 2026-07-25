@@ -669,6 +669,8 @@ module AresMUSH
         if stun
           target.update(stun_counter: 2)
           target.update(is_stunned: true)
+          target.update(action_klass: nil)
+          target.update(action_args: nil)
           messages << t('serum.explosive_stun', :name => combatant.name, :target_name => target.name)
         else
           attacker_net_successes = margin[:attacker_net_successes]
