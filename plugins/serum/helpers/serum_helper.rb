@@ -66,10 +66,10 @@ module AresMUSH
           heal_amount = 0
           dice_message = t('tdd.botch')
           FS3Combat.inflict_damage(target, "MINOR", "Botched Serum")
-          if target.sys_defense_mod > 0
-            target.update(sys_attack_mod: 0)
-            target.update(sys_initiative_mod: 0)
-            target.update(sys_defense_mod: 0)
+          if target.combatant.sys_defense_mod > 0
+            target.combatant.update(sys_attack_mod: 0)
+            target.combatant.update(sys_initiative_mod: 0)
+            target.combatant.update(sys_defense_mod: 0)
             return t('serum.c_used_v_made_it_worse_venom', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
           else
             return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
@@ -94,10 +94,10 @@ module AresMUSH
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
           wound.update(is_serumable: false)
-          if target.sys_defense_mod > 0
-            target.update(sys_attack_mod: 0)
-            target.update(sys_initiative_mod: 0)
-            target.update(sys_defense_mod: 0)
+          if target.combatant.sys_defense_mod > 0
+            target.combatant.update(sys_attack_mod: 0)
+            target.combatant.update(sys_initiative_mod: 0)
+            target.combatant.update(sys_defense_mod: 0)
             return t('serum.used_v_in_combat_venom', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
           else
             return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
