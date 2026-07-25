@@ -667,7 +667,7 @@ module AresMUSH
       margin = FS3Combat.determine_attack_margin(combatant, target)
       if (margin[:hit])
         if stun
-          target.update(stun_counter: 2)
+          target.update(stun_counter: 1)
           target.update(is_stunned: true)
           target.update(action_klass: nil)
           target.update(action_args: nil)
