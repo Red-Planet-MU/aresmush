@@ -12,5 +12,10 @@ module AresMUSH
     attribute :horse_kod, :type => DataType::Boolean, :default => false
     attribute :horse_ko_counter, :type => DataType::Integer, :default => 0
     
+    attribute :sys_defense_mod, :type => DataType::Integer, :default => 0
+    attribute :sys_attack_mod, :type => DataType::Integer, :default => 0
+    attribute :sys_initiative_mod, :type => DataType::Integer, :default => 0
+    attribute :sys_armor_mod, :type => DataType::Integer, :default => 0
+    
   end
 end

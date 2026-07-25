@@ -431,3 +431,141 @@ fs3combat:
       - Head
       - Neck
       - Groin
+    ArmedMonster:
+      areas:
+        Chest:
+        - Leg
+        - Leg
+        - Arm
+        - Arm
+        - Abdomen
+        - Abdomen
+        - Head
+        - Chest
+        - Chest
+        - Chest
+        Leg:
+        - Chest
+        - Chest
+        - Arm
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Leg
+        - Leg
+        - Leg
+        - Leg
+        Arm:
+        - Head
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Arm
+        - Arm
+        - Arm
+        - Arm
+        Head:
+        - Arm
+        - Arm
+        - Arm
+        - Chest
+        - Chest
+        - Neck
+        - Neck
+        - Head
+        - Head
+        - Head
+        Neck:
+        - Arm
+        - Arm
+        - Arm
+        - Chest
+        - Chest
+        - Head
+        - Head
+        - Neck
+        - Neck
+        - Neck
+        Abdomen:
+        - Leg
+        - Leg
+        - Arm
+        - Arm
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+      vital_areas:
+      - Chest
+      - Abdomen
+      critical_areas:
+      - Head
+      - Neck
+      - Groin
+    LeggedMonster:
+      areas:
+        Chest:
+        - Leg
+        - Leg
+        - Leg
+        - Leg
+        - Abdomen
+        - Abdomen
+        - Head
+        - Chest
+        - Chest
+        - Chest
+        Leg:
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Leg
+        - Leg
+        - Leg
+        - Leg
+        Head:
+        - Abdomen
+        - Abdomen
+        - Chest
+        - Chest
+        - Chest
+        - Neck
+        - Neck
+        - Head
+        - Head
+        - Head
+        Neck:
+        - Leg
+        - Leg
+        - Leg
+        - Chest
+        - Chest
+        - Head
+        - Head
+        - Neck
+        - Neck
+        - Neck
+        Abdomen:
+        - Leg
+        - Leg
+        - Leg
+        - Leg
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+      vital_areas:
+      - Chest
+      - Abdomen
+      critical_areas:
+      - Head
+      - Neck

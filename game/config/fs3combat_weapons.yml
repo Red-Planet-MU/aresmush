@@ -162,10 +162,22 @@ fs3combat:
       has_shrapnel: false
       init_mod: 0
       firearm_type: Rifles
-      is_hidden: true
+      is_hidden: false
       npc_only: true
       allowed_specials:
       - Scope
+    Energy Grenade:
+      description: Restricted, NILE-issue energy-based stun grenade with a thumb reader activator.
+      skill: Athletics
+      lethality: 0
+      penetration: 7
+      weapon_type: Explosive
+      is_automatic: false
+      recoil: 0
+      damage_type: Stun
+      accuracy: 0
+      has_shrapnel: false
+      init_mod: 0
     Shotgun:
       description: Double-barreled shotgun
       skill: Firearms
@@ -254,6 +266,9 @@ fs3combat:
       npc_only: true
       accuracy: 1
       init_mod: 0
+      allowed_specials:
+      - Venom
+      - Acid
     Beak:
       description: Bites from a beak
       skill: Melee
@@ -266,6 +281,9 @@ fs3combat:
       npc_only: true
       accuracy: 0
       init_mod: 0
+      allowed_specials:
+      - Venom
+      - Acid
     Claws:
       description: Animal or creature claws
       skill: Melee
@@ -277,6 +295,9 @@ fs3combat:
       npc_only: true
       accuracy: 1
       init_mod: 0
+      allowed_specials:
+      - Venom
+      - Acid
     Horns:
       description: Horns
       skill: Melee
@@ -288,6 +309,9 @@ fs3combat:
       npc_only: true
       accuracy: 1
       init_mod: 0
+      allowed_specials:
+      - Venom
+      - Acid
     Teeth:
       description: Animal or creature teeth
       skill: Melee
@@ -299,6 +323,24 @@ fs3combat:
       npc_only: true
       accuracy: 1
       init_mod: 0
+      allowed_specials:
+      - Venom
+      - Acid
+    Spit:
+      description: Saliva or other fluid ejected from a creature's mouth.
+      skill: Athletics
+      lethality: 5
+      penetration: 2
+      weapon_type: Ranged
+      recoil: 0
+      damage_type: Physical
+      npc_only: true
+      accuracy: 1
+      init_mod: 0
+      allowed_specials:
+      - Fire
+      - Venom
+      - Acid
     Vines:
       description: A grasping plant appendage.
       skill: Athletics
@@ -311,6 +353,7 @@ fs3combat:
       accuracy: 0
       has_shrapnel: false
       init_mod: 0
+      npc_only: true
   weapon specials:
     Ap:
       description: Armor Piercing Rounds
@@ -326,3 +369,12 @@ fs3combat:
       description: Shotgun pellets
       accuracy: 3
       penetration: -2
+    Fire:
+      description: Burning substance.
+      lethality: 10
+    Acid: 
+      description: Corrosive substance.
+      target_armor_mod: -2
+    Venom: 
+      description: Toxic substance.
+      target_dice_mod: -2
