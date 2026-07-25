@@ -21,7 +21,7 @@ fs3combat:
         Ass: 0
     NILE Armor:
       description: A system of overlapping ceramic plates and aramid fibers.
-      is_hidden: true
+      is_hidden: false
       npc_only: true
       defense: 0
       protection:
