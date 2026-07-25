@@ -662,7 +662,7 @@ module AresMUSH
       messages
     end
     
-    def self.resolve_explosion(combatant, target, stun)
+    def self.resolve_explosion(combatant, target, stun=false)
       messages = []
       margin = FS3Combat.determine_attack_margin(combatant, target)
       if (margin[:hit])

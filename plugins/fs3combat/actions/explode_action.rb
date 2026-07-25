@@ -56,7 +56,6 @@ module AresMUSH
             messages << t('fs3combat.explode_resolution_message', :name => self.name, :weapon => self.combatant.weapon)
             
             self.targets.each do |target, num|
-              stun = FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Stun" ? true : false
               messages.concat FS3Combat.resolve_explosion(combatant, target, stun)
             end
 
@@ -69,8 +68,9 @@ module AresMUSH
         else
           messages << t('fs3combat.explode_resolution_message', :name => self.name, :weapon => self.combatant.weapon)
           
+          stun = FS3Combat.weapon_stat(self.combatant.weapon, "damage_type") == "Stun" ? true : false
           self.targets.each do |target, num|
-            messages.concat FS3Combat.resolve_explosion(combatant, target)
+            messages.concat FS3Combat.resolve_explosion(combatant, target, stun)
           end
 
           ammo_message = FS3Combat.update_ammo(@combatant, 1)
