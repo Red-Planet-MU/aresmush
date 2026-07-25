@@ -260,6 +260,17 @@ module AresMUSH
 
       #Serums
       serum_mod = combatant.serum_damage_lethality_mod
+      #I am being lazy because I know what the specials are
+      if weapon.include? "+Venom" 
+        inflict_venom_mod = FS3Combat.weapon_specials["Venom"]["target_dice_mod"]
+        combatant.update(sys_defense_mod: inflict_venom_mod)
+        combatant.update(sys_attack_mod: inflict_venom_mod)
+        combatant.update(sys_initiative_mod: inflict_venom_mod)
+      elsif weapon.include? "+Acid" 
+        inflict_acid_mod = FS3Combat.weapon_specials["Acid"]["target_armor_mod"]
+        combatant.update(sys_armor_mod: inflict_acid_mod)
+        combatant.update(sys_acid_counter: 4)
+      end
       #/Serums
       
       total = random + severity + lethality + mod + npc_mod + serum_mod #Serums
@@ -295,6 +306,7 @@ module AresMUSH
       
       #Serum
       serum_mod = combatant.serum_armor_mod
+      special_mod = combatant.sys_armor_mod
       #/Serum
       pen = FS3Combat.weapon_stat(weapon, "penetration")
 
@@ -303,7 +315,7 @@ module AresMUSH
       # Armor doesn't cover this hit location
       return 0 if !protect
       random_die = rand(8) + 1
-      result = random_die + attacker_net_successes + pen - protect - serum_mod #Serums
+      result = random_die + attacker_net_successes + pen - protect - serum_mod - special_mod #Serums
             
       if (result >= 8) # 8-9
         armor_reduction = 0
@@ -317,7 +329,7 @@ module AresMUSH
         armor_reduction = 100
       end
       
-     combatant.log "Determined armor: loc=#{hitloc} weapon=#{weapon} net=#{attacker_net_successes} serum=#{serum_mod}" + #Serums
+     combatant.log "Determined armor: loc=#{hitloc} weapon=#{weapon} net=#{attacker_net_successes} serum=#{serum_mod} special=#{special_mod}"+ #Serums
       " pen=#{pen} protect=#{protect} random=#{random_die} result=#{result} reduction=#{armor_reduction}"
       
       armor_reduction

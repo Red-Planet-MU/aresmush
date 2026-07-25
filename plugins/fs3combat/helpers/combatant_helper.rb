@@ -9,6 +9,7 @@ module AresMUSH
       else 
         accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "accuracy")
       end
+      extra_special_mod = combatant.sys_attack_mod
       special_mod = combatant.attack_mod
       damage_mod = combatant.total_damage_mod
       stance_mod = combatant.attack_stance_mod
@@ -40,9 +41,9 @@ module AresMUSH
       end
       #/end firearm specialty
 
-      combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod} specialty=#{specialty_mod}" #TC
+      combatant.log "Attack roll for #{combatant.name} ability=#{ability} aiming=#{aiming_mod} mod=#{mod} accuracy=#{accuracy_mod} damage=#{damage_mod} stance=#{stance_mod} mount=#{mount_mod} luck=#{luck_mod} stress=#{stress_mod} special=#{special_mod} specialty=#{specialty_mod} extra_special=#{extra_special_mod}" #TC
 
-      mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod + specialty_mod #TC
+      mod = mod + accuracy_mod + damage_mod + stance_mod + aiming_mod + luck_mod - stress_mod + special_mod + mount_mod + specialty_mod + extra_special_mod #TC
       
       
       combatant.roll_ability(ability, mod)
@@ -56,6 +57,7 @@ module AresMUSH
         ability = FS3Combat.weapon_defense_skill(combatant, attacker_weapon)
       end
       #/end snares
+      extra_special_mod = combatant.sys_defense_mod
       stance_mod = combatant.defense_stance_mod
       luck_mod = (combatant.luck == "Defense") ? 3 : 0
       damage_mod = combatant.total_damage_mod
@@ -63,9 +65,9 @@ module AresMUSH
       dodge_mod = FS3Combat.vehicle_dodge_mod(combatant)
       armor_mod = FS3Combat.armor_stat(combatant.armor, 'defense') || 0
       
-      mod = stance_mod + luck_mod + damage_mod + special_mod + dodge_mod + armor_mod
+      mod = stance_mod + luck_mod + damage_mod + special_mod + dodge_mod + armor_mod + extra_special_mod
       
-      combatant.log "Defense roll for #{combatant.name} ability=#{ability} stance=#{stance_mod} damage=#{damage_mod} luck=#{luck_mod} special=#{special_mod} armor=#{armor_mod} dodge=#{dodge_mod}"
+      combatant.log "Defense roll for #{combatant.name} ability=#{ability} stance=#{stance_mod} damage=#{damage_mod} luck=#{luck_mod} special=#{special_mod} extra_special=#{extra_special_mod} armor=#{armor_mod} dodge=#{dodge_mod}"
       
       combatant.roll_ability(ability, mod)
     end
@@ -155,18 +157,19 @@ module AresMUSH
       gm_mod = combatant.initiative_mod
       #Serums
       serum_mod = combatant.serum_init_mod
+      special_mod = combatant.sys_initiative_mod
       #/Serums
       if serum_mod 
         if serum_mod > 0
-          roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod) + serum_mod #Serums
+          roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod + special_mod) + serum_mod #Serums
         else 
-          roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod + serum_mod) #Serums
+          roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod + serum_mod + special_mod) #Serums
         end
       else
-        roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod) #Serums
+        roll = combatant.roll_ability(ability, weapon_mod + action_mod + luck_mod + combatant.total_damage_mod + gm_mod + special_mod) #Serums
       end
 
-      combatant.log "Initiative roll for #{combatant.name} ability=#{ability} action=#{action_mod} weapon=#{weapon_mod} luck=#{luck_mod} gm=#{gm_mod} roll=#{roll} serum=#{serum_mod}"
+      combatant.log "Initiative roll for #{combatant.name} ability=#{ability} action=#{action_mod} weapon=#{weapon_mod} luck=#{luck_mod} gm=#{gm_mod} roll=#{roll} serum=#{serum_mod} special=#{special_mod}"
       
       roll
     end

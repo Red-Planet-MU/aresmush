@@ -16,6 +16,7 @@ module AresMUSH
     attribute :sys_attack_mod, :type => DataType::Integer, :default => 0
     attribute :sys_initiative_mod, :type => DataType::Integer, :default => 0
     attribute :sys_armor_mod, :type => DataType::Integer, :default => 0
+    attribute :sys_acid_counter, :type => DataType::Integer, :default => -1
     
   end
 end
