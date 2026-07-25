@@ -121,7 +121,7 @@ module AresMUSH
           wound = FS3Combat.worst_serumable_wound(self.target.associated_model)
           FS3Combat.heal(wound, 1)
           wound.update(is_serumable: false)
-          if self.target.sys_attack_mod > 0
+          if self.target.sys_attack_mod < 0
             self.target.update(sys_attack_mod: 0)
             self.target.update(sys_initiative_mod: 0)
             self.target.update(sys_defense_mod: 0)

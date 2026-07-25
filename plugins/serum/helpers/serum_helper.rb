@@ -66,7 +66,7 @@ module AresMUSH
           heal_amount = 0
           dice_message = t('tdd.botch')
           FS3Combat.inflict_damage(target, "MINOR", "Botched Serum")
-          if target.combatant.sys_defense_mod > 0
+          if target.combatant.sys_defense_mod < 0
             target.combatant.update(sys_attack_mod: 0)
             target.combatant.update(sys_initiative_mod: 0)
             target.combatant.update(sys_defense_mod: 0)
@@ -94,7 +94,7 @@ module AresMUSH
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
           wound.update(is_serumable: false)
-          if target.combatant.sys_defense_mod > 0
+          if target.combatant.sys_defense_mod < 0
             target.combatant.update(sys_attack_mod: 0)
             target.combatant.update(sys_initiative_mod: 0)
             target.combatant.update(sys_defense_mod: 0)
