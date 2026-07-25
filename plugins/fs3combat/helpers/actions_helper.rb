@@ -580,13 +580,31 @@ module AresMUSH
       
       FS3Combat.award_hit_achievement(attacker, damage, weapon_type)
       
-      messages << t('fs3combat.attack_hits', 
-                    :name => attack_name, 
-                    :weapon => weapon_name,
-                    :target => target.name,
-                    :hitloc => hitloc,
-                    :armor => reduced_by_armor,
-                    :damage => FS3Combat.display_severity(damage)) 
+      if weapon.include? "+Venom" 
+        messages << t('fs3combat.attack_hits_venom', 
+                      :name => attack_name, 
+                      :weapon => weapon_name,
+                      :target => target.name,
+                      :hitloc => hitloc,
+                      :armor => reduced_by_armor,
+                      :damage => FS3Combat.display_severity(damage)) 
+      elsif weapon.include? "+Acid" 
+        messages << t('fs3combat.attack_hits_acid', 
+                      :name => attack_name, 
+                      :weapon => weapon_name,
+                      :target => target.name,
+                      :hitloc => hitloc,
+                      :armor => reduced_by_armor,
+                      :damage => FS3Combat.display_severity(damage)) 
+      else
+        messages << t('fs3combat.attack_hits', 
+                      :name => attack_name, 
+                      :weapon => weapon_name,
+                      :target => target.name,
+                      :hitloc => hitloc,
+                      :armor => reduced_by_armor,
+                      :damage => FS3Combat.display_severity(damage)) 
+      end
 
       messages.concat FS3Combat.resolve_possible_crew_hit(target, hitloc, damage)
       messages
