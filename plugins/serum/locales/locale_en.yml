@@ -35,3 +35,4 @@ en:
     cant_get_serum_for_others: "You cannot get serums for other characters."
     acid_wore_off: "%{name}'s %xyACID%xn wore off!"
     explosive_stun: "%{name} attacks %{target_name} with an Energy Grenade and STUNS THEM for 1 round!"
+    no_longer_stunned: "%{name} is no longer stunned."
