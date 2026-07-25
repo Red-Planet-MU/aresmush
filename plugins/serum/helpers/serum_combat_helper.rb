@@ -29,6 +29,13 @@ module AresMUSH
         combatant.update(sys_acid_counter: combatant.sys_acid_counter - 1)
         return
       end
+      if combatant.stun_counter == 0 && combatant.is_stunned
+        combatant.update(is_stunned: false)
+        FS3Combat.emit_to_combat combatant.combat, t('serum.no_longer_stunned', :name => combatant.name), nil, true
+      elsif combatant.stun_counter > 0
+        combatant.update(stun_counter: combatant.stun_counter - 1)
+      end
+
     end
 
 

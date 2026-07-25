@@ -662,13 +662,19 @@ module AresMUSH
       messages
     end
     
-    def self.resolve_explosion(combatant, target)
+    def self.resolve_explosion(combatant, target, stun)
       messages = []
       margin = FS3Combat.determine_attack_margin(combatant, target)
       if (margin[:hit])
-        attacker_net_successes = margin[:attacker_net_successes]
-        messages.concat FS3Combat.resolve_attack(combatant, combatant.name, target, combatant.weapon, attacker_net_successes)
-        max_shrapnel = [ 5, attacker_net_successes + 2 ].min
+        if stun
+          target.update(stun_counter: 2)
+          target.update(is_stunned: true)
+          messages.concat t('serum.explosive_stun', :name => combatant.name, :target_name => target.name)
+        else
+          attacker_net_successes = margin[:attacker_net_successes]
+          messages.concat FS3Combat.resolve_attack(combatant, combatant.name, target, combatant.weapon, attacker_net_successes)
+          max_shrapnel = [ 5, attacker_net_successes + 2 ].min
+        end
       else
         messages << margin[:message]
         max_shrapnel = 2

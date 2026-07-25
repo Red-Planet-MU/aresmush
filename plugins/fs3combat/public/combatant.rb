@@ -29,6 +29,8 @@ module AresMUSH
     attribute :is_snared, :type => DataType::Boolean
     attribute :snare_roll, :type => DataType::Integer
     reference :snared_by, "AresMUSH::Combatant"
+    attribute :is_stunned, :type => DataType::Boolean
+    attribute :stun_counter, :type => DataType::Integer
     
     attribute :damage_lethality_mod, :type => DataType::Integer, :default => 0
     attribute :defense_mod, :type => DataType::Integer, :default => 0
