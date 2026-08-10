@@ -160,7 +160,7 @@ module AresMUSH
         
         if (json_message["type"] == "identify")
           handle_identify(json_message, enactor)
-        elsif (json_input["type"] == "pong")
+        elsif (json_message["type"] == "pong")
           #Do something maybe??
         else
           Global.logger.warn "Unexpected input from web client: #{data}"
