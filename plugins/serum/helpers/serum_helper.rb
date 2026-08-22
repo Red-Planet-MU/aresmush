@@ -61,6 +61,10 @@ module AresMUSH
         dice_message = TDD.print_dice(heal_roll)
         wound = FS3Combat.worst_serumable_wound(target)
         display_name = Global.read_config('serum',serum_name,'display_name')
+        npc_combatant = combat.find_combatant(target.name).is_npc?
+        if npc_combatant
+          target = combat.find_combatant(target.name)
+        end
         case heal_success_level
         when -1
           heal_amount = 0
