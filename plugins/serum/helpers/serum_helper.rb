@@ -63,22 +63,30 @@ module AresMUSH
         display_name = Global.read_config('serum',serum_name,'display_name')
         combat = target.combat
         npc_combatant = combat.find_combatant(target.name).is_npc?
-        if npc_combatant
-          target = combat.find_combatant(target.name)
-        end
         case heal_success_level
         when -1
           heal_amount = 0
           dice_message = t('tdd.botch')
           FS3Combat.inflict_damage(target, "MINOR", "Botched Serum")
-          if target.combatant.sys_defense_mod < 0
-            target.combatant.update(sys_attack_mod: 0)
-            target.combatant.update(sys_initiative_mod: 0)
-            target.combatant.update(sys_defense_mod: 0)
-            return t('serum.c_used_v_made_it_worse_venom', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
-          else
-            return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
-          end
+          if !npc_combatant
+            if target.combatant.sys_defense_mod < 0
+              target.combatant.update(sys_attack_mod: 0)
+              target.combatant.update(sys_initiative_mod: 0)
+              target.combatant.update(sys_defense_mod: 0)
+              return t('serum.c_used_v_made_it_worse_venom', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
+            else
+              return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
+            end
+          else 
+            npc_target = combat.find_combatant(target.name)
+            if npc_target.sys_defense_mod < 0
+              npc_target.update(sys_attack_mod: 0)
+              npc_target.update(sys_initiative_mod: 0)
+              npc_target.update(sys_defense_mod: 0)
+              return t('serum.c_used_v_made_it_worse_venom', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
+            else
+              return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
+            end
         when 0
           heal_amount = 1
         when 1
@@ -99,14 +107,25 @@ module AresMUSH
         if heal_success_level >= 0
           FS3Combat.heal(wound, heal_amount)
           wound.update(is_serumable: false)
-          if target.combatant.sys_defense_mod < 0
-            target.combatant.update(sys_attack_mod: 0)
-            target.combatant.update(sys_initiative_mod: 0)
-            target.combatant.update(sys_defense_mod: 0)
-            return t('serum.used_v_in_combat_venom', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+          if !npc_combatant
+            if target.combatant.sys_defense_mod < 0
+              target.combatant.update(sys_attack_mod: 0)
+              target.combatant.update(sys_initiative_mod: 0)
+              target.combatant.update(sys_defense_mod: 0)
+              return t('serum.used_v_in_combat_venom', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+            else
+              return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+            end
           else
-            return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
-          end
+            npc_target = combat.find_combatant(target.name)
+            if npc_target.sys_defense_mod < 0
+              npc_target.update(sys_attack_mod: 0)
+              npc_target.update(sys_initiative_mod: 0)
+              npc_target.update(sys_defense_mod: 0)
+              return t('serum.used_v_in_combat_venom', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+            else
+              return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
+            end
         end
       end
 
