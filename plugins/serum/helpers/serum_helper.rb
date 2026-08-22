@@ -87,6 +87,7 @@ module AresMUSH
             else
               return t('serum.c_used_v_made_it_worse', :name => char.name, :target => target.name, :serum_name => display_name, :dice_result => dice_message)
             end
+          end
         when 0
           heal_amount = 1
         when 1
@@ -126,6 +127,7 @@ module AresMUSH
             else
               return t('serum.used_v_in_combat', :name => char.name, :target => target.name, :serum_name => display_name, :heal_points => heal_amount, :dice_result => dice_message)
             end
+          end
         end
       end
 
